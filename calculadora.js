@@ -1,10 +1,3 @@
-// Iniciar campos zerados
-function inicializar() {
-    document.getElementById("v_m").value = "0.00";
-    document.getElementById("v_a").value = "0.00";
-    document.getElementById("v_p").value = "0";
-}
-
 // Obter valores dos campos
 function calcular(inputElement) {
     var cnpj = document.getElementById("cnpj").value;

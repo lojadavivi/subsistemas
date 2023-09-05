@@ -4,26 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <!-- Ícones -->
-    <link rel="icon" href="/favicon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="/icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+
+    <!-- Estilos padrão  CSS -->
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <script src="calculadora.js"></script>
+    <script src="calc_variables.js"></script>
+    <script>
+        function inicializar() {
+            document.getElementById("v_m").value = "0.00";
+            document.getElementById("v_a").value = "0.00";
+            document.getElementById("v_p").value = "0";
+        }
+    </script>
 
     <!-- Título da página -->
     <title>CALCULADORA</title>
-    
-
-    <!-- Estilos padrão  CSS -->
-    <link rel="stylesheet" type="text/css" href="/estilos.css">
+</head>
 
 <body onload="inicializar()">
-    <script>
-        // Função para alternar a exibição do changelog como spoiler
-        function toggleChangelog() {
-            const changelog = document.getElementById("changelog");
-            changelog.style.display = changelog.style.display === "none" ? "block" : "none";
-        }
-    </script>
-    <script src="/calculadora.js"></script>
-    <script src="/calc_variables.js"></script>
 
     <!-- Título principal -->
     <h1 class="header-with-image" style="background-color: #A37774;">
@@ -109,9 +108,12 @@
                 marketplace.</td>
         </tr>
         <tr style="text-align: center;">
-            <td>R$ <input class="input_calc" style="width: 10ch;" type="number" id="v_m" name="v_m" onkeyup="calcular()"></td>
-            <td>R$ <input class="input_calc" style="width: 10ch;" type="number" id="v_a" name="v_a" onkeyup="calcular()"></td>
-            <td><input class="input_calc" style="width: 10ch; text-align: right;" type="number" id="v_p" name="v_p" onkeyup="calcular()"> %</td>
+            <td>R$ <input class="input_calc" style="width: 10ch;" type="number" id="v_m" name="v_m"
+                    onkeyup="calcular()"></td>
+            <td>R$ <input class="input_calc" style="width: 10ch;" type="number" id="v_a" name="v_a"
+                    onkeyup="calcular()"></td>
+            <td><input class="input_calc" style="width: 10ch; text-align: right;" type="number" id="v_p" name="v_p"
+                    onkeyup="calcular()"> %</td>
         </tr>
         <tr>
             <th style="width: 23ch;">MARKETPLACE</th>
@@ -163,12 +165,7 @@
         <a href="https://franciscastela.link/" class="spoiler">Francis Castela</a>
         para a
         <a href="https://www.lojadaviviunhas.com.br/" class="spoiler">Loja da Vivi</a>.
-        </div>
-</body>
-
-</html>
-</div>
-
+    </div>
 </body>
 
 </html>

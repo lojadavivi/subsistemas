@@ -21,13 +21,13 @@
 
 /* Padrão de fonte e fundo */
 @font-face {
-    font-family: "Roboto Mono";
-    src: url(/RobotoMono-VariableFont_wght.ttf);
+    font-family: "Roboto Regular";
+    src: url(Roboto-Regular.ttf);
 }
 
 @font-face {
-    font-family: "Roboto Regular";
-    src: url(/Roboto-Regular.ttf);
+    font-family: "Roboto Mono";
+    src: url(RobotoMono-VariableFont_wght.ttf);
 }
 
 body {
@@ -113,7 +113,6 @@ body {
     padding: 0;
     margin: 0;
 }
-
 
 /* Botão de voltar */
 .button-back {
