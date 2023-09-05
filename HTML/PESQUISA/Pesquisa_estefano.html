@@ -4,23 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <!-- Ícones -->
-    <link rel="icon" href="STYLES/favicon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="STYLES/icon.png" type="image/x-icon">
+    <link rel="icon" href="/subsistemas/STYLES/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/subsistemas/STYLES/icon.png" type="image/x-icon">
 
     <!-- Título da página -->
     <title>ESTEFANO</title>
 
     <!-- Estilos padrão  CSS -->
-    <link rel="stylesheet" type="text/css" href="STYLES/estilos.css">
+    <link rel="/subsistemas/STYLESheet" type="text/css" href="/subsistemas/STYLES/estilos.css">
 
 </head>
 
 <body>
     <!-- Título principal -->
     <h1 class="header-with-image" style="background-color: #AC3931;">
-        <span class="header-text"><a href="/index.html" class="button-back" style="margin-left: 5%;">⬅️ MENU</a></span>
+        <span class="header-text"><a href="/subsistemas/index.html" class="button-back" style="margin-left: 5%;">⬅️ MENU</a></span>
         <span class="header-text">ESTOQUE - LOJA DA VIVI SV LTDA (Estefano)</span>
-        <img class="header-image" src="STYLES/icon.png">
+        <img class="header-image" src="/subsistemas/STYLES/icon.png">
     </h1>
 
     <!-- Área para mostrar a última data de atualização do arquivo -->
@@ -96,7 +96,7 @@
             inputNome = inputNome.toLowerCase();
             var resultsTableBody = document.getElementById("resultsTableBody");
             resultsTableBody.innerHTML = "";
-            var csvEstefano = "CSV/Produtos_exportados (ESTEFANO).csv";
+            var csvEstefano = "/subsistemas/CSV/Produtos_exportados (ESTEFANO).csv";
 
             // Realiza uma requisição para obter os dados do CSV (precisa estar sendo executado com o servidor python -m http.server)
             fetch(csvEstefano).then(response => response.text()).then(data => {
@@ -341,7 +341,7 @@
 
     // Função assíncrona para obter a data de última atualização do arquivo
     async function getLastModified() {
-        var csvEstefano = "CSV/Produtos_exportados (ESTEFANO).csv";
+        var csvEstefano = "/subsistemas/CSV/Produtos_exportados (ESTEFANO).csv";
         const response = await fetch(csvEstefano, { method: "HEAD" });
         const lastModified = new Date(response.headers.get("Last-Modified"));
         const lastModifiedText = "Última atualização: " + lastModified.toLocaleString();

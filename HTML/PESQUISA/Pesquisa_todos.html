@@ -4,23 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <!-- Ícones -->
-    <link rel="icon" href="STYLES/favicon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="STYLES/icon.png" type="image/x-icon">
+    <link rel="icon" href="/subsistemas/STYLES/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/subsistemas/STYLES/icon.png" type="image/x-icon">
 
     <!-- Título da página -->
     <title>LOJA DA VIVI</title>
 
     <!-- Estilos padrão  CSS -->
-    <link rel="stylesheet" type="text/css" href="STYLES/estilos.css">
+    <link rel="/subsistemas/STYLESheet" type="text/css" href="/subsistemas/STYLES/estilos.css">
 
 </head>
 
 <body>
     <!-- Título principal -->
     <h1 class="header-with-image" style="background-color: #992380;">
-        <span class="header-text"><a href="/index.html" class="button-back" style="margin-left: 5%;">⬅️ MENU</a></span>
+        <span class="header-text"><a href="/subsistemas/index.html" class="button-back" style="margin-left: 5%;">⬅️ MENU</a></span>
         <span class="header-text">TODOS OS ESTOQUES</span>
-        <img class="header-image" src="STYLES/icon.png">
+        <img class="header-image" src="/subsistemas/STYLES/icon.png">
     </h1>
 
     <!-- Campos de busca por produto ou código de barras -->
@@ -92,10 +92,10 @@
             inputNome = inputNome.toLowerCase();
             var resultsTableBody = document.getElementById("resultsTableBody");
             resultsTableBody.innerHTML = "";
-            var csvEstefano = "Produtos_exportados (ESTEFANO).csv";
-            var csvTijucas = "Produtos_exportados (TIJUCAS).csv";
-            var csvFerry = "Produtos_exportados (FERRY).csv";
-            var csvSite = "magazord.csv";
+            var csvEstefano = "/subsistemas/CSV/Produtos_exportados (ESTEFANO).csv";
+            var csvTijucas = "/subsistemas/CSV/Produtos_exportados (TIJUCAS).csv";
+            var csvFerry = "/subsistemas/CSV/Produtos_exportados (FERRY).csv";
+            var csvSite = "/subsistemas/CSV/magazord.csv";
 
             // Requisição de dados ESTEFANO
             fetch(csvEstefano).then(response => response.text()).then(data => {
