@@ -92,11 +92,10 @@
             inputNome = inputNome.toLowerCase();
             var resultsTableBody = document.getElementById("resultsTableBody");
             resultsTableBody.innerHTML = "";
-            var serverUrl = "http://192.168.15.184:8000";
-            var csvEstefano = serverUrl + "/Produtos_exportados (ESTEFANO).csv";
-            var csvTijucas = serverUrl + "/Produtos_exportados (TIJUCAS).csv";
-            var csvFerry = serverUrl + "/Produtos_exportados (FERRY).csv";
-            var csvSite = serverUrl + "/magazord.csv";
+            var csvEstefano = "Produtos_exportados (ESTEFANO).csv";
+            var csvTijucas = "Produtos_exportados (TIJUCAS).csv";
+            var csvFerry = "Produtos_exportados (FERRY).csv";
+            var csvSite = "magazord.csv";
 
             // Requisição de dados ESTEFANO
             fetch(csvEstefano).then(response => response.text()).then(data => {

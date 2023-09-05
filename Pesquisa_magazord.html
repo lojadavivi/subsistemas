@@ -91,8 +91,7 @@
             inputNome = inputNome.toLowerCase();
             var resultsTableBody = document.getElementById("resultsTableBody");
             resultsTableBody.innerHTML = "";
-            var serverUrl = "http://192.168.15.184:8000";
-            var csvSite = serverUrl + "/magazord.csv";
+            var csvSite = "magazord.csv";
 
             // Realiza uma requisição para obter os dados do CSV (precisa estar sendo executado com o servidor python -m http.server)
             fetch(csvSite).then(response => response.text()).then(data => {
@@ -215,8 +214,7 @@
 
     // Função assíncrona para obter a data de última atualização do arquivo
     async function getLastModified() {
-        var serverUrl = "http://192.168.15.184:8000";
-        var csvSite = serverUrl + "/magazord.csv";
+        var csvSite = "magazord.csv";
         const response = await fetch(csvSite, { method: "HEAD" });
         const lastModified = new Date(response.headers.get("Last-Modified"));
         const lastModifiedText = "Última atualização: " + lastModified.toLocaleString();

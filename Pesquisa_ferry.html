@@ -96,8 +96,7 @@
             inputNome = inputNome.toLowerCase();
             var resultsTableBody = document.getElementById("resultsTableBody");
             resultsTableBody.innerHTML = "";
-            var serverUrl = "http://192.168.15.184:8000";
-            var csvFerry = serverUrl + "/Produtos_exportados (FERRY).csv";
+            var csvFerry = "Produtos_exportados (FERRY).csv";
 
             // Realiza uma requisição para obter os dados do CSV (precisa estar sendo executado com o servidor python -m http.server)
             fetch(csvFerry).then(response => response.text()).then(data => {
@@ -342,8 +341,7 @@
 
     // Função assíncrona para obter a data de última atualização do arquivo
     async function getLastModified() {
-        var serverUrl = "http://192.168.15.184:8000";
-        var csvFerry = serverUrl + "/Produtos_exportados (FERRY).csv";
+        var csvFerry = "Produtos_exportados (FERRY).csv";
         const response = await fetch(csvFerry, { method: "HEAD" });
         const lastModified = new Date(response.headers.get("Last-Modified"));
         const lastModifiedText = "Última atualização: " + lastModified.toLocaleString();
