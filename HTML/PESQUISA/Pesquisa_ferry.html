@@ -4,23 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <!-- Ícones -->
-    <link rel="icon" href="favicon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link rel="icon" href="STYLES/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="STYLES/icon.png" type="image/x-icon">
 
     <!-- Título da página -->
-    <title>ESTEFANO</title>
+    <title>FERRY</title>
 
     <!-- Estilos padrão  CSS -->
-    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <link rel="stylesheet" type="text/css" href="STYLES/estilos.css">
 
 </head>
 
 <body>
     <!-- Título principal -->
-    <h1 class="header-with-image" style="background-color: #AC3931;">
+    <h1 class="header-with-image" style="background-color: #5B8266;">
         <span class="header-text"><a href="index.html" class="button-back" style="margin-left: 5%;">⬅️ MENU</a></span>
-        <span class="header-text">ESTOQUE - LOJA DA VIVI SV LTDA (Estefano)</span>
-        <img class="header-image" src="icon.png">
+        <span class="header-text">ESTOQUE - LOJA DA VIVI LTDA (Ferry)</span>
+        <img class="header-image" src="STYLES/icon.png">
     </h1>
 
     <!-- Área para mostrar a última data de atualização do arquivo -->
@@ -54,11 +54,11 @@
                 <tr>
                     <th style="background-color: #333843;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorId()">ID</button></th>
                     <th style="background-color: #333843;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorRef()">Referência</button></th>
-                    <th style="background-color: #AC3931;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorCod()">Cod. Barras</button></th>
-                    <th style="background-color: #AC3931;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorNom()">Produto</button></th>
-                    <th style="background-color: #AC3931;">Custo</th>
-                    <th style="background-color: #AC3931;">Venda</th>
-                    <th style="background-color: #AC3931;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorQtd()">QTD</button></th>
+                    <th style="background-color: #5B8266;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorCod()">Cod. Barras</button></th>
+                    <th style="background-color: #5B8266;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorNom()">Produto</button></th>
+                    <th style="background-color: #5B8266;">Custo</th>
+                    <th style="background-color: #5B8266;">Venda</th>
+                    <th style="background-color: #5B8266;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorQtd()">QTD</button></th>
                     <th style="background-color: #333843;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorNcm()">NCM</button></th>
                     <th style="background-color: #333843;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorCes()">CEST</button></th>
                     <th style="background-color: #333843;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorPis()">PIS</button></th>
@@ -96,60 +96,60 @@
             inputNome = inputNome.toLowerCase();
             var resultsTableBody = document.getElementById("resultsTableBody");
             resultsTableBody.innerHTML = "";
-            var csvEstefano = "Produtos_exportados (ESTEFANO).csv";
+            var csvFerry = "CSV/Produtos_exportados (FERRY).csv";
 
             // Realiza uma requisição para obter os dados do CSV (precisa estar sendo executado com o servidor python -m http.server)
-            fetch(csvEstefano).then(response => response.text()).then(data => {
-                var linhasEstefano = data.split("\n");
-                for (var infoEstefano = 1; infoEstefano < linhasEstefano.length; infoEstefano++) {
-                    var columnsEstefano = linhasEstefano[infoEstefano].split(";");
-                    var idEstefano = columnsEstefano[0];
-                    var refEstefano = columnsEstefano[23] || "";
-                    var codEstefano = columnsEstefano[22] || "";
-                    var prodEstefano = columnsEstefano[4] || "";
-                    var custoEstefano = columnsEstefano[6] || "";
-                    var vendaEstefano = columnsEstefano[7] || "";
-                    var qtdEstefano = columnsEstefano[25] || "";
-                    var ncmEstefano = columnsEstefano[40] || "";
-                    var cestEstefano = columnsEstefano[55] || "";
-                    var pisEstefano = columnsEstefano[34] || "";
-                    var cofinsEstefano = columnsEstefano[35] || "";
+            fetch(csvFerry).then(response => response.text()).then(data => {
+                var linhasFerry = data.split("\n");
+                for (var infoFerry = 1; infoFerry < linhasFerry.length; infoFerry++) {
+                    var columnsFerry = linhasFerry[infoFerry].split(";");
+                    var idFerry = columnsFerry[0];
+                    var refFerry = columnsFerry[23] || "";
+                    var codFerry = columnsFerry[22] || "";
+                    var prodFerry = columnsFerry[4] || "";
+                    var custoFerry = columnsFerry[6] || "";
+                    var vendaFerry = columnsFerry[7] || "";
+                    var qtdFerry = columnsFerry[25] || "";
+                    var ncmFerry = columnsFerry[40] || "";
+                    var cestFerry = columnsFerry[55] || "";
+                    var pisFerry = columnsFerry[34] || "";
+                    var cofinsFerry = columnsFerry[35] || "";
 
                     // Verifica se o resultado corresponde à busca e organiza as informações na tabela
-                    if ((inputCod && (inputNome === "" || prodEstefano.toLowerCase().includes(inputNome))) || (!inputCod && codEstefano.trim().match(inputNome) == inputNome || refEstefano.trim().match(inputNome) == inputNome)) {
+                    if ((inputCod && (inputNome === "" || prodFerry.toLowerCase().includes(inputNome))) || (!inputCod && codFerry.trim().match(inputNome) == inputNome || refFerry.trim().match(inputNome) == inputNome)) {
                         var row = resultsTableBody.insertRow();
-                        var idEstefanoCell = row.insertCell(0);
-                        var refEstefanoCell = row.insertCell(1);
-                        var codEstefanoCell = row.insertCell(2);
-                        var prodEstefanoCell = row.insertCell(3);
-                        var custoEstefanoCell = row.insertCell(4);
-                        var vendaEstefanoCell = row.insertCell(5);
-                        var qtdEstefanoCell = row.insertCell(6);
-                        var ncmEstefanoCell = row.insertCell(7);
-                        var cestEstefanoCell = row.insertCell(8);
-                        var pisEstefanoCell = row.insertCell(9);
-                        var cofinsEstefanoCell = row.insertCell(10);
-                        idEstefanoCell.textContent = idEstefano.replace(/"/g, "");
-                        refEstefanoCell.textContent = refEstefano.replace(/"/g, "");
-                        codEstefanoCell.textContent = codEstefano.replace(/"/g, "");
-                        prodEstefanoCell.textContent = prodEstefano.replace(/"/g, "");
+                        var idFerryCell = row.insertCell(0);
+                        var refFerryCell = row.insertCell(1);
+                        var codFerryCell = row.insertCell(2);
+                        var prodFerryCell = row.insertCell(3);
+                        var custoFerryCell = row.insertCell(4);
+                        var vendaFerryCell = row.insertCell(5);
+                        var qtdFerryCell = row.insertCell(6);
+                        var ncmFerryCell = row.insertCell(7);
+                        var cestFerryCell = row.insertCell(8);
+                        var pisFerryCell = row.insertCell(9);
+                        var cofinsFerryCell = row.insertCell(10);
+                        idFerryCell.textContent = idFerry.replace(/"/g, "");
+                        refFerryCell.textContent = refFerry.replace(/"/g, "");
+                        codFerryCell.textContent = codFerry.replace(/"/g, "");
+                        prodFerryCell.textContent = prodFerry.replace(/"/g, "");
 
-                        var custoEstefanoNum = parseFloat(custoEstefano.replace(/"/g, "").replace(",", "."));
-                        var vendaEstefanoNum = parseFloat(vendaEstefano.replace(/"/g, "").replace(",", "."));
+                        var custoFerryNum = parseFloat(custoFerry.replace(/"/g, "").replace(",", "."));
+                        var vendaFerryNum = parseFloat(vendaFerry.replace(/"/g, "").replace(",", "."));
 
-                        custoEstefanoCell.textContent = "R$ " + custoEstefanoNum.toLocaleString('pt-BR', {
+                        custoFerryCell.textContent = "R$ " + custoFerryNum.toLocaleString('pt-BR', {
                             minimumFractionDigits: 2,
                             maximumFractionDigits: 2
                         });
-                        vendaEstefanoCell.textContent = "R$ " + vendaEstefanoNum.toLocaleString('pt-BR', {
+                        vendaFerryCell.textContent = "R$ " + vendaFerryNum.toLocaleString('pt-BR', {
                             minimumFractionDigits: 2,
                             maximumFractionDigits: 2
                         });
-                        qtdEstefanoCell.textContent = qtdEstefano.replace(/"/g, "");
-                        ncmEstefanoCell.textContent = ncmEstefano.replace(/"/g, "");
-                        cestEstefanoCell.textContent = cestEstefano.replace(/"/g, "");
-                        pisEstefanoCell.textContent = pisEstefano.replace(/"/g, "");
-                        cofinsEstefanoCell.textContent = cofinsEstefano.replace(/"/g, "");
+                        qtdFerryCell.textContent = qtdFerry.replace(/"/g, "");
+                        ncmFerryCell.textContent = ncmFerry.replace(/"/g, "");
+                        cestFerryCell.textContent = cestFerry.replace(/"/g, "");
+                        pisFerryCell.textContent = pisFerry.replace(/"/g, "");
+                        cofinsFerryCell.textContent = cofinsFerry.replace(/"/g, "");
                     }
                 }
             });
@@ -341,8 +341,8 @@
 
     // Função assíncrona para obter a data de última atualização do arquivo
     async function getLastModified() {
-        var csvEstefano = "Produtos_exportados (ESTEFANO).csv";
-        const response = await fetch(csvEstefano, { method: "HEAD" });
+        var csvFerry = "CSV/Produtos_exportados (FERRY).csv";
+        const response = await fetch(csvFerry, { method: "HEAD" });
         const lastModified = new Date(response.headers.get("Last-Modified"));
         const lastModifiedText = "Última atualização: " + lastModified.toLocaleString();
         document.getElementById("lastModified").textContent = lastModifiedText;

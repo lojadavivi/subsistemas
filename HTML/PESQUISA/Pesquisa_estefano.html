@@ -4,23 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <!-- Ícones -->
-    <link rel="icon" href="favicon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link rel="icon" href="STYLES/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="STYLES/icon.png" type="image/x-icon">
 
     <!-- Título da página -->
-    <title>TIJUCAS</title>
+    <title>ESTEFANO</title>
 
     <!-- Estilos padrão  CSS -->
-    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <link rel="stylesheet" type="text/css" href="STYLES/estilos.css">
 
 </head>
 
 <body>
     <!-- Título principal -->
-    <h1 class="header-with-image" style="background-color: #660085;">
+    <h1 class="header-with-image" style="background-color: #AC3931;">
         <span class="header-text"><a href="index.html" class="button-back" style="margin-left: 5%;">⬅️ MENU</a></span>
-        <span class="header-text">ESTOQUE - VIVIANE CHRISTINA FERREIRA (Antiga Tijucas)</span>
-        <img class="header-image" src="icon.png">
+        <span class="header-text">ESTOQUE - LOJA DA VIVI SV LTDA (Estefano)</span>
+        <img class="header-image" src="STYLES/icon.png">
     </h1>
 
     <!-- Área para mostrar a última data de atualização do arquivo -->
@@ -54,11 +54,11 @@
                 <tr>
                     <th style="background-color: #333843;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorId()">ID</button></th>
                     <th style="background-color: #333843;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorRef()">Referência</button></th>
-                    <th style="background-color: #660085;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorCod()">Cod. Barras</button></th>
-                    <th style="background-color: #660085;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorNom()">Produto</button></th>
-                    <th style="background-color: #660085;">Custo</th>
-                    <th style="background-color: #660085;">Venda</th>
-                    <th style="background-color: #660085;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorQtd()">QTD</button></th>
+                    <th style="background-color: #AC3931;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorCod()">Cod. Barras</button></th>
+                    <th style="background-color: #AC3931;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorNom()">Produto</button></th>
+                    <th style="background-color: #AC3931;">Custo</th>
+                    <th style="background-color: #AC3931;">Venda</th>
+                    <th style="background-color: #AC3931;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorQtd()">QTD</button></th>
                     <th style="background-color: #333843;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorNcm()">NCM</button></th>
                     <th style="background-color: #333843;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorCes()">CEST</button></th>
                     <th style="background-color: #333843;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorPis()">PIS</button></th>
@@ -96,60 +96,60 @@
             inputNome = inputNome.toLowerCase();
             var resultsTableBody = document.getElementById("resultsTableBody");
             resultsTableBody.innerHTML = "";
-            var csvTijucas = "Produtos_exportados (TIJUCAS).csv";
+            var csvEstefano = "CSV/Produtos_exportados (ESTEFANO).csv";
 
             // Realiza uma requisição para obter os dados do CSV (precisa estar sendo executado com o servidor python -m http.server)
-            fetch(csvTijucas).then(response => response.text()).then(data => {
-                var linhasTijucas = data.split("\n");
-                for (var infoTijucas = 1; infoTijucas < linhasTijucas.length; infoTijucas++) {
-                    var columnsTijucas = linhasTijucas[infoTijucas].split(";");
-                    var idTijucas = columnsTijucas[0];
-                    var refTijucas = columnsTijucas[23] || "";
-                    var codTijucas = columnsTijucas[22] || "";
-                    var prodTijucas = columnsTijucas[4] || "";
-                    var custoTijucas = columnsTijucas[6] || "";
-                    var vendaTijucas = columnsTijucas[7] || "";
-                    var qtdTijucas = columnsTijucas[25] || "";
-                    var ncmTijucas = columnsTijucas[40] || "";
-                    var cestTijucas = columnsTijucas[55] || "";
-                    var pisTijucas = columnsTijucas[34] || "";
-                    var cofinsTijucas = columnsTijucas[35] || "";
+            fetch(csvEstefano).then(response => response.text()).then(data => {
+                var linhasEstefano = data.split("\n");
+                for (var infoEstefano = 1; infoEstefano < linhasEstefano.length; infoEstefano++) {
+                    var columnsEstefano = linhasEstefano[infoEstefano].split(";");
+                    var idEstefano = columnsEstefano[0];
+                    var refEstefano = columnsEstefano[23] || "";
+                    var codEstefano = columnsEstefano[22] || "";
+                    var prodEstefano = columnsEstefano[4] || "";
+                    var custoEstefano = columnsEstefano[6] || "";
+                    var vendaEstefano = columnsEstefano[7] || "";
+                    var qtdEstefano = columnsEstefano[25] || "";
+                    var ncmEstefano = columnsEstefano[40] || "";
+                    var cestEstefano = columnsEstefano[55] || "";
+                    var pisEstefano = columnsEstefano[34] || "";
+                    var cofinsEstefano = columnsEstefano[35] || "";
 
                     // Verifica se o resultado corresponde à busca e organiza as informações na tabela
-                    if ((inputCod && (inputNome === "" || prodTijucas.toLowerCase().includes(inputNome))) || (!inputCod && codTijucas.trim().match(inputNome) == inputNome || refTijucas.trim().match(inputNome) == inputNome)) {
+                    if ((inputCod && (inputNome === "" || prodEstefano.toLowerCase().includes(inputNome))) || (!inputCod && codEstefano.trim().match(inputNome) == inputNome || refEstefano.trim().match(inputNome) == inputNome)) {
                         var row = resultsTableBody.insertRow();
-                        var idTijucasCell = row.insertCell(0);
-                        var refTijucasCell = row.insertCell(1);
-                        var codTijucasCell = row.insertCell(2);
-                        var prodTijucasCell = row.insertCell(3);
-                        var custoTijucasCell = row.insertCell(4);
-                        var vendaTijucasCell = row.insertCell(5);
-                        var qtdTijucasCell = row.insertCell(6);
-                        var ncmTijucasCell = row.insertCell(7);
-                        var cestTijucasCell = row.insertCell(8);
-                        var pisTijucasCell = row.insertCell(9);
-                        var cofinsTijucasCell = row.insertCell(10);
-                        idTijucasCell.textContent = idTijucas.replace(/"/g, "");
-                        refTijucasCell.textContent = refTijucas.replace(/"/g, "");
-                        codTijucasCell.textContent = codTijucas.replace(/"/g, "");
-                        prodTijucasCell.textContent = prodTijucas.replace(/"/g, "");
+                        var idEstefanoCell = row.insertCell(0);
+                        var refEstefanoCell = row.insertCell(1);
+                        var codEstefanoCell = row.insertCell(2);
+                        var prodEstefanoCell = row.insertCell(3);
+                        var custoEstefanoCell = row.insertCell(4);
+                        var vendaEstefanoCell = row.insertCell(5);
+                        var qtdEstefanoCell = row.insertCell(6);
+                        var ncmEstefanoCell = row.insertCell(7);
+                        var cestEstefanoCell = row.insertCell(8);
+                        var pisEstefanoCell = row.insertCell(9);
+                        var cofinsEstefanoCell = row.insertCell(10);
+                        idEstefanoCell.textContent = idEstefano.replace(/"/g, "");
+                        refEstefanoCell.textContent = refEstefano.replace(/"/g, "");
+                        codEstefanoCell.textContent = codEstefano.replace(/"/g, "");
+                        prodEstefanoCell.textContent = prodEstefano.replace(/"/g, "");
 
-                        var custoTijucasNum = parseFloat(custoTijucas.replace(/"/g, "").replace(",", "."));
-                        var vendaTijucasNum = parseFloat(vendaTijucas.replace(/"/g, "").replace(",", "."));
+                        var custoEstefanoNum = parseFloat(custoEstefano.replace(/"/g, "").replace(",", "."));
+                        var vendaEstefanoNum = parseFloat(vendaEstefano.replace(/"/g, "").replace(",", "."));
 
-                        custoTijucasCell.textContent = "R$ " + custoTijucasNum.toLocaleString('pt-BR', {
+                        custoEstefanoCell.textContent = "R$ " + custoEstefanoNum.toLocaleString('pt-BR', {
                             minimumFractionDigits: 2,
                             maximumFractionDigits: 2
                         });
-                        vendaTijucasCell.textContent = "R$ " + vendaTijucasNum.toLocaleString('pt-BR', {
+                        vendaEstefanoCell.textContent = "R$ " + vendaEstefanoNum.toLocaleString('pt-BR', {
                             minimumFractionDigits: 2,
                             maximumFractionDigits: 2
                         });
-                        qtdTijucasCell.textContent = qtdTijucas.replace(/"/g, "");
-                        ncmTijucasCell.textContent = ncmTijucas.replace(/"/g, "");
-                        cestTijucasCell.textContent = cestTijucas.replace(/"/g, "");
-                        pisTijucasCell.textContent = pisTijucas.replace(/"/g, "");
-                        cofinsTijucasCell.textContent = cofinsTijucas.replace(/"/g, "");
+                        qtdEstefanoCell.textContent = qtdEstefano.replace(/"/g, "");
+                        ncmEstefanoCell.textContent = ncmEstefano.replace(/"/g, "");
+                        cestEstefanoCell.textContent = cestEstefano.replace(/"/g, "");
+                        pisEstefanoCell.textContent = pisEstefano.replace(/"/g, "");
+                        cofinsEstefanoCell.textContent = cofinsEstefano.replace(/"/g, "");
                     }
                 }
             });
@@ -341,8 +341,8 @@
 
     // Função assíncrona para obter a data de última atualização do arquivo
     async function getLastModified() {
-        var csvTijucas = "Produtos_exportados (TIJUCAS).csv";
-        const response = await fetch(csvTijucas, { method: "HEAD" });
+        var csvEstefano = "CSV/Produtos_exportados (ESTEFANO).csv";
+        const response = await fetch(csvEstefano, { method: "HEAD" });
         const lastModified = new Date(response.headers.get("Last-Modified"));
         const lastModifiedText = "Última atualização: " + lastModified.toLocaleString();
         document.getElementById("lastModified").textContent = lastModifiedText;

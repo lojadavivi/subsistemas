@@ -22,12 +22,12 @@
 /* Padrão de fonte e fundo */
 @font-face {
     font-family: "Roboto Regular";
-    src: url(Roboto-Regular.ttf);
+    src: url(STYLES/Roboto-Regular.ttf);
 }
 
 @font-face {
     font-family: "Roboto Mono";
-    src: url(RobotoMono-VariableFont_wght.ttf);
+    src: url(STYLES/RobotoMono-VariableFont_wght.ttf);
 }
 
 body {
