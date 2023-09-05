@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Ícones -->
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/icon.png" type="image/x-icon">
+
+    <!-- Título da página -->
+    <title>MAGAZORD</title>
+
+    <!-- Estilos padrão  CSS -->
+    <link rel="stylesheet" type="text/css" href="/estilos.css">
+
+</head>
+
+<body>
+    <!-- Título principal -->
+    <h1 class="header-with-image" style="background-color: #008DD5;">
+        <span class="header-text"><a href="index.html" class="button-back" style="margin-left: 5%;">⬅️ MENU</a></span>
+        <span class="header-text">ESTOQUE - LOJA DA VIVI ONLINE (Site)</span>
+        <img class="header-image" src="icon.png">
+    </h1>
+
+    <!-- Área para mostrar a última data de atualização do arquivo -->
+    <p id="lastModified"></p>
+
+    <!-- Campos de busca por produto ou código de barras -->
+    <!-- Campos de busca por produto ou código de barras -->
+    <div>
+        <table style="width: 100%; text-align: center;">
+            <thead>
+                <tr>
+                    <th>
+                        <input style="width: 75%; padding: 5px; text-align: center;" type="text" id="BuscaNome"
+                            onkeydown="handleKeyPress(event, 'BuscaPorNome')" placeholder="BUSCAR POR PRODUTO"><button
+                            class="buscar" onclick="BuscaPorNome()">Buscar</button>
+                    </th>
+                    <th>
+                        <input style="width: 75%; padding: 5px; text-align: center;" type="number" id="BuscaCod"
+                            onkeydown="handleKeyPress(event, 'BuscaPorCod')"
+                            placeholder="BUSCAR POR CÓDIGO DE BARRAS"><button class="buscar"
+                            onclick="BuscaPorCod()">Buscar</button>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <p style="text-align: center;">Dica: após a pesquisa, clique no cabeçalho que deseja organizar por ordem alfabética.</p>
+    <!-- Tabela para exibir os resultados dinamicamente-->
+    <div id="resultsContainer">
+        <table class="tabela_busca">
+            <thead>
+                <tr>
+                    <th style="background-color: #008DD5;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorCod()">Cod. Barras</button></th>
+                    <th style="background-color: #008DD5;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorNom()">Produto</button></th>
+                    <th style="background-color: #008DD5;">Custo</th>
+                    <th style="background-color: #008DD5;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorQtdF()">QTD Fis.</button></th>
+                    <th style="background-color: #008DD5;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorQtdV()">QTD Vir.</button></th>
+                </tr>
+            </thead>
+            <tbody id="resultsTableBody"></tbody>
+        </table>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Função para lidar com o pressionamento da tecla Enter nos campos de busca
+        function handleKeyPress(event, searchFunction) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                window[searchFunction]();
+            }
+        }
+
+        // Função de busca por produto
+        function BuscaPorNome() {
+            var inputNome = document.getElementById("BuscaNome").value;
+            inicarBusca(inputNome, true);
+        }
+
+        // Função de busca por código de barras
+        function BuscaPorCod() {
+            var inputNome = document.getElementById("BuscaCod").value;
+            inicarBusca(inputNome, false);
+        }
+
+        // Função que realiza a busca e exibe os resultados
+        function inicarBusca(inputNome, inputCod) {
+            inputNome = inputNome.toLowerCase();
+            var resultsTableBody = document.getElementById("resultsTableBody");
+            resultsTableBody.innerHTML = "";
+            var serverUrl = "http://192.168.15.184:8000";
+            var csvSite = serverUrl + "/magazord.csv";
+
+            // Realiza uma requisição para obter os dados do CSV (precisa estar sendo executado com o servidor python -m http.server)
+            fetch(csvSite).then(response => response.text()).then(data => {
+                var linhasSite = data.split("\n");
+                for (var infoSite = 1; infoSite < linhasSite.length; infoSite++) {
+                    var columnsSite = linhasSite[infoSite].split(";");
+                    var codSite = columnsSite[3] || "";
+                    var prodSite = columnsSite[4] || "";
+                    var custoSite = columnsSite[15] || "";
+                    var qtdSiteF = columnsSite[7] || "";
+                    var qtdSiteV = columnsSite[10] || "";
+                    // Verifica se o resultado corresponde à busca
+                    if ((inputCod && (inputNome === "" || prodSite.toLowerCase().includes(inputNome))) || (!inputCod && codSite.trim().match(inputNome) == inputNome)) {
+                        var row = resultsTableBody.insertRow();
+                        var codSiteCell = row.insertCell(0);
+                        var prodSiteCell = row.insertCell(1);
+                        var custoSiteCell = row.insertCell(2);
+                        var qtdSiteFCell = row.insertCell(3);
+                        var qtdSiteVCell = row.insertCell(4);
+                        codSiteCell.textContent = codSite.replace(/"/g, "");
+                        prodSiteCell.textContent = prodSite.replace(/"/g, "");
+                        var custoSiteNum = parseFloat(custoSite.replace(/"/g, "").replace(",", "."));
+                        custoSiteCell.textContent = custoSiteNum === 0 ? "" : "R$ " + custoSiteNum.toLocaleString('pt-BR', {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                        });
+                        qtdSiteFCell.textContent = qtdSiteF === "0" ? "" : qtdSiteF.replace(/"/g, "");
+                        qtdSiteVCell.textContent = qtdSiteV === "0" ? "" : qtdSiteV.replace(/"/g, "");
+                    }
+                }
+            });
+        }
+
+        // Funções para ordenar a tabela
+
+        // Ordenar por Cod. Barras
+        function ordenarPorCod() {
+            var table = document.querySelector(".tabela_busca");
+            var rows = Array.from(table.rows).slice(1);
+            rows.sort(function (a, b) {
+                var cellA = a.cells[0].textContent.trim();
+                var cellB = b.cells[0].textContent.trim();
+                if (!isNaN(cellA) && !isNaN(cellB)) {
+                    return parseFloat(cellA) - parseFloat(cellB);
+                } else {
+                    return cellA.localeCompare(cellB);
+                }
+            });
+            var tbody = table.querySelector("tbody");
+            tbody.innerHTML = "";
+            rows.forEach(function (row) {
+                tbody.appendChild(row);
+            });
+        }
+        // Ordenar por Nome
+        function ordenarPorNom() {
+            var table = document.querySelector(".tabela_busca");
+            var rows = Array.from(table.rows).slice(1);
+            rows.sort(function (a, b) {
+                var cellA = a.cells[1].textContent.toLowerCase();
+                var cellB = b.cells[1].textContent.toLowerCase();
+                return cellA.localeCompare(cellB);
+            });
+            var tbody = table.querySelector("tbody");
+            tbody.innerHTML = "";
+            rows.forEach(function (row) {
+                tbody.appendChild(row);
+            });
+        }
+        // Ordenar por QTD Fís.
+        function ordenarPorQtdF() {
+            var table = document.querySelector(".tabela_busca");
+            var rows = Array.from(table.rows).slice(1);
+            rows.sort(function (a, b) {
+                var cellA = a.cells[3].textContent.trim();
+                var cellB = b.cells[3].textContent.trim();
+                if (!isNaN(cellA) && !isNaN(cellB)) {
+                    return parseFloat(cellA) - parseFloat(cellB);
+                } else {
+                    return cellA.localeCompare(cellB);
+                }
+            });
+            var tbody = table.querySelector("tbody");
+            tbody.innerHTML = "";
+            rows.forEach(function (row) {
+                tbody.appendChild(row);
+            });
+        }
+        // Ordenar por QTD Vir.
+        function ordenarPorQtdV() {
+            var table = document.querySelector(".tabela_busca");
+            var rows = Array.from(table.rows).slice(1);
+            rows.sort(function (a, b) {
+                var cellA = a.cells[4].textContent.trim();
+                var cellB = b.cells[4].textContent.trim();
+                if (!isNaN(cellA) && !isNaN(cellB)) {
+                    return parseFloat(cellA) - parseFloat(cellB);
+                } else {
+                    return cellA.localeCompare(cellB);
+                }
+            });
+            var tbody = table.querySelector("tbody");
+            tbody.innerHTML = "";
+            rows.forEach(function (row) {
+                tbody.appendChild(row);
+            });
+        }
+
+    </script>
+
+    <!-- Rodapé da página -->
+    <div class="footer">
+        Desenvolvido por
+        <a href="https://franciscastela.link/" style="color: inherit;">Francis Castela</a>
+        para a
+        <a href="https://www.lojadaviviunhas.com.br/" style="color: inherit;">Loja da Vivi</a>.
+    </div>
+</body>
+<script>
+
+    // Função assíncrona para obter a data de última atualização do arquivo
+    async function getLastModified() {
+        var serverUrl = "http://192.168.15.184:8000";
+        var csvSite = serverUrl + "/magazord.csv";
+        const response = await fetch(csvSite, { method: "HEAD" });
+        const lastModified = new Date(response.headers.get("Last-Modified"));
+        const lastModifiedText = "Última atualização: " + lastModified.toLocaleString();
+        // Exiba a última atualização dentro de um elemento HTML com o ID "lastModified"
+        document.getElementById("lastModified").textContent = lastModifiedText;
+        const currentDate = new Date();
+        const nextUpdate = new Date(lastModified);
+        nextUpdate.setHours(nextUpdate.getHours() + 16); // Adiciona 16 horas
+
+        // Se a data de atualização for maior ou igual a 16 horas a partir de agora, exibe um aviso
+        if (currentDate >= nextUpdate) {
+            const updateWarning = document.createElement("span");
+            updateWarning.innerHTML = "Atualizar arquivo. Os números podem estar muito diferentes.";
+            updateWarning.className = "update-warning";
+            document.getElementById("lastModified").appendChild(updateWarning);
+        }
+    }
+
+    // Chama a função para obter a data de última atualização ao carregar a página
+    getLastModified();
+</script>
+
+</html>
