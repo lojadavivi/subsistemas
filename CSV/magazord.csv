@@ -1235,17 +1235,17 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;426;7898126408953-01;Shampoo Bio Extratus Pós Coloração Goji Berry 250ml - ;Sim;Bio Extratus;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;410;7898126400872-01;Shampoo Bio Extratus Tutano e Ceramidas 1L - ;Sim;Bio Extratus;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;414;7898126400247-01;Shampoo Bio Extratus Tutano e Ceramidas 250ml - ;Sim;Bio Extratus;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2568;7898649840988;Shampoo Cosmeceuta Black Matizante Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2558;7898649840018;Shampoo Cosmeceuta Blond Matizante Platinado Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2544;7898649841312;Shampoo Cosmeceuta Camomila Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2579;7898649840957;Shampoo Cosmeceuta Castanho Matizante Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2477;7898649840735;Shampoo Cosmeceuta Crescimento Capilar Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2375;7898649840360;Shampoo Cosmeceuta Desmaiação Liso Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2548;7898649840728;Shampoo Cosmeceuta Força Três Pimentas Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2467;7898649840049;Shampoo Cosmeceuta Liso Extreme Pós Progressiva Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2450;7898649840025;Shampoo Cosmeceuta pH Neutro Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2404;7898649840032;Shampoo Cosmeceuta Power Cachos Vegano Sem Sal 300ml - ;Não;Cosmeceuta;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2585;7898649840469;Shampoo Cosmeceuta Vermelho Malagueta Matizante Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;2568;7898649840988;Shampoo Cosmeceuta Black Matizante Vegano 300ml - ;Não;Cosmeceuta;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;2558;7898649840018;Shampoo Cosmeceuta Blond Matizante Platinado Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;3;3;0;;0;0;0
+1;Padrão Loja da Vivi;2544;7898649841312;Shampoo Cosmeceuta Camomila Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;8;8;0;;0;0;0
+1;Padrão Loja da Vivi;2579;7898649840957;Shampoo Cosmeceuta Castanho Matizante Vegano 300ml - ;Não;Cosmeceuta;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;2477;7898649840735;Shampoo Cosmeceuta Crescimento Capilar Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;4;4;0;;0;0;0
+1;Padrão Loja da Vivi;2375;7898649840360;Shampoo Cosmeceuta Desmaiação Liso Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;5;5;0;;0;0;0
+1;Padrão Loja da Vivi;2548;7898649840728;Shampoo Cosmeceuta Força Três Pimentas Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;4;4;0;;0;0;0
+1;Padrão Loja da Vivi;2467;7898649840049;Shampoo Cosmeceuta Liso Extreme Pós Progressiva Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;7;7;0;;0;0;0
+1;Padrão Loja da Vivi;2450;7898649840025;Shampoo Cosmeceuta pH Neutro Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;3;3;0;;0;0;0
+1;Padrão Loja da Vivi;2404;7898649840032;Shampoo Cosmeceuta Power Cachos Vegano Sem Sal 300ml - ;Sim;Cosmeceuta;0;0;0;8;8;0;;0;0;0
+1;Padrão Loja da Vivi;2585;7898649840469;Shampoo Cosmeceuta Vermelho Malagueta Matizante Vegano 300ml - ;Não;Cosmeceuta;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;476;7898468519805-01;Shampoo Desamarelador Alfaparf Alta Moda 300ml - ;Sim;Alfaparf;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;212;7896380607389-01;Shampoo em Calda Keragen Sweet Vanilla Reconstrução 300ml - ;Sim;Kert;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;220;7896380607358-01;Shampoo em Calda Keragen Tutti Frutti Hidratação 300ml - ;Sim;Kert;0;0;0;0;0;0;;0;0;0
