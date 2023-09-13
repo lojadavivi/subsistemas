@@ -108,7 +108,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3917;7899940703866;Cabine LED/UV Piu Bella PB03 48W 21LEDs Bivolt - ;Sim;Piu Bella;12;0;0;0;12;0;;0;167,9;0
 1;Padrão Loja da Vivi;378;7898604565024;Cabine LED/UV SUNUV Sun 5 Plus 48W 36 LEDs Bivolt - ;Não;SUNUV;0;0;0;0;0;0;;549,9;299,9;0
 1;Padrão Loja da Vivi;322;7898604565031;Cabine LED/UV SUNUV Sun 9X Plus 36W 18 LEDs Bivolt - ;Sim;SUNUV;13;0;0;0;13;0;;0;61,21;0
-1;Padrão Loja da Vivi;376;7898604565048;Cabine LED/UV SUNUV Sun One 48W 30 Led UV Fundo de Metal Bivolt - ;Sim;SUNUV;0;0;0;17;17;0;;0;0;0
+1;Padrão Loja da Vivi;376;7898604565048;Cabine LED/UV SUNUV Sun One 48W 30 Led UV Fundo de Metal Bivolt - ;Sim;SUNUV;1;0;0;17;18;0;;0;150;0
 1;Padrão Loja da Vivi;3704;94834376;Caneta Óleo Hidratante de Cutículas - ;Sim;RPC;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2051;7898699910136;Capa Base Lara Machado Natural 12ml - ;Não;Lara Machado;0;0;0;0;0;0;;0;42,58;0
 1;Padrão Loja da Vivi;2370;7438513179785;Carimbo de Unha Transparente com Ponta de Silicone Manicure - ;Sim;RPC;0;0;0;0;0;0;;0;0;0
@@ -369,7 +369,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3730;7898569383268;Escova Secadora Montreal Soling 1200W Formato Oval - Rose Gold;Sim;Soling;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3731;7898569383251;Escova Secadora Montreal Soling 1200W Formato Oval - Silver;Sim;Soling;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2231;7908422601443;Escova Secadora MQ Beauty Styler 1300W Bivolt - ;Não;MQ;0;0;0;0;0;0;;0;202,95;0
-1;Padrão Loja da Vivi;3944;7897517957056;Escova Secadora Vertix Power Glam Bivolt 1300W - ;Sim;Vertix;8;0;0;0;8;0;;0;119;0
+1;Padrão Loja da Vivi;3944;7897517957056;Escova Secadora Vertix Power Glam Bivolt 1300W - ;Sim;Vertix;7;0;0;0;7;0;;0;119;0
 1;Padrão Loja da Vivi;2880;7898466603285;Esfoliante Facial PhálleBeauty Cristais de Quartzo 50g - ;Sim;Phallebeauty;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3016;7898632472790;Esfoliante Rosto e Corpo Labotrat Capim Limão 150g - ;Sim;Labotrat;0;0;0;0;0;0;;0;11,7;0
 1;Padrão Loja da Vivi;2001;7908209802278;Esmalte Anita Coisas Que Eu Já Fiz 10ml - Bloqueei e Fingi Que Na?o;Sim;Anita;0;0;0;0;0;0;;0;0;0
@@ -601,8 +601,8 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;4103;7908003902075;Fluído 11 in 1 Vizet Splendidus 38ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;4091;7908003903324;Fluído Ativador Vizet Selagem Térmica 130ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;4093;7908003901986;Fluído Disciplinante Vizet 1L - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
+1;Padrão Loja da Vivi;4101;7908003908534;Fluído Vizet 11 in 1 Splendidus 250ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;4015;7908003906608;Fluido Vizet Backstage Nutricao 200ml - ;Sim;Vizet;3;0;0;0;3;0;;0;0;0
-1;Padrão Loja da Vivi;4101;7908003908534;FLUIDO VIZET SPLENDIDUS 250ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;3419;7908334509554;Gel AnyLovy Construtor Autonivelante Blanco 24g - ;Sim;Any Lovy;0;0;0;7;7;0;;0;2,77;0
 1;Padrão Loja da Vivi;3431;7908334507666;Gel AnyLovy Construtor Autonivelante Clear 24g - ;Sim;Any Lovy;0;0;0;4;4;0;;0;7,2;0
 1;Padrão Loja da Vivi;3317;7908334509561;Gel AnyLovy Construtor Autonivelante Cover 24g - ;Sim;Any Lovy;0;0;0;9;9;0;;0;5,14;0
@@ -963,7 +963,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;4061;7898207530221;Máscara Vizet Expertise Curly 250g - ;Sim;Vizet;4;0;0;0;4;0;;0;0;0
 1;Padrão Loja da Vivi;4067;7908003905441;MASCARA VIZET INTENSIVE 250g - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;4075;7898207535660;Máscara Vizet Platinize Precision 250g - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
-1;Padrão Loja da Vivi;4083;7908003903690;MASCARA VIZET RITUAL SUBLIME 250g - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
+1;Padrão Loja da Vivi;4083;7908003903690;Máscara Vizet Ritual Sublime 250g - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;4095;7908003903317;MASCARA VIZET SELAGEM TERMICA 250g - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;4027;7908003909029;Máscara Vizet Splendidus 240g - ;Sim;Vizet;3;0;0;0;3;0;;0;0;0
 1;Padrão Loja da Vivi;4029;7908003909678;MASCARA VIZET SPLENDIDUS AGUA DE COCO 240g - ;Sim;Vizet;3;0;0;0;3;0;;0;0;0
