@@ -854,7 +854,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2554;7898649840780;Leave-in Cosmeceuta Força Três Pimentas Vegano 200ml - ;Não;Cosmeceuta;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2473;7898649840117;Leave-in Cosmeceuta Liso Extreme Pós Progressiva Vegano 200ml - ;Sim;Cosmeceuta;0;0;0;7;7;0;;0;0;0
 1;Padrão Loja da Vivi;4057;7908003902556;LEAVE IN VIZET EXPERTISE CURLY 500ml - ;Sim;Vizet;4;0;0;0;4;0;;0;0;0
-1;Padrão Loja da Vivi;4109;7908003908527;LEAVE IN VIZET SPLENDIDUS 250ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
+1;Padrão Loja da Vivi;4109;7908003908527;Leave In Vizet Splendidus 250ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;3037;54873674;Linha de Algodão Vanity Para Depilação Facial 300m - ;Sim;RPC;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2037;7898699910426;Lixa 100/180 Lara Machado Boomerang - ;Não;Lara Machado;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2035;7898699910433;Lixa 180/240 Lara Machado Boomerang - ;Não;Lara Machado;0;0;0;0;0;0;;0;2,3;0
@@ -1033,7 +1033,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3683;7899572806157;Pasta Modeladora Lola Cereal Killer 100g - ;Sim;Lola;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3843;7898926064991;Peça de Reposição Beltec LB100 - Bulbo Com Cabo Fixo - ;Sim;Beltec;5;0;0;0;5;0;;0;165,71;0
 1;Padrão Loja da Vivi;3845;7898921107099;Peça de Reposição Beltec LB100 - Ponta Caneta - ;Sim;Beltec;14;0;0;0;14;0;;0;168,5;0
-1;Padrão Loja da Vivi;4087;7908003903553;PEELING MICELAR VIZET RITUAL SUBLIME 250ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
+1;Padrão Loja da Vivi;4087;7908003903553;Peeling Micelar Vizet Ritual Sublime 250ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;3835;7896727946393;Pente Corte Corrido Dompel 4569 Preto - ;Sim;Dompel;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2510;731509991710;Pente de Carbono ProArt Profissional - ;Sim;ProArt;15;0;0;0;15;0;;0;5,97;0
 1;Padrão Loja da Vivi;2512;731509991604;Pente Garfo ProArt Wonder Curly Dentes de Metal - ;Sim;ProArt;24;0;0;0;24;0;;0;3,34;0
