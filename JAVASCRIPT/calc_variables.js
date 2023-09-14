@@ -224,7 +224,7 @@ const TxMerMen79 = 6;
 const TxMerMai79 = 0;
 
 // Shopee
-const TxSho = 2;
+const TxSho = 3;
 
 // Site
 const TxSit_10 = 0;
