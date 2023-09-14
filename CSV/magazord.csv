@@ -803,7 +803,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3365;7898610373934;Kit Promocional Haskell Murumuru Edição Limitada - ;Sim;Haskell;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4013;7908003907131;Kit Reparação Absolute Vizet Pro 1L+1kg - ;Sim;Vizet;6;0;0;0;6;0;;0;0;0
 1;Padrão Loja da Vivi;3981;8063496893435;Kit Salon Line Meu Liso Antiqueda Jaborandi - ;Sim;Salon Line;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;3972;307360675429;Kit Salon Line Meu Liso Matizador Preto - ;Sim;Salon Line;0;0;0;5;5;0;;0;0;0
+1;Padrão Loja da Vivi;3972;307360675429;Kit Salon Line Meu Liso Matizador Preto - ;Sim;Salon Line;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;4132;5678055814504;Kit Selante Top Coat Fengshangmei (No-cleanse) 15ml - ;Sim;Fengshangmei;0;0;0;58;58;0;;0;0;0
 1;Padrão Loja da Vivi;492;7898610373187;Kit Shampoo e Condicionador Haskell Cavalo Forte 500ml - ;Sim;Haskell;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;516;7898610372975-01;Kit Shampoo e Condicionador Haskell Mandioca 500ml - ;Sim;Haskell;0;0;0;0;0;0;;0;0;0
@@ -886,6 +886,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2809;7898657692838;Máquina De Corte Mq Force Barber Brave Gold Series Bivolt - ;Sim;MQ;0;0;0;1;1;0;;0;0;0
 1;Padrão Loja da Vivi;3911;7898562214552;Máscara Arvensis Cachinhos Naturais Crespíssimos Vegano 250g - ;Sim;Arvensis;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;3909;7898562214545;Máscara Arvensis Cachinhos Naturais Ondulados Vegano 250g - ;Sim;Arvensis;0;0;0;12;12;0;;0;0;0
+1;Padrão Loja da Vivi;4139;7898562213654;Máscara Arvensis Cachos Naturais Ondulados e Cacheados 250g - ;Sim;Arvensis;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;3872;7898562213722;Máscara Arvensis Para Cachos Naturais 2x1 Vegana 450g - ;Sim;Arvensis;0;0;0;1;1;0;;0;0;0
 1;Padrão Loja da Vivi;3562;7898649841695;Máscara Beautech Aminoácidos Vegano 250g - ;Sim;Beautech;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3626;7898649841749;Máscara Beautech Anti Queda e Quebra Vegano 250g - ;Sim;Beautech;0;0;0;0;0;0;;0;0;0
@@ -930,7 +931,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;62;7897517937539-01;Máscara Facial Ricca Borbulhante Para Desintoxicar a Pele Bubble Help! 1un - ;Sim;Ricca;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2740;7898610375112;Máscara Haskell Cavalo Forte 900g - ;Sim;Haskell;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3974;7898009437643;Máscara Hidratante Salon Line Meu Liso Antiqueda 300g - ;Sim;Salon Line;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;3962;7908458316625;Máscara Matizadora Salon Line Meu Liso Preto Azulado 300g - ;Sim;Salon Line;0;0;0;5;5;0;;0;0;0
+1;Padrão Loja da Vivi;3962;7908458316625;Máscara Matizadora Salon Line Meu Liso Preto Azulado 300g - ;Sim;Salon Line;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;3202;7898449393547;Máscara Pigmentante Kamaleão Color 150ml - Arara Azul;Sim;Kamaleão Color;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3203;7898449393684;Máscara Pigmentante Kamaleão Color 150ml - Azulão;Sim;Kamaleão Color;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3204;7898449393592;Máscara Pigmentante Kamaleão Color 150ml - Beija-Flor;Sim;Kamaleão Color;0;0;0;0;0;0;;0;0;0
@@ -1271,7 +1272,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;474;7896085871146-01;Shampoo Nazca Sfera Cicatriliss 300ml - ;Sim;Nazca;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3979;7898968070233;Shampoo Salon Line Meu Liso Antiqueda 300ml - ;Sim;Salon Line;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3990;7898524349438;Shampoo Salon Line Meu Liso Demais Liss Expert Sem Sal 300ml - ;Sim;Salon Line;0;0;0;10;10;0;;0;0;0
-1;Padrão Loja da Vivi;3970;7908458316571;Shampoo Salon Line Meu Liso Matizador Preto 300ml - ;Sim;Salon Line;0;0;0;8;8;0;;0;0;0
+1;Padrão Loja da Vivi;3970;7908458316571;Shampoo Salon Line Meu Liso Matizador Preto 300ml - ;Sim;Salon Line;0;0;0;7;7;0;;0;0;0
 1;Padrão Loja da Vivi;198;7899572806751-01;Shampoo Sem Sulfato Lola Meu Cacho Minha Vida 500ml - ;Sim;Lola;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4011;7908003902532;Shampoo Vizet Absoluté 250ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;4019;7908003902648;Shampoo Vizet Backstage Nutrição 250ml - ;Sim;Vizet;3;0;0;0;3;0;;0;0;0
