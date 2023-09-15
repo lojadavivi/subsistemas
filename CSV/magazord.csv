@@ -369,7 +369,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3730;7898569383268;Escova Secadora Montreal Soling 1200W Formato Oval - Rose Gold;Sim;Soling;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3731;7898569383251;Escova Secadora Montreal Soling 1200W Formato Oval - Silver;Sim;Soling;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2231;7908422601443;Escova Secadora MQ Beauty Styler 1300W Bivolt - ;Não;MQ;0;0;0;0;0;0;;0;202,95;0
-1;Padrão Loja da Vivi;3944;7897517957056;Escova Secadora Vertix Power Glam Bivolt 1300W - ;Sim;Vertix;7;0;0;0;7;0;;0;119;0
+1;Padrão Loja da Vivi;3944;7897517957056;Escova Secadora Vertix Power Glam Bivolt 1300W - ;Sim;Vertix;5;0;0;0;5;0;;0;119;0
 1;Padrão Loja da Vivi;2880;7898466603285;Esfoliante Facial PhálleBeauty Cristais de Quartzo 50g - ;Sim;Phallebeauty;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3016;7898632472790;Esfoliante Rosto e Corpo Labotrat Capim Limão 150g - ;Sim;Labotrat;0;0;0;0;0;0;;0;11,7;0
 1;Padrão Loja da Vivi;2001;7908209802278;Esmalte Anita Coisas Que Eu Já Fiz 10ml - Bloqueei e Fingi Que Na?o;Sim;Anita;0;0;0;0;0;0;;0;0;0
@@ -1014,6 +1014,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;662;7898964247370;Òleo Hidratante de Cutícula Vòlia Melón 10ml - ;Sim;Vòlia;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;664;7898964247448;Òleo Hidratante de Cutícula Vòlia Parfum 10ml - ;Não;Vòlia;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3491;7899531416540;Óleo Para Lixamento Master AnyLovy 20ml Any Lovy - ;Sim;Any Lovy;0;0;0;9;9;0;;0;0;0
+1;Padrão Loja da Vivi;4085;7908003903645;Óleo Precioso Vizet Ritual Sublime 60ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;2751;7899703612749;Óleo Reparador Balai Essential Oil Repair África 60ml - ;Sim;Balai;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2749;7899703612848;Óleo Reparador Balai Essential Oil Repair Ásia 60ml - ;Não;Balai;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2753;7899703612947;Óleo Reparador Balai Essential Oil Repair Oriente 60ml - ;Sim;Balai;0;0;0;0;0;0;;0;0;0
@@ -1021,7 +1022,6 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2821;7898911689918;Óleo Secante de Esmalte Repós Película Protetora 120ml - ;Não;Repós;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3810;7891033718702;Óleo Spray Bronzeador Australian Gold Intensificador 237ml - ;Sim;Australian Gold;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4021;7908003908763;OLEO VIZET BACKSTAGE GLOW 38ml - ;Sim;Vizet;3;0;0;0;3;0;;0;0;0
-1;Padrão Loja da Vivi;4085;7908003903645;OLEO VIZET RITUAL SUBLIME 60ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;4111;7908003902006;OLEO VIZET SPLENDIDUS 38ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;3633;7896727933546;Organizador De Esmaltes Dompel Smaltbell Twist 2 Andares - Rosa;Sim;Dompel;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3632;7896727933553;Organizador De Esmaltes Dompel Smaltbell Twist 2 Andares - Roxo;Sim;Dompel;0;0;0;0;0;0;;0;0;0
