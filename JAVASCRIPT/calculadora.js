@@ -211,44 +211,49 @@ function calcular(inputElement) {
     // --------------------------------
 
     // FÓRMULAS DE CÁLCULO
-    var endcomm_ame = (-(((constanteCnpj + constanteCtAme) * 100) - 100));
-    var endcomm_mag = (-(((constanteCnpj + constanteCtMag) * 100) - 100));
-    var endcomm_mercl = (-(((constanteCnpj + constanteCtMerCl) * 100) - 100));
-    var endcomm_merpr = (-(((constanteCnpj + constanteCtMerPr) * 100) - 100));
-    var endcomm_sho = (-(((constanteCnpj + constanteCtSho) * 100) - 100));
+
+    // Simplificações de CNPJ + categoria
+    var simply_cnpj_ct_ame = (-(((constanteCnpj + constanteCtAme) * 100) - 100));
+    var simply_cnpj_ct_mag = (-(((constanteCnpj + constanteCtMag) * 100) - 100));
+    var simply_cnpj_ct_mercl = (-(((constanteCnpj + constanteCtMerCl) * 100) - 100));
+    var simply_cnpj_ct_merpr = (-(((constanteCnpj + constanteCtMerPr) * 100) - 100));
+    var simply_cnpj_ct_sho = (-(((constanteCnpj + constanteCtSho) * 100) - 100));
+
+    // Simplificações de custo + [custo * porcentagem]
+    var simply_custo_vp = (custo + (custo * v_p) / 100);
 
     // Americanas manual - calcAmeM
     var calcAmeM = v_m - (custo + (v_m * constanteCnpj) + (v_m * constanteCtAme) + TxAme + ((v_m <= 39.99 ? FrAmeMen40 : v_m >= 40 && v_m <= 78.99 ? FrAmeMen79 : v_m >= 79 ? constanteFrAme : 0) * constanteNvAme));
 
     // Americanas auto - calcAmeA
     if (
-        (((custo + v_a + TxAme) + (FrAmeMen79 * constanteNvAme)) * 100) / endcomm_ame >= 78.96) {
-        constanteResultAmeA = (((custo + v_a + TxAme) + (constanteFrAme * constanteNvAme)) * 100) / endcomm_ame;
+        (((custo + v_a + TxAme) + (FrAmeMen79 * constanteNvAme)) * 100) / simply_cnpj_ct_ame >= 78.96) {
+        constanteResultAmeA = (((custo + v_a + TxAme) + (constanteFrAme * constanteNvAme)) * 100) / simply_cnpj_ct_ame;
     } else if (
-        (((custo + v_a + TxAme) + (FrAmeMen40 * constanteNvAme)) * 100) / endcomm_ame >= 39.94 && (((custo + v_a + TxAme) + (FrAmeMen40 * constanteNvAme)) * 100) / endcomm_ame <= 78.95) {
-        constanteResultAmeA = (((custo + v_a + TxAme) + (FrAmeMen79 * constanteNvAme)) * 100) / endcomm_ame;
+        (((custo + v_a + TxAme) + (FrAmeMen40 * constanteNvAme)) * 100) / simply_cnpj_ct_ame >= 39.94 && (((custo + v_a + TxAme) + (FrAmeMen40 * constanteNvAme)) * 100) / simply_cnpj_ct_ame <= 78.95) {
+        constanteResultAmeA = (((custo + v_a + TxAme) + (FrAmeMen79 * constanteNvAme)) * 100) / simply_cnpj_ct_ame;
     } else if (
-        (((custo + v_a + TxAme) + (constanteFrAme * constanteNvAme)) * 100) / endcomm_ame >= 78.96) {
-        constanteResultAmeA = (((custo + v_a + TxAme) + (constanteFrAme * constanteNvAme)) * 100) / endcomm_ame;
+        (((custo + v_a + TxAme) + (constanteFrAme * constanteNvAme)) * 100) / simply_cnpj_ct_ame >= 78.96) {
+        constanteResultAmeA = (((custo + v_a + TxAme) + (constanteFrAme * constanteNvAme)) * 100) / simply_cnpj_ct_ame;
     } else if (
-        (((custo + v_a + TxAme) + (FrAmeMen40 * constanteNvAme)) * 100) / endcomm_ame <= 39.93) {
-        constanteResultAmeA = (((custo + v_a + TxAme) + (FrAmeMen40 * constanteNvAme)) * 100) / endcomm_ame;
+        (((custo + v_a + TxAme) + (FrAmeMen40 * constanteNvAme)) * 100) / simply_cnpj_ct_ame <= 39.93) {
+        constanteResultAmeA = (((custo + v_a + TxAme) + (FrAmeMen40 * constanteNvAme)) * 100) / simply_cnpj_ct_ame;
     }
     var calcAmeA = constanteResultAmeA;
 
     // Americanas porcentagem - calcAmeP
     if (
-        (((custo + (custo * v_p) / 100) + TxAme + (FrAmeMen79 * constanteNvAme)) * 100) / endcomm_ame >= 78.96) {
-        constanteResultAmeP = (((custo + (custo * v_p) / 100) + TxAme + (constanteFrAme * constanteNvAme)) * 100) / endcomm_ame
+        ((simply_custo_vp + TxAme + (FrAmeMen79 * constanteNvAme)) * 100) / simply_cnpj_ct_ame >= 78.96) {
+        constanteResultAmeP = ((simply_custo_vp + TxAme + (constanteFrAme * constanteNvAme)) * 100) / simply_cnpj_ct_ame
     } else if (
-        (((custo + (custo * v_p) / 100) + TxAme + (FrAmeMen40 * constanteNvAme)) * 100) / endcomm_ame >= 39.94 && (((custo + (custo * v_p) / 100) + TxAme + (FrAmeMen40 * constanteNvAme)) * 100) / endcomm_ame <= 78.95) {
-        constanteResultAmeP = (((custo + (custo * v_p) / 100) + TxAme + (FrAmeMen79 * constanteNvAme)) * 100) / endcomm_ame
+        ((simply_custo_vp + TxAme + (FrAmeMen40 * constanteNvAme)) * 100) / simply_cnpj_ct_ame >= 39.94 && ((simply_custo_vp + TxAme + (FrAmeMen40 * constanteNvAme)) * 100) / simply_cnpj_ct_ame <= 78.95) {
+        constanteResultAmeP = ((simply_custo_vp + TxAme + (FrAmeMen79 * constanteNvAme)) * 100) / simply_cnpj_ct_ame
     } else if (
-        (((custo + (custo * v_p) / 100) + TxAme + (constanteFrAme * constanteNvAme)) * 100) / endcomm_ame >= 78.96) {
-        constanteResultAmeP = (((custo + (custo * v_p) / 100) + TxAme + (constanteFrAme * constanteNvAme)) * 100) / endcomm_ame
+        ((simply_custo_vp + TxAme + (constanteFrAme * constanteNvAme)) * 100) / simply_cnpj_ct_ame >= 78.96) {
+        constanteResultAmeP = ((simply_custo_vp + TxAme + (constanteFrAme * constanteNvAme)) * 100) / simply_cnpj_ct_ame
     } else if (
-        (((custo + (custo * v_p) / 100) + TxAme + (FrAmeMen40 * constanteNvAme)) * 100) / endcomm_ame <= 39.93) {
-        constanteResultAmeP = (((custo + (custo * v_p) / 100) + TxAme + (FrAmeMen40 * constanteNvAme)) * 100) / endcomm_ame
+        ((simply_custo_vp + TxAme + (FrAmeMen40 * constanteNvAme)) * 100) / simply_cnpj_ct_ame <= 39.93) {
+        constanteResultAmeP = ((simply_custo_vp + TxAme + (FrAmeMen40 * constanteNvAme)) * 100) / simply_cnpj_ct_ame
     }
     var calcAmeP = constanteResultAmeP;
 
@@ -257,43 +262,43 @@ function calcular(inputElement) {
 
     // Magalu auto - calcMagA
     if (
-        (((custo + v_a + TxMag_40A79) + (FrMagMen79 * constanteNvMag)) * 100) / endcomm_mag >= 78.96) {
-        constanteResultMagA = (((custo + v_a + TxMag_79) + (constanteFrMag * constanteNvMag)) * 100) / endcomm_mag;
+        (((custo + v_a + TxMag_40A79) + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag >= 78.96) {
+        constanteResultMagA = (((custo + v_a + TxMag_79) + (constanteFrMag * constanteNvMag)) * 100) / simply_cnpj_ct_mag;
     } else if (
-        (((custo + v_a + TxMag_10A40) + (FrMagMen79 * constanteNvMag)) * 100) / endcomm_mag >= 39.94 && (((custo + v_a + TxMag_10A40) + (FrMagMen79 * constanteNvMag)) * 100) / endcomm_mag <= 78.95) {
-        constanteResultMagA = (((custo + v_a + TxMag_40A79) + (FrMagMen79 * constanteNvMag)) * 100) / endcomm_mag;
+        (((custo + v_a + TxMag_10A40) + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag >= 39.94 && (((custo + v_a + TxMag_10A40) + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag <= 78.95) {
+        constanteResultMagA = (((custo + v_a + TxMag_40A79) + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag;
     } else if (
-        (((custo + v_a + TxMag_40A79) + (constanteFrMag * constanteNvMag)) * 100) / endcomm_mag >= 78.96) {
-        constanteResultMagA = (((custo + v_a + TxMag_79) + (constanteFrMag * constanteNvMag)) * 100) / endcomm_mag;
+        (((custo + v_a + TxMag_40A79) + (constanteFrMag * constanteNvMag)) * 100) / simply_cnpj_ct_mag >= 78.96) {
+        constanteResultMagA = (((custo + v_a + TxMag_79) + (constanteFrMag * constanteNvMag)) * 100) / simply_cnpj_ct_mag;
     } else if (
-        (((custo + v_a + TxMag_79) + (FrMagMen79 * constanteNvMag)) * 100) / endcomm_mag >= 9.96 && (((custo + v_a + TxMag_10) + (FrMagMen79 * constanteNvMag)) * 100) / endcomm_mag <= 39.93) {
-        constanteResultMagA = (((custo + v_a + TxMag_10A40) + (FrMagMen79 * constanteNvMag)) * 100) / endcomm_mag;
+        (((custo + v_a + TxMag_79) + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag >= 9.96 && (((custo + v_a + TxMag_10) + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag <= 39.93) {
+        constanteResultMagA = (((custo + v_a + TxMag_10A40) + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag;
     } else if (
-        (((custo + v_a + TxMag_10) + (FrMagMen79 * constanteNvMag)) * 100) / endcomm_mag <= 9.97) {
-        constanteResultMagA = (((custo + v_a + TxMag_10) + (FrMagMen79 * constanteNvMag)) * 100) / endcomm_mag;
+        (((custo + v_a + TxMag_10) + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag <= 9.97) {
+        constanteResultMagA = (((custo + v_a + TxMag_10) + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag;
     }
     var calcMagA = constanteResultMagA;
 
 
     // Magalu porcentagem - calcMagP
     if (
-        ((((custo + (custo * v_p) / 100) + TxMag_40A79) + (FrMagMen79 * constanteNvMag)) * 100) / endcomm_mag >= 78.96) {
-        constanteResultMagP = (((custo + (custo * v_p) / 100) + TxMag_79 + (constanteFrMag * constanteNvMag)) * 100) / endcomm_mag
+        (((simply_custo_vp + TxMag_40A79) + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag >= 78.96) {
+        constanteResultMagP = ((simply_custo_vp + TxMag_79 + (constanteFrMag * constanteNvMag)) * 100) / simply_cnpj_ct_mag
     } else if (
-        (((custo + (custo * v_p) / 100) + TxMag_10A40 + (FrMagMen79 * constanteNvMag)) * 100) / endcomm_mag >= 39.94 && (((custo + (custo * v_p) / 100) + TxMag_10A40 + (FrMagMen79 * constanteNvMag)) * 100) / endcomm_mag <= 78.95) {
-        constanteResultMagP = (((custo + (custo * v_p) / 100) + TxMag_40A79 + (FrMagMen79 * constanteNvMag)) * 100) / endcomm_mag
+        ((simply_custo_vp + TxMag_10A40 + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag >= 39.94 && ((simply_custo_vp + TxMag_10A40 + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag <= 78.95) {
+        constanteResultMagP = ((simply_custo_vp + TxMag_40A79 + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag
     } else if (
-        (((custo + (custo * v_p) / 100) + TxMag_40A79 + (constanteFrMag * constanteNvMag)) * 100) / endcomm_mag >= 78.96) {
-        constanteResultMagP = (((custo + (custo * v_p) / 100) + TxMag_79 + (constanteFrMag * constanteNvMag)) * 100) / endcomm_mag
+        ((simply_custo_vp + TxMag_40A79 + (constanteFrMag * constanteNvMag)) * 100) / simply_cnpj_ct_mag >= 78.96) {
+        constanteResultMagP = ((simply_custo_vp + TxMag_79 + (constanteFrMag * constanteNvMag)) * 100) / simply_cnpj_ct_mag
     } else if (
-        (((custo + (custo * v_p) / 100) + TxMag_79 + (constanteFrMag * constanteNvMag)) * 100) / endcomm_mag >= 78.96) {
-        constanteResultMagP = (((custo + (custo * v_p) / 100) + TxMag_79 + (constanteFrMag * constanteNvMag)) * 100) / endcomm_mag
+        ((simply_custo_vp + TxMag_79 + (constanteFrMag * constanteNvMag)) * 100) / simply_cnpj_ct_mag >= 78.96) {
+        constanteResultMagP = ((simply_custo_vp + TxMag_79 + (constanteFrMag * constanteNvMag)) * 100) / simply_cnpj_ct_mag
     } else if (
-        (((custo + (custo * v_p) / 100) + TxMag_10 + (FrMagMen79 * constanteNvMag)) * 100) / endcomm_mag >= 9.97 && (((custo + (custo * v_p) / 100) + TxMag_10 + (FrMagMen79 * constanteNvMag)) * 100) / endcomm_mag <= 39.93) {
-        constanteResultMagP = (((custo + (custo * v_p) / 100) + TxMag_10A40 + (FrMagMen79 * constanteNvMag)) * 100) / endcomm_mag
+        ((simply_custo_vp + TxMag_10 + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag >= 9.97 && ((simply_custo_vp + TxMag_10 + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag <= 39.93) {
+        constanteResultMagP = ((simply_custo_vp + TxMag_10A40 + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag
     } else if (
-        (((custo + (custo * v_p) / 100) + TxMag_10 + (FrMagMen79 * constanteNvMag)) * 100) / endcomm_mag <= 9.96) {
-        constanteResultMagP = (((custo + (custo * v_p) / 100) + TxMag_10 + (FrMagMen79 * constanteNvMag)) * 100) / endcomm_mag
+        ((simply_custo_vp + TxMag_10 + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag <= 9.96) {
+        constanteResultMagP = ((simply_custo_vp + TxMag_10 + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag
     }
     var calcMagP = constanteResultMagP;
 
@@ -302,27 +307,33 @@ function calcular(inputElement) {
 
     // Mercado Livre clássico auto - calcMerClA
     if (
-        (((custo + v_a + TxMerMen79) + (FrMerMen79 * constanteNvMer)) * 100) / endcomm_mercl >= 78.96) {
-        constanteResultMerClA = (((custo + v_a + TxMerMen79) + (constanteFrMer * constanteNvMer)) * 100) / endcomm_mercl;
+        (((custo + v_a) + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_mercl >= 78.98) {
+        constanteResultMerClA = (((custo + v_a) + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_mercl;
     } else if (
-        (((custo + v_a + TxMerMen79) + (FrMerMen79 * constanteNvMer)) * 100) / endcomm_mercl <= 78.95) {
-        constanteResultMerClA = (((custo + v_a + TxMerMen79) + (FrMerMen79 * constanteNvMer)) * 100) / endcomm_mercl;
+        (((custo + v_a + TxMerMen79) + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_mercl >= 78.98) {
+        constanteResultMerClA = (((custo + v_a + TxMerMen79) + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_mercl;
     } else if (
-        (((custo + v_a + TxMerMen79) + (constanteFrMer * constanteNvMer)) * 100) / endcomm_mercl >= 78.96) {
-        constanteResultMerClA = (((custo + v_a + TxMerMai79) + (constanteFrMer * constanteNvMer)) * 100) / endcomm_mercl;
+        (((custo + v_a + TxMerMen79) + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_mercl <= 78.97) {
+        constanteResultMerClA = (((custo + v_a + TxMerMen79) + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_mercl;
+    } else if (
+        (((custo + v_a + TxMerMen79) + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_mercl >= 78.98) {
+        constanteResultMerClA = (((custo + v_a + TxMerMai79) + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_mercl;
     }
     var calcMerClA = constanteResultMerClA;
 
     // Mercado Livre clássico porcentagem - calcMerClP
     if (
-        (((custo + (custo * v_p) / 100) + (FrMerMen79 * constanteNvMer)) * 100) / endcomm_mercl >= 78.96) {
-        constanteResultMerClP = (((custo + (custo * v_p) / 100) + (constanteFrMer * constanteNvMer)) * 100) / endcomm_mercl;
+        ((simply_custo_vp + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_mercl >= 78.98) {
+        constanteResultMerClP = ((simply_custo_vp + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_mercl;
     } else if (
-        (((custo + (custo * v_p) / 100) + (FrMerMen79 * constanteNvMer)) * 100) / endcomm_mercl <= 78.95) {
-        constanteResultMerClP = (((custo + (custo * v_p) / 100) + (FrMerMen79 * constanteNvMer)) * 100) / endcomm_mercl;
+        ((simply_custo_vp + TxMerMen79 + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_mercl >= 78.98) {
+        constanteResultMerClP = ((simply_custo_vp + TxMerMen79 + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_mercl;
     } else if (
-        (((custo + (custo * v_p) / 100) + (constanteFrMer * constanteNvMer)) * 100) / endcomm_mercl >= 78.96) {
-        constanteResultMerClP = (((custo + v_a + TxMerMai79) + (constanteFrMer * constanteNvMer)) * 100) / endcomm_mercl;
+        ((simply_custo_vp + TxMerMen79 + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_mercl <= 78.97) {
+        constanteResultMerClP = ((simply_custo_vp + TxMerMen79 + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_mercl;
+    } else if (
+        ((simply_custo_vp + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_mercl >= 78.98) {
+        constanteResultMerClP = ((simply_custo_vp + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_mercl;
     }
     var calcMerClP = constanteResultMerClP;
 
@@ -332,50 +343,53 @@ function calcular(inputElement) {
 
     // Mercado Livre premium auto - calcMerPrA
     if (
-        (((custo + v_a + TxMerMen79) + (FrMerMen79 * constanteNvMer)) * 100) / endcomm_merpr >= 78.96) {
-        constanteResultMerPrA = (((custo + v_a + TxMerMen79) + (constanteFrMer * constanteNvMer)) * 100) / endcomm_merpr;
+        (((custo + v_a + TxMerMen79) + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_merpr >= 78.98) {
+        constanteResultMerPrA = (((custo + v_a + TxMerMen79) + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_merpr;
     } else if (
-        (((custo + v_a + TxMerMen79) + (FrMerMen79 * constanteNvMer)) * 100) / endcomm_merpr <= 78.95) {
-        constanteResultMerPrA = (((custo + v_a + TxMerMen79) + (FrMerMen79 * constanteNvMer)) * 100) / endcomm_merpr;
+        (((custo + v_a + TxMerMen79) + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_merpr <= 78.97) {
+        constanteResultMerPrA = (((custo + v_a + TxMerMen79) + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_merpr;
     } else if (
-        (((custo + v_a + TxMerMen79) + (constanteFrMer * constanteNvMer)) * 100) / endcomm_merpr >= 78.96) {
-        constanteResultMerPrA = (((custo + v_a + TxMerMai79) + (constanteFrMer * constanteNvMer)) * 100) / endcomm_merpr;
+        (((custo + v_a + TxMerMen79) + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_merpr >= 78.98) {
+        constanteResultMerPrA = (((custo + v_a + TxMerMai79) + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_merpr;
     }
     var calcMerPrA = constanteResultMerPrA;
 
     // Mercado Livre premium porcentagem - calcMerPrP
     if (
-        (((custo + (custo * v_p) / 100) + (FrMerMen79 * constanteNvMer)) * 100) / endcomm_merpr >= 78.96) {
-        constanteResultMerPrP = (((custo + (custo * v_p) / 100) + (constanteFrMer * constanteNvMer)) * 100) / endcomm_merpr;
+        ((simply_custo_vp + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_merpr >= 78.98) {
+        constanteResultMerPrP = ((simply_custo_vp + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_merpr;
     } else if (
-        (((custo + (custo * v_p) / 100) + (FrMerMen79 * constanteNvMer)) * 100) / endcomm_merpr <= 78.95) {
-        constanteResultMerPrP = (((custo + (custo * v_p) / 100) + (FrMerMen79 * constanteNvMer)) * 100) / endcomm_merpr;
+        ((simply_custo_vp + TxMerMen79 + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_merpr >= 78.98) {
+        constanteResultMerPrP = ((simply_custo_vp + TxMerMen79 + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_merpr;
     } else if (
-        (((custo + (custo * v_p) / 100) + (constanteFrMer * constanteNvMer)) * 100) / endcomm_merpr >= 78.96) {
-        constanteResultMerPrP = (((custo + v_a + TxMerMai79) + (constanteFrMer * constanteNvMer)) * 100) / endcomm_merpr;
+        ((simply_custo_vp + TxMerMen79 + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_merpr <= 78.97) {
+        constanteResultMerPrP = ((simply_custo_vp + TxMerMen79 + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_merpr;
+    } else if (
+        ((simply_custo_vp + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_merpr >= 78.98) {
+        constanteResultMerPrP = ((simply_custo_vp + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_merpr;
     }
     var calcMerPrP = constanteResultMerPrP;
 
     // Shopee manual - calcShoM
-    var calcShoM = v_m - (custo + (v_m * constanteCnpj) + (v_m >= 500 ? 100 : v_m <= 499.99 ? custo * constanteCtSho : 0) + TxSho);
+    var calcShoM = v_m - (custo + (v_m * constanteCnpj) + (v_m >= 500 ? 100 : v_m <= 499.99 ? v_m * constanteCtSho : 0) + TxSho);
 
     // Shopee auto - calcShoA
     if (
-        ((v_a + custo + TxSho) * 100) / endcomm_sho <= 499.97) {
-        constanteResultShoA = ((v_a + custo + TxSho) * 100) / endcomm_sho;
+        ((v_a + custo + TxSho) * 100) / simply_cnpj_ct_sho <= 499.97) {
+        constanteResultShoA = ((v_a + custo + TxSho) * 100) / simply_cnpj_ct_sho;
     } else if (
-        ((v_a + custo + TxSho) * 100) / endcomm_sho >= 499.98) {
+        ((v_a + custo + TxSho) * 100) / simply_cnpj_ct_sho >= 499.98) {
         constanteResultShoA = ((v_a + custo + TxSho + 100) * 100) / (-(((constanteCnpj) * 100) - 100));
     }
     var calcShoA = constanteResultShoA;
 
     // Shopee porcentagem - calcShoP
     if (
-        ((((custo + (custo * v_p)) / 100) + TxSho) * 100) / endcomm_sho <= 499.97) {
-        constanteResultShoP = (((custo + (custo * v_p) / 100) + TxSho) * 100) / endcomm_sho;
+        ((simply_custo_vp + TxSho) * 100) / simply_cnpj_ct_sho <= 499.97) {
+        constanteResultShoP = ((simply_custo_vp + TxSho) * 100) / simply_cnpj_ct_sho;
     } else if (
-        ((((custo + (custo * v_p)) / 100) + TxSho) * 100) / endcomm_sho >= 499.98) {
-        constanteResultShoP = (((custo + (custo * v_p) / 100) + TxSho + 100) * 100) / (-(((constanteCnpj) * 100) - 100));
+        ((simply_custo_vp + TxSho) * 100) / simply_cnpj_ct_sho >= 499.98) {
+        constanteResultShoP = ((simply_custo_vp + TxSho + 100) * 100) / (-(((constanteCnpj) * 100) - 100));
     }
     var calcShoP = constanteResultShoP;
 
@@ -386,7 +400,7 @@ function calcular(inputElement) {
     var calcSitA = (custo + v_a) * 100 / (-(((constanteCnpj + cnpj_online_cmss) * 100) - 100));
 
     // Site porcentagem - calcSitP
-    var calcSitP = (((v_p * custo) + custo) * 10) / (-(((constanteCnpj + cnpj_online_cmss) * 100) - 100));
+    var calcSitP = (simply_custo_vp * 100) / (-(((constanteCnpj + cnpj_online_cmss) * 100) - 100));
 
     // --------------------------------
 
@@ -405,14 +419,12 @@ function calcular(inputElement) {
     // Mercado Livre Clássico
     document.getElementById("result-mercl-v_m").textContent = "R$ " + calcMerClM.toFixed(2).replace(".", ",") + " (" + ((calcMerClM / custo) * 100).toFixed(2) + "%)";
     document.getElementById("result-mercl-v_a").textContent = "R$ " + calcMerClA.toFixed(2).replace(".", ",") + " (" + ((v_a / custo) * 100).toFixed(2) + "%)";
-    // document.getElementById("result-mercl-v_p").textContent = "R$ " + calcMerClP.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * v_p) / 100).toFixed(2).replace(".", ",") + ")";
-    document.getElementById("result-mercl-v_p").textContent = "EM MANUTENÇÃO"
+    document.getElementById("result-mercl-v_p").textContent = "R$ " + calcMerClP.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * v_p) / 100).toFixed(2).replace(".", ",") + ")";
 
     // Mercado Livre Premium
     document.getElementById("result-merpr-v_m").textContent = "R$ " + calcMerPrM.toFixed(2).replace(".", ",") + " (" + ((calcMerPrM / custo) * 100).toFixed(2) + "%)";
     document.getElementById("result-merpr-v_a").textContent = "R$ " + calcMerPrA.toFixed(2).replace(".", ",") + " (" + ((v_a / custo) * 100).toFixed(2) + "%)";
-    // document.getElementById("result-merpr-v_p").textContent = "R$ " + calcMerPrP.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * v_p) / 100).toFixed(2).replace(".", ",") + ")";
-    document.getElementById("result-merpr-v_p").textContent = "EM MANUTENÇÃO"
+    document.getElementById("result-merpr-v_p").textContent = "R$ " + calcMerPrP.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * v_p) / 100).toFixed(2).replace(".", ",") + ")";
 
     // Shopee
     document.getElementById("result-sho-v_m").textContent = "R$ " + calcShoM.toFixed(2).replace(".", ",") + " (" + ((calcShoM / custo) * 100).toFixed(2) + "%)";
@@ -422,6 +434,5 @@ function calcular(inputElement) {
     // Site
     document.getElementById("result-sit-v_m").textContent = "R$ " + calcSitM.toFixed(2).replace(".", ",") + " (" + ((calcSitM / custo) * 100).toFixed(2) + "%)";
     document.getElementById("result-sit-v_a").textContent = "R$ " + calcSitA.toFixed(2).replace(".", ",") + " (" + ((v_a / custo) * 100).toFixed(2) + "%)";
-    // document.getElementById("result-sit-v_p").textContent = "R$ " + calcSitP.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * v_p) / 100).toFixed(2).replace(".", ",") + ")";
-    document.getElementById("result-sit-v_p").textContent = "EM MANUTENÇÃO"
+    document.getElementById("result-sit-v_p").textContent = "R$ " + calcSitP.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * v_p) / 100).toFixed(2).replace(".", ",") + ")";
 }
