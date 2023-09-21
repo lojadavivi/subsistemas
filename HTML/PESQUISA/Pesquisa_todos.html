@@ -18,7 +18,8 @@
 <body>
     <!-- Título principal -->
     <h1 class="header-with-image" style="background-color: #992380;">
-        <span class="header-text"><a href="/subsistemas/index.html" class="button-back" style="margin-left: 5%;">⬅️ MENU</a></span>
+        <span class="header-text"><a href="/subsistemas/index.html" class="button-back" style="margin-left: 5%;">⬅️
+                MENU</a></span>
         <span class="header-text">TODOS OS ESTOQUES</span>
         <img class="header-image" src="/subsistemas/STYLES/icon.png">
     </h1>
@@ -204,7 +205,7 @@
                     }
                 }
             });
-        // Requisição de dados SITE
+            // Requisição de dados SITE
             fetch(csvSite).then(response => response.text()).then(data => {
                 var linhasSite = data.split("\n");
                 for (var infoSite = 1; infoSite < linhasSite.length; infoSite++) {
@@ -213,7 +214,7 @@
                     var prodSite = columnsSite[4] || "";
                     var qtdSiteF = columnsSite[7] || "";
                     var qtdSiteV = columnsSite[10] || "";
-                    
+
                     // Conferência de dados SITE
                     if ((inputCod && (inputNome === "" || prodSite.toLowerCase().includes(inputNome))) || (!inputCod && codSite.trim().match(inputNome) == inputNome)) {
                         var row = resultsTableBody.insertRow();
