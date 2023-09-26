@@ -617,7 +617,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3874;7898562214880;Geleia Ativadora Arvensis Alta Fixação Cachos Naturais 450g - ;Sim;Arvensis;0;0;0;8;8;0;;0;0;0
 1;Padrão Loja da Vivi;3904;7898562214583;Geleia Ativadora Arvensis Forte Cachinhos Naturais 250g - ;Sim;Arvensis;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;3902;7898562214576;Geleia Ativadora Arvensis Suave Cachinhos Naturais 250g - ;Sim;Arvensis;0;0;0;5;5;0;;0;0;0
-1;Padrão Loja da Vivi;1939;7898562214606;Geleia Ativadora de Cachos Arvensis Cachos Naturais 250g - Alta Fixação;Sim;Arvensis;0;0;0;18;18;0;;0;0;0
+1;Padrão Loja da Vivi;1939;7898562214606;Geleia Ativadora de Cachos Arvensis Cachos Naturais 250g - Alta Fixação;Sim;Arvensis;0;0;0;17;17;0;;0;0;0
 1;Padrão Loja da Vivi;560;7891350034868-01;Gel Fixador Bozzano Extra Forte Sem Álcool 300g - ;Sim;Bozzano;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;2055;7898699910075;Gel Lara Machado Banho de Fibra Natural Pink 30g - ;Não;Lara Machado;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2053;7898699910020;Gel Lara Machado Branco Baby 30g - ;Não;Lara Machado;0;0;0;4;4;0;;0;0;0
@@ -1005,7 +1005,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2355;7898921107044;Motor de Suspensão Beltec Chicote Mini 220V - ;Não;Beltec;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3782;7898567704126;Mousse Auto Bronzeador My Health SUN Prime 150ml - ;Sim;My Health;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;510;7898944075153-01;Nectavita Haskell Mandioca 40ml - ;Sim;Haskell;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;3449;7898911307119;Nupill Firmness Intensive Lifting Instantâneo Cinderela 1,2g - ;Sim;Nupill;8;0;0;0;8;0;;0;12,36;0
+1;Padrão Loja da Vivi;3449;7898911307119;Nupill Firmness Intensive Lifting Instantâneo Cinderela 1,2g - ;Sim;Nupill;6;0;0;0;6;0;;0;12,36;0
 1;Padrão Loja da Vivi;3504;4064666306155;Oil Reflections Light Wella Para Reflexos Luminosos 30ml - ;Sim;Wella;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3502;4064666306148;Oil Reflections Wella Para Cabelos Suaves e Luminosos 30ml - ;Sim;Wella;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;208;7899572810192-01;Óleo Capilar Lola Pinga! Açaí e Pracaxi Pré e Pós Química 50ml - ;Sim;Lola;0;0;0;2;2;0;;0;0;0
@@ -1114,7 +1114,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;186;7896046700676-01;Pomada Modeladora Cless Charming Normal Efeito Matte 50g - ;Não;Cless;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2421;731509579204-01;Prancha Alisadora Kiss New York Titanium Luxy 450F Bivolt - ;Sim;Kiss;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2659;7908422601498;Prancha de Cabelo MQ Titanium Max480 Slim Bivolt Automático - ;Sim;MQ;5;0;0;0;5;0;;0;295,99;0
-1;Padrão Loja da Vivi;3950;7898496354881;Prancha Ga.ma Elegance Blue Titanium 3D Bivolt - ;Sim;Ga.ma;0;0;0;1;1;0;;0;0;0
+1;Padrão Loja da Vivi;3950;7898496354881;Prancha Ga.ma Elegance Blue Titanium 3D Bivolt - ;Sim;Ga.ma;0;1;0;1;0;0;;0;0;0
 1;Padrão Loja da Vivi;4116;7898496352030;Prancha Ga.ma Eleganza Plus Bivolt 210ḞC/410ḞF - ;Sim;Ga.ma;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;2226;7898949454144;Prancha Lizze Extreme Com Placa Revestida Em Titânio 220V - ;Sim;Lizze;1;0;0;14;15;0;;0;214,65;0
 1;Padrão Loja da Vivi;2237;7908422601276;Prancha Modeladora MQ Beauty Lissondas - ;Sim;MQ;3;0;0;2;5;0;;0;328,88;0
