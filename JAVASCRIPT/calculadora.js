@@ -438,7 +438,7 @@ function calcular(inputElement) {
     document.getElementById("result-sho-v_p").textContent = "R$ " + calcShoP.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * v_p) / 100).toFixed(2).replace(".", ",") + ")";
 
     // Site
-    document.getElementById("result-sit-v_m").textContent = "PIX R$ " + calcSitM.toFixed(2).replace(".", ",") + " (" + ((calcSitM / custo) * 100).toFixed(2) + "%)";
+    document.getElementById("result-sit-v_m").textContent = "R$ " + calcSitM.toFixed(2).replace(".", ",") + " (" + ((calcSitM / custo) * 100).toFixed(2) + "%)";
     document.getElementById("result-sit-v_a").textContent = "PIX R$ " + calcSitA.toFixed(2).replace(".", ",") + " (" + ((v_a / custo) * 100).toFixed(2) + "%)";
     document.getElementById("result-sit-v_p").textContent = "PIX R$ " + calcSitP.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * v_p) / 100).toFixed(2).replace(".", ",") + ")";
     document.getElementById("result-sit-v_m-12x").textContent = "12x de R$ " + calcSitM12x1.toFixed(2).replace(".", ",") + " (" + (calcSitM12x12).toFixed(2).replace(".", ",") + ")";
