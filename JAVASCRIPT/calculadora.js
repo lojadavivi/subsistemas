@@ -395,12 +395,18 @@ function calcular(inputElement) {
 
     // Site manual - calcSitM
     var calcSitM = v_m - (custo + (v_m * constanteCnpj) + (v_m * cnpj_online_cmss));
+    var calcSitM12x12 = v_m + (v_m * TxSit_12x);
+    var calcSitM12x1 = calcSitM12x12 / 12;
 
     // Site auto - calcSitA
     var calcSitA = (custo + v_a) * 100 / (-(((constanteCnpj + cnpj_online_cmss) * 100) - 100));
+    var calcSitA12x12 = calcSitA + (calcSitA * TxSit_12x);
+    var calcSitA12x1 = calcSitA12x12 / 12;
 
     // Site porcentagem - calcSitP
     var calcSitP = (simply_custo_vp * 100) / (-(((constanteCnpj + cnpj_online_cmss) * 100) - 100));
+    var calcSitP12x12 = calcSitP + (calcSitP * TxSit_12x);
+    var calcSitP12x1 = calcSitP12x12 / 12;
 
     // --------------------------------
 
@@ -432,7 +438,10 @@ function calcular(inputElement) {
     document.getElementById("result-sho-v_p").textContent = "R$ " + calcShoP.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * v_p) / 100).toFixed(2).replace(".", ",") + ")";
 
     // Site
-    document.getElementById("result-sit-v_m").textContent = "R$ " + calcSitM.toFixed(2).replace(".", ",") + " (" + ((calcSitM / custo) * 100).toFixed(2) + "%)";
-    document.getElementById("result-sit-v_a").textContent = "R$ " + calcSitA.toFixed(2).replace(".", ",") + " (" + ((v_a / custo) * 100).toFixed(2) + "%)";
-    document.getElementById("result-sit-v_p").textContent = "R$ " + calcSitP.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * v_p) / 100).toFixed(2).replace(".", ",") + ")";
+    document.getElementById("result-sit-v_m").textContent = "PIX R$ " + calcSitM.toFixed(2).replace(".", ",") + " (" + ((calcSitM / custo) * 100).toFixed(2) + "%)";
+    document.getElementById("result-sit-v_a").textContent = "PIX R$ " + calcSitA.toFixed(2).replace(".", ",") + " (" + ((v_a / custo) * 100).toFixed(2) + "%)";
+    document.getElementById("result-sit-v_p").textContent = "PIX R$ " + calcSitP.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * v_p) / 100).toFixed(2).replace(".", ",") + ")";
+    document.getElementById("result-sit-v_m-12x").textContent = "12x de R$ " + calcSitM12x1.toFixed(2).replace(".", ",") + " (" + (calcSitM12x12).toFixed(2).replace(".", ",") + ")";
+    document.getElementById("result-sit-v_a-12x").textContent = "12x de R$ " + calcSitA12x1.toFixed(2).replace(".", ",") + " (" + (calcSitA12x12).toFixed(2).replace(".", ",") + ")";
+    document.getElementById("result-sit-v_p-12x").textContent = "12x de R$ " + calcSitP12x1.toFixed(2).replace(".", ",") + " (" + (calcSitP12x12).toFixed(2).replace(".", ",") + ")";
 }

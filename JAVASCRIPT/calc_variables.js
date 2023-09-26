@@ -231,3 +231,4 @@ const TxSit_10 = 0;
 const TxSit_10A40 = 0;
 const TxSit_40A79 = 0;
 const TxSit_79 = 0;
+const TxSit_12x = 0.0656;
