@@ -306,7 +306,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2779;7898967373670;Creme de Pentear Balai Europa Oliva e Aloe Proteção UV 400ml - ;Sim;Balai;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;2781;7898967373724;Creme de Pentear Balai Oriente Algas e Sais Dead Sea 400ml - ;Sim;Balai;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;2235;7908357401187-01;Creme Esfoliante Berry Kiss Pezinho de Princesa 150ml - ;Sim;Berry Kiss;0;0;0;5;5;0;;0;14,35;0
-1;Padrão Loja da Vivi;2233;7908357402849-01;Creme Facial Berry Kiss Antioxidante Pele de Porcelana 50g - ;Sim;Berry Kiss;0;0;0;10;10;0;;0;8,83;0
+1;Padrão Loja da Vivi;2233;7908357402849;Creme Facial Berry Kiss Antioxidante Pele de Porcelana 50g - ;Sim;Berry Kiss;0;0;0;6;6;0;;0;8,83;0
 1;Padrão Loja da Vivi;2244;7908357402856;Creme Facial Berry Kiss Vitamina C Pele de Veludo 50g - ;Sim;Berry Kiss;0;0;0;19;19;0;;0;9,5;0
 1;Padrão Loja da Vivi;2253;7908357402252-01;Creme Hidratante Berry Kiss Coenzima Q10 Corpo de Sereia 150ml - ;Sim;Berry Kiss;0;0;0;0;0;0;;0;14,49;0
 1;Padrão Loja da Vivi;2241;7908357401194-01;Creme Hidratante Berry Kiss Pezinho de Princesa 150ml - ;Sim;Berry Kiss;0;0;0;2;2;0;;0;13,49;0
@@ -364,7 +364,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2506;731509992564;Escova Profissional ProArt Elite Pro Ceramic - 43mm;Sim;ProArt;0;0;0;2;2;0;;0;43,26;0
 1;Padrão Loja da Vivi;2516;731509991819;Escova Profissional ProArt Metallic Pro Alumínio Térmica - 15mm;Sim;ProArt;0;0;0;0;0;0;;0;12,92;0
 1;Padrão Loja da Vivi;2517;731509991826;Escova Profissional ProArt Metallic Pro Alumínio Térmica - 25mm;Sim;ProArt;0;0;0;0;0;0;;0;23,7;0
-1;Padrão Loja da Vivi;2518;731509991840;Escova Profissional ProArt Metallic Pro Alumínio Térmica - 38mm;Sim;ProArt;1;0;0;0;1;0;;0;19,88;0
+1;Padrão Loja da Vivi;2518;731509991840;Escova Profissional ProArt Metallic Pro Alumínio Térmica - 38mm;Sim;ProArt;0;0;0;0;0;0;;0;19,88;0
 1;Padrão Loja da Vivi;3815;7897517909246;Escova Ricca Twist 3D Curls Cachos E Ondas 360Ḟ - ;Sim;Ricca;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;3730;7898569383268;Escova Secadora Montreal Soling 1200W Formato Oval - Rose Gold;Sim;Soling;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;3731;7898569383251;Escova Secadora Montreal Soling 1200W Formato Oval - Silver;Sim;Soling;0;0;0;3;3;0;;0;0;0
@@ -411,14 +411,14 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2923;9977510144580;Esmalte em Gel Lírio Gel Polish Cremoso 12ml - ;Sim;Lírio;0;0;0;12;12;0;;0;0;0
 1;Padrão Loja da Vivi;2927;6034096213734;Esmalte em Gel Lírio Térmico Refletivo Cremoso 12ml - ;Sim;Lírio;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;2937;602883749344;Esmalte em Gel Real Love Efeito Mármore Cremoso 10ml - ;Sim;Real Love;20;0;0;0;20;0;;0;0;0
-1;Padrão Loja da Vivi;2921;602883749078;Esmalte em Gel Real Love Linha Light Cremoso 8ml - ;Sim;Real Love;20;0;0;0;20;0;;0;0;0
+1;Padrão Loja da Vivi;2921;602883749078;Esmalte em Gel Real Love Linha Light Cremoso 8ml - ;Sim;Real Love;20;1;0;0;19;0;;0;0;0
 1;Padrão Loja da Vivi;3433;618341108158;Esmalte em Gel Real Love Refletivo 10ml - ;Sim;Real Love;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;1146;7898664976334-01;Esmalte Haskell Coleção Avisa Que É Ela 8ml - Entregando Tudo!;Sim;Haskell;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;1574;7898664976365-01;Esmalte Haskell Coleção Avisa Que É Ela 8ml - Localiza Aí, BB!;Sim;Haskell;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;1576;7898664976358-01;Esmalte Haskell Coleção Avisa Que É Ela 8ml - Ninguém Supera!;Sim;Haskell;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;1578;7898664976341-01;Esmalte Haskell Coleção Avisa Que É Ela 8ml - Quem Me Conhece Sabe!;Sim;Haskell;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3987;7898595239362;Esmalte Hits 5Free Glitter 8ml - Diamante De Fogo;Sim;Hits;0;0;0;14;14;0;;0;0;0
-1;Padrão Loja da Vivi;3986;7898595239355;Esmalte Hits 5Free Glitter 8ml - Diamante Estrela;Sim;Hits;0;0;0;14;14;0;;0;0;0
+1;Padrão Loja da Vivi;3986;7898595239355;Esmalte Hits 5Free Glitter 8ml - Diamante Estrela;Sim;Hits;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;3983;7898595239317;Esmalte Hits 5Free Glitter 8ml - Diamante Lua Azul;Sim;Hits;0;0;0;8;8;0;;0;0;0
 1;Padrão Loja da Vivi;3984;7898595239348;Esmalte Hits 5Free Glitter 8ml - Diamante Rosa Eterno;Sim;Hits;0;0;0;9;9;0;;0;0;0
 1;Padrão Loja da Vivi;3985;7898595239324;Esmalte Hits 5Free Glitter 8ml - Diamante Sakura;Sim;Hits;0;0;0;7;7;0;;0;0;0
@@ -617,7 +617,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3874;7898562214880;Geleia Ativadora Arvensis Alta Fixação Cachos Naturais 450g - ;Sim;Arvensis;0;0;0;8;8;0;;0;0;0
 1;Padrão Loja da Vivi;3904;7898562214583;Geleia Ativadora Arvensis Forte Cachinhos Naturais 250g - ;Sim;Arvensis;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;3902;7898562214576;Geleia Ativadora Arvensis Suave Cachinhos Naturais 250g - ;Sim;Arvensis;0;0;0;5;5;0;;0;0;0
-1;Padrão Loja da Vivi;1939;7898562214606;Geleia Ativadora de Cachos Arvensis Cachos Naturais 250g - Alta Fixação;Sim;Arvensis;0;2;0;16;14;0;;0;0;0
+1;Padrão Loja da Vivi;1939;7898562214606;Geleia Ativadora de Cachos Arvensis Cachos Naturais 250g - Alta Fixação;Sim;Arvensis;0;0;0;15;15;0;;0;0;0
 1;Padrão Loja da Vivi;560;7891350034868-01;Gel Fixador Bozzano Extra Forte Sem Álcool 300g - ;Sim;Bozzano;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;2055;7898699910075;Gel Lara Machado Banho de Fibra Natural Pink 30g - ;Não;Lara Machado;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2053;7898699910020;Gel Lara Machado Branco Baby 30g - ;Não;Lara Machado;0;0;0;4;4;0;;0;0;0
@@ -1032,7 +1032,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;1720;751320710574-01;Par de Luva de Látex Poli com Pó - M;Sim;Poli;0;0;0;30;30;0;;0;0;0
 1;Padrão Loja da Vivi;718;751320710567-01;Par de Luva de Látex Poli com Pó - P;Sim;Poli;0;0;0;50;50;0;;0;0;0
 1;Padrão Loja da Vivi;3683;7899572806157;Pasta Modeladora Lola Cereal Killer 100g - ;Sim;Lola;0;0;0;3;3;0;;0;0;0
-1;Padrão Loja da Vivi;3843;7898926064991;Peça de Reposição Beltec LB100 - Bulbo Com Cabo Fixo - ;Sim;Beltec;5;1;0;0;4;0;;0;165,71;0
+1;Padrão Loja da Vivi;3843;7898926064991;Peça de Reposição Beltec LB100 - Bulbo Com Cabo Fixo - ;Sim;Beltec;4;0;0;0;4;0;;0;165,71;0
 1;Padrão Loja da Vivi;3845;7898921107099;Peça de Reposição Beltec LB100 - Ponta Caneta - ;Sim;Beltec;14;0;0;0;14;0;;0;168,5;0
 1;Padrão Loja da Vivi;4087;7908003903553;Peeling Micelar Vizet Ritual Sublime 250ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;3835;7896727946393;Pente Corte Corrido Dompel 4569 Preto - ;Sim;Dompel;0;0;0;4;4;0;;0;0;0
@@ -1120,12 +1120,12 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2237;7908422601276;Prancha Modeladora MQ Beauty Lissondas - ;Sim;MQ;3;0;0;2;5;0;;0;328,88;0
 1;Padrão Loja da Vivi;2250;7898657692227;Prancha MQ Professional Titanium Slim Azul Bivolt 450F / 232C - ;Não;MQ;0;0;0;0;0;0;;0;206,6;0
 1;Padrão Loja da Vivi;3728;7898569382933;Prancha Para Cabelo Soling Royal Grafite 480ḞF/250ḞC - ;Sim;Soling;0;0;0;2;2;0;;0;0;0
-1;Padrão Loja da Vivi;3724;7898569382407;Prancha Para Cabelo Soling Royal Plus Bivolt 250ḞC/480ḞF - ;Sim;Soling;0;0;0;1;1;0;;0;0;0
+1;Padrão Loja da Vivi;3724;7898569382407;Prancha Para Cabelo Soling Royal Plus Bivolt 250ḞC/480ḞF - ;Sim;Soling;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3726;7898569382865;Prancha Para Cabelo Soling Royal Rose Gold 250ḞC/480ḞF - ;Sim;Soling;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2409;7898957952649;Prancha Profissional Lion Tittan 500F 250ẃC Bivolt - Azul Fosco;Não;Lion;0;0;0;0;0;0;;0;322,9;0
 1;Padrão Loja da Vivi;2410;7898957952632;Prancha Profissional Lion Tittan 500F 250ẃC Bivolt - Cinza Chumbo;Sim;Lion;0;0;0;2;2;0;;0;322,9;0
 1;Padrão Loja da Vivi;3548;7898949454137;Prancha Profissional Mini Lizze Titânio 200 ḞC Bivolt - ;Sim;Lizze;0;0;0;10;10;0;;0;0;0
-1;Padrão Loja da Vivi;4156;7898569383299;PRANCHA SOLING MUNIQUE 220V - ;Sim;Soling;5;0;0;0;5;0;;0;204,4;0
+1;Padrão Loja da Vivi;4156;7898569383299;Prancha Soling Munique Black 220v - ;Sim;Soling;5;0;0;0;5;0;;0;204,4;0
 1;Padrão Loja da Vivi;3447;7899531416533;Prep Anylovy Spray Higienizador de Unhas 120ml - ;Sim;Any Lovy;0;0;0;9;9;0;;0;1,11;0
 1;Padrão Loja da Vivi;2065;7898699910105;Prep Higienizador Lara Machado 125ml - ;Não;Lara Machado;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;682;7898964247776;Prep Higienizador Vòlia 350ml - ;Sim;Vòlia;0;0;0;30;30;0;;0;0;0
