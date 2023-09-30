@@ -617,7 +617,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3874;7898562214880;Geleia Ativadora Arvensis Alta Fixação Cachos Naturais 450g - ;Sim;Arvensis;0;0;0;8;8;0;;0;0;0
 1;Padrão Loja da Vivi;3904;7898562214583;Geleia Ativadora Arvensis Forte Cachinhos Naturais 250g - ;Sim;Arvensis;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;3902;7898562214576;Geleia Ativadora Arvensis Suave Cachinhos Naturais 250g - ;Sim;Arvensis;0;0;0;5;5;0;;0;0;0
-1;Padrão Loja da Vivi;1939;7898562214606;Geleia Ativadora de Cachos Arvensis Cachos Naturais 250g - Alta Fixação;Sim;Arvensis;0;0;0;15;15;0;;0;0;0
+1;Padrão Loja da Vivi;1939;7898562214606;Geleia Ativadora de Cachos Arvensis Cachos Naturais 250g - Alta Fixação;Sim;Arvensis;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;560;7891350034868-01;Gel Fixador Bozzano Extra Forte Sem Álcool 300g - ;Sim;Bozzano;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;2055;7898699910075;Gel Lara Machado Banho de Fibra Natural Pink 30g - ;Não;Lara Machado;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2053;7898699910020;Gel Lara Machado Branco Baby 30g - ;Não;Lara Machado;0;0;0;4;4;0;;0;0;0
@@ -987,8 +987,8 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3529;81476367;Mini Lixa Buffer Polidora 100/180 Cores Sortidas - ;Sim;RPC;0;0;0;20;20;0;;0;0;0
 1;Padrão Loja da Vivi;3956;8023277109810;Mini Prancha Ga.ma Ceramic Ion Bivolt 200ḞC/392ḞF - ;Sim;Ga.ma;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;2657;7908422600712;Modelador de Cachos Triondas MQ Beauty Glam Wave Bivolt - ;Sim;MQ Hair;8;0;0;4;12;0;;0;236,79;0
-1;Padrão Loja da Vivi;3905;7897517954055;Modelador de Cachos X330 Vertix Bivolt - 10mm x 130mm;Sim;Vertix;0;0;0;0;0;0;;0;104,24;0
-1;Padrão Loja da Vivi;2647;7897517954024;Modelador de Cachos X330 Vertix Bivolt - 25mm x 170mm;Sim;Vertix;0;0;0;3;3;0;;0;0;0
+1;Padrão Loja da Vivi;3905;7897517954055;Modelador de Cachos X330 Vertix Bivolt - 10mm x 130mm;Sim;Vertix;0;0;0;6;6;0;;0;104,24;0
+1;Padrão Loja da Vivi;2647;7897517954024;Modelador de Cachos X330 Vertix Bivolt - 25mm x 170mm;Sim;Vertix;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;2648;7897517954031;Modelador de Cachos X330 Vertix Bivolt - 32mm x 130mm;Sim;Vertix;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;3960;7898496353419;Modelador Ga.ma Ceramic Nano Tourmaline New 25mm Bivolt - ;Sim;Ga.ma;0;0;0;8;8;0;;0;0;0
 1;Padrão Loja da Vivi;2246;7898657699530;Modelador MQ Beauty Automatico Sem Fio My Wave - ;Não;MQ;0;0;0;0;0;0;;0;322,3;0
@@ -1185,11 +1185,11 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2257;7908422601436;Secador De Cabelo MQ Beauty Belle Rosa 2000w 220v - ;Sim;MQ;7;0;0;4;11;0;;0;135,28;0
 1;Padrão Loja da Vivi;2807;7898657690629;Secador de Cabelo MQ Professional Millano Íon 1900W 220V - ;Não;MQ;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2448;7898957952441;Secador de Cabelo Profissional Lion Aero Ultra 3000W 220V - ;Sim;Lion;0;0;0;0;0;0;;0;499,14;0
-1;Padrão Loja da Vivi;3880;7898957952601;Secador de Cabelo Profissional Lion LS10 2540W 220V - ;Sim;Lion;5;0;0;2;7;0;;0;388,2;0
+1;Padrão Loja da Vivi;3880;7898957952601;Secador de Cabelo Profissional Lion LS10 2540W 220V - ;Sim;Lion;3;0;0;0;3;0;;0;388,2;0
 1;Padrão Loja da Vivi;3882;7898957952656;Secador de Cabelo Profissional Lion Tutti Aero 2800W 220V - ;Sim;Lion;6;0;0;3;9;0;;0;443,67;0
 1;Padrão Loja da Vivi;2406;7898569382353;Secador de Cabelo Profissional Soling Dubai 2500 - 110V;Sim;Soling;15;0;0;3;18;0;;0;181,04;0
 1;Padrão Loja da Vivi;2407;7898569382346;Secador de Cabelo Profissional Soling Dubai 2500 - 220V;Sim;Soling;0;0;0;3;3;0;;0;0;0
-1;Padrão Loja da Vivi;4154;7898569382360;Secador de Cabelo Soling Montreal 2300 220V - ;Sim;Soling;12;0;0;0;12;0;;0;95,81;0
+1;Padrão Loja da Vivi;4154;7898569382360;Secador de Cabelo Soling Montreal 2300 220V - ;Sim;Soling;11;0;0;0;11;0;;0;95,81;0
 1;Padrão Loja da Vivi;3999;7898496356090;Secador Ga.ma Babosa 3D Auto Bivolt Motor Profissional 2200W - ;Sim;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4145;7898496354805;Secador Gama IQ Perfetto Cinza 2000w 220v - ;Sim;Ga.ma;0;0;0;1;1;0;;0;0;0
 1;Padrão Loja da Vivi;4143;7898496356182;Secador Gama IQ Perfetto Preto 127v 1800w - ;Sim;Ga.ma;0;0;0;2;2;0;;0;0;0
