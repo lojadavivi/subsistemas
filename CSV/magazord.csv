@@ -32,7 +32,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;888;7898506258413;Apontador Para Lápis de Maquiagem Macrilan AP-01 - ;Sim;Macrilan;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2393;5678000870491;Aquecedor de Cera Girl Fatale Pro Wax Panela de Cera Bivolt - ;Sim;Girl Fatale;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3994;7898562213708;Ativador de Cachos Arvensis Cachos Naturais 1L - ;Sim;Arvensis;0;0;0;12;12;0;;0;0;0
-1;Padrão Loja da Vivi;3876;7898562213791;Ativador De Cachos Arvensis Cachos Naturais Crespos 300ml - ;Sim;Arvensis;0;0;0;8;8;0;;0;0;0
+1;Padrão Loja da Vivi;3876;7898562213791;Ativador De Cachos Arvensis Cachos Naturais Crespos 300ml - ;Sim;Arvensis;0;0;0;7;7;0;;0;0;0
 1;Padrão Loja da Vivi;3888;7898562213685;Ativador De Cachos Arvensis Para Cabelos Ondulados 300ml - ;Sim;Arvensis;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;3554;7898649841770;Ativador de Cachos Beautech No Poo Vegano 500ml - ;Não;Beautech;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2391;7898649840100;Ativador de Cachos Cosmeceuta Power Cachos Vegano 200ml - ;Sim;Cosmeceuta;0;0;0;7;7;0;;0;0;0
@@ -309,7 +309,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2233;7908357402849;Creme Facial Berry Kiss Antioxidante Pele de Porcelana 50g - ;Sim;Berry Kiss;0;0;0;6;6;0;;0;8,83;0
 1;Padrão Loja da Vivi;2244;7908357402856;Creme Facial Berry Kiss Vitamina C Pele de Veludo 50g - ;Sim;Berry Kiss;0;0;0;19;19;0;;0;9,5;0
 1;Padrão Loja da Vivi;2253;7908357402252-01;Creme Hidratante Berry Kiss Coenzima Q10 Corpo de Sereia 150ml - ;Sim;Berry Kiss;0;0;0;0;0;0;;0;14,49;0
-1;Padrão Loja da Vivi;2241;7908357401194-01;Creme Hidratante Berry Kiss Pezinho de Princesa 150ml - ;Sim;Berry Kiss;0;0;0;0;0;0;;0;13,49;0
+1;Padrão Loja da Vivi;2241;7908357401194;Creme Hidratante Berry Kiss Pezinho de Princesa 150ml - ;Sim;Berry Kiss;0;0;0;0;0;0;;0;13,49;0
 1;Padrão Loja da Vivi;914;7896369126009-01;Creme para Massagem Hidramais Drenagem Linfática 1kg - ;Sim;Hidramais;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;912;7896369126122-01;Creme para Massagem Hidramais Esfoliante com Murumuru 1kg - ;Sim;Hidramais;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3323;7908458311859;Creme Para Pentear Salon Line Super Controle 1L - ;Sim;Salon Line;0;0;0;0;0;0;;0;0;0
@@ -617,7 +617,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3874;7898562214880;Geleia Ativadora Arvensis Alta Fixação Cachos Naturais 450g - ;Sim;Arvensis;0;0;0;22;22;0;;0;0;0
 1;Padrão Loja da Vivi;3904;7898562214583;Geleia Ativadora Arvensis Forte Cachinhos Naturais 250g - ;Sim;Arvensis;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;3902;7898562214576;Geleia Ativadora Arvensis Suave Cachinhos Naturais 250g - ;Sim;Arvensis;0;0;0;5;5;0;;0;0;0
-1;Padrão Loja da Vivi;1939;7898562214606;Geleia Ativadora de Cachos Arvensis Cachos Naturais 250g - Alta Fixação;Sim;Arvensis;0;0;0;10;10;0;;0;0;0
+1;Padrão Loja da Vivi;1939;7898562214606;Geleia Ativadora de Cachos Arvensis Cachos Naturais 250g - Alta Fixação;Sim;Arvensis;0;0;0;7;7;0;;0;0;0
 1;Padrão Loja da Vivi;560;7891350034868-01;Gel Fixador Bozzano Extra Forte Sem Álcool 300g - ;Sim;Bozzano;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;2055;7898699910075;Gel Lara Machado Banho de Fibra Natural Pink 30g - ;Não;Lara Machado;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2053;7898699910020;Gel Lara Machado Branco Baby 30g - ;Não;Lara Machado;0;0;0;4;4;0;;0;0;0
@@ -722,10 +722,12 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3462;7898699911089;Higienizador Bluwe Para Mãos e Unhas 125ml - ;Sim;Bluwe;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;656;7899838823010;Irrigador Oral Multilaser Clearpik Profissional 1000ml HC038 - ;Sim;Multi;0;0;0;1;1;0;;0;0;0
 1;Padrão Loja da Vivi;3536;65970447;Kit 10 Lixa Buffer Polidora 100/180 Cores Sortidas - ;Sim;RPC;0;0;0;1;1;0;;0;0;0
+1;Padrão Loja da Vivi;4167;8165682729938;Kit 12 Top Coat D&Z 15ml - ;Sim;D&Z;0;0;0;9;9;0;;0;0;0
 1;Padrão Loja da Vivi;3540;61422827;Kit 20 Lixa Lavável Polidora 100/180 Cores Sortidas - ;Sim;RPC;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;3538;43783670;Kit 20 Mini Lixa Buffer Polidora 100/180 Cores Sortidas - ;Sim;RPC;0;0;0;1;1;0;;0;0;0
-1;Padrão Loja da Vivi;4163;4940670327587;Kit 2 Top Coat D&Z 15ml - ;Sim;D&Z;0;0;0;4;4;0;;0;0;0
+1;Padrão Loja da Vivi;4163;4940670327587;Kit 2 Top Coat D&Z 15ml - ;Sim;D&Z;0;0;0;54;54;0;;0;0;0
 1;Padrão Loja da Vivi;644;669120040015-01;Kit 5 Dedo de Treino Para Manicure Com Adesivo - ;Sim;D&Z;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;4165;7490325025322;Kit 6 Top Coat D&Z 15ml - ;Sim;D&Z;0;0;0;18;18;0;;0;0;0
 1;Padrão Loja da Vivi;3913;7898525587716;Kit Blant Blindagem Das Unhas Em Dois Passos 2x8,5ml - ;Sim;Blant;0;0;0;10;10;0;;0;19,71;0
 1;Padrão Loja da Vivi;4137;4377016305679;Kit Cabine LED/UV Piu Bella PB01 48W + Gel AnyLovy 24g - ;Sim;Piu Bella;0;0;0;7;7;0;;0;0;0
 1;Padrão Loja da Vivi;104;7898606741013-01;Kit Cadiveu Professional Plástica dos Fios Selagem Térmica 1L - ;Sim;Cadiveu;0;0;0;0;0;0;;0;0;0
@@ -855,7 +857,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2554;7898649840780;Leave-in Cosmeceuta Força Três Pimentas Vegano 200ml - ;Não;Cosmeceuta;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2473;7898649840117;Leave-in Cosmeceuta Liso Extreme Pós Progressiva Vegano 200ml - ;Sim;Cosmeceuta;0;0;0;7;7;0;;0;0;0
 1;Padrão Loja da Vivi;4057;7908003902556;LEAVE IN VIZET EXPERTISE CURLY 500ml - ;Sim;Vizet;4;0;0;0;4;0;;0;0;0
-1;Padrão Loja da Vivi;4109;7908003908527;Leave In Vizet Splendidus 250ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
+1;Padrão Loja da Vivi;4109;7908003908527;Leave In Vizet Splendidus 250ml - ;Sim;Vizet;1;0;0;0;1;0;;0;0;0
 1;Padrão Loja da Vivi;3037;54873674;Linha de Algodão Vanity Para Depilação Facial 300m - ;Sim;RPC;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2037;7898699910426;Lixa 100/180 Lara Machado Boomerang - ;Não;Lara Machado;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2035;7898699910433;Lixa 180/240 Lara Machado Boomerang - ;Não;Lara Machado;0;0;0;0;0;0;;0;2,3;0
@@ -919,7 +921,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;1877;7898417970725;Máscara Capilar Cápsula Hair Milagrosos 3 Minutos Uma Vez 18g - Pura Selva;Sim;Uma Vez;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2570;7898649841008;Máscara Capilar Cosmeceuta Black Matizante Vegano 250g - ;Não;Cosmeceuta;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;2560;7898649840124;Máscara Capilar Cosmeceuta Blond Matizante Vegano 250g - ;Sim;Cosmeceuta;0;0;0;7;7;0;;0;0;0
-1;Padrão Loja da Vivi;2580;7898649840971;Máscara Capilar Cosmeceuta Castanho Matizante Vegano 250g - ;Não;Cosmeceuta;0;1;0;2;1;0;;0;0;0
+1;Padrão Loja da Vivi;2580;7898649840971;Máscara Capilar Cosmeceuta Castanho Matizante Vegano 250g - ;Não;Cosmeceuta;0;0;0;1;1;0;;0;0;0
 1;Padrão Loja da Vivi;2378;7898649840421;Máscara Capilar Cosmeceuta Desmaiação Alisamento Vegano 250g - ;Sim;Cosmeceuta;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;2550;7898649840766;Máscara Capilar Cosmeceuta Força Três Pimentas Vegano 250g - ;Sim;Cosmeceuta;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;2471;7898649840155;Máscara Capilar Cosmeceuta Liso Extreme Pós Progressiva Vegano 250g - ;Não;Cosmeceuta;0;0;0;0;0;0;;0;0;0
@@ -1365,7 +1367,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2291;7908357402795-01;Tônico Facial Adstringente Berry Kiss Essencial 120ml - ;Sim;Berry Kiss;0;0;0;0;0;0;;0;7,22;0
 1;Padrão Loja da Vivi;502;7898610374665-01;Tônico Haskell CBA Amazônico 120ml - ;Sim;Haskell;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3924;7898444721246;Top Coat Beltrat Matte Fosco 10ml - ;Sim;Beltrat;0;0;0;4;4;0;;0;0;0
-1;Padrão Loja da Vivi;4160;7758258033556;Top Coat D&Z No Cleanse 15ml - ;Sim;D&Z;0;0;0;9;9;0;;0;0;0
+1;Padrão Loja da Vivi;4160;7758258033556;Top Coat D&Z No Cleanse 15ml - ;Sim;D&Z;0;0;0;109;109;0;;0;0;0
 1;Padrão Loja da Vivi;2047;7898699910099;Top Coat Lara Machado Camuflagem Nude Pink 12ml - ;Não;Lara Machado;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2049;7898699910143;Top Coat Lara Machado Clear 12ml - ;Não;Lara Machado;0;0;0;0;0;0;;0;52,73;0
 1;Padrão Loja da Vivi;3794;7898699910297;Top Coat Lara Machado Sunshine Gold 12ml - ;Sim;Lara Machado;0;0;0;0;0;0;;0;0;0
