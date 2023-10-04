@@ -31,7 +31,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;554;41235973;Apoio de Mão para Manicure Almofada com Tapete - ;Não;RPC;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;888;7898506258413;Apontador Para Lápis de Maquiagem Macrilan AP-01 - ;Sim;Macrilan;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2393;5678000870491;Aquecedor de Cera Girl Fatale Pro Wax Panela de Cera Bivolt - ;Sim;Girl Fatale;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;3994;7898562213708;Ativador de Cachos Arvensis Cachos Naturais 1L - ;Sim;Arvensis;0;0;0;12;12;0;;0;0;0
+1;Padrão Loja da Vivi;3994;7898562213708;Ativador de Cachos Arvensis Cachos Naturais 1L - ;Sim;Arvensis;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;3876;7898562213791;Ativador De Cachos Arvensis Cachos Naturais Crespos 300ml - ;Sim;Arvensis;0;0;0;7;7;0;;0;0;0
 1;Padrão Loja da Vivi;3888;7898562213685;Ativador De Cachos Arvensis Para Cabelos Ondulados 300ml - ;Sim;Arvensis;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;3554;7898649841770;Ativador de Cachos Beautech No Poo Vegano 500ml - ;Não;Beautech;0;0;0;0;0;0;;0;0;0
@@ -617,7 +617,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3874;7898562214880;Geleia Ativadora Arvensis Alta Fixação Cachos Naturais 450g - ;Sim;Arvensis;0;0;0;22;22;0;;0;0;0
 1;Padrão Loja da Vivi;3904;7898562214583;Geleia Ativadora Arvensis Forte Cachinhos Naturais 250g - ;Sim;Arvensis;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;3902;7898562214576;Geleia Ativadora Arvensis Suave Cachinhos Naturais 250g - ;Sim;Arvensis;0;0;0;5;5;0;;0;0;0
-1;Padrão Loja da Vivi;1939;7898562214606;Geleia Ativadora de Cachos Arvensis Cachos Naturais 250g - Alta Fixação;Sim;Arvensis;0;4;0;7;3;0;;0;0;0
+1;Padrão Loja da Vivi;1939;7898562214606;Geleia Ativadora de Cachos Arvensis Cachos Naturais 250g - Alta Fixação;Sim;Arvensis;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;560;7891350034868-01;Gel Fixador Bozzano Extra Forte Sem Álcool 300g - ;Sim;Bozzano;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;2055;7898699910075;Gel Lara Machado Banho de Fibra Natural Pink 30g - ;Não;Lara Machado;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2053;7898699910020;Gel Lara Machado Branco Baby 30g - ;Não;Lara Machado;0;0;0;4;4;0;;0;0;0
