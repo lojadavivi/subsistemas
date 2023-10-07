@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Ícones -->
+    <link rel="icon" href="/subsistemas/STYLES/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/subsistemas/STYLES/icon.png" type="image/x-icon">
+
+    <!-- Título da página -->
+    <title>FERRY</title>
+
+    <!-- Estilos padrão  CSS -->
+    <link rel="stylesheet" type="text/css" href="/subsistemas/STYLES/estilos.css">
+
+</head>
+
+<body>
+    <!-- Título principal -->
+    <h1 class="header-with-image" style="background-color: #5B8266;">
+        <span class="header-text">VISUALIZAÇÃO EMERGENCIAL DE ESTOQUE - LOJA DA VIVI LTDA (Ferry)</span>
+        <img class="header-image" src="/subsistemas/STYLES/icon.png">
+    </h1>
+
+    <!-- Campos de busca por produto ou código de barras -->
+    <div>
+        <table style="width: 100%; text-align: center;">
+            <thead>
+                <tr>
+                    <th>
+                        <input style="width: 75%; padding: 5px; text-align: center;" type="text" id="BuscaNome"
+                            onkeydown="handleKeyPress(event, 'BuscaPorNome')" placeholder="BUSCAR POR PRODUTO"><button
+                            class="buscar" onclick="BuscaPorNome()">Buscar</button>
+                    </th>
+                    <th>
+                        <input style="width: 75%; padding: 5px; text-align: center;" type="number" id="BuscaCod"
+                            onkeydown="handleKeyPress(event, 'BuscaPorCod')"
+                            placeholder="BUSCAR POR CÓDIGO DE BARRAS"><button class="buscar"
+                            onclick="BuscaPorCod()">Buscar</button>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <!-- Tabela para exibir os resultados dinamicamente-->
+    <div id="resultsContainer">
+        <table class="tabela_busca">
+            <thead>
+                <tr>
+                    <th style="background-color: #333843;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorRef()">Referência</button></th>
+                    <th style="background-color: #5B8266;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorCod()">Cod. Barras</button></th>
+                    <th style="background-color: #5B8266;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorNom()">Produto</button></th>
+                    <th style="background-color: #5B8266;">Venda</th>
+                </tr>
+            </thead>
+            <tbody id="resultsTableBody"></tbody>
+        </table>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Função para lidar com o pressionamento da tecla Enter nos campos de busca
+        function handleKeyPress(event, searchFunction) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                window[searchFunction]();
+            }
+        }
+
+        // Função de busca por produto
+        function BuscaPorNome() {
+            var inputNome = document.getElementById("BuscaNome").value;
+            inicarBusca(inputNome, true);
+        }
+
+        // Função de busca por código de barras
+        function BuscaPorCod() {
+            var inputNome = document.getElementById("BuscaCod").value;
+            inicarBusca(inputNome, false);
+        }
+
+        // Função que realiza a busca e exibe os resultados
+        function inicarBusca(inputNome, inputCod) {
+            inputNome = inputNome.toLowerCase();
+            var resultsTableBody = document.getElementById("resultsTableBody");
+            resultsTableBody.innerHTML = "";
+            var csvFerry = "/subsistemas/CSV/Produtos_exportados (FERRY).csv";
+
+            // Realiza uma requisição para obter os dados do CSV (precisa estar sendo executado com o servidor python -m http.server)
+            fetch(csvFerry).then(response => response.text()).then(data => {
+                var linhasFerry = data.split("\n");
+                for (var infoFerry = 1; infoFerry < linhasFerry.length; infoFerry++) {
+                    var columnsFerry = linhasFerry[infoFerry].split(";");
+                    var refFerry = columnsFerry[23] || "";
+                    var codFerry = columnsFerry[22] || "";
+                    var prodFerry = columnsFerry[4] || "";
+                    var vendaFerry = columnsFerry[7] || "";
+
+                    // Verifica se o resultado corresponde à busca e organiza as informações na tabela
+                    if ((inputCod && (inputNome === "" || prodFerry.toLowerCase().includes(inputNome))) || (!inputCod && codFerry.trim().match(inputNome) == inputNome || refFerry.trim().match(inputNome) == inputNome)) {
+                        var row = resultsTableBody.insertRow();
+                        var refFerryCell = row.insertCell(1);
+                        var codFerryCell = row.insertCell(2);
+                        var prodFerryCell = row.insertCell(3);
+                        var vendaFerryCell = row.insertCell(5);
+                        refFerryCell.textContent = refFerry.replace(/"/g, "");
+                        codFerryCell.textContent = codFerry.replace(/"/g, "");
+                        prodFerryCell.textContent = prodFerry.replace(/"/g, "");
+
+                        var vendaFerryNum = parseFloat(vendaFerry.replace(/"/g, "").replace(",", "."));
+
+                        vendaFerryCell.textContent = "R$ " + vendaFerryNum.toLocaleString('pt-BR', {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                        });
+                    }
+                }
+            });
+        }
+
+        // Funções para ordenar a tabela
+
+        // Ordenar por ID
+        function ordenarPorId() {
+            var table = document.querySelector(".tabela_busca");
+            var rows = Array.from(table.rows).slice(1);
+            rows.sort(function (a, b) {
+                var cellA = a.cells[0].textContent.trim();
+                var cellB = b.cells[0].textContent.trim();
+                if (!isNaN(cellA) && !isNaN(cellB)) {
+                    return parseFloat(cellA) - parseFloat(cellB);
+                } else {
+                    return cellA.localeCompare(cellB);
+                }
+            });
+            var tbody = table.querySelector("tbody");
+            tbody.innerHTML = "";
+            rows.forEach(function (row) {
+                tbody.appendChild(row);
+            });
+        }
+        // Ordenar por Referência
+        function ordenarPorRef() {
+            var table = document.querySelector(".tabela_busca");
+            var rows = Array.from(table.rows).slice(1);
+            rows.sort(function (a, b) {
+                var cellA = a.cells[1].textContent.trim();
+                var cellB = b.cells[1].textContent.trim();
+                if (!isNaN(cellA) && !isNaN(cellB)) {
+                    return parseFloat(cellA) - parseFloat(cellB);
+                } else {
+                    return cellA.localeCompare(cellB);
+                }
+            });
+            var tbody = table.querySelector("tbody");
+            tbody.innerHTML = "";
+            rows.forEach(function (row) {
+                tbody.appendChild(row);
+            });
+        }
+        // Ordenar por Cod. Barras
+        function ordenarPorCod() {
+            var table = document.querySelector(".tabela_busca");
+            var rows = Array.from(table.rows).slice(1);
+            rows.sort(function (a, b) {
+                var cellA = a.cells[2].textContent.trim();
+                var cellB = b.cells[2].textContent.trim();
+                if (!isNaN(cellA) && !isNaN(cellB)) {
+                    return parseFloat(cellA) - parseFloat(cellB);
+                } else {
+                    return cellA.localeCompare(cellB);
+                }
+            });
+            var tbody = table.querySelector("tbody");
+            tbody.innerHTML = "";
+            rows.forEach(function (row) {
+                tbody.appendChild(row);
+            });
+        }
+        // Ordenar por Nome
+        function ordenarPorNom() {
+            var table = document.querySelector(".tabela_busca");
+            var rows = Array.from(table.rows).slice(1);
+            rows.sort(function (a, b) {
+                var cellA = a.cells[3].textContent.toLowerCase();
+                var cellB = b.cells[3].textContent.toLowerCase();
+                return cellA.localeCompare(cellB);
+            });
+            var tbody = table.querySelector("tbody");
+            tbody.innerHTML = "";
+            rows.forEach(function (row) {
+                tbody.appendChild(row);
+            });
+        }
+
+
+    </script>
+
+    <!-- Rodapé da página -->
+    <div class="footer">
+        Desenvolvido por
+        <a href="https://francis-castela.github.io/portfolio/" style="color: inherit;">Francis Castela</a>
+        para a
+        <a href="https://www.lojadaviviunhas.com.br/" style="color: inherit;">Loja da Vivi</a>.
+    </div>
+</body>
+
+</html>
