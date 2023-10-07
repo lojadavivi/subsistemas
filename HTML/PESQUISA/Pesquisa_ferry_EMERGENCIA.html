@@ -21,7 +21,7 @@
         <span class="header-text">VISUALIZAÇÃO EMERGENCIAL DE ESTOQUE - LOJA DA VIVI LTDA (Ferry)</span>
         <img class="header-image" src="/subsistemas/STYLES/icon.png">
     </h1>
-
+    <p style="text-align: center;">Pesquise por descrição (lado esquerdo) ou por código de barras (lado direito)</p>
     <!-- Campos de busca por produto ou código de barras -->
     <div>
         <table style="width: 100%; text-align: center;">
@@ -100,10 +100,10 @@
                     // Verifica se o resultado corresponde à busca e organiza as informações na tabela
                     if ((inputCod && (inputNome === "" || prodFerry.toLowerCase().includes(inputNome))) || (!inputCod && codFerry.trim().match(inputNome) == inputNome || refFerry.trim().match(inputNome) == inputNome)) {
                         var row = resultsTableBody.insertRow();
-                        var refFerryCell = row.insertCell(1);
-                        var codFerryCell = row.insertCell(2);
-                        var prodFerryCell = row.insertCell(3);
-                        var vendaFerryCell = row.insertCell(5);
+                        var refFerryCell = row.insertCell(0);
+                        var codFerryCell = row.insertCell(1);
+                        var prodFerryCell = row.insertCell(2);
+                        var vendaFerryCell = row.insertCell(3);
                         refFerryCell.textContent = refFerry.replace(/"/g, "");
                         codFerryCell.textContent = codFerry.replace(/"/g, "");
                         prodFerryCell.textContent = prodFerry.replace(/"/g, "");
