@@ -58,9 +58,9 @@
                     <th style="background-color: #333843;">ID E</th>
                     <th style="background-color: #333843;">ID T</th>
                     <th style="background-color: #333843;">ID F</th>
-                    <th style="background-color: #992380;">REF</th>
-                    <th style="background-color: #992380;">COD</th>
-                    <th style="background-color: #992380;">PRODUTO</th>
+                    <th style="background-color: #992380;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorRef()">REF</button></th>
+                    <th style="background-color: #992380;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorCod()">COD</button></th>
+                    <th style="background-color: #992380;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorNom()">PRODUTO</button></th>
                     <th style="background-color: #333843;">QTD E</th>
                     <th style="background-color: #333843;">QTD T</th>
                     <th style="background-color: #333843;">QTD F</th>
@@ -337,6 +337,60 @@
     getLastModifiedSite();
     getLastModifiedTijucas();
     getLastModifiedFerry();
+
+            // Ordenar por Referência
+            function ordenarPorRef() {
+            var table = document.querySelector(".tabela_busca");
+            var rows = Array.from(table.rows).slice(1);
+            rows.sort(function (a, b) {
+                var cellA = a.cells[3].textContent.trim();
+                var cellB = b.cells[3].textContent.trim();
+                if (!isNaN(cellA) && !isNaN(cellB)) {
+                    return parseFloat(cellA) - parseFloat(cellB);
+                } else {
+                    return cellA.localeCompare(cellB);
+                }
+            });
+            var tbody = table.querySelector("tbody");
+            tbody.innerHTML = "";
+            rows.forEach(function (row) {
+                tbody.appendChild(row);
+            });
+        }
+        // Ordenar por Cod. Barras
+        function ordenarPorCod() {
+            var table = document.querySelector(".tabela_busca");
+            var rows = Array.from(table.rows).slice(1);
+            rows.sort(function (a, b) {
+                var cellA = a.cells[4].textContent.trim();
+                var cellB = b.cells[4].textContent.trim();
+                if (!isNaN(cellA) && !isNaN(cellB)) {
+                    return parseFloat(cellA) - parseFloat(cellB);
+                } else {
+                    return cellA.localeCompare(cellB);
+                }
+            });
+            var tbody = table.querySelector("tbody");
+            tbody.innerHTML = "";
+            rows.forEach(function (row) {
+                tbody.appendChild(row);
+            });
+        }
+        // Ordenar por Nome
+        function ordenarPorNom() {
+            var table = document.querySelector(".tabela_busca");
+            var rows = Array.from(table.rows).slice(1);
+            rows.sort(function (a, b) {
+                var cellA = a.cells[5].textContent.toLowerCase();
+                var cellB = b.cells[5].textContent.toLowerCase();
+                return cellA.localeCompare(cellB);
+            });
+            var tbody = table.querySelector("tbody");
+            tbody.innerHTML = "";
+            rows.forEach(function (row) {
+                tbody.appendChild(row);
+            });
+        }
 
 </script>
 
