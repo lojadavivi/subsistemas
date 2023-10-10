@@ -43,7 +43,14 @@
             }
         }
 
-
+        function spoilerAjuda(button) {
+            var spoiler = button.nextElementSibling;
+            if (spoiler.style.display === "none" || spoiler.style.display === "") {
+                spoiler.style.display = "block";
+            } else {
+                spoiler.style.display = "none";
+            }
+        }
     </script>
 
     <!-- Título da página -->
@@ -128,19 +135,34 @@
 
     <table class="tabela_calc">
         <tr>
-            <th rowspan="2" class="background-color-change">CÁLCULOS
-            </th>
-            <td style="font-size: x-small;">Aqui você insere o <span style="color: #ffe893; font-weight: bold;">valor de
-                    venda</span> manualmente, e o sistema lhe informa qual será o <span
-                    style="color: #aeffac; font-weight: bold;">valor líquido</span> aproximado que você receberá
-                vendendo a esse preço em cada marketplace.</td>
-            <td style="font-size: x-small;">Aqui você insere o <span style="color: #aeffac; font-weight: bold;">valor
-                    líquido</span> que deseja receber pelo produto, e o sistema lhe sugere qual o <span
-                    style="color: #ffe893; font-weight: bold;">valor de venda</span> a colocar em cada marketplace.</td>
-            <td style="font-size: x-small;">Aqui você insere a <span
-                    style="color: #aeffac; font-weight: bold;">porcentagem líquida</span> que deseja receber pelo
-                produto, e o sistema lhe sugere qual o <span style="color: #ffe893; font-weight: bold;">valor de
-                    venda</span> a colocar em cada marketplace.</td>
+            <th rowspan="2" class="background-color-change">CÁLCULOS</th>
+            <td style="font-size: x-small;">
+                <button onclick="spoilerAjuda(this)">AJUDA</button>
+                <span class="spoiler" style="display: none;">
+                    Aqui você insere o <span style="color: #ffe893; font-weight: bold;">valor de venda</span>
+                    manualmente, e o sistema lhe informa qual será o <span
+                        style="color: #aeffac; font-weight: bold;">valor líquido</span> aproximado que você receberá
+                    vendendo a esse preço em cada marketplace.
+                </span>
+            </td>
+            <td style="font-size: x-small;">
+                <button onclick="spoilerAjuda(this)">AJUDA</button>
+                <span class="spoiler" style="display: none;">
+                    Aqui você insere o <span style="color: #aeffac; font-weight: bold;">valor líquido</span> que deseja
+                    receber pelo produto, e o sistema lhe sugere qual o <span
+                        style="color: #ffe893; font-weight: bold;">valor de venda</span> a colocar em cada marketplace,
+                    ao mesmo tempo que lhe informa qual a porcentagem líquida que você está ganhando.
+                </span>
+            </td>
+            <td style="font-size: x-small;">
+                <button onclick="spoilerAjuda(this)">AJUDA</button>
+                <span class="spoiler" style="display: none;">
+                    Aqui você insere a <span style="color: #aeffac; font-weight: bold;">porcentagem líquida</span> que
+                    deseja receber pelo produto, e o sistema lhe sugere qual o <span
+                        style="color: #ffe893; font-weight: bold;">valor de venda</span> a colocar em cada marketplace,
+                    ao mesmo tempo que lhe informa qual o valor líquido que você está ganhando.
+                </span>
+            </td>
         </tr>
         <tr style="text-align: center;">
             <td style="color: #ffe893; font-weight: bold;">R$ <input class="input_calc"
