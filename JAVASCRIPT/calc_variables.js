@@ -7,7 +7,7 @@
 const cnpj_svltda = 0.08506399;
 const cnpj_ltda = 0.09162236;
 const cnpj_online_imps = 0.04000002;
-const cnpj_online_cmss = 0.02500000;
+const cnpj_online_cmss = 0.04500000;
 
 // ----------------------------------------
 

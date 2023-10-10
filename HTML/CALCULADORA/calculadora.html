@@ -12,11 +12,38 @@
     <script src="/subsistemas/JAVASCRIPT/calculadora.js"></script>
     <script src="/subsistemas/JAVASCRIPT/calc_variables.js"></script>
     <script>
+        // Valores iniciais
         function inicializar() {
             document.getElementById("v_m").value = "0.00";
             document.getElementById("v_a").value = "0.00";
             document.getElementById("v_p").value = "0";
         }
+
+        // Verifica o valor de constanteCnpj e define o background da página de acordo com o valor
+        function alterarBackgroundComBaseEmCnpj() {
+            var elementsToChange = document.querySelectorAll('.background-color-change');
+            var cnpj = document.getElementById("cnpj").value;
+
+            if (cnpj === "Selecione") {
+                elementsToChange.forEach(function (element) {
+                    element.style.backgroundColor = "#A37774";
+                });
+            } else if (cnpj === "FERRY") {
+                elementsToChange.forEach(function (element) {
+                    element.style.backgroundColor = "#5B8266";
+                });
+            } else if (cnpj === "ESTEFANO") {
+                elementsToChange.forEach(function (element) {
+                    element.style.backgroundColor = "#AC3931";
+                });
+            } else if (cnpj === "SITE") {
+                elementsToChange.forEach(function (element) {
+                    element.style.backgroundColor = "#008DD5";
+                });
+            }
+        }
+
+
     </script>
 
     <!-- Título da página -->
@@ -26,12 +53,13 @@
 <body onload="inicializar()">
 
     <!-- Título principal -->
-    <h1 class="header-with-image" style="background-color: #A37774;">
-        <span class="header-text"><a href="/subsistemas/index.html" class="button-back" style="margin-left: 5%;">⬅️ MENU</a></span>
+    <h1 class="header-with-image background-color-change" style="background-color: #A37774;">
+        <span class="header-text"><a href="/subsistemas/index.html" class="button-back" style="margin-left: 5%;">⬅️
+                MENU</a></span>
         <span class="header-text">CALCULADORA PARA MARKETPLACES</span>
         <img class="header-image" src="/subsistemas/STYLES/icon.png">
     </h1>
-    <table class="tabela_calc">
+    <table class="tabela_calc background-color-change">
         <tr>
             <th>CNPJ</th>
             <th>NÍVEL</th>
@@ -41,7 +69,9 @@
         </tr>
         <tr>
             <td>
-                <select class="input_calc" id="cnpj" name="cnpj" onchange="calcular()">
+                <select class="input_calc" id="cnpj" name="cnpj"
+                    onchange="alterarBackgroundComBaseEmCnpj(); calcular()">
+                    <option value="Selecione">Selecione...</option>
                     <option value="FERRY">FERRY</option>
                     <option value="ESTEFANO">ESTEFANO</option>
                     <option value="SITE">SITE</option>
@@ -58,6 +88,7 @@
             </td>
             <td>
                 <select class="input_calc" id="peso" name="peso" onchange="calcular()">
+                    <option value="Selecione">Selecione...</option>
                     <option value="até 0.3kg">até 0.3kg</option>
                     <option value="0.3 a 0.5kg">0.3 a 0.5kg</option>
                     <option value="0.5 a 1kg">0.5 a 1kg</option>
@@ -72,6 +103,7 @@
             </td>
             <td>
                 <select class="input_calc" id="categoria" name="categoria" onchange="calcular()">
+                    <option value="Selecione">Selecione...</option>
                     <option value="Bronzeador ou protetor">Bronzeador ou protetor</option>
                     <option value="Creme depilatório">Creme depilatório</option>
                     <option value="Desodorante">Desodorante</option>
@@ -96,27 +128,30 @@
 
     <table class="tabela_calc">
         <tr>
-            <th rowspan="2">CÁLCULOS
+            <th rowspan="2" class="background-color-change">CÁLCULOS
             </th>
-            <td style="font-size: x-small;">Aqui você insere o valor de venda
-                manualmente, e o sistema lhe informa qual será o valor líquido aproximado que você receberá vendendo a
-                esse preço em cada marketplace.</td>
-            <td style="font-size: x-small;">Aqui você insere o valor líquido
-                que deseja receber pelo produto, e o sistema lhe sugere qual o valor de venda a colocar em cada
-                marketplace.</td>
-            <td style="font-size: x-small;">Aqui você insere a porcentagem
-                líquida que deseja receber pelo produto, e o sistema lhe sugere qual o valor de venda a colocar em cada
-                marketplace.</td>
+            <td style="font-size: x-small;">Aqui você insere o <span style="color: #ffe893; font-weight: bold;">valor de
+                    venda</span> manualmente, e o sistema lhe informa qual será o <span
+                    style="color: #aeffac; font-weight: bold;">valor líquido</span> aproximado que você receberá
+                vendendo a esse preço em cada marketplace.</td>
+            <td style="font-size: x-small;">Aqui você insere o <span style="color: #aeffac; font-weight: bold;">valor
+                    líquido</span> que deseja receber pelo produto, e o sistema lhe sugere qual o <span
+                    style="color: #ffe893; font-weight: bold;">valor de venda</span> a colocar em cada marketplace.</td>
+            <td style="font-size: x-small;">Aqui você insere a <span
+                    style="color: #aeffac; font-weight: bold;">porcentagem líquida</span> que deseja receber pelo
+                produto, e o sistema lhe sugere qual o <span style="color: #ffe893; font-weight: bold;">valor de
+                    venda</span> a colocar em cada marketplace.</td>
         </tr>
         <tr style="text-align: center;">
-            <td>R$ <input class="input_calc" style="width: 10ch;" type="number" id="v_m" name="v_m"
-                    onkeyup="calcular()"></td>
-            <td>R$ <input class="input_calc" style="width: 10ch;" type="number" id="v_a" name="v_a"
-                    onkeyup="calcular()"></td>
-            <td><input class="input_calc" style="width: 10ch; text-align: right;" type="number" id="v_p" name="v_p"
+            <td style="color: #ffe893; font-weight: bold;">R$ <input class="input_calc"
+                    style="color: #ffe893; width: 10ch;" type="number" id="v_m" name="v_m" onkeyup="calcular()"></td>
+            <td style="color: #aeffac; font-weight: bold;">R$ <input class="input_calc"
+                    style="color: #aeffac; width: 10ch;" type="number" id="v_a" name="v_a" onkeyup="calcular()"></td>
+            <td style="color: #aeffac; font-weight: bold;"><input class="input_calc"
+                    style="color: #aeffac; width: 10ch; text-align: right;" type="number" id="v_p" name="v_p"
                     onkeyup="calcular()"> %</td>
         </tr>
-        <tr>
+        <tr class="background-color-change">
             <th style="width: 23ch;">MARKETPLACE</th>
             <th style="width: 23ch;">VALOR LÍQUIDO APROX.</th>
             <th style="width: 23ch;">SUGESTÃO DE VENDA</th>
@@ -153,7 +188,9 @@
             <td id="result-sho-v_p"></td>
         </tr>
         <tr>
-            <th rowspan="2" style="text-align: right; font-weight: 100; font-size: medium; background-color: #282C34; border: 1px solid #999999; padding: 8px;">SITE</th>
+            <th rowspan="2"
+                style="text-align: right; font-weight: 100; font-size: medium; background-color: #282C34; border: 1px solid #999999; padding: 8px;">
+                SITE</th>
             <td id="result-sit-v_m"></td>
             <td id="result-sit-v_a"></td>
             <td id="result-sit-v_p"></td>

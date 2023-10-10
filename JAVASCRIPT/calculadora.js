@@ -16,10 +16,19 @@ function calcular(inputElement) {
         constanteCnpj = cnpj_ltda;
     } else if (cnpj === "SITE") {
         constanteCnpj = cnpj_online_imps;
+    } else if (cnpj === "Selecione") {
+        constanteCnpj = 999;
     }
 
     // Valores constantes de categorias
-    if (categoria === "Bronzeador ou protetor") {
+    if (categoria === "Selecione") {
+        constanteCtAme = 999;
+        constanteCtMag = 999;
+        constanteCtMerCl = 999;
+        constanteCtMerPr = 999;
+        constanteCtSho = 999;
+        constanteCtSit = 999;
+    } else if (categoria === "Bronzeador ou protetor") {
         constanteCtAme = CtAme01;
         constanteCtMag = CtMag01;
         constanteCtMerCl = CtMerCl01;
@@ -113,7 +122,13 @@ function calcular(inputElement) {
     }
 
     // Valores constantes de peso e frete para acima de R$ 79
-    if (peso === "até 0.3kg") {
+    if (peso === "Selecione") {
+        constanteFrAme = 999;
+        constanteFrMag = 999;
+        constanteFrMer = 999;
+        constanteFrSho = 999;
+        constanteFrSit = 999;
+    } else if (peso === "até 0.3kg") {
         constanteFrAme = FrAmeMai79_300g;
         constanteFrMag = FrMagMai79_300g;
         constanteFrMer = FrMerMai79_300g;
