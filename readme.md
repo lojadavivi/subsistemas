@@ -284,16 +284,3 @@ ESTOQUES
     </tbody>
 </table>
 </details>
-
-<style>
-    details {
-        padding: 5px;
-    }
-
-    summary {
-        cursor: pointer;
-        padding: 4px;
-        background-color: #333843;
-        color: #FFFFFF;
-    }
-</style>
