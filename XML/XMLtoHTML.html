@@ -15,7 +15,7 @@
 
     <!-- Scripts de terceiros -->
     <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 </head>
 
@@ -264,27 +264,31 @@
 
     <button id="saveAsSinglePDFButton">Salvar como PDF</button>
 
-    <script>
+   <script>
         document.addEventListener('DOMContentLoaded', function () {
             const saveAsSinglePDFButton = document.getElementById("saveAsSinglePDFButton");
             saveAsSinglePDFButton.addEventListener("click", () => {
                 const tables = document.querySelectorAll(".tabelageral");
 
-                const pdfOptions = {
-                    margin: 10,
-                    filename: 'notas.pdf', // Nome do arquivo PDF
-                    image: { type: 'jpeg', quality: 1 },
-                    html2canvas: { scale: 2 },
-                    jsPDF: { unit: 'mm', format: [100, 150], orientation: 'portrait' }
-                };
+                const pdf = new jsPDF();
 
-                const pdfPromise = html2pdf().from(tables).set(pdfOptions).outputPdf();
+                tables.forEach((table, index) => {
+                    if (index > 0) {
+                        pdf.addPage();
+                    }
 
-                pdfPromise.then((pdf) => {
-                    pdf.save();
+                    pdf.html(table, {
+                        callback: function () {
+                            if (index === tables.length - 1) {
+                                pdf.save('notas.pdf');
+                            }
+                        }
+                    });
                 });
             });
         });
+    </script>
+
     </script>
 
     <style>
