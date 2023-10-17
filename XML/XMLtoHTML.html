@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="/subsistemas/STYLES/estilos.css">
 
     <!-- Scripts de terceiros -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bwip-js/4.1.1/bwip-js-min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jsbarcode/3.11.0/JsBarcode.all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.js"></script>
 
@@ -185,8 +185,8 @@
 
                 const row7 = table.insertRow(3);
                 const cell7 = row7.insertCell();
-                const barcodeCanvas = createBarcodeCanvas(chNFe.textContent);
-                cell7.appendChild(barcodeCanvas);
+                const barcodeImage = createBarcodeImage(chNFe.textContent);
+                cell7.appendChild(barcodeImage);
 
                 const row8 = table.insertRow(4);
                 row8.classList.add("centerrow")
@@ -237,26 +237,21 @@
             }
         }
 
-        // Função para criar o código de barras em um elemento de canvas usando bwip-js
-        function createBarcodeCanvas(chaveNFe) {
-            // Crie um elemento de canvas para exibir o código de barras
-            const barcodeCanvas = document.createElement("canvas");
+        // Função para criar o código de barras em uma imagem e adicioná-lo à tabela
+        function createBarcodeImage(chaveNFe) {
+            // Crie um elemento de imagem para exibir o código de barras
+            const barcodeImage = new Image();
 
-            // Use bwip-js para gerar o código de barras
-            bwipjs.toCanvas(barcodeCanvas, {
-                bcid: 'code128',  // Especifique o tipo de simbologia (Code 128 neste caso)
-                text: chaveNFe,   // O valor do código de barras (a chave da NFe)
-                scale: 1.8,       // Ajuste o tamanho do código de barras (você pode alterar o valor conforme necessário)
-            }, function (err, cvs) {
-                if (err) {
-                    console.error(err);
-                    return;
-                }
-                // O código de barras foi gerado no elemento de canvas
+            // Use JsBarcode para gerar o código de barras
+            JsBarcode(barcodeImage, chaveNFe, {
+                format: "CODE128",
+                width: 1.3,
+                height: 40,
             });
 
-            return barcodeCanvas;
+            return barcodeImage;
         }
+
 
         // Ouvinte de evento do input de arquivos
         const xmlFilesInput = document.getElementById("xmlFilesInput");
