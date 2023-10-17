@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>XML para HTML</title>
+</head>
+
+<body>
+    <!-- Input para selecionar arquivos XML -->
+    <input type="file" id="xmlFilesInput" accept=".xml" multiple>
+
+    <!-- Contêiner para as tabelas geradas a partir dos arquivos XML -->
+    <div id="tablesContainer"></div>
+
+    <!-- Scripts de terceiros para código de barras e formatação de data -->
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <script>
+        // Função para carregar e processar os arquivos XML
+        function handleXMLFiles(event) {
+            const files = event.target.files;
+            const tablesContainer = document.getElementById("tablesContainer");
+
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    const xmlData = e.target.result;
+                    const tableHTML = xmlToTable(xmlData);
+
+                    // Crie uma div para conter cada tabela e dê a ela uma classe para estilização
+                    const tableDiv = document.createElement("div");
+                    tableDiv.classList.add("tabelageral");
+                    tableDiv.innerHTML = tableHTML;
+
+                    // Adicione a tabela à área de contêiner de tabelas
+                    tablesContainer.appendChild(tableDiv);
+                };
+
+                reader.readAsText(file);
+            }
+        }
+
+        // Função para formatar data e hora no formato "dd/mm/yyyy hh:mm"
+        function formatarDataHora(data) {
+            const dataObj = new Date(data);
+            const dia = dataObj.getDate().toString().padStart(2, '0');
+            const mes = (dataObj.getMonth() + 1).toString().padStart(2, '0');
+            const ano = dataObj.getFullYear();
+            const hora = dataObj.getHours().toString().padStart(2, '0');
+            const minutos = dataObj.getMinutes().toString().padStart(2, '0');
+
+            return `${dia}/${mes}/${ano} ${hora}:${minutos}`;
+        }
+
+        // Função para transformar o XML em uma tabela HTML
+        function xmlToTable(xmlData) {
+            if (window.DOMParser) {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlData, "text/xml");
+
+                // Tags e atributos
+                const serie = xmlDoc.querySelector("serie");                            // Série NFe
+                const nNF = xmlDoc.querySelector("nNF");                                // Número NFe
+                const tpNF = xmlDoc.querySelector("tpNF");                              // Tipo NFe (entrada ou saída)
+                const chNFe = xmlDoc.querySelector("chNFe");                            // Chave NFe
+                const nProt = xmlDoc.querySelector("nProt");                            // Protocolo NFe
+                const dhRecbto = xmlDoc.querySelector("dhRecbto").textContent;          // Data e hora do protocolo NFe
+                const vPag = xmlDoc.querySelector("vPag");                              // Valor da NFe
+                const infCpl = xmlDoc.querySelector("infCpl");                          // Informações complementares
+
+                const emitCNPJ = xmlDoc.querySelector("emit > CNPJ");                   // CNPJ emitente
+                const emitIE = xmlDoc.querySelector("emit > IE");                       // Inscrição Estadual emitente
+                const emitxNome = xmlDoc.querySelector("emit > xNome");                 // Nome emitente
+                const emitxLgr = xmlDoc.querySelector("emit > enderEmit > xLgr");       // Rua emitente
+                const emitnro = xmlDoc.querySelector("emit > enderEmit > nro");         // Número do endereço emitente
+                const emitxBairro = xmlDoc.querySelector("emit > enderEmit > xBairro"); // Bairro emitente
+                const emitxMun = xmlDoc.querySelector("emit > enderEmit > xMun");       // Municipio emitente
+                const emitUF = xmlDoc.querySelector("emit > enderEmit > UF");           // UF emitente
+                const emitCEP = xmlDoc.querySelector("emit > enderEmit > CEP");         // CEP emitente
+
+                const destCPF = xmlDoc.querySelector("dest > CPF");                     // CPF destinatário
+                const destCNPJ = xmlDoc.querySelector("dest > CNPJ");                   // CNPJ destinatário
+                const destIEElement = xmlDoc.querySelector("dest > IE");
+                const destIE = destIEElement ? destIEElement.textContent : "N/A";       // Inscrição Estadual destinatário
+                const destxNome = xmlDoc.querySelector("dest > xNome");                 // Nome destinatário
+                const destxLgr = xmlDoc.querySelector("dest > enderDest > xLgr");       // Rua destinatário
+                const destnro = xmlDoc.querySelector("dest > enderDest > nro");         // Número do endereço destinatário
+                const destCpl = xmlDoc.querySelector("dest > enderDest > xCpl");        // Complemento destinatário
+                const destxBairro = xmlDoc.querySelector("dest > enderDest > xBairro"); // Bairro destinatário
+                const destxMun = xmlDoc.querySelector("dest > enderDest > xMun");       // Municipio destinatário
+                const destUF = xmlDoc.querySelector("dest > enderDest > UF");           // UF destinatário
+                const destCEP = xmlDoc.querySelector("dest > enderDest > CEP");         // CEP destinatário
+
+                const detalhes = xmlDoc.querySelectorAll("det");                        // Produtos
+
+                // Verificar se há CPF ou CNPJ do destinatário
+                const destCPFElement = xmlDoc.querySelector("dest > CPF");
+                const destCNPJElement = xmlDoc.querySelector("dest > CNPJ");
+
+                // String para exibir o CPF/CNPJ na tabela
+                let cpfCnpjString = "";
+                if (destCPFElement) {
+                    cpfCnpjString = `CPF: ${destCPFElement.textContent}`;
+                } else if (destCNPJElement) {
+                    cpfCnpjString = `CNPJ: ${destCNPJElement.textContent}`;
+                }
+
+                // Tabela de produtos
+                const produtosTable = document.createElement("table");
+                produtosTable.classList.add("tabelaprodutos");
+
+                // Cabeçalho da tabela de produtos
+                const produtosTableHeader = produtosTable.createTHead();
+                const headerRow = produtosTableHeader.insertRow();
+                headerRow.innerHTML = `
+        <th>CÓDIGO</th>
+        <th>PRODUTO</th>
+        <th>QTD</th>
+        <th>$ UN</th>
+        <th>$ TOTAL
+    `;
+
+                // Linhas da tabela de produtos
+                detalhes.forEach((detalhe, index) => {
+                    const produto = detalhe.querySelector("prod");
+
+                    const cEAN = produto.querySelector("cEAN").textContent;
+                    const xProd = produto.querySelector("xProd").textContent;
+                    const qCom = parseInt(produto.querySelector("qCom").textContent);
+                    const vUnCom = parseFloat(produto.querySelector("vUnCom").textContent).toFixed(2);
+                    const vProd = parseFloat(produto.querySelector("vProd").textContent).toFixed(2);
+
+                    const produtosTableRow = produtosTable.insertRow();
+                    produtosTableRow.innerHTML = `
+        <td>${cEAN}</td>
+        <td>${xProd}</td>
+        <td>${qCom}</td>
+        <td>R$ ${vUnCom}</td>
+        <td>R$ ${vProd}</td>
+    `;
+                });
+
+                // Tabela final que inclui os produtos e as informações
+                const table = document.createElement("table");
+                const headerRow1 = table.insertRow(0);
+                const headerCell1 = headerRow1.insertCell();
+                headerCell1.innerHTML = "DANFE SIMPLIFICADO - ETIQUETA";
+
+                const row2 = table.insertRow(1);
+                const cell2 = row2.insertCell();
+                cell2.innerHTML = `NFe N. ${nNF.textContent} | Série ${serie.textContent} | Tipo NFe: ${tpNF.textContent}`;
+
+                const row3 = table.insertRow(2);
+                const cell3 = row3.insertCell();
+                cell3.innerHTML = emitxNome.textContent;
+
+                const row4 = table.insertRow(3);
+                const cell4 = row4.insertCell();
+                cell4.innerHTML = `CNPJ: ${emitCNPJ.textContent} | IE: ${emitIE.textContent}`;
+
+                const row5 = table.insertRow(4);
+                const cell5 = row5.insertCell();
+                cell5.innerHTML = `${emitxLgr.textContent}, ${emitnro.textContent}, ${emitxBairro.textContent}`;
+
+                const row6 = table.insertRow(5);
+                const cell6 = row6.insertCell();
+                cell6.innerHTML = `CEP: ${emitCEP.textContent} | ${emitxMun.textContent} - ${emitUF.textContent}`;
+
+                const row7 = table.insertRow(6);
+                const cell7 = row7.insertCell();
+                cell7.appendChild(createBarcodeSVG(chNFe.textContent));
+
+                const row8 = table.insertRow(7);
+                const cell8 = row8.insertCell();
+                cell8.innerHTML = `${chNFe.textContent}`;
+
+                const row9 = table.insertRow(8);
+                const cell9 = row9.insertCell();
+                cell9.innerHTML = `PROTOCOLO: ${nProt.textContent} - ${formatarDataHora(dhRecbto)}`;
+
+                const row10 = table.insertRow(9);
+                const cell10 = row10.insertCell();
+                cell10.innerHTML = `DESTINATÁRIO`;
+
+                const row11 = table.insertRow(10);
+                const cell11 = row11.insertCell();
+                cell11.innerHTML = `${destxNome.textContent}`;
+
+                const row12 = table.insertRow(11);
+                const cell12 = row12.insertCell();
+                cell12.innerHTML = `CNPJ/CPF: ${cpfCnpjString} | IE: ${destIE}`;
+
+                const row13 = table.insertRow(12);
+                const cell13 = row13.insertCell();
+                cell13.innerHTML = `${destxLgr.textContent}, ${destnro.textContent}, ${destxBairro.textContent}`;
+
+                const row14 = table.insertRow(13);
+                const cell14 = row14.insertCell();
+                cell14.innerHTML = `CEP: ${destCEP.textContent} | ${destxMun.textContent} - ${destUF.textContent}`;
+
+                const row15 = table.insertRow(14);
+                const cell15 = row15.insertCell();
+                cell15.ColSpan = 6;
+                cell15.appendChild(produtosTable);
+
+                const row16 = table.insertRow(15);
+                const cell16 = row16.insertCell();
+                cell16.innerHTML = `Valor Total da NFe: R$ ${vPag.textContent}`;
+
+                const row17 = table.insertRow(16);
+                const cell17 = row17.insertCell();
+                cell17.innerHTML = `Informações complementares: ${infCpl.textContent}`;
+
+                return table.outerHTML;
+            }
+        }
+
+        // Função para criar o código de barras SVG
+        function createBarcodeSVG(chaveNFe) {
+            const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+            svg.setAttribute("width", "10cm"); // Largura máxima de 10cm
+            svg.setAttribute("height", "80"); // Altura
+
+            const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+            rect.setAttribute("width", "100%");
+            rect.setAttribute("height", "100%");
+            rect.setAttribute("fill", "white");
+            svg.appendChild(rect);
+
+            JsBarcode(svg, chaveNFe, {
+                format: "CODE128",
+                lineColor: "#000",
+                width: 1.2, // Largura máxima de 10cm
+                height: 40,
+                displayValue: false,
+            });
+
+            return svg;
+        }
+
+        // Ouvinte de evento do input de arquivos
+        const xmlFilesInput = document.getElementById("xmlFilesInput");
+        xmlFilesInput.addEventListener("change", handleXMLFiles);
+    </script>
+
+    <style>
+        .tabelageral {
+            margin-top: 20px;
+            border: 1px solid #000;
+            /* Adiciona borda preta de 1px */
+            padding: 10px;
+            max-width: 10cm;
+            /* Largura máxima de 10cm */
+            max-height: 15cm;
+            /* Altura máxima de 15cm */
+        }
+
+        /* Estilo para adicionar espaço entre as tabelas */
+        .tabelageral+.tabelageral {
+            margin-top: 40px;
+            /* Ajuste conforme necessário para controlar o espaçamento */
+        }
+
+    </style>
+</body>
+
+</html>
