@@ -268,19 +268,21 @@
         document.addEventListener('DOMContentLoaded', function () {
             const saveAsSinglePDFButton = document.getElementById("saveAsSinglePDFButton");
             saveAsSinglePDFButton.addEventListener("click", () => {
-                // Certifique-se de que a biblioteca jsPDF foi carregada antes desta parte do código
-                const pdf = new jsPDF();
+
+                const doc = new jsPDF({
+                    orientation: "portrait",
+                    unit: "mm",
+                    format: [100, 150]
+                });
 
                 tables.forEach((table, index) => {
                     if (index > 0) {
-                        pdf.addPage();
+                        doc.addPage();
                     }
 
-                    pdf.html(table, {
+                    doc.html(table, {
                         callback: function () {
-                            if (index === tables.length - 1) {
-                                pdf.save('notas.pdf');
-                            }
+                            doc.save('notas.pdf');
                         }
                     });
                 });
@@ -297,30 +299,27 @@
             margin-top: 20px;
             border: 1px solid #000000;
             padding: 1px;
-            max-width: 10cm;
-            max-height: 15cm;
+            width: 10cm;
+            height: 15cm;
             font-family: "Roboto Mono";
             font-size: 7px;
             font-weight: bold;
         }
 
         .tabelageral+.tabelageral {
-            margin-top: 40px;
+            margin-top: 10px;
         }
 
         .tabelaprodutos {
             border-collapse: collapse;
             width: 100%;
-            /* Para ocupar toda a largura da tabela */
         }
 
         .tabelaprodutos th,
         .tabelaprodutos td {
             border: 1px solid black;
             padding: 0.5px;
-            /* Ajuste o padding conforme necessário */
             text-align: left;
-            /* Ajuste o alinhamento conforme necessário */
         }
 
         .centerrow {
