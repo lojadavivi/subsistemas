@@ -15,6 +15,7 @@
 
     <!-- Scripts de terceiros -->
     <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+    <script src="/subsistemas/JAVASCRIPT/jspdf.umd.min.js"></script>
 
 </head>
 
@@ -261,28 +262,27 @@
         xmlFilesInput.addEventListener("change", handleXMLFiles);
     </script>
 
-    <script src="/subsistemas/JAVASCRIPT/jspdf.umd.min.js"></script>
-
     <button id="saveAsSinglePDFButton">Salvar como PDF</button>
 
     <script>
-        const saveAsSinglePDFButton = document.getElementById("saveAsSinglePDFButton");
-        saveAsSinglePDFButton.addEventListener("click", () => {
-            const tables = document.querySelectorAll(".tabelageral");
+        document.addEventListener('DOMContentLoaded', function () {
+            const saveAsSinglePDFButton = document.getElementById("saveAsSinglePDFButton");
+            saveAsSinglePDFButton.addEventListener("click", () => {
+                // Certifique-se de que a biblioteca jsPDF foi carregada antes desta parte do código
+                const pdf = new jsPDF();
 
-            const pdf = new jsPDF();
-
-            tables.forEach((table, index) => {
-                if (index > 0) {
-                    pdf.addPage();
-                }
-
-                pdf.html(table, {
-                    callback: function () {
-                        if (index === tables.length - 1) {
-                            pdf.save('notas.pdf');
-                        }
+                tables.forEach((table, index) => {
+                    if (index > 0) {
+                        pdf.addPage();
                     }
+
+                    pdf.html(table, {
+                        callback: function () {
+                            if (index === tables.length - 1) {
+                                pdf.save('notas.pdf');
+                            }
+                        }
+                    });
                 });
             });
         });
