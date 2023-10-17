@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="/subsistemas/STYLES/estilos.css">
 
     <!-- Scripts de terceiros -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" onload="startApp()"></script>
     <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
 
 </head>
@@ -265,10 +265,10 @@
     <button id="SalvarPDF">Salvar como PDF</button>
 
     <script>
-        function salvarcomopdf() {
+        function startApp() {
             const salvarPDF = document.getElementById("SalvarPDF");
             salvarPDF.addEventListener("click", () => {
-                // Certifique-se de que a variável tables esteja definida ou passe como um argumento
+                // Se chegou aqui, a biblioteca jsPDF está carregada e pode ser usada.
                 const tables = document.querySelectorAll(".tabelageral");
 
                 const doc = new jsPDF({
@@ -291,7 +291,7 @@
             });
         };
 
-        salvarcomopdf(); // Chame a função para que ela seja ativada.
+        startApp(); // Chame a função para que ela seja ativada.
     </script>
 
     <style>
