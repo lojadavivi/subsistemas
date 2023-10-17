@@ -14,9 +14,9 @@
     <link rel="stylesheet" type="text/css" href="/subsistemas/STYLES/estilos.css">
 
     <!-- Scripts de terceiros -->
-    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.5/JsBarcode.all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 </head>
 
@@ -237,21 +237,14 @@
         // Função para criar o código de barras SVG
         function createBarcodeSVG(chaveNFe) {
             const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-            svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-            svg.setAttribute("width", "10cm"); // Largura máxima de 10cm
-            svg.setAttribute("height", "30"); // Altura
-
             const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-            rect.setAttribute("width", "100%");
-            rect.setAttribute("height", "100%");
-            rect.setAttribute("fill", "white");
             svg.appendChild(rect);
 
             JsBarcode(svg, chaveNFe, {
                 format: "CODE128",
-                lineColor: "#000",
+                lineColor: "#000000",
                 width: 1.28,
-                height: 30,
+                height: 25,
                 displayValue: false,
             });
 
