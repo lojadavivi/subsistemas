@@ -151,20 +151,17 @@
                 const table = document.createElement("table");
                 const headerRow1 = table.insertRow(0);
                 headerRow1.classList.add("centerrow")
-                headerRow1.classList.add("centerrow")
                 const headerCell1 = headerRow1.insertCell();
                 headerCell1.innerHTML = `DANFE SIMPLIFICADO - ETIQUETA | NFe N. ${nNF.textContent} | Série ${serie.textContent} | Tipo NFe: ${tpNF.textContent}`;
                 headerCell1.innerHTML = `DANFE SIMPLIFICADO - ETIQUETA | NFe N. ${nNF.textContent} | Série ${serie.textContent} | Tipo NFe: ${tpNF.textContent}`;
 
                 const row3 = table.insertRow(1);
                 row3.classList.add("centerrow")
-                row3.classList.add("centerrow")
                 const cell3 = row3.insertCell();
                 cell3.innerHTML = `${emitxNome.textContent} | CNPJ: ${emitCNPJ.textContent} | IE: ${emitIE.textContent}`;
                 cell3.innerHTML = `${emitxNome.textContent} | CNPJ: ${emitCNPJ.textContent} | IE: ${emitIE.textContent}`;
 
                 const row5 = table.insertRow(2);
-                row5.classList.add("centerrow")
                 row5.classList.add("centerrow")
                 const cell5 = row5.insertCell();
                 cell5.innerHTML = `${emitxLgr.textContent}, ${emitnro.textContent}, ${emitxBairro.textContent} - CEP: ${emitCEP.textContent} | ${emitxMun.textContent} - ${emitUF.textContent}`;
@@ -175,12 +172,10 @@
 
                 const row8 = table.insertRow(4);
                 row8.classList.add("centerrow")
-                row8.classList.add("centerrow")
                 const cell8 = row8.insertCell();
                 cell8.innerHTML = `${chNFe.textContent}`;
 
                 const row9 = table.insertRow(5);
-                row9.classList.add("centerrow")
                 row9.classList.add("centerrow")
                 const cell9 = row9.insertCell();
                 cell9.innerHTML = `PROTOCOLO: ${nProt.textContent} - ${formatarDataHora(dhRecbto)}`;
@@ -217,7 +212,6 @@
                 cell16.innerHTML = `Valor Total da NFe: R$ ${vPag.textContent}`;
 
                 const row17 = table.insertRow(13);
-                row17.classList.add("row17")
                 row17.classList.add("row17")
                 const cell17 = row17.insertCell();
                 cell17.innerHTML = `Informações complementares: ${infCpl.textContent}`;
@@ -278,7 +272,6 @@
             width: 100%;
             /* Para ocupar toda a largura da tabela */
         }
-
         .tabelaprodutos th,
         .tabelaprodutos td {
             border: 1px solid black;
@@ -286,15 +279,6 @@
             /* Ajuste o padding conforme necessário */
             text-align: left;
             /* Ajuste o alinhamento conforme necessário */
-        }
-        .centerrow {
-            text-align: center;
-        }
-        .row16 {
-            text-align: right;
-        }
-        .row17 {
-            font-family: "Roboto Regular";
         }
         .centerrow {
             text-align: center;
