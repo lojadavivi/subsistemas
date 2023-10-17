@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>XML para HTML</title>
+
+    <!-- Estilos padrão  CSS -->
+    <link rel="stylesheet" type="text/css" href="/subsistemas/STYLES/estilos.css">
 </head>
 
 <body>
@@ -117,7 +120,7 @@
                 const produtosTableHeader = produtosTable.createTHead();
                 const headerRow = produtosTableHeader.insertRow();
                 headerRow.innerHTML = `
-        <th>CÓDIGO</th>
+        <th style=width: 13ch;>CÓDIGO</th>
         <th>PRODUTO</th>
         <th>QTD</th>
         <th>$ UN</th>
@@ -136,7 +139,7 @@
 
                     const produtosTableRow = produtosTable.insertRow();
                     produtosTableRow.innerHTML = `
-        <td>${cEAN}</td>
+        <td style=width: 13ch;>${cEAN}</td>
         <td>${xProd}</td>
         <td>${qCom}</td>
         <td>R$ ${vUnCom}</td>
@@ -148,70 +151,58 @@
                 const table = document.createElement("table");
                 const headerRow1 = table.insertRow(0);
                 const headerCell1 = headerRow1.insertCell();
-                headerCell1.innerHTML = "DANFE SIMPLIFICADO - ETIQUETA";
+                headerCell1.innerHTML = `"DANFE SIMPLIFICADO - ETIQUETA | NFe N. ${nNF.textContent} | Série ${serie.textContent} | Tipo NFe: ${tpNF.textContent}"`;
 
-                const row2 = table.insertRow(1);
-                const cell2 = row2.insertCell();
-                cell2.innerHTML = `NFe N. ${nNF.textContent} | Série ${serie.textContent} | Tipo NFe: ${tpNF.textContent}`;
-
-                const row3 = table.insertRow(2);
+                const row3 = table.insertRow(1);
                 const cell3 = row3.insertCell();
-                cell3.innerHTML = emitxNome.textContent;
+                cell3.innerHTML = `emitxNome.textContent | CNPJ: ${emitCNPJ.textContent} | IE: ${emitIE.textContent}`;
 
-                const row4 = table.insertRow(3);
-                const cell4 = row4.insertCell();
-                cell4.innerHTML = `CNPJ: ${emitCNPJ.textContent} | IE: ${emitIE.textContent}`;
-
-                const row5 = table.insertRow(4);
+                const row5 = table.insertRow(2);
                 const cell5 = row5.insertCell();
-                cell5.innerHTML = `${emitxLgr.textContent}, ${emitnro.textContent}, ${emitxBairro.textContent}`;
+                cell5.innerHTML = `${emitxLgr.textContent}, ${emitnro.textContent}, ${emitxBairro.textContent} - CEP: ${emitCEP.textContent} | ${emitxMun.textContent} - ${emitUF.textContent}`;
 
-                const row6 = table.insertRow(5);
-                const cell6 = row6.insertCell();
-                cell6.innerHTML = `CEP: ${emitCEP.textContent} | ${emitxMun.textContent} - ${emitUF.textContent}`;
-
-                const row7 = table.insertRow(6);
+                const row7 = table.insertRow(3);
                 const cell7 = row7.insertCell();
                 cell7.appendChild(createBarcodeSVG(chNFe.textContent));
 
-                const row8 = table.insertRow(7);
+                const row8 = table.insertRow(4);
                 const cell8 = row8.insertCell();
                 cell8.innerHTML = `${chNFe.textContent}`;
 
-                const row9 = table.insertRow(8);
+                const row9 = table.insertRow(5);
                 const cell9 = row9.insertCell();
                 cell9.innerHTML = `PROTOCOLO: ${nProt.textContent} - ${formatarDataHora(dhRecbto)}`;
 
-                const row10 = table.insertRow(9);
+                const row10 = table.insertRow(6);
                 const cell10 = row10.insertCell();
                 cell10.innerHTML = `DESTINATÁRIO`;
 
-                const row11 = table.insertRow(10);
+                const row11 = table.insertRow(7);
                 const cell11 = row11.insertCell();
                 cell11.innerHTML = `${destxNome.textContent}`;
 
-                const row12 = table.insertRow(11);
+                const row12 = table.insertRow(8);
                 const cell12 = row12.insertCell();
                 cell12.innerHTML = `CNPJ/CPF: ${cpfCnpjString} | IE: ${destIE}`;
 
-                const row13 = table.insertRow(12);
+                const row13 = table.insertRow(9);
                 const cell13 = row13.insertCell();
                 cell13.innerHTML = `${destxLgr.textContent}, ${destnro.textContent}, ${destxBairro.textContent}`;
 
-                const row14 = table.insertRow(13);
+                const row14 = table.insertRow(10);
                 const cell14 = row14.insertCell();
                 cell14.innerHTML = `CEP: ${destCEP.textContent} | ${destxMun.textContent} - ${destUF.textContent}`;
 
-                const row15 = table.insertRow(14);
+                const row15 = table.insertRow(11);
                 const cell15 = row15.insertCell();
                 cell15.ColSpan = 6;
                 cell15.appendChild(produtosTable);
 
-                const row16 = table.insertRow(15);
+                const row16 = table.insertRow(12);
                 const cell16 = row16.insertCell();
                 cell16.innerHTML = `Valor Total da NFe: R$ ${vPag.textContent}`;
 
-                const row17 = table.insertRow(16);
+                const row17 = table.insertRow(13);
                 const cell17 = row17.insertCell();
                 cell17.innerHTML = `Informações complementares: ${infCpl.textContent}`;
 
@@ -224,7 +215,7 @@
             const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
             svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
             svg.setAttribute("width", "10cm"); // Largura máxima de 10cm
-            svg.setAttribute("height", "80"); // Altura
+            svg.setAttribute("height", "30"); // Altura
 
             const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
             rect.setAttribute("width", "100%");
@@ -235,8 +226,8 @@
             JsBarcode(svg, chaveNFe, {
                 format: "CODE128",
                 lineColor: "#000",
-                width: 1.2, // Largura máxima de 10cm
-                height: 40,
+                width: 1.4,
+                height: 30,
                 displayValue: false,
             });
 
@@ -250,22 +241,36 @@
 
     <style>
         .tabelageral {
+            background-color: #FFFFFF;
+            color: #000000;
             margin-top: 20px;
-            border: 1px solid #000;
-            /* Adiciona borda preta de 1px */
-            padding: 10px;
+            border: 1px solid #000000;
+            padding: 1px;
             max-width: 10cm;
-            /* Largura máxima de 10cm */
             max-height: 15cm;
-            /* Altura máxima de 15cm */
+            font-family: "Roboto Mono";
+            font-size: 7px;
+            font-weight: bold;
         }
 
-        /* Estilo para adicionar espaço entre as tabelas */
         .tabelageral+.tabelageral {
             margin-top: 40px;
-            /* Ajuste conforme necessário para controlar o espaçamento */
         }
 
+        .tabelaprodutos {
+            border-collapse: collapse;
+            width: 100%;
+            /* Para ocupar toda a largura da tabela */
+        }
+
+        .tabelaprodutos th,
+        .tabelaprodutos td {
+            border: 1px solid black;
+            padding: 0.5px;
+            /* Ajuste o padding conforme necessário */
+            text-align: left;
+            /* Ajuste o alinhamento conforme necessário */
+        }
     </style>
 </body>
 
