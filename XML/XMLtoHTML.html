@@ -269,7 +269,7 @@
             const saveAsSinglePDFButton = document.getElementById("saveAsSinglePDFButton");
             saveAsSinglePDFButton.addEventListener("click", () => {
 
-                const doc = new jsPDF({
+                const doc = new jspdf({
                     orientation: "portrait",
                     unit: "mm",
                     format: [100, 150]
@@ -288,8 +288,6 @@
                 });
             });
         });
-    </script>
-
     </script>
 
     <style>
