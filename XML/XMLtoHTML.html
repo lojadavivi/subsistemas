@@ -272,7 +272,7 @@
                 // Se chegou aqui, a biblioteca jsPDF está carregada e pode ser usada.
                 const tables = document.querySelectorAll(".tabelageral");
 
-                const doc = new jsPDF({
+                const doc = new window.jspdf.jsPDF({
                     orientation: "portrait",
                     unit: "mm",
                     format: [100, 150]
