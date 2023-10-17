@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="/subsistemas/STYLES/estilos.css">
 
     <!-- Scripts de terceiros -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.5/JsBarcode.all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bwip-js/4.1.1/bwip-js-min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.js"></script>
 
@@ -183,7 +183,8 @@
 
                 const row7 = table.insertRow(3);
                 const cell7 = row7.insertCell();
-                cell7.appendChild(createBarcodeSVG(chNFe.textContent));
+                const barcodeCanvas = createBarcodeCanvas(chNFe.textContent);
+                cell7.appendChild(barcodeCanvas);
 
                 const row8 = table.insertRow(4);
                 row8.classList.add("centerrow")
@@ -234,22 +235,27 @@
             }
         }
 
-        // Função para criar o código de barras SVG
-        function createBarcodeSVG(chaveNFe) {
-            const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-            const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-            svg.appendChild(rect);
+        // Função para criar o código de barras em um elemento de canvas usando bwip-js
+        function createBarcodeCanvas(chaveNFe) {
+            // Crie um elemento de canvas para exibir o código de barras
+            const barcodeCanvas = document.createElement("canvas");
 
-            JsBarcode(svg, chaveNFe, {
-                format: "CODE128",
-                lineColor: "#000000",
-                width: 1.28,
-                height: 25,
-                displayValue: false,
+            // Use bwip-js para gerar o código de barras
+            bwipjs.toCanvas(barcodeCanvas, {
+                bcid: 'code128',  // Especifique o tipo de simbologia (Code 128 neste caso)
+                text: chaveNFe,   // O valor do código de barras
+                scale: 1.8,       // Ajuste o tamanho do código de barras (você pode alterar o valor conforme necessário)
+            }, function (err, cvs) {
+                if (err) {
+                    console.error(err);
+                    return;
+                }
+                // O código de barras foi gerado no elemento de canvas
             });
 
-            return svg;
+            return barcodeCanvas;
         }
+
 
         // Ouvinte de evento do input de arquivos
         const xmlFilesInput = document.getElementById("xmlFilesInput");
