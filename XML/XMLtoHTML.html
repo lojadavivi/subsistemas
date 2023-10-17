@@ -12,6 +12,12 @@
 
     <!-- Estilos padrão  CSS -->
     <link rel="stylesheet" type="text/css" href="/subsistemas/STYLES/estilos.css">
+
+    <!-- Scripts de terceiros -->
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
 </head>
 
 <body>
@@ -28,10 +34,6 @@
 
     <!-- Contêiner para as tabelas geradas a partir dos arquivos XML -->
     <div id="tablesContainer"></div>
-
-    <!-- Scripts de terceiros para código de barras e formatação de data -->
-    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
     <script>
         // Função para carregar e processar os arquivos XML
@@ -259,6 +261,56 @@
         // Ouvinte de evento do input de arquivos
         const xmlFilesInput = document.getElementById("xmlFilesInput");
         xmlFilesInput.addEventListener("change", handleXMLFiles);
+    </script>
+
+    <button id="saveAsPDFButton">Salvar como PDF</button>
+
+
+    <script>
+        const saveAsPDFButton = document.getElementById("saveAsPDFButton");
+        saveAsPDFButton.addEventListener("click", () => {
+            const tables = document.querySelectorAll(".tabelageral");
+            const promises = [];
+
+            tables.forEach((table, index) => {
+                const tableClone = table.cloneNode(true);
+                const options = {
+                    margin: 10,
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'mm', format: [100, 150], orientation: 'portrait' } // Defina o formato como [100, 150] para 10x15cm
+                };
+
+                const promise = html2pdf()
+                    .from(tableClone)
+                    .set(options)
+                    .outputPdf()
+                    .then(pdfData => {
+                        const pdfBlob = new Blob([pdfData], { type: "application/pdf" });
+                        const pdfUrl = URL.createObjectURL(pdfBlob);
+                        const a = document.createElement("a");
+                        a.href = pdfUrl;
+                        a.download = `table_${index + 1}.pdf`;
+                        a.style.display = "none";
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                    });
+
+                promises.push(promise);
+            });
+
+            // Wait for all PDFs to be generated before providing the download links
+            Promise.all(promises).then(() => {
+                alert("PDFs gerados com sucesso e prontos para download.");
+            });
+        });
+
+
+        // Wait for all PDFs to be generated before providing the download links
+        Promise.all(promises).then(() => {
+            alert("PDFs gerados com sucesso e prontos para download.");
+        });
     </script>
 
     <style>
