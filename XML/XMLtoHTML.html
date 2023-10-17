@@ -3,13 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>XML para HTML</title>
+    <!-- Definição de ícones da página -->
+    <link rel="icon" href="STYLES/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="STYLES/icon.png" type="image/x-icon">
+
+    <!-- Título da página -->
+    <title>DANFE</title>
 
     <!-- Estilos padrão  CSS -->
     <link rel="stylesheet" type="text/css" href="/subsistemas/STYLES/estilos.css">
 </head>
 
 <body>
+    <!-- Título principal -->
+    <h1 class="header-with-image background-color-change" style="background-color: #A37774;">
+        <span class="header-text"><a href="/subsistemas/index.html" class="button-back" style="margin-left: 5%;">⬅️
+                MENU</a></span>
+        <span class="header-text">Gerador de DANFE Simplificada</span>
+        <img class="header-image" src="/subsistemas/STYLES/icon.png">
+    </h1>
+
     <!-- Input para selecionar arquivos XML -->
     <input type="file" id="xmlFilesInput" accept=".xml" multiple>
 
@@ -271,6 +284,7 @@
             width: 100%;
             /* Para ocupar toda a largura da tabela */
         }
+
         .tabelaprodutos th,
         .tabelaprodutos td {
             border: 1px solid black;
@@ -279,12 +293,15 @@
             text-align: left;
             /* Ajuste o alinhamento conforme necessário */
         }
+
         .centerrow {
             text-align: center;
         }
+
         .row16 {
             text-align: right;
         }
+
         .row17 {
             font-family: "Roboto Regular";
         }
