@@ -263,7 +263,7 @@
         xmlFilesInput.addEventListener("change", handleXMLFiles);
     </script>
 
-    <button id="saveAsPDFButton">Salvar como PDF</button>
+    <button id="saveAsSinglePDFButton">Salvar como PDF</button>
 
 
     <script>
@@ -273,7 +273,7 @@
 
             const options = {
                 margin: 10,
-                image: { type: 'jpeg', quality: 0.98 },
+                image: { type: 'jpeg', quality: 1 },
                 html2canvas: { scale: 2 },
                 jsPDF: { unit: 'mm', format: [100, 150], orientation: 'portrait' }
             };
