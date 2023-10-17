@@ -245,7 +245,7 @@
             // Use bwip-js para gerar o código de barras
             bwipjs.toCanvas(barcodeCanvas, {
                 bcid: 'code128',  // Especifique o tipo de simbologia (Code 128 neste caso)
-                text: chaveNFe,   // O valor do código de barras
+                text: chaveNFe,   // O valor do código de barras (a chave da NFe)
                 scale: 1.8,       // Ajuste o tamanho do código de barras (você pode alterar o valor conforme necessário)
             }, function (err, cvs) {
                 if (err) {
