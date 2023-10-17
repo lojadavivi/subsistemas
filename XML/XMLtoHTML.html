@@ -15,9 +15,8 @@
 
     <!-- Scripts de terceiros -->
     <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    
+
 </head>
 
 <body>
@@ -273,8 +272,8 @@
             const options = {
                 margin: 10,
                 image: { type: 'jpeg', quality: 1 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'mm', format: [100, 150], orientation: 'portrait' }
+                format: [100, 150], // Ajuste o formato do PDF conforme necessário
+                orientation: 'portrait' // Ajuste a orientação do PDF conforme necessário
             };
 
             const pdf = new jsPDF(options);
@@ -291,14 +290,14 @@
 
             const promises = tables.map((table, index) => {
                 return loadTable(table, index).then(({ img, index }) => {
-                    pdf.addImage(img, "JPEG", 0, 0, 100, 150);
+                    pdf.addImage(img, 'JPEG', 0, 0); // Use 'JPEG' como formato de imagem
                     if (index < tables.length - 1) {
-                        pdf.addPage([100, 150], 'portrait');
+                        pdf.addPage(); // Adicione uma nova página
                     }
                 });
             });
 
-            // Wait for all tables to be added to the PDF
+            // Aguarde a conclusão de todas as tabelas a serem adicionadas ao PDF
             Promise.all(promises).then(() => {
                 pdf.save("all_tables.pdf");
             });
