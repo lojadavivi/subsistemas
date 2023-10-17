@@ -267,50 +267,45 @@
 
 
     <script>
-        const saveAsPDFButton = document.getElementById("saveAsPDFButton");
-        saveAsPDFButton.addEventListener("click", () => {
+        const saveAsSinglePDFButton = document.getElementById("saveAsSinglePDFButton");
+        saveAsSinglePDFButton.addEventListener("click", () => {
             const tables = document.querySelectorAll(".tabelageral");
-            const promises = [];
 
-            tables.forEach((table, index) => {
-                const tableClone = table.cloneNode(true);
-                const options = {
-                    margin: 10,
-                    image: { type: 'jpeg', quality: 0.98 },
-                    html2canvas: { scale: 2 },
-                    jsPDF: { unit: 'mm', format: [100, 150], orientation: 'portrait' } // Defina o formato como [100, 150] para 10x15cm
-                };
+            const options = {
+                margin: 10,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: [100, 150], orientation: 'portrait' }
+            };
 
-                const promise = html2pdf()
-                    .from(tableClone)
-                    .set(options)
-                    .outputPdf()
-                    .then(pdfData => {
-                        const pdfBlob = new Blob([pdfData], { type: "application/pdf" });
-                        const pdfUrl = URL.createObjectURL(pdfBlob);
-                        const a = document.createElement("a");
-                        a.href = pdfUrl;
-                        a.download = `table_${index + 1}.pdf`;
-                        a.style.display = "none";
-                        document.body.appendChild(a);
-                        a.click();
-                        document.body.removeChild(a);
-                    });
+            const pdf = new jsPDF(options);
 
-                promises.push(promise);
+            const loadTable = (table, index) => {
+                return new Promise((resolve) => {
+                    const img = new Image();
+                    img.src = "data:image/svg+xml," + encodeURIComponent(table.outerHTML);
+                    img.onload = () => {
+                        resolve({ img, index });
+                    };
+                });
+            };
+
+            const promises = tables.map((table, index) => {
+                return loadTable(table, index).then(({ img, index }) => {
+                    pdf.addImage(img, "JPEG", 0, 0, 100, 150);
+                    if (index < tables.length - 1) {
+                        pdf.addPage([100, 150], 'portrait');
+                    }
+                });
             });
 
-            // Wait for all PDFs to be generated before providing the download links
+            // Wait for all tables to be added to the PDF
             Promise.all(promises).then(() => {
-                alert("PDFs gerados com sucesso e prontos para download.");
+                pdf.save("all_tables.pdf");
             });
         });
 
 
-        // Wait for all PDFs to be generated before providing the download links
-        Promise.all(promises).then(() => {
-            alert("PDFs gerados com sucesso e prontos para download.");
-        });
     </script>
 
     <style>
