@@ -35,6 +35,8 @@
     <!-- Contêiner para as tabelas geradas a partir dos arquivos XML -->
     <div id="tablesContainer"></div>
 
+    <button id="SalvarPDF">Salvar como PDF</button>
+
     <script>
         // Função para carregar e processar os arquivos XML
         function handleXMLFiles(event) {
@@ -256,15 +258,11 @@
             return barcodeCanvas;
         }
 
-
         // Ouvinte de evento do input de arquivos
         const xmlFilesInput = document.getElementById("xmlFilesInput");
         xmlFilesInput.addEventListener("change", handleXMLFiles);
-    </script>
 
-    <button id="SalvarPDF">Salvar como PDF</button>
-
-    <script>
+        // Função para iniciar o aplicativo
         function startApp() {
             const salvarPDF = document.getElementById("SalvarPDF");
             salvarPDF.addEventListener("click", () => {
@@ -289,7 +287,7 @@
                     });
                 });
             });
-        };
+        }
 
         startApp(); // Chame a função para que ela seja ativada.
     </script>
