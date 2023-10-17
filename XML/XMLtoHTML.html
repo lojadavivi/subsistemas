@@ -265,22 +265,24 @@
     <button id="saveAsSinglePDFButton">Salvar como PDF</button>
 
     <script>
-        const saveAsSinglePDFButton = document.getElementById("saveAsSinglePDFButton");
-        saveAsSinglePDFButton.addEventListener("click", () => {
-            const tables = document.querySelectorAll(".tabelageral");
+        document.addEventListener('DOMContentLoaded', function () {
+            const saveAsSinglePDFButton = document.getElementById("saveAsSinglePDFButton");
+            saveAsSinglePDFButton.addEventListener("click", () => {
+                const tables = document.querySelectorAll(".tabelageral");
 
-            const pdfOptions = {
-                margin: 10,
-                filename: 'notas.pdf', // Nome do arquivo PDF
-                image: { type: 'jpeg', quality: 1 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'mm', format: [100, 150], orientation: 'portrait' }
-            };
+                const pdfOptions = {
+                    margin: 10,
+                    filename: 'notas.pdf', // Nome do arquivo PDF
+                    image: { type: 'jpeg', quality: 1 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'mm', format: [100, 150], orientation: 'portrait' }
+                };
 
-            const pdfPromise = html2pdf().from(tables).set(pdfOptions).outputPdf();
+                const pdfPromise = html2pdf().from(tables).set(pdfOptions).outputPdf();
 
-            pdfPromise.then((pdf) => {
-                pdf.save();
+                pdfPromise.then((pdf) => {
+                    pdf.save();
+                });
             });
         });
     </script>
