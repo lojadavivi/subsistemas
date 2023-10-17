@@ -15,7 +15,7 @@
 
     <!-- Scripts de terceiros -->
     <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 </head>
 
@@ -269,40 +269,20 @@
         saveAsSinglePDFButton.addEventListener("click", () => {
             const tables = document.querySelectorAll(".tabelageral");
 
-            const options = {
+            const pdfOptions = {
                 margin: 10,
+                filename: 'notas.pdf', // Nome do arquivo PDF
                 image: { type: 'jpeg', quality: 1 },
-                format: [100, 150], // Ajuste o formato do PDF conforme necessário
-                orientation: 'portrait' // Ajuste a orientação do PDF conforme necessário
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: [100, 150], orientation: 'portrait' }
             };
 
-            const pdf = new jsPDF(options);
+            const pdfPromise = html2pdf().from(tables).set(pdfOptions).outputPdf();
 
-            const loadTable = (table, index) => {
-                return new Promise((resolve) => {
-                    const img = new Image();
-                    img.src = "data:image/svg+xml," + encodeURIComponent(table.outerHTML);
-                    img.onload = () => {
-                        resolve({ img, index });
-                    };
-                });
-            };
-
-            const promises = tables.map((table, index) => {
-                return loadTable(table, index).then(({ img, index }) => {
-                    pdf.addImage(img, 'JPEG', 0, 0); // Use 'JPEG' como formato de imagem
-                    if (index < tables.length - 1) {
-                        pdf.addPage(); // Adicione uma nova página
-                    }
-                });
-            });
-
-            // Aguarde a conclusão de todas as tabelas a serem adicionadas ao PDF
-            Promise.all(promises).then(() => {
-                pdf.save("notas.pdf");
+            pdfPromise.then((pdf) => {
+                pdf.save();
             });
         });
-
     </script>
 
     <style>
