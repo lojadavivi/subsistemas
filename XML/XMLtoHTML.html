@@ -262,14 +262,16 @@
         xmlFilesInput.addEventListener("change", handleXMLFiles);
     </script>
 
-    <button id="saveAsSinglePDFButton">Salvar como PDF</button>
+    <button id="SalvarPDF">Salvar como PDF</button>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const saveAsSinglePDFButton = document.getElementById("saveAsSinglePDFButton");
-            saveAsSinglePDFButton.addEventListener("click", () => {
+        function salvarcomopdf() {
+            const salvarPDF = document.getElementById("SalvarPDF");
+            salvarPDF.addEventListener("click", () => {
+                // Certifique-se de que a variável tables esteja definida ou passe como um argumento
+                const tables = document.querySelectorAll(".tabelageral");
 
-                const doc = new jspdf({
+                const doc = new jsPDF({
                     orientation: "portrait",
                     unit: "mm",
                     format: [100, 150]
@@ -287,7 +289,9 @@
                     });
                 });
             });
-        });
+        };
+
+        salvarcomopdf(); // Chame a função para que ela seja ativada.
     </script>
 
     <style>
