@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <!-- Definição de ícones da página -->
-    <link rel="icon" href="STYLES/favicon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="STYLES/icon.png" type="image/x-icon">
+    <link rel="icon" href="/subsistemas/STYLES/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/subsistemas/STYLES/icon.png" type="image/x-icon">
 
     <!-- Título da página -->
     <title>DANFE</title>
@@ -240,7 +240,7 @@
 
                 // Criar a imagem e adicioná-la à nova linha
                 const qrCodeImage = document.createElement("img");
-                qrCodeImage.src = "STYLES/logo_vivi_qr_code.png";
+                qrCodeImage.src = "/subsistemas/STYLES/logo_vivi_qr_code.png";
                 cell18.style.textAlign = "center";
                 cell18.appendChild(qrCodeImage);
 
@@ -273,7 +273,7 @@
         function startApp() {
             const salvarPDF = document.getElementById("SalvarPDF");
             const gifImage = new Image();
-            gifImage.src = "STYLES/loading.gif";
+            gifImage.src = "/subsistemas/STYLES/loading.gif";
 
             salvarPDF.addEventListener("click", () => {
                 // Exibe o GIF no centro da página
