@@ -284,3 +284,35 @@ ESTOQUES
     </tbody>
 </table>
 </details>
+<details>
+<summary>
+DANFE SIMPLIFICADO
+</summary>
+<table>
+    <thead>
+        <tr style="background-color: #333843; color: aquamarine;">
+            <th style="width: 12ch;">VERSÃO</th>
+            <th style="text-align: left; padding: 0 2ch">CHANGELOG</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0.1.0<br>18/10/2023</td>
+            <td>
+                <ul>
+                    <li>Versão ALPHA funcional.</li>
+                    <li>Adicionado console lateral para acompanhar o progresso.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>0.0.1<br>17/10/2023</td>
+            <td>
+                <ul>
+                    <li>Desenvolvimento inicial do código, disponibilizando para testes.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</details>
