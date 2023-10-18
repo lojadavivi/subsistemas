@@ -137,11 +137,11 @@
                 const produtosTableHeader = produtosTable.createTHead();
                 const headerRow = produtosTableHeader.insertRow();
                 headerRow.innerHTML = `
-        <th style=width: 13ch;>CÓDIGO</th>
-        <th>PRODUTO</th>
-        <th>QTD</th>
-        <th>$ UN</th>
-        <th>$ TOTAL
+        <th style="width: 13ch; text-align: center;">CÓDIGO</th>
+        <th style="text-align: center;">PRODUTO</th>
+        <th style="text-align: center;">QTD</th>
+        <th style="width: 10ch; text-align: center;">$ UN</th>
+        <th style="width: 10ch; text-align: center;">$ TOTAL
     `;
 
                 // Linhas da tabela de produtos
@@ -156,18 +156,18 @@
 
                     const produtosTableRow = produtosTable.insertRow();
                     produtosTableRow.innerHTML = `
-        <td style=width: 13ch;>${cEAN}</td>
+        <td style="width: 13ch;">${cEAN}</td>
         <td>${xProd}</td>
-        <td>${qCom}</td>
-        <td>R$ ${vUnCom}</td>
-        <td>R$ ${vProd}</td>
+        <td style="text-align: center;">${qCom}</td>
+        <td style="width: 10ch; text-align: center;">R$ ${vUnCom}</td>
+        <td style="width: 10ch; text-align: center;">R$ ${vProd}</td>
     `;
                 });
 
                 // Tabela final que inclui os produtos e as informações
                 const table = document.createElement("table");
                 const headerRow1 = table.insertRow(0);
-                headerRow1.classList.add("centerrow")
+                headerRow1.classList.add("centerrowgrande")
                 const headerCell1 = headerRow1.insertCell();
                 headerCell1.innerHTML = `DANFE SIMPLIFICADO - ETIQUETA<br>NFe N. ${nNF.textContent} | Série ${serie.textContent} | Tipo NFe: ${tpNF.textContent}`;
 
@@ -198,22 +198,27 @@
                 cell9.innerHTML = `PROTOCOLO: ${nProt.textContent} - ${formatarDataHora(dhRecbto)}`;
 
                 const row10 = table.insertRow(6);
+                row10.classList.add("centerrow")
                 const cell10 = row10.insertCell();
                 cell10.innerHTML = `<br>DESTINATÁRIO`;
 
                 const row11 = table.insertRow(7);
+                row11.classList.add("centerrow")
                 const cell11 = row11.insertCell();
                 cell11.innerHTML = `${destxNome.textContent}`;
 
                 const row12 = table.insertRow(8);
+                row12.classList.add("centerrow")
                 const cell12 = row12.insertCell();
                 cell12.innerHTML = `CNPJ/CPF: ${cpfCnpjString} | IE: ${destIE}`;
 
                 const row13 = table.insertRow(9);
+                row13.classList.add("centerrow")
                 const cell13 = row13.insertCell();
                 cell13.innerHTML = `${destxLgr.textContent}, ${destnro.textContent}, ${destxBairro.textContent}`;
 
                 const row14 = table.insertRow(10);
+                row14.classList.add("centerrow")
                 const cell14 = row14.insertCell();
                 cell14.innerHTML = `CEP: ${destCEP.textContent} | ${destxMun.textContent} - ${destUF.textContent}`;
 
@@ -312,7 +317,7 @@
             width: 395mm;
             height: 595mm;
             font-family: "Roboto Mono";
-            font-size: 30px;
+            font-size: 40px;
             font-weight: bold;
         }
 
@@ -328,16 +333,21 @@
         .tabelaprodutos th,
         .tabelaprodutos td {
             border: 2px solid black;
-            padding: 10px;
+            padding: 5px;
             text-align: left;
         }
 
-        .centerrow {
+        .centerrow, .centerrowgrande {
             text-align: center;
+        }
+
+        .centerrowgrande {
+            font-size: 80px;
         }
 
         .row16 {
             text-align: right;
+            font-size: 80px;
         }
 
         .row17 {
