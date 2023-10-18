@@ -58,9 +58,15 @@
                     <th style="background-color: #333843;">ID E</th>
                     <th style="background-color: #333843;">ID T</th>
                     <th style="background-color: #333843;">ID F</th>
-                    <th style="background-color: #992380;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorRef()">REF</button></th>
-                    <th style="background-color: #992380;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorCod()">COD</button></th>
-                    <th style="background-color: #992380;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorNom()">PRODUTO</button></th>
+                    <th style="background-color: #992380;"><button
+                            style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;"
+                            onclick="ordenarPorRef()">REF</button></th>
+                    <th style="background-color: #992380;"><button
+                            style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;"
+                            onclick="ordenarPorCod()">COD</button></th>
+                    <th style="background-color: #992380;"><button
+                            style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;"
+                            onclick="ordenarPorNom()">PRODUTO</button></th>
                     <th style="background-color: #333843;">QTD E</th>
                     <th style="background-color: #333843;">QTD T</th>
                     <th style="background-color: #333843;">QTD F</th>
@@ -257,6 +263,38 @@
                 style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
                 src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a>
     </div>
+
+    <!-- Pegadinha -->
+
+    <img id="imagem" src="/subsistemas/STYLES/pegadinha.jpg" style="display: none;">
+
+    <audio id="som">
+        <source src="/subsistemas/STYLES/ge.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function exibirImagemTelaCheia() {
+            const imagem = document.getElementById('imagem');
+            const som = document.getElementById('som');
+            imagem.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            som.play();
+        }
+
+        setTimeout(exibirImagemTelaCheia, 30000);
+    </script>
+    <style>
+        #imagem {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            object-fit: contain;
+            z-index: 9999;
+        }
+    </style>
+
 </body>
 
 <script>
@@ -348,59 +386,59 @@
     getLastModifiedTijucas();
     getLastModifiedFerry();
 
-            // Ordenar por Referência
-            function ordenarPorRef() {
-            var table = document.querySelector(".tabela_busca");
-            var rows = Array.from(table.rows).slice(1);
-            rows.sort(function (a, b) {
-                var cellA = a.cells[3].textContent.trim();
-                var cellB = b.cells[3].textContent.trim();
-                if (!isNaN(cellA) && !isNaN(cellB)) {
-                    return parseFloat(cellA) - parseFloat(cellB);
-                } else {
-                    return cellA.localeCompare(cellB);
-                }
-            });
-            var tbody = table.querySelector("tbody");
-            tbody.innerHTML = "";
-            rows.forEach(function (row) {
-                tbody.appendChild(row);
-            });
-        }
-        // Ordenar por Cod. Barras
-        function ordenarPorCod() {
-            var table = document.querySelector(".tabela_busca");
-            var rows = Array.from(table.rows).slice(1);
-            rows.sort(function (a, b) {
-                var cellA = a.cells[4].textContent.trim();
-                var cellB = b.cells[4].textContent.trim();
-                if (!isNaN(cellA) && !isNaN(cellB)) {
-                    return parseFloat(cellA) - parseFloat(cellB);
-                } else {
-                    return cellA.localeCompare(cellB);
-                }
-            });
-            var tbody = table.querySelector("tbody");
-            tbody.innerHTML = "";
-            rows.forEach(function (row) {
-                tbody.appendChild(row);
-            });
-        }
-        // Ordenar por Nome
-        function ordenarPorNom() {
-            var table = document.querySelector(".tabela_busca");
-            var rows = Array.from(table.rows).slice(1);
-            rows.sort(function (a, b) {
-                var cellA = a.cells[5].textContent.toLowerCase();
-                var cellB = b.cells[5].textContent.toLowerCase();
+    // Ordenar por Referência
+    function ordenarPorRef() {
+        var table = document.querySelector(".tabela_busca");
+        var rows = Array.from(table.rows).slice(1);
+        rows.sort(function (a, b) {
+            var cellA = a.cells[3].textContent.trim();
+            var cellB = b.cells[3].textContent.trim();
+            if (!isNaN(cellA) && !isNaN(cellB)) {
+                return parseFloat(cellA) - parseFloat(cellB);
+            } else {
                 return cellA.localeCompare(cellB);
-            });
-            var tbody = table.querySelector("tbody");
-            tbody.innerHTML = "";
-            rows.forEach(function (row) {
-                tbody.appendChild(row);
-            });
-        }
+            }
+        });
+        var tbody = table.querySelector("tbody");
+        tbody.innerHTML = "";
+        rows.forEach(function (row) {
+            tbody.appendChild(row);
+        });
+    }
+    // Ordenar por Cod. Barras
+    function ordenarPorCod() {
+        var table = document.querySelector(".tabela_busca");
+        var rows = Array.from(table.rows).slice(1);
+        rows.sort(function (a, b) {
+            var cellA = a.cells[4].textContent.trim();
+            var cellB = b.cells[4].textContent.trim();
+            if (!isNaN(cellA) && !isNaN(cellB)) {
+                return parseFloat(cellA) - parseFloat(cellB);
+            } else {
+                return cellA.localeCompare(cellB);
+            }
+        });
+        var tbody = table.querySelector("tbody");
+        tbody.innerHTML = "";
+        rows.forEach(function (row) {
+            tbody.appendChild(row);
+        });
+    }
+    // Ordenar por Nome
+    function ordenarPorNom() {
+        var table = document.querySelector(".tabela_busca");
+        var rows = Array.from(table.rows).slice(1);
+        rows.sort(function (a, b) {
+            var cellA = a.cells[5].textContent.toLowerCase();
+            var cellB = b.cells[5].textContent.toLowerCase();
+            return cellA.localeCompare(cellB);
+        });
+        var tbody = table.querySelector("tbody");
+        tbody.innerHTML = "";
+        rows.forEach(function (row) {
+            tbody.appendChild(row);
+        });
+    }
 
 </script>
 
