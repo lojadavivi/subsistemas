@@ -264,37 +264,6 @@
                 src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a>
     </div>
 
-    <!-- Pegadinha -->
-
-    <img id="imagem" src="/subsistemas/STYLES/pegadinha.jpg" style="display: none;">
-
-    <audio id="som">
-        <source src="/subsistemas/STYLES/ge.mp3" type="audio/mpeg">
-    </audio>
-
-    <script>
-        function exibirImagemTelaCheia() {
-            const imagem = document.getElementById('imagem');
-            const som = document.getElementById('som');
-            imagem.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            som.play();
-        }
-
-        setTimeout(exibirImagemTelaCheia, 10000);
-    </script>
-    <style>
-        #imagem {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            object-fit: contain;
-            z-index: 9999;
-        }
-    </style>
-
 </body>
 
 <script>
