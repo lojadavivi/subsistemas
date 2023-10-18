@@ -169,14 +169,12 @@
                 const headerRow1 = table.insertRow(0);
                 headerRow1.classList.add("centerrow")
                 const headerCell1 = headerRow1.insertCell();
-                headerCell1.innerHTML = `DANFE SIMPLIFICADO - ETIQUETA | NFe N. ${nNF.textContent} | Série ${serie.textContent} | Tipo NFe: ${tpNF.textContent}`;
-                headerCell1.innerHTML = `DANFE SIMPLIFICADO - ETIQUETA | NFe N. ${nNF.textContent} | Série ${serie.textContent} | Tipo NFe: ${tpNF.textContent}`;
+                headerCell1.innerHTML = `DANFE SIMPLIFICADO - ETIQUETA<br>NFe N. ${nNF.textContent} | Série ${serie.textContent} | Tipo NFe: ${tpNF.textContent}`;
 
                 const row3 = table.insertRow(1);
                 row3.classList.add("centerrow")
                 const cell3 = row3.insertCell();
-                cell3.innerHTML = `${emitxNome.textContent} | CNPJ: ${emitCNPJ.textContent} | IE: ${emitIE.textContent}`;
-                cell3.innerHTML = `${emitxNome.textContent} | CNPJ: ${emitCNPJ.textContent} | IE: ${emitIE.textContent}`;
+                cell3.innerHTML = `<br>${emitxNome.textContent} | CNPJ: ${emitCNPJ.textContent} | IE: ${emitIE.textContent}`;
 
                 const row5 = table.insertRow(2);
                 row5.classList.add("centerrow")
@@ -201,7 +199,7 @@
 
                 const row10 = table.insertRow(6);
                 const cell10 = row10.insertCell();
-                cell10.innerHTML = `DESTINATÁRIO`;
+                cell10.innerHTML = `<br>DESTINATÁRIO`;
 
                 const row11 = table.insertRow(7);
                 const cell11 = row11.insertCell();
@@ -232,7 +230,7 @@
                 const row17 = table.insertRow(13);
                 row17.classList.add("row17")
                 const cell17 = row17.insertCell();
-                cell17.innerHTML = `Informações complementares: ${infCpl.textContent}`;
+                cell17.innerHTML = `<br>Informações complementares: ${infCpl.textContent}`;
 
                 return table.outerHTML;
             }
