@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="/subsistemas/STYLES/estilos.css">
 
     <!-- Scripts de terceiros -->
-    <script src="https://cdn.jsdelivr.net/jsbarcode/3.11.0/JsBarcode.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.5/JsBarcode.all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.js"></script>
 
@@ -238,15 +238,16 @@
         }
 
         // Função para criar o código de barras em uma imagem e adicioná-lo à tabela
-        function createBarcodeImage(chaveNFe) {
+        function createBarcodeImage(chNFe) {
             // Crie um elemento de imagem para exibir o código de barras
             const barcodeImage = new Image();
 
             // Use JsBarcode para gerar o código de barras
-            JsBarcode(barcodeImage, chaveNFe, {
+            JsBarcode(barcodeImage, chNFe, {
                 format: "CODE128",
-                width: 1.3,
+                width: 1.2,
                 height: 40,
+                displayValue: false,
             });
 
             return barcodeImage;
