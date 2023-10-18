@@ -262,7 +262,6 @@
         function startApp() {
             const salvarPDF = document.getElementById("SalvarPDF");
             salvarPDF.addEventListener("click", () => {
-                // Se chegou aqui, a biblioteca jsPDF está carregada e pode ser usada.
                 const tables = document.querySelectorAll(".tabelageral");
 
                 const doc = new window.jspdf.jsPDF({
@@ -271,28 +270,44 @@
                     format: [100, 150]
                 });
 
-                tables.forEach((table, index) => {
-                    if (index > 0) {
-                        doc.addPage();
-                    }
-
-                    doc.html(table, {
-                        callback: function () {
-                            doc.save('notas.pdf');
+                const generatePDF = (index) => {
+                    if (index < tables.length) {
+                        if (index > 0) {
+                            doc.addPage();
                         }
-                    });
-                });
+
+                        const table = tables[index];
+
+                        // Use html2canvas to capture the content of the table as an image
+                        html2canvas(table).then((canvas) => {
+                            const imgData = canvas.toDataURL('image/jpeg');
+
+                            // Add the image to the PDF
+                            doc.addImage(imgData, 'JPEG', 0, 0); // You may need to adjust the position (10, 10) as per your layout.
+
+                            // Call generatePDF recursively for the next table
+                            generatePDF(index + 1);
+                        });
+                    } else {
+                        // Save the PDF when all tables are processed
+                        doc.save('notas.pdf');
+                    }
+                };
+
+                // Start generating the PDF from the first table
+                generatePDF(0);
             });
         }
 
-        startApp(); // Chame a função para que ela seja ativada.
+        startApp();
+
     </script>
 
     <style>
         .tabelageral {
             background-color: #FFFFFF;
             color: #000000;
-            margin-top: 20px;
+            margin-top: 1px;
             border: 1px solid #000000;
             padding: 1px;
             width: 10cm;
