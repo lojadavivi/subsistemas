@@ -281,7 +281,13 @@
             const consoleOutput = document.getElementById("console-output");
 
             salvarPDF.addEventListener("click", () => {
-                consolePanel.style.display = "block"; // Exibe o painel de console
+                consolePanel.style.display = "block";
+
+                console.log = function (message) {
+                    const logLine = document.createElement("div");
+                    logLine.textContent = message;
+                    consoleOutput.appendChild(logLine);
+                };
 
                 const tables = document.querySelectorAll(".tabelageral");
 
