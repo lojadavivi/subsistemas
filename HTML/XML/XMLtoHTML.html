@@ -30,8 +30,11 @@
     </h1>
 
     <!-- Input para selecionar arquivos XML e salvar -->
-    <input type="file" id="xmlFilesInput" accept=".xml" multiple>
-    <button id="SalvarPDF">Salvar como PDF</button>
+    <label for="xmlFilesInput" class="custom-file-upload">
+
+    </label>
+    <input class="botaoxml" type="file" id="xmlFilesInput" accept=".xml" multiple>
+        <button class="botaoxml" id="SalvarPDF">Salvar como PDF</button>
 
     <!-- Contêiner para as tabelas geradas a partir dos arquivos XML -->
     <div id="tablesContainer"></div>
@@ -150,16 +153,16 @@
                     const cEAN = produto.querySelector("cEAN").textContent;
                     const xProd = produto.querySelector("xProd").textContent;
                     const qCom = parseInt(produto.querySelector("qCom").textContent);
-                    const vUnCom = parseFloat(produto.querySelector("vUnCom").textContent).toFixed(2);
-                    const vProd = parseFloat(produto.querySelector("vProd").textContent).toFixed(2);
+                    const vUnCom = parseFloat(produto.querySelector("vUnCom").textContent.replace(/\./g, ',')).toFixed(2);
+                    const vProd = parseFloat(produto.querySelector("vProd").textContent.replace(/\./g, ',')).toFixed(2);
 
                     const produtosTableRow = produtosTable.insertRow();
                     produtosTableRow.innerHTML = `
         <td style="width: 13ch;">${cEAN}</td>
         <td>${xProd}</td>
         <td style="text-align: center;">${qCom}</td>
-        <td style="width: 10ch; text-align: center;">R$ ${vUnCom}</td>
-        <td style="width: 10ch; text-align: center;">R$ ${vProd}</td>
+        <td style="width: 10ch; text-align: center;">R$ ${vUnCom.replace(/\./g, ',')}</td>
+        <td style="width: 10ch; text-align: center;">R$ ${vProd.replace(/\./g, ',')}</td>
     `;
                 });
 
@@ -221,24 +224,38 @@
                 const cell14 = row14.insertCell();
                 cell14.innerHTML = `CEP: ${destCEP.textContent} | ${destxMun.textContent} - ${destUF.textContent}`;
 
-                const row15 = table.insertRow(11);
+                const emptyRow1 = table.insertRow(11);
+                const emptyCell1 = emptyRow1.insertCell();
+                emptyCell1.innerHTML = `<p> </p>`;
+
+                const row15 = table.insertRow(12);
                 const cell15 = row15.insertCell();
                 cell15.colspan = 6;
                 cell15.appendChild(produtosTable);
 
-                const row16 = table.insertRow(12);
+                const emptyRow2 = table.insertRow(13);
+                const emptyCell2 = emptyRow2.insertCell();
+                emptyCell2.innerHTML = `<p> </p>`;
+
+                const row16 = table.insertRow(14);
                 row16.classList.add("row16");
                 const cell16 = row16.insertCell();
-                cell16.innerHTML = `Valor Total da NFe: R$ ${vPag.textContent}`;
+                cell16.innerHTML = `Valor Total da NFe: R$ ${vPag.textContent.replace(/\./g, ',')}`;
 
-                const row17 = table.insertRow(13);
+                const emptyRow3 = table.insertRow(15);
+                const emptyCell3 = emptyRow3.insertCell();
+                emptyCell3.innerHTML = `<p> </p>`;
+
+                const row17 = table.insertRow(16);
                 const cell17 = row17.insertCell();
                 cell17.innerHTML = `Informações complementares: ${infCpl.textContent}`;
 
-                const row18 = table.insertRow(14);
-                const cell18 = row18.insertCell();
+                const emptyRow4 = table.insertRow(16);
+                const emptyCell4 = emptyRow4.insertCell();
+                emptyCell4.innerHTML = `<p> </p>`;
 
-                // Criar a imagem e adicioná-la à nova linha
+                const row18 = table.insertRow(18);
+                const cell18 = row18.insertCell();
                 const qrCodeImage = document.createElement("img");
                 qrCodeImage.src = "/subsistemas/STYLES/logo_vivi_qr_code.png";
                 cell18.style.textAlign = "center";
@@ -257,7 +274,7 @@
             JsBarcode(barcodeImage, chNFe, {
                 format: "CODE128",
                 width: 5,
-                height: 80,
+                height: 100,
                 displayValue: false,
             });
 
@@ -370,9 +387,21 @@
         }
 
         .row16 {
-            text-align: right;
+            text-align: center;
             font-size: 50px;
         }
+        .botaoxml {
+			color: #ffffff;
+			background-color: #2d3047;
+			font-size: 24px;
+			border: 5px solid #ffffff;
+			padding: 15px 50px;
+			cursor: pointer
+		}
+		.botaoxml:hover {
+			color: #2d63c8;
+			background-color: #ffffff;
+		}
     </style>
 </body>
 
