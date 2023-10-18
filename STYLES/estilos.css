@@ -30,6 +30,11 @@
     src: url(RobotoMono-VariableFont_wght.ttf);
 }
 
+@font-face {
+    font-family: "Lekton";
+    src: url(Lekton-Regular.ttf);
+}
+
 body {
     font-family: "Roboto Regular";
     background-color: #282C34;
@@ -43,6 +48,7 @@ body {
     background-color: #333843;
     white-space: nowrap;
     text-align: center;
+    font-family: "Lekton";
 }
 
 .header-text {
@@ -51,6 +57,7 @@ body {
     font-size: xx-large;
     white-space: nowrap;
     display: flex;
+    font-family: "Lekton";
 }
 
 .header-image {
@@ -61,6 +68,7 @@ body {
     margin-left: 2%;
     margin-right: 2%;
     white-space: nowrap;
+    font-family: "Lekton";
 }
 
 .subheader_text {
@@ -69,49 +77,7 @@ body {
     font-size: xx-large;
     white-space: nowrap;
     padding: 0.5ch;
-}
-
-/* Estilo do changelog */
-.spoiler {
-    cursor: pointer;
-    text-decoration: underline;
-    color: inherit;
-}
-
-.spoiler-content {
-    display: none;
-}
-
-.spoiler.open .spoiler-content {
-    display: block;
-}
-
-.tabela_changelog {
-    display: none;
-    border: 1px solid #ffffff;
-    padding: 0.5ch;
-    font-family: 'Roboto Mono';
-    width: 100%;
-    margin: 0 auto;
-}
-
-.tabela_changelog table {
-    border-collapse: collapse;
-    border: 1px solid #ffffff;
-    padding: 0.5ch;
-    width: 100%
-}
-
-.tabela_changelog td {
-    border: 1px solid #ffffff;
-    margin: 0.5ch;
-}
-
-.tabela_changelog ul,
-.tabela_changelog li {
-    text-align: left;
-    padding: 0;
-    margin: 0;
+    font-family: "Lekton";
 }
 
 /* Botão de voltar */
