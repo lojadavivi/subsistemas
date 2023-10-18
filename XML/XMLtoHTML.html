@@ -184,6 +184,7 @@
                 cell5.innerHTML = `${emitxLgr.textContent}, ${emitnro.textContent}, ${emitxBairro.textContent} - CEP: ${emitCEP.textContent} | ${emitxMun.textContent} - ${emitUF.textContent}`;
 
                 const row7 = table.insertRow(3);
+                row7.classList.add("centerrow")
                 const cell7 = row7.insertCell();
                 const barcodeImage = createBarcodeImage(chNFe.textContent);
                 cell7.appendChild(barcodeImage);
@@ -245,8 +246,8 @@
             // Use JsBarcode para gerar o código de barras
             JsBarcode(barcodeImage, chNFe, {
                 format: "CODE128",
-                width: 1.2,
-                height: 40,
+                width: 5,
+                height: 80,
                 displayValue: false,
             });
 
@@ -279,7 +280,7 @@
                         const table = tables[index];
 
                         // Use html2canvas to capture the content of the table as an image with higher resolution
-                        html2canvas(table, {scale: 4}).then((canvas) => {
+                        html2canvas(table).then((canvas) => {
                             const imgData = canvas.toDataURL('image/png');
 
                             // Add the image to the PDF
@@ -308,12 +309,12 @@
             background-color: #FFFFFF;
             color: #000000;
             margin-top: 1px;
-            border: 1px solid #000000;
-            padding: 1px;
-            width: 10cm;
-            height: 15cm;
+            border: 5px solid #000000;
+            padding: 5px;
+            width: 405mm;
+            height: 605mm;
             font-family: "Roboto Mono";
-            font-size: 7px;
+            font-size: 30px;
             font-weight: bold;
         }
 
@@ -328,8 +329,8 @@
 
         .tabelaprodutos th,
         .tabelaprodutos td {
-            border: 1px solid black;
-            padding: 0.5px;
+            border: 5px solid black;
+            padding: 5px;
             text-align: left;
         }
 
