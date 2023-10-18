@@ -311,7 +311,7 @@ DANFE SIMPLIFICADO
             <td>
                 <ul>
                     <li>Versão ALPHA funcional.</li>
-                    <li>Adicionado console lateral para acompanhar o progresso.</li>
+                    <li>Adicionado GIF para mostrar que o arquivo está sendo gerado.</li>
                 </ul>
             </td>
         </tr>
