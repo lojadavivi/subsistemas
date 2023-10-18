@@ -288,25 +288,31 @@
                 const doc = new window.jspdf.jsPDF({
                     orientation: "portrait",
                     unit: "mm",
-                    format: [405, 605]
+                    format: [100, 150]
                 });
+
+                const pageSize = {
+                    width: 100, // Largura da página em mm (10 cm)
+                    height: 150, // Altura da página em mm (15 cm)
+                };
 
                 const generatePDF = (index) => {
                     if (index < tables.length) {
                         if (index > 0) {
-                            doc.addPage();
+                            // Adiciona uma nova página com o tamanho personalizado
+                            doc.addPage(pageSize.width, pageSize.height);
                         }
 
                         const table = tables[index];
 
-                        // Use html2canvas to capture the content of the table as an image with higher resolution
+                        // Use html2canvas para capturar o conteúdo da tabela como uma imagem com alta resolução
                         html2canvas(table).then((canvas) => {
                             const imgData = canvas.toDataURL('image/png');
 
-                            // Add the image to the PDF
-                            doc.addImage(imgData, 'png', 0, 0);
+                            // Adiciona a imagem ao PDF
+                            doc.addImage(imgData, 'png', 0, 0, pageSize.width, pageSize.height);
 
-                            // Call generatePDF recursively for the next table
+                            // Chama generatePDF recursivamente para a próxima tabela
                             generatePDF(index + 1);
                         });
                     } else {
@@ -315,7 +321,7 @@
                     }
                 };
 
-                // Start generating the PDF from the first table
+                // Inicia a geração do PDF a partir da primeira tabela
                 generatePDF(0);
             });
         }
@@ -367,7 +373,6 @@
             text-align: right;
             font-size: 50px;
         }
-
     </style>
 </body>
 
