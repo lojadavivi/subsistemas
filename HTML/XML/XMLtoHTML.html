@@ -33,11 +33,6 @@
     <input type="file" id="xmlFilesInput" accept=".xml" multiple>
     <button id="SalvarPDF">Salvar como PDF</button>
 
-    <div id="console-panel">
-        <pre id="console-output"></pre>
-    </div>
-
-
     <!-- Contêiner para as tabelas geradas a partir dos arquivos XML -->
     <div id="tablesContainer"></div>
 
@@ -245,7 +240,7 @@
 
                 // Criar a imagem e adicioná-la à nova linha
                 const qrCodeImage = document.createElement("img");
-                qrCodeImage.src = "STYLES/logo_vivi_qr_code.webp";
+                qrCodeImage.src = "STYLES/logo_vivi_qr_code.png";
                 cell18.style.textAlign = "center";
                 cell18.appendChild(qrCodeImage);
 
@@ -277,17 +272,16 @@
         // Função para iniciar o aplicativo
         function startApp() {
             const salvarPDF = document.getElementById("SalvarPDF");
-            const consolePanel = document.getElementById("console-panel");
-            const consoleOutput = document.getElementById("console-output");
+            const gifImage = new Image();
+            gifImage.src = "STYLES/loading.gif";
 
             salvarPDF.addEventListener("click", () => {
-                consolePanel.style.display = "block";
-
-                console.log = function (message) {
-                    const logLine = document.createElement("div");
-                    logLine.textContent = message;
-                    consoleOutput.appendChild(logLine);
-                };
+                // Exibe o GIF no centro da página
+                gifImage.style.position = "fixed";
+                gifImage.style.left = "50%";
+                gifImage.style.top = "50%";
+                gifImage.style.transform = "translate(-50%, -50%)";
+                document.body.appendChild(gifImage);
 
                 const tables = document.querySelectorAll(".tabelageral");
 
@@ -316,9 +310,8 @@
                             generatePDF(index + 1);
                         });
                     } else {
-                        // Save the PDF when all tables are processed
                         doc.save('notas.pdf');
-                        consolePanel.style.display = "none"; // Oculta o painel de console quando o PDF está pronto
+                        gifImage.style.display = "none";
                     }
                 };
 
@@ -375,27 +368,6 @@
             font-size: 50px;
         }
 
-        #console-panel {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 300px;
-            height: 100%;
-            color: #2ECA17;
-            background-color: #121b10;
-            border: 6px solid #32312D;
-            background-image: linear-gradient(to bottom, #090c08 3px, transparent 1px);
-            border-left: 1px solid #32312D;
-            padding: 10px;
-            overflow: auto;
-            display: none;
-        }
-
-        #console-output {
-            white-space: pre-wrap;
-            color: #2ECA17;
-            font-family: "Roboto Mono";
-        }
     </style>
 </body>
 
