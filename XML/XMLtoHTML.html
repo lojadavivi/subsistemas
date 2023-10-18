@@ -22,7 +22,7 @@
 
 <body>
     <!-- Título principal -->
-    <h1 class="header-with-image background-color-change" style="background-color: #A37774;">
+    <h1 class="header-with-image background-color-change" style="background-color: #2D3047;">
         <span class="header-text"><a href="/subsistemas/index.html" class="button-back" style="margin-left: 5%;">⬅️
                 MENU</a></span>
         <span class="header-text">Gerador de DANFE Simplificada</span>
@@ -32,6 +32,11 @@
     <!-- Input para selecionar arquivos XML e salvar -->
     <input type="file" id="xmlFilesInput" accept=".xml" multiple>
     <button id="SalvarPDF">Salvar como PDF</button>
+
+    <div id="console-panel">
+        <pre id="console-output"></pre>
+    </div>
+
 
     <!-- Contêiner para as tabelas geradas a partir dos arquivos XML -->
     <div id="tablesContainer"></div>
@@ -263,7 +268,12 @@
         // Função para iniciar o aplicativo
         function startApp() {
             const salvarPDF = document.getElementById("SalvarPDF");
+            const consolePanel = document.getElementById("console-panel");
+            const consoleOutput = document.getElementById("console-output");
+
             salvarPDF.addEventListener("click", () => {
+                consolePanel.style.display = "block"; // Exibe o painel de console
+
                 const tables = document.querySelectorAll(".tabelageral");
 
                 const doc = new window.jspdf.jsPDF({
@@ -293,6 +303,7 @@
                     } else {
                         // Save the PDF when all tables are processed
                         doc.save('notas.pdf');
+                        consolePanel.style.display = "none"; // Oculta o painel de console quando o PDF está pronto
                     }
                 };
 
@@ -300,6 +311,7 @@
                 generatePDF(0);
             });
         }
+
 
         startApp();
 
@@ -335,7 +347,8 @@
             text-align: left;
         }
 
-        .centerrow, .centerrowgrande {
+        .centerrow,
+        .centerrowgrande {
             text-align: center;
         }
 
@@ -346,6 +359,27 @@
         .row16 {
             text-align: right;
             font-size: 80px;
+        }
+
+        #console-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background-color: #121b10;
+            border: 6px solid #32312D;
+            background-image: linear-gradient(to bottom, #090c08 3px, transparent 1px);
+            border-left: 1px solid #32312D;
+            padding: 10px;
+            overflow: auto;
+            display: none;
+        }
+
+        #console-output {
+            white-space: pre-wrap;
+            color: #2ECA17;
+            font-family: "Roboto Mono";
         }
     </style>
 </body>
