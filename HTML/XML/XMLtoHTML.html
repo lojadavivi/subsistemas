@@ -31,10 +31,9 @@
 
     <!-- Input para selecionar arquivos XML e salvar -->
     <label for="xmlFilesInput" class="custom-file-upload">
-
     </label>
     <input class="botaoxml" type="file" id="xmlFilesInput" accept=".xml" multiple>
-        <button class="botaoxml" id="SalvarPDF">Salvar como PDF</button>
+    <button class="botaoxml" id="SalvarPDF">Salvar como PDF</button>
 
     <!-- Contêiner para as tabelas geradas a partir dos arquivos XML -->
     <div id="tablesContainer"></div>
@@ -281,7 +280,6 @@
             return barcodeImage;
         }
 
-
         // Ouvinte de evento do input de arquivos
         const xmlFilesInput = document.getElementById("xmlFilesInput");
         xmlFilesInput.addEventListener("change", handleXMLFiles);
@@ -390,18 +388,20 @@
             text-align: center;
             font-size: 50px;
         }
+
         .botaoxml {
-			color: #ffffff;
-			background-color: #2d3047;
-			font-size: 24px;
-			border: 5px solid #ffffff;
-			padding: 15px 50px;
-			cursor: pointer
-		}
-		.botaoxml:hover {
-			color: #2d63c8;
-			background-color: #ffffff;
-		}
+            color: #ffffff;
+            background-color: #2d3047;
+            font-size: 24px;
+            border: 5px solid #ffffff;
+            padding: 15px 50px;
+            cursor: pointer
+        }
+
+        .botaoxml:hover {
+            color: #2d63c8;
+            background-color: #ffffff;
+        }
     </style>
 </body>
 
