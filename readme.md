@@ -28,6 +28,16 @@ INDEX
     </thead>
     <tbody>
         <tr>
+            <td>2.0.5<br>18/10/2023</td>
+            <td>
+                <ul>
+                    <li>Adicionado botão GERADOR DE DANFE SIMPLIFICADO.</li>
+                    <li>Adicionada fonte Lekton para alguns estilos.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+        <tr>
             <td>2.0.4<br>16/10/2023</td>
             <td>
                 <ul>
