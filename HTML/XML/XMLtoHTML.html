@@ -273,7 +273,7 @@
         function startApp() {
             const salvarPDF = document.getElementById("SalvarPDF");
             const gifImage = new Image();
-            gifImage.src = "/subsistemas/STYLES/loading.gif";
+            gifImage.src = "/subsistemas/STYLES/carregando.gif";
 
             salvarPDF.addEventListener("click", () => {
                 // Exibe o GIF no centro da página
@@ -300,7 +300,7 @@
                     if (index < tables.length) {
                         if (index > 0) {
                             // Adiciona uma nova página com o tamanho personalizado
-                            doc.addPage(pageSize.width, pageSize.height);
+                            doc.addPage([pageSize.width, pageSize.height]);
                         }
 
                         const table = tables[index];
