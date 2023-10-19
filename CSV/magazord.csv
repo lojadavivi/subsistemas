@@ -307,6 +307,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;4003;7898524349445;Condicionador Salon Line Meu Liso Demais 300ml - ;Sim;Salon Line;0;0;0;9;9;0;;0;0;0
 1;Padrão Loja da Vivi;3968;7908458316588;Condicionador Salon Line Meu Liso Matizador Preto 300ml - ;Sim;Salon Line;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;798;7896075701019-01;Cortador de Unhas Para Mãos Merheje Unhex - ;Sim;Merheje;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;4198;7898562213623;Co-Wash Arvensis Cachos Naturais 300ml - ;Sim;Arvensis;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;3907;7898562214569;Creme Arvensis Cachinhos Naturais 2x1 Vegano 250g - ;Sim;Arvensis;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;3878;7898562213692;Creme Ativador Arvensis Cachos Ondulados E Cacheados 500ml - ;Sim;Arvensis;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2763;7898967373564;Creme de Pentear Balai África Moringa com Proteção UV 400ml - ;Não;Balai;0;0;0;0;0;0;;0;0;0
@@ -782,6 +783,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3345;7896509972244;Kit Coloração Creme Beauty Color Bela&Cor - 9.0 - Louro Muito Claro;Sim;Beauty Color;0;0;0;8;8;0;;0;0;0
 1;Padrão Loja da Vivi;3821;74370344;Kit Com 3 Géis Para Massagem Dr. Ideal Arnica 240g - ;Sim;Ideal;0;0;0;13;13;0;;0;0;0
 1;Padrão Loja da Vivi;3819;53176851;Kit Com 6 Géis Para Massagem Dr. Ideal Arnica 240g - ;Sim;Ideal;0;0;0;6;6;0;;0;0;0
+1;Padrão Loja da Vivi;4199;9777757188688;Kit Co-Wash + Spray Day After 250ml Arvensis Cachos Naturais - ;Sim;Arvensis;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;4190;9387995040138;Kit De Esmalte Em Gel D&z 7,5ml 24 Unidades Cores a Escolher - ;Sim;D&Z;0;0;0;8;8;0;;0;0;0
 1;Padrão Loja da Vivi;334;7899522319478-01;Kit Deo Colônia Corvette Casual Life 100ml + Shampoo 100ml + Gel Pós Barba 100ml - ;Sim;Corvette;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;478;7898468519980-01;Kit Desamarelador Alfaparf Shampoo 300ml + Máscara 200g - ;Sim;Alfaparf;0;0;0;0;0;0;;0;0;0
@@ -791,6 +793,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2919;74120321;Kit Esmalte em Gel LED/UV D&Z Francesinha 2x12g - ;Não;D&Z;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2858;7898699910686;Kit Fibra de Vidro Lara Machado 4m - ;Não;Lara Machado;0;0;0;0;0;0;;0;9,9;0
 1;Padrão Loja da Vivi;326;7899766007445-01;Kit Love Secret Seduction Loção Desodorante 250ml + Sabonete 200ml + Body Splash 250ml - ;Sim;Love Secret;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;4203;9186160246968;Kit Máscara 2x1 Arvensis + Touca de Cetim Dupla Face Poli - ;Sim;Arvensis;0;0;0;12;12;0;;0;0;0
 1;Padrão Loja da Vivi;4195;9440504704942;Kit Máscara 2x1 + Geleia Alta 250g  Arvensis Cachos Naturais - ;Sim;Arvensis;0;0;0;24;24;0;;0;0;0
 1;Padrão Loja da Vivi;3760;29505661;Kit para Alongamento de Unhas (Acrílico) - Kit 05 - ;Não;RPC;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3765;18525458;Kit para Alongamento de Unhas (Acrílico) - Kit 06 - ;Não;RPC;0;0;0;0;0;0;;0;0;0
@@ -989,7 +992,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3467;5678000860013;Micromotor Girl Fatale Caneta Rosa Lixa Elétrica Bivolt - ;Sim;Girl Fatale;0;0;0;30;30;0;;0;0;0
 1;Padrão Loja da Vivi;3469;5678000860068;Micromotor Mercedes2000 Bivolt 20.000RPM - ;Não;Fan&Co;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;1942;7908718711061;Micromotor Profissional Marathon M3 Champion Bivolt - Azul;Sim;Talmax;2;0;0;0;2;0;;0;699;0
-1;Padrão Loja da Vivi;1170;7897087560830;Micromotor Profissional Marathon M3 Champion Bivolt - Branco;Sim;Talmax;4;0;0;0;4;0;;0;699;0
+1;Padrão Loja da Vivi;1170;7897087560830;Micromotor Profissional Marathon M3 Champion Bivolt - Branco;Sim;Talmax;3;0;0;0;3;0;;0;699;0
 1;Padrão Loja da Vivi;1941;7898234771260;Micromotor Profissional Marathon M3 Champion Bivolt - Rosa;Sim;Talmax;4;0;0;0;4;0;;0;725;0
 1;Padrão Loja da Vivi;3500;7758258058023;Micromotor Siôux Lixa Elétrica Telefone 30.000 RPM Bivolt - ;Não;Siôux;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3919;7928680937535;Mini Cabine Fan Nails Portátil Q5 Recarregável - ;Sim;Fan&Co;0;0;0;30;30;0;;0;0;0
@@ -1381,6 +1384,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;672;7898964247264;Top Coat Vòlia Alto Brilho 9g - ;Sim;Vòlia;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;666;7898964247394;Top Coat Vòlia Matte Fosco 9g - ;Não;Vòlia;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;670;7898964247417;Top Coat Vòlia Silver Glitter 9g - ;Sim;Vòlia;0;0;0;17;17;0;;0;0;0
+1;Padrão Loja da Vivi;4201;602883243347;Touca de Cetim Dupla Face P/ Dormir Poli - ;Sim;Poli;0;0;0;12;12;0;;0;0;0
 1;Padrão Loja da Vivi;2523;731509991697;Touca de Cetim ProArt Wonder Curly Dupla Face Extra Grande - Preto;Não;ProArt;0;0;0;0;0;0;;0;14,39;0
 1;Padrão Loja da Vivi;2524;731509991703;Touca de Cetim ProArt Wonder Curly Dupla Face Extra Grande - Rosa;Não;ProArt;0;0;0;0;0;0;;0;14,39;0
 1;Padrão Loja da Vivi;2520;731509991673;Touca de Cetim ProArt Wonder Curly Dupla Face Grande - Preto;Não;ProArt;0;0;0;0;0;0;;0;11,19;0
