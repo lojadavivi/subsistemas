@@ -145,23 +145,25 @@
         <th style="width: 10ch; text-align: center;">$ TOTAL
     `;
 
-                // Linhas da tabela de produtos
+                /// Linhas da tabela de produtos
                 detalhes.forEach((detalhe, index) => {
                     const produto = detalhe.querySelector("prod");
 
                     const cEAN = produto.querySelector("cEAN").textContent;
                     const xProd = produto.querySelector("xProd").textContent;
                     const qCom = parseInt(produto.querySelector("qCom").textContent);
-                    const vUnCom = parseFloat(produto.querySelector("vUnCom").textContent.replace(/\./g, ',')).toFixed(2);
-                    const vProd = parseFloat(produto.querySelector("vProd").textContent.replace(/\./g, ',')).toFixed(2);
+
+                    // Substitua vírgulas por pontos e então faça o parseFloat
+                    const vUnCom = parseFloat(produto.querySelector("vUnCom").textContent.replace(',', '.')).toFixed(2);
+                    const vProd = parseFloat(produto.querySelector("vProd").textContent.replace(',', '.')).toFixed(2);
 
                     const produtosTableRow = produtosTable.insertRow();
                     produtosTableRow.innerHTML = `
         <td style="width: 13ch;">${cEAN}</td>
         <td>${xProd}</td>
         <td style="text-align: center;">${qCom}</td>
-        <td style="width: 10ch; text-align: center;">R$ ${vUnCom.replace(/\./g, ',')}</td>
-        <td style="width: 10ch; text-align: center;">R$ ${vProd.replace(/\./g, ',')}</td>
+        <td style="width: 10ch; text-align: center;">R$ ${vUnCom.replace('.', ',')}</td>
+        <td style="width: 10ch; text-align: center;">R$ ${vProd.replace('.', ',')}</td>
     `;
                 });
 

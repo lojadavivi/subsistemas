@@ -307,6 +307,14 @@ DANFE SIMPLIFICADO
     </thead>
     <tbody>
         <tr>
+            <td>0.1.1<br>19/10/2023</td>
+            <td>
+                <ul>
+                    <li>Corrigido bug que fazia valores não exibir centavos nos preços.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
             <td>0.1.0<br>18/10/2023</td>
             <td>
                 <ul>
