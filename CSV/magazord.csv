@@ -891,7 +891,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;1697;7822295317266-02;Luminária de Mesa Articulada Estilo Pixar Com Base Pesada - Vermelho;Sim;Siôux;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3587;7896727915108;Maleta Organizadora de Esmaltes Dompel - Rosa;Não;Dompel;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3588;7896727915115;Maleta Organizadora de Esmaltes Dompel - Roxo;Não;Dompel;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2811;7898657692852;Máquina de Acabamento MQ Force Barber Shave Zero Gold Series - ;Sim;MQ;0;0;0;1;1;0;;0;0;0
+1;Padrão Loja da Vivi;2811;7898657692852;Máquina de Acabamento MQ Force Barber Shave Zero Gold Series - ;Não;MQ;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2813;7898657692845;Máquina de Acabamento MQ Force Barber Ultimate Gold Series - ;Não;MQ;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;68;7898569382766;Máquina de Acabamento Soling Zero Lithium Bivolt - ;Sim;Soling;0;0;0;16;16;0;;0;0;0
 1;Padrão Loja da Vivi;470;7899838830179-01;Máquina de Corte e Acabamento Multilaser Men Care 3 em 1 Sem Fio EB017 - ;Sim;Multi;0;0;0;0;0;0;;0;0;0
@@ -941,6 +941,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2402;7898649840148;Máscara Capilar Cosmeceuta Power Cachos Vegana 250g - ;Não;Cosmeceuta;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2587;7898649840353;Máscara Capilar Cosmeceuta Vermelho Malagueta Matizante 250g - ;Sim;Cosmeceuta;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;4205;7898639792907;Máscara Capilar Felps Marula Hipernutrição Sachê 50g - ;Sim;Felps;0;0;0;20;20;0;;0;0;0
+1;Padrão Loja da Vivi;4209;7898639792891;Máscara Capilar Felps SOS Reconstrução Sachê 50g - ;Sim;Felps;0;0;0;30;30;0;;0;0;0
 1;Padrão Loja da Vivi;2775;7898639793591;Máscara Capilar Felps XForce Tratamento Fortificante 300g - ;Sim;Felps;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;3896;7898562213258;Máscara Condicionante Arvensis BB Hair Revolution 300ml - ;Não;Arvensis;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2481;7898649840773;Máscara Cosmeceuta Crescimento Capilar Vegano 250g - ;Sim;Cosmeceuta;0;0;0;9;9;0;;0;0;0
