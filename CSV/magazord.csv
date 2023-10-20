@@ -72,7 +72,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2819;7898911689888;Base Repós Incolor para Unhas Durabilidade e Brilho 120ml - ;Sim;Repós;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;2817;7898911689895;Base Repós para Unhas Maxi Brilho com Óleo de Argan 120ml - ;Sim;Repós;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;2815;7898911689925;Base Seda Repós para Unhas 120ml Cobertura Protetora - ;Sim;Repós;0;0;0;5;5;0;;0;0;0
-1;Padrão Loja da Vivi;2432;7898945390309;Batom Colorido Cremoso Colormake Alta Fixação - Preto;Sim;ColorMake;0;0;0;35;35;0;;0;0;0
+1;Padrão Loja da Vivi;2432;7898945390309;Batom Colorido Cremoso Colormake Alta Fixação - Preto;Sim;ColorMake;1;0;0;5;6;0;;0;0;0
 1;Padrão Loja da Vivi;2433;7898945390316;Batom Colorido Cremoso Colormake Alta Fixação - Roxo;Sim;ColorMake;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3892;7898562211865;BB Cream Hair Arvensis Revolution 150ml - ;Sim;Arvensis;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;882;7896229908820;Blend de Óleos Natuhair Bomba de Vitaminas 60ml - ;Não;Natuhair;0;0;0;0;0;0;;0;0;0
@@ -355,7 +355,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;4065;7908003905427;Elixir Vizet Intensive Pro 120ml - ;Sim;Vizet;4;0;0;0;4;0;;0;0;0
 1;Padrão Loja da Vivi;1934;7898418097766-01;Emulsão Reveladora DiColore Tonalize Color 120ml - ;Sim;Dicolore;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;3958;7898496352412;Escova Alisadora De Cabelo Ga.ma Innova Mini Bivolt - ;Sim;Ga.ma;0;0;0;1;1;0;;0;0;0
-1;Padrão Loja da Vivi;4124;7898496355277;Escova Alisadora Ga.ma Barber Style Bivolt 165ḞC/329ḞF - ;Sim;Ga.ma;0;0;0;1;1;0;;0;0;0
+1;Padrão Loja da Vivi;4124;7898496355277;Escova Alisadora Ga.ma Barber Style Bivolt 165ḞC/329ḞF - ;Sim;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2361;7897517917463-01;Escova De Bigode Enox - Belliz Company - ;Não;Belliz;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;776;74053902;Escova Espanadora Para Unhas - ;Sim;RPC;0;0;0;20;20;0;;0;0;0
 1;Padrão Loja da Vivi;3837;7896727941299;Escova Pirulito Lollipop Dompel Com Cheirinho Cores Sortidas - ;Sim;Dompel;0;0;0;66;66;0;;0;0;0
@@ -793,6 +793,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2919;74120321;Kit Esmalte em Gel LED/UV D&Z Francesinha 2x12g - ;Não;D&Z;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2858;7898699910686;Kit Fibra de Vidro Lara Machado 4m - ;Não;Lara Machado;0;0;0;0;0;0;;0;9,9;0
 1;Padrão Loja da Vivi;326;7899766007445-01;Kit Love Secret Seduction Loção Desodorante 250ml + Sabonete 200ml + Body Splash 250ml - ;Sim;Love Secret;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;4207;8182404947197;Kit Máscara 2x1 Arvensis 450g + Pente Dentes de Metal ProArt - ;Sim;Arvensis;0;0;0;24;24;0;;0;0;0
 1;Padrão Loja da Vivi;4203;9186160246968;Kit Máscara 2x1 Arvensis + Touca de Cetim Dupla Face Poli - ;Sim;Arvensis;0;0;0;12;12;0;;0;0;0
 1;Padrão Loja da Vivi;4195;9440504704942;Kit Máscara 2x1 + Geleia Alta 250g  Arvensis Cachos Naturais - ;Sim;Arvensis;0;0;0;24;24;0;;0;0;0
 1;Padrão Loja da Vivi;3760;29505661;Kit para Alongamento de Unhas (Acrílico) - Kit 05 - ;Não;RPC;0;0;0;0;0;0;;0;0;0
@@ -939,6 +940,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2452;7898649840131;Máscara Capilar Cosmeceuta Neutro Vegano 250g - ;Sim;Cosmeceuta;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;2402;7898649840148;Máscara Capilar Cosmeceuta Power Cachos Vegana 250g - ;Não;Cosmeceuta;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2587;7898649840353;Máscara Capilar Cosmeceuta Vermelho Malagueta Matizante 250g - ;Sim;Cosmeceuta;0;0;0;3;3;0;;0;0;0
+1;Padrão Loja da Vivi;4205;7898639792907;Máscara Capilar Felps Marula Hipernutrição Sachê 50g - ;Sim;Felps;0;0;0;20;20;0;;0;0;0
 1;Padrão Loja da Vivi;2775;7898639793591;Máscara Capilar Felps XForce Tratamento Fortificante 300g - ;Sim;Felps;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;3896;7898562213258;Máscara Condicionante Arvensis BB Hair Revolution 300ml - ;Não;Arvensis;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2481;7898649840773;Máscara Cosmeceuta Crescimento Capilar Vegano 250g - ;Sim;Cosmeceuta;0;0;0;9;9;0;;0;0;0
