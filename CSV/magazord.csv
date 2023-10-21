@@ -7,7 +7,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;216;7896380607365;2 em 1 Máscara Condicionante Keragen Tutti Frutti Hidratante 300g - ;Sim;Kert;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;222;7896380607426;2 em 1 Máscara Condicionante Kert Choco Nuts com Aroma de Chocolate 300g - ;Sim;Kert;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;742;5678000890379;6x Lixa para Alongamento Kit Fan Nails Lavável Polidora Buffer - ;Sim;Fan&Co;0;0;0;8;8;0;;0;0;0
-1;Padrão Loja da Vivi;194;7899572812134;Acidificante Capilar Lola Densidade pH 3.0/4.0 250g - ;Não;Lola;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;194;7899572812134;Acidificante Capilar Lola Densidade pH 3.0/4.0 250g - ;Não;Lola;0;0;0;36;36;0;;0;0;0
 1;Padrão Loja da Vivi;3456;7898699911119;Adesivador Bluwe Step 2 10ml - ;Sim;Bluwe;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;2043;7898699910129;Adesivador Lara Machado Primer Step 2 12ml - ;Não;Lara Machado;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;582;7897517937461;Adesivo para Remoção de Cravos do Nariz Ricca Faixa Preta 3un - ;Sim;Ricca;0;0;0;9;9;0;;0;0;0
@@ -41,6 +41,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;4055;7898207530238;Ativador de Cachos Vizet Expertise Curly 300ml - ;Sim;Vizet;4;0;0;0;4;0;;0;0;0
 1;Padrão Loja da Vivi;2389;7898649841213;Ativador Multifuncional Cosmeceuta Power Cachos Vegano 1kg - ;Não;Cosmeceuta;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3922;7896115143496;Baba De Quiabo Soft Hair Hidratação E Brilho Intenso 220ml - ;Sim;Soft Hair;0;0;0;3;3;0;;0;0;0
+1;Padrão Loja da Vivi;4213;7899572805396;Bálsamo Lola o Exterminador De Frizz 120g - ;Sim;Lola;0;0;0;12;12;0;;0;0;0
 1;Padrão Loja da Vivi;4105;7908003909890;Balsamo Vizet Splendidus Agua de Coco 250ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;444;7898132981877;Banho de Creme Bio Extratus Cachos e Crespos 1kg - ;Sim;Bio Extratus;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;3008;7898132981853;Banho de Creme Bio Extratus Cachos e Crespos 250g - ;Sim;Bio Extratus;0;0;0;2;2;0;;0;14;0
@@ -720,6 +721,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3967;7898964247981;Gel Vòlia Sachê - Control Cover 14g;Não;Vòlia;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2266;7898721330000;Gel Vòlia Sachê - Control Pink 14g;Sim;Vòlia;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;2263;7898964247974;Gel Vòlia Sachê - Gel Base 12g;Sim;Vòlia;0;0;0;18;18;0;;0;0;0
+1;Padrão Loja da Vivi;4215;7896727945952;Gola Higiênica Descartável Dompel 100 unidades 6,5cm - ;Sim;Dompel;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;4107;7908003908589;Hair Spray Vizet Splendidus 400ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;2248;7908357401163-01;Hidratante Berry Kiss Mãozinha de Fada Clareador 100ml - ;Sim;Berry Kiss;0;0;0;0;0;0;;0;9,65;0
 1;Padrão Loja da Vivi;654;7898506467556-01;Hidromassageador Para Pés Multilaser Foot Spa - 110V;Sim;Multi;0;0;0;0;0;0;;0;0;0
@@ -793,6 +795,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2919;74120321;Kit Esmalte em Gel LED/UV D&Z Francesinha 2x12g - ;Não;D&Z;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2858;7898699910686;Kit Fibra de Vidro Lara Machado 4m - ;Não;Lara Machado;0;0;0;0;0;0;;0;9,9;0
 1;Padrão Loja da Vivi;326;7899766007445-01;Kit Love Secret Seduction Loção Desodorante 250ml + Sabonete 200ml + Body Splash 250ml - ;Sim;Love Secret;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;4219;9023765313766;Kit Máscar 2x1 Arvensis 450g + Trio De Pente Garfo ProArt - ;Sim;Arvensis;0;0;0;18;18;0;;0;0;0
 1;Padrão Loja da Vivi;4207;8182404947197;Kit Máscara 2x1 Arvensis 450g + Pente Dentes de Metal ProArt - ;Sim;Arvensis;0;0;0;24;24;0;;0;0;0
 1;Padrão Loja da Vivi;4203;9186160246968;Kit Máscara 2x1 Arvensis + Touca de Cetim Dupla Face Poli - ;Sim;Arvensis;0;0;0;12;12;0;;0;0;0
 1;Padrão Loja da Vivi;4195;9440504704942;Kit Máscara 2x1 + Geleia Alta 250g  Arvensis Cachos Naturais - ;Sim;Arvensis;0;0;0;24;24;0;;0;0;0
@@ -1043,6 +1046,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;4111;7908003902006;OLEO VIZET SPLENDIDUS 38ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;3633;7896727933546;Organizador De Esmaltes Dompel Smaltbell Twist 2 Andares - Rosa;Sim;Dompel;0;0;0;1;1;0;;0;0;0
 1;Padrão Loja da Vivi;3632;7896727933553;Organizador De Esmaltes Dompel Smaltbell Twist 2 Andares - Roxo;Não;Dompel;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;4211;7898130553144;Paleta de Sombras Vivai Chocolate com Pimenta 11 Cores - ;Sim;Vivai;0;0;0;8;8;0;;0;0;0
 1;Padrão Loja da Vivi;738;751320457769-01;Palito de Bambu Poli Ponta e Chanfro 50un - ;Sim;Poli;0;0;0;30;30;0;;0;0;0
 1;Padrão Loja da Vivi;736;751320340191-01;Palito de Pinus Poli Ponta e Chanfro 100un - ;Sim;Poli;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;2423;7898903221393;Pancake Colormake Maquiagem Artística 10g - Branco;Sim;ColorMake;0;0;0;15;15;0;;0;0;0
@@ -1126,6 +1130,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;190;7896046714000-01;Pomada Modeladora Cless Charming Extra Forte Efeito Matte 50g - ;Não;Cless;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;192;7896046700997-01;Pomada Modeladora Cless Charming Extra Forte Efeito Molhado 50g - ;Não;Cless;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;186;7896046700676-01;Pomada Modeladora Cless Charming Normal Efeito Matte 50g - ;Não;Cless;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;4217;7908458322374;Pomada Modeladora Salon Line Antifrizz #todecacho 120g - ;Sim;Salon Line;0;0;0;12;12;0;;0;0;0
 1;Padrão Loja da Vivi;2421;731509579204-01;Prancha Alisadora Kiss New York Titanium Luxy 450F Bivolt - ;Não;Kiss;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2659;7908422601498;Prancha de Cabelo MQ Titanium Max480 Slim Bivolt Automático - ;Sim;MQ;4;0;0;0;4;0;;0;295,99;0
 1;Padrão Loja da Vivi;3950;7898496354881;Prancha Ga.ma Elegance Blue Titanium 3D Bivolt - ;Não;Ga.ma;0;0;0;0;0;0;;0;0;0
