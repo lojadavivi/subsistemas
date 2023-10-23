@@ -26,7 +26,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3263;7891060800401;Alicate Para Cutículas Mundial 722 Professional Premium - ;Sim;Mundial;0;0;0;1;1;0;;0;0;0
 1;Padrão Loja da Vivi;3261;7891060773200;Alicate Para Cutículas Mundial 772 Professional Premium - ;Sim;Mundial;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;1901;7891060969504;Alicate Para Cutículas Mundial 777 Professional - ;Sim;Mundial;0;0;0;36;36;0;;0;0;0
-1;Padrão Loja da Vivi;3265;7891060679724;Alicate Para Unhas Mundial 522 Classic - ;Sim;Mundial;0;0;0;28;28;0;;0;0;0
+1;Padrão Loja da Vivi;3265;7891060679724;Alicate Para Unhas Mundial 522 Classic - ;Sim;Mundial;0;0;0;26;26;0;;0;0;0
 1;Padrão Loja da Vivi;472;7899838889818;Aparador e Barbeador Multilaser Men Care 24 em 1 Recarregável - ;Sim;Multi;0;0;0;1;1;0;;0;0;0
 1;Padrão Loja da Vivi;554;41235973;Apoio de Mão para Manicure Almofada com Tapete - ;Não;RPC;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;888;7898506258413;Apontador Para Lápis de Maquiagem Macrilan AP-01 - ;Não;Macrilan;0;0;0;0;0;0;;0;0;0
@@ -95,7 +95,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;772;7898639790170;Botox Felps Ômega Zero XBTX Nanoplastia Capilar 300g - ;Não;Felps;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2535;7898639793881;Botox Felps Xbtx Quiabo Okra Alinhamento Capilar 300ml - ;Sim;Felps;0;0;0;13;13;0;;0;0;0
 1;Padrão Loja da Vivi;4051;7908003907919;Botox Vizet B-tox Orgânico 1kg - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
-1;Padrão Loja da Vivi;4049;7908003909937;Botox Vizet B-tox Orgânico 250g - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
+1;Padrão Loja da Vivi;4049;7908003909937;Botox Vizet B-tox Orgânico 250g - ;Sim;Vizet;1;0;0;0;1;0;;0;0;0
 1;Padrão Loja da Vivi;4045;7908003907902;Botox Vizet B-tox Trealose 1kg - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;4047;7908003909913;Botox Vizet B-tox Trealose 250g - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;3544;7908169;Broca 100% Tungstênio Para Unhas Profissional (unitario) - ;Sim;RPC;35;0;0;0;35;0;;0;0;0
@@ -368,7 +368,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2540;731509992830;Escova Profissional ProArt Ceramic Expert Pro Lavand - 33mm;Sim;ProArt;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;2503;731509992502;Escova Profissional ProArt Elite Pro Ceramic - 22mm;Sim;ProArt;4;0;0;0;4;0;;0;32,82;0
 1;Padrão Loja da Vivi;2504;731509992526;Escova Profissional ProArt Elite Pro Ceramic - 27mm;Sim;ProArt;6;0;0;0;6;0;;0;37,29;0
-1;Padrão Loja da Vivi;2505;731509992540;Escova Profissional ProArt Elite Pro Ceramic - 34mm;Sim;ProArt;8;0;0;0;8;0;;0;54,26;0
+1;Padrão Loja da Vivi;2505;731509992540;Escova Profissional ProArt Elite Pro Ceramic - 34mm;Sim;ProArt;6;0;0;0;6;0;;0;54,26;0
 1;Padrão Loja da Vivi;2506;731509992564;Escova Profissional ProArt Elite Pro Ceramic - 43mm;Sim;ProArt;0;0;0;2;2;0;;0;43,26;0
 1;Padrão Loja da Vivi;2516;731509991819;Escova Profissional ProArt Metallic Pro Alumínio Térmica - 15mm;Não;ProArt;0;0;0;0;0;0;;0;12,92;0
 1;Padrão Loja da Vivi;2517;731509991826;Escova Profissional ProArt Metallic Pro Alumínio Térmica - 25mm;Não;ProArt;0;0;0;0;0;0;;0;23,7;0
@@ -623,7 +623,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3874;7898562214880;Geleia Ativadora Arvensis Alta Fixação Cachos Naturais 450g - ;Sim;Arvensis;0;0;0;14;14;0;;0;0;0
 1;Padrão Loja da Vivi;3904;7898562214583;Geleia Ativadora Arvensis Forte Cachinhos Naturais 250g - ;Sim;Arvensis;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;3902;7898562214576;Geleia Ativadora Arvensis Suave Cachinhos Naturais 250g - ;Sim;Arvensis;0;0;0;3;3;0;;0;0;0
-1;Padrão Loja da Vivi;1939;7898562214606;Geleia Ativadora de Cachos Arvensis Cachos Naturais 250g - Alta Fixação;Sim;Arvensis;0;0;0;29;29;0;;0;0;0
+1;Padrão Loja da Vivi;1939;7898562214606;Geleia Ativadora de Cachos Arvensis Cachos Naturais 250g - Alta Fixação;Sim;Arvensis;1;0;0;29;30;0;;0;0;0
 1;Padrão Loja da Vivi;560;7891350034868-01;Gel Fixador Bozzano Extra Forte Sem Álcool 300g - ;Sim;Bozzano;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;2055;7898699910075;Gel Lara Machado Banho de Fibra Natural Pink 30g - ;Não;Lara Machado;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2053;7898699910020;Gel Lara Machado Branco Baby 30g - ;Não;Lara Machado;0;0;0;4;4;0;;0;0;0
@@ -795,8 +795,8 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2919;74120321;Kit Esmalte em Gel LED/UV D&Z Francesinha 2x12g - ;Não;D&Z;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2858;7898699910686;Kit Fibra de Vidro Lara Machado 4m - ;Não;Lara Machado;0;0;0;0;0;0;;0;9,9;0
 1;Padrão Loja da Vivi;326;7899766007445-01;Kit Love Secret Seduction Loção Desodorante 250ml + Sabonete 200ml + Body Splash 250ml - ;Sim;Love Secret;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;4219;9023765313766;Kit Máscar 2x1 Arvensis 450g + Trio De Pente Garfo ProArt - ;Sim;Arvensis;0;0;0;18;18;0;;0;0;0
 1;Padrão Loja da Vivi;4207;8182404947197;Kit Máscara 2x1 Arvensis 450g + Pente Dentes de Metal ProArt - ;Sim;Arvensis;0;0;0;24;24;0;;0;0;0
+1;Padrão Loja da Vivi;4219;9023765313766;Kit Máscara 2x1 Arvensis 450g + Trio De Pente Garfo ProArt - ;Sim;Arvensis;0;0;0;18;18;0;;0;0;0
 1;Padrão Loja da Vivi;4203;9186160246968;Kit Máscara 2x1 Arvensis + Touca de Cetim Dupla Face Poli - ;Sim;Arvensis;0;0;0;12;12;0;;0;0;0
 1;Padrão Loja da Vivi;4195;9440504704942;Kit Máscara 2x1 + Geleia Alta 250g  Arvensis Cachos Naturais - ;Sim;Arvensis;0;0;0;24;24;0;;0;0;0
 1;Padrão Loja da Vivi;3760;29505661;Kit para Alongamento de Unhas (Acrílico) - Kit 05 - ;Não;RPC;0;0;0;0;0;0;;0;0;0
@@ -1006,13 +1006,13 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;552;1387-01;Mini Lanterna UV Para Secagem de Esmalte em Gel 9 LEDs - ;Não;RPC;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3529;81476367;Mini Lixa Buffer Polidora 100/180 Cores Sortidas - ;Sim;RPC;0;0;0;20;20;0;;0;0;0
 1;Padrão Loja da Vivi;3956;8023277109810;Mini Prancha Ga.ma Ceramic Ion Bivolt 200ḞC/392ḞF - ;Sim;Ga.ma;0;0;0;5;5;0;;0;0;0
-1;Padrão Loja da Vivi;2657;7908422600712;Modelador de Cachos Triondas MQ Beauty Glam Wave Bivolt - ;Sim;MQ Hair;8;0;0;4;12;0;;0;236,79;0
+1;Padrão Loja da Vivi;2657;7908422600712;Modelador de Cachos Triondas MQ Beauty Glam Wave Bivolt - ;Sim;MQ Hair;7;0;0;4;11;0;;0;236,79;0
 1;Padrão Loja da Vivi;3905;7897517954055;Modelador de Cachos X330 Vertix Bivolt - 10mm x 130mm;Sim;Vertix;0;0;0;6;6;0;;0;104,24;0
 1;Padrão Loja da Vivi;2647;7897517954024;Modelador de Cachos X330 Vertix Bivolt - 25mm x 170mm;Sim;Vertix;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;2648;7897517954031;Modelador de Cachos X330 Vertix Bivolt - 32mm x 130mm;Sim;Vertix;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;3960;7898496353419;Modelador Ga.ma Ceramic Nano Tourmaline New 25mm Bivolt - ;Sim;Ga.ma;0;0;0;8;8;0;;0;0;0
 1;Padrão Loja da Vivi;2246;7898657699530;Modelador MQ Beauty Automatico Sem Fio My Wave - ;Não;MQ;0;0;0;0;0;0;;0;322,3;0
-1;Padrão Loja da Vivi;3932;7897517954062;Modelador Vertix Triondas X330 Triple Wave Bivolt 16mm - ;Sim;Vertix;0;0;0;13;13;0;;0;0;0
+1;Padrão Loja da Vivi;3932;7897517954062;Modelador Vertix Triondas X330 Triple Wave Bivolt 16mm - ;Sim;Vertix;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3754;28332275;Molde de Papel Para Alongamento de Unhas 50 Unidades - ;Sim;RPC;0;0;0;30;30;0;;0;0;0
 1;Padrão Loja da Vivi;3756;77584687;Monomer Acrílico Líquido X&D Para Alongamento de Unhas 30ml - ;Sim;X&D;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;3151;731509595864;Monomer Kiss Líquido Acrílico Odor Reduzido 60ml - ;Não;Kiss;0;0;0;0;0;0;;0;0;0
@@ -1025,7 +1025,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2355;7898921107044;Motor de Suspensão Beltec Chicote Mini 220V - ;Não;Beltec;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3782;7898567704126;Mousse Auto Bronzeador My Health SUN Prime 150ml - ;Sim;My Health;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;510;7898944075153-01;Nectavita Haskell Mandioca 40ml - ;Sim;Haskell;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;3449;7898911307119;Nupill Firmness Intensive Lifting Instantâneo Cinderela 1,2g - ;Sim;Nupill;5;0;0;0;5;0;;0;12,36;0
+1;Padrão Loja da Vivi;3449;7898911307119;Nupill Firmness Intensive Lifting Instantâneo Cinderela 1,2g - ;Sim;Nupill;4;0;0;0;4;0;;0;12,36;0
 1;Padrão Loja da Vivi;3504;4064666306155;Oil Reflections Light Wella Para Reflexos Luminosos 30ml - ;Não;Wella;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3502;4064666306148;Oil Reflections Wella Para Cabelos Suaves e Luminosos 30ml - ;Sim;Wella;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;208;7899572810192-01;Óleo Capilar Lola Pinga! Açaí e Pracaxi Pré e Pós Química 50ml - ;Sim;Lola;0;0;0;2;2;0;;0;0;0
