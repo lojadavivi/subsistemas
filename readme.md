@@ -1,8 +1,8 @@
 <h1>SUBSISTEMAS DA LOJA DA VIVI</h1>
 <h2>Tudo o que o escritório precisa em um só lugar</h2>
 </p>Gerenciar marketplaces e estoques não é uma tarefa fácil. É necessário verificar aumento de preços, calcular valores líquidos baseados em custos operacionais e impostos, entre outras funções que tomam tempo e reduzem nossa capacidade de vender mais rápido que a concorrência.</p>
-</p>Para reduzir o impacto destes problemas, os <a href="https://lojadavivi.github.io/subsistemas/index.html" style="color: inherit; text-decoration: underline">Subsistemas da Loja da Vivi</a> começaram a ser desenvolvidos por <a href="https://francis-castela.github.io/portfolio/" style="color: inherit; text-decoration: underline">Francis Castela</a>. Começou com a Planilha de Cálculo para Marketplaces no início de 2023, tornando-se a <a href="https://lojadavivi.github.io/subsistemas/HTML/CALCULADORA/calculadora.html" style="color: inherit; text-decoration: underline">Calculadora para Marketplaces</a> em 17/08/2023, após o desenolvimento incial dos subsistemas de estoque em 15/08/2023. Visa ser uma solução prática e completa de gerenciamento de preços e estoque para agilizar o trabalho no escritório, garantindo que não seja perdido tempo em tarefas essenciais que são, infelizmente, lentas.</p>
-<p>Hoje os subsistemas contam com páginas de visualização de estoques das lojas e uma calculadora de preços para marketplaces, sempre buscando se apresentar da forma mais intuitiva possível.</p>
+</p>Para reduzir o impacto destes problemas, os <a href="https://lojadavivi.github.io/subsistemas/index.html" style="color: inherit; text-decoration: underline">Subsistemas da Loja da Vivi</a> começaram a ser desenvolvidos por <a href="https://francis-castela.github.io/portfolio/" style="color: inherit; text-decoration: underline">Francis Castela</a>. Começou com a Planilha de Cálculo para Marketplaces no início de 2023, tornando-se a <a href="https://lojadavivi.github.io/subsistemas/HTML/CALCULADORA/calculadora.html" style="color: inherit; text-decoration: underline">Calculadora para Marketplaces</a> em 17/08/2023, após o desenvolvimento inicial dos subsistemas de estoque em 15/08/2023. Visa ser uma solução prática e completa de gerenciamento de preços e estoque para agilizar o trabalho no escritório, garantindo que não seja perdido tempo em tarefas essenciais que são, infelizmente, lentas.</p>
+<p>Hoje os subsistemas contam com páginas de visualização de estoques das lojas, uma calculadora de preços para marketplaces e um gerador de Danfe Simplificada, sempre buscando se apresentar da forma mais intuitiva possível.</p>
 <p>Construído sob a licença <a
             href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br" target="_blank"
             rel="license noopener noreferrer" style="color: inherit; text-decoration: underline;">CC BY-NC-SA 4.0<img
@@ -17,7 +17,7 @@
 <h2>Changelog</h2>
 <details>
 <summary>
-INDEX
+SUBSISTEMAS
 </summary>
 <table>
     <thead>
@@ -27,6 +27,14 @@ INDEX
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td>2.0.6<br>24/10/2023</td>
+            <td>
+                <ul>
+                    <li>Corrigido erro de ortografia em README</li>
+                </ul>
+            </td>
+        </tr>
         <tr>
             <td>2.0.5<br>18/10/2023</td>
             <td>
