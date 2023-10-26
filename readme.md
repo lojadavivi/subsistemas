@@ -239,11 +239,18 @@ ESTOQUES
     </thead>
     <tbody>
         <tr>
+            <td>1.3.0 <br> 26/10/2023</td>
+            <td>
+                <ul>
+                    <li>Adicionada verificação de custo "meia nota".</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
             <td>1.2.1 <br> 10/10/2023</td>
             <td>
                 <ul>
-                    <li>Adicionado botões para organizar a tabela em ordem alfabética em TODOS OS ESTOQUES.
-                    </li>
+                    <li>Adicionado botões para organizar a tabela em ordem alfabética em TODOS OS ESTOQUES.</li>
                 </ul>
             </td>
         </tr>

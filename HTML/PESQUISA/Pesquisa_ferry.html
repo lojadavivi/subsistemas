@@ -18,7 +18,8 @@
 <body>
     <!-- Título principal -->
     <h1 class="header-with-image" style="background-color: #5B8266;">
-        <span class="header-text"><a href="/subsistemas/index.html" class="button-back" style="margin-left: 5%;">⬅️ MENU</a></span>
+        <span class="header-text"><a href="/subsistemas/index.html" class="button-back" style="margin-left: 5%;">⬅️
+                MENU</a></span>
         <span class="header-text">ESTOQUE - LOJA DA VIVI LTDA (Ferry)</span>
         <img class="header-image" src="/subsistemas/STYLES/icon.png">
     </h1>
@@ -46,23 +47,43 @@
             </thead>
         </table>
     </div>
-    <p style="text-align: center;">Dica: após a pesquisa, clique no cabeçalho que deseja organizar por ordem alfabética.</p>
+    <p style="text-align: center;">Dica: após a pesquisa, clique no cabeçalho que deseja organizar por ordem alfabética.
+    </p>
     <!-- Tabela para exibir os resultados dinamicamente-->
     <div id="resultsContainer">
         <table class="tabela_busca">
             <thead>
                 <tr>
-                    <th style="background-color: #333843;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorId()">ID</button></th>
-                    <th style="background-color: #333843;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorRef()">Referência</button></th>
-                    <th style="background-color: #5B8266;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorCod()">Cod. Barras</button></th>
-                    <th style="background-color: #5B8266;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorNom()">Produto</button></th>
+                    <th style="background-color: #333843;">⚠</th>
+                    <th style="background-color: #333843;"><button
+                            style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;"
+                            onclick="ordenarPorId()">ID</button></th>
+                    <th style="background-color: #333843;"><button
+                            style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;"
+                            onclick="ordenarPorRef()">Referência</button></th>
+                    <th style="background-color: #5B8266;"><button
+                            style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;"
+                            onclick="ordenarPorCod()">Cod. Barras</button></th>
+                    <th style="background-color: #5B8266;"><button
+                            style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;"
+                            onclick="ordenarPorNom()">Produto</button></th>
                     <th style="background-color: #5B8266;">Custo</th>
                     <th style="background-color: #5B8266;">Venda</th>
-                    <th style="background-color: #5B8266;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorQtd()">QTD</button></th>
-                    <th style="background-color: #333843;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorNcm()">NCM</button></th>
-                    <th style="background-color: #333843;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorCes()">CEST</button></th>
-                    <th style="background-color: #333843;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorPis()">PIS</button></th>
-                    <th style="background-color: #333843;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorCof()">COFINS</button></th>
+                    <th style="background-color: #5B8266;"><button
+                            style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;"
+                            onclick="ordenarPorQtd()">QTD</button></th>
+                    <th style="background-color: #333843;"><button
+                            style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;"
+                            onclick="ordenarPorNcm()">NCM</button></th>
+                    <th style="background-color: #333843;"><button
+                            style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;"
+                            onclick="ordenarPorCes()">CEST</button></th>
+                    <th style="background-color: #333843;"><button
+                            style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;"
+                            onclick="ordenarPorPis()">PIS</button></th>
+                    <th style="background-color: #333843;"><button
+                            style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;"
+                            onclick="ordenarPorCof()">COFINS</button></th>
                 </tr>
             </thead>
             <tbody id="resultsTableBody"></tbody>
@@ -103,6 +124,7 @@
                 var linhasFerry = data.split("\n");
                 for (var infoFerry = 1; infoFerry < linhasFerry.length; infoFerry++) {
                     var columnsFerry = linhasFerry[infoFerry].split(";");
+                    var obsFerry = columnsFerry[57] || "";
                     var idFerry = columnsFerry[0];
                     var refFerry = columnsFerry[23] || "";
                     var codFerry = columnsFerry[22] || "";
@@ -118,33 +140,50 @@
                     // Verifica se o resultado corresponde à busca e organiza as informações na tabela
                     if ((inputCod && (inputNome === "" || prodFerry.toLowerCase().includes(inputNome))) || (!inputCod && codFerry.trim().match(inputNome) == inputNome || refFerry.trim().match(inputNome) == inputNome)) {
                         var row = resultsTableBody.insertRow();
-                        var idFerryCell = row.insertCell(0);
-                        var refFerryCell = row.insertCell(1);
-                        var codFerryCell = row.insertCell(2);
-                        var prodFerryCell = row.insertCell(3);
-                        var custoFerryCell = row.insertCell(4);
-                        var vendaFerryCell = row.insertCell(5);
-                        var qtdFerryCell = row.insertCell(6);
-                        var ncmFerryCell = row.insertCell(7);
-                        var cestFerryCell = row.insertCell(8);
-                        var pisFerryCell = row.insertCell(9);
-                        var cofinsFerryCell = row.insertCell(10);
+                        var obsFerryCell = row.insertCell(0);
+                        var idFerryCell = row.insertCell(1);
+                        var refFerryCell = row.insertCell(2);
+                        var codFerryCell = row.insertCell(3);
+                        var prodFerryCell = row.insertCell(4);
+                        var custoFerryCell = row.insertCell(5);
+                        var vendaFerryCell = row.insertCell(6);
+                        var qtdFerryCell = row.insertCell(7);
+                        var ncmFerryCell = row.insertCell(8);
+                        var cestFerryCell = row.insertCell(9);
+                        var pisFerryCell = row.insertCell(10);
+                        var cofinsFerryCell = row.insertCell(11);
+
+                        // Verifica se o conteúdo de obsFerryCell é igual a ⚠
+                        if (obsFerry === "⚠") {
+                            obsFerryCell.textContent = "⚠"; // Exibe ⚠
+                        } else {
+                            obsFerryCell.textContent = ""; // Não exibe nada
+                        }
+
                         idFerryCell.textContent = idFerry.replace(/"/g, "");
                         refFerryCell.textContent = refFerry.replace(/"/g, "");
                         codFerryCell.textContent = codFerry.replace(/"/g, "");
                         prodFerryCell.textContent = prodFerry.replace(/"/g, "");
 
-                        var custoFerryNum = parseFloat(custoFerry.replace(/"/g, "").replace(",", "."));
-                        var vendaFerryNum = parseFloat(vendaFerry.replace(/"/g, "").replace(",", "."));
+                        if (obsFerry === "⚠") {
+                            var anchor = document.createElement("a");
+                            anchor.textContent = "Meia nota";
+                            anchor.href = "https://docs.google.com/spreadsheets/d/1iaiCJpYmdUV9sA556QLTEr2d70IUYYjzTTSQKDDhWv4/edit?usp=sharing";
+                            custoFerryCell.appendChild(anchor);
+                        } else {
+                            var custoFerryNum = parseFloat(custoFerry.replace(/"/g, "").replace(",", "."));
+                            custoFerryCell.textContent = "R$ " + custoFerryNum.toLocaleString('pt-BR', {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2
+                            });
+                        }
 
-                        custoFerryCell.textContent = "R$ " + custoFerryNum.toLocaleString('pt-BR', {
-                            minimumFractionDigits: 2,
-                            maximumFractionDigits: 2
-                        });
+                        var vendaFerryNum = parseFloat(vendaFerry.replace(/"/g, "").replace(",", "."));
                         vendaFerryCell.textContent = "R$ " + vendaFerryNum.toLocaleString('pt-BR', {
                             minimumFractionDigits: 2,
                             maximumFractionDigits: 2
                         });
+
                         qtdFerryCell.textContent = qtdFerry.replace(/"/g, "");
                         ncmFerryCell.textContent = ncmFerry.replace(/"/g, "");
                         cestFerryCell.textContent = cestFerry.replace(/"/g, "");

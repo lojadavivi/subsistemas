@@ -18,7 +18,8 @@
 <body>
     <!-- Título principal -->
     <h1 class="header-with-image" style="background-color: #008DD5;">
-        <span class="header-text"><a href="/subsistemas/index.html" class="button-back" style="margin-left: 5%;">⬅️ MENU</a></span>
+        <span class="header-text"><a href="/subsistemas/index.html" class="button-back" style="margin-left: 5%;">⬅️
+                MENU</a></span>
         <span class="header-text">ESTOQUE - LOJA DA VIVI ONLINE (Site)</span>
         <img class="header-image" src="/subsistemas/STYLES/icon.png">
     </h1>
@@ -46,17 +47,26 @@
             </thead>
         </table>
     </div>
-    <p style="text-align: center;">Dica: após a pesquisa, clique no cabeçalho que deseja organizar por ordem alfabética.</p>
+    <p style="text-align: center;">Dica: após a pesquisa, clique no cabeçalho que deseja organizar por ordem alfabética.
+    </p>
     <!-- Tabela para exibir os resultados dinamicamente-->
     <div id="resultsContainer">
         <table class="tabela_busca">
             <thead>
                 <tr>
-                    <th style="background-color: #008DD5;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorCod()">Cod. Barras</button></th>
-                    <th style="background-color: #008DD5;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorNom()">Produto</button></th>
+                    <th style="background-color: #008DD5;"><button
+                            style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;"
+                            onclick="ordenarPorCod()">Cod. Barras</button></th>
+                    <th style="background-color: #008DD5;"><button
+                            style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;"
+                            onclick="ordenarPorNom()">Produto</button></th>
                     <th style="background-color: #008DD5;">Custo</th>
-                    <th style="background-color: #008DD5;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorQtdF()">QTD Fis.</button></th>
-                    <th style="background-color: #008DD5;"><button style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;" onclick="ordenarPorQtdV()">QTD Vir.</button></th>
+                    <th style="background-color: #008DD5;"><button
+                            style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;"
+                            onclick="ordenarPorQtdF()">QTD Fis.</button></th>
+                    <th style="background-color: #008DD5;"><button
+                            style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;"
+                            onclick="ordenarPorQtdV()">QTD Vir.</button></th>
                 </tr>
             </thead>
             <tbody id="resultsTableBody"></tbody>
