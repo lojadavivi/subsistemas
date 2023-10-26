@@ -154,7 +154,7 @@
                         var cofinsTijucasCell = row.insertCell(11);
 
                         // Verifica se o conteúdo de obsTijucasCell é igual a ⚠
-                        if (obsTijucas === "⚠") {
+                        if (obsTijucas === "?") {
                             obsTijucasCell.textContent = "⚠"; // Exibe ⚠
                         } else {
                             obsTijucasCell.textContent = ""; // Não exibe nada
@@ -165,7 +165,7 @@
                         codTijucasCell.textContent = codTijucas.replace(/"/g, "");
                         prodTijucasCell.textContent = prodTijucas.replace(/"/g, "");
 
-                        if (obsTijucas === "⚠") {
+                        if (obsTijucas === "?") {
                             var anchor = document.createElement("a");
                             anchor.textContent = "Meia nota";
                             anchor.href = "https://docs.google.com/spreadsheets/d/1iaiCJpYmdUV9sA556QLTEr2d70IUYYjzTTSQKDDhWv4/edit?usp=sharing";

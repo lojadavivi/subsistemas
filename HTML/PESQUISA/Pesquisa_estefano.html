@@ -154,7 +154,7 @@
                         var cofinsEstefanoCell = row.insertCell(11);
 
                         // Verifica se o conteúdo de obsEstefanoCell é igual a ⚠
-                        if (obsEstefano === "⚠") {
+                        if (obsEstefano === "?") {
                             obsEstefanoCell.textContent = "⚠"; // Exibe ⚠
                         } else {
                             obsEstefanoCell.textContent = ""; // Não exibe nada
@@ -165,7 +165,7 @@
                         codEstefanoCell.textContent = codEstefano.replace(/"/g, "");
                         prodEstefanoCell.textContent = prodEstefano.replace(/"/g, "");
 
-                        if (obsEstefano === "⚠") {
+                        if (obsEstefano === "?") {
                             var anchor = document.createElement("a");
                             anchor.textContent = "Meia nota";
                             anchor.href = "https://docs.google.com/spreadsheets/d/1iaiCJpYmdUV9sA556QLTEr2d70IUYYjzTTSQKDDhWv4/edit?usp=sharing";

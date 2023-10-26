@@ -154,7 +154,7 @@
                         var cofinsFerryCell = row.insertCell(11);
 
                         // Verifica se o conteúdo de obsFerryCell é igual a ⚠
-                        if (obsFerry === "⚠") {
+                        if (obsFerry === "?") {
                             obsFerryCell.textContent = "⚠"; // Exibe ⚠
                         } else {
                             obsFerryCell.textContent = ""; // Não exibe nada
@@ -165,7 +165,7 @@
                         codFerryCell.textContent = codFerry.replace(/"/g, "");
                         prodFerryCell.textContent = prodFerry.replace(/"/g, "");
 
-                        if (obsFerry === "⚠") {
+                        if (obsFerry === "?") {
                             var anchor = document.createElement("a");
                             anchor.textContent = "Meia nota";
                             anchor.href = "https://docs.google.com/spreadsheets/d/1iaiCJpYmdUV9sA556QLTEr2d70IUYYjzTTSQKDDhWv4/edit?usp=sharing";
