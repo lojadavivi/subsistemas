@@ -993,7 +993,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;748;7898926064212;Micromotor Beltec LB100 Profissional 30.000 RPM - ;Sim;Beltec;18;0;0;0;18;0;;0;455,4;0
 1;Padrão Loja da Vivi;2650;7898935061943;Micromotor Beltec LB20 Profissional - ;Não;Beltec;0;0;0;0;0;0;;0;208,4;0
 1;Padrão Loja da Vivi;750;7898935061653;Micromotor Beltec LB3000 Profissional 45.000 RPM - ;Sim;Beltec;0;0;0;3;3;0;;0;983,25;0
-1;Padrão Loja da Vivi;746;7898935061134;Micromotor Beltec LB50 Profissional 14.000 RPM - ;Sim;Beltec;0;1;0;6;5;0;;0;248,4;0
+1;Padrão Loja da Vivi;746;7898935061134;Micromotor Beltec LB50 Profissional 14.000 RPM - ;Sim;Beltec;0;0;0;6;6;0;;0;248,4;0
 1;Padrão Loja da Vivi;2652;7898935061950;Micromotor Beltec LB Prime Profissional - ;Não;Beltec;0;0;0;0;0;0;;0;558,4;0
 1;Padrão Loja da Vivi;3467;5678000860013;Micromotor Girl Fatale Caneta Rosa Lixa Elétrica Bivolt - ;Sim;Girl Fatale;0;0;0;30;30;0;;0;0;0
 1;Padrão Loja da Vivi;3469;5678000860068;Micromotor Mercedes2000 Bivolt 20.000RPM - ;Não;Fan&Co;0;0;0;0;0;0;;0;0;0
@@ -1210,7 +1210,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;4154;7898569382360;Secador de Cabelo Soling Montreal 2300 220V - ;Sim;Soling;8;0;0;0;8;0;;0;95,81;0
 1;Padrão Loja da Vivi;3999;7898496356090;Secador Ga.ma Babosa 3D Auto Bivolt Motor Profissional 2200W - ;Não;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4145;7898496354805;Secador Gama IQ Perfetto Cinza 2000w 220v - ;Não;Ga.ma;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;4143;7898496356182;Secador Gama IQ Perfetto Preto 127v 1800w - ;Sim;Ga.ma;0;0;0;1;1;0;;0;0;0
+1;Padrão Loja da Vivi;4143;7898496356182;Secador Gama IQ Perfetto Preto 127v 1800w - ;Sim;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4150;7898496355574;Secador Gama IQ Perfetto Rose Gold 1800w 127v - ;Sim;Ga.ma;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;4148;7898496355581;Secador Gama IQ Perfetto Rose Gold 2000w 220v - ;Sim;Ga.ma;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;4113;7898496355529;Secador Ga.ma Se Speciale Ultra Ion Motor AC 2300W 220V - ;Não;Ga.ma;0;0;0;0;0;0;;0;0;0
