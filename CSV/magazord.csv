@@ -796,6 +796,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;326;7899766007445-01;Kit Love Secret Seduction Loção Desodorante 250ml + Sabonete 200ml + Body Splash 250ml - ;Sim;Love Secret;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4207;8182404947197;Kit Máscara 2x1 Arvensis 450g + Pente Dentes de Metal ProArt - ;Sim;Arvensis;0;0;0;24;24;0;;0;0;0
 1;Padrão Loja da Vivi;4219;9023765313766;Kit Máscara 2x1 Arvensis 450g + Trio De Pente Garfo ProArt - ;Sim;Arvensis;0;0;0;18;18;0;;0;0;0
+1;Padrão Loja da Vivi;4233;8346649263034;Kit Máscara 2x1 Arvensis Cachos Nat + Escova Pirulito Dompel - ;Sim;Arvensis;0;0;0;24;24;0;;0;0;0
 1;Padrão Loja da Vivi;4203;9186160246968;Kit Máscara 2x1 Arvensis + Touca de Cetim Dupla Face Poli - ;Sim;Arvensis;0;0;0;12;12;0;;0;0;0
 1;Padrão Loja da Vivi;4195;9440504704942;Kit Máscara 2x1 + Geleia Alta 250g  Arvensis Cachos Naturais - ;Sim;Arvensis;0;0;0;24;24;0;;0;0;0
 1;Padrão Loja da Vivi;4230;9178217934331;Kit Máscara 2x1 + Geleia Alta 450g Arvensis Cachos Naturais - ;Sim;Arvensis;0;0;0;14;14;0;;0;0;0
@@ -993,13 +994,13 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;748;7898926064212;Micromotor Beltec LB100 Profissional 30.000 RPM - ;Sim;Beltec;18;0;0;0;18;0;;0;455,4;0
 1;Padrão Loja da Vivi;2650;7898935061943;Micromotor Beltec LB20 Profissional - ;Não;Beltec;0;0;0;0;0;0;;0;208,4;0
 1;Padrão Loja da Vivi;750;7898935061653;Micromotor Beltec LB3000 Profissional 45.000 RPM - ;Sim;Beltec;0;0;0;3;3;0;;0;983,25;0
-1;Padrão Loja da Vivi;746;7898935061134;Micromotor Beltec LB50 Profissional 14.000 RPM - ;Sim;Beltec;0;0;0;6;6;0;;0;248,4;0
+1;Padrão Loja da Vivi;746;7898935061134;Micromotor Beltec LB50 Profissional 14.000 RPM - ;Sim;Beltec;0;1;0;5;4;0;;0;248,4;0
 1;Padrão Loja da Vivi;2652;7898935061950;Micromotor Beltec LB Prime Profissional - ;Não;Beltec;0;0;0;0;0;0;;0;558,4;0
 1;Padrão Loja da Vivi;3467;5678000860013;Micromotor Girl Fatale Caneta Rosa Lixa Elétrica Bivolt - ;Sim;Girl Fatale;0;0;0;30;30;0;;0;0;0
 1;Padrão Loja da Vivi;3469;5678000860068;Micromotor Mercedes2000 Bivolt 20.000RPM - ;Não;Fan&Co;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;1942;7908718711061;Micromotor Profissional Marathon M3 Champion Bivolt - Azul;Não;Talmax;3;0;0;0;3;0;;0;699;0
 1;Padrão Loja da Vivi;1170;7897087560830;Micromotor Profissional Marathon M3 Champion Bivolt - Branco;Não;Talmax;0;0;0;0;0;0;;0;699;0
-1;Padrão Loja da Vivi;1941;7898234771260;Micromotor Profissional Marathon M3 Champion Bivolt - Rosa;Não;Talmax;1;0;0;0;1;0;;0;725;0
+1;Padrão Loja da Vivi;1941;7898234771260;Micromotor Profissional Marathon M3 Champion Bivolt - Rosa;Não;Talmax;0;0;0;0;0;0;;0;725;0
 1;Padrão Loja da Vivi;3500;7758258058023;Micromotor Siôux Lixa Elétrica Telefone 30.000 RPM Bivolt - ;Não;Siôux;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3919;7928680937535;Mini Cabine Fan Nails Portátil Q5 Recarregável - ;Sim;Fan&Co;0;0;0;30;30;0;;0;0;0
 1;Padrão Loja da Vivi;3018;1189533000011;Mini Cabine LED/UV Portátil Q5 18W 5 LEDs Recaregável - ;Não;RPC;0;0;0;18;18;0;;0;0;0
@@ -1199,7 +1200,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2666;7898957952700;Secador de Cabelo Lion Aero Pro 2150W Grafite - 220V;Sim;Lion;0;0;0;3;3;0;;0;126,82;0
 1;Padrão Loja da Vivi;2662;7898957952335;Secador de Cabelo Lion Aero Pro 2150W Rosa - 127V;Não;Lion;0;0;0;0;0;0;;0;126,82;0
 1;Padrão Loja da Vivi;2663;7898957952342;Secador de Cabelo Lion Aero Pro 2150W Rosa - 220V;Não;Lion;0;0;0;0;0;0;;0;126,82;0
-1;Padrão Loja da Vivi;2352;7898949454267;Secador de Cabelo Lizze Extreme 2400w - 220V;Sim;Lizze;0;1;0;14;13;0;;0;0;0
+1;Padrão Loja da Vivi;2352;7898949454267;Secador de Cabelo Lizze Extreme 2400w - 220V;Sim;Lizze;0;1;0;13;12;0;;0;0;0
 1;Padrão Loja da Vivi;2257;7908422601436;Secador De Cabelo MQ Beauty Belle Rosa 2000w 220v - ;Sim;MQ;7;0;0;4;11;0;;0;135,28;0
 1;Padrão Loja da Vivi;2807;7898657690629;Secador de Cabelo MQ Professional Millano Íon 1900W 220V - ;Não;MQ;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2448;7898957952441;Secador de Cabelo Profissional Lion Aero Ultra 3000W 220V - ;Não;Lion;0;0;0;0;0;0;;0;499,14;0
@@ -1211,8 +1212,8 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3999;7898496356090;Secador Ga.ma Babosa 3D Auto Bivolt Motor Profissional 2200W - ;Não;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4145;7898496354805;Secador Gama IQ Perfetto Cinza 2000w 220v - ;Não;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4143;7898496356182;Secador Gama IQ Perfetto Preto 127v 1800w - ;Sim;Ga.ma;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;4150;7898496355574;Secador Gama IQ Perfetto Rose Gold 1800w 127v - ;Sim;Ga.ma;0;0;0;2;2;0;;0;0;0
-1;Padrão Loja da Vivi;4148;7898496355581;Secador Gama IQ Perfetto Rose Gold 2000w 220v - ;Sim;Ga.ma;0;0;0;4;4;0;;0;0;0
+1;Padrão Loja da Vivi;4150;7898496355574;Secador Gama IQ Perfetto Rose Gold 1800w 127v - ;Sim;Ga.ma;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;4148;7898496355581;Secador Gama IQ Perfetto Rose Gold 2000w 220v - ;Sim;Ga.ma;1;1;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4113;7898496355529;Secador Ga.ma Se Speciale Ultra Ion Motor AC 2300W 220V - ;Não;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3710;7540704045080;Selante Top Coat Fengshangmei (No-cleanse) 15ml - ;Sim;Fengshangmei;0;0;0;500;500;0;;0;0;0
 1;Padrão Loja da Vivi;2304;7908357402771-01;Sérum Facial Berry Kiss Essencial para Pele Oleosa 30ml - ;Sim;Berry Kiss;0;0;0;10;10;0;;0;8,01;0
