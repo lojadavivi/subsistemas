@@ -107,7 +107,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2600;72715482;Cabine LED/UV Fan Nails 5 Plus 48W 24 LEDs Bivolt - ;Sim;Fan&Co;0;0;0;20;20;0;;0;0;0
 1;Padrão Loja da Vivi;3024;8972881209839;Cabine LED/UV Ganesha YC-09 Com Apoio 120W 24 LEDs Bivolt - ;Sim;RPC;0;0;0;1;1;0;;0;0;0
 1;Padrão Loja da Vivi;3915;7899940703859;Cabine LED/UV Piu Bella PB01 48W 30LEDs Bivolt - ;Sim;Piu Bella;7;0;0;0;7;0;;0;120,9;0
-1;Padrão Loja da Vivi;3917;7899940703866;Cabine LED/UV Piu Bella PB03 48W 21LEDs Bivolt - ;Sim;Piu Bella;10;0;0;0;10;0;;0;167,9;0
+1;Padrão Loja da Vivi;3917;7899940703866;Cabine LED/UV Piu Bella PB03 48W 21LEDs Bivolt - ;Sim;Piu Bella;9;0;0;0;9;0;;0;167,9;0
 1;Padrão Loja da Vivi;378;7898604565024;Cabine LED/UV SUNUV Sun 5 Plus 48W 36 LEDs Bivolt - ;Não;SUNUV;0;0;0;0;0;0;;549,9;299,9;0
 1;Padrão Loja da Vivi;322;7898604565031;Cabine LED/UV SUNUV Sun 9X Plus 36W 18 LEDs Bivolt - ;Sim;SUNUV;10;0;0;0;10;0;;0;61,21;0
 1;Padrão Loja da Vivi;376;7898604565048;Cabine LED/UV SUNUV Sun One 48W 30 Led UV Fundo de Metal Bivolt - ;Sim;SUNUV;0;0;0;4;4;0;;0;150;0
@@ -757,7 +757,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3289;7896509976747;Kit Coloração Beauty Color Bela&Cor Sem Amônia - 66.26 - Marsala;Sim;Beauty Color;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;3288;7896509976662;Kit Coloração Beauty Color Bela&Cor Sem Amônia - 6.7 - Chocolate;Sim;Beauty Color;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;3290;7896509976686;Kit Coloração Beauty Color Bela&Cor Sem Amônia - 7.0 - Louro Médio;Sim;Beauty Color;0;0;0;6;6;0;;0;0;0
-1;Padrão Loja da Vivi;3291;7896509976693;Kit Coloração Beauty Color Bela&Cor Sem Amônia - 7.1 - Louro Cinza Médio;Sim;Beauty Color;0;0;0;6;6;0;;0;0;0
+1;Padrão Loja da Vivi;3291;7896509976693;Kit Coloração Beauty Color Bela&Cor Sem Amônia - 7.1 - Louro Cinza Médio;Sim;Beauty Color;0;1;0;6;5;0;;0;0;0
 1;Padrão Loja da Vivi;3292;7896509976709;Kit Coloração Beauty Color Bela&Cor Sem Amônia - 7.43 - Ruivo Acobreado Dourado;Sim;Beauty Color;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;3276;7896509976716;Kit Coloração Beauty Color Bela&Cor Sem Amônia - 8.0 - Louro Claro;Sim;Beauty Color;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;3307;7896509972251;Kit Coloração Creme Beauty Color Bela&Cor - 10.0 - Louro Claríssimo;Sim;Beauty Color;0;0;0;6;6;0;;0;0;0
@@ -829,7 +829,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3972;307360675429;Kit Salon Line Meu Liso Matizador Preto - ;Não;Salon Line;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4132;5678055814504;Kit Selante Top Coat Fengshangmei (No-cleanse) 15ml - ;Sim;Fengshangmei;0;0;0;41;41;0;;0;0;0
 1;Padrão Loja da Vivi;4193;9711010809989;Kit Shampoo + Cond. + Máscara 2x1 Arvensis Cachos Naturais - ;Sim;Arvensis;0;0;0;5;5;0;;0;0;0
-1;Padrão Loja da Vivi;492;7898610373187;Kit Shampoo e Condicionador Haskell Cavalo Forte 500ml - ;Sim;Haskell;0;0;0;7;7;0;;0;0;0
+1;Padrão Loja da Vivi;492;7898610373187;Kit Shampoo e Condicionador Haskell Cavalo Forte 500ml - ;Sim;Haskell;0;1;0;7;6;0;;0;0;0
 1;Padrão Loja da Vivi;516;7898610372975-01;Kit Shampoo e Condicionador Haskell Mandioca 500ml - ;Sim;Haskell;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;634;7896013569817-01;Kit Shampoo e Condicionador Vitay + Novex Doctor Rícino Embelleze 300ml - ;Sim;Embelleze;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;632;7896013565741-01;Kit Shampoo e Condicionador Vitay + Novex Liso de Cinema Embelleze 300ml - ;Sim;Embelleze;0;0;0;0;0;0;;0;0;0
@@ -996,7 +996,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2526;5678008280103;Massageador Facial Energy Beauty Bar - ;Sim;RPC;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;748;7898926064212;Micromotor Beltec LB100 Profissional 30.000 RPM - ;Sim;Beltec;18;0;0;0;18;0;;0;455,4;0
 1;Padrão Loja da Vivi;2650;7898935061943;Micromotor Beltec LB20 Profissional - ;Não;Beltec;0;0;0;0;0;0;;0;208,4;0
-1;Padrão Loja da Vivi;750;7898935061653;Micromotor Beltec LB3000 Profissional 45.000 RPM - ;Sim;Beltec;0;0;0;3;3;0;;0;983,25;0
+1;Padrão Loja da Vivi;750;7898935061653;Micromotor Beltec LB3000 Profissional 45.000 RPM - ;Sim;Beltec;0;0;0;0;0;0;;0;983,25;0
 1;Padrão Loja da Vivi;746;7898935061134;Micromotor Beltec LB50 Profissional 14.000 RPM - ;Sim;Beltec;0;0;0;4;4;0;;0;248,4;0
 1;Padrão Loja da Vivi;2652;7898935061950;Micromotor Beltec LB Prime Profissional - ;Não;Beltec;0;0;0;0;0;0;;0;558,4;0
 1;Padrão Loja da Vivi;3467;5678000860013;Micromotor Girl Fatale Caneta Rosa Lixa Elétrica Bivolt - ;Sim;Girl Fatale;0;0;0;30;30;0;;0;0;0
@@ -1030,7 +1030,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2355;7898921107044;Motor de Suspensão Beltec Chicote Mini 220V - ;Não;Beltec;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3782;7898567704126;Mousse Auto Bronzeador My Health SUN Prime 150ml - ;Sim;My Health;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;510;7898944075153-01;Nectavita Haskell Mandioca 40ml - ;Sim;Haskell;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;3449;7898911307119;Nupill Firmness Intensive Lifting Instantâneo Cinderela 1,2g - ;Sim;Nupill;3;0;0;0;3;0;;0;12,36;0
+1;Padrão Loja da Vivi;3449;7898911307119;Nupill Firmness Intensive Lifting Instantâneo Cinderela 1,2g - ;Sim;Nupill;1;0;0;0;1;0;;0;12,36;0
 1;Padrão Loja da Vivi;3504;4064666306155;Oil Reflections Light Wella Para Reflexos Luminosos 30ml - ;Não;Wella;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3502;4064666306148;Oil Reflections Wella Para Cabelos Suaves e Luminosos 30ml - ;Sim;Wella;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;208;7899572810192-01;Óleo Capilar Lola Pinga! Açaí e Pracaxi Pré e Pós Química 50ml - ;Sim;Lola;0;0;0;2;2;0;;0;0;0
@@ -1137,6 +1137,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;186;7896046700676-01;Pomada Modeladora Cless Charming Normal Efeito Matte 50g - ;Não;Cless;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4217;7908458322374;Pomada Modeladora Salon Line Antifrizz #todecacho 120g - ;Sim;Salon Line;0;0;0;12;12;0;;0;0;0
 1;Padrão Loja da Vivi;2421;731509579204-01;Prancha Alisadora Kiss New York Titanium Luxy 450F Bivolt - ;Não;Kiss;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;4246;7898605222704;Prancha de Cabelo Double Sublime Lizz Profissional Bivolt - ;Sim;Lizz;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;2659;7908422601498;Prancha de Cabelo MQ Titanium Max480 Slim Bivolt Automático - ;Sim;MQ;4;0;0;0;4;0;;0;295,99;0
 1;Padrão Loja da Vivi;3950;7898496354881;Prancha Ga.ma Elegance Blue Titanium 3D Bivolt - ;Não;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4116;7898496352030;Prancha Ga.ma Eleganza Plus Bivolt 210ḞC/410ḞF - ;Sim;Ga.ma;0;0;0;10;10;0;;0;0;0
@@ -1314,7 +1315,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;4099;7908003901580;SHAMPOO VIZET SELAGEM TERMICA ANTI RESIDUOS 1L - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;4031;7908003909012;Shampoo Vizet Splendidus 250ml - ;Sim;Vizet;3;0;0;0;3;0;;0;0;0
 1;Padrão Loja da Vivi;4033;7908003909661;Shampoo Vizet Splendidus Água de Coco 250ml - ;Sim;Vizet;3;0;0;0;3;0;;0;0;0
-1;Padrão Loja da Vivi;3954;7896010175622;Spray Argan Cless Charming Extra Brilho 150ml - ;Sim;Cless;36;1;0;0;35;0;;0;15,98;0
+1;Padrão Loja da Vivi;3954;7896010175622;Spray Argan Cless Charming Extra Brilho 150ml - ;Sim;Cless;35;0;0;0;35;0;;0;15,98;0
 1;Padrão Loja da Vivi;3952;7896046716226;Spray Argan Cless Charming Extra Brilho 300ml - ;Não;Cless;0;0;0;0;0;0;;0;17,78;0
 1;Padrão Loja da Vivi;3786;7891033718719;Spray Australian Gold Accelerator Com Instant Bronzer 237g - ;Sim;Australian Gold;0;0;0;1;1;0;;0;0;0
 1;Padrão Loja da Vivi;3784;7891033718689;Spray Australian Gold Acelerador de Bronzeamento Clear 237g - ;Sim;Australian Gold;0;0;0;3;3;0;;0;0;0
