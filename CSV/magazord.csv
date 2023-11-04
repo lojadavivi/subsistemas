@@ -621,7 +621,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3874;7898562214880;Geleia Ativadora Arvensis Alta Fixação Cachos Naturais 450g - ;Sim;Arvensis;0;0;0;14;14;0;;0;0;0
 1;Padrão Loja da Vivi;3904;7898562214583;Geleia Ativadora Arvensis Forte Cachinhos Naturais 250g - ;Sim;Arvensis;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;3902;7898562214576;Geleia Ativadora Arvensis Suave Cachinhos Naturais 250g - ;Sim;Arvensis;0;0;0;3;3;0;;0;0;0
-1;Padrão Loja da Vivi;1939;7898562214606;Geleia Ativadora de Cachos Arvensis Cachos Naturais 250g - Alta Fixação;Sim;Arvensis;0;0;0;29;29;0;;0;0;0
+1;Padrão Loja da Vivi;1939;7898562214606;Geleia Ativadora de Cachos Arvensis Cachos Naturais 250g - Alta Fixação;Sim;Arvensis;0;1;0;29;28;0;;0;0;0
 1;Padrão Loja da Vivi;4226;7899572808724;Geleia Corporal Iluminadora Lola Bemdita Praia 200ml - ;Sim;Lola;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;560;7891350034868-01;Gel Fixador Bozzano Extra Forte Sem Álcool 300g - ;Sim;Bozzano;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;2055;7898699910075;Gel Lara Machado Banho de Fibra Natural Pink 30g - ;Não;Lara Machado;0;0;0;0;0;0;;0;0;0
@@ -1000,6 +1000,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;746;7898935061134;Micromotor Beltec LB50 Profissional 14.000 RPM - ;Sim;Beltec;0;0;0;4;4;0;;0;248,4;0
 1;Padrão Loja da Vivi;2652;7898935061950;Micromotor Beltec LB Prime Profissional - ;Não;Beltec;0;0;0;0;0;0;;0;558,4;0
 1;Padrão Loja da Vivi;3467;5678000860013;Micromotor Girl Fatale Caneta Rosa Lixa Elétrica Bivolt - ;Sim;Girl Fatale;0;0;0;30;30;0;;0;0;0
+1;Padrão Loja da Vivi;4248;8476318511552;Micromotor Lb 100 Beltec + Cabine Q5 Portátil Fan Nails - ;Sim;Beltec;0;0;0;18;18;0;;0;0;0
 1;Padrão Loja da Vivi;3469;5678000860068;Micromotor Mercedes2000 Bivolt 20.000RPM - ;Não;Fan&Co;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;1942;7908718711061;Micromotor Profissional Marathon M3 Champion Bivolt - Azul;Não;Talmax;3;0;0;0;3;0;;0;699;0
 1;Padrão Loja da Vivi;1170;7897087560830;Micromotor Profissional Marathon M3 Champion Bivolt - Branco;Não;Talmax;0;0;0;0;0;0;;0;699;0
@@ -1216,7 +1217,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;4154;7898569382360;Secador de Cabelo Soling Montreal 2300 220V - ;Sim;Soling;8;0;0;0;8;0;;0;95,81;0
 1;Padrão Loja da Vivi;3999;7898496356090;Secador Ga.ma Babosa 3D Auto Bivolt Motor Profissional 2200W - ;Não;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4145;7898496354805;Secador Gama IQ Perfetto Cinza 2000w 220v - ;Não;Ga.ma;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;4143;7898496356182;Secador Gama IQ Perfetto Preto 127v 1800w - ;Sim;Ga.ma;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;4143;7898496356182;Secador Gama IQ Perfetto Preto 127v 1800w - ;Sim;Ga.ma;1;0;0;0;1;0;;0;0;0
 1;Padrão Loja da Vivi;4150;7898496355574;Secador Gama IQ Perfetto Rose Gold 1800w 127v - ;Sim;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4148;7898496355581;Secador Gama IQ Perfetto Rose Gold 2000w 220v - ;Sim;Ga.ma;1;1;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4113;7898496355529;Secador Ga.ma Se Speciale Ultra Ion Motor AC 2300W 220V - ;Não;Ga.ma;0;0;0;0;0;0;;0;0;0
