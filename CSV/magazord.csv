@@ -30,7 +30,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;4176;5678000801016;Aquecedor de Cera Roll On Fan&Co 40W Bivolt - ;Sim;Fan&Co;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;4171;7898562214538;Ativador de Cachos Arvensis Cachinhos Crespos Vegano 300ml - ;Sim;Arvensis;0;0;0;17;17;0;;0;0;0
 1;Padrão Loja da Vivi;4236;7898562214521;Ativador de Cachos Arvensis Cachinhos Ondulados Vegano 300ml - ;Sim;Arvensis;0;0;0;33;33;0;;0;0;0
-1;Padrão Loja da Vivi;3994;7898562213708;Ativador de Cachos Arvensis Cachos Naturais 1L - ;Sim;Arvensis;0;0;0;7;7;0;;0;0;0
+1;Padrão Loja da Vivi;3994;7898562213708;Ativador de Cachos Arvensis Cachos Naturais 1L - ;Sim;Arvensis;0;1;0;7;6;0;;0;0;0
 1;Padrão Loja da Vivi;3876;7898562213791;Ativador De Cachos Arvensis Cachos Naturais Crespos 300ml - ;Sim;Arvensis;0;0;0;7;7;0;;0;0;0
 1;Padrão Loja da Vivi;4238;7898562213807;Ativador De Cachos Arvensis Cachos Naturais Crespos 500ml - ;Sim;Arvensis;0;0;0;15;15;0;;0;0;0
 1;Padrão Loja da Vivi;3878;7898562213692;Ativador De Cachos Arvensis Cachos Naturais Ondulados 500ml - ;Sim;Arvensis;0;0;0;12;12;0;;0;0;0
@@ -364,9 +364,9 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2538;731509992793;Escova Profissional ProArt Ceramic Expert Pro Lavand - 19mm;Sim;ProArt;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2539;731509992816;Escova Profissional ProArt Ceramic Expert Pro Lavand - 28mm;Sim;ProArt;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;2540;731509992830;Escova Profissional ProArt Ceramic Expert Pro Lavand - 33mm;Sim;ProArt;0;0;0;3;3;0;;0;0;0
-1;Padrão Loja da Vivi;2503;731509992502;Escova Profissional ProArt Elite Pro Ceramic - 22mm;Sim;ProArt;3;0;0;0;3;0;;0;32,82;0
-1;Padrão Loja da Vivi;2504;731509992526;Escova Profissional ProArt Elite Pro Ceramic - 27mm;Sim;ProArt;2;0;0;0;2;0;;0;37,29;0
-1;Padrão Loja da Vivi;2505;731509992540;Escova Profissional ProArt Elite Pro Ceramic - 34mm;Sim;ProArt;5;0;0;0;5;0;;0;54,26;0
+1;Padrão Loja da Vivi;2503;731509992502;Escova Profissional ProArt Elite Pro Ceramic - 22mm;Sim;ProArt;2;0;0;0;2;0;;0;32,82;0
+1;Padrão Loja da Vivi;2504;731509992526;Escova Profissional ProArt Elite Pro Ceramic - 27mm;Sim;ProArt;1;0;0;0;1;0;;0;37,29;0
+1;Padrão Loja da Vivi;2505;731509992540;Escova Profissional ProArt Elite Pro Ceramic - 34mm;Sim;ProArt;3;0;0;0;3;0;;0;54,26;0
 1;Padrão Loja da Vivi;2506;731509992564;Escova Profissional ProArt Elite Pro Ceramic - 43mm;Sim;ProArt;0;0;0;2;2;0;;0;43,26;0
 1;Padrão Loja da Vivi;2516;731509991819;Escova Profissional ProArt Metallic Pro Alumínio Térmica - 15mm;Não;ProArt;0;0;0;0;0;0;;0;12,92;0
 1;Padrão Loja da Vivi;2517;731509991826;Escova Profissional ProArt Metallic Pro Alumínio Térmica - 25mm;Não;ProArt;0;0;0;0;0;0;;0;23,7;0
@@ -621,7 +621,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3874;7898562214880;Geleia Ativadora Arvensis Alta Fixação Cachos Naturais 450g - ;Sim;Arvensis;0;0;0;14;14;0;;0;0;0
 1;Padrão Loja da Vivi;3904;7898562214583;Geleia Ativadora Arvensis Forte Cachinhos Naturais 250g - ;Sim;Arvensis;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;3902;7898562214576;Geleia Ativadora Arvensis Suave Cachinhos Naturais 250g - ;Sim;Arvensis;0;0;0;3;3;0;;0;0;0
-1;Padrão Loja da Vivi;1939;7898562214606;Geleia Ativadora de Cachos Arvensis Cachos Naturais 250g - Alta Fixação;Sim;Arvensis;0;1;0;29;28;0;;0;0;0
+1;Padrão Loja da Vivi;1939;7898562214606;Geleia Ativadora de Cachos Arvensis Cachos Naturais 250g - Alta Fixação;Sim;Arvensis;0;0;0;29;29;0;;0;0;0
 1;Padrão Loja da Vivi;4226;7899572808724;Geleia Corporal Iluminadora Lola Bemdita Praia 200ml - ;Sim;Lola;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;560;7891350034868-01;Gel Fixador Bozzano Extra Forte Sem Álcool 300g - ;Sim;Bozzano;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;2055;7898699910075;Gel Lara Machado Banho de Fibra Natural Pink 30g - ;Não;Lara Machado;0;0;0;0;0;0;;0;0;0
@@ -757,7 +757,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3289;7896509976747;Kit Coloração Beauty Color Bela&Cor Sem Amônia - 66.26 - Marsala;Sim;Beauty Color;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;3288;7896509976662;Kit Coloração Beauty Color Bela&Cor Sem Amônia - 6.7 - Chocolate;Sim;Beauty Color;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;3290;7896509976686;Kit Coloração Beauty Color Bela&Cor Sem Amônia - 7.0 - Louro Médio;Sim;Beauty Color;0;0;0;6;6;0;;0;0;0
-1;Padrão Loja da Vivi;3291;7896509976693;Kit Coloração Beauty Color Bela&Cor Sem Amônia - 7.1 - Louro Cinza Médio;Sim;Beauty Color;0;1;0;6;5;0;;0;0;0
+1;Padrão Loja da Vivi;3291;7896509976693;Kit Coloração Beauty Color Bela&Cor Sem Amônia - 7.1 - Louro Cinza Médio;Sim;Beauty Color;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;3292;7896509976709;Kit Coloração Beauty Color Bela&Cor Sem Amônia - 7.43 - Ruivo Acobreado Dourado;Sim;Beauty Color;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;3276;7896509976716;Kit Coloração Beauty Color Bela&Cor Sem Amônia - 8.0 - Louro Claro;Sim;Beauty Color;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;3307;7896509972251;Kit Coloração Creme Beauty Color Bela&Cor - 10.0 - Louro Claríssimo;Sim;Beauty Color;0;0;0;6;6;0;;0;0;0
@@ -829,7 +829,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3972;307360675429;Kit Salon Line Meu Liso Matizador Preto - ;Não;Salon Line;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4132;5678055814504;Kit Selante Top Coat Fengshangmei (No-cleanse) 15ml - ;Sim;Fengshangmei;0;0;0;41;41;0;;0;0;0
 1;Padrão Loja da Vivi;4193;9711010809989;Kit Shampoo + Cond. + Máscara 2x1 Arvensis Cachos Naturais - ;Sim;Arvensis;0;0;0;5;5;0;;0;0;0
-1;Padrão Loja da Vivi;492;7898610373187;Kit Shampoo e Condicionador Haskell Cavalo Forte 500ml - ;Sim;Haskell;0;1;0;7;6;0;;0;0;0
+1;Padrão Loja da Vivi;492;7898610373187;Kit Shampoo e Condicionador Haskell Cavalo Forte 500ml - ;Sim;Haskell;0;1;0;4;3;0;;0;0;0
 1;Padrão Loja da Vivi;516;7898610372975-01;Kit Shampoo e Condicionador Haskell Mandioca 500ml - ;Sim;Haskell;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;634;7896013569817-01;Kit Shampoo e Condicionador Vitay + Novex Doctor Rícino Embelleze 300ml - ;Sim;Embelleze;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;632;7896013565741-01;Kit Shampoo e Condicionador Vitay + Novex Liso de Cinema Embelleze 300ml - ;Sim;Embelleze;0;0;0;0;0;0;;0;0;0
@@ -1210,8 +1210,8 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2257;7908422601436;Secador De Cabelo MQ Beauty Belle Rosa 2000w 220v - ;Sim;MQ;7;0;0;4;11;0;;0;135,28;0
 1;Padrão Loja da Vivi;2807;7898657690629;Secador de Cabelo MQ Professional Millano Íon 1900W 220V - ;Não;MQ;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2448;7898957952441;Secador de Cabelo Profissional Lion Aero Ultra 3000W 220V - ;Não;Lion;0;0;0;0;0;0;;0;499,14;0
-1;Padrão Loja da Vivi;3880;7898957952601;Secador de Cabelo Profissional Lion LS10 2540W 220V - ;Sim;Lion;1;0;0;0;1;0;;0;388,2;0
-1;Padrão Loja da Vivi;3882;7898957952656;Secador de Cabelo Profissional Lion Tutti Aero 2800W 220V - ;Sim;Lion;5;0;0;3;8;0;;0;443,67;0
+1;Padrão Loja da Vivi;3880;7898957952601;Secador de Cabelo Profissional Lion LS10 2540W 220V - ;Sim;Lion;0;0;0;0;0;0;;0;388,2;0
+1;Padrão Loja da Vivi;3882;7898957952656;Secador de Cabelo Profissional Lion Tutti Aero 2800W 220V - ;Sim;Lion;4;0;0;3;7;0;;0;443,67;0
 1;Padrão Loja da Vivi;2406;7898569382353;Secador de Cabelo Profissional Soling Dubai 2500 - 110V;Sim;Soling;15;0;0;3;18;0;;0;181,04;0
 1;Padrão Loja da Vivi;2407;7898569382346;Secador de Cabelo Profissional Soling Dubai 2500 - 220V;Sim;Soling;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;4154;7898569382360;Secador de Cabelo Soling Montreal 2300 220V - ;Sim;Soling;8;0;0;0;8;0;;0;95,81;0
@@ -1275,7 +1275,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2477;7898649840735;Shampoo Cosmeceuta Crescimento Capilar Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;2375;7898649840360;Shampoo Cosmeceuta Desmaiação Liso Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;2548;7898649840728;Shampoo Cosmeceuta Força Três Pimentas Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;4;4;0;;0;0;0
-1;Padrão Loja da Vivi;2467;7898649840049;Shampoo Cosmeceuta Liso Extreme Pós Progressiva Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;7;7;0;;0;0;0
+1;Padrão Loja da Vivi;2467;7898649840049;Shampoo Cosmeceuta Liso Extreme Pós Progressiva Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;2450;7898649840025;Shampoo Cosmeceuta pH Neutro Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;2404;7898649840032;Shampoo Cosmeceuta Power Cachos Vegano Sem Sal 300ml - ;Sim;Cosmeceuta;0;0;0;8;8;0;;0;0;0
 1;Padrão Loja da Vivi;2585;7898649840469;Shampoo Cosmeceuta Vermelho Malagueta Matizante Vegano 300ml - ;Não;Cosmeceuta;0;0;0;0;0;0;;0;0;0
