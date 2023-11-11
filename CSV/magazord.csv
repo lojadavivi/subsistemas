@@ -375,6 +375,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3815;7897517909246;Escova Ricca Twist 3D Curls Cachos E Ondas 360Ḟ - ;Sim;Ricca;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;4260;4829105254936;Escova Rotativa 3 em 1 Red Hot Lizz + Escova Pirulito Dompel - ;Sim;Lizz;0;0;0;12;12;0;;0;0;0
 1;Padrão Loja da Vivi;4252;7898605222261;Escova Rotativa Red Hot Lizz Professional Classic Bivolt - ;Sim;Lizz;0;0;0;12;12;0;;0;0;0
+1;Padrão Loja da Vivi;4264;7898605221790;Escova Secadora Lizz Profissional Trend Íon Classic 220V - ;Sim;Lizz;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;3730;7898569383268;Escova Secadora Montreal Soling 1200W Formato Oval - Rose Gold;Sim;Soling;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;3731;7898569383251;Escova Secadora Montreal Soling 1200W Formato Oval - Silver;Sim;Soling;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;2231;7908422601443;Escova Secadora MQ Beauty Styler 1300W Bivolt - ;Não;MQ;0;0;0;0;0;0;;0;202,95;0
@@ -621,10 +622,10 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3396;7908334508861;Gel Base Anylovy 20g - ;Sim;Any Lovy;0;0;0;3;3;0;;0;4;0
 1;Padrão Loja da Vivi;3475;7908652100402;Gel Base AnyLovy Maior Aderência 9g - ;Não;Any Lovy;0;0;0;0;0;0;;0;3,56;0
 1;Padrão Loja da Vivi;3483;7908652100419;Gel Base Fiber AnyLovy 10ml - ;Sim;Any Lovy;0;0;0;2;2;0;;0;3,56;0
-1;Padrão Loja da Vivi;3874;7898562214880;Geleia Ativadora Arvensis Alta Fixação Cachos Naturais 450g - ;Sim;Arvensis;0;0;0;14;14;0;;0;0;0
+1;Padrão Loja da Vivi;3874;7898562214880;Geleia Ativadora Arvensis Alta Fixação Cachos Naturais 450g - ;Não;Arvensis;0;0;0;14;14;0;;0;0;0
 1;Padrão Loja da Vivi;3904;7898562214583;Geleia Ativadora Arvensis Forte Cachinhos Naturais 250g - ;Sim;Arvensis;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;3902;7898562214576;Geleia Ativadora Arvensis Suave Cachinhos Naturais 250g - ;Sim;Arvensis;0;0;0;3;3;0;;0;0;0
-1;Padrão Loja da Vivi;1939;7898562214606;Geleia Ativadora de Cachos Arvensis Cachos Naturais 250g - Alta Fixação;Sim;Arvensis;0;1;0;12;11;0;;0;0;0
+1;Padrão Loja da Vivi;1939;7898562214606;Geleia Ativadora de Cachos Arvensis Cachos Naturais 250g - Alta Fixação;Não;Arvensis;0;0;0;12;12;0;;0;0;0
 1;Padrão Loja da Vivi;4226;7899572808724;Geleia Corporal Iluminadora Lola Bemdita Praia 200ml - ;Sim;Lola;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;560;7891350034868-01;Gel Fixador Bozzano Extra Forte Sem Álcool 300g - ;Sim;Bozzano;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;2055;7898699910075;Gel Lara Machado Banho de Fibra Natural Pink 30g - ;Não;Lara Machado;0;0;0;0;0;0;;0;0;0
@@ -798,14 +799,14 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3050;6972760070101;Kit Esmalte em Gel Francesinha LED/UV Helen Color - ;Não;Helen Color;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2919;74120321;Kit Esmalte em Gel LED/UV D&Z Francesinha 2x12g - ;Não;D&Z;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2858;7898699910686;Kit Fibra de Vidro Lara Machado 4m - ;Não;Lara Machado;0;0;0;0;0;0;;0;9,9;0
-1;Padrão Loja da Vivi;4223;8939431930667;Kit Geleia Alta Fixação Arvensis 250g + Touca De Cetim Poli - ;Sim;Arvensis;0;0;0;2;2;0;;0;0;0
+1;Padrão Loja da Vivi;4223;8939431930667;Kit Geleia Alta Fixação Arvensis 250g + Touca De Cetim Poli - ;Não;Arvensis;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;326;7899766007445-01;Kit Love Secret Seduction Loção Desodorante 250ml + Sabonete 200ml + Body Splash 250ml - ;Sim;Love Secret;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4207;8182404947197;Kit Máscara 2x1 Arvensis 450g + Pente Dentes de Metal ProArt - ;Não;Arvensis;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4219;9023765313766;Kit Máscara 2x1 Arvensis 450g + Trio De Pente Garfo ProArt - ;Não;Arvensis;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4233;8346649263034;Kit Máscara 2x1 Arvensis Cachos Nat + Escova Pirulito Dompel - ;Não;Arvensis;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4203;9186160246968;Kit Máscara 2x1 Arvensis + Touca de Cetim Dupla Face Poli - ;Não;Arvensis;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4195;9440504704942;Kit Máscara 2x1 + Geleia Alta 250g  Arvensis Cachos Naturais - ;Não;Arvensis;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;4230;9178217934331;Kit Máscara 2x1 + Geleia Alta 450g Arvensis Cachos Naturais - ;Sim;Arvensis;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;4230;9178217934331;Kit Máscara 2x1 + Geleia Alta 450g Arvensis Cachos Naturais - ;Não;Arvensis;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3760;29505661;Kit para Alongamento de Unhas (Acrílico) - Kit 05 - ;Não;RPC;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3765;18525458;Kit para Alongamento de Unhas (Acrílico) - Kit 06 - ;Não;RPC;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3767;59838050;Kit para Alongamento de Unhas (Acrílico) - Kit 07 - ;Não;RPC;0;0;0;0;0;0;;0;0;0
@@ -832,7 +833,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3972;307360675429;Kit Salon Line Meu Liso Matizador Preto - ;Não;Salon Line;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4132;5678055814504;Kit Selante Top Coat Fengshangmei (No-cleanse) 15ml - ;Sim;Fengshangmei;0;0;0;41;41;0;;0;0;0
 1;Padrão Loja da Vivi;4193;9711010809989;Kit Shampoo + Cond. + Máscara 2x1 Arvensis Cachos Naturais - ;Não;Arvensis;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;492;7898610373187;Kit Shampoo e Condicionador Haskell Cavalo Forte 500ml - ;Sim;Haskell;0;1;0;4;3;0;;0;0;0
+1;Padrão Loja da Vivi;492;7898610373187;Kit Shampoo e Condicionador Haskell Cavalo Forte 500ml - ;Sim;Haskell;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;516;7898610372975-01;Kit Shampoo e Condicionador Haskell Mandioca 500ml - ;Sim;Haskell;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;634;7896013569817-01;Kit Shampoo e Condicionador Vitay + Novex Doctor Rícino Embelleze 300ml - ;Sim;Embelleze;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;632;7896013565741-01;Kit Shampoo e Condicionador Vitay + Novex Liso de Cinema Embelleze 300ml - ;Sim;Embelleze;0;0;0;0;0;0;;0;0;0
@@ -905,7 +906,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2813;7898657692845;Máquina de Acabamento MQ Force Barber Ultimate Gold Series - ;Não;MQ;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;68;7898569382766;Máquina de Acabamento Soling Zero Lithium Bivolt - ;Sim;Soling;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;470;7899838830179-01;Máquina de Corte e Acabamento Multilaser Men Care 3 em 1 Sem Fio EB017 - ;Sim;Multi;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;4120;7898496356397;Máquina de Corte Ga.ma GBS Absolute Fade Cord Cordless - ;Sim;Ga.ma;0;0;0;2;2;0;;0;0;0
+1;Padrão Loja da Vivi;4120;7898496356397;Máquina de Corte Ga.ma GBS Absolute Fade Cord Cordless - ;Sim;Ga.ma;0;1;0;2;1;0;;0;0;0
 1;Padrão Loja da Vivi;4126;7898496354393;Máquina De Corte Ga.ma GBS Absolute Stage Cord Cordless - ;Não;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4118;7898496355659;Maquina de Corte Ga.ma Multi-Styler T923 Black Titanium USB - ;Sim;Ga.ma;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;2809;7898657692838;Máquina De Corte Mq Force Barber Brave Gold Series Bivolt - ;Sim;MQ;0;0;0;1;1;0;;0;0;0
@@ -913,7 +914,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3909;7898562214545;Máscara Arvensis Cachinhos Naturais Ondulados Vegano 250g - ;Sim;Arvensis;0;0;0;15;15;0;;0;0;0
 1;Padrão Loja da Vivi;4139;7898562213654;Máscara Arvensis Cachos Naturais Ondulados e Cacheados 250g - ;Sim;Arvensis;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;4141;7898562213661;Máscara Arvensis Cachos Naturais Ondulados e Cacheados 450g - ;Sim;Arvensis;0;0;0;6;6;0;;0;0;0
-1;Padrão Loja da Vivi;3872;7898562213722;Máscara Arvensis Para Cachos Naturais 2x1 Vegana 450g - ;Sim;Arvensis;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;3872;7898562213722;Máscara Arvensis Para Cachos Naturais 2x1 Vegana 450g - ;Não;Arvensis;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3562;7898649841695;Máscara Beautech Aminoácidos Vegano 250g - ;Não;Beautech;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3626;7898649841749;Máscara Beautech Anti Queda e Quebra Vegano 250g - ;Sim;Beautech;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;3628;7898649841756;Máscara Beautech Blond Platinum Vegano 250g - ;Não;Beautech;0;0;0;0;0;0;;0;0;0
@@ -1149,6 +1150,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3950;7898496354881;Prancha Ga.ma Elegance Blue Titanium 3D Bivolt - ;Não;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4116;7898496352030;Prancha Ga.ma Eleganza Plus Bivolt 210ḞC/410ḞF - ;Sim;Ga.ma;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;2226;7898949454144;Prancha Lizze Extreme Com Placa Revestida Em Titânio 220V - ;Sim;Lizze;0;0;0;22;22;0;;0;214,65;0
+1;Padrão Loja da Vivi;4262;9654118834371;Prancha Lizz Neo Titanium Special + Escova Pirulito Dompel - ;Sim;Lizz;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;2237;7908422601276;Prancha Modeladora MQ Beauty Lissondas - ;Sim;MQ;3;0;0;0;3;0;;0;328,88;0
 1;Padrão Loja da Vivi;2250;7898657692227;Prancha MQ Professional Titanium Slim Azul Bivolt 450F / 232C - ;Não;MQ;0;0;0;0;0;0;;0;206,6;0
 1;Padrão Loja da Vivi;3728;7898569382933;Prancha Para Cabelo Soling Royal Grafite 480ḞF/250ḞC - ;Sim;Soling;0;0;0;0;0;0;;0;0;0
@@ -1209,10 +1211,10 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3890;7898496354799;Secador De Cabelo Gama iQ Perfetto Cinza 127V - ;Sim;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3507;731509758702;Secador de Cabelo Kiss Tourmaline Ion 2000W 220V - ;Não;Kiss;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2665;7898957952694;Secador de Cabelo Lion Aero Pro 2150W Grafite - 127V;Sim;Lion;0;0;0;0;0;0;;0;126,82;0
-1;Padrão Loja da Vivi;2666;7898957952700;Secador de Cabelo Lion Aero Pro 2150W Grafite - 220V;Sim;Lion;0;0;0;3;3;0;;0;126,82;0
+1;Padrão Loja da Vivi;2666;7898957952700;Secador de Cabelo Lion Aero Pro 2150W Grafite - 220V;Sim;Lion;0;1;0;3;2;0;;0;126,82;0
 1;Padrão Loja da Vivi;2662;7898957952335;Secador de Cabelo Lion Aero Pro 2150W Rosa - 127V;Não;Lion;0;0;0;0;0;0;;0;126,82;0
 1;Padrão Loja da Vivi;2663;7898957952342;Secador de Cabelo Lion Aero Pro 2150W Rosa - 220V;Não;Lion;0;0;0;0;0;0;;0;126,82;0
-1;Padrão Loja da Vivi;2352;7898949454267;Secador de Cabelo Lizze Extreme 2400w - 220V;Sim;Lizze;0;1;0;13;12;0;;0;0;0
+1;Padrão Loja da Vivi;2352;7898949454267;Secador de Cabelo Lizze Extreme 2400w - 220V;Não;Lizze;0;1;0;0;-1;0;;0;0;0
 1;Padrão Loja da Vivi;2257;7908422601436;Secador De Cabelo MQ Beauty Belle Rosa 2000w 220v - ;Sim;MQ;7;0;0;4;11;0;;0;135,28;0
 1;Padrão Loja da Vivi;2807;7898657690629;Secador de Cabelo MQ Professional Millano Íon 1900W 220V - ;Não;MQ;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2448;7898957952441;Secador de Cabelo Profissional Lion Aero Ultra 3000W 220V - ;Sim;Lion;0;0;0;10;10;0;;0;499,14;0
