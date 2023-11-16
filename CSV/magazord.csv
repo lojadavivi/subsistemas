@@ -30,7 +30,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;4176;5678000801016;Aquecedor de Cera Roll On Fan&Co 40W Bivolt - ;Sim;Fan&Co;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;4171;7898562214538;Ativador de Cachos Arvensis Cachinhos Crespos Vegano 300ml - ;Sim;Arvensis;0;0;0;17;17;0;;0;0;0
 1;Padrão Loja da Vivi;4236;7898562214521;Ativador de Cachos Arvensis Cachinhos Ondulados Vegano 300ml - ;Sim;Arvensis;0;0;0;33;33;0;;0;0;0
-1;Padrão Loja da Vivi;3994;7898562213708;Ativador de Cachos Arvensis Cachos Naturais 1L - ;Sim;Arvensis;0;0;0;5;5;0;;0;0;0
+1;Padrão Loja da Vivi;3994;7898562213708;Ativador de Cachos Arvensis Cachos Naturais 1L - ;Sim;Arvensis;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;3876;7898562213791;Ativador De Cachos Arvensis Cachos Naturais Crespos 300ml - ;Sim;Arvensis;0;0;0;7;7;0;;0;0;0
 1;Padrão Loja da Vivi;4238;7898562213807;Ativador De Cachos Arvensis Cachos Naturais Crespos 500ml - ;Sim;Arvensis;0;0;0;15;15;0;;0;0;0
 1;Padrão Loja da Vivi;3878;7898562213692;Ativador De Cachos Arvensis Cachos Naturais Ondulados 500ml - ;Sim;Arvensis;0;0;0;12;12;0;;0;0;0
@@ -55,7 +55,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;430;7898126407918;Banho de Creme Bio Extratus Pós Química Acabate e Jojoba 1kg - ;Não;Bio Extratus;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;422;7898126400070;Banho de Creme Bio Extratus Tutano com Ceramidas e Manteiga de Karité 1kg - ;Sim;Bio Extratus;0;0;0;7;7;0;;0;0;0
 1;Padrão Loja da Vivi;4130;7898496355253;Barbeador Ga.ma 3 Lâminas GSH887 Sport W&D USB - ;Sim;Ga.ma;0;0;0;1;1;0;;0;0;0
-1;Padrão Loja da Vivi;3489;7899531419961;Base Bomba AnyLovy 10ml Any Lovy - ;Sim;Any Lovy;0;0;0;4;4;0;;0;1,73;0
+1;Padrão Loja da Vivi;3489;7899531419961;Base Bomba AnyLovy 10ml Any Lovy - ;Sim;Any Lovy;0;0;0;0;0;0;;0;1,73;0
 1;Padrão Loja da Vivi;2673;7898595238150;Base de Unha Hits 5free 8ml - Base Corretiva;Sim;Hits;0;0;0;12;12;0;;0;0;0
 1;Padrão Loja da Vivi;2674;7898595238129;Base de Unha Hits 5free 8ml - Base Forte Cálcio;Sim;Hits;0;0;0;12;12;0;;0;0;0
 1;Padrão Loja da Vivi;2675;7898595238136;Base de Unha Hits 5free 8ml - Base Forte Capillisil;Sim;Hits;0;0;0;12;12;0;;0;0;0
@@ -99,7 +99,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;4047;7908003909913;Botox Vizet B-tox Trealose 250g - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;3544;7908169;Broca 100% Tungstênio Para Unhas Profissional (unitario) - ;Sim;RPC;35;0;0;0;35;0;;0;0;0
 1;Padrão Loja da Vivi;3542;93313575;Broca De Cerâmica Para Unhas Profissional - (unitario) - ;Sim;RPC;170;0;0;0;170;0;;0;0;0
-1;Padrão Loja da Vivi;3546;4767;Broca De Tungstênio Para Unhas Profissional (unitário) - ;Sim;RPC;58;0;0;0;58;0;;0;0;0
+1;Padrão Loja da Vivi;3546;4767;Broca De Tungstênio Para Unhas Profissional (unitário) - ;Sim;RPC;57;0;0;0;57;0;;0;0;0
 1;Padrão Loja da Vivi;3550;2912752;Broca Diamantada Para Unhas Profissional (unitário) - ;Sim;RPC;34;0;0;0;34;0;;0;0;0
 1;Padrão Loja da Vivi;2228;7908357402801;Bruma Fixadora de Maquiagem Berry Kiss Efeito Matte 100ml - ;Não;Berry Kiss;0;0;0;0;0;0;;0;12,01;0
 1;Padrão Loja da Vivi;3590;7898581800750;B-tox Ciclos Portier Máscara Reconstrutora 1kg - ;Não;Portier;0;0;0;0;0;0;;0;0;0
@@ -110,7 +110,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3917;7899940703866;Cabine LED/UV Piu Bella PB03 48W 21LEDs Bivolt - ;Sim;Piu Bella;9;0;0;0;9;0;;0;167,9;0
 1;Padrão Loja da Vivi;378;7898604565024;Cabine LED/UV SUNUV Sun 5 Plus 48W 36 LEDs Bivolt - ;Não;SUNUV;0;0;0;0;0;0;;549,9;299,9;0
 1;Padrão Loja da Vivi;322;7898604565031;Cabine LED/UV SUNUV Sun 9X Plus 36W 18 LEDs Bivolt - ;Sim;SUNUV;10;0;0;0;10;0;;0;61,21;0
-1;Padrão Loja da Vivi;376;7898604565048;Cabine LED/UV SUNUV Sun One 48W 30 Led UV Fundo de Metal Bivolt - ;Sim;SUNUV;0;0;0;4;4;0;;0;150;0
+1;Padrão Loja da Vivi;376;7898604565048;Cabine LED/UV SUNUV Sun One 48W 30 Led UV Fundo de Metal Bivolt - ;Sim;SUNUV;0;0;0;3;3;0;;0;150;0
 1;Padrão Loja da Vivi;4173;8496964642196;Cabine Sun Nails Sun 50 48w Bivolt Original Certif. Celak - ;Não;Sun Nails;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3704;94834376;Caneta Óleo Hidratante de Cutículas - ;Sim;RPC;0;0;0;100;100;0;;0;0;0
 1;Padrão Loja da Vivi;2051;7898699910136;Capa Base Lara Machado Natural 12ml - ;Não;Lara Machado;0;0;0;0;0;0;;0;42,58;0
@@ -357,6 +357,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3958;7898496352412;Escova Alisadora De Cabelo Ga.ma Innova Mini Bivolt - ;Sim;Ga.ma;0;0;0;1;1;0;;0;0;0
 1;Padrão Loja da Vivi;4124;7898496355277;Escova Alisadora Ga.ma Barber Style Bivolt 165ḞC/329ḞF - ;Sim;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2361;7897517917463-01;Escova De Bigode Enox - Belliz Company - ;Não;Belliz;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;4287;7896727941428;ESCOVA DOMPEL PIRULITO SEM CHEIRO - ;Não;Dompel;0;0;0;61;61;0;;0;0;0
 1;Padrão Loja da Vivi;776;74053902;Escova Espanadora Para Unhas - ;Sim;RPC;0;0;0;20;20;0;;0;0;0
 1;Padrão Loja da Vivi;3837;7896727941299;Escova Pirulito Lollipop Dompel Com Cheirinho Cores Sortidas - ;Sim;Dompel;0;0;0;66;66;0;;0;0;0
 1;Padrão Loja da Vivi;3022;731509991758;Escova Proart Desembaraçante com Cerdas Inteligentes - Amarelo e Azul;Não;ProArt;0;0;0;0;0;0;;0;0;0
@@ -375,6 +376,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3815;7897517909246;Escova Ricca Twist 3D Curls Cachos E Ondas 360Ḟ - ;Sim;Ricca;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;4260;4829105254936;Escova Rotativa 3 em 1 Red Hot Lizz + Escova Pirulito Dompel - ;Sim;Lizz;0;0;0;12;12;0;;0;0;0
 1;Padrão Loja da Vivi;4252;7898605222261;Escova Rotativa Red Hot Lizz Professional Classic Bivolt - ;Sim;Lizz;0;0;0;12;12;0;;0;0;0
+1;Padrão Loja da Vivi;4266;7898605221783;Escova Secadora Lizz Profissional Trend Íon Classic 127V - ;Sim;Lizz;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;4264;7898605221790;Escova Secadora Lizz Profissional Trend Íon Classic 220V - ;Sim;Lizz;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;3730;7898569383268;Escova Secadora Montreal Soling 1200W Formato Oval - Rose Gold;Sim;Soling;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;3731;7898569383251;Escova Secadora Montreal Soling 1200W Formato Oval - Silver;Sim;Soling;0;0;0;3;3;0;;0;0;0
@@ -600,15 +602,16 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2363;5678000870401;Esterilizador Microesferas Tools Sterilizer Bivolt FJ7040 - ;Não;Fan&Co;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3829;7908334501527;Fibra de Vidro A Metro Psiu 2,90 Metros - ;Sim;Psiu;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;3495;618231037278;Fibra de Vidro AnyLovy Ultrafina 5 Metros Any Lovy - ;Sim;Any Lovy;0;0;0;2;2;0;;0;2,6;0
-1;Padrão Loja da Vivi;3493;7908334507147;Fibra de Vidro AnyLovy Ultrafina Fio a Fio 50un - ;Sim;Any Lovy;0;0;0;10;10;0;;0;3,97;0
+1;Padrão Loja da Vivi;3493;7908334507147;Fibra de Vidro AnyLovy Ultrafina Fio a Fio 50un - ;Sim;Any Lovy;0;0;0;9;9;0;;0;3,97;0
 1;Padrão Loja da Vivi;2067;7898699910860;Fibra de Vidro Lara Machado Selada 4m - ;Não;Lara Machado;0;0;0;0;0;0;;0;0,41;0
 1;Padrão Loja da Vivi;3827;7908334501510;Fibra de Vidro Psiu Fio a Fio 50 Unidades 6 Centímetros - ;Sim;Psiu;0;0;0;8;8;0;;0;0;0
+1;Padrão Loja da Vivi;4274;7898964247585;Fibra de Vidro Vòlia 4m - ;Sim;Vòlia;0;0;0;20;20;0;;0;0;0
 1;Padrão Loja da Vivi;3002;7898126404276;Finalizador Bio Extratus Blond Bioreflex 200g - ;Não;Bio Extratus;0;0;0;0;0;0;;0;24;0
 1;Padrão Loja da Vivi;4005;7908003908749;Finalizador Vizet Absoluté Fiber Oil 38ml - ;Sim;Vizet;3;0;0;0;3;0;;0;0;0
 1;Padrão Loja da Vivi;4073;7908003908756;Finalizador Vizet Platinize Óleo 38ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;4103;7908003902075;Fluído 11 in 1 Vizet Splendidus 38ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;4091;7908003903324;Fluído Ativador Vizet Selagem Térmica 130ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
-1;Padrão Loja da Vivi;4093;7908003901986;Fluído Disciplinante Vizet Selagem Térmica 1L - ;Sim;Vizet;0;0;0;3;3;0;;0;0;0
+1;Padrão Loja da Vivi;4093;7908003901986;Fluído Disciplinante Vizet Selagem Térmica 1L - ;Sim;Vizet;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;4101;7908003908534;Fluído Vizet 11 in 1 Splendidus 250ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;4015;7908003906608;Fluido Vizet Backstage Nutricao 200ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;3419;7908334509554;Gel AnyLovy Construtor Autonivelante Blanco 24g - ;Sim;Any Lovy;0;0;0;5;5;0;;0;2,77;0
@@ -622,10 +625,10 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3396;7908334508861;Gel Base Anylovy 20g - ;Sim;Any Lovy;0;0;0;3;3;0;;0;4;0
 1;Padrão Loja da Vivi;3475;7908652100402;Gel Base AnyLovy Maior Aderência 9g - ;Não;Any Lovy;0;0;0;0;0;0;;0;3,56;0
 1;Padrão Loja da Vivi;3483;7908652100419;Gel Base Fiber AnyLovy 10ml - ;Sim;Any Lovy;0;0;0;2;2;0;;0;3,56;0
-1;Padrão Loja da Vivi;3874;7898562214880;Geleia Ativadora Arvensis Alta Fixação Cachos Naturais 450g - ;Não;Arvensis;0;0;0;14;14;0;;0;0;0
+1;Padrão Loja da Vivi;3874;7898562214880;Geleia Ativadora Arvensis Alta Fixação Cachos Naturais 450g - ;Sim;Arvensis;0;0;0;14;14;0;;0;0;0
 1;Padrão Loja da Vivi;3904;7898562214583;Geleia Ativadora Arvensis Forte Cachinhos Naturais 250g - ;Sim;Arvensis;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;3902;7898562214576;Geleia Ativadora Arvensis Suave Cachinhos Naturais 250g - ;Sim;Arvensis;0;0;0;3;3;0;;0;0;0
-1;Padrão Loja da Vivi;1939;7898562214606;Geleia Ativadora de Cachos Arvensis Cachos Naturais 250g - Alta Fixação;Não;Arvensis;0;0;0;12;12;0;;0;0;0
+1;Padrão Loja da Vivi;1939;7898562214606;Geleia Ativadora de Cachos Arvensis Cachos Naturais 250g - Alta Fixação;Sim;Arvensis;0;0;0;12;12;0;;0;0;0
 1;Padrão Loja da Vivi;4226;7899572808724;Geleia Corporal Iluminadora Lola Bemdita Praia 200ml - ;Sim;Lola;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;560;7891350034868-01;Gel Fixador Bozzano Extra Forte Sem Álcool 300g - ;Sim;Bozzano;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;2055;7898699910075;Gel Lara Machado Banho de Fibra Natural Pink 30g - ;Não;Lara Machado;0;0;0;0;0;0;;0;0;0
@@ -714,15 +717,15 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2274;7898964247561;Gel Vòlia Control Blanc Glitter 24g - ;Não;Vòlia;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2279;7898964247271;Gel Vòlia Control Cover 24g - ;Não;Vòlia;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;2300;7898964247820;Gel Vòlia Control Pink 24g - ;Não;Vòlia;0;0;0;2;2;0;;0;0;0
-1;Padrão Loja da Vivi;3966;7898964247646;Gel Vòlia Sachê - Classic Blanc 14g;Sim;Vòlia;0;0;0;10;10;0;;0;0;0
-1;Padrão Loja da Vivi;2268;7898964247639;Gel Vòlia Sachê - Classic Clear 14g;Sim;Vòlia;0;0;0;6;6;0;;0;0;0
-1;Padrão Loja da Vivi;2261;7898964247677;Gel Vòlia Sachê - Classic Cover 14g;Sim;Vòlia;0;0;0;16;16;0;;0;0;0
-1;Padrão Loja da Vivi;3964;7898964247684;Gel Vòlia Sachê - Classic Crystal 14g;Não;Vòlia;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;3965;7898964247653;Gel Vòlia Sachê - Classic Nude 14g;Sim;Vòlia;0;0;0;15;15;0;;0;0;0
+1;Padrão Loja da Vivi;3966;7898964247646;Gel Vòlia Sachê - Classic Blanc 14g;Sim;Vòlia;0;0;0;19;19;0;;0;0;0
+1;Padrão Loja da Vivi;2268;7898964247639;Gel Vòlia Sachê - Classic Clear 14g;Sim;Vòlia;0;0;0;16;16;0;;0;0;0
+1;Padrão Loja da Vivi;2261;7898964247677;Gel Vòlia Sachê - Classic Cover 14g;Sim;Vòlia;0;0;0;13;13;0;;0;0;0
+1;Padrão Loja da Vivi;3964;7898964247684;Gel Vòlia Sachê - Classic Crystal 14g;Sim;Vòlia;0;0;0;19;19;0;;0;0;0
+1;Padrão Loja da Vivi;3965;7898964247653;Gel Vòlia Sachê - Classic Nude 14g;Sim;Vòlia;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2264;7898964247660;Gel Vòlia Sachê - Classic Pink 14g;Sim;Vòlia;0;0;0;19;19;0;;0;0;0
 1;Padrão Loja da Vivi;3496;7898721330017;Gel Vòlia Sachê - Classic Pink Hard 14g;Sim;Vòlia;0;0;0;20;20;0;;0;0;0
 1;Padrão Loja da Vivi;3967;7898964247981;Gel Vòlia Sachê - Control Cover 14g;Não;Vòlia;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2266;7898721330000;Gel Vòlia Sachê - Control Pink 14g;Sim;Vòlia;0;0;0;4;4;0;;0;0;0
+1;Padrão Loja da Vivi;2266;7898721330000;Gel Vòlia Sachê - Control Pink 14g;Sim;Vòlia;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2263;7898964247974;Gel Vòlia Sachê - Gel Base 12g;Sim;Vòlia;0;0;0;18;18;0;;0;0;0
 1;Padrão Loja da Vivi;4215;7896727945952;Gola Higiênica Descartável Dompel 100 unidades 6,5cm - ;Sim;Dompel;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;4107;7908003908589;Hair Spray Vizet Splendidus 400ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
@@ -799,7 +802,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3050;6972760070101;Kit Esmalte em Gel Francesinha LED/UV Helen Color - ;Não;Helen Color;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2919;74120321;Kit Esmalte em Gel LED/UV D&Z Francesinha 2x12g - ;Não;D&Z;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2858;7898699910686;Kit Fibra de Vidro Lara Machado 4m - ;Não;Lara Machado;0;0;0;0;0;0;;0;9,9;0
-1;Padrão Loja da Vivi;4223;8939431930667;Kit Geleia Alta Fixação Arvensis 250g + Touca De Cetim Poli - ;Não;Arvensis;0;0;0;2;2;0;;0;0;0
+1;Padrão Loja da Vivi;4223;8939431930667;Kit Geleia Alta Fixação Arvensis 250g + Touca De Cetim Poli - ;Sim;Arvensis;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;326;7899766007445-01;Kit Love Secret Seduction Loção Desodorante 250ml + Sabonete 200ml + Body Splash 250ml - ;Sim;Love Secret;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4207;8182404947197;Kit Máscara 2x1 Arvensis 450g + Pente Dentes de Metal ProArt - ;Não;Arvensis;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4219;9023765313766;Kit Máscara 2x1 Arvensis 450g + Trio De Pente Garfo ProArt - ;Não;Arvensis;0;0;0;0;0;0;;0;0;0
@@ -842,7 +845,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;630;7896013563525-01;Kit Shampoo e Condicionador Vitay + Novex Óleo de Coco Embelleze 300ml - ;Sim;Embelleze;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;636;7896013561897-01;Kit Shampoo e Condicionador Vitay + Novex Reposição de Massa Embelleze 300ml - ;Sim;Embelleze;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;628;7896013567080-01;Kit Shampoo e Condicionador Vitay + Novex SuperBabosão Embelleze 300ml - ;Sim;Embelleze;0;0;0;2;2;0;;0;0;0
-1;Padrão Loja da Vivi;4191;8944876247010;Kit Sh + Cond + Ativ. de Cachos Arvensis Cachos Naturais 1L - ;Sim;Arvensis;0;0;0;5;5;0;;0;0;0
+1;Padrão Loja da Vivi;4191;8944876247010;Kit Sh + Cond + Ativ. de Cachos Arvensis Cachos Naturais 1L - ;Sim;Arvensis;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;4128;7898525587723;Kit STOP Unhas Roídas Blant Vegano 2x8,5ml - ;Sim;Blant;0;0;0;16;16;0;;0;0;0
 1;Padrão Loja da Vivi;3293;7896509955353;Kit Tinta Permanente Beauty Color Argan & Coco - 10.0 - Louro Claríssimo;Sim;Beauty Color;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;3294;7896509970349;Kit Tinta Permanente Beauty Color Argan & Coco - 12.11 - Louro Ultra Claríssimo Especial Gelo;Sim;Beauty Color;0;0;0;6;6;0;;0;0;0
@@ -906,7 +909,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2813;7898657692845;Máquina de Acabamento MQ Force Barber Ultimate Gold Series - ;Não;MQ;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;68;7898569382766;Máquina de Acabamento Soling Zero Lithium Bivolt - ;Sim;Soling;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;470;7899838830179-01;Máquina de Corte e Acabamento Multilaser Men Care 3 em 1 Sem Fio EB017 - ;Sim;Multi;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;4120;7898496356397;Máquina de Corte Ga.ma GBS Absolute Fade Cord Cordless - ;Sim;Ga.ma;0;1;0;2;1;0;;0;0;0
+1;Padrão Loja da Vivi;4120;7898496356397;Máquina de Corte Ga.ma GBS Absolute Fade Cord Cordless - ;Sim;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4126;7898496354393;Máquina De Corte Ga.ma GBS Absolute Stage Cord Cordless - ;Não;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4118;7898496355659;Maquina de Corte Ga.ma Multi-Styler T923 Black Titanium USB - ;Sim;Ga.ma;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;2809;7898657692838;Máquina De Corte Mq Force Barber Brave Gold Series Bivolt - ;Sim;MQ;0;0;0;1;1;0;;0;0;0
@@ -936,7 +939,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;1869;7898417970688;Máscara Capilar Cápsula Hair Milagrosos 3 Minutos Uma Vez 18g - Argan;Sim;Uma Vez;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;1870;7898417970718;Máscara Capilar Cápsula Hair Milagrosos 3 Minutos Uma Vez 18g - Cachos;Sim;Uma Vez;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;1871;7898417970701;Máscara Capilar Cápsula Hair Milagrosos 3 Minutos Uma Vez 18g - Crescimento;Sim;Uma Vez;0;0;0;9;9;0;;0;0;0
-1;Padrão Loja da Vivi;1872;7898417970695;Máscara Capilar Cápsula Hair Milagrosos 3 Minutos Uma Vez 18g - Desmaia Fio;Sim;Uma Vez;0;0;0;22;22;0;;0;0;0
+1;Padrão Loja da Vivi;1872;7898417970695;Máscara Capilar Cápsula Hair Milagrosos 3 Minutos Uma Vez 18g - Desmaia Fio;Sim;Uma Vez;0;0;0;18;18;0;;0;0;0
 1;Padrão Loja da Vivi;1873;7898417970657;Máscara Capilar Cápsula Hair Milagrosos 3 Minutos Uma Vez 18g - Força Cavalar;Sim;Uma Vez;0;0;0;16;16;0;;0;0;0
 1;Padrão Loja da Vivi;1874;7898417970640;Máscara Capilar Cápsula Hair Milagrosos 3 Minutos Uma Vez 18g - Mandioca;Sim;Uma Vez;0;0;0;12;12;0;;0;0;0
 1;Padrão Loja da Vivi;1875;7898417970671;Máscara Capilar Cápsula Hair Milagrosos 3 Minutos Uma Vez 18g - Manteiga de Coco;Sim;Uma Vez;0;0;0;22;22;0;;0;0;0
@@ -955,7 +958,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;4209;7898639792891;Máscara Capilar Felps SOS Reconstrução Sachê 50g - ;Sim;Felps;0;0;0;30;30;0;;0;0;0
 1;Padrão Loja da Vivi;2775;7898639793591;Máscara Capilar Felps XForce Tratamento Fortificante 300g - ;Sim;Felps;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;3896;7898562213258;Máscara Condicionante Arvensis BB Hair Revolution 300ml - ;Não;Arvensis;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2481;7898649840773;Máscara Cosmeceuta Crescimento Capilar Vegano 250g - ;Sim;Cosmeceuta;0;0;0;9;9;0;;0;0;0
+1;Padrão Loja da Vivi;2481;7898649840773;Máscara Cosmeceuta Crescimento Capilar Vegano 250g - ;Sim;Cosmeceuta;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;66;7897517937584;Máscara Facial Nutritiva Ricca Chocolate Pode! 10g - ;Não;Ricca;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;62;7897517937539-01;Máscara Facial Ricca Borbulhante Para Desintoxicar a Pele Bubble Help! 1un - ;Sim;Ricca;0;0;0;15;15;0;;0;0;0
 1;Padrão Loja da Vivi;2740;7898610375112;Máscara Haskell Cavalo Forte 900g - ;Sim;Haskell;0;0;0;8;8;0;;0;0;0
@@ -1143,13 +1146,20 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;192;7896046700997-01;Pomada Modeladora Cless Charming Extra Forte Efeito Molhado 50g - ;Não;Cless;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;186;7896046700676-01;Pomada Modeladora Cless Charming Normal Efeito Matte 50g - ;Não;Cless;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4217;7908458322374;Pomada Modeladora Salon Line Antifrizz #todecacho 120g - ;Sim;Salon Line;0;0;0;12;12;0;;0;0;0
+1;Padrão Loja da Vivi;4269;17898721330045;Pote ECO Vòlia Reutilizável para Sachê Refil de Gel - Amarelo;Sim;Vòlia;0;0;0;50;50;0;;0;0;0
+1;Padrão Loja da Vivi;4271;17898721330052;Pote ECO Vòlia Reutilizável para Sachê Refil de Gel - Azul;Sim;Vòlia;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;4268;17898721330076;Pote ECO Vòlia Reutilizável para Sachê Refil de Gel - Lilás;Sim;Vòlia;0;0;0;50;50;0;;0;0;0
+1;Padrão Loja da Vivi;4270;17898721330069;Pote ECO Vòlia Reutilizável para Sachê Refil de Gel - Rosa;Sim;Vòlia;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;4272;17898721330038;Pote ECO Vòlia Reutilizável para Sachê Refil de Gel - Verde;Sim;Vòlia;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2421;731509579204-01;Prancha Alisadora Kiss New York Titanium Luxy 450F Bivolt - ;Não;Kiss;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4246;7898605222704;Prancha de Cabelo Double Sublime Lizz Profissional Bivolt - ;Sim;Lizz;0;0;0;3;3;0;;0;0;0
+1;Padrão Loja da Vivi;4284;7898605222384;Prancha de Cabelo Lizz Neo Titanium Special Cinza Bivolt - ;Sim;Lizz;0;0;0;7;7;0;;0;0;0
 1;Padrão Loja da Vivi;2659;7908422601498;Prancha de Cabelo MQ Titanium Max480 Slim Bivolt Automático - ;Não;MQ;0;0;0;0;0;0;;0;295,99;0
 1;Padrão Loja da Vivi;4256;7898605222391;Prancha de Cabelo Neo Titanium Lizz Special Bivolt - ;Sim;Lizz;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;3950;7898496354881;Prancha Ga.ma Elegance Blue Titanium 3D Bivolt - ;Não;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4116;7898496352030;Prancha Ga.ma Eleganza Plus Bivolt 210ḞC/410ḞF - ;Sim;Ga.ma;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;2226;7898949454144;Prancha Lizze Extreme Com Placa Revestida Em Titânio 220V - ;Sim;Lizze;0;0;0;22;22;0;;0;214,65;0
+1;Padrão Loja da Vivi;4288;9319530097727;Prancha Lizz Neo Titanium Cinza + Escova Pirulito Dompel - ;Sim;Lizz;0;0;0;7;7;0;;0;0;0
 1;Padrão Loja da Vivi;4262;9654118834371;Prancha Lizz Neo Titanium Special + Escova Pirulito Dompel - ;Sim;Lizz;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;2237;7908422601276;Prancha Modeladora MQ Beauty Lissondas - ;Sim;MQ;3;0;0;0;3;0;;0;328,88;0
 1;Padrão Loja da Vivi;2250;7898657692227;Prancha MQ Professional Titanium Slim Azul Bivolt 450F / 232C - ;Não;MQ;0;0;0;0;0;0;;0;206,6;0
@@ -1178,7 +1188,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2045;7898699910112;Primer Lara Machado Ácido Step 1 12 ml - ;Não;Lara Machado;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3804;731509624861;Primer Líquido Kiss Ultrabond 14ml para Unhas de Porcelana - ;Não;Kiss;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4069;7908003905410;Primer Vizet Intensive Pro 120ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
-1;Padrão Loja da Vivi;674;7898964247097;Primer Vòlia 10ml - ;Sim;Vòlia;0;0;0;6;6;0;;0;0;0
+1;Padrão Loja da Vivi;674;7898964247097;Primer Vòlia 10ml - ;Sim;Vòlia;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;684;7898964247615;Primer Vòlia Ácido 10ml - ;Sim;Vòlia;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;498;751320203861-01;Protetor de Bacia de Pedicure Poli 50 Unidades 66x68cm - ;Sim;Poli;0;0;0;30;30;0;;0;0;0
 1;Padrão Loja da Vivi;3823;7896727910318;Protetor de Orelhas Dompel 331 Com 4 Unidades - ;Sim;Dompel;0;0;0;3;3;0;;0;0;0
@@ -1209,12 +1219,16 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2439;7898595464177;Sangue Artificial Colormake Efeitos Especiais - 180ml;Sim;ColorMake;0;0;0;7;7;0;;0;0;0
 1;Padrão Loja da Vivi;2438;7898595463064;Sangue Artificial Colormake Efeitos Especiais - 20ml;Sim;ColorMake;0;0;0;7;7;0;;0;0;0
 1;Padrão Loja da Vivi;3890;7898496354799;Secador De Cabelo Gama iQ Perfetto Cinza 127V - ;Sim;Ga.ma;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;4276;7898496356885;Secador de Cabelo Gama Italy Babosa Ceramic Íon 2100W 220V - ;Sim;Ga.ma;0;0;0;4;4;0;;0;0;0
+1;Padrão Loja da Vivi;4281;7898496356847;Secador de Cabelo Gama Italy Lichia Ceramic Ion 220V 2100W - ;Sim;Ga.ma;0;0;0;4;4;0;;0;0;0
+1;Padrão Loja da Vivi;4279;7898496356946;Secador de Cabelo Ga.ma Marula Ceramic Ion Bivolt 2000W - ;Sim;Ga.ma;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;3507;731509758702;Secador de Cabelo Kiss Tourmaline Ion 2000W 220V - ;Não;Kiss;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2665;7898957952694;Secador de Cabelo Lion Aero Pro 2150W Grafite - 127V;Sim;Lion;0;0;0;0;0;0;;0;126,82;0
-1;Padrão Loja da Vivi;2666;7898957952700;Secador de Cabelo Lion Aero Pro 2150W Grafite - 220V;Sim;Lion;0;1;0;3;2;0;;0;126,82;0
+1;Padrão Loja da Vivi;2666;7898957952700;Secador de Cabelo Lion Aero Pro 2150W Grafite - 220V;Sim;Lion;0;0;0;0;0;0;;0;126,82;0
 1;Padrão Loja da Vivi;2662;7898957952335;Secador de Cabelo Lion Aero Pro 2150W Rosa - 127V;Não;Lion;0;0;0;0;0;0;;0;126,82;0
 1;Padrão Loja da Vivi;2663;7898957952342;Secador de Cabelo Lion Aero Pro 2150W Rosa - 220V;Não;Lion;0;0;0;0;0;0;;0;126,82;0
 1;Padrão Loja da Vivi;2352;7898949454267;Secador de Cabelo Lizze Extreme 2400w - 220V;Não;Lizze;0;1;0;0;-1;0;;0;0;0
+1;Padrão Loja da Vivi;4290;7898605222407;Secador de Cabelo Lizz Professional Vector 2200W 127V - ;Sim;Lizz;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;2257;7908422601436;Secador De Cabelo MQ Beauty Belle Rosa 2000w 220v - ;Sim;MQ;7;0;0;4;11;0;;0;135,28;0
 1;Padrão Loja da Vivi;2807;7898657690629;Secador de Cabelo MQ Professional Millano Íon 1900W 220V - ;Não;MQ;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2448;7898957952441;Secador de Cabelo Profissional Lion Aero Ultra 3000W 220V - ;Sim;Lion;0;0;0;10;10;0;;0;499,14;0
@@ -1228,7 +1242,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;4143;7898496356182;Secador Gama IQ Perfetto Preto 127v 1800w - ;Sim;Ga.ma;0;0;0;1;1;0;;0;0;0
 1;Padrão Loja da Vivi;4152;7898496356199;Secador Gama IQ Perfetto Preto 220v 2000w - ;Sim;Ga.ma;0;0;0;1;1;0;;0;0;0
 1;Padrão Loja da Vivi;4150;7898496355574;Secador Gama IQ Perfetto Rose Gold 1800w 127v - ;Não;Ga.ma;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;4148;7898496355581;Secador Gama IQ Perfetto Rose Gold 2000w 220v - ;Sim;Ga.ma;1;1;0;1;1;0;;0;0;0
+1;Padrão Loja da Vivi;4148;7898496355581;Secador Gama IQ Perfetto Rose Gold 2000w 220v - ;Sim;Ga.ma;1;0;0;1;2;0;;0;0;0
 1;Padrão Loja da Vivi;4113;7898496355529;Secador Ga.ma Se Speciale Ultra Ion Motor AC 2300W 220V - ;Não;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3710;7540704045080;Selante Top Coat Fengshangmei (No-cleanse) 15ml - ;Sim;Fengshangmei;0;0;0;500;500;0;;0;0;0
 1;Padrão Loja da Vivi;2304;7908357402771-01;Sérum Facial Berry Kiss Essencial para Pele Oleosa 30ml - ;Sim;Berry Kiss;0;0;0;10;10;0;;0;8,01;0
@@ -1315,7 +1329,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3970;7908458316571;Shampoo Salon Line Meu Liso Matizador Preto 300ml - ;Sim;Salon Line;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;198;7899572806751-01;Shampoo Sem Sulfato Lola Meu Cacho Minha Vida 500ml - ;Sim;Lola;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;4011;7908003902532;Shampoo Vizet Absoluté 250ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
-1;Padrão Loja da Vivi;4019;7908003902648;Shampoo Vizet Backstage Nutrição 250ml - ;Sim;Vizet;3;0;0;0;3;0;;0;0;0
+1;Padrão Loja da Vivi;4019;7908003902648;Shampoo Vizet Backstage Nutrição 250ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
 1;Padrão Loja da Vivi;4059;7898207530214;Shampoo Vizet Expertise Curly 250ml - ;Sim;Vizet;4;0;0;0;4;0;;0;0;0
 1;Padrão Loja da Vivi;4071;7908003905434;Shampoo Vizet Intensive 250ml - ;Sim;Vizet;4;0;0;0;4;0;;0;0;0
 1;Padrão Loja da Vivi;4122;7898207535653;Shampoo Vizet Platinize Precision 1L - ;Sim;Vizet;0;0;0;2;2;0;;0;0;0
