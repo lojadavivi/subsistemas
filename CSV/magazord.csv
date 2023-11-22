@@ -111,7 +111,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;378;7898604565024;Cabine LED/UV SUNUV Sun 5 Plus 48W 36 LEDs Bivolt - ;Não;SUNUV;0;0;0;0;0;0;;549;90;299;90;0
 1;Padrão Loja da Vivi;322;7898604565031;Cabine LED/UV SUNUV Sun 9X Plus 36W 18 LEDs Bivolt - ;Sim;SUNUV;10;0;0;0;10;0;;0;0;61;21;0
 1;Padrão Loja da Vivi;376;7898604565048;Cabine LED/UV SUNUV Sun One 48W 30 Led UV Fundo de Metal Bivolt - ;Sim;SUNUV;0;0;0;0;0;0;;0;0;150;0;0
-1;Padrão Loja da Vivi;4173;8496964642196;Cabine Sun Nails Sun 50 48w Bivolt Original Certif. Celak - ;Não;Sun Nails;0;0;0;0;0;0;;0;0;0;0;0
+1;Padrão Loja da Vivi;4173;8496964642196;Cabine Sun Nails Sun 50 48w Bivolt Original Certif. Celak - ;Não;Sun Nails;1;0;0;0;1;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3704;94834376;Caneta Óleo Hidratante de Cutículas - ;Sim;RPC;0;0;0;100;100;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;2051;7898699910136;Capa Base Lara Machado Natural 12ml - ;Não;Lara Machado;0;0;0;0;0;0;;0;0;42;58;0
 1;Padrão Loja da Vivi;2370;7438513179785;Carimbo de Unha Transparente com Ponta de Silicone Manicure - ;Não;RPC;0;0;0;0;0;0;;0;0;0;0;0
@@ -805,12 +805,12 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2858;7898699910686;Kit Fibra de Vidro Lara Machado 4m - ;Não;Lara Machado;0;0;0;0;0;0;;0;0;9;90;0
 1;Padrão Loja da Vivi;4223;8939431930667;Kit Geleia Alta Fixação Arvensis 250g + Touca De Cetim Poli - ;Sim;Arvensis;0;0;0;2;2;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;326;7899766007445-01;Kit Love Secret Seduction Loção Desodorante 250ml + Sabonete 200ml + Body Splash 250ml - ;Sim;Love Secret;0;0;0;0;0;0;;0;0;0;0;0
-1;Padrão Loja da Vivi;4207;8182404947197;Kit Máscara 2x1 Arvensis 450g + Pente Dentes de Metal ProArt - ;Não;Arvensis;0;0;0;0;0;0;;0;0;0;0;0
-1;Padrão Loja da Vivi;4219;9023765313766;Kit Máscara 2x1 Arvensis 450g + Trio De Pente Garfo ProArt - ;Não;Arvensis;0;0;0;0;0;0;;0;0;0;0;0
-1;Padrão Loja da Vivi;4233;8346649263034;Kit Máscara 2x1 Arvensis Cachos Nat + Escova Pirulito Dompel - ;Não;Arvensis;0;0;0;0;0;0;;0;0;0;0;0
-1;Padrão Loja da Vivi;4203;9186160246968;Kit Máscara 2x1 Arvensis + Touca de Cetim Dupla Face Poli - ;Não;Arvensis;0;0;0;0;0;0;;0;0;0;0;0
-1;Padrão Loja da Vivi;4195;9440504704942;Kit Máscara 2x1 + Geleia Alta 250g  Arvensis Cachos Naturais - ;Não;Arvensis;0;0;0;0;0;0;;0;0;0;0;0
-1;Padrão Loja da Vivi;4230;9178217934331;Kit Máscara 2x1 + Geleia Alta 450g Arvensis Cachos Naturais - ;Não;Arvensis;0;0;0;0;0;0;;0;0;0;0;0
+1;Padrão Loja da Vivi;4207;8182404947197;Kit Máscara 2x1 Arvensis 450g + Pente Dentes de Metal ProArt - ;Não;Arvensis;0;0;0;24;24;0;;0;0;0;0;0
+1;Padrão Loja da Vivi;4219;9023765313766;Kit Máscara 2x1 Arvensis 450g + Trio De Pente Garfo ProArt - ;Não;Arvensis;0;0;0;18;18;0;;0;0;0;0;0
+1;Padrão Loja da Vivi;4233;8346649263034;Kit Máscara 2x1 Arvensis Cachos Nat + Escova Pirulito Dompel - ;Sim;Arvensis;0;0;0;50;50;0;;0;0;0;0;0
+1;Padrão Loja da Vivi;4203;9186160246968;Kit Máscara 2x1 Arvensis + Touca de Cetim Dupla Face Poli - ;Não;Arvensis;0;0;0;12;12;0;;0;0;0;0;0
+1;Padrão Loja da Vivi;4195;9440504704942;Kit Máscara 2x1 + Geleia Alta 250g  Arvensis Cachos Naturais - ;Sim;Arvensis;0;0;0;12;12;0;;0;0;0;0;0
+1;Padrão Loja da Vivi;4230;9178217934331;Kit Máscara 2x1 + Geleia Alta 450g Arvensis Cachos Naturais - ;Sim;Arvensis;0;0;0;14;14;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3760;29505661;Kit para Alongamento de Unhas (Acrílico) - Kit 05 - ;Não;RPC;0;0;0;0;0;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3765;18525458;Kit para Alongamento de Unhas (Acrílico) - Kit 06 - ;Não;RPC;0;0;0;0;0;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3767;59838050;Kit para Alongamento de Unhas (Acrílico) - Kit 07 - ;Não;RPC;0;0;0;0;0;0;;0;0;0;0;0
@@ -821,7 +821,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3740;36545926;Kit para Alongamento de Unhas (Tips) - Kit 02 - ;Não;RPC;0;0;0;0;0;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3742;76061363;Kit para Alongamento de Unhas (Tips) - Kit 03 - ;Não;RPC;0;0;0;0;0;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3744;70787795;Kit para Alongamento de Unhas (Tips) - Kit 04 - ;Não;RPC;0;0;0;0;0;0;;0;0;0;0;0
-1;Padrão Loja da Vivi;3012;7898639856876;Kit para Extensão de Cílios Master Premium Lash Lifting - ;Sim;RPC;0;0;0;5;5;0;;0;0;238;89;0
+1;Padrão Loja da Vivi;3012;7898639856876;Kit para Extensão de Cílios Master Premium Lash Lifting - ;Sim;RPC;0;0;0;4;4;0;;0;0;238;89;0
 1;Padrão Loja da Vivi;3356;7898181583732;Kit Perfume Euroessence Belle Feminino Eau de Toilette - ;Sim;Euroessence;0;0;0;2;2;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3358;7898181582636;Kit Perfume Euroessence Feroze Masculino Eau de Toilette - ;Sim;Euroessence;0;0;0;2;2;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3360;7898181583756;Kit Perfume Euroessence Go Girl Feminino Eau de Toilette - ;Sim;Euroessence;0;0;0;2;2;0;;0;0;0;0;0
@@ -836,7 +836,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3981;8063496893435;Kit Salon Line Meu Liso Antiqueda Jaborandi - ;Não;Salon Line;0;0;0;3;3;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3972;307360675429;Kit Salon Line Meu Liso Matizador Preto - ;Não;Salon Line;0;0;0;0;0;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;4132;5678055814504;Kit Selante Top Coat Fengshangmei (No-cleanse) 15ml - ;Sim;Fengshangmei;0;0;0;41;41;0;;0;0;0;0;0
-1;Padrão Loja da Vivi;4193;9711010809989;Kit Shampoo + Cond. + Máscara 2x1 Arvensis Cachos Naturais - ;Não;Arvensis;0;0;0;0;0;0;;0;0;0;0;0
+1;Padrão Loja da Vivi;4193;9711010809989;Kit Shampoo + Cond. + Máscara 2x1 Arvensis Cachos Naturais - ;Sim;Arvensis;0;0;0;5;5;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;492;7898610373187;Kit Shampoo e Condicionador Haskell Cavalo Forte 500ml - ;Sim;Haskell;0;0;0;4;4;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;516;7898610372975-01;Kit Shampoo e Condicionador Haskell Mandioca 500ml - ;Sim;Haskell;0;0;0;3;3;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;634;7896013569817-01;Kit Shampoo e Condicionador Vitay + Novex Doctor Rícino Embelleze 300ml - ;Sim;Embelleze;0;0;0;0;0;0;;0;0;0;0;0
@@ -870,6 +870,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3372;7896509955292;Kit Tinta Permanente Beauty Color Argan & Coco - 8.1 - Louro Cinza Claro;Sim;Beauty Color;0;0;0;6;6;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3373;7896509979373;Kit Tinta Permanente Beauty Color Argan & Coco - 86.44 - Ruivo Cobre Natural;Sim;Beauty Color;0;0;0;6;6;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3374;7896509974521;Kit Tinta Permanente Beauty Color Argan & Coco - 96.44 - Ruivo Claro Indecifrável;Sim;Beauty Color;0;0;0;5;5;0;;0;0;0;0;0
+1;Padrão Loja da Vivi;4303;9864292848501;Kit Verniz Extra Brilho Impala Profissional 60ml 3 Unidades - ;Sim;Impala;0;0;0;3;3;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3833;7896727945020;Kit Viagem Dompel 4502 Verde 60ml 3 Frascos - ;Sim;Dompel;0;0;0;4;4;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;4023;7908003911114;Kit Vizet Backstage Hidratação 2x900ml - ;Sim;Vizet;6;0;0;0;6;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;4025;7908003901399;Kit Vizet Backstage Nutrição 1L+1kg - ;Sim;Vizet;3;0;0;0;3;0;;0;0;0;0;0
@@ -918,7 +919,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3909;7898562214545;Máscara Arvensis Cachinhos Naturais Ondulados Vegano 250g - ;Sim;Arvensis;0;0;0;15;15;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;4139;7898562213654;Máscara Arvensis Cachos Naturais Ondulados e Cacheados 250g - ;Sim;Arvensis;0;0;0;2;2;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;4141;7898562213661;Máscara Arvensis Cachos Naturais Ondulados e Cacheados 450g - ;Sim;Arvensis;0;0;0;6;6;0;;0;0;0;0;0
-1;Padrão Loja da Vivi;3872;7898562213722;Máscara Arvensis Para Cachos Naturais 2x1 Vegana 450g - ;Não;Arvensis;0;0;0;0;0;0;;0;0;0;0;0
+1;Padrão Loja da Vivi;3872;7898562213722;Máscara Arvensis Para Cachos Naturais 2x1 Vegana 450g - ;Sim;Arvensis;0;0;0;50;50;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3562;7898649841695;Máscara Beautech Aminoácidos Vegano 250g - ;Não;Beautech;0;0;0;0;0;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3626;7898649841749;Máscara Beautech Anti Queda e Quebra Vegano 250g - ;Sim;Beautech;0;0;0;2;2;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3628;7898649841756;Máscara Beautech Blond Platinum Vegano 250g - ;Não;Beautech;0;0;0;0;0;0;;0;0;0;0;0
@@ -1216,8 +1217,8 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2297;7908357402269-01;Sabonete Demaquilante Berry Kiss Pré Maquiagem Segredinho 100ml - ;Sim;Berry Kiss;0;0;0;6;6;0;;0;0;10;48;0
 1;Padrão Loja da Vivi;2255;7908357402290-01;Sabonete Facial Berry Kiss Essencial Antioleosidade 100ml - ;Sim;Berry Kiss;0;0;0;4;4;0;;0;0;11;29;0
 1;Padrão Loja da Vivi;2896;7898449400658;Sabonete Facial PhalleBeauty Antioleosidade 100ml - ;Não;Phallebeauty;0;0;0;0;0;0;;0;0;0;0;0
-1;Padrão Loja da Vivi;2898;7898449395664;Sabonete Facial PhalleBeauty Rosa Mosqueta 100ml - ;Sim;Phallebeauty;0;0;0;2;2;0;;0;0;0;0;0
-1;Padrão Loja da Vivi;2894;7898466606095;Sabonete Micelar PhalleBeauty Make On & Off 100ml - ;Sim;Phallebeauty;0;0;0;3;3;0;;0;0;0;0;0
+1;Padrão Loja da Vivi;2898;7898449395664;Sabonete Facial PhalleBeauty Rosa Mosqueta 100ml - ;Sim;Phallebeauty;0;1;0;2;1;0;;0;0;0;0;0
+1;Padrão Loja da Vivi;2894;7898466606095;Sabonete Micelar PhalleBeauty Make On & Off 100ml - ;Sim;Phallebeauty;0;1;0;3;2;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;2302;7908357402306-01;Sabonete Purificante Facial Berry Kiss Detox Segredinho 100ml - ;Sim;Berry Kiss;0;0;0;0;0;0;;0;0;10;27;0
 1;Padrão Loja da Vivi;2439;7898595464177;Sangue Artificial Colormake Efeitos Especiais - 180ml;Sim;ColorMake;0;0;0;7;7;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;2438;7898595463064;Sangue Artificial Colormake Efeitos Especiais - 20ml;Sim;ColorMake;0;0;0;7;7;0;;0;0;0;0;0
@@ -1355,7 +1356,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;1831;39571005107;Spray Fixador Vital Care 283g - Extra Super Firm 21H;Sim;Vital Care;0;0;0;4;4;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;2068;39571004223;Spray Fixador Vital Care 283g - Mega Freeze 24H;Não;Vital Care;0;0;0;0;0;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3813;7891033718658;Spray Gel Protetor Solar Australian Gold FPS 15 125g - ;Sim;Australian Gold;0;0;0;2;2;0;;0;0;0;0;0
-1;Padrão Loja da Vivi;3997;7898567704089;Spray My Health Alivi Ice 280ml - ;Sim;My Health;0;0;0;8;8;0;;0;0;0;0;0
+1;Padrão Loja da Vivi;3997;7898567704089;Spray My Health Alivi Ice 280ml - ;Sim;My Health;0;3;0;8;5;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;2746;7898132980672;Spray Pré-Escova Bio Extratus +Liso 100ml - ;Não;Bio Extratus;0;0;0;0;0;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3269;7897517921880;Spray Secante De Esmaltes Vertix Professional 400ml - ;Sim;Vertix;0;0;0;4;4;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3321;7898132981426;Suplemento Alimentar Bio Extratus Força 900mg - ;Sim;Bio Extratus;37;0;0;0;37;0;;0;0;16;36;0
