@@ -96,7 +96,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;4051;7908003907919;Botox Vizet B-tox Orgânico 1kg - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;4049;7908003909937;Botox Vizet B-tox Orgânico 250g - ;Não;Vizet;0;0;0;0;0;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;4045;7908003907902;Botox Vizet B-tox Trealose 1kg - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0;0;0
-1;Padrão Loja da Vivi;4047;7908003909913;Botox Vizet B-tox Trealose 250g - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0;0;0
+1;Padrão Loja da Vivi;4047;7908003909913;Botox Vizet B-tox Trealose 250g - ;Sim;Vizet;1;0;0;0;1;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3544;7908169;Broca 100% Tungstênio Para Unhas Profissional (unitario) - ;Sim;RPC;35;0;0;0;35;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3542;93313575;Broca De Cerâmica Para Unhas Profissional - (unitario) - ;Sim;RPC;169;0;0;0;169;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3546;4767;Broca De Tungstênio Para Unhas Profissional (unitário) - ;Sim;RPC;57;0;0;0;57;0;;0;0;0;0;0
@@ -1005,7 +1005,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2526;5678008280103;Massageador Facial Energy Beauty Bar - ;Sim;RPC;0;0;0;2;2;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;748;7898926064212;Micromotor Beltec LB100 Profissional 30.000 RPM - ;Sim;Beltec;18;0;0;0;18;0;;0;0;455;40;0
 1;Padrão Loja da Vivi;2650;7898935061943;Micromotor Beltec LB20 Profissional - ;Não;Beltec;0;0;0;0;0;0;;0;0;208;40;0
-1;Padrão Loja da Vivi;750;7898935061653;Micromotor Beltec LB3000 Profissional 45.000 RPM - ;Sim;Beltec;0;0;0;0;0;0;;0;0;983;25;0
+1;Padrão Loja da Vivi;750;7898935061653;Micromotor Beltec LB3000 Profissional 45.000 RPM - ;Não;Beltec;0;0;0;0;0;0;;0;0;983;25;0
 1;Padrão Loja da Vivi;746;7898935061134;Micromotor Beltec LB50 Profissional 14.000 RPM - ;Sim;Beltec;0;0;0;4;4;0;;0;0;248;40;0
 1;Padrão Loja da Vivi;2652;7898935061950;Micromotor Beltec LB Prime Profissional - ;Não;Beltec;0;0;0;0;0;0;;0;0;558;40;0
 1;Padrão Loja da Vivi;3467;5678000860013;Micromotor Girl Fatale Caneta Rosa Lixa Elétrica Bivolt - ;Sim;Girl Fatale;0;0;0;30;30;0;;0;0;0;0;0
