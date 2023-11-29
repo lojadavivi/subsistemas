@@ -109,8 +109,8 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3915;7899940703859;Cabine LED/UV Piu Bella PB01 48W 30LEDs Bivolt - ;Sim;Piu Bella;7;0;0;0;7;0;;0;0;120;90;0
 1;Padrão Loja da Vivi;3917;7899940703866;Cabine LED/UV Piu Bella PB03 48W 21LEDs Bivolt - ;Sim;Piu Bella;8;0;0;0;8;0;;0;0;167;90;0
 1;Padrão Loja da Vivi;378;7898604565024;Cabine LED/UV SUNUV Sun 5 Plus 48W 36 LEDs Bivolt - ;Não;SUNUV;0;0;0;0;0;0;;549;90;299;90;0
-1;Padrão Loja da Vivi;322;7898604565031;Cabine LED/UV SUNUV Sun 9X Plus 36W 18 LEDs Bivolt - ;Sim;SUNUV;10;0;0;0;10;0;;0;0;61;21;0
-1;Padrão Loja da Vivi;376;7898604565048;Cabine LED/UV SUNUV Sun One 48W 30 Led UV Fundo de Metal Bivolt - ;Sim;SUNUV;0;0;0;0;0;0;;0;0;150;0;0
+1;Padrão Loja da Vivi;322;7898604565031;Cabine LED/UV SUNUV Sun 9X Plus 36W 18 LEDs Bivolt - ;Sim;SUNUV;9;0;0;0;9;0;;0;0;61;21;0
+1;Padrão Loja da Vivi;376;7898604565048;Cabine LED/UV SUNUV Sun One 48W 30 Led UV Fundo de Metal Bivolt - ;Sim;SUNUV;0;0;0;4;4;0;;0;0;150;0;0
 1;Padrão Loja da Vivi;4173;8496964642196;Cabine Sun Nails Sun 50 48w Bivolt Original Certif. Celak - ;Não;Sun Nails;1;0;0;0;1;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3704;94834376;Caneta Óleo Hidratante de Cutículas - ;Sim;RPC;0;0;0;100;100;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;2051;7898699910136;Capa Base Lara Machado Natural 12ml - ;Não;Lara Machado;0;0;0;0;0;0;;0;0;42;58;0
@@ -1005,7 +1005,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2526;5678008280103;Massageador Facial Energy Beauty Bar - ;Sim;RPC;0;0;0;2;2;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;748;7898926064212;Micromotor Beltec LB100 Profissional 30.000 RPM - ;Sim;Beltec;18;0;0;0;18;0;;0;0;455;40;0
 1;Padrão Loja da Vivi;2650;7898935061943;Micromotor Beltec LB20 Profissional - ;Não;Beltec;0;0;0;0;0;0;;0;0;208;40;0
-1;Padrão Loja da Vivi;750;7898935061653;Micromotor Beltec LB3000 Profissional 45.000 RPM - ;Não;Beltec;0;0;0;0;0;0;;0;0;983;25;0
+1;Padrão Loja da Vivi;750;7898935061653;Micromotor Beltec LB3000 Profissional 45.000 RPM - ;Sim;Beltec;0;0;0;1;1;0;;0;0;983;25;0
 1;Padrão Loja da Vivi;746;7898935061134;Micromotor Beltec LB50 Profissional 14.000 RPM - ;Sim;Beltec;0;0;0;4;4;0;;0;0;248;40;0
 1;Padrão Loja da Vivi;2652;7898935061950;Micromotor Beltec LB Prime Profissional - ;Não;Beltec;0;0;0;0;0;0;;0;0;558;40;0
 1;Padrão Loja da Vivi;3467;5678000860013;Micromotor Girl Fatale Caneta Rosa Lixa Elétrica Bivolt - ;Sim;Girl Fatale;0;0;0;30;30;0;;0;0;0;0;0
