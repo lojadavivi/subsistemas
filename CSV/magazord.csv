@@ -107,7 +107,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2600;72715482;Cabine LED/UV Fan Nails 5 Plus 48W 24 LEDs Bivolt - ;Sim;Fan&Co;0;0;0;20;20;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3024;8972881209839;Cabine LED/UV Ganesha YC-09 Com Apoio 120W 24 LEDs Bivolt - ;Sim;RPC;0;0;0;1;1;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3915;7899940703859;Cabine LED/UV Piu Bella PB01 48W 30LEDs Bivolt - ;Sim;Piu Bella;7;0;0;0;7;0;;0;0;120;90;0
-1;Padrão Loja da Vivi;3917;7899940703866;Cabine LED/UV Piu Bella PB03 48W 21LEDs Bivolt - ;Sim;Piu Bella;8;0;0;0;8;0;;0;0;167;90;0
+1;Padrão Loja da Vivi;3917;7899940703866;Cabine LED/UV Piu Bella PB03 48W 21LEDs Bivolt - ;Sim;Piu Bella;7;0;0;0;7;0;;0;0;167;90;0
 1;Padrão Loja da Vivi;378;7898604565024;Cabine LED/UV SUNUV Sun 5 Plus 48W 36 LEDs Bivolt - ;Não;SUNUV;0;0;0;0;0;0;;549;90;299;90;0
 1;Padrão Loja da Vivi;322;7898604565031;Cabine LED/UV SUNUV Sun 9X Plus 36W 18 LEDs Bivolt - ;Sim;SUNUV;9;0;0;0;9;0;;0;0;61;21;0
 1;Padrão Loja da Vivi;376;7898604565048;Cabine LED/UV SUNUV Sun One 48W 30 Led UV Fundo de Metal Bivolt - ;Sim;SUNUV;0;0;0;4;4;0;;0;0;150;0;0
@@ -1348,7 +1348,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3954;7896010175622;Spray Argan Cless Eu Amo Charming Extra Brilho 150ml - ;Sim;Cless;35;0;0;0;35;0;;0;0;15;98;0
 1;Padrão Loja da Vivi;3786;7891033718719;Spray Australian Gold Accelerator Com Instant Bronzer 237g - ;Sim;Australian Gold;0;0;0;1;1;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3784;7891033718689;Spray Australian Gold Acelerador de Bronzeamento Clear 237g - ;Sim;Australian Gold;0;0;0;3;3;0;;0;0;0;0;0
-1;Padrão Loja da Vivi;3949;7896010175615;Spray Cless Charming Gloss Térmico Extra Brilho 150ml - ;Sim;Cless;36;0;0;0;36;0;;0;0;15;98;0
+1;Padrão Loja da Vivi;3949;7896010175615;Spray Cless Charming Gloss Térmico Extra Brilho 150ml - ;Sim;Cless;36;1;0;0;35;0;;0;0;15;98;0
 1;Padrão Loja da Vivi;3947;7896046716219;Spray Cless Charming Gloss Térmico Extra Brilho 300ml - ;Não;Cless;0;0;0;0;0;0;;0;0;17;78;0
 1;Padrão Loja da Vivi;3894;7898562214613;Spray Day After Arvensis Cachos Naturais 250ml - ;Sim;Arvensis;0;0;0;9;9;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;4001;7908458320226;Spray Defrizante Salon Line Meu Liso Demais 240ml - ;Sim;Salon Line;0;0;0;2;2;0;;0;0;0;0;0
