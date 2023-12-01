@@ -95,7 +95,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2535;7898639793881;Botox Felps Xbtx Quiabo Okra Alinhamento Capilar 300ml - ;Sim;Felps;0;0;0;12;12;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;4051;7908003907919;Botox Vizet B-tox Orgânico 1kg - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;4049;7908003909937;Botox Vizet B-tox Orgânico 250g - ;Não;Vizet;0;0;0;0;0;0;;0;0;0;0;0
-1;Padrão Loja da Vivi;4045;7908003907902;Botox Vizet B-tox Trealose 1kg - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0;0;0
+1;Padrão Loja da Vivi;4045;7908003907902;Botox Vizet B-tox Trealose 1kg - ;Sim;Vizet;1;0;0;0;1;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;4047;7908003909913;Botox Vizet B-tox Trealose 250g - ;Sim;Vizet;1;0;0;0;1;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3544;7908169;Broca 100% Tungstênio Para Unhas Profissional (unitario) - ;Sim;RPC;35;0;0;0;35;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3542;93313575;Broca De Cerâmica Para Unhas Profissional - (unitario) - ;Sim;RPC;169;0;0;0;169;0;;0;0;0;0;0
@@ -260,7 +260,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;450;7898132981747;Condicionador Bio Extratus Cachos e Crespos 1L - ;Sim;Bio Extratus;0;0;0;0;0;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;446;7898132981723;Condicionador Bio Extratus Cachos e Crespos 250ml - ;Sim;Bio Extratus;0;0;0;3;3;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;448;7898132981730;Condicionador Bio Extratus Cachos e Crespos 500ml - ;Sim;Bio Extratus;0;0;0;2;2;0;;0;0;0;0;0
-1;Padrão Loja da Vivi;806;7898126407567;Condicionador Bio Extratus Força Com Pimenta 1L - ;Não;Bio Extratus;0;0;0;3;3;0;;0;0;0;0;0
+1;Padrão Loja da Vivi;806;7898126407567;Condicionador Bio Extratus Força Com Pimenta 1L - ;Não;Bio Extratus;0;0;0;2;2;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;2744;7898132980610;Condicionador Bio Extratus +Liso 350ml - ;Sim;Bio Extratus;0;0;0;5;5;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;402;7898132984885;Condicionador Bio Extratus Mel Chia e Colágeno 1L - ;Sim;Bio Extratus;0;0;0;1;1;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;382;7898132984922;Condicionador Bio Extratus Mel Chia e Colágeno 250ml - ;Sim;Bio Extratus;0;0;0;8;8;0;;0;0;0;0;0
@@ -888,7 +888,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2554;7898649840780;Leave-in Cosmeceuta Força Três Pimentas Vegano 200ml - ;Não;Cosmeceuta;0;0;0;0;0;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;2473;7898649840117;Leave-in Cosmeceuta Liso Extreme Pós Progressiva Vegano 200ml - ;Sim;Cosmeceuta;0;0;0;7;7;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;4057;7908003902556;LEAVE IN VIZET EXPERTISE CURLY 500ml - ;Sim;Vizet;4;0;0;0;4;0;;0;0;0;0;0
-1;Padrão Loja da Vivi;4109;7908003908527;Leave In Vizet Splendidus 250ml - ;Sim;Vizet;1;0;0;0;1;0;;0;0;0;0;0
+1;Padrão Loja da Vivi;4109;7908003908527;Leave In Vizet Splendidus 250ml - ;Sim;Vizet;0;0;0;0;0;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3037;54873674;Linha de Algodão Vanity Para Depilação Facial 300m - ;Sim;RPC;0;0;0;9;9;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;2037;7898699910426;Lixa 100/180 Lara Machado Boomerang - ;Não;Lara Machado;0;0;0;0;0;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;2035;7898699910433;Lixa 180/240 Lara Machado Boomerang - ;Não;Lara Machado;0;0;0;0;0;0;;0;0;2;30;0
@@ -1348,7 +1348,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3954;7896010175622;Spray Argan Cless Eu Amo Charming Extra Brilho 150ml - ;Sim;Cless;35;0;0;0;35;0;;0;0;15;98;0
 1;Padrão Loja da Vivi;3786;7891033718719;Spray Australian Gold Accelerator Com Instant Bronzer 237g - ;Sim;Australian Gold;0;0;0;1;1;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;3784;7891033718689;Spray Australian Gold Acelerador de Bronzeamento Clear 237g - ;Sim;Australian Gold;0;0;0;3;3;0;;0;0;0;0;0
-1;Padrão Loja da Vivi;3949;7896010175615;Spray Cless Charming Gloss Térmico Extra Brilho 150ml - ;Sim;Cless;36;1;0;0;35;0;;0;0;15;98;0
+1;Padrão Loja da Vivi;3949;7896010175615;Spray Cless Charming Gloss Térmico Extra Brilho 150ml - ;Sim;Cless;35;0;0;0;35;0;;0;0;15;98;0
 1;Padrão Loja da Vivi;3947;7896046716219;Spray Cless Charming Gloss Térmico Extra Brilho 300ml - ;Não;Cless;0;0;0;0;0;0;;0;0;17;78;0
 1;Padrão Loja da Vivi;3894;7898562214613;Spray Day After Arvensis Cachos Naturais 250ml - ;Sim;Arvensis;0;0;0;9;9;0;;0;0;0;0;0
 1;Padrão Loja da Vivi;4001;7908458320226;Spray Defrizante Salon Line Meu Liso Demais 240ml - ;Sim;Salon Line;0;0;0;2;2;0;;0;0;0;0;0
