@@ -98,7 +98,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;4045;7908003907902;Botox Vizet B-tox Trealose 1kg - ;Sim;Vizet;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4047;7908003909913;Botox Vizet B-tox Trealose 250g - ;Sim;Vizet;1;0;0;0;1;0;;0;0;0
 1;Padrão Loja da Vivi;3544;7908169;Broca 100% Tungstênio Para Unhas Profissional (unitario) - ;Sim;RPC;35;0;0;0;35;0;;0;0;0
-1;Padrão Loja da Vivi;3542;93313575;Broca De Cerâmica Para Unhas Profissional - (unitario) - ;Sim;RPC;169;1;0;0;168;0;;0;0;0
+1;Padrão Loja da Vivi;3542;93313575;Broca De Cerâmica Para Unhas Profissional - (unitario) - ;Sim;RPC;169;0;0;0;169;0;;0;0;0
 1;Padrão Loja da Vivi;3546;4767;Broca De Tungstênio Para Unhas Profissional (unitário) - ;Sim;RPC;57;0;0;0;57;0;;0;0;0
 1;Padrão Loja da Vivi;3550;2912752;Broca Diamantada Para Unhas Profissional (unitário) - ;Sim;RPC;34;0;0;0;34;0;;0;0;0
 1;Padrão Loja da Vivi;2228;7908357402801;Bruma Fixadora de Maquiagem Berry Kiss Efeito Matte 100ml - ;Não;Berry Kiss;0;0;0;0;0;0;;0;12,01;0
@@ -941,7 +941,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;1869;7898417970688;Máscara Capilar Cápsula Hair Milagrosos 3 Minutos Uma Vez 18g - Argan;Sim;Uma Vez;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;1870;7898417970718;Máscara Capilar Cápsula Hair Milagrosos 3 Minutos Uma Vez 18g - Cachos;Sim;Uma Vez;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;1871;7898417970701;Máscara Capilar Cápsula Hair Milagrosos 3 Minutos Uma Vez 18g - Crescimento;Sim;Uma Vez;0;0;0;9;9;0;;0;0;0
-1;Padrão Loja da Vivi;1872;7898417970695;Máscara Capilar Cápsula Hair Milagrosos 3 Minutos Uma Vez 18g - Desmaia Fio;Sim;Uma Vez;0;0;0;18;18;0;;0;0;0
+1;Padrão Loja da Vivi;1872;7898417970695;Máscara Capilar Cápsula Hair Milagrosos 3 Minutos Uma Vez 18g - Desmaia Fio;Sim;Uma Vez;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;1873;7898417970657;Máscara Capilar Cápsula Hair Milagrosos 3 Minutos Uma Vez 18g - Força Cavalar;Sim;Uma Vez;0;0;0;16;16;0;;0;0;0
 1;Padrão Loja da Vivi;1874;7898417970640;Máscara Capilar Cápsula Hair Milagrosos 3 Minutos Uma Vez 18g - Mandioca;Sim;Uma Vez;0;0;0;12;12;0;;0;0;0
 1;Padrão Loja da Vivi;1875;7898417970671;Máscara Capilar Cápsula Hair Milagrosos 3 Minutos Uma Vez 18g - Manteiga de Coco;Sim;Uma Vez;0;0;0;22;22;0;;0;0;0
@@ -1070,7 +1070,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;1720;751320710574-01;Par de Luva de Látex Poli com Pó - M;Sim;Poli;0;0;0;30;30;0;;0;0;0
 1;Padrão Loja da Vivi;718;751320710567-01;Par de Luva de Látex Poli com Pó - P;Sim;Poli;0;0;0;50;50;0;;0;0;0
 1;Padrão Loja da Vivi;3683;7899572806157;Pasta Modeladora Lola Cereal Killer 100g - ;Não;Lola;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;3843;7898926064991;Peça de Reposição Beltec LB100 - Bulbo Com Cabo Fixo - ;Sim;Beltec;4;0;0;0;4;0;;0;165,71;0
+1;Padrão Loja da Vivi;3843;7898926064991;Peça de Reposição Beltec LB100 - Bulbo Com Cabo Fixo - ;Sim;Beltec;3;0;0;0;3;0;;0;165,71;0
 1;Padrão Loja da Vivi;3845;7898921107099;Peça de Reposição Beltec LB100 - Ponta Caneta - ;Sim;Beltec;14;0;0;0;14;0;;0;168,5;0
 1;Padrão Loja da Vivi;4258;7898605221806;Pedicure Feet Care Lizz Profissinal Bivolt Chaveado - ;Sim;Lizz;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;4087;7908003903553;Peeling Micelar Vizet Ritual Sublime 250ml - ;Sim;Vizet;2;0;0;0;2;0;;0;0;0
