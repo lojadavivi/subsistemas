@@ -111,7 +111,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;378;7898604565024;Cabine LED/UV SUNUV Sun 5 Plus 48W 36 LEDs Bivolt - ;Não;SUNUV;0;0;0;0;0;0;;549,9;299,9;0
 1;Padrão Loja da Vivi;322;7898604565031;Cabine LED/UV SUNUV Sun 9X Plus 36W 18 LEDs Bivolt - ;Sim;SUNUV;8;0;0;0;8;0;;0;61,21;0
 1;Padrão Loja da Vivi;376;7898604565048;Cabine LED/UV SUNUV Sun One 48W 30 Led UV Fundo de Metal Bivolt - ;Sim;SUNUV;0;0;0;4;4;0;;0;150;0
-1;Padrão Loja da Vivi;4173;8496964642196;Cabine Sun Nails Sun 50 48w Bivolt Original Certif. Celak - ;Não;Sun Nails;1;0;0;0;1;0;;0;0;0
+1;Padrão Loja da Vivi;4173;8496964642196;Cabine Sun Nails Sun 50 48w Bivolt Original Certif. Celak - ;Não;Sun Nails;0;1;0;0;-1;0;;0;0;0
 1;Padrão Loja da Vivi;3704;94834376;Caneta Óleo Hidratante de Cutículas - ;Sim;RPC;0;0;0;100;100;0;;0;0;0
 1;Padrão Loja da Vivi;2051;7898699910136;Capa Base Lara Machado Natural 12ml - ;Não;Lara Machado;0;0;0;0;0;0;;0;42,58;0
 1;Padrão Loja da Vivi;2370;7438513179785;Carimbo de Unha Transparente com Ponta de Silicone Manicure - ;Não;RPC;0;0;0;0;0;0;;0;0;0
@@ -821,7 +821,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3740;36545926;Kit para Alongamento de Unhas (Tips) - Kit 02 - ;Não;RPC;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3742;76061363;Kit para Alongamento de Unhas (Tips) - Kit 03 - ;Não;RPC;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3744;70787795;Kit para Alongamento de Unhas (Tips) - Kit 04 - ;Não;RPC;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;3012;7898639856876;Kit para Extensão de Cílios Master Premium Lash Lifting - ;Sim;RPC;0;0;0;4;4;0;;0;238,89;0
+1;Padrão Loja da Vivi;3012;7898639856876;Kit para Extensão de Cílios Master Premium Lash Lifting - ;Sim;RPC;0;1;0;4;3;0;;0;238,89;0
 1;Padrão Loja da Vivi;3356;7898181583732;Kit Perfume Euroessence Belle Feminino Eau de Toilette - ;Sim;Euroessence;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;3358;7898181582636;Kit Perfume Euroessence Feroze Masculino Eau de Toilette - ;Sim;Euroessence;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;3360;7898181583756;Kit Perfume Euroessence Go Girl Feminino Eau de Toilette - ;Sim;Euroessence;0;0;0;2;2;0;;0;0;0
@@ -1027,7 +1027,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3905;7897517954055;Modelador de Cachos X330 10mm Vertix Profissional Bivolt - 10mm x 130mm;Sim;Vertix;0;0;0;6;6;0;;0;104,24;0
 1;Padrão Loja da Vivi;2647;7897517954024;Modelador de Cachos X330 10mm Vertix Profissional Bivolt - 25mm x 170mm;Sim;Vertix;0;1;0;0;-1;0;;0;0;0
 1;Padrão Loja da Vivi;2648;7897517954031;Modelador de Cachos X330 10mm Vertix Profissional Bivolt - 32mm x 130mm;Sim;Vertix;0;0;0;4;4;0;;0;0;0
-1;Padrão Loja da Vivi;3960;7898496353419;Modelador Ga.ma Ceramic Nano Tourmaline New 25mm Bivolt - ;Sim;Ga.ma;0;0;0;8;8;0;;0;0;0
+1;Padrão Loja da Vivi;3960;7898496353419;Modelador Ga.ma Ceramic Nano Tourmaline New 25mm Bivolt - ;Sim;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2246;7898657699530;Modelador MQ Beauty Automatico Sem Fio My Wave - ;Não;MQ;0;0;0;0;0;0;;0;322,3;0
 1;Padrão Loja da Vivi;3932;7897517954062;Modelador Vertix Triondas X330 Triple Wave Bivolt 16mm - ;Sim;Vertix;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3754;28332275;Molde de Papel Para Alongamento de Unhas 50 Unidades - ;Sim;RPC;0;0;0;30;30;0;;0;0;0
@@ -1352,7 +1352,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3954;7896010175622;Spray Argan Cless Eu Amo Charming Extra Brilho 150ml - ;Sim;Cless;35;0;0;0;35;0;;0;15,98;0
 1;Padrão Loja da Vivi;3786;7891033718719;Spray Australian Gold Accelerator Com Instant Bronzer 237g - ;Sim;Australian Gold;0;0;0;1;1;0;;0;0;0
 1;Padrão Loja da Vivi;3784;7891033718689;Spray Australian Gold Acelerador de Bronzeamento Clear 237g - ;Sim;Australian Gold;0;0;0;3;3;0;;0;0;0
-1;Padrão Loja da Vivi;3949;7896010175615;Spray Cless Charming Gloss Térmico Extra Brilho 150ml - ;Sim;Cless;31;0;0;0;31;0;;0;15,98;0
+1;Padrão Loja da Vivi;3949;7896010175615;Spray Cless Charming Gloss Térmico Extra Brilho 150ml - ;Sim;Cless;26;0;0;0;26;0;;0;15,98;0
 1;Padrão Loja da Vivi;3947;7896046716219;Spray Cless Charming Gloss Térmico Extra Brilho 300ml - ;Não;Cless;0;0;0;0;0;0;;0;17,78;0
 1;Padrão Loja da Vivi;3894;7898562214613;Spray Day After Arvensis Cachos Naturais 250ml - ;Sim;Arvensis;0;0;0;9;9;0;;0;0;0
 1;Padrão Loja da Vivi;4001;7908458320226;Spray Defrizante Salon Line Meu Liso Demais 240ml - ;Sim;Salon Line;0;0;0;2;2;0;;0;0;0
