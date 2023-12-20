@@ -438,30 +438,30 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2726;7898595238594;Esmalte Hits 5free Glitter Jelly 8ml - Grape;Sim;Hits;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;2727;7898595238563;Esmalte Hits 5free Glitter Jelly 8ml - Lemon;Sim;Hits;0;0;0;7;7;0;;0;0;0
 1;Padrão Loja da Vivi;2728;7898595238587;Esmalte Hits 5free Glitter Jelly 8ml - Strawberry;Sim;Hits;0;0;0;10;10;0;;0;0;0
-1;Padrão Loja da Vivi;2671;7898595237535;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Amsterdam;Sim;Hits;0;0;0;7;7;0;;0;0;0
-1;Padrão Loja da Vivi;2700;7898595237528;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Atenas;Sim;Hits;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2701;7898595238297;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Atlanta;Sim;Hits;0;0;0;6;6;0;;0;0;0
-1;Padrão Loja da Vivi;2702;7898595237573;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Berlim;Sim;Hits;0;0;0;2;2;0;;0;0;0
-1;Padrão Loja da Vivi;2703;7898595237559;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Buenos Aires;Sim;Hits;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2704;7898595237566;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Cancún;Sim;Hits;0;0;0;12;12;0;;0;0;0
-1;Padrão Loja da Vivi;2705;7898595237580;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Caracas;Sim;Hits;0;0;0;6;6;0;;0;0;0
-1;Padrão Loja da Vivi;2706;7898595238310;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Dubai;Sim;Hits;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2707;7898595238365;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Genebra;Sim;Hits;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2708;7898595237597;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Havana;Sim;Hits;0;0;0;6;6;0;;0;0;0
-1;Padrão Loja da Vivi;2709;7898595237610;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Istambul;Sim;Hits;0;0;0;6;6;0;;0;0;0
-1;Padrão Loja da Vivi;2710;7898595238303;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Lima;Sim;Hits;0;0;0;4;4;0;;0;0;0
-1;Padrão Loja da Vivi;2711;7898595238389;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Londres;Sim;Hits;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2712;7898595238358;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Madri;Sim;Hits;0;0;0;3;3;0;;0;0;0
-1;Padrão Loja da Vivi;2713;7898595237634;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Miami;Sim;Hits;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2714;7898595238327;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Milão;Sim;Hits;0;0;0;4;4;0;;0;0;0
-1;Padrão Loja da Vivi;2715;7898595237641;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Moscou;Sim;Hits;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2716;7898595238341;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Oslo;Sim;Hits;0;0;0;5;5;0;;0;0;0
-1;Padrão Loja da Vivi;2717;7898595237665;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Paris;Sim;Hits;0;0;0;5;5;0;;0;0;0
-1;Padrão Loja da Vivi;2718;7898595237672;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Roma;Sim;Hits;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2719;7898595237511;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Santiago;Sim;Hits;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2720;7898595237689;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Seul;Sim;Hits;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2722;7898595238372;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Viena;Sim;Hits;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2723;7898595238334;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Zurique;Sim;Hits;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;2671;7898595237535;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Amsterdam;Não;Hits;0;0;0;7;7;0;;0;0;0
+1;Padrão Loja da Vivi;2700;7898595237528;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Atenas;Não;Hits;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;2701;7898595238297;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Atlanta;Não;Hits;0;0;0;6;6;0;;0;0;0
+1;Padrão Loja da Vivi;2702;7898595237573;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Berlim;Não;Hits;0;0;0;2;2;0;;0;0;0
+1;Padrão Loja da Vivi;2703;7898595237559;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Buenos Aires;Não;Hits;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;2704;7898595237566;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Cancún;Não;Hits;0;0;0;12;12;0;;0;0;0
+1;Padrão Loja da Vivi;2705;7898595237580;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Caracas;Não;Hits;0;0;0;6;6;0;;0;0;0
+1;Padrão Loja da Vivi;2706;7898595238310;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Dubai;Não;Hits;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;2707;7898595238365;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Genebra;Não;Hits;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;2708;7898595237597;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Havana;Não;Hits;0;0;0;6;6;0;;0;0;0
+1;Padrão Loja da Vivi;2709;7898595237610;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Istambul;Não;Hits;0;0;0;6;6;0;;0;0;0
+1;Padrão Loja da Vivi;2710;7898595238303;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Lima;Não;Hits;0;0;0;4;4;0;;0;0;0
+1;Padrão Loja da Vivi;2711;7898595238389;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Londres;Não;Hits;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;2712;7898595238358;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Madri;Não;Hits;0;0;0;3;3;0;;0;0;0
+1;Padrão Loja da Vivi;2713;7898595237634;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Miami;Não;Hits;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;2714;7898595238327;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Milão;Não;Hits;0;0;0;4;4;0;;0;0;0
+1;Padrão Loja da Vivi;2715;7898595237641;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Moscou;Não;Hits;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;2716;7898595238341;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Oslo;Não;Hits;0;0;0;5;5;0;;0;0;0
+1;Padrão Loja da Vivi;2717;7898595237665;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Paris;Não;Hits;0;0;0;5;5;0;;0;0;0
+1;Padrão Loja da Vivi;2718;7898595237672;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Roma;Não;Hits;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;2719;7898595237511;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Santiago;Não;Hits;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;2720;7898595237689;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Seul;Não;Hits;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;2722;7898595238372;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Viena;Não;Hits;0;0;0;0;0;0;;0;0;0
+1;Padrão Loja da Vivi;2723;7898595238334;Esmalte Hits 5free Glitter Volta ao Mundo 8ml - Zurique;Não;Hits;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2127;7896111947715;Esmalte Impala A Cor da Sua Moda 7,5ml - Buquê;Sim;Impala;0;0;0;0;0;0;;0;1,5;0
 1;Padrão Loja da Vivi;2097;7896111945735;Esmalte Impala A Cor da Sua Moda 7,5ml - Café Café;Sim;Impala;0;0;0;0;0;0;;0;1,5;0
 1;Padrão Loja da Vivi;1957;7896111992364;Esmalte Impala A Cor da Sua Moda 7,5ml - Dádiva;Sim;Impala;0;0;0;0;0;0;;0;1,5;0
@@ -821,7 +821,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3740;36545926;Kit para Alongamento de Unhas (Tips) - Kit 02 - ;Não;RPC;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3742;76061363;Kit para Alongamento de Unhas (Tips) - Kit 03 - ;Não;RPC;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3744;70787795;Kit para Alongamento de Unhas (Tips) - Kit 04 - ;Não;RPC;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;3012;7898639856876;Kit para Extensão de Cílios Master Premium Lash Lifting - ;Sim;RPC;0;1;0;4;3;0;;0;238,89;0
+1;Padrão Loja da Vivi;3012;7898639856876;Kit para Extensão de Cílios Master Premium Lash Lifting - ;Não;RPC;0;0;0;2;2;0;;0;238,89;0
 1;Padrão Loja da Vivi;3356;7898181583732;Kit Perfume Euroessence Belle Feminino Eau de Toilette - ;Sim;Euroessence;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;3358;7898181582636;Kit Perfume Euroessence Feroze Masculino Eau de Toilette - ;Sim;Euroessence;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;3360;7898181583756;Kit Perfume Euroessence Go Girl Feminino Eau de Toilette - ;Sim;Euroessence;0;0;0;2;2;0;;0;0;0
@@ -947,7 +947,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;1875;7898417970671;Máscara Capilar Cápsula Hair Milagrosos 3 Minutos Uma Vez 18g - Manteiga de Coco;Sim;Uma Vez;0;0;0;22;22;0;;0;0;0
 1;Padrão Loja da Vivi;1876;7898417970664;Máscara Capilar Cápsula Hair Milagrosos 3 Minutos Uma Vez 18g - Matizadora;Sim;Uma Vez;0;0;0;9;9;0;;0;0;0
 1;Padrão Loja da Vivi;1877;7898417970725;Máscara Capilar Cápsula Hair Milagrosos 3 Minutos Uma Vez 18g - Pura Selva;Sim;Uma Vez;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;2570;7898649841008;Máscara Capilar Cosmeceuta Black Matizante Vegano 250g - ;Não;Cosmeceuta;0;0;0;2;2;0;;0;0;0
+1;Padrão Loja da Vivi;2570;7898649841008;Máscara Capilar Cosmeceuta Black Matizante Vegano 250g - ;Não;Cosmeceuta;0;2;0;2;0;0;;0;0;0
 1;Padrão Loja da Vivi;2560;7898649840124;Máscara Capilar Cosmeceuta Blond Matizante Vegano 250g - ;Sim;Cosmeceuta;0;0;0;7;7;0;;0;0;0
 1;Padrão Loja da Vivi;2580;7898649840971;Máscara Capilar Cosmeceuta Castanho Matizante Vegano 250g - ;Não;Cosmeceuta;0;0;0;1;1;0;;0;0;0
 1;Padrão Loja da Vivi;2378;7898649840421;Máscara Capilar Cosmeceuta Desmaiação Alisamento Vegano 250g - ;Sim;Cosmeceuta;0;0;0;5;5;0;;0;0;0
@@ -1162,7 +1162,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;4256;7898605222391;Prancha de Cabelo Neo Titanium Lizz Special Bivolt - ;Sim;Lizz;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;3950;7898496354881;Prancha Ga.ma Elegance Blue Titanium 3D Bivolt - ;Não;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4116;7898496352030;Prancha Ga.ma Eleganza Plus Bivolt 210ḞC/410ḞF - ;Sim;Ga.ma;0;0;0;10;10;0;;0;0;0
-1;Padrão Loja da Vivi;2226;7898949454144;Prancha Lizze Extreme Com Placa Revestida Em Titânio 220V - ;Sim;Lizze;0;0;0;22;22;0;;0;214,65;0
+1;Padrão Loja da Vivi;2226;7898949454144;Prancha Lizze Extreme Com Placa Revestida Em Titânio 220V - ;Não;Lizze;0;0;0;10;10;0;;0;214,65;0
 1;Padrão Loja da Vivi;4288;9319530097727;Prancha Lizz Neo Titanium Cinza + Escova Pirulito Dompel - ;Sim;Lizz;0;0;0;7;7;0;;0;0;0
 1;Padrão Loja da Vivi;4262;9654118834371;Prancha Lizz Neo Titanium Special + Escova Pirulito Dompel - ;Sim;Lizz;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;2237;7908422601276;Prancha Modeladora MQ Beauty Lissondas - ;Sim;MQ;3;0;0;0;3;0;;0;328,88;0
