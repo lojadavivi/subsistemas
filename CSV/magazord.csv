@@ -1162,7 +1162,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;4256;7898605222391;Prancha de Cabelo Neo Titanium Lizz Special Bivolt - ;Sim;Lizz;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;3950;7898496354881;Prancha Ga.ma Elegance Blue Titanium 3D Bivolt - ;Não;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4116;7898496352030;Prancha Ga.ma Eleganza Plus Bivolt 210ḞC/410ḞF - ;Sim;Ga.ma;0;0;0;10;10;0;;0;0;0
-1;Padrão Loja da Vivi;2226;7898949454144;Prancha Lizze Extreme Com Placa Revestida Em Titânio 220V - ;Não;Lizze;1;1;0;8;8;0;;0;214,65;0
+1;Padrão Loja da Vivi;2226;7898949454144;Prancha Lizze Extreme Com Placa Revestida Em Titânio 220V - ;Não;Lizze;1;0;0;8;9;0;;0;214,65;0
 1;Padrão Loja da Vivi;4288;9319530097727;Prancha Lizz Neo Titanium Cinza + Escova Pirulito Dompel - ;Sim;Lizz;0;0;0;7;7;0;;0;0;0
 1;Padrão Loja da Vivi;4262;9654118834371;Prancha Lizz Neo Titanium Special + Escova Pirulito Dompel - ;Sim;Lizz;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;2237;7908422601276;Prancha Modeladora MQ Beauty Lissondas - ;Sim;MQ;3;0;0;0;3;0;;0;328,88;0
