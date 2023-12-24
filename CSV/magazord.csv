@@ -915,6 +915,8 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;4126;7898496354393;Máquina De Corte Ga.ma GBS Absolute Stage Cord Cordless - ;Não;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4118;7898496355659;Maquina de Corte Ga.ma Multi-Styler T923 Black Titanium USB - ;Sim;Ga.ma;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;2809;7898657692838;Máquina De Corte Mq Force Barber Brave Gold Series Bivolt - ;Sim;MQ;0;0;0;1;1;0;;0;0;0
+1;Padrão Loja da Vivi;4310;7908718730710;Marathon Champion Eletronic Talmax Bivolt Automático Prata  - ;Sim;Talmax;0;0;0;17;17;0;;0;0;0
+1;Padrão Loja da Vivi;4312;1258055256128;Marathon Champion Eletronic Talmax Bivolt Automático Rose  - ;Sim;Talmax;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;3911;7898562214552;Máscara Arvensis Cachinhos Naturais Crespíssimos Vegano 250g - ;Sim;Arvensis;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;3909;7898562214545;Máscara Arvensis Cachinhos Naturais Ondulados Vegano 250g - ;Sim;Arvensis;0;0;0;15;15;0;;0;0;0
 1;Padrão Loja da Vivi;4139;7898562213654;Máscara Arvensis Cachos Naturais Ondulados e Cacheados 250g - ;Sim;Arvensis;0;0;0;2;2;0;;0;0;0
@@ -1233,7 +1235,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2663;7898957952342;Secador de Cabelo Lion Aero Pro 2150W Rosa - 220V;Não;Lion;0;0;0;0;0;0;;0;126,82;0
 1;Padrão Loja da Vivi;2352;7898949454267;Secador de Cabelo Lizze Extreme 2400w - 220V;Não;Lizze;0;1;0;0;-1;0;;0;0;0
 1;Padrão Loja da Vivi;4290;7898605222407;Secador de Cabelo Lizz Professional Vector 2200W 127V - ;Sim;Lizz;0;0;0;2;2;0;;0;0;0
-1;Padrão Loja da Vivi;4292;7898605222414;Secador de Cabelo Lizz Professional Vector 2400W 220V - ;Sim;Lizz;0;0;0;4;4;0;;0;0;0
+1;Padrão Loja da Vivi;4292;7898605222414;Secador de Cabelo Lizz Professional Vector 2400W 220V - ;Sim;Lizz;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;2257;7908422601436;Secador De Cabelo MQ Beauty Belle Rosa 2000w 220v - ;Sim;MQ;6;0;0;4;10;0;;0;135,28;0
 1;Padrão Loja da Vivi;2807;7898657690629;Secador de Cabelo MQ Professional Millano Íon 1900W 220V - ;Não;MQ;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2448;7898957952441;Secador de Cabelo Profissional Lion Aero Ultra 3000W 220V - ;Sim;Lion;0;0;0;9;9;0;;0;499,14;0
