@@ -1420,7 +1420,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;1913;7898418090859;Tonalizante DiColore Concept Brilho Intenso Sem Amônia 60g - 1.0;Sim;Dicolore;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;1920;7898418090583;Tonalizante DiColore Concept Brilho Intenso Sem Amônia 60g - 7.0;Sim;Dicolore;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;3679;7898649841817;Tônico Capilar Beautech Crescimento Vegano 120ml - ;Sim;Beautech;0;0;0;3;3;0;;0;0;0
-1;Padrão Loja da Vivi;4297;7899572802289;Tônico de Crescimento Lola Rapunzel Vegano 250ml - ;Sim;Lola;0;0;0;93;93;0;;0;0;0
+1;Padrão Loja da Vivi;4297;7899572802289;Tônico de Crescimento Lola Rapunzel Vegano 250ml - ;Não;Lola;0;0;0;63;63;0;;0;0;0
 1;Padrão Loja da Vivi;2291;7908357402795-01;Tônico Facial Adstringente Berry Kiss Essencial 120ml - ;Sim;Berry Kiss;0;0;0;4;4;0;;0;7,22;0
 1;Padrão Loja da Vivi;502;7898610374665-01;Tônico Haskell CBA Amazônico 120ml - ;Sim;Haskell;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3924;7898444721246;Top Coat Beltrat Matte Fosco 10ml - ;Sim;Beltrat;0;0;0;4;4;0;;0;0;0
