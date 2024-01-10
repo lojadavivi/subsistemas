@@ -107,7 +107,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2600;72715482;Cabine LED/UV Fan Nails 5 Plus 48W 24 LEDs Bivolt - ;Sim;Fan&Co;0;0;0;20;20;0;;0;0;0
 1;Padrão Loja da Vivi;3024;8972881209839;Cabine LED/UV Ganesha YC-09 Com Apoio 120W 24 LEDs Bivolt - ;Sim;RPC;0;0;0;1;1;0;;0;0;0
 1;Padrão Loja da Vivi;3915;7899940703859;Cabine LED/UV Piu Bella PB01 48W 30LEDs Bivolt - ;Sim;Piu Bella;7;0;0;0;7;0;;0;120,9;0
-1;Padrão Loja da Vivi;3917;7899940703866;Cabine LED/UV Piu Bella PB03 48W 21LEDs Bivolt - ;Sim;Piu Bella;3;0;0;0;3;0;;0;167,9;0
+1;Padrão Loja da Vivi;3917;7899940703866;Cabine LED/UV Piu Bella PB03 48W 21LEDs Bivolt - ;Sim;Piu Bella;2;0;0;0;2;0;;0;167,9;0
 1;Padrão Loja da Vivi;378;7898604565024;Cabine LED/UV SUNUV Sun 5 Plus 48W 36 LEDs Bivolt - ;Não;SUNUV;0;0;0;0;0;0;;549,9;299,9;0
 1;Padrão Loja da Vivi;322;7898604565031;Cabine LED/UV SUNUV Sun 9X Plus 36W 18 LEDs Bivolt - ;Sim;SUNUV;8;0;0;0;8;0;;0;61,21;0
 1;Padrão Loja da Vivi;376;7898604565048;Cabine LED/UV SUNUV Sun One 48W 30 Led UV Fundo de Metal Bivolt - ;Sim;SUNUV;0;0;0;4;4;0;;0;150;0
@@ -282,7 +282,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2373;7898649840407;Condicionador Cosmeceuta Desmaiação Liso Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;2552;7898649840742;Condicionador Cosmeceuta Força Três Pimentas Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;2454;7898649840063;Condicionador Cosmeceuta Neutro Misturinha Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;3;3;0;;0;0;0
-1;Padrão Loja da Vivi;2400;7898649840070;Condicionador Cosmeceuta Power Cachos Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;7;7;0;;0;0;0
+1;Padrão Loja da Vivi;2400;7898649840070;Condicionador Cosmeceuta Power Cachos Vegano 300ml - ;Sim;Cosmeceuta;0;2;0;7;5;0;;0;0;0
 1;Padrão Loja da Vivi;2589;7898649840476;Condicionador Cosmeceuta Vermelho Malagueta Matizante 300ml - ;Sim;Cosmeceuta;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;766;7898639794420;Condicionador Felps Equilíbrio Nutrileveza 250ml - ;Sim;Felps;0;0;0;2;2;0;;0;0;0
 1;Padrão Loja da Vivi;770;7898639790675;Condicionador Felps Extrato de Bamboo Crescimento Capilar 250ml - ;Não;Felps;0;0;0;0;0;0;;0;0;0
@@ -620,12 +620,12 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3317;7908334509561;Gel AnyLovy Construtor Autonivelante Cover 24g - ;Sim;Any Lovy;0;0;0;8;8;0;;0;5,14;0
 1;Padrão Loja da Vivi;3380;7908334509578;Gel AnyLovy Construtor Autonivelante Cover Nude 24g - ;Sim;Any Lovy;0;0;0;7;7;0;;0;6,21;0
 1;Padrão Loja da Vivi;3312;7908334506867;Gel AnyLovy Construtor Autonivelante Hard Pink Nude +Nude 24g - ;Sim;Any Lovy;0;0;0;5;5;0;;0;7,2;0
-1;Padrão Loja da Vivi;3281;7908334506850;Gel AnyLovy Construtor Autonivelante Light Pink 24g - ;Sim;Any Lovy;0;0;0;4;4;0;;0;5,14;0
+1;Padrão Loja da Vivi;3281;7908334506850;Gel AnyLovy Construtor Autonivelante Light Pink 24g - ;Sim;Any Lovy;0;1;0;4;3;0;;0;5,14;0
 1;Padrão Loja da Vivi;3414;7908334510475;Gel AnyLovy Construtor Autonivelante Pink Nude 24g - ;Sim;Any Lovy;0;0;0;7;7;0;;0;7,2;0
 1;Padrão Loja da Vivi;2769;7908458316915;Gelatina Salon Line Fixação Extraforte Estilização 280g - ;Sim;Salon Line;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;3396;7908334508861;Gel Base Anylovy 20g - ;Sim;Any Lovy;0;0;0;3;3;0;;0;4;0
 1;Padrão Loja da Vivi;3475;7908652100402;Gel Base AnyLovy Maior Aderência 9g - ;Não;Any Lovy;0;0;0;0;0;0;;0;3,56;0
-1;Padrão Loja da Vivi;3483;7908652100419;Gel Base Fiber AnyLovy 10ml - ;Sim;Any Lovy;0;0;0;2;2;0;;0;3,56;0
+1;Padrão Loja da Vivi;3483;7908652100419;Gel Base Fiber AnyLovy 10ml - ;Sim;Any Lovy;0;1;0;2;1;0;;0;3,56;0
 1;Padrão Loja da Vivi;3874;7898562214880;Geleia Ativadora Arvensis Alta Fixação Cachos Naturais 450g - ;Sim;Arvensis;0;0;0;14;14;0;;0;0;0
 1;Padrão Loja da Vivi;3904;7898562214583;Geleia Ativadora Arvensis Forte Cachinhos Naturais 250g - ;Sim;Arvensis;0;0;0;3;3;0;;0;0;0
 1;Padrão Loja da Vivi;3902;7898562214576;Geleia Ativadora Arvensis Suave Cachinhos Naturais 250g - ;Sim;Arvensis;0;0;0;3;3;0;;0;0;0
@@ -1018,7 +1018,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;1941;7898234771260;Micromotor Profissional Marathon M3 Champion Bivolt - Rosa;Não;Talmax;0;0;0;0;0;0;;0;725;0
 1;Padrão Loja da Vivi;3500;7758258058023;Micromotor Siôux Lixa Elétrica Telefone 30.000 RPM Bivolt - ;Não;Siôux;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4242;7899572802296;Milk Spray Rapunzel Lola Cosmetics 250ml - ;Sim;Lola;0;0;0;49;49;0;;0;0;0
-1;Padrão Loja da Vivi;3919;7928680937535;Mini Cabine Fan Nails Portátil Q5 Recarregável - ;Sim;Fan&Co;0;0;0;30;30;0;;0;0;0
+1;Padrão Loja da Vivi;3919;7928680937535;Mini Cabine Fan Nails Portátil Q5 Recarregável - ;Sim;Fan&Co;0;1;0;30;29;0;;0;0;0
 1;Padrão Loja da Vivi;3018;1189533000011;Mini Cabine LED/UV Portátil Q5 18W 5 LEDs Recaregável - ;Não;RPC;0;0;0;18;18;0;;0;0;0
 1;Padrão Loja da Vivi;552;1387-01;Mini Lanterna UV Para Secagem de Esmalte em Gel 9 LEDs - ;Não;RPC;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3529;81476367;Mini Lixa Buffer Polidora 100/180 Cores Sortidas - ;Sim;RPC;0;0;0;20;20;0;;0;0;0
@@ -1026,12 +1026,12 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;4244;7897517954048;Modelador Cônico Vertix X330 210ḞC Bivolt Design Inovador - ;Sim;Vertix;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;4299;8023277110137;Modelador de Cachos Ga.ma Italy Spirale Bivolt Automático - ;Sim;Ga.ma;0;0;0;12;12;0;;0;0;0
 1;Padrão Loja da Vivi;2657;7908422600712;Modelador de Cachos Triondas MQ Beauty Glam Wave Bivolt - ;Sim;MQ Hair;0;0;0;4;4;0;;0;236,79;0
-1;Padrão Loja da Vivi;3905;7897517954055;Modelador de Cachos X330 10mm Vertix Profissional Bivolt - 10mm x 130mm;Sim;Vertix;6;0;0;6;12;0;;0;125,09;0
+1;Padrão Loja da Vivi;3905;7897517954055;Modelador de Cachos X330 10mm Vertix Profissional Bivolt - 10mm x 130mm;Sim;Vertix;0;0;0;0;0;0;;0;213,69;0
 1;Padrão Loja da Vivi;2647;7897517954024;Modelador de Cachos X330 10mm Vertix Profissional Bivolt - 25mm x 170mm;Sim;Vertix;0;1;0;0;-1;0;;0;0;0
 1;Padrão Loja da Vivi;2648;7897517954031;Modelador de Cachos X330 10mm Vertix Profissional Bivolt - 32mm x 130mm;Sim;Vertix;6;0;0;4;10;0;;0;125,09;0
 1;Padrão Loja da Vivi;3960;7898496353419;Modelador Ga.ma Ceramic Nano Tourmaline New 25mm Bivolt - ;Sim;Ga.ma;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2246;7898657699530;Modelador MQ Beauty Automatico Sem Fio My Wave - ;Não;MQ;0;0;0;0;0;0;;0;322,3;0
-1;Padrão Loja da Vivi;3932;7897517954062;Modelador Vertix Triondas X330 Triple Wave Bivolt 16mm - ;Sim;Vertix;10;0;0;0;10;0;;0;195,1;0
+1;Padrão Loja da Vivi;3932;7897517954062;Modelador Vertix Triondas X330 Triple Wave Bivolt 16mm - ;Sim;Vertix;8;0;0;0;8;0;;0;195,1;0
 1;Padrão Loja da Vivi;3754;28332275;Molde de Papel Para Alongamento de Unhas 50 Unidades - ;Sim;RPC;0;0;0;30;30;0;;0;0;0
 1;Padrão Loja da Vivi;3756;77584687;Monomer Acrílico Líquido X&D Para Alongamento de Unhas 30ml - ;Sim;X&D;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;3151;731509595864;Monomer Kiss Líquido Acrílico Odor Reduzido 60ml - ;Não;Kiss;0;0;0;0;0;0;;0;0;0
@@ -1201,7 +1201,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;3792;7897230303406;Protetor Solar Anasol FPS 30 Hipoalergênico 120g - Loção - ;Sim;Anasol;0;0;0;8;8;0;;0;0;0
 1;Padrão Loja da Vivi;3802;7897230303413;Protetor Solar Anasol FPS 50 Hipoalergênico 120g - Loção - ;Sim;Anasol;0;0;0;6;6;0;;0;0;0
 1;Padrão Loja da Vivi;3808;7891033718580;Protetor Solar Australian Gold Com Instant Bronzer FPS 8 237g - ;Sim;Australian Gold;0;0;0;2;2;0;;0;0;0
-1;Padrão Loja da Vivi;3780;79656119732;Protetor Solar Banana Boat Advanced Protection FPS 50 170g - ;Sim;Banana Boat;4;0;0;0;4;0;;0;0;0
+1;Padrão Loja da Vivi;3780;79656119732;Protetor Solar Banana Boat Advanced Protection FPS 50 170g - ;Sim;Banana Boat;3;0;0;0;3;0;;0;0;0
 1;Padrão Loja da Vivi;3649;7898649842012;Protetor Solar Capilar Beautech Vegano 300ml - ;Não;Beautech;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;3778;7898567703501;Protetor Solar My Health SUN Prime FPS 15 150ml - ;Sim;My Health;0;0;0;10;10;0;;0;0;0
 1;Padrão Loja da Vivi;3736;7898567703518;Protetor Solar My Health Sun Prime FPS 30 150ml - ;Sim;My Health;0;0;0;9;9;0;;0;0;0
@@ -1311,7 +1311,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2548;7898649840728;Shampoo Cosmeceuta Força Três Pimentas Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;4;4;0;;0;0;0
 1;Padrão Loja da Vivi;2467;7898649840049;Shampoo Cosmeceuta Liso Extreme Pós Progressiva Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;2450;7898649840025;Shampoo Cosmeceuta pH Neutro Vegano 300ml - ;Sim;Cosmeceuta;0;0;0;3;3;0;;0;0;0
-1;Padrão Loja da Vivi;2404;7898649840032;Shampoo Cosmeceuta Power Cachos Vegano Sem Sal 300ml - ;Sim;Cosmeceuta;0;0;0;8;8;0;;0;0;0
+1;Padrão Loja da Vivi;2404;7898649840032;Shampoo Cosmeceuta Power Cachos Vegano Sem Sal 300ml - ;Sim;Cosmeceuta;0;2;0;8;6;0;;0;0;0
 1;Padrão Loja da Vivi;2585;7898649840469;Shampoo Cosmeceuta Vermelho Malagueta Matizante Vegano 300ml - ;Não;Cosmeceuta;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;476;7898468519805-01;Shampoo Desamarelador Alfaparf Alta Moda 300ml - ;Sim;Alfaparf;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;212;7896380607389-01;Shampoo em Calda Keragen Sweet Vanilla Reconstrução 300ml - ;Sim;Kert;0;0;0;0;0;0;;0;0;0
@@ -1428,7 +1428,7 @@ Id Dep.;Depósito;Produto/Derivação Id Der.;Produto/Derivação Código Der.;P
 1;Padrão Loja da Vivi;2047;7898699910099;Top Coat Lara Machado Camuflagem Nude Pink 12ml - ;Não;Lara Machado;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;2049;7898699910143;Top Coat Lara Machado Clear 12ml - ;Não;Lara Machado;0;0;0;0;0;0;;0;52,73;0
 1;Padrão Loja da Vivi;3794;7898699910297;Top Coat Lara Machado Sunshine Gold 12ml - ;Sim;Lara Machado;0;0;0;0;0;0;;0;0;0
-1;Padrão Loja da Vivi;3487;7908652100396;Top Coat LED/UV AnyLovy 9g Any Lovy - ;Sim;Any Lovy;0;0;0;3;3;0;;0;3,56;0
+1;Padrão Loja da Vivi;3487;7908652100396;Top Coat LED/UV AnyLovy 9g Any Lovy - ;Sim;Any Lovy;0;1;0;3;2;0;;0;3,56;0
 1;Padrão Loja da Vivi;3460;7898699911195;Top Coat LED/UV Bluwe Super Clear 10ml - ;Sim;Bluwe;0;0;0;5;5;0;;0;0;0
 1;Padrão Loja da Vivi;3849;7898444721413;Top Coat Letícia Gama Selante 14ml - ;Não;Letícia Gama;0;0;0;0;0;0;;0;0;0
 1;Padrão Loja da Vivi;752;6228480332204-01;Top Coat Nails T4 Efeito Extra Brilho 15ml - ;Sim;Nails T4;0;0;0;5;5;0;;0;0;0
