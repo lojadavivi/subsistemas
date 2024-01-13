@@ -155,19 +155,6 @@
                         codFerryCell.textContent = codFerry.replace(/"/g, "");
                         prodFerryCell.textContent = prodFerry.replace(/"/g, "");
 
-                        if (obsFerry === "?") {
-                            var anchor = document.createElement("a");
-                            anchor.textContent = "Meia nota";
-                            anchor.href = "https://docs.google.com/spreadsheets/d/1iaiCJpYmdUV9sA556QLTEr2d70IUYYjzTTSQKDDhWv4/edit?usp=sharing";
-                            custoFerryCell.appendChild(anchor);
-                        } else {
-                            var custoFerryNum = parseFloat(custoFerry.replace(/"/g, "").replace(",", "."));
-                            custoFerryCell.textContent = "R$ " + custoFerryNum.toLocaleString('pt-BR', {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2
-                            });
-                        }
-
                         var vendaFerryNum = parseFloat(vendaFerry.replace(/"/g, "").replace(",", "."));
                         vendaFerryCell.textContent = "R$ " + vendaFerryNum.toLocaleString('pt-BR', {
                             minimumFractionDigits: 2,

@@ -155,19 +155,6 @@
                         codTijucasCell.textContent = codTijucas.replace(/"/g, "");
                         prodTijucasCell.textContent = prodTijucas.replace(/"/g, "");
 
-                        if (obsTijucas === "?") {
-                            var anchor = document.createElement("a");
-                            anchor.textContent = "Meia nota";
-                            anchor.href = "https://docs.google.com/spreadsheets/d/1iaiCJpYmdUV9sA556QLTEr2d70IUYYjzTTSQKDDhWv4/edit?usp=sharing";
-                            custoTijucasCell.appendChild(anchor);
-                        } else {
-                            var custoTijucasNum = parseFloat(custoTijucas.replace(/"/g, "").replace(",", "."));
-                            custoTijucasCell.textContent = "R$ " + custoTijucasNum.toLocaleString('pt-BR', {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2
-                            });
-                        }
-
                         var vendaTijucasNum = parseFloat(vendaTijucas.replace(/"/g, "").replace(",", "."));
                         vendaTijucasCell.textContent = "R$ " + vendaTijucasNum.toLocaleString('pt-BR', {
                             minimumFractionDigits: 2,
