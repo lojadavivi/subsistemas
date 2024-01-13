@@ -155,6 +155,12 @@
                         codEstefanoCell.textContent = codEstefano.replace(/"/g, "");
                         prodEstefanoCell.textContent = prodEstefano.replace(/"/g, "");
 
+                        var custoEstefanoNum = parseFloat(custoEstefano.replace(/"/g, "").replace(",", "."));
+                        custoEstefanoCell.textContent = "R$ " + custoEstefanoNum.toLocaleString('pt-BR', {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                        });
+
                         var vendaEstefanoNum = parseFloat(vendaEstefano.replace(/"/g, "").replace(",", "."));
                         vendaEstefanoCell.textContent = "R$ " + vendaEstefanoNum.toLocaleString('pt-BR', {
                             minimumFractionDigits: 2,

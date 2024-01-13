@@ -155,6 +155,12 @@
                         codFerryCell.textContent = codFerry.replace(/"/g, "");
                         prodFerryCell.textContent = prodFerry.replace(/"/g, "");
 
+                        var custoFerryNum = parseFloat(custoFerry.replace(/"/g, "").replace(",", "."));
+                        custoFerryCell.textContent = "R$ " + custoFerryNum.toLocaleString('pt-BR', {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                        });
+
                         var vendaFerryNum = parseFloat(vendaFerry.replace(/"/g, "").replace(",", "."));
                         vendaFerryCell.textContent = "R$ " + vendaFerryNum.toLocaleString('pt-BR', {
                             minimumFractionDigits: 2,
