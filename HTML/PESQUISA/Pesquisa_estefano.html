@@ -54,7 +54,6 @@
         <table class="tabela_busca">
             <thead>
                 <tr>
-                    <th style="background-color: #333843;">⚠</th>
                     <th style="background-color: #333843;"><button
                             style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;"
                             onclick="ordenarPorId()">ID</button></th>
@@ -124,7 +123,6 @@
                 var linhasEstefano = data.split("\n");
                 for (var infoEstefano = 1; infoEstefano < linhasEstefano.length; infoEstefano++) {
                     var columnsEstefano = linhasEstefano[infoEstefano].split(";");
-                    var obsEstefano = columnsEstefano[57] || "";
                     var idEstefano = columnsEstefano[0];
                     var refEstefano = columnsEstefano[23] || "";
                     var codEstefano = columnsEstefano[22] || "";
@@ -140,25 +138,17 @@
                     // Verifica se o resultado corresponde à busca e organiza as informações na tabela
                     if ((inputCod && (inputNome === "" || prodEstefano.toLowerCase().includes(inputNome))) || (!inputCod && codEstefano.trim().match(inputNome) == inputNome || refEstefano.trim().match(inputNome) == inputNome)) {
                         var row = resultsTableBody.insertRow();
-                        var obsEstefanoCell = row.insertCell(0);
-                        var idEstefanoCell = row.insertCell(1);
-                        var refEstefanoCell = row.insertCell(2);
-                        var codEstefanoCell = row.insertCell(3);
-                        var prodEstefanoCell = row.insertCell(4);
-                        var custoEstefanoCell = row.insertCell(5);
-                        var vendaEstefanoCell = row.insertCell(6);
-                        var qtdEstefanoCell = row.insertCell(7);
-                        var ncmEstefanoCell = row.insertCell(8);
-                        var cestEstefanoCell = row.insertCell(9);
-                        var pisEstefanoCell = row.insertCell(10);
-                        var cofinsEstefanoCell = row.insertCell(11);
-
-                        // Verifica se o conteúdo de obsEstefanoCell é igual a ⚠
-                        if (obsEstefano === "?") {
-                            obsEstefanoCell.textContent = "⚠"; // Exibe ⚠
-                        } else {
-                            obsEstefanoCell.textContent = ""; // Não exibe nada
-                        }
+                        var idEstefanoCell = row.insertCell(0);
+                        var refEstefanoCell = row.insertCell(1);
+                        var codEstefanoCell = row.insertCell(2);
+                        var prodEstefanoCell = row.insertCell(3);
+                        var custoEstefanoCell = row.insertCell(4);
+                        var vendaEstefanoCell = row.insertCell(5);
+                        var qtdEstefanoCell = row.insertCell(6);
+                        var ncmEstefanoCell = row.insertCell(7);
+                        var cestEstefanoCell = row.insertCell(8);
+                        var pisEstefanoCell = row.insertCell(9);
+                        var cofinsEstefanoCell = row.insertCell(10);
 
                         idEstefanoCell.textContent = idEstefano.replace(/"/g, "");
                         refEstefanoCell.textContent = refEstefano.replace(/"/g, "");

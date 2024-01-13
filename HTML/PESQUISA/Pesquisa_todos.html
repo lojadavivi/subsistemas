@@ -25,10 +25,7 @@
     </h1>
 
     <!-- Área para mostrar a última data de atualização do arquivo -->
-    <!-- <p id="lastModifiedEstefano"></p>
-    <p id="lastModifiedFerry"></p>
-    <p id="lastModifiedTijucas"></p>
-    <p id="lastModifiedSite"></p>-->
+    <p id="lastModified"></p>
 
     <!-- Campos de busca por produto ou código de barras -->
     <div>
@@ -55,9 +52,7 @@
         <table class="tabela_busca">
             <thead>
                 <tr>
-                    <th style="background-color: #333843;">ID E</th>
-                    <th style="background-color: #333843;">ID T</th>
-                    <th style="background-color: #333843;">ID F</th>
+                    <th style="background-color: #333843;">ID</th>
                     <th style="background-color: #992380;"><button
                             style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;"
                             onclick="ordenarPorRef()">REF</button></th>
@@ -125,17 +120,15 @@
                     if ((inputCod && (inputNome === "" || prodEstefano.toLowerCase().includes(inputNome))) || (!inputCod && codEstefano.trim().match(inputNome) == inputNome || refEstefano.trim().match(inputNome) == inputNome)) {
                         var row = resultsTableBody.insertRow();
                         var idEstefanoCell = row.insertCell(0);
-                        row.insertCell(1);
-                        row.insertCell(2);
-                        var refEstefanoCell = row.insertCell(3);
-                        var codEstefanoCell = row.insertCell(4);
-                        var prodEstefanoCell = row.insertCell(5);
-                        var qtdEstefanoCell = row.insertCell(6);
+                        var refEstefanoCell = row.insertCell(1);
+                        var codEstefanoCell = row.insertCell(2);
+                        var prodEstefanoCell = row.insertCell(3);
+                        var qtdEstefanoCell = row.insertCell(4);
+                        row.insertCell(5);
+                        row.insertCell(6);
                         row.insertCell(7);
                         row.insertCell(8);
-                        row.insertCell(9);
-                        row.insertCell(10);
-                        idEstefanoCell.textContent = idEstefano.replace(/"/g, "");
+                        idEstefanoCell.textContent = "EST-" + idEstefano.replace(/"/g, "");
                         refEstefanoCell.textContent = refEstefano.replace(/"/g, "");
                         codEstefanoCell.textContent = codEstefano.replace(/"/g, "");
                         prodEstefanoCell.textContent = prodEstefano.replace(/"/g, "");
@@ -158,18 +151,16 @@
                     // Conferência de dados TIJUCAS
                     if ((inputCod && (inputNome === "" || prodTijucas.toLowerCase().includes(inputNome))) || (!inputCod && codTijucas.trim().match(inputNome) == inputNome || refTijucas.trim().match(inputNome) == inputNome)) {
                         var row = resultsTableBody.insertRow();
-                        row.insertCell(0);
-                        var idTijucasCell = row.insertCell(1);
-                        row.insertCell(2);
-                        var refTijucasCell = row.insertCell(3);
-                        var codTijucasCell = row.insertCell(4);
-                        var prodTijucasCell = row.insertCell(5);
+                        var idTijucasCell = row.insertCell(0);
+                        var refTijucasCell = row.insertCell(1);
+                        var codTijucasCell = row.insertCell(2);
+                        var prodTijucasCell = row.insertCell(3);
+                        row.insertCell(4);
+                        var qtdTijucasCell = row.insertCell(5);
                         row.insertCell(6);
-                        var qtdTijucasCell = row.insertCell(7);
+                        row.insertCell(7);
                         row.insertCell(8);
-                        row.insertCell(9);
-                        row.insertCell(10);
-                        idTijucasCell.textContent = idTijucas.replace(/"/g, "");
+                        idTijucasCell.textContent = "TIJ-" + idTijucas.replace(/"/g, "");
                         refTijucasCell.textContent = refTijucas.replace(/"/g, "");
                         codTijucasCell.textContent = codTijucas.replace(/"/g, "");
                         prodTijucasCell.textContent = prodTijucas.replace(/"/g, "");
@@ -192,18 +183,16 @@
                     // Conferência de dados FERRY
                     if ((inputCod && (inputNome === "" || prodFerry.toLowerCase().includes(inputNome))) || (!inputCod && codFerry.trim().match(inputNome) == inputNome || refFerry.trim().match(inputNome) == inputNome)) {
                         var row = resultsTableBody.insertRow();
-                        row.insertCell(0);
-                        row.insertCell(1);
-                        var idFerryCell = row.insertCell(2);
-                        var refFerryCell = row.insertCell(3);
-                        var codFerryCell = row.insertCell(4);
-                        var prodFerryCell = row.insertCell(5);
-                        row.insertCell(6);
+                        var idFerryCell = row.insertCell(0);
+                        var refFerryCell = row.insertCell(1);
+                        var codFerryCell = row.insertCell(2);
+                        var prodFerryCell = row.insertCell(3);
+                        row.insertCell(4);
+                        row.insertCell(5);
+                        var qtdFerryCell = row.insertCell(6);
                         row.insertCell(7);
-                        var qtdFerryCell = row.insertCell(8);
-                        row.insertCell(9);
-                        row.insertCell(10);
-                        idFerryCell.textContent = idFerry.replace(/"/g, "");
+                        row.insertCell(8);
+                        idFerryCell.textContent = "FER-" + idFerry.replace(/"/g, "");
                         refFerryCell.textContent = refFerry.replace(/"/g, "");
                         codFerryCell.textContent = codFerry.replace(/"/g, "");
                         prodFerryCell.textContent = prodFerry.replace(/"/g, "");
@@ -226,15 +215,13 @@
                         var row = resultsTableBody.insertRow();
                         row.insertCell(0);
                         row.insertCell(1);
-                        row.insertCell(2);
-                        row.insertCell(3);
-                        var codSiteCell = row.insertCell(4);
-                        var prodSiteCell = row.insertCell(5);
+                        var codSiteCell = row.insertCell(2);
+                        var prodSiteCell = row.insertCell(3);
+                        row.insertCell(4);
+                        row.insertCell(5);
                         row.insertCell(6);
-                        row.insertCell(7);
-                        row.insertCell(8);
-                        var qtdSiteFCell = row.insertCell(9);
-                        var qtdSiteVCell = row.insertCell(10);
+                        var qtdSiteFCell = row.insertCell(7);
+                        var qtdSiteVCell = row.insertCell(8);
                         codSiteCell.textContent = codSite.replace(/"/g, "");
                         prodSiteCell.textContent = prodSite.replace(/"/g, "");
                         qtdSiteFCell.textContent = qtdSiteF === "0" ? "" : qtdSiteF.replace(/"/g, "");
@@ -267,101 +254,13 @@
 </body>
 
 <script>
-
-    // Função assíncrona para obter a data de última atualização do arquivo CSV de Tijucas
-    async function getLastModifiedTijucas() {
-        var csvTijucas = "/subsistemas/CSV/Produtos_exportados (TIJUCAS).csv";
-        const response = await fetch(csvTijucas, { method: "HEAD" });
-        const lastModified = new Date(response.headers.get("Last-Modified"));
-        const lastModifiedText = "Última atualização (Tijucas): " + lastModified.toLocaleString();
-        document.getElementById("lastModifiedTijucas").textContent = lastModifiedText;
-        const currentDate = new Date();
-        const nextUpdate = new Date(lastModified);
-        nextUpdate.setHours(nextUpdate.getHours() + 16); // Adiciona 16 horas
-
-        // Se a data de atualização for maior ou igual a 16 horas a partir de agora, exibe um aviso
-        if (currentDate >= nextUpdate) {
-            const updateWarning = document.createElement("span");
-            updateWarning.innerHTML = "Atualizar arquivo (Tijucas). Os números podem estar muito diferentes.";
-            updateWarning.className = "update-warning";
-            document.getElementById("lastModifiedTijucas").appendChild(updateWarning);
-        }
-    }
-
-    // Função assíncrona para obter a data de última atualização do arquivo CSV do Ferry
-    async function getLastModifiedFerry() {
-        var csvFerry = "/subsistemas/CSV/Produtos_exportados (FERRY).csv";
-        const response = await fetch(csvFerry, { method: "HEAD" });
-        const lastModified = new Date(response.headers.get("Last-Modified"));
-        const lastModifiedText = "Última atualização (Ferry): " + lastModified.toLocaleString();
-        document.getElementById("lastModifiedFerry").textContent = lastModifiedText;
-        const currentDate = new Date();
-        const nextUpdate = new Date(lastModified);
-        nextUpdate.setHours(nextUpdate.getHours() + 16); // Adiciona 16 horas
-
-        // Se a data de atualização for maior ou igual a 16 horas a partir de agora, exibe um aviso
-        if (currentDate >= nextUpdate) {
-            const updateWarning = document.createElement("span");
-            updateWarning.innerHTML = "Atualizar arquivo (Ferry). Os números podem estar muito diferentes.";
-            updateWarning.className = "update-warning";
-            document.getElementById("lastModifiedFerry").appendChild(updateWarning);
-        }
-    }
-
-    // Função assíncrona para obter a data de última atualização do arquivo CSV de Estefano
-    async function getLastModifiedEstefano() {
-        var csvEstefano = "/subsistemas/CSV/Produtos_exportados (ESTEFANO).csv";
-        const response = await fetch(csvEstefano, { method: "HEAD" });
-        const lastModified = new Date(response.headers.get("Last-Modified"));
-        const lastModifiedText = "Última atualização (Estefano): " + lastModified.toLocaleString();
-        document.getElementById("lastModifiedEstefano").textContent = lastModifiedText;
-        const currentDate = new Date();
-        const nextUpdate = new Date(lastModified);
-        nextUpdate.setHours(nextUpdate.getHours() + 16); // Adiciona 16 horas
-
-        // Se a data de atualização for maior ou igual a 16 horas a partir de agora, exibe um aviso
-        if (currentDate >= nextUpdate) {
-            const updateWarning = document.createElement("span");
-            updateWarning.innerHTML = "Atualizar arquivo (Estefano). Os números podem estar muito diferentes.";
-            updateWarning.className = "update-warning";
-            document.getElementById("lastModifiedEstefano").appendChild(updateWarning);
-        }
-    }
-
-    // Função assíncrona para obter a data de última atualização do arquivo CSV do Site
-    async function getLastModifiedSite() {
-        var csvSite = "/subsistemas/CSV/magazord.csv";
-        const response = await fetch(csvSite, { method: "HEAD" });
-        const lastModified = new Date(response.headers.get("Last-Modified"));
-        const lastModifiedText = "Última atualização (Site): " + lastModified.toLocaleString();
-        // Exiba a última atualização dentro de um elemento HTML com o ID "lastModifiedSite"
-        document.getElementById("lastModifiedSite").textContent = lastModifiedText;
-        const currentDate = new Date();
-        const nextUpdate = new Date(lastModified);
-        nextUpdate.setHours(nextUpdate.getHours() + 16); // Adiciona 16 horas
-
-        // Se a data de atualização for maior ou igual a 16 horas a partir de agora, exibe um aviso
-        if (currentDate >= nextUpdate) {
-            const updateWarning = document.createElement("span");
-            updateWarning.innerHTML = "Atualizar arquivo (Site). Os números podem estar muito diferentes.";
-            updateWarning.className = "update-warning";
-            document.getElementById("lastModifiedSite").appendChild(updateWarning);
-        }
-    }
-
-    // Chama as funções para obter as datas de última atualização ao carregar a página
-    getLastModifiedEstefano();
-    getLastModifiedSite();
-    getLastModifiedTijucas();
-    getLastModifiedFerry();
-
     // Ordenar por Referência
     function ordenarPorRef() {
         var table = document.querySelector(".tabela_busca");
         var rows = Array.from(table.rows).slice(1);
         rows.sort(function (a, b) {
-            var cellA = a.cells[3].textContent.trim();
-            var cellB = b.cells[3].textContent.trim();
+            var cellA = a.cells[1].textContent.trim();
+            var cellB = b.cells[1].textContent.trim();
             if (!isNaN(cellA) && !isNaN(cellB)) {
                 return parseFloat(cellA) - parseFloat(cellB);
             } else {
@@ -379,8 +278,8 @@
         var table = document.querySelector(".tabela_busca");
         var rows = Array.from(table.rows).slice(1);
         rows.sort(function (a, b) {
-            var cellA = a.cells[4].textContent.trim();
-            var cellB = b.cells[4].textContent.trim();
+            var cellA = a.cells[2].textContent.trim();
+            var cellB = b.cells[2].textContent.trim();
             if (!isNaN(cellA) && !isNaN(cellB)) {
                 return parseFloat(cellA) - parseFloat(cellB);
             } else {
@@ -398,8 +297,8 @@
         var table = document.querySelector(".tabela_busca");
         var rows = Array.from(table.rows).slice(1);
         rows.sort(function (a, b) {
-            var cellA = a.cells[5].textContent.toLowerCase();
-            var cellB = b.cells[5].textContent.toLowerCase();
+            var cellA = a.cells[3].textContent.toLowerCase();
+            var cellB = b.cells[3].textContent.toLowerCase();
             return cellA.localeCompare(cellB);
         });
         var tbody = table.querySelector("tbody");
@@ -409,6 +308,28 @@
         });
     }
 
+    // Função assíncrona para obter a data de última atualização do arquivo
+    async function getLastModified() {
+        var csvEstefano = "/subsistemas/CSV/Produtos_exportados (ESTEFANO).csv";
+        const response = await fetch(csvEstefano, { method: "HEAD" });
+        const lastModified = new Date(response.headers.get("Last-Modified"));
+        const lastModifiedText = "Última atualização: " + lastModified.toLocaleString();
+        document.getElementById("lastModified").textContent = lastModifiedText;
+        const currentDate = new Date();
+        const nextUpdate = new Date(lastModified);
+        nextUpdate.setHours(nextUpdate.getHours() + 16); // Adiciona 16 horas
+
+        // Se a data de atualização for maior ou igual a 16 horas a partir de agora, exibe um aviso
+        if (currentDate >= nextUpdate) {
+            const updateWarning = document.createElement("span");
+            updateWarning.innerHTML = "Atualizar arquivo. Os números podem estar muito diferentes.";
+            updateWarning.className = "update-warning";
+            document.getElementById("lastModified").appendChild(updateWarning);
+        }
+    }
+
+    // Chama a função para obter a data de última atualização ao carregar a página
+    getLastModified();
 </script>
 
 

@@ -239,6 +239,15 @@ ESTOQUES
     </thead>
     <tbody>
         <tr>
+            <td>1.3.1 <br> 13/01/2024</td>
+            <td>
+                <ul>
+                    <li>Corrigido erro nos botões de organização das colunas.</li>
+                    <li>Simplificadas colunas de ID em TODOS OS ESTOQUES.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
             <td>1.3.0 <br> 26/10/2023</td>
             <td>
                 <ul>

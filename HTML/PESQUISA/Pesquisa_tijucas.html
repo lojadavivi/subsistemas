@@ -54,7 +54,6 @@
         <table class="tabela_busca">
             <thead>
                 <tr>
-                    <th style="background-color: #333843;">⚠</th>
                     <th style="background-color: #333843;"><button
                             style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;"
                             onclick="ordenarPorId()">ID</button></th>
@@ -124,7 +123,6 @@
                 var linhasTijucas = data.split("\n");
                 for (var infoTijucas = 1; infoTijucas < linhasTijucas.length; infoTijucas++) {
                     var columnsTijucas = linhasTijucas[infoTijucas].split(";");
-                    var obsTijucas = columnsTijucas[57] || "";
                     var idTijucas = columnsTijucas[0];
                     var refTijucas = columnsTijucas[23] || "";
                     var codTijucas = columnsTijucas[22] || "";
@@ -140,25 +138,17 @@
                     // Verifica se o resultado corresponde à busca e organiza as informações na tabela
                     if ((inputCod && (inputNome === "" || prodTijucas.toLowerCase().includes(inputNome))) || (!inputCod && codTijucas.trim().match(inputNome) == inputNome || refTijucas.trim().match(inputNome) == inputNome)) {
                         var row = resultsTableBody.insertRow();
-                        var obsTijucasCell = row.insertCell(0);
-                        var idTijucasCell = row.insertCell(1);
-                        var refTijucasCell = row.insertCell(2);
-                        var codTijucasCell = row.insertCell(3);
-                        var prodTijucasCell = row.insertCell(4);
-                        var custoTijucasCell = row.insertCell(5);
-                        var vendaTijucasCell = row.insertCell(6);
-                        var qtdTijucasCell = row.insertCell(7);
-                        var ncmTijucasCell = row.insertCell(8);
-                        var cestTijucasCell = row.insertCell(9);
-                        var pisTijucasCell = row.insertCell(10);
-                        var cofinsTijucasCell = row.insertCell(11);
-
-                        // Verifica se o conteúdo de obsTijucasCell é igual a ⚠
-                        if (obsTijucas === "?") {
-                            obsTijucasCell.textContent = "⚠"; // Exibe ⚠
-                        } else {
-                            obsTijucasCell.textContent = ""; // Não exibe nada
-                        }
+                        var idTijucasCell = row.insertCell(0);
+                        var refTijucasCell = row.insertCell(1);
+                        var codTijucasCell = row.insertCell(2);
+                        var prodTijucasCell = row.insertCell(3);
+                        var custoTijucasCell = row.insertCell(4);
+                        var vendaTijucasCell = row.insertCell(5);
+                        var qtdTijucasCell = row.insertCell(6);
+                        var ncmTijucasCell = row.insertCell(7);
+                        var cestTijucasCell = row.insertCell(8);
+                        var pisTijucasCell = row.insertCell(9);
+                        var cofinsTijucasCell = row.insertCell(10);
 
                         idTijucasCell.textContent = idTijucas.replace(/"/g, "");
                         refTijucasCell.textContent = refTijucas.replace(/"/g, "");

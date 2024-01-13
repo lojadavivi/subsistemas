@@ -54,7 +54,6 @@
         <table class="tabela_busca">
             <thead>
                 <tr>
-                    <th style="background-color: #333843;">⚠</th>
                     <th style="background-color: #333843;"><button
                             style="background-color: inherit; color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit;"
                             onclick="ordenarPorId()">ID</button></th>
@@ -124,7 +123,6 @@
                 var linhasFerry = data.split("\n");
                 for (var infoFerry = 1; infoFerry < linhasFerry.length; infoFerry++) {
                     var columnsFerry = linhasFerry[infoFerry].split(";");
-                    var obsFerry = columnsFerry[57] || "";
                     var idFerry = columnsFerry[0];
                     var refFerry = columnsFerry[23] || "";
                     var codFerry = columnsFerry[22] || "";
@@ -140,25 +138,17 @@
                     // Verifica se o resultado corresponde à busca e organiza as informações na tabela
                     if ((inputCod && (inputNome === "" || prodFerry.toLowerCase().includes(inputNome))) || (!inputCod && codFerry.trim().match(inputNome) == inputNome || refFerry.trim().match(inputNome) == inputNome)) {
                         var row = resultsTableBody.insertRow();
-                        var obsFerryCell = row.insertCell(0);
-                        var idFerryCell = row.insertCell(1);
-                        var refFerryCell = row.insertCell(2);
-                        var codFerryCell = row.insertCell(3);
-                        var prodFerryCell = row.insertCell(4);
-                        var custoFerryCell = row.insertCell(5);
-                        var vendaFerryCell = row.insertCell(6);
-                        var qtdFerryCell = row.insertCell(7);
-                        var ncmFerryCell = row.insertCell(8);
-                        var cestFerryCell = row.insertCell(9);
-                        var pisFerryCell = row.insertCell(10);
-                        var cofinsFerryCell = row.insertCell(11);
-
-                        // Verifica se o conteúdo de obsFerryCell é igual a ⚠
-                        if (obsFerry === "?") {
-                            obsFerryCell.textContent = "⚠"; // Exibe ⚠
-                        } else {
-                            obsFerryCell.textContent = ""; // Não exibe nada
-                        }
+                        var idFerryCell = row.insertCell(0);
+                        var refFerryCell = row.insertCell(1);
+                        var codFerryCell = row.insertCell(2);
+                        var prodFerryCell = row.insertCell(3);
+                        var custoFerryCell = row.insertCell(4);
+                        var vendaFerryCell = row.insertCell(5);
+                        var qtdFerryCell = row.insertCell(6);
+                        var ncmFerryCell = row.insertCell(7);
+                        var cestFerryCell = row.insertCell(8);
+                        var pisFerryCell = row.insertCell(9);
+                        var cofinsFerryCell = row.insertCell(10);
 
                         idFerryCell.textContent = idFerry.replace(/"/g, "");
                         refFerryCell.textContent = refFerry.replace(/"/g, "");
