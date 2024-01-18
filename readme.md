@@ -130,7 +130,7 @@ SUBSISTEMAS
             <td>
                 <ul>
                     <li>Separados os estilos CSS em um único arquivo.</li>
-                    <li>Adicionado MAGAZORD na lista de estoque.</li>
+                    <li>Adicionado SITE na lista de estoque.</li>
                     <li>Adicionado botão "CALCULADORA (em breve)" na página inicial para indexar a futura
                         página da Calculadora para Marketplaces.</li>
                     <li>Limpeza de código em variáveis.</li>
@@ -162,13 +162,21 @@ CALCULADORA
     </thead>
     <tbody>
         <tr>
+            <td>4.1.2 <br> 18/01/2024</td>
+            <td>
+                <ul>
+                    <li>Atualizada taxa de cartão para SITE.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
             <td>4.1.1 <br> 10/10/2023</td>
             <td>
                 <ul>
                     <li>Adicionada diferenciação de cores na tabela e no H1 de acordo com o CNPJ selecionado
                         para facilitar a identificação de para onde o valor está sendo calculado.</li>
                     <li>Textos de ajuda ficam escondidos em um spoiler.</li>
-                    <li>Corrigida comissão do MAGAZORD.</li>
+                    <li>Corrigida comissão do SITE.</li>
                 </ul>
             </td>
         </tr>
@@ -271,7 +279,7 @@ ESTOQUES
                         consertar estoques das lojas. Inclui apenas informações básicas relacionadas a
                         cadastros e quantidades.</li>
                     <li>Adicionado botões para organizar a tabela em ordem alfabética em ESTEFANO, FERRY,
-                        TIJUCAS e MAGAZORD.</li>
+                        TIJUCAS e SITE.</li>
                     <li>Códigos VAR renomeados de acordo com o arquivo para facilitar mesclagem de várias
                         pesquisas.</li>
                     <li>Códigos de busca renomeados para melhor entendimento por terceiros.</li>
