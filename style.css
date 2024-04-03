@@ -1,0 +1,151 @@
+/* Padrão de fonte e fundo */
+@font-face {
+    font-family: "Inconsolata";
+    src: url(STYLES/Inconsolata.ttf);
+}
+
+body {
+    font-family: "Inconsolata";
+    background-color: #241734;
+    color: #c18fff;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Título da página */
+
+header {
+    background-color: #2E2157;
+    padding: 20px 30px;
+    text-align: center;
+    max-width: 940px;
+    margin: auto;
+}
+
+#titulo {
+    font-size: 6vw;
+    font-weight: bold;
+    color: #ffc1f5;
+}
+
+@media screen and (min-width: 1000px) {
+    #titulo {
+        font-size: 60px;
+    }
+}
+
+/* Menu */
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    background: #f706cf;
+    font-size: 2.5vw;
+    text-decoration: none;
+    font-weight: bold;
+    color: #540d6e;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 4px;
+    cursor: pointer;
+    border: none;
+    width: 25vw;
+    padding: 2px 2px 5px;
+    background: #f706cf;
+}
+
+@media screen and (min-width: 1000px) {
+    nav ul li {
+        width: 250px;
+    }
+
+    nav ul li a {
+        font-size: 25px;
+    }
+}
+
+/* Rodapé */
+
+footer {
+    background: #2E2157;
+    max-width: 1000px;
+    font-size: small;
+    text-align: center;
+    padding: 5px;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+/* --------------------------------------------------- */
+
+/* ESTILOS DA CALCULADORA */
+
+.tabela_calc {
+    color: ff;
+    border-collapse: collapse;
+    margin: 20px auto auto;
+    width: 96vw;
+}
+
+@media screen and (min-width: 1000px) {
+    .tabela_calc {
+        width: 960px;
+    }
+}
+
+.tabela_calc th,
+.tabela_calc td,
+.tabela_calc tr {
+    font-size: 2vw;
+    text-align: center;
+    border: 1px solid #999999;
+    padding: 8px;
+}
+
+@media screen and (max-width: 700px) {
+    .tabela_calc th,
+    .tabela_calc td,
+    .tabela_calc tr {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+    .tabela_calc th,
+    .tabela_calc td,
+    .tabela_calc tr {
+        font-size: 20px;
+    }
+}
+
+.tabela_calc th {
+    text-align: center;
+}
+
+.input_calc {
+    font-size: 2vw;
+    background-color: #333843;
+    color: #ffffff;
+}
+
+@media screen and (max-width: 700px) {
+    .input_calc {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+    .input_calc {
+        font-size: 20px;
+    }
+}
