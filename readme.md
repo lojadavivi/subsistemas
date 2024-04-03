@@ -1,8 +1,7 @@
-<h1>SUBSISTEMAS DAS LOJAS</h1>
-<h2>Tudo o que o escritório precisa em um só lugar</h2>
+<h1>Subsistema da Loja da Vivi</h1>
 </p>Gerenciar marketplaces e estoques não é uma tarefa fácil. É necessário verificar aumento de preços, calcular valores líquidos baseados em custos operacionais e impostos, entre outras funções que tomam tempo e reduzem nossa capacidade de vender mais rápido que a concorrência.</p>
-</p>Para reduzir o impacto destes problemas, os <a href="https://lojadavivi.github.io/subsistemas/index.html" style="color: inherit; text-decoration: underline">Subsistemas das Lojas</a> começaram a ser desenvolvidos por <a href="https://francis-castela.github.io/portfolio/" style="color: inherit; text-decoration: underline">Francis Castela</a>. Começou com a Planilha de Cálculo para Marketplaces no início de 2023, tornando-se a <a href="https://lojadavivi.github.io/subsistemas/HTML/CALCULADORA/calculadora.html" style="color: inherit; text-decoration: underline">Calculadora para Marketplaces</a> em 17/08/2023, após o desenvolvimento inicial dos subsistemas de estoque em 15/08/2023. Visa ser uma solução prática e completa de gerenciamento de preços e estoque para agilizar o trabalho no escritório, garantindo que não seja perdido tempo em tarefas essenciais que são, infelizmente, lentas.</p>
-<p>Hoje os subsistemas contam com páginas de visualização de estoques das lojas, uma calculadora de preços para marketplaces e um gerador de Danfe Simplificada, sempre buscando se apresentar da forma mais intuitiva possível.</p>
+</p>Para reduzir o impacto destes problemas, o <b>Subsistema da Loja da Vivi</b> começou a ser desenvolvido por <a href="https://francis-castela.github.io/portfolio/" style="color: inherit; text-decoration: underline">Francis Castela</a>. Começou com a Planilha de Cálculo para Marketplaces no início de 2023, tornando-se a Calculadora para Marketplaces em 17/08/2023, após o desenvolvimento inicial dos subsistemas de estoque em 15/08/2023, e chegando a uma versão moderna e compacta em 03/04/2024 sem os módulos de estoque. Visa ser uma solução prática de cálculo de preços para agilizar o trabalho no escritório, garantindo que não seja perdido tempo em tarefas essenciais que são, infelizmente, lentas.</p>
+<p>Hoje o Subsistema conta com uma calculadora de preços para marketplaces e um gerador de Danfe Simplificada, sempre buscando se apresentar da forma mais intuitiva possível.</p>
 <p>Construído sob a licença <a
             href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br" target="_blank"
             rel="license noopener noreferrer" style="color: inherit; text-decoration: underline;">CC BY-NC-SA 4.0<img
@@ -17,7 +16,7 @@
 <h2>Changelog</h2>
 <details>
 <summary>
-SUBSISTEMAS
+SUBSISTEMA
 </summary>
 <table>
     <thead>
@@ -27,6 +26,17 @@ SUBSISTEMAS
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td style="font-weight: bold;">3.0.0<br>03/04/2023</td>
+            <td>
+                <ul>
+                    <li>Novo design! Paleta de cores inspirada em visuais synthwave, e layout reorganizado para ser responsivo a dimensões da tela.</li>
+                    <li>Removidos botões de estoque, não mais utilizados.</li>
+                    <li>Calculadora movida para o index.</li>
+                    <li>Adicionado link para a planilha de vendas semanais.</li>
+                </ul>
+            </td>
+        </tr>
         <tr>
             <td>2.0.6<br>24/10/2023</td>
             <td>
@@ -149,6 +159,7 @@ SUBSISTEMAS
     </tbody>
 </table>
 </details>
+
 <details>
 <summary>
 CALCULADORA
@@ -161,6 +172,17 @@ CALCULADORA
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td>4.2.0 <br> 03/04/2024</td>
+            <td>
+                <ul>
+                    <li>Mudança de layout seguindo os novos padrões.</li>
+                    <li>Adicionado marketplace CASAS BAHIA (ainda em desenvolvimento).</li>
+                    <li>Marketplace AMERICANAS marcado para manutenção.</li>
+                    <li>Removido SITE.</li>
+                </ul>
+            </td>
+        </tr>
         <tr>
             <td>4.1.2 <br> 18/01/2024</td>
             <td>
@@ -236,98 +258,6 @@ CALCULADORA
 
 <details>
 <summary>
-ESTOQUES
-</summary>
-<table>
-    <thead>
-        <tr style="background-color: #333843; color: aquamarine;">
-            <th style="width: 12ch;">VERSÃO</th>
-            <th style="text-align: left; padding: 0 2ch">CHANGELOG</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1.3.1 <br> 13/01/2024</td>
-            <td>
-                <ul>
-                    <li>Corrigido erro nos botões de organização das colunas.</li>
-                    <li>Simplificadas colunas de ID em TODOS OS ESTOQUES.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>1.3.0 <br> 26/10/2023</td>
-            <td>
-                <ul>
-                    <li>Adicionada verificação de custo "meia nota".</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>1.2.1 <br> 10/10/2023</td>
-            <td>
-                <ul>
-                    <li>Adicionado botões para organizar a tabela em ordem alfabética em TODOS OS ESTOQUES.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>1.2.0 <br> 26/08/2023</td>
-            <td>
-                <ul>
-                    <li>Desenvolvida página TODOS OS ESTOQUES, formatada para uso experimental para
-                        consertar estoques das lojas. Inclui apenas informações básicas relacionadas a
-                        cadastros e quantidades.</li>
-                    <li>Adicionado botões para organizar a tabela em ordem alfabética em ESTEFANO, FERRY,
-                        TIJUCAS e SITE.</li>
-                    <li>Códigos VAR renomeados de acordo com o arquivo para facilitar mesclagem de várias
-                        pesquisas.</li>
-                    <li>Códigos de busca renomeados para melhor entendimento por terceiros.</li>
-                    <li>Melhora na documentação.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>1.1.0 <br> 21/08/2023</td>
-            <td>
-                <ul>
-                    <li>Alterado TYPE de INPUT de "text" para "number" em Cod. barras nas tabelas de
-                        pesquisa.</li>
-                    <li>Adicionada coluna Referência.</li>
-                    <li>A INPUT de Cod. barras agora também pesquisa Referência.</li>
-                    <li>Aviso de falta de atualização reduzido de 1 dia para 16 horas.</li>
-                </ul>
-            </td>
-        </tr>
-        <td style="font-weight: bold;">1.0.0 <br> 18/08/2023</td>
-        <td>
-            <ul>
-                <li>Lançamento oficial! Bem vindo 1.0.0!</li>
-                <li>Tabelas completas com todas as informações relevantes a anunciar em marketplaces.
-                </li>
-            </ul>
-        </td>
-        </tr>
-        <tr>
-            <td>0.0.2 <br> 17/08/2023</td>
-            <td>
-                <ul>
-                    <li>Corrigido bug que causava valores de venda e custo não exibir centavos.</li>
-            </td>
-        </tr>
-        <tr>
-            <td>0.0.1 <br> 15/08/2023</td>
-            <td>
-                <ul>
-                    <li>Desenvolvimento inicial do código, disponibilizando para testes.</li>
-                </ul>
-            </td>
-        </tr>
-    </tbody>
-</table>
-</details>
-<details>
-<summary>
 DANFE SIMPLIFICADO
 </summary>
 <table>
@@ -338,6 +268,15 @@ DANFE SIMPLIFICADO
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td style="font-weight: bold;">1.0.0<br>04/03/2024</td>
+            <td>
+                <ul>
+                    <li>Versão marcada como estável, depois de meses de testes.</li>
+                    <li>Mudança de layout seguindo os novos padrões.</li>
+                </ul>
+            </td>
+        </tr>
         <tr>
             <td>0.1.1<br>19/10/2023</td>
             <td>
