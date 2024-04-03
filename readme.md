@@ -4,15 +4,7 @@
 <p>Hoje o Subsistema conta com uma calculadora de preços para marketplaces e um gerador de Danfe Simplificada, sempre buscando se apresentar da forma mais intuitiva possível.</p>
 <p>Construído sob a licença <a
             href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br" target="_blank"
-            rel="license noopener noreferrer" style="color: inherit; text-decoration: underline;">CC BY-NC-SA 4.0<img
-                style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-                src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img
-                style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-                src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img
-                style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-                src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"><img
-                style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-                src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></p>
+            rel="license noopener noreferrer" style="color: inherit; text-decoration: underline;">CC BY-NC-SA 4.0</a></p>
 <h2>Changelog</h2>
 <details>
 <summary>
