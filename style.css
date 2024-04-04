@@ -11,6 +11,13 @@ body {
     max-width: 1000px;
     margin: auto;
     padding: 20px;
+    font-size: 2vw;
+}
+
+@media screen and (min-width: 1000px) {
+    body {
+        font-size: 20px;
+    }
 }
 
 /* Título da página */
@@ -75,7 +82,7 @@ nav ul li {
 footer {
     background: #2E2157;
     max-width: 1000px;
-    font-size: small;
+    font-size: 1.5vw;
     text-align: center;
     padding: 5px;
 }
@@ -84,21 +91,20 @@ footer a {
     text-decoration: none;
 }
 
+@media screen and (min-width: 1000px) {
+    footer {
+        font-size: small;
+    }
+}
+
 /* --------------------------------------------------- */
 
 /* ESTILOS DA CALCULADORA */
 
 .tabela_calc {
-    color: ff;
     border-collapse: collapse;
     margin: 20px auto auto;
-    width: 96vw;
-}
-
-@media screen and (min-width: 1000px) {
-    .tabela_calc {
-        width: 960px;
-    }
+    width: 92vw;
 }
 
 .tabela_calc th,
@@ -106,25 +112,8 @@ footer a {
 .tabela_calc tr {
     font-size: 2vw;
     text-align: center;
-    border: 1px solid #999999;
-    padding: 8px;
-}
-
-@media screen and (max-width: 700px) {
-    .tabela_calc th,
-    .tabela_calc td,
-    .tabela_calc tr {
-        font-size: 15px;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-
-    .tabela_calc th,
-    .tabela_calc td,
-    .tabela_calc tr {
-        font-size: 20px;
-    }
+    border: 1px solid #c18fff;
+    padding: 10px 5px 10px 5px;
 }
 
 .tabela_calc th {
@@ -132,18 +121,53 @@ footer a {
 }
 
 .input_calc {
+    font-family: inherit;
     font-size: 2vw;
-    background-color: #333843;
+    background-color: #212330;
     color: #ffffff;
 }
 
-@media screen and (max-width: 700px) {
-    .input_calc {
-        font-size: 15px;
+.spoilerbutton {
+    font-family: inherit;
+    background-color: #212330;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 2vw;
+}
+
+.spoiler {
+    font-family: inherit;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 470px) {
+    .tabela_calc {
+        width: 80vw;
+    }
+}
+
+@media screen and (min-width: 471px) {
+    .tabela_calc {
+        width: 90vw;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .tabela_calc {
+        width: 92vw;
     }
 }
 
 @media screen and (min-width: 1000px) {
+    .tabela_calc {
+        width: 950px;
+    }
+
+    .tabela_calc th,
+    .tabela_calc td,
+    .tabela_calc tr {
+        font-size: 20px;
+    }
 
     .input_calc {
         font-size: 20px;

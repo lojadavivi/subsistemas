@@ -4,231 +4,341 @@
 
 // Alíquota por CNPJ
 
-const cnpj_svltda = 0.08506399;
-const cnpj_ltda = 0.09162236;
-const cnpj_online_imps = 0.04000002;
-const cnpj_online_cmss = 0.04500000;
+const cnpjLTDA = 0.09162236;
+const cnpjONLINE = 0.04000002;
+const cnpjSV = 0.08506399;
+const cnpjVIVI = 0.05;
 
 // ----------------------------------------
 
 // COMISSÃO POR CATEGORIA
 
 // 01 - Bronzeador ou protetor solar
-const CtAme01 = 0.17;
-const CtMag01 = 0.18;
-const CtMerCl01 = 0.13;
-const CtMerPr01 = 0.18;
-const CtSho01 = 0.2;
-const CtSit01 = 0;
+const CategoriaAmericanas01 = 0.17;
+const CategoriaCasasBahia01 = 0;
+const CategoriaMagalu01 = 0.18;
+const CategoriaMercadoLivreClassico01 = 0.13;
+const CategoriaMercadoLivrePremium01 = 0.18;
+const CategoriaOlist01 = 0;
+const CategoriaRD01 = 0;
+const CategoriaShopee01 = 0.2;
+const CategoriaWebContinental01 = 0;
+const CategoriaSiteUool01 = 0;
+const CategoriaSiteAtacado01 = 0;
 
 // 02 - Creme depilatório
-const CtAme02 = 0.17;
-const CtMag02 = 0.18;
-const CtMerCl02 = 0.13;
-const CtMerPr02 = 0.18;
-const CtSho02 = 0.2;
-const CtSit02 = 0;
+const CategoriaAmericanas02 = 0.17;
+const CategoriaCasasBahia02 = 0;
+const CategoriaMagalu02 = 0.18;
+const CategoriaMercadoLivreClassico02 = 0.13;
+const CategoriaMercadoLivrePremium02 = 0.18;
+const CategoriaOlist02 = 0;
+const CategoriaRD02 = 0;
+const CategoriaShopee02 = 0.2;
+const CategoriaWebContinental02 = 0;
+const CategoriaSiteUool02 = 0;
+const CategoriaSiteAtacado02 = 0;
 
 // 03 - Desodorante
-const CtAme03 = 0.17;
-const CtMag03 = 0.18;
-const CtMerCl03 = 0.13;
-const CtMerPr03 = 0.18;
-const CtSho03 = 0.2;
-const CtSit03 = 0;
+const CategoriaAmericanas03 = 0.17;
+const CategoriaCasasBahia03 = 0;
+const CategoriaMagalu03 = 0.18;
+const CategoriaMercadoLivreClassico03 = 0.13;
+const CategoriaMercadoLivrePremium03 = 0.18;
+const CategoriaOlist03 = 0;
+const CategoriaRD03 = 0;
+const CategoriaShopee03 = 0.2;
+const CategoriaWebContinental03 = 0;
+const CategoriaSiteUool03 = 0;
+const CategoriaSiteAtacado03 = 0;
 
 // 04 - Escova ou pente de cabelo
-const CtAme04 = 0.17;
-const CtMag04 = 0.18;
-const CtMerCl04 = 0.12;
-const CtMerPr04 = 0.17;
-const CtSho04 = 0.2;
-const CtSit04 = 0;
+const CategoriaAmericanas04 = 0.17;
+const CategoriaCasasBahia04 = 0;
+const CategoriaMagalu04 = 0.18;
+const CategoriaMercadoLivreClassico04 = 0.12;
+const CategoriaMercadoLivrePremium04 = 0.17;
+const CategoriaOlist04 = 0;
+const CategoriaRD04 = 0;
+const CategoriaShopee04 = 0.2;
+const CategoriaWebContinental04 = 0;
+const CategoriaSiteUool04 = 0;
+const CategoriaSiteAtacado04 = 0;
 
 // 05 - Espuma de barbear
-const CtAme05 = 0.17;
-const CtMag05 = 0.18;
-const CtMerCl05 = 0.13;
-const CtMerPr05 = 0.18;
-const CtSho05 = 0.2;
-const CtSit05 = 0;
+const CategoriaAmericanas05 = 0.17;
+const CategoriaCasasBahia05 = 0;
+const CategoriaMagalu05 = 0.18;
+const CategoriaMercadoLivreClassico05 = 0.13;
+const CategoriaMercadoLivrePremium05 = 0.18;
+const CategoriaOlist05 = 0;
+const CategoriaRD05 = 0;
+const CategoriaShopee05 = 0.2;
+const CategoriaWebContinental05 = 0;
+const CategoriaSiteUool05 = 0;
+const CategoriaSiteAtacado05 = 0;
 
 // 06 - Fixador de cabelo
-const CtAme06 = 0.17;
-const CtMag06 = 0.18;
-const CtMerCl06 = 0.12;
-const CtMerPr06 = 0.17;
-const CtSho06 = 0.2;
-const CtSit06 = 0;
+const CategoriaAmericanas06 = 0.17;
+const CategoriaCasasBahia06 = 0;
+const CategoriaMagalu06 = 0.18;
+const CategoriaMercadoLivreClassico06 = 0.12;
+const CategoriaMercadoLivrePremium06 = 0.17;
+const CategoriaOlist06 = 0;
+const CategoriaRD06 = 0;
+const CategoriaShopee06 = 0.2;
+const CategoriaWebContinental06 = 0;
+const CategoriaSiteUool06 = 0;
+const CategoriaSiteAtacado06 = 0;
 
 // 07 - Maquinário ou eletrônico
-const CtAme07 = 0.16;
-const CtMag07 = 0.18;
-const CtMerCl07 = 0.12;
-const CtMerPr07 = 0.17;
-const CtSho07 = 0.2;
-const CtSit07 = 0;
+const CategoriaAmericanas07 = 0.16;
+const CategoriaCasasBahia07 = 0;
+const CategoriaMagalu07 = 0.18;
+const CategoriaMercadoLivreClassico07 = 0.12;
+const CategoriaMercadoLivrePremium07 = 0.17;
+const CategoriaOlist07 = 0;
+const CategoriaRD07 = 0;
+const CategoriaShopee07 = 0.2;
+const CategoriaWebContinental07 = 0;
+const CategoriaSiteUool07 = 0;
+const CategoriaSiteAtacado07 = 0;
 
 // 08 - Pele ou unha
-const CtAme08 = 0.17;
-const CtMag08 = 0.18;
-const CtMerCl08 = 0.12;
-const CtMerPr08 = 0.17;
-const CtSho08 = 0.2;
-const CtSit08 = 0;
+const CategoriaAmericanas08 = 0.17;
+const CategoriaCasasBahia08 = 0;
+const CategoriaMagalu08 = 0.18;
+const CategoriaMercadoLivreClassico08 = 0.12;
+const CategoriaMercadoLivrePremium08 = 0.17;
+const CategoriaOlist08 = 0;
+const CategoriaRD08 = 0;
+const CategoriaShopee08 = 0.2;
+const CategoriaWebContinental08 = 0;
+const CategoriaSiteUool08 = 0;
+const CategoriaSiteAtacado08 = 0;
 
 // 09 - Repelente
-const CtAme09 = 0.17;
-const CtMag09 = 0.18;
-const CtMerCl09 = 0.115;
-const CtMerPr09 = 0.165;
-const CtSho09 = 0.2;
-const CtSit09 = 0;
+const CategoriaAmericanas09 = 0.17;
+const CategoriaCasasBahia09 = 0;
+const CategoriaMagalu09 = 0.18;
+const CategoriaMercadoLivreClassico09 = 0.115;
+const CategoriaMercadoLivrePremium09 = 0.165;
+const CategoriaOlist09 = 0;
+const CategoriaRD09 = 0;
+const CategoriaShopee09 = 0.2;
+const CategoriaWebContinental09 = 0;
+const CategoriaSiteUool09 = 0;
+const CategoriaSiteAtacado09 = 0;
 
 // 10 - Sabonete
-const CtAme10 = 0.17;
-const CtMag10 = 0.18;
-const CtMerCl10 = 0.13;
-const CtMerPr10 = 0.18;
-const CtSho10 = 0.2;
-const CtSit10 = 0;
+const CategoriaAmericanas10 = 0.17;
+const CategoriaCasasBahia10 = 0;
+const CategoriaMagalu10 = 0.18;
+const CategoriaMercadoLivreClassico10 = 0.13;
+const CategoriaMercadoLivrePremium10 = 0.18;
+const CategoriaOlist10 = 0;
+const CategoriaRD10 = 0;
+const CategoriaShopee10 = 0.2;
+const CategoriaWebContinental10 = 0;
+const CategoriaSiteUool10 = 0;
+const CategoriaSiteAtacado10 = 0;
 
 // 11 - Shampoo/Cond/Masc capilar
-const CtAme11 = 0.17;
-const CtMag11 = 0.18;
-const CtMerCl11 = 0.13;
-const CtMerPr11 = 0.18;
-const CtSho11 = 0.2;
-const CtSit11 = 0;
+const CategoriaAmericanas11 = 0.17;
+const CategoriaCasasBahia11 = 0;
+const CategoriaMagalu11 = 0.18;
+const CategoriaMercadoLivreClassico11 = 0.13;
+const CategoriaMercadoLivrePremium11 = 0.18;
+const CategoriaOlist11 = 0;
+const CategoriaRD11 = 0;
+const CategoriaShopee11 = 0.2;
+const CategoriaWebContinental11 = 0;
+const CategoriaSiteUool11 = 0;
+const CategoriaSiteAtacado11 = 0;
 
 // 12 - Tinta capilar
-const CtAme12 = 0.17;
-const CtMag12 = 0.18;
-const CtMerCl12 = 0.12;
-const CtMerPr12 = 0.17;
-const CtSho12 = 0.2;
-const CtSit12 = 0;
+const CategoriaAmericanas12 = 0.17;
+const CategoriaCasasBahia12 = 0;
+const CategoriaMagalu12 = 0.18;
+const CategoriaMercadoLivreClassico12 = 0.12;
+const CategoriaMercadoLivrePremium12 = 0.17;
+const CategoriaOlist12 = 0;
+const CategoriaRD12 = 0;
+const CategoriaShopee12 = 0.2;
+const CategoriaWebContinental12 = 0;
+const CategoriaSiteUool12 = 0;
+const CategoriaSiteAtacado12 = 0;
 
 // 13 - Utensílio ou acessório de beleza
-const CtAme13 = 0.17;
-const CtMag13 = 0.18;
-const CtMerCl13 = 0.12;
-const CtMerPr13 = 0.17;
-const CtSho13 = 0.2;
-const CtSit13 = 0;
+const CategoriaAmericanas13 = 0.17;
+const CategoriaCasasBahia13 = 0;
+const CategoriaMagalu13 = 0.18;
+const CategoriaMercadoLivreClassico13 = 0.12;
+const CategoriaMercadoLivrePremium13 = 0.17;
+const CategoriaOlist13 = 0;
+const CategoriaRD13 = 0;
+const CategoriaShopee13 = 0.2;
+const CategoriaWebContinental13 = 0;
+const CategoriaSiteUool13 = 0;
+const CategoriaSiteAtacado13 = 0;
 
 // ----------------------------------------
 
 // FRETE
 
-// Americanas abaixo de R$ 40
-const FrAmeMen40 = 0;
+// Americanas
+const FreteAmericanasGratis = 0;
+const FreteAmericanasFixo = 12.9;
+const FreteAmericanas_ate300G = 32.9;
+const FreteAmericanas_300a500G = 32.9;
+const FreteAmericanas_500Ga1KG = 35.9;
+const FreteAmericanas_1a2KG = 36.9;
+const FreteAmericanas_2a5KG = 45.9;
+const FreteAmericanas_5a9KG = 67.9;
+const FreteAmericanas_9a13KG = 91.9;
+const FreteAmericanas_13a17KG = 104.9;
+const FreteAmericanas_17a23KG = 112.9;
+const FreteAmericanas_23a30KG = 119.9;
 
-// Americanas abaixo de R$ 79
-const FrAmeMen79 = 12.9;
+// Casas Bahia
+const FreteCasasBahia = 0;
 
-// Americanas acima de R$ 79
-const FrAmeMai79_300g = 32.9;
-const FrAmeMai79_300gA500g = 32.9;
-const FrAmeMai79_500gA1kg = 35.9;
-const FrAmeMai79_1A2kg = 36.9;
-const FrAmeMai79_2A5kg = 45.9;
-const FrAmeMai79_5A9kg = 67.9;
-const FrAmeMai79_9A13kg = 91.9;
-const FrAmeMai79_13A17kg = 104.9;
-const FrAmeMai79_17A23kg = 112.9;
-const FrAmeMai79_23A30kg = 119.9;
+// Magalu 
+const FreteMagaluGratis = 0;
+const FreteMagalu_ate300G = 27.9;
+const FreteMagalu_300a500G = 27.9;
+const FreteMagalu_500Ga1KG = 32.9;
+const FreteMagalu_1a2KG = 35.9;
+const FreteMagalu_2a5KG = 44.9;
+const FreteMagalu_5a9KG = 47.9;
+const FreteMagalu_9a13KG = 52.9;
+const FreteMagalu_13a17KG = 57.9;
+const FreteMagalu_17a23KG = 62.9;
+const FreteMagalu_23a30KG = 67.9;
 
-// Magalu abaixo de R$ 79
-const FrMagMen79 = 0;
+// Mercado Livre
+const FreteMercadoLivreGratis = 0;
+const FreteMercadoLivre_ate300G = 35.9;
+const FreteMercadoLivre_300a500G = 36.9;
+const FreteMercadoLivre_500Ga1KG = 40.9;
+const FreteMercadoLivre_1a2KG = 42.9;
+const FreteMercadoLivre_2a5KG = 52.9;
+const FreteMercadoLivre_5a9KG = 77.9;
+const FreteMercadoLivre_9a13KG = 121.9;
+const FreteMercadoLivre_13a17KG = 135.9;
+const FreteMercadoLivre_17a23KG = 158.9;
+const FreteMercadoLivre_23a30KG = 182.9;
 
-// Magalu acima de R$ 79
-const FrMagMai79_300g = 27.9;
-const FrMagMai79_300gA500g = 27.9;
-const FrMagMai79_500gA1kg = 32.9;
-const FrMagMai79_1A2kg = 35.9;
-const FrMagMai79_2A5kg = 44.9;
-const FrMagMai79_5A9kg = 47.9;
-const FrMagMai79_9A13kg = 52.9;
-const FrMagMai79_13A17kg = 57.9;
-const FrMagMai79_17A23kg = 62.9;
-const FrMagMai79_23A30kg = 67.9;
+// Olist
+const FreteOlist = 0;
 
-// Mercado Livre abaixo de R$ 79
-const FrMerMen79 = 0;
-
-// Mercado Livre acima de R$ 79
-const FrMerMai79_300g = 35.9;
-const FrMerMai79_300gA500g = 36.9;
-const FrMerMai79_500gA1kg = 40.9;
-const FrMerMai79_1A2kg = 42.9;
-const FrMerMai79_2A5kg = 52.9;
-const FrMerMai79_5A9kg = 77.9;
-const FrMerMai79_9A13kg = 121.9;
-const FrMerMai79_13A17kg = 135.9;
-const FrMerMai79_17A23kg = 158.9;
-const FrMerMai79_23A30kg = 182.9;
+// RD
+const FreteRD = 0;
 
 // Shopee
-const FrSho = 0;
+const FreteShopee = 0;
 
-// Site
-const FrSit = 0;
+// Web Continental
+const FreteWebContinental = 0;
+
+// Site Uool
+const FreteSiteUool = 0;
+
+// Site Atacado
+const FreteSiteAtacado = 0;
 
 // ----------------------------------------
 
 // DESCONTO (%) POR NÍVEL
 
 // Americanas
-const NvAme1 = 1;
-const NvAme2 = 1;
-const NvAme3 = 1;
-const NvAme4 = 0.6;
-const NvAme5 = 0.5;
+const NivelAmericanas1 = 1;
+const NivelAmericanas2 = 1;
+const NivelAmericanas3 = 1;
+const NivelAmericanas4 = 0.6;
+const NivelAmericanas5 = 0.5;
+
+// Casas Bahia
+const NivelCasasBahia = 1;
 
 // Magalu
-const NvMag1 = 1;
-const NvMag2 = 1;
-const NvMag3 = 0.6;
-const NvMag4 = 0.5;
-const NvMag5 = 0.5;
+const NivelMagalu1 = 1;
+const NivelMagalu2 = 1;
+const NivelMagalu3 = 0.6;
+const NivelMagalu4 = 0.5;
+const NivelMagalu5 = 0.5;
 
 // Mercado Livre
-const NvMer1 = 1;
-const NvMer2 = 1;
-const NvMer3 = 0.6;
-const NvMer4 = 0.5;
-const NvMer5 = 0.5;
+const NivelMercadoLivre1 = 1;
+const NivelMercadoLivre2 = 1;
+const NivelMercadoLivre3 = 0.6;
+const NivelMercadoLivre4 = 0.5;
+const NivelMercadoLivre5 = 0.5;
+
+// Olist
+const NivelOlist1 = 1;
+const NivelOlist2 = 1;
+const NivelOlist3 = 1;
+const NivelOlist4 = 1;
+const NivelOlist5 = 1;
+
+// RD
+const NivelRD = 1;
+
+// Web Continental
+const NivelWebContinental = 1;
 
 // Shopee
-const NvSho = 1;
+const NivelShopee = 1;
 
-// Site
-const NvSit = 1;
+// Site Uool
+const NivelSiteUool = 1;
+
+// Site Atacado
+const NivelSiteAtacado = 1;
 
 // ----------------------------------------
 
 // TAXA FIXA
 
 // Americanas
-const TxAme = 0;
+const TaxaAmericanas = 0;
+
+// Americanas
+const TaxaCasasBahia = 0;
 
 // Magalu
-const TxMag_10 = 0;
-const TxMag_10A40 = 5;
-const TxMag_40A79 = 5;
-const TxMag_79 = 5;
+const TaxaMagalu_ATE10 = 0;
+const TaxaMagalu_10A40 = 5;
+const TaxaMagalu_40A79 = 5;
+const TaxaMagalu_ACIMA79 = 5;
 
 // Mercado Livre
-const TxMerMen79 = 6;
-const TxMerMai79 = 0;
+const TaxaMercadoLivre_ATE79 = 6;
+const TaxaMercadoLivre_ACIMA79 = 0;
+
+// Olist
+const TaxaOlist = 0;
+
+// RD
+const TaxaRD = 0;
+
+// Web Continental
+const TaxaWebContinental = 0;
 
 // Shopee
-const TxSho = 3;
+const TaxaShopee = 3;
 
-// Site
-const TxSit_10 = 0;
-const TxSit_10A40 = 0;
-const TxSit_40A79 = 0;
-const TxSit_79 = 0;
-const TxSit_12x = 0.1306;
+// Site Uool
+const TaxaSiteUool_ATE10 = 0;
+const TaxaSiteUool_10A40 = 0;
+const TaxaSiteUool_40A79 = 0;
+const TaxaSiteUool_ACIMA79 = 0;
+const TaxaSiteUool_12x = 0.1306;
+
+// Site Atacado
+const TaxaSiteAtacado_ATE10 = 0;
+const TaxaSiteAtacado_10A40 = 0;
+const TaxaSiteAtacado_40A79 = 0;
+const TaxaSiteAtacado_ACIMA79 = 0;
+const TaxaSiteAtacado_12x = 0.1306;

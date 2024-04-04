@@ -165,6 +165,17 @@ CALCULADORA
     </thead>
     <tbody>
         <tr>
+            <td>4.2.1 <br> 04/04/2024</td>
+            <td>
+                <ul>
+                    <li>Correção de erros no layout em relação a mudança de cores por CNPJ.</li>
+                    <li>Adicionados marketplaces RD, SITE-UOOL e SITE-ATACADO (ainda em desenvolvimento).</li>
+                    <li>Alterados nomes de CNPJ para a razão social de cada um.</li>
+                    <li>Adicionado CNPJ VIVIANE CHRISTINA FERREIRA.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
             <td>4.2.0 <br> 03/04/2024</td>
             <td>
                 <ul>

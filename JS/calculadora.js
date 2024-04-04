@@ -1,462 +1,681 @@
-// Obter valores dos campos
+// Início da função
 function calcular(inputElement) {
+
+    // Obtém os valores de cada campo
     var cnpj = document.getElementById("cnpj").value;
     var nivel = document.getElementById("nivel").value;
     var peso = document.getElementById("peso").value;
     var categoria = document.getElementById("categoria").value;
     var custo = parseFloat(document.getElementById("custo").value.replace(",", "."));
-    var v_m = parseFloat(document.getElementById("v_m").value.replace(",", "."));
-    var v_a = parseFloat(document.getElementById("v_a").value.replace(",", "."));
-    var v_p = parseFloat(document.getElementById("v_p").value.replace(",", "."));
+    var VendaManual = parseFloat(document.getElementById("VendaManual").value.replace(",", "."));
+    var VendaValorLiquido = parseFloat(document.getElementById("VendaValorLiquido").value.replace(",", "."));
+    var VendaPorcentagemLiquida = parseFloat(document.getElementById("VendaPorcentagemLiquida").value.replace(",", "."));
 
-    // Valores constantes de CNPJ
-    if (cnpj === "ESTEFANO") {
-        constanteCnpj = cnpj_svltda;
-    } else if (cnpj === "FERRY") {
-        constanteCnpj = cnpj_ltda;
-    } else if (cnpj === "SITE") {
-        constanteCnpj = cnpj_online_imps;
+    // Valores constantes de CNPJ definidos no calc_variables.js
+    if (cnpj === "LOJA DA VIVI LTDA") {
+        constCnpj = cnpjLTDA;
+    } else if (cnpj === "LOJA DA VIVI ONLINE") {
+        constCnpj = cnpjONLINE;
+    } else if (cnpj === "LOJA DA VIVI SV LTDA") {
+        constCnpj = cnpjSV;
+    } else if (cnpj === "VIVIANE CHRISTINA FERREIRA") {
+        constCnpj = cnpjVIVI;
     } else if (cnpj === "Selecione") {
-        constanteCnpj = 999;
+        constCnpj = 999;
     }
 
-    // Valores constantes de categorias
+    // Valores constantes de categorias definidos no calc_variables.js
     if (categoria === "Selecione") {
-        constanteCtAme = 999;
-        constanteCtMag = 999;
-        constanteCtMerCl = 999;
-        constanteCtMerPr = 999;
-        constanteCtSho = 999;
-        constanteCtSit = 999;
+        constCategoriaAmericanas = 999;
+        constCategoriaCasasBahia = 999;
+        constCategoriaMagalu = 999;
+        constCategoriaMercadoLivreClassico = 999;
+        constCategoriaMercadoLivrePremium = 999;
+        constCategoriaOlist = 999;
+        constCategoriaRD = 999;
+        constCategoriaShopee = 999;
+        constCategoriaWebContinental = 999;
+        constCategoriaSiteUool = 999;
+        constCategoriaSiteAtacado = 999;
     } else if (categoria === "Bronzeador ou protetor") {
-        constanteCtAme = CtAme01;
-        constanteCtMag = CtMag01;
-        constanteCtMerCl = CtMerCl01;
-        constanteCtMerPr = CtMerPr01;
-        constanteCtSho = CtSho01;
-        constanteCtSit = CtSit01;
+        constCategoriaAmericanas = CategoriaAmericanas01;
+        constCategoriaCasasBahia = CategoriaCasasBahia01;
+        constCategoriaMagalu = CategoriaMagalu01;
+        constCategoriaMercadoLivreClassico = CategoriaMercadoLivreClassico01;
+        constCategoriaMercadoLivrePremium = CategoriaMercadoLivrePremium01;
+        constCategoriaOlist = CategoriaOlist01;
+        constCategoriaRD = CategoriaRD01;
+        constCategoriaShopee = CategoriaShopee01;
+        constCategoriaWebContinental = CategoriaWebContinental01;
+        constCategoriaSiteUool = CategoriaSiteUool01;
+        constCategoriaSiteAtacado = CategoriaSiteAtacado01;
     } else if (categoria === "Creme depilatório") {
-        constanteCtAme = CtAme02;
-        constanteCtMag = CtMag02;
-        constanteCtMerCl = CtMerCl02;
-        constanteCtMerPr = CtMerPr02;
-        constanteCtSho = CtSho02;
-        constanteCtSit = CtSit02;
+        constCategoriaAmericanas = CategoriaAmericanas02;
+        constCategoriaCasasBahia = CategoriaCasasBahia02;
+        constCategoriaMagalu = CategoriaMagalu02;
+        constCategoriaMercadoLivreClassico = CategoriaMercadoLivreClassico02;
+        constCategoriaMercadoLivrePremium = CategoriaMercadoLivrePremium02;
+        constCategoriaOlist = CategoriaOlist02;
+        constCategoriaRD = CategoriaRD02;
+        constCategoriaShopee = CategoriaShopee02;
+        constCategoriaWebContinental = CategoriaWebContinental02;
+        constCategoriaSiteUool = CategoriaSiteUool02;
+        constCategoriaSiteAtacado = CategoriaSiteAtacado02;
     } else if (categoria === "Desodorante") {
-        constanteCtAme = CtAme03;
-        constanteCtMag = CtMag03;
-        constanteCtMerCl = CtMerCl03;
-        constanteCtMerPr = CtMerPr03;
-        constanteCtSho = CtSho03;
-        constanteCtSit = CtSit03;
+        constCategoriaAmericanas = CategoriaAmericanas03;
+        constCategoriaCasasBahia = CategoriaCasasBahia03;
+        constCategoriaMagalu = CategoriaMagalu03;
+        constCategoriaMercadoLivreClassico = CategoriaMercadoLivreClassico03;
+        constCategoriaMercadoLivrePremium = CategoriaMercadoLivrePremium03;
+        constCategoriaOlist = CategoriaOlist03;
+        constCategoriaRD = CategoriaRD03;
+        constCategoriaShopee = CategoriaShopee03;
+        constCategoriaWebContinental = CategoriaWebContinental03;
+        constCategoriaSiteUool = CategoriaSiteUool03;
+        constCategoriaSiteAtacado = CategoriaSiteAtacado03;
     } else if (categoria === "Escova ou pente de cabelo") {
-        constanteCtAme = CtAme04;
-        constanteCtMag = CtMag04;
-        constanteCtMerCl = CtMerCl04;
-        constanteCtMerPr = CtMerPr04;
-        constanteCtSho = CtSho04;
-        constanteCtSit = CtSit04;
+        constCategoriaAmericanas = CategoriaAmericanas04;
+        constCategoriaCasasBahia = CategoriaCasasBahia04;
+        constCategoriaMagalu = CategoriaMagalu04;
+        constCategoriaMercadoLivreClassico = CategoriaMercadoLivreClassico04;
+        constCategoriaMercadoLivrePremium = CategoriaMercadoLivrePremium04;
+        constCategoriaOlist = CategoriaOlist04;
+        constCategoriaRD = CategoriaRD04;
+        constCategoriaShopee = CategoriaShopee04;
+        constCategoriaWebContinental = CategoriaWebContinental04;
+        constCategoriaSiteUool = CategoriaSiteUool04;
+        constCategoriaSiteAtacado = CategoriaSiteAtacado04;
     } else if (categoria === "Espuma de barbear") {
-        constanteCtAme = CtAme05;
-        constanteCtMag = CtMag05;
-        constanteCtMerCl = CtMerCl05;
-        constanteCtMerPr = CtMerPr05;
-        constanteCtSho = CtSho05;
-        constanteCtSit = CtSit05;
+        constCategoriaAmericanas = CategoriaAmericanas05;
+        constCategoriaCasasBahia = CategoriaCasasBahia05;
+        constCategoriaMagalu = CategoriaMagalu05;
+        constCategoriaMercadoLivreClassico = CategoriaMercadoLivreClassico05;
+        constCategoriaMercadoLivrePremium = CategoriaMercadoLivrePremium05;
+        constCategoriaOlist = CategoriaOlist05;
+        constCategoriaRD = CategoriaRD05;
+        constCategoriaShopee = CategoriaShopee05;
+        constCategoriaWebContinental = CategoriaWebContinental05;
+        constCategoriaSiteUool = CategoriaSiteUool05;
+        constCategoriaSiteAtacado = CategoriaSiteAtacado05;
     } else if (categoria === "Fixador de cabelo") {
-        constanteCtAme = CtAme06;
-        constanteCtMag = CtMag06;
-        constanteCtMerCl = CtMerCl06;
-        constanteCtMerPr = CtMerPr06;
-        constanteCtSho = CtSho06;
-        constanteCtSit = CtSit06;
+        constCategoriaAmericanas = CategoriaAmericanas06;
+        constCategoriaCasasBahia = CategoriaCasasBahia06;
+        constCategoriaMagalu = CategoriaMagalu06;
+        constCategoriaMercadoLivreClassico = CategoriaMercadoLivreClassico06;
+        constCategoriaMercadoLivrePremium = CategoriaMercadoLivrePremium06;
+        constCategoriaOlist = CategoriaOlist06;
+        constCategoriaRD = CategoriaRD06;
+        constCategoriaShopee = CategoriaShopee06;
+        constCategoriaWebContinental = CategoriaWebContinental06;
+        constCategoriaSiteUool = CategoriaSiteUool06;
+        constCategoriaSiteAtacado = CategoriaSiteAtacado06;
     } else if (categoria === "Maquinário ou eletrônico") {
-        constanteCtAme = CtAme07;
-        constanteCtMag = CtMag07;
-        constanteCtMerCl = CtMerCl07;
-        constanteCtMerPr = CtMerPr07;
-        constanteCtSho = CtSho07;
-        constanteCtSit = CtSit07;
+        constCategoriaAmericanas = CategoriaAmericanas07;
+        constCategoriaCasasBahia = CategoriaCasasBahia07;
+        constCategoriaMagalu = CategoriaMagalu07;
+        constCategoriaMercadoLivreClassico = CategoriaMercadoLivreClassico07;
+        constCategoriaMercadoLivrePremium = CategoriaMercadoLivrePremium07;
+        constCategoriaOlist = CategoriaOlist07;
+        constCategoriaRD = CategoriaRD07;
+        constCategoriaShopee = CategoriaShopee07;
+        constCategoriaWebContinental = CategoriaWebContinental07;
+        constCategoriaSiteUool = CategoriaSiteUool07;
+        constCategoriaSiteAtacado = CategoriaSiteAtacado07;
     } else if (categoria === "Pele ou unha") {
-        constanteCtAme = CtAme08;
-        constanteCtMag = CtMag08;
-        constanteCtMerCl = CtMerCl08;
-        constanteCtMerPr = CtMerPr08;
-        constanteCtSho = CtSho08;
-        constanteCtSit = CtSit08;
+        constCategoriaAmericanas = CategoriaAmericanas08;
+        constCategoriaCasasBahia = CategoriaCasasBahia08;
+        constCategoriaMagalu = CategoriaMagalu08;
+        constCategoriaMercadoLivreClassico = CategoriaMercadoLivreClassico08;
+        constCategoriaMercadoLivrePremium = CategoriaMercadoLivrePremium08;
+        constCategoriaOlist = CategoriaOlist08;
+        constCategoriaRD = CategoriaRD08;
+        constCategoriaShopee = CategoriaShopee08;
+        constCategoriaWebContinental = CategoriaWebContinental08;
+        constCategoriaSiteUool = CategoriaSiteUool08;
+        constCategoriaSiteAtacado = CategoriaSiteAtacado08;
     } else if (categoria === "Repelente") {
-        constanteCtAme = CtAme09;
-        constanteCtMag = CtMag09;
-        constanteCtMerCl = CtMerCl09;
-        constanteCtMerPr = CtMerPr09;
-        constanteCtSho = CtSho09;
-        constanteCtSit = CtSit09;
+        constCategoriaAmericanas = CategoriaAmericanas09;
+        constCategoriaCasasBahia = CategoriaCasasBahia09;
+        constCategoriaMagalu = CategoriaMagalu09;
+        constCategoriaMercadoLivreClassico = CategoriaMercadoLivreClassico09;
+        constCategoriaMercadoLivrePremium = CategoriaMercadoLivrePremium09;
+        constCategoriaOlist = CategoriaOlist09;
+        constCategoriaRD = CategoriaRD09;
+        constCategoriaShopee = CategoriaShopee09;
+        constCategoriaWebContinental = CategoriaWebContinental09;
+        constCategoriaSiteUool = CategoriaSiteUool09;
+        constCategoriaSiteAtacado = CategoriaSiteAtacado09;
     } else if (categoria === "Sabonete") {
-        constanteCtAme = CtAme10;
-        constanteCtMag = CtMag10;
-        constanteCtMerCl = CtMerCl10;
-        constanteCtMerPr = CtMerPr10;
-        constanteCtSho = CtSho10;
-        constanteCtSit = CtSit10;
+        constCategoriaAmericanas = CategoriaAmericanas10;
+        constCategoriaCasasBahia = CategoriaCasasBahia10;
+        constCategoriaMagalu = CategoriaMagalu10;
+        constCategoriaMercadoLivreClassico = CategoriaMercadoLivreClassico10;
+        constCategoriaMercadoLivrePremium = CategoriaMercadoLivrePremium10;
+        constCategoriaOlist = CategoriaOlist10;
+        constCategoriaRD = CategoriaRD10;
+        constCategoriaShopee = CategoriaShopee10;
+        constCategoriaWebContinental = CategoriaWebContinental10;
+        constCategoriaSiteUool = CategoriaSiteUool10;
+        constCategoriaSiteAtacado = CategoriaSiteAtacado10;
     } else if (categoria === "Shampoo/Cond/Masc capilar") {
-        constanteCtAme = CtAme11;
-        constanteCtMag = CtMag11;
-        constanteCtMerCl = CtMerCl11;
-        constanteCtMerPr = CtMerPr11;
-        constanteCtSho = CtSho11;
-        constanteCtSit = CtSit11;
+        constCategoriaAmericanas = CategoriaAmericanas11;
+        constCategoriaCasasBahia = CategoriaCasasBahia11;
+        constCategoriaMagalu = CategoriaMagalu11;
+        constCategoriaMercadoLivreClassico = CategoriaMercadoLivreClassico11;
+        constCategoriaMercadoLivrePremium = CategoriaMercadoLivrePremium11;
+        constCategoriaOlist = CategoriaOlist11;
+        constCategoriaRD = CategoriaRD11;
+        constCategoriaShopee = CategoriaShopee11;
+        constCategoriaWebContinental = CategoriaWebContinental11;
+        constCategoriaSiteUool = CategoriaSiteUool11;
+        constCategoriaSiteAtacado = CategoriaSiteAtacado11;
     } else if (categoria === "Tinta Capilar") {
-        constanteCtAme = CtAme12;
-        constanteCtMag = CtMag12;
-        constanteCtMerCl = CtMerCl12;
-        constanteCtMerPr = CtMerPr12;
-        constanteCtSho = CtSho12;
-        constanteCtSit = CtSit12;
+        constCategoriaAmericanas = CategoriaAmericanas12;
+        constCategoriaCasasBahia = CategoriaCasasBahia12;
+        constCategoriaMagalu = CategoriaMagalu12;
+        constCategoriaMercadoLivreClassico = CategoriaMercadoLivreClassico12;
+        constCategoriaMercadoLivrePremium = CategoriaMercadoLivrePremium12;
+        constCategoriaOlist = CategoriaOlist12;
+        constCategoriaRD = CategoriaRD12;
+        constCategoriaShopee = CategoriaShopee12;
+        constCategoriaWebContinental = CategoriaWebContinental12;
+        constCategoriaSiteUool = CategoriaSiteUool12;
+        constCategoriaSiteAtacado = CategoriaSiteAtacado12;
     } else if (categoria === "Utensílio ou acessório de beleza") {
-        constanteCtAme = CtAme13;
-        constanteCtMag = CtMag13;
-        constanteCtMerCl = CtMerCl13;
-        constanteCtMerPr = CtMerPr13;
-        constanteCtSho = CtSho13;
-        constanteCtSit = CtSit13;
+        constCategoriaAmericanas = CategoriaAmericanas13;
+        constCategoriaCasasBahia = CategoriaCasasBahia13;
+        constCategoriaMagalu = CategoriaMagalu13;
+        constCategoriaMercadoLivreClassico = CategoriaMercadoLivreClassico13;
+        constCategoriaMercadoLivrePremium = CategoriaMercadoLivrePremium13;
+        constCategoriaOlist = CategoriaOlist13;
+        constCategoriaRD = CategoriaRD13;
+        constCategoriaShopee = CategoriaShopee13;
+        constCategoriaWebContinental = CategoriaWebContinental13;
+        constCategoriaSiteUool = CategoriaSiteUool13;
+        constCategoriaSiteAtacado = CategoriaSiteAtacado13;
     }
 
-    // Valores constantes de peso e frete para acima de R$ 79
+    // Valores constantes de peso e frete para acima de R$ 79 definidos no calc_variables.js
     if (peso === "Selecione") {
-        constanteFrAme = 999;
-        constanteFrMag = 999;
-        constanteFrMer = 999;
-        constanteFrSho = 999;
-        constanteFrSit = 999;
+        constFreteAmericanas = 999;
+        constFreteCasasBahia = 999;
+        constFreteMagalu = 999;
+        constFreteMercadoLivre = 999;
+        constFreteOlist = 999;
+        constFreteRD = 999;
+        constFreteShopee = 999;
+        constFreteWebContinental = 999;
+        constFreteSiteUool = 999;
+        constFreteSiteAtacado = 999;
     } else if (peso === "até 0.3kg") {
-        constanteFrAme = FrAmeMai79_300g;
-        constanteFrMag = FrMagMai79_300g;
-        constanteFrMer = FrMerMai79_300g;
-        constanteFrSho = FrSho;
-        constanteFrSit = FrSit;
+        constFreteAmericanas = FreteAmericanas_ate300G;
+        constFreteCasasBahia = FreteCasasBahia;
+        constFreteMagalu = FreteMagalu_ate300G;
+        constFreteMercadoLivre = FreteMercadoLivre_ate300G;
+        constFreteOlist = FreteOlist;
+        constFreteRD = FreteRD;
+        constFreteShopee = FreteShopee;
+        constFreteWebContinental = FreteWebContinental;
+        constFreteSiteUool = FreteSiteUool;
+        constFreteSiteAtacado = FreteSiteAtacado;
     } else if (peso === "0.3 a 0.5kg") {
-        constanteFrAme = FrAmeMai79_300gA500g;
-        constanteFrMag = FrMagMai79_300gA500g;
-        constanteFrMer = FrMerMai79_300gA500g;
-        constanteFrSho = FrSho;
-        constanteFrSit = FrSit;
+        constFreteAmericanas = FreteAmericanas_300a500G;
+        constFreteCasasBahia = FreteCasasBahia;
+        constFreteMagalu = FreteMagalu_300a500G;
+        constFreteMercadoLivre = FreteMercadoLivre_300a500G;
+        constFreteOlist = FreteOlist;
+        constFreteRD = FreteRD;
+        constFreteShopee = FreteShopee;
+        constFreteWebContinental = FreteWebContinental;
+        constFreteSiteUool = FreteSiteUool;
+        constFreteSiteAtacado = FreteSiteAtacado;
     } else if (peso === "0.5 a 1kg") {
-        constanteFrAme = FrAmeMai79_500gA1kg;
-        constanteFrMag = FrMagMai79_500gA1kg;
-        constanteFrMer = FrMerMai79_500gA1kg;
-        constanteFrSho = FrSho;
-        constanteFrSit = FrSit;
+        constFreteAmericanas = FreteAmericanas_500Ga1KG;
+        constFreteCasasBahia = FreteCasasBahia;
+        constFreteMagalu = FreteMagalu_500Ga1KG;
+        constFreteMercadoLivre = FreteMercadoLivre_500Ga1KG;
+        constFreteOlist = FreteOlist;
+        constFreteRD = FreteRD;
+        constFreteShopee = FreteShopee;
+        constFreteWebContinental = FreteWebContinental;
+        constFreteSiteUool = FreteSiteUool;
+        constFreteSiteAtacado = FreteSiteAtacado;
     } else if (peso === "1 a 2kg") {
-        constanteFrAme = FrAmeMai79_1A2kg;
-        constanteFrMag = FrMagMai79_1A2kg;
-        constanteFrMer = FrMerMai79_1A2kg;
-        constanteFrSho = FrSho;
-        constanteFrSit = FrSit;
+        constFreteAmericanas = FreteAmericanas_1a2KG;
+        constFreteCasasBahia = FreteCasasBahia;
+        constFreteMagalu = FreteMagalu_1a2KG;
+        constFreteMercadoLivre = FreteMercadoLivre_1a2KG;
+        constFreteOlist = FreteOlist;
+        constFreteRD = FreteRD;
+        constFreteShopee = FreteShopee;
+        constFreteWebContinental = FreteWebContinental;
+        constFreteSiteUool = FreteSiteUool;
+        constFreteSiteAtacado = FreteSiteAtacado;
     } else if (peso === "2 a 5kg") {
-        constanteFrAme = FrAmeMai79_2A5kg;
-        constanteFrMag = FrMagMai79_2A5kg;
-        constanteFrMer = FrMerMai79_2A5kg;
-        constanteFrSho = FrSho;
-        constanteFrSit = FrSit;
+        constFreteAmericanas = FreteAmericanas_2a5KG;
+        constFreteCasasBahia = FreteCasasBahia;
+        constFreteMagalu = FreteMagalu_2a5KG;
+        constFreteMercadoLivre = FreteMercadoLivre_2a5KG;
+        constFreteOlist = FreteOlist;
+        constFreteRD = FreteRD;
+        constFreteShopee = FreteShopee;
+        constFreteWebContinental = FreteWebContinental;
+        constFreteSiteUool = FreteSiteUool;
+        constFreteSiteAtacado = FreteSiteAtacado;
     } else if (peso === "5 a 9kg") {
-        constanteFrAme = FrAmeMai79_5A9kg;
-        constanteFrMag = FrMagMai79_5A9kg;
-        constanteFrMer = FrMerMai79_5A9kg;
-        constanteFrSho = FrSho;
-        constanteFrSit = FrSit;
+        constFreteAmericanas = FreteAmericanas_5a9KG;
+        constFreteCasasBahia = FreteCasasBahia;
+        constFreteMagalu = FreteMagalu_5a9KG;
+        constFreteMercadoLivre = FreteMercadoLivre_5a9KG;
+        constFreteOlist = FreteOlist;
+        constFreteRD = FreteRD;
+        constFreteShopee = FreteShopee;
+        constFreteWebContinental = FreteWebContinental;
+        constFreteSiteUool = FreteSiteUool;
+        constFreteSiteAtacado = FreteSiteAtacado;
     } else if (peso === "9 a 13kg") {
-        constanteFrAme = FrAmeMai79_9A13kg;
-        constanteFrMag = FrMagMai79_9A13kg;
-        constanteFrMer = FrMerMai79_9A13kg;
-        constanteFrSho = FrSho;
-        constanteFrSit = FrSit;
+        constFreteAmericanas = FreteAmericanas_9a13KG;
+        constFreteCasasBahia = FreteCasasBahia;
+        constFreteMagalu = FreteMagalu_9a13KG;
+        constFreteMercadoLivre = FreteMercadoLivre_9a13KG;
+        constFreteOlist = FreteOlist;
+        constFreteRD = FreteRD;
+        constFreteShopee = FreteShopee;
+        constFreteWebContinental = FreteWebContinental;
+        constFreteSiteUool = FreteSiteUool;
+        constFreteSiteAtacado = FreteSiteAtacado;
     } else if (peso === "13 a 17kg") {
-        constanteFrAme = FrAmeMai79_13A17kg;
-        constanteFrMag = FrMagMai79_13A17kg;
-        constanteFrMer = FrMerMai79_13A17kg;
-        constanteFrSho = FrSho;
-        constanteFrSit = FrSit;
+        constFreteAmericanas = FreteAmericanas_13a17KG;
+        constFreteCasasBahia = FreteCasasBahia;
+        constFreteMagalu = FreteMagalu_13a17KG;
+        constFreteMercadoLivre = FreteMercadoLivre_13a17KG;
+        constFreteOlist = FreteOlist;
+        constFreteRD = FreteRD;
+        constFreteShopee = FreteShopee;
+        constFreteWebContinental = FreteWebContinental;
+        constFreteSiteUool = FreteSiteUool;
+        constFreteSiteAtacado = FreteSiteAtacado;
     } else if (peso === "17 a 23kg") {
-        constanteFrAme = FrAmeMai79_17A23kg;
-        constanteFrMag = FrMagMai79_17A23kg;
-        constanteFrMer = FrMerMai79_17A23kg;
-        constanteFrSho = FrSho;
-        constanteFrSit = FrSit;
+        constFreteAmericanas = FreteAmericanas_17a23KG;
+        constFreteCasasBahia = FreteCasasBahia;
+        constFreteMagalu = FreteMagalu_17a23KG;
+        constFreteMercadoLivre = FreteMercadoLivre_17a23KG;
+        constFreteOlist = FreteOlist;
+        constFreteRD = FreteRD;
+        constFreteShopee = FreteShopee;
+        constFreteWebContinental = FreteWebContinental;
+        constFreteSiteUool = FreteSiteUool;
+        constFreteSiteAtacado = FreteSiteAtacado;
     } else if (peso === "23 a 30kg") {
-        constanteFrAme = FrAmeMai79_23A30kg;
-        constanteFrMag = FrMagMai79_23A30kg;
-        constanteFrMer = FrMerMai79_23A30kg;
-        constanteFrSho = FrSho;
-        constanteFrSit = FrSit;
+        constFreteAmericanas = FreteAmericanas_23a30KG;
+        constFreteCasasBahia = FreteCasasBahia;
+        constFreteMagalu = FreteMagalu_23a30KG;
+        constFreteMercadoLivre = FreteMercadoLivre_23a30KG;
+        constFreteOlist = FreteOlist;
+        constFreteRD = FreteRD;
+        constFreteShopee = FreteShopee;
+        constFreteWebContinental = FreteWebContinental;
+        constFreteSiteUool = FreteSiteUool;
+        constFreteSiteAtacado = FreteSiteAtacado;
     }
 
-    // Valores constantes de desconto no frete baseado no nível
+    // Valores constantes de desconto no frete baseado no nível definidos no calc_variables.js
     if (nivel === "5") {
-        constanteNvAme = NvAme5;
-        constanteNvMag = NvMag5;
-        constanteNvMer = NvMer5;
-        constanteNvSho = NvSho;
-        cosntanteNvSit = NvSit;
+        constNivelAmericanas = NivelAmericanas5;
+        constNivelCasasBahia = NivelCasasBahia;
+        constNivelMagalu = NivelMagalu5;
+        constNivelMercadoLivre = NivelMercadoLivre5;
+        constNivelOlist = NivelOlist1;
+        constNivelRD = NivelRD;
+        constNivelWebContinental = NivelWebContinental;
+        constNivelShopee = NivelShopee;
+        constNivelSiteUool = NivelSiteUool;
+        constNivelSiteAtacado = NivelSiteAtacado;
     } else if (nivel === "4") {
-        constanteNvAme = NvAme4;
-        constanteNvMag = NvMag4;
-        constanteNvMer = NvMer4;
-        constanteNvSho = NvSho;
-        cosntanteNvSit = NvSit;
+        constNivelAmericanas = NivelAmericanas4;
+        constNivelCasasBahia = NivelCasasBahia;
+        constNivelMagalu = NivelMagalu4;
+        constNivelMercadoLivre = NivelMercadoLivre4;
+        constNivelOlist = NivelOlist4;
+        constNivelRD = NivelRD;
+        constNivelWebContinental = NivelWebContinental;
+        constNivelShopee = NivelShopee;
+        constNivelSiteUool = NivelSiteUool;
+        constNivelSiteAtacado = NivelSiteAtacado;
     } else if (nivel === "3") {
-        constanteNvAme = NvAme3;
-        constanteNvMag = NvMag3;
-        constanteNvMer = NvMer3;
-        constanteNvSho = NvSho;
-        cosntanteNvSit = NvSit;
+        constNivelAmericanas = NivelAmericanas3;
+        constNivelCasasBahia = NivelCasasBahia;
+        constNivelMagalu = NivelMagalu3;
+        constNivelMercadoLivre = NivelMercadoLivre3;
+        constNivelOlist = NivelOlist3;
+        constNivelRD = NivelRD;
+        constNivelWebContinental = NivelWebContinental;
+        constNivelShopee = NivelShopee;
+        constNivelSiteUool = NivelSiteUool;
+        constNivelSiteAtacado = NivelSiteAtacado;
     } else if (nivel === "2") {
-        constanteNvAme = NvAme2;
-        constanteNvMag = NvMag2;
-        constanteNvMer = NvMer2;
-        constanteNvSho = NvSho;
-        cosntanteNvSit = NvSit;
+        constNivelAmericanas = NivelAmericanas2;
+        constNivelCasasBahia = NivelCasasBahia;
+        constNivelMagalu = NivelMagalu2;
+        constNivelMercadoLivre = NivelMercadoLivre2;
+        constNivelOlist = NivelOlist2;
+        constNivelRD = NivelRD;
+        constNivelWebContinental = NivelWebContinental;
+        constNivelShopee = NivelShopee;
+        constNivelSiteUool = NivelSiteUool;
+        constNivelSiteAtacado = NivelSiteAtacado;
     } else if (nivel === "1") {
-        constanteNvAme = NvAme1;
-        constanteNvMag = NvMag1;
-        constanteNvMer = NvMer1;
-        constanteNvSho = NvSho;
-        cosntanteNvSit = NvSit;
+        constNivelAmericanas = NivelAmericanas1;
+        constNivelCasasBahia = NivelCasasBahia;
+        constNivelMagalu = NivelMagalu1;
+        constNivelMercadoLivre = NivelMercadoLivre1;
+        constNivelOlist = NivelOlist1;
+        constNivelRD = NivelRD;
+        constNivelWebContinental = NivelWebContinental;
+        constNivelShopee = NivelShopee;
+        constNivelSiteUool = NivelSiteUool;
+        constNivelSiteAtacado = NivelSiteAtacado;
     }
 
     // --------------------------------
-
+    // --------------------------------
     // FÓRMULAS DE CÁLCULO
+    // --------------------------------
+    // --------------------------------
 
-    // Simplificações de CNPJ + categoria
-    var simply_cnpj_ct_ame = (-(((constanteCnpj + constanteCtAme) * 100) - 100));
-    var simply_cnpj_ct_mag = (-(((constanteCnpj + constanteCtMag) * 100) - 100));
-    var simply_cnpj_ct_mercl = (-(((constanteCnpj + constanteCtMerCl) * 100) - 100));
-    var simply_cnpj_ct_merpr = (-(((constanteCnpj + constanteCtMerPr) * 100) - 100));
-    var simply_cnpj_ct_sho = (-(((constanteCnpj + constanteCtSho) * 100) - 100));
 
-    // Simplificações de custo + [custo * porcentagem]
-    var simply_custo_vp = (custo + (custo * v_p) / 100);
 
-    // Americanas manual - calcAmeM
-    var calcAmeM = v_m - (custo + (v_m * constanteCnpj) + (v_m * constanteCtAme) + TxAme + ((v_m <= 39.99 ? FrAmeMen40 : v_m >= 40 && v_m <= 78.99 ? FrAmeMen79 : v_m >= 79 ? constanteFrAme : 0) * constanteNvAme));
+    // --------------------------------
+    // AMERICANAS
+    // --------------------------------
 
-    // Americanas auto - calcAmeA
+    // Americanas manual - calcAmericanasManual
+    var calcAmericanasManual = VendaManual - (custo + (VendaManual * constCnpj) + (VendaManual * constCategoriaAmericanas) + TaxaAmericanas + ((VendaManual <= 39.99 ? FreteAmericanasGratis : VendaManual >= 40 && VendaManual <= 78.99 ? FreteAmericanasFixo : VendaManual >= 79 ? constFreteAmericanas : 0) * constNivelAmericanas));
+
+    // Americanas auto - calcAmericanasValorLiquido
     if (
-        (((custo + v_a + TxAme) + (FrAmeMen79 * constanteNvAme)) * 100) / simply_cnpj_ct_ame >= 78.96) {
-        constanteResultAmeA = (((custo + v_a + TxAme) + (constanteFrAme * constanteNvAme)) * 100) / simply_cnpj_ct_ame;
+        (((custo + VendaValorLiquido + TaxaAmericanas) + (FreteAmericanasFixo * constNivelAmericanas)) * 100) / (-(((constCnpj + constCategoriaAmericanas) * 100) - 100)) >= 78.96) {
+        constResultAmeA = (((custo + VendaValorLiquido + TaxaAmericanas) + (constFreteAmericanas * constNivelAmericanas)) * 100) / (-(((constCnpj + constCategoriaAmericanas) * 100) - 100));
     } else if (
-        (((custo + v_a + TxAme) + (FrAmeMen40 * constanteNvAme)) * 100) / simply_cnpj_ct_ame >= 39.94 && (((custo + v_a + TxAme) + (FrAmeMen40 * constanteNvAme)) * 100) / simply_cnpj_ct_ame <= 78.95) {
-        constanteResultAmeA = (((custo + v_a + TxAme) + (FrAmeMen79 * constanteNvAme)) * 100) / simply_cnpj_ct_ame;
+        (((custo + VendaValorLiquido + TaxaAmericanas) + (FreteAmericanasGratis * constNivelAmericanas)) * 100) / (-(((constCnpj + constCategoriaAmericanas) * 100) - 100)) >= 39.94 && (((custo + VendaValorLiquido + TaxaAmericanas) + (FreteAmericanasGratis * constNivelAmericanas)) * 100) / (-(((constCnpj + constCategoriaAmericanas) * 100) - 100)) <= 78.95) {
+        constResultAmeA = (((custo + VendaValorLiquido + TaxaAmericanas) + (FreteAmericanasFixo * constNivelAmericanas)) * 100) / (-(((constCnpj + constCategoriaAmericanas) * 100) - 100));
     } else if (
-        (((custo + v_a + TxAme) + (constanteFrAme * constanteNvAme)) * 100) / simply_cnpj_ct_ame >= 78.96) {
-        constanteResultAmeA = (((custo + v_a + TxAme) + (constanteFrAme * constanteNvAme)) * 100) / simply_cnpj_ct_ame;
+        (((custo + VendaValorLiquido + TaxaAmericanas) + (constFreteAmericanas * constNivelAmericanas)) * 100) / (-(((constCnpj + constCategoriaAmericanas) * 100) - 100)) >= 78.96) {
+        constResultAmeA = (((custo + VendaValorLiquido + TaxaAmericanas) + (constFreteAmericanas * constNivelAmericanas)) * 100) / (-(((constCnpj + constCategoriaAmericanas) * 100) - 100));
     } else if (
-        (((custo + v_a + TxAme) + (FrAmeMen40 * constanteNvAme)) * 100) / simply_cnpj_ct_ame <= 39.93) {
-        constanteResultAmeA = (((custo + v_a + TxAme) + (FrAmeMen40 * constanteNvAme)) * 100) / simply_cnpj_ct_ame;
+        (((custo + VendaValorLiquido + TaxaAmericanas) + (FreteAmericanasGratis * constNivelAmericanas)) * 100) / (-(((constCnpj + constCategoriaAmericanas) * 100) - 100)) <= 39.93) {
+        constResultAmeA = (((custo + VendaValorLiquido + TaxaAmericanas) + (FreteAmericanasGratis * constNivelAmericanas)) * 100) / (-(((constCnpj + constCategoriaAmericanas) * 100) - 100));
     }
-    var calcAmeA = constanteResultAmeA;
+    var calcAmericanasValorLiquido = constResultAmeA;
 
-    // Americanas porcentagem - calcAmeP
+    // Americanas porcentagem - calcAmericanasPorcentagemLiquida
     if (
-        ((simply_custo_vp + TxAme + (FrAmeMen79 * constanteNvAme)) * 100) / simply_cnpj_ct_ame >= 78.96) {
-        constanteResultAmeP = ((simply_custo_vp + TxAme + (constanteFrAme * constanteNvAme)) * 100) / simply_cnpj_ct_ame
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaAmericanas + (FreteAmericanasFixo * constNivelAmericanas)) * 100) / (-(((constCnpj + constCategoriaAmericanas) * 100) - 100)) >= 78.96) {
+        constResultAmeP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaAmericanas + (constFreteAmericanas * constNivelAmericanas)) * 100) / (-(((constCnpj + constCategoriaAmericanas) * 100) - 100))
     } else if (
-        ((simply_custo_vp + TxAme + (FrAmeMen40 * constanteNvAme)) * 100) / simply_cnpj_ct_ame >= 39.94 && ((simply_custo_vp + TxAme + (FrAmeMen40 * constanteNvAme)) * 100) / simply_cnpj_ct_ame <= 78.95) {
-        constanteResultAmeP = ((simply_custo_vp + TxAme + (FrAmeMen79 * constanteNvAme)) * 100) / simply_cnpj_ct_ame
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaAmericanas + (FreteAmericanasGratis * constNivelAmericanas)) * 100) / (-(((constCnpj + constCategoriaAmericanas) * 100) - 100)) >= 39.94 && (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaAmericanas + (FreteAmericanasGratis * constNivelAmericanas)) * 100) / (-(((constCnpj + constCategoriaAmericanas) * 100) - 100)) <= 78.95) {
+        constResultAmeP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaAmericanas + (FreteAmericanasFixo * constNivelAmericanas)) * 100) / (-(((constCnpj + constCategoriaAmericanas) * 100) - 100))
     } else if (
-        ((simply_custo_vp + TxAme + (constanteFrAme * constanteNvAme)) * 100) / simply_cnpj_ct_ame >= 78.96) {
-        constanteResultAmeP = ((simply_custo_vp + TxAme + (constanteFrAme * constanteNvAme)) * 100) / simply_cnpj_ct_ame
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaAmericanas + (constFreteAmericanas * constNivelAmericanas)) * 100) / (-(((constCnpj + constCategoriaAmericanas) * 100) - 100)) >= 78.96) {
+        constResultAmeP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaAmericanas + (constFreteAmericanas * constNivelAmericanas)) * 100) / (-(((constCnpj + constCategoriaAmericanas) * 100) - 100))
     } else if (
-        ((simply_custo_vp + TxAme + (FrAmeMen40 * constanteNvAme)) * 100) / simply_cnpj_ct_ame <= 39.93) {
-        constanteResultAmeP = ((simply_custo_vp + TxAme + (FrAmeMen40 * constanteNvAme)) * 100) / simply_cnpj_ct_ame
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaAmericanas + (FreteAmericanasGratis * constNivelAmericanas)) * 100) / (-(((constCnpj + constCategoriaAmericanas) * 100) - 100)) <= 39.93) {
+        constResultAmeP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaAmericanas + (FreteAmericanasGratis * constNivelAmericanas)) * 100) / (-(((constCnpj + constCategoriaAmericanas) * 100) - 100))
     }
-    var calcAmeP = constanteResultAmeP;
+    var calcAmericanasPorcentagemLiquida = constResultAmeP;
 
-    // Magalu manual - calcMagM
-    var calcMagM = v_m - (custo + (v_m * constanteCnpj) + (v_m * constanteCtMag) + (v_m <= 9.99 ? TxMag_10 : v_m >= 10 && v_m <= 39.99 ? TxMag_10A40 : v_m >= 40 && v_m <= 78.99 ? TxMag_40A79 : v_m >= 79 ? TxMag_79 : 0) + ((v_m <= 78.99 ? FrMagMen79 : v_m >= 79 ? constanteFrMag : 0) * constanteNvMag));
+    // --------------------------------
+    // CASAS BAHIA
+    // --------------------------------
 
-    // Magalu auto - calcMagA
+
+
+    // --------------------------------
+    // MAGALU
+    // --------------------------------
+
+    // Magalu manual - calcMagaluValorLiquidoluManual
+    var calcMagaluValorLiquidoluManual = VendaManual - (custo + (VendaManual * constCnpj) + (VendaManual * constCategoriaMagalu) + (VendaManual <= 9.99 ? TaxaMagalu_ATE10 : VendaManual >= 10 && VendaManual <= 39.99 ? TaxaMagalu_10A40 : VendaManual >= 40 && VendaManual <= 78.99 ? TaxaMagalu_40A79 : VendaManual >= 79 ? TaxaMagalu_ACIMA79 : 0) + ((VendaManual <= 78.99 ? FreteMagaluGratis : VendaManual >= 79 ? constFreteMagalu : 0) * constNivelMagalu));
+
+    // Magalu auto - calcMagaluValorLiquido
     if (
-        (((custo + v_a + TxMag_40A79) + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag >= 78.96) {
-        constanteResultMagA = (((custo + v_a + TxMag_79) + (constanteFrMag * constanteNvMag)) * 100) / simply_cnpj_ct_mag;
+        (((custo + VendaValorLiquido + TaxaMagalu_40A79) + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 78.96) {
+        constResultMagA = (((custo + VendaValorLiquido + TaxaMagalu_ACIMA79) + (constFreteMagalu * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100));
     } else if (
-        (((custo + v_a + TxMag_10A40) + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag >= 39.94 && (((custo + v_a + TxMag_10A40) + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag <= 78.95) {
-        constanteResultMagA = (((custo + v_a + TxMag_40A79) + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag;
+        (((custo + VendaValorLiquido + TaxaMagalu_10A40) + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 39.94 && (((custo + VendaValorLiquido + TaxaMagalu_10A40) + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) <= 78.95) {
+        constResultMagA = (((custo + VendaValorLiquido + TaxaMagalu_40A79) + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100));
     } else if (
-        (((custo + v_a + TxMag_40A79) + (constanteFrMag * constanteNvMag)) * 100) / simply_cnpj_ct_mag >= 78.96) {
-        constanteResultMagA = (((custo + v_a + TxMag_79) + (constanteFrMag * constanteNvMag)) * 100) / simply_cnpj_ct_mag;
+        (((custo + VendaValorLiquido + TaxaMagalu_40A79) + (constFreteMagalu * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 78.96) {
+        constResultMagA = (((custo + VendaValorLiquido + TaxaMagalu_ACIMA79) + (constFreteMagalu * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100));
     } else if (
-        (((custo + v_a + TxMag_79) + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag >= 9.96 && (((custo + v_a + TxMag_10) + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag <= 39.93) {
-        constanteResultMagA = (((custo + v_a + TxMag_10A40) + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag;
+        (((custo + VendaValorLiquido + TaxaMagalu_ACIMA79) + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 9.96 && (((custo + VendaValorLiquido + TaxaMagalu_ATE10) + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) <= 39.93) {
+        constResultMagA = (((custo + VendaValorLiquido + TaxaMagalu_10A40) + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100));
     } else if (
-        (((custo + v_a + TxMag_10) + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag <= 9.97) {
-        constanteResultMagA = (((custo + v_a + TxMag_10) + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag;
+        (((custo + VendaValorLiquido + TaxaMagalu_ATE10) + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) <= 9.97) {
+        constResultMagA = (((custo + VendaValorLiquido + TaxaMagalu_ATE10) + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100));
     }
-    var calcMagA = constanteResultMagA;
+    var calcMagaluValorLiquido = constResultMagA;
 
-
-    // Magalu porcentagem - calcMagP
+    // Magalu porcentagem - calcMagaluPorcentagemLiquida
     if (
-        (((simply_custo_vp + TxMag_40A79) + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag >= 78.96) {
-        constanteResultMagP = ((simply_custo_vp + TxMag_79 + (constanteFrMag * constanteNvMag)) * 100) / simply_cnpj_ct_mag
+        ((((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_40A79) + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 78.96) {
+        constResultMagP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ACIMA79 + (constFreteMagalu * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100))
     } else if (
-        ((simply_custo_vp + TxMag_10A40 + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag >= 39.94 && ((simply_custo_vp + TxMag_10A40 + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag <= 78.95) {
-        constanteResultMagP = ((simply_custo_vp + TxMag_40A79 + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_10A40 + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 39.94 && (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_10A40 + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) <= 78.95) {
+        constResultMagP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_40A79 + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100))
     } else if (
-        ((simply_custo_vp + TxMag_40A79 + (constanteFrMag * constanteNvMag)) * 100) / simply_cnpj_ct_mag >= 78.96) {
-        constanteResultMagP = ((simply_custo_vp + TxMag_79 + (constanteFrMag * constanteNvMag)) * 100) / simply_cnpj_ct_mag
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_40A79 + (constFreteMagalu * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 78.96) {
+        constResultMagP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ACIMA79 + (constFreteMagalu * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100))
     } else if (
-        ((simply_custo_vp + TxMag_79 + (constanteFrMag * constanteNvMag)) * 100) / simply_cnpj_ct_mag >= 78.96) {
-        constanteResultMagP = ((simply_custo_vp + TxMag_79 + (constanteFrMag * constanteNvMag)) * 100) / simply_cnpj_ct_mag
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ACIMA79 + (constFreteMagalu * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 78.96) {
+        constResultMagP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ACIMA79 + (constFreteMagalu * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100))
     } else if (
-        ((simply_custo_vp + TxMag_10 + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag >= 9.97 && ((simply_custo_vp + TxMag_10 + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag <= 39.93) {
-        constanteResultMagP = ((simply_custo_vp + TxMag_10A40 + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ATE10 + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 9.97 && (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ATE10 + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) <= 39.93) {
+        constResultMagP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_10A40 + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100))
     } else if (
-        ((simply_custo_vp + TxMag_10 + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag <= 9.96) {
-        constanteResultMagP = ((simply_custo_vp + TxMag_10 + (FrMagMen79 * constanteNvMag)) * 100) / simply_cnpj_ct_mag
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ATE10 + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) <= 9.96) {
+        constResultMagP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ATE10 + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100))
     }
-    var calcMagP = constanteResultMagP;
+    var calcMagaluPorcentagemLiquida = constResultMagP;
 
-    // Mercado Livre clássico manual - calcMerClM
-    var calcMerClM = v_m - (custo + (v_m * constanteCnpj) + (v_m * constanteCtMerCl) + (v_m <= 78.99 ? TxMerMen79 : v_m >= 79 ? TxMerMai79 : 0) + ((v_m <= 78.99 ? FrMerMen79 : v_m >= 79 ? constanteFrMer : 0) * constanteNvMer));
+    // --------------------------------
+    // MERCADO LIVRE
+    // --------------------------------
 
-    // Mercado Livre clássico auto - calcMerClA
+    // Mercado Livre clássico manual - calcMercadoLivreClassicoManual
+    var calcMercadoLivreClassicoManual = VendaManual - (custo + (VendaManual * constCnpj) + (VendaManual * constCategoriaMercadoLivreClassico) + (VendaManual <= 78.99 ? TaxaMercadoLivre_ATE79 : VendaManual >= 79 ? TaxaMercadoLivre_ACIMA79 : 0) + ((VendaManual <= 78.99 ? FreteMercadoLivreGratis : VendaManual >= 79 ? constFreteMercadoLivre : 0) * constNivelMercadoLivre));
+
+    // Mercado Livre clássico auto - calcMercadoLivreClassicoValorLiquido
     if (
-        (((custo + v_a) + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_mercl >= 78.98) {
-        constanteResultMerClA = (((custo + v_a) + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_mercl;
+        (((custo + VendaValorLiquido) + (FreteMercadoLivreGratis * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivreClassico) * 100) - 100)) >= 78.98) {
+        constResultMerClA = (((custo + VendaValorLiquido) + (constFreteMercadoLivre * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivreClassico) * 100) - 100));
     } else if (
-        (((custo + v_a + TxMerMen79) + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_mercl >= 78.98) {
-        constanteResultMerClA = (((custo + v_a + TxMerMen79) + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_mercl;
+        (((custo + VendaValorLiquido + TaxaMercadoLivre_ATE79) + (FreteMercadoLivreGratis * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivreClassico) * 100) - 100)) >= 78.98) {
+        constResultMerClA = (((custo + VendaValorLiquido + TaxaMercadoLivre_ATE79) + (constFreteMercadoLivre * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivreClassico) * 100) - 100));
     } else if (
-        (((custo + v_a + TxMerMen79) + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_mercl <= 78.97) {
-        constanteResultMerClA = (((custo + v_a + TxMerMen79) + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_mercl;
+        (((custo + VendaValorLiquido + TaxaMercadoLivre_ATE79) + (FreteMercadoLivreGratis * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivreClassico) * 100) - 100)) <= 78.97) {
+        constResultMerClA = (((custo + VendaValorLiquido + TaxaMercadoLivre_ATE79) + (FreteMercadoLivreGratis * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivreClassico) * 100) - 100));
     } else if (
-        (((custo + v_a + TxMerMen79) + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_mercl >= 78.98) {
-        constanteResultMerClA = (((custo + v_a + TxMerMai79) + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_mercl;
+        (((custo + VendaValorLiquido + TaxaMercadoLivre_ATE79) + (constFreteMercadoLivre * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivreClassico) * 100) - 100)) >= 78.98) {
+        constResultMerClA = (((custo + VendaValorLiquido + TaxaMercadoLivre_ACIMA79) + (constFreteMercadoLivre * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivreClassico) * 100) - 100));
     }
-    var calcMerClA = constanteResultMerClA;
+    var calcMercadoLivreClassicoValorLiquido = constResultMerClA;
 
-    // Mercado Livre clássico porcentagem - calcMerClP
+    // Mercado Livre clássico porcentagem - calcMercadoLivreClassicoPorcentagemLiquida
     if (
-        ((simply_custo_vp + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_mercl >= 78.98) {
-        constanteResultMerClP = ((simply_custo_vp + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_mercl;
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + (FreteMercadoLivreGratis * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivreClassico) * 100) - 100)) >= 78.98) {
+        constResultMerClP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + (constFreteMercadoLivre * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivreClassico) * 100) - 100));
     } else if (
-        ((simply_custo_vp + TxMerMen79 + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_mercl >= 78.98) {
-        constanteResultMerClP = ((simply_custo_vp + TxMerMen79 + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_mercl;
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMercadoLivre_ATE79 + (FreteMercadoLivreGratis * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivreClassico) * 100) - 100)) >= 78.98) {
+        constResultMerClP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMercadoLivre_ATE79 + (FreteMercadoLivreGratis * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivreClassico) * 100) - 100));
     } else if (
-        ((simply_custo_vp + TxMerMen79 + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_mercl <= 78.97) {
-        constanteResultMerClP = ((simply_custo_vp + TxMerMen79 + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_mercl;
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMercadoLivre_ATE79 + (FreteMercadoLivreGratis * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivreClassico) * 100) - 100)) <= 78.97) {
+        constResultMerClP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMercadoLivre_ATE79 + (FreteMercadoLivreGratis * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivreClassico) * 100) - 100));
     } else if (
-        ((simply_custo_vp + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_mercl >= 78.98) {
-        constanteResultMerClP = ((simply_custo_vp + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_mercl;
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + (constFreteMercadoLivre * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivreClassico) * 100) - 100)) >= 78.98) {
+        constResultMerClP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + (constFreteMercadoLivre * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivreClassico) * 100) - 100));
     }
-    var calcMerClP = constanteResultMerClP;
+    var calcMercadoLivreClassicoPorcentagemLiquida = constResultMerClP;
 
-    // Mercado Livre premium manual - calcMerPrM
+    // Mercado Livre premium manual - calcMercadoLivrePremiumManual
 
-    var calcMerPrM = v_m - (custo + (v_m * constanteCnpj) + (v_m * constanteCtMerPr) + (v_m <= 78.99 ? TxMerMen79 : v_m >= 79 ? TxMerMai79 : 0) + ((v_m <= 78.99 ? FrMerMen79 : v_m >= 79 ? constanteFrMer : 0) * constanteNvMer));
+    var calcMercadoLivrePremiumManual = VendaManual - (custo + (VendaManual * constCnpj) + (VendaManual * constCategoriaMercadoLivrePremium) + (VendaManual <= 78.99 ? TaxaMercadoLivre_ATE79 : VendaManual >= 79 ? TaxaMercadoLivre_ACIMA79 : 0) + ((VendaManual <= 78.99 ? FreteMercadoLivreGratis : VendaManual >= 79 ? constFreteMercadoLivre : 0) * constNivelMercadoLivre));
 
-    // Mercado Livre premium auto - calcMerPrA
+    // Mercado Livre premium auto - calcMercadoLivrePremiumValorLiquido
     if (
-        (((custo + v_a + TxMerMen79) + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_merpr >= 78.98) {
-        constanteResultMerPrA = (((custo + v_a + TxMerMen79) + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_merpr;
+        (((custo + VendaValorLiquido + TaxaMercadoLivre_ATE79) + (FreteMercadoLivreGratis * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivrePremium) * 100) - 100)) >= 78.98) {
+        constResultMerPrA = (((custo + VendaValorLiquido + TaxaMercadoLivre_ATE79) + (constFreteMercadoLivre * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivrePremium) * 100) - 100));
     } else if (
-        (((custo + v_a + TxMerMen79) + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_merpr <= 78.97) {
-        constanteResultMerPrA = (((custo + v_a + TxMerMen79) + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_merpr;
+        (((custo + VendaValorLiquido + TaxaMercadoLivre_ATE79) + (FreteMercadoLivreGratis * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivrePremium) * 100) - 100)) <= 78.97) {
+        constResultMerPrA = (((custo + VendaValorLiquido + TaxaMercadoLivre_ATE79) + (FreteMercadoLivreGratis * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivrePremium) * 100) - 100));
     } else if (
-        (((custo + v_a + TxMerMen79) + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_merpr >= 78.98) {
-        constanteResultMerPrA = (((custo + v_a + TxMerMai79) + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_merpr;
+        (((custo + VendaValorLiquido + TaxaMercadoLivre_ATE79) + (constFreteMercadoLivre * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivrePremium) * 100) - 100)) >= 78.98) {
+        constResultMerPrA = (((custo + VendaValorLiquido + TaxaMercadoLivre_ACIMA79) + (constFreteMercadoLivre * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivrePremium) * 100) - 100));
     }
-    var calcMerPrA = constanteResultMerPrA;
+    var calcMercadoLivrePremiumValorLiquido = constResultMerPrA;
 
-    // Mercado Livre premium porcentagem - calcMerPrP
+    // Mercado Livre premium porcentagem - calcMercadoLivrePremiumPorcentagemLiquida
     if (
-        ((simply_custo_vp + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_merpr >= 78.98) {
-        constanteResultMerPrP = ((simply_custo_vp + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_merpr;
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + (FreteMercadoLivreGratis * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivrePremium) * 100) - 100)) >= 78.98) {
+        constResultMerPrP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + (constFreteMercadoLivre * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivrePremium) * 100) - 100));
     } else if (
-        ((simply_custo_vp + TxMerMen79 + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_merpr >= 78.98) {
-        constanteResultMerPrP = ((simply_custo_vp + TxMerMen79 + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_merpr;
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMercadoLivre_ATE79 + (FreteMercadoLivreGratis * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivrePremium) * 100) - 100)) >= 78.98) {
+        constResultMerPrP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMercadoLivre_ATE79 + (FreteMercadoLivreGratis * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivrePremium) * 100) - 100));
     } else if (
-        ((simply_custo_vp + TxMerMen79 + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_merpr <= 78.97) {
-        constanteResultMerPrP = ((simply_custo_vp + TxMerMen79 + (FrMerMen79 * constanteNvMer)) * 100) / simply_cnpj_ct_merpr;
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMercadoLivre_ATE79 + (FreteMercadoLivreGratis * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivrePremium) * 100) - 100)) <= 78.97) {
+        constResultMerPrP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMercadoLivre_ATE79 + (FreteMercadoLivreGratis * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivrePremium) * 100) - 100));
     } else if (
-        ((simply_custo_vp + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_merpr >= 78.98) {
-        constanteResultMerPrP = ((simply_custo_vp + (constanteFrMer * constanteNvMer)) * 100) / simply_cnpj_ct_merpr;
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + (constFreteMercadoLivre * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivrePremium) * 100) - 100)) >= 78.98) {
+        constResultMerPrP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + (constFreteMercadoLivre * constNivelMercadoLivre)) * 100) / (-(((constCnpj + constCategoriaMercadoLivrePremium) * 100) - 100));
     }
-    var calcMerPrP = constanteResultMerPrP;
+    var calcMercadoLivrePremiumPorcentagemLiquida = constResultMerPrP;
 
-    // Shopee manual - calcShoM
-    var calcShoM = v_m - (custo + (v_m * constanteCnpj) + (v_m >= 500 ? 100 : v_m <= 499.99 ? v_m * constanteCtSho : 0) + TxSho);
+    // --------------------------------
+    // RD
+    // --------------------------------
 
-    // Shopee auto - calcShoA
+
+
+    // --------------------------------
+    // OLIST
+    // --------------------------------
+
+
+
+    // --------------------------------
+    // SHOPEE
+    // --------------------------------
+
+    // Shopee manual - calcShopeeManual
+    var calcShopeeManual = VendaManual - (custo + (VendaManual * constCnpj) + (VendaManual >= 500 ? 100 : VendaManual <= 499.99 ? VendaManual * constCategoriaShopee : 0) + TaxaShopee);
+
+    // Shopee auto - calcShopeeValorLiquido
     if (
-        ((v_a + custo + TxSho) * 100) / simply_cnpj_ct_sho <= 499.97) {
-        constanteResultShoA = ((v_a + custo + TxSho) * 100) / simply_cnpj_ct_sho;
+        ((VendaValorLiquido + custo + TaxaShopee) * 100) / (-(((constCnpj + constCategoriaShopee) * 100) - 100)) <= 499.97) {
+        constResultShoA = ((VendaValorLiquido + custo + TaxaShopee) * 100) / (-(((constCnpj + constCategoriaShopee) * 100) - 100));
     } else if (
-        ((v_a + custo + TxSho) * 100) / simply_cnpj_ct_sho >= 499.98) {
-        constanteResultShoA = ((v_a + custo + TxSho + 100) * 100) / (-(((constanteCnpj) * 100) - 100));
+        ((VendaValorLiquido + custo + TaxaShopee) * 100) / (-(((constCnpj + constCategoriaShopee) * 100) - 100)) >= 499.98) {
+        constResultShoA = ((VendaValorLiquido + custo + TaxaShopee + 100) * 100) / (-(((constCnpj) * 100) - 100));
     }
-    var calcShoA = constanteResultShoA;
+    var calcShopeeValorLiquido = constResultShoA;
 
-    // Shopee porcentagem - calcShoP
+    // Shopee porcentagem - calcShopeePorcentagemLiquida
     if (
-        ((simply_custo_vp + TxSho) * 100) / simply_cnpj_ct_sho <= 499.97) {
-        constanteResultShoP = ((simply_custo_vp + TxSho) * 100) / simply_cnpj_ct_sho;
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaShopee) * 100) / (-(((constCnpj + constCategoriaShopee) * 100) - 100)) <= 499.97) {
+        constResultShoP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaShopee) * 100) / (-(((constCnpj + constCategoriaShopee) * 100) - 100));
     } else if (
-        ((simply_custo_vp + TxSho) * 100) / simply_cnpj_ct_sho >= 499.98) {
-        constanteResultShoP = ((simply_custo_vp + TxSho + 100) * 100) / (-(((constanteCnpj) * 100) - 100));
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaShopee) * 100) / (-(((constCnpj + constCategoriaShopee) * 100) - 100)) >= 499.98) {
+        constResultShoP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaShopee + 100) * 100) / (-(((constCnpj) * 100) - 100));
     }
-    var calcShoP = constanteResultShoP;
+    var calcShopeePorcentagemLiquida = constResultShoP;
 
-    // Site manual - calcSitM
-    var calcSitM = v_m - (custo + (v_m * constanteCnpj) + (v_m * cnpj_online_cmss));
-    var calcSitM12x12 = v_m + (v_m * TxSit_12x);
+    // --------------------------------
+    // SITE UOOL
+    // --------------------------------
+
+    // Site Uool manual - calcSiteUoolManual
+    var calcSiteUoolManual = VendaManual - (custo + (VendaManual * constCnpj) + (VendaManual));
+    var calcSitM12x12 = VendaManual + (VendaManual * TaxaSiteUool_12x);
     var calcSitM12x1 = calcSitM12x12 / 12;
 
-    // Site auto - calcSitA
-    var calcSitA = (custo + v_a) * 100 / (-(((constanteCnpj + cnpj_online_cmss) * 100) - 100));
-    var calcSitA12x12 = calcSitA + (calcSitA * TxSit_12x);
+    // Site Uool auto - calcSiteUoolValorLiquido
+    var calcSiteUoolValorLiquido = (custo + VendaValorLiquido) * 100 / (-(((constCnpj) * 100) - 100));
+    var calcSitA12x12 = calcSiteUoolValorLiquido + (calcSiteUoolValorLiquido * TaxaSiteUool_12x);
     var calcSitA12x1 = calcSitA12x12 / 12;
 
-    // Site porcentagem - calcSitP
-    var calcSitP = (simply_custo_vp * 100) / (-(((constanteCnpj + cnpj_online_cmss) * 100) - 100));
-    var calcSitP12x12 = calcSitP + (calcSitP * TxSit_12x);
+    // Site Uool porcentagem - calcSiteUoolPorcentagemLiquida
+    var calcSiteUoolPorcentagemLiquida = ((custo + (custo * VendaPorcentagemLiquida) / 100) * 100) / (-(((constCnpj) * 100) - 100));
+    var calcSitP12x12 = calcSiteUoolPorcentagemLiquida + (calcSiteUoolPorcentagemLiquida * TaxaSiteUool_12x);
     var calcSitP12x1 = calcSitP12x12 / 12;
+
+    // --------------------------------
+    // SITE ATACADO
+    // --------------------------------
+
+
 
     // --------------------------------
 
     // Valores que serão exibidos na tabela de resultados
 
     // Americanas
-    document.getElementById("result-ame-v_m").textContent = "R$ " + calcAmeM.toFixed(2).replace(".", ",") + " (" + ((calcAmeM / custo) * 100).toFixed(2) + "%)";
-    document.getElementById("result-ame-v_a").textContent = "R$ " + calcAmeA.toFixed(2).replace(".", ",") + " (" + ((v_a / custo) * 100).toFixed(2) + "%)";
-    document.getElementById("result-ame-v_p").textContent = "R$ " + calcAmeP.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * v_p) / 100).toFixed(2).replace(".", ",") + ")";
+    document.getElementById("resultado-Americanas-VendaManual").textContent = "R$ " + calcAmericanasManual.toFixed(2).replace(".", ",") + " (" + ((calcAmericanasManual / custo) * 100).toFixed(2) + "%)";
+    document.getElementById("resultado-Americanas-VendaValorLiquido").textContent = "R$ " + calcAmericanasValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2) + "%)";
+    document.getElementById("resultado-Americanas-VendaPorcentagemLiquida").textContent = "R$ " + calcAmericanasPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+
+    // Casas Bahia
+    document.getElementById("resultado-CasasBahia-VendaManual").textContent = "Em breve";
+    document.getElementById("resultado-CasasBahia-VendaValorLiquido").textContent = "Em breve";
+    document.getElementById("resultado-CasasBahia-VendaPorcentagemLiquida").textContent = "Em breve";
 
     // Magalu
-    document.getElementById("result-mag-v_m").textContent = "R$ " + calcMagM.toFixed(2).replace(".", ",") + " (" + ((calcMagM / custo) * 100).toFixed(2) + "%)";
-    document.getElementById("result-mag-v_a").textContent = "R$ " + calcMagA.toFixed(2).replace(".", ",") + " (" + ((v_a / custo) * 100).toFixed(2) + "%)";
-    document.getElementById("result-mag-v_p").textContent = "R$ " + calcMagP.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * v_p) / 100).toFixed(2).replace(".", ",") + ")";
+    document.getElementById("resultado-Magalu-VendaManual").textContent = "R$ " + calcMagaluValorLiquidoluManual.toFixed(2).replace(".", ",") + " (" + ((calcMagaluValorLiquidoluManual / custo) * 100).toFixed(2) + "%)";
+    document.getElementById("resultado-Magalu-VendaValorLiquido").textContent = "R$ " + calcMagaluValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2) + "%)";
+    document.getElementById("resultado-Magalu-VendaPorcentagemLiquida").textContent = "R$ " + calcMagaluPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
 
     // Mercado Livre Clássico
-    document.getElementById("result-mercl-v_m").textContent = "R$ " + calcMerClM.toFixed(2).replace(".", ",") + " (" + ((calcMerClM / custo) * 100).toFixed(2) + "%)";
-    document.getElementById("result-mercl-v_a").textContent = "R$ " + calcMerClA.toFixed(2).replace(".", ",") + " (" + ((v_a / custo) * 100).toFixed(2) + "%)";
-    document.getElementById("result-mercl-v_p").textContent = "R$ " + calcMerClP.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * v_p) / 100).toFixed(2).replace(".", ",") + ")";
+    document.getElementById("resultado-MercadoLivreClassico-VendaManual").textContent = "R$ " + calcMercadoLivreClassicoManual.toFixed(2).replace(".", ",") + " (" + ((calcMercadoLivreClassicoManual / custo) * 100).toFixed(2) + "%)";
+    document.getElementById("resultado-MercadoLivreClassico-VendaValorLiquido").textContent = "R$ " + calcMercadoLivreClassicoValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2) + "%)";
+    document.getElementById("resultado-MercadoLivreClassico-VendaPorcentagemLiquida").textContent = "R$ " + calcMercadoLivreClassicoPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
 
     // Mercado Livre Premium
-    document.getElementById("result-merpr-v_m").textContent = "R$ " + calcMerPrM.toFixed(2).replace(".", ",") + " (" + ((calcMerPrM / custo) * 100).toFixed(2) + "%)";
-    document.getElementById("result-merpr-v_a").textContent = "R$ " + calcMerPrA.toFixed(2).replace(".", ",") + " (" + ((v_a / custo) * 100).toFixed(2) + "%)";
-    document.getElementById("result-merpr-v_p").textContent = "R$ " + calcMerPrP.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * v_p) / 100).toFixed(2).replace(".", ",") + ")";
+    document.getElementById("resultado-MercadoLivrePremium-VendaManual").textContent = "R$ " + calcMercadoLivrePremiumManual.toFixed(2).replace(".", ",") + " (" + ((calcMercadoLivrePremiumManual / custo) * 100).toFixed(2) + "%)";
+    document.getElementById("resultado-MercadoLivrePremium-VendaValorLiquido").textContent = "R$ " + calcMercadoLivrePremiumValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2) + "%)";
+    document.getElementById("resultado-MercadoLivrePremium-VendaPorcentagemLiquida").textContent = "R$ " + calcMercadoLivrePremiumPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+
+    // RD
+    document.getElementById("resultado-RD-VendaManual").textContent = "Em breve";
+    document.getElementById("resultado-RD-VendaValorLiquido").textContent = "Em breve";
+    document.getElementById("resultado-RD-VendaPorcentagemLiquida").textContent = "Em breve";
+
+    // Olist
+    document.getElementById("resultado-Olist-VendaManual").textContent = "Em breve";
+    document.getElementById("resultado-Olist-VendaValorLiquido").textContent = "Em breve";
+    document.getElementById("resultado-Olist-VendaPorcentagemLiquida").textContent = "Em breve";
 
     // Shopee
-    document.getElementById("result-sho-v_m").textContent = "R$ " + calcShoM.toFixed(2).replace(".", ",") + " (" + ((calcShoM / custo) * 100).toFixed(2) + "%)";
-    document.getElementById("result-sho-v_a").textContent = "R$ " + calcShoA.toFixed(2).replace(".", ",") + " (" + ((v_a / custo) * 100).toFixed(2) + "%)";
-    document.getElementById("result-sho-v_p").textContent = "R$ " + calcShoP.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * v_p) / 100).toFixed(2).replace(".", ",") + ")";
+    document.getElementById("resultado-Shopee-VendaManual").textContent = "R$ " + calcShopeeManual.toFixed(2).replace(".", ",") + " (" + ((calcShopeeManual / custo) * 100).toFixed(2) + "%)";
+    document.getElementById("resultado-Shopee-VendaValorLiquido").textContent = "R$ " + calcShopeeValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2) + "%)";
+    document.getElementById("resultado-Shopee-VendaPorcentagemLiquida").textContent = "R$ " + calcShopeePorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
 
-    // Site
-    document.getElementById("result-sit-v_m").textContent = "R$ " + calcSitM.toFixed(2).replace(".", ",") + " (" + ((calcSitM / custo) * 100).toFixed(2) + "%)";
-    document.getElementById("result-sit-v_a").textContent = "PIX R$ " + calcSitA.toFixed(2).replace(".", ",") + " (" + ((v_a / custo) * 100).toFixed(2) + "%)";
-    document.getElementById("result-sit-v_p").textContent = "PIX R$ " + calcSitP.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * v_p) / 100).toFixed(2).replace(".", ",") + ")";
-    document.getElementById("result-sit-v_m-12x").textContent = "12x de R$ " + calcSitM12x1.toFixed(2).replace(".", ",") + " (" + (calcSitM12x12).toFixed(2).replace(".", ",") + ")";
-    document.getElementById("result-sit-v_a-12x").textContent = "12x de R$ " + calcSitA12x1.toFixed(2).replace(".", ",") + " (" + (calcSitA12x12).toFixed(2).replace(".", ",") + ")";
-    document.getElementById("result-sit-v_p-12x").textContent = "12x de R$ " + calcSitP12x1.toFixed(2).replace(".", ",") + " (" + (calcSitP12x12).toFixed(2).replace(".", ",") + ")";
+    // Web Continental
+    document.getElementById("resultado-WebContinental-VendaManual").textContent = "Em breve";
+    document.getElementById("resultado-WebContinental-VendaValorLiquido").textContent = "Em breve";
+    document.getElementById("resultado-WebContinental-VendaPorcentagemLiquida").textContent = "Em breve";
+
+    // Site Uool
+    document.getElementById("resultado-SiteUool-VendaManual").textContent = "R$ " + calcSiteUoolManual.toFixed(2).replace(".", ",") + " (" + ((calcSiteUoolManual / custo) * 100).toFixed(2) + "%)";
+    document.getElementById("resultado-SiteUool-VendaValorLiquido").textContent = "PIX R$ " + calcSiteUoolValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2) + "%)";
+    document.getElementById("resultado-SiteUool-VendaPorcentagemLiquida").textContent = "PIX R$ " + calcSiteUoolPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+    document.getElementById("resultado-SiteUool-VendaManual-12x").textContent = "12x de R$ " + calcSitM12x1.toFixed(2).replace(".", ",") + " (" + (calcSitM12x12).toFixed(2).replace(".", ",") + ")";
+    document.getElementById("resultado-SiteUool-VendaValorLiquido-12x").textContent = "12x de R$ " + calcSitA12x1.toFixed(2).replace(".", ",") + " (" + (calcSitA12x12).toFixed(2).replace(".", ",") + ")";
+    document.getElementById("resultado-SiteUool-VendaPorcentagemLiquida-12x").textContent = "12x de R$ " + calcSitP12x1.toFixed(2).replace(".", ",") + " (" + (calcSitP12x12).toFixed(2).replace(".", ",") + ")";
+
+    // Site Atacado
+    document.getElementById("resultado-SiteAtacado-VendaManual").textContent = "Em breve";
+    document.getElementById("resultado-SiteAtacado-VendaValorLiquido").textContent = "Em breve";
+    document.getElementById("resultado-SiteAtacado-VendaPorcentagemLiquida").textContent = "Em breve";
+    document.getElementById("resultado-SiteAtacado-VendaManual-12x").textContent = "Em breve";
+    document.getElementById("resultado-SiteAtacado-VendaValorLiquido-12x").textContent = "Em breve";
+    document.getElementById("resultado-SiteAtacado-VendaPorcentagemLiquida-12x").textContent = "Em breve";
 }
