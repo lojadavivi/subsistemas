@@ -162,6 +162,9 @@ footer a {
     .tabela_calc {
         width: 950px;
     }
+    .spoilerbutton {
+        font-size: 20px;
+    }
 
     .tabela_calc th,
     .tabela_calc td,
