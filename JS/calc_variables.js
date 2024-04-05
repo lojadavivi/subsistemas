@@ -4,14 +4,16 @@
 
 // Alíquota por CNPJ
 
-const cnpjLTDA = 0.09162236;
-const cnpjONLINE = 0.04000002;
-const cnpjSV = 0.08506399;
-const cnpjVIVI = 0.05;
+const cnpjLTDA = 0.10;
+const cnpjONLINE = 0.05;
+const cnpjSV = 0.09;
+const cnpjVIVI = 0.06;
 
 // ----------------------------------------
 
 // COMISSÃO POR CATEGORIA
+
+// Americanas: todos os produtos que vendemos atualmente entram na taxa de 17%
 
 // 01 - Bronzeador ou protetor solar
 const CategoriaAmericanas01 = 0.17;
@@ -187,18 +189,21 @@ const CategoriaSiteAtacado13 = 0;
 // FRETE
 
 // Americanas
-const FreteAmericanasGratis = 0;
-const FreteAmericanasFixo = 12.9;
-const FreteAmericanas_ate300G = 32.9;
-const FreteAmericanas_300a500G = 32.9;
-const FreteAmericanas_500Ga1KG = 35.9;
-const FreteAmericanas_1a2KG = 36.9;
-const FreteAmericanas_2a5KG = 45.9;
-const FreteAmericanas_5a9KG = 67.9;
-const FreteAmericanas_9a13KG = 91.9;
-const FreteAmericanas_13a17KG = 104.9;
-const FreteAmericanas_17a23KG = 112.9;
-const FreteAmericanas_23a30KG = 119.9;
+// Até R$ 40 o frete é pago pelo cliente
+// De R$ 40 a 89,99 o frete é pago pelo vendedor, com um desconto baseado no nível
+// Acima de R$ 90 o frete é pago pelo vendedor, com um desconto baseado no nível
+const FreteAmericanas_ATE40 = 0;
+const FreteAmericanas_DE40A89 = 12.9;
+const FreteAmericanas_ACIMA79_ate300G = 37.9;
+const FreteAmericanas_ACIMA79_300a500G = 37.9;
+const FreteAmericanas_ACIMA79_500Ga1KG = 40.9;
+const FreteAmericanas_ACIMA79_1a2KG = 41.9;
+const FreteAmericanas_ACIMA79_2a5KG = 50.9;
+const FreteAmericanas_ACIMA79_5a9KG = 72.9;
+const FreteAmericanas_ACIMA79_9a13KG = 96.9;
+const FreteAmericanas_ACIMA79_13a17KG = 113.9;
+const FreteAmericanas_ACIMA79_17a23KG = 121.9;
+const FreteAmericanas_ACIMA79_23a30KG = 128.9;
 
 // Casas Bahia
 const FreteCasasBahia = 0;
@@ -252,6 +257,9 @@ const FreteSiteAtacado = 0;
 // DESCONTO (%) POR NÍVEL
 
 // Americanas
+// Do nível 1 ao 3 não há desconto no frete (1 = 0%)
+// No nível 4 há desconto de 40% no frete (0.6 = 40%)
+// No nível 5 há desconto de 50% no frete (0.5 = 50%)
 const NivelAmericanas1 = 1;
 const NivelAmericanas2 = 1;
 const NivelAmericanas3 = 1;
@@ -302,6 +310,7 @@ const NivelSiteAtacado = 1;
 // TAXA FIXA
 
 // Americanas
+// Não há taxa fixa
 const TaxaAmericanas = 0;
 
 // Americanas
