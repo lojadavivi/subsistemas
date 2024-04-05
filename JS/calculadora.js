@@ -210,7 +210,7 @@ function calcular(inputElement) {
     } else if (peso === "até 0.3kg") {
         constFreteAmericanas = FreteAmericanas_ACIMA79_ate300G;
         constFreteCasasBahia = FreteCasasBahia;
-        constFreteMagalu = FreteMagalu_ate300G;
+        constFreteMagalu = FreteMagalu_ACIMA79_ate300G;
         constFreteMercadoLivre = FreteMercadoLivre_ate300G;
         constFreteOlist = FreteOlist;
         constFreteRD = FreteRD;
@@ -221,7 +221,7 @@ function calcular(inputElement) {
     } else if (peso === "0.3 a 0.5kg") {
         constFreteAmericanas = FreteAmericanas_ACIMA79_300a500G;
         constFreteCasasBahia = FreteCasasBahia;
-        constFreteMagalu = FreteMagalu_300a500G;
+        constFreteMagalu = FreteMagalu_ACIMA79_300a500G;
         constFreteMercadoLivre = FreteMercadoLivre_300a500G;
         constFreteOlist = FreteOlist;
         constFreteRD = FreteRD;
@@ -232,7 +232,7 @@ function calcular(inputElement) {
     } else if (peso === "0.5 a 1kg") {
         constFreteAmericanas = FreteAmericanas_ACIMA79_500Ga1KG;
         constFreteCasasBahia = FreteCasasBahia;
-        constFreteMagalu = FreteMagalu_500Ga1KG;
+        constFreteMagalu = FreteMagalu_ACIMA79_500Ga1KG;
         constFreteMercadoLivre = FreteMercadoLivre_500Ga1KG;
         constFreteOlist = FreteOlist;
         constFreteRD = FreteRD;
@@ -243,7 +243,7 @@ function calcular(inputElement) {
     } else if (peso === "1 a 2kg") {
         constFreteAmericanas = FreteAmericanas_ACIMA79_1a2KG;
         constFreteCasasBahia = FreteCasasBahia;
-        constFreteMagalu = FreteMagalu_1a2KG;
+        constFreteMagalu = FreteMagalu_ACIMA79_1a2KG;
         constFreteMercadoLivre = FreteMercadoLivre_1a2KG;
         constFreteOlist = FreteOlist;
         constFreteRD = FreteRD;
@@ -254,7 +254,7 @@ function calcular(inputElement) {
     } else if (peso === "2 a 5kg") {
         constFreteAmericanas = FreteAmericanas_ACIMA79_2a5KG;
         constFreteCasasBahia = FreteCasasBahia;
-        constFreteMagalu = FreteMagalu_2a5KG;
+        constFreteMagalu = FreteMagalu_ACIMA79_2a5KG;
         constFreteMercadoLivre = FreteMercadoLivre_2a5KG;
         constFreteOlist = FreteOlist;
         constFreteRD = FreteRD;
@@ -265,7 +265,7 @@ function calcular(inputElement) {
     } else if (peso === "5 a 9kg") {
         constFreteAmericanas = FreteAmericanas_ACIMA79_5a9KG;
         constFreteCasasBahia = FreteCasasBahia;
-        constFreteMagalu = FreteMagalu_5a9KG;
+        constFreteMagalu = FreteMagalu_ACIMA79_5a9KG;
         constFreteMercadoLivre = FreteMercadoLivre_5a9KG;
         constFreteOlist = FreteOlist;
         constFreteRD = FreteRD;
@@ -276,7 +276,7 @@ function calcular(inputElement) {
     } else if (peso === "9 a 13kg") {
         constFreteAmericanas = FreteAmericanas_ACIMA79_9a13KG;
         constFreteCasasBahia = FreteCasasBahia;
-        constFreteMagalu = FreteMagalu_9a13KG;
+        constFreteMagalu = FreteMagalu_ACIMA79_9a13KG;
         constFreteMercadoLivre = FreteMercadoLivre_9a13KG;
         constFreteOlist = FreteOlist;
         constFreteRD = FreteRD;
@@ -287,7 +287,7 @@ function calcular(inputElement) {
     } else if (peso === "13 a 17kg") {
         constFreteAmericanas = FreteAmericanas_ACIMA79_13a17KG;
         constFreteCasasBahia = FreteCasasBahia;
-        constFreteMagalu = FreteMagalu_13a17KG;
+        constFreteMagalu = FreteMagalu_ACIMA79_13a17KG;
         constFreteMercadoLivre = FreteMercadoLivre_13a17KG;
         constFreteOlist = FreteOlist;
         constFreteRD = FreteRD;
@@ -298,7 +298,7 @@ function calcular(inputElement) {
     } else if (peso === "17 a 23kg") {
         constFreteAmericanas = FreteAmericanas_ACIMA79_17a23KG;
         constFreteCasasBahia = FreteCasasBahia;
-        constFreteMagalu = FreteMagalu_17a23KG;
+        constFreteMagalu = FreteMagalu_ACIMA79_17a23KG;
         constFreteMercadoLivre = FreteMercadoLivre_17a23KG;
         constFreteOlist = FreteOlist;
         constFreteRD = FreteRD;
@@ -309,7 +309,7 @@ function calcular(inputElement) {
     } else if (peso === "23 a 30kg") {
         constFreteAmericanas = FreteAmericanas_ACIMA79_23a30KG;
         constFreteCasasBahia = FreteCasasBahia;
-        constFreteMagalu = FreteMagalu_23a30KG;
+        constFreteMagalu = FreteMagalu_ACIMA79_23a30KG;
         constFreteMercadoLivre = FreteMercadoLivre_23a30KG;
         constFreteOlist = FreteOlist;
         constFreteRD = FreteRD;
@@ -435,46 +435,46 @@ function calcular(inputElement) {
     // --------------------------------
 
     // Magalu manual - calcMagaluValorLiquidoluManual
-    var calcMagaluValorLiquidoluManual = VendaManual - (custo + (VendaManual * constCnpj) + (VendaManual * constCategoriaMagalu) + (VendaManual <= 9.99 ? TaxaMagalu_ATE10 : VendaManual >= 10 && VendaManual <= 39.99 ? TaxaMagalu_10A40 : VendaManual >= 40 && VendaManual <= 78.99 ? TaxaMagalu_40A79 : VendaManual >= 79 ? TaxaMagalu_ACIMA79 : 0) + ((VendaManual <= 78.99 ? FreteMagaluGratis : VendaManual >= 79 ? constFreteMagalu : 0) * constNivelMagalu));
+    var calcMagaluValorLiquidoluManual = VendaManual - (custo + (VendaManual * constCnpj) + (VendaManual * constCategoriaMagalu) + (VendaManual <= 9.99 ? TaxaMagalu_ATE10 : VendaManual >= 10 && VendaManual <= 39.99 ? TaxaMagalu_10A40 : VendaManual >= 40 && VendaManual <= 78.99 ? TaxaMagalu_ACIMA10 : VendaManual >= 79 ? TaxaMagalu_ACIMA79 : 0) + ((VendaManual <= 78.99 ? FreteMagalu_ATE79 : VendaManual >= 79 ? constFreteMagalu : 0) * constNivelMagalu));
 
     // Magalu auto - calcMagaluValorLiquido
     if (
-        (((custo + VendaValorLiquido + TaxaMagalu_40A79) + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 78.96) {
+        (((custo + VendaValorLiquido + TaxaMagalu_ACIMA10) + (FreteMagalu_ATE79 * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 78.96) {
         constResultMagA = (((custo + VendaValorLiquido + TaxaMagalu_ACIMA79) + (constFreteMagalu * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100));
     } else if (
-        (((custo + VendaValorLiquido + TaxaMagalu_10A40) + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 39.94 && (((custo + VendaValorLiquido + TaxaMagalu_10A40) + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) <= 78.95) {
-        constResultMagA = (((custo + VendaValorLiquido + TaxaMagalu_40A79) + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100));
+        (((custo + VendaValorLiquido + TaxaMagalu_10A40) + (FreteMagalu_ATE79 * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 39.94 && (((custo + VendaValorLiquido + TaxaMagalu_10A40) + (FreteMagalu_ATE79 * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) <= 78.95) {
+        constResultMagA = (((custo + VendaValorLiquido + TaxaMagalu_ACIMA10) + (FreteMagalu_ATE79 * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100));
     } else if (
-        (((custo + VendaValorLiquido + TaxaMagalu_40A79) + (constFreteMagalu * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 78.96) {
+        (((custo + VendaValorLiquido + TaxaMagalu_ACIMA10) + (constFreteMagalu * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 78.96) {
         constResultMagA = (((custo + VendaValorLiquido + TaxaMagalu_ACIMA79) + (constFreteMagalu * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100));
     } else if (
-        (((custo + VendaValorLiquido + TaxaMagalu_ACIMA79) + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 9.96 && (((custo + VendaValorLiquido + TaxaMagalu_ATE10) + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) <= 39.93) {
-        constResultMagA = (((custo + VendaValorLiquido + TaxaMagalu_10A40) + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100));
+        (((custo + VendaValorLiquido + TaxaMagalu_ACIMA79) + (FreteMagalu_ATE79 * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 9.96 && (((custo + VendaValorLiquido + TaxaMagalu_ATE10) + (FreteMagalu_ATE79 * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) <= 39.93) {
+        constResultMagA = (((custo + VendaValorLiquido + TaxaMagalu_10A40) + (FreteMagalu_ATE79 * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100));
     } else if (
-        (((custo + VendaValorLiquido + TaxaMagalu_ATE10) + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) <= 9.97) {
-        constResultMagA = (((custo + VendaValorLiquido + TaxaMagalu_ATE10) + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100));
+        (((custo + VendaValorLiquido + TaxaMagalu_ATE10) + (FreteMagalu_ATE79 * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) <= 9.97) {
+        constResultMagA = (((custo + VendaValorLiquido + TaxaMagalu_ATE10) + (FreteMagalu_ATE79 * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100));
     }
     var calcMagaluValorLiquido = constResultMagA;
 
     // Magalu porcentagem - calcMagaluPorcentagemLiquida
     if (
-        ((((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_40A79) + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 78.96) {
+        ((((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ACIMA10) + (FreteMagalu_ATE79 * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 78.96) {
         constResultMagP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ACIMA79 + (constFreteMagalu * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100))
     } else if (
-        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_10A40 + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 39.94 && (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_10A40 + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) <= 78.95) {
-        constResultMagP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_40A79 + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100))
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_10A40 + (FreteMagalu_ATE79 * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 39.94 && (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_10A40 + (FreteMagalu_ATE79 * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) <= 78.95) {
+        constResultMagP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ACIMA10 + (FreteMagalu_ATE79 * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100))
     } else if (
-        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_40A79 + (constFreteMagalu * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 78.96) {
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ACIMA10 + (constFreteMagalu * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 78.96) {
         constResultMagP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ACIMA79 + (constFreteMagalu * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100))
     } else if (
         (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ACIMA79 + (constFreteMagalu * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 78.96) {
         constResultMagP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ACIMA79 + (constFreteMagalu * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100))
     } else if (
-        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ATE10 + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 9.97 && (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ATE10 + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) <= 39.93) {
-        constResultMagP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_10A40 + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100))
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ATE10 + (FreteMagalu_ATE79 * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) >= 9.97 && (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ATE10 + (FreteMagalu_ATE79 * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) <= 39.93) {
+        constResultMagP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_10A40 + (FreteMagalu_ATE79 * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100))
     } else if (
-        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ATE10 + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) <= 9.96) {
-        constResultMagP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ATE10 + (FreteMagaluGratis * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100))
+        (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ATE10 + (FreteMagalu_ATE79 * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100)) <= 9.96) {
+        constResultMagP = (((custo + (custo * VendaPorcentagemLiquida) / 100) + TaxaMagalu_ATE10 + (FreteMagalu_ATE79 * constNivelMagalu)) * 100) / (-(((constCnpj + constCategoriaMagalu) * 100) - 100))
     }
     var calcMagaluPorcentagemLiquida = constResultMagP;
 

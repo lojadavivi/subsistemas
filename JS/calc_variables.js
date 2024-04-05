@@ -13,11 +13,13 @@ const cnpjVIVI = 0.06;
 
 // COMISSÃO POR CATEGORIA
 
-// Americanas: todos os produtos que vendemos atualmente entram na taxa de 17%
+// Americanas:  todos os produtos que vendemos atualmente entram na taxa de 17%
+// Casas Bahia: todos os produtos que vendemos atualmente entram na taxa de 21%
+// Magalu:      todos os produtos que vendemos atualmente entram na taxa de 18%
 
 // 01 - Bronzeador ou protetor solar
 const CategoriaAmericanas01 = 0.17;
-const CategoriaCasasBahia01 = 0;
+const CategoriaCasasBahia01 = 0.21;
 const CategoriaMagalu01 = 0.18;
 const CategoriaMercadoLivreClassico01 = 0.13;
 const CategoriaMercadoLivrePremium01 = 0.18;
@@ -30,7 +32,7 @@ const CategoriaSiteAtacado01 = 0;
 
 // 02 - Creme depilatório
 const CategoriaAmericanas02 = 0.17;
-const CategoriaCasasBahia02 = 0;
+const CategoriaCasasBahia02 = 0.21;
 const CategoriaMagalu02 = 0.18;
 const CategoriaMercadoLivreClassico02 = 0.13;
 const CategoriaMercadoLivrePremium02 = 0.18;
@@ -43,7 +45,7 @@ const CategoriaSiteAtacado02 = 0;
 
 // 03 - Desodorante
 const CategoriaAmericanas03 = 0.17;
-const CategoriaCasasBahia03 = 0;
+const CategoriaCasasBahia03 = 0.21;
 const CategoriaMagalu03 = 0.18;
 const CategoriaMercadoLivreClassico03 = 0.13;
 const CategoriaMercadoLivrePremium03 = 0.18;
@@ -56,7 +58,7 @@ const CategoriaSiteAtacado03 = 0;
 
 // 04 - Escova ou pente de cabelo
 const CategoriaAmericanas04 = 0.17;
-const CategoriaCasasBahia04 = 0;
+const CategoriaCasasBahia04 = 0.21;
 const CategoriaMagalu04 = 0.18;
 const CategoriaMercadoLivreClassico04 = 0.12;
 const CategoriaMercadoLivrePremium04 = 0.17;
@@ -69,7 +71,7 @@ const CategoriaSiteAtacado04 = 0;
 
 // 05 - Espuma de barbear
 const CategoriaAmericanas05 = 0.17;
-const CategoriaCasasBahia05 = 0;
+const CategoriaCasasBahia05 = 0.21;
 const CategoriaMagalu05 = 0.18;
 const CategoriaMercadoLivreClassico05 = 0.13;
 const CategoriaMercadoLivrePremium05 = 0.18;
@@ -82,7 +84,7 @@ const CategoriaSiteAtacado05 = 0;
 
 // 06 - Fixador de cabelo
 const CategoriaAmericanas06 = 0.17;
-const CategoriaCasasBahia06 = 0;
+const CategoriaCasasBahia06 = 0.21;
 const CategoriaMagalu06 = 0.18;
 const CategoriaMercadoLivreClassico06 = 0.12;
 const CategoriaMercadoLivrePremium06 = 0.17;
@@ -94,8 +96,8 @@ const CategoriaSiteUool06 = 0;
 const CategoriaSiteAtacado06 = 0;
 
 // 07 - Maquinário ou eletrônico
-const CategoriaAmericanas07 = 0.16;
-const CategoriaCasasBahia07 = 0;
+const CategoriaAmericanas07 = 0.17;
+const CategoriaCasasBahia07 = 0.21;
 const CategoriaMagalu07 = 0.18;
 const CategoriaMercadoLivreClassico07 = 0.12;
 const CategoriaMercadoLivrePremium07 = 0.17;
@@ -121,7 +123,7 @@ const CategoriaSiteAtacado08 = 0;
 
 // 09 - Repelente
 const CategoriaAmericanas09 = 0.17;
-const CategoriaCasasBahia09 = 0;
+const CategoriaCasasBahia09 = 0.21;
 const CategoriaMagalu09 = 0.18;
 const CategoriaMercadoLivreClassico09 = 0.115;
 const CategoriaMercadoLivrePremium09 = 0.165;
@@ -134,7 +136,7 @@ const CategoriaSiteAtacado09 = 0;
 
 // 10 - Sabonete
 const CategoriaAmericanas10 = 0.17;
-const CategoriaCasasBahia10 = 0;
+const CategoriaCasasBahia10 = 0.21;
 const CategoriaMagalu10 = 0.18;
 const CategoriaMercadoLivreClassico10 = 0.13;
 const CategoriaMercadoLivrePremium10 = 0.18;
@@ -147,7 +149,7 @@ const CategoriaSiteAtacado10 = 0;
 
 // 11 - Shampoo/Cond/Masc capilar
 const CategoriaAmericanas11 = 0.17;
-const CategoriaCasasBahia11 = 0;
+const CategoriaCasasBahia11 = 0.21;
 const CategoriaMagalu11 = 0.18;
 const CategoriaMercadoLivreClassico11 = 0.13;
 const CategoriaMercadoLivrePremium11 = 0.18;
@@ -160,7 +162,7 @@ const CategoriaSiteAtacado11 = 0;
 
 // 12 - Tinta capilar
 const CategoriaAmericanas12 = 0.17;
-const CategoriaCasasBahia12 = 0;
+const CategoriaCasasBahia12 = 0.21;
 const CategoriaMagalu12 = 0.18;
 const CategoriaMercadoLivreClassico12 = 0.12;
 const CategoriaMercadoLivrePremium12 = 0.17;
@@ -173,7 +175,7 @@ const CategoriaSiteAtacado12 = 0;
 
 // 13 - Utensílio ou acessório de beleza
 const CategoriaAmericanas13 = 0.17;
-const CategoriaCasasBahia13 = 0;
+const CategoriaCasasBahia13 = 0.21;
 const CategoriaMagalu13 = 0.18;
 const CategoriaMercadoLivreClassico13 = 0.12;
 const CategoriaMercadoLivrePremium13 = 0.17;
@@ -206,20 +208,34 @@ const FreteAmericanas_ACIMA79_17a23KG = 121.9;
 const FreteAmericanas_ACIMA79_23a30KG = 128.9;
 
 // Casas Bahia
-const FreteCasasBahia = 0;
+// Até 69,89 o frete é pago pelo cliente
+// Acima de 69,90 o frete é pago pelo vendedor
+const FreteCasasBahia_ATE69 = 0;
+const FreteCasasBahia_ACIMA79_ate300G = 29;
+const FreteCasasBahia_ACIMA79_300a500G = 29;
+const FreteCasasBahia_ACIMA79_500Ga1KG = 32;
+const FreteCasasBahia_ACIMA79_1a2KG = 34;
+const FreteCasasBahia_ACIMA79_2a5KG = 42;
+const FreteCasasBahia_ACIMA79_5a9KG = 67.9;
+const FreteCasasBahia_ACIMA79_9a13KG = 91.9;
+const FreteCasasBahia_ACIMA79_13a17KG = 104.9;
+const FreteCasasBahia_ACIMA79_17a23KG = 112.9;
+const FreteCasasBahia_ACIMA79_23a30KG = 119.9;
 
 // Magalu 
-const FreteMagaluGratis = 0;
-const FreteMagalu_ate300G = 27.9;
-const FreteMagalu_300a500G = 27.9;
-const FreteMagalu_500Ga1KG = 32.9;
-const FreteMagalu_1a2KG = 35.9;
-const FreteMagalu_2a5KG = 44.9;
-const FreteMagalu_5a9KG = 47.9;
-const FreteMagalu_9a13KG = 52.9;
-const FreteMagalu_13a17KG = 57.9;
-const FreteMagalu_17a23KG = 62.9;
-const FreteMagalu_23a30KG = 67.9;
+// Até 78,99 o frete é pago pelo cliente
+// Acima de 79 o frete é pago pelo vendedor
+const FreteMagalu_ATE79 = 0;
+const FreteMagalu_ACIMA79_ate300G = 27.9;
+const FreteMagalu_ACIMA79_300a500G = 27.9;
+const FreteMagalu_ACIMA79_500Ga1KG = 32.9;
+const FreteMagalu_ACIMA79_1a2KG = 35.9;
+const FreteMagalu_ACIMA79_2a5KG = 44.9;
+const FreteMagalu_ACIMA79_5a9KG = 47.9;
+const FreteMagalu_ACIMA79_9a13KG = 52.9;
+const FreteMagalu_ACIMA79_13a17KG = 57.9;
+const FreteMagalu_ACIMA79_17a23KG = 62.9;
+const FreteMagalu_ACIMA79_23a30KG = 67.9;
 
 // Mercado Livre
 const FreteMercadoLivreGratis = 0;
@@ -267,12 +283,23 @@ const NivelAmericanas4 = 0.6;
 const NivelAmericanas5 = 0.5;
 
 // Casas Bahia
-const NivelCasasBahia = 1;
+// Do nível 1 ao 3 não há desconto no frete (1 = 0%)
+// No nível 4 há desconto de 40% no frete (0.6 = 40%)
+// No nível 5 há desconto de 50% no frete (0.5 = 50%)
+const NivelCasasBahia1 = 1;
+const NivelCasasBahia2 = 1;
+const NivelCasasBahia3 = 1;
+const NivelCasasBahia4 = 0.6;
+const NivelCasasBahia5 = 0.5;
+
 
 // Magalu
+// Do nível 1 ao 3 não há desconto no frete (1 = 0%)
+// No nível 4 há desconto de 25% no frete (0.75 = 25%)
+// No nível 5 há desconto de 50% no frete (0.5 = 50%)
 const NivelMagalu1 = 1;
 const NivelMagalu2 = 1;
-const NivelMagalu3 = 0.6;
+const NivelMagalu3 = 0.75;
 const NivelMagalu4 = 0.5;
 const NivelMagalu5 = 0.5;
 
@@ -313,14 +340,15 @@ const NivelSiteAtacado = 1;
 // Não há taxa fixa
 const TaxaAmericanas = 0;
 
-// Americanas
+// Casas Bahia
+// Não há taxa fixa
 const TaxaCasasBahia = 0;
 
 // Magalu
+// Até R$ 9,99 não há taxa fixa
+// Acima de R$ 10 há taxa fixa de R$ 5
 const TaxaMagalu_ATE10 = 0;
-const TaxaMagalu_10A40 = 5;
-const TaxaMagalu_40A79 = 5;
-const TaxaMagalu_ACIMA79 = 5;
+const TaxaMagalu_ACIMA10 = 5;
 
 // Mercado Livre
 const TaxaMercadoLivre_ATE79 = 6;
