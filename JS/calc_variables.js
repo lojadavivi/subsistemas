@@ -11,180 +11,30 @@ const cnpjVIVI = 0.06;
 
 // ----------------------------------------
 
-// COMISSÃO POR CATEGORIA
+// COMISSÃO
 
-// Americanas:  todos os produtos que vendemos atualmente entram na taxa de 17%
-// Casas Bahia: todos os produtos que vendemos atualmente entram na taxa de 21%
-// Magalu:      todos os produtos que vendemos atualmente entram na taxa de 18%
+// Americanas:      17%
+// Casas Bahia:     21%
+// Magalu:          18%
+// Mercado Livre:   13% clássico e 18% premium
+// Olist:           21%
+// RD:              18%
+// Shopee:          20%
+// WebContinental:  ?
+// SiteUool:        ?
+// SiteAtacado:     ?
 
-// 01 - Bronzeador ou protetor solar
-const CategoriaAmericanas01 = 0.17;
-const CategoriaCasasBahia01 = 0.21;
-const CategoriaMagalu01 = 0.18;
-const CategoriaMercadoLivreClassico01 = 0.13;
-const CategoriaMercadoLivrePremium01 = 0.18;
-const CategoriaOlist01 = 0;
-const CategoriaRD01 = 0;
-const CategoriaShopee01 = 0.2;
-const CategoriaWebContinental01 = 0;
-const CategoriaSiteUool01 = 0;
-const CategoriaSiteAtacado01 = 0;
-
-// 02 - Creme depilatório
-const CategoriaAmericanas02 = 0.17;
-const CategoriaCasasBahia02 = 0.21;
-const CategoriaMagalu02 = 0.18;
-const CategoriaMercadoLivreClassico02 = 0.13;
-const CategoriaMercadoLivrePremium02 = 0.18;
-const CategoriaOlist02 = 0;
-const CategoriaRD02 = 0;
-const CategoriaShopee02 = 0.2;
-const CategoriaWebContinental02 = 0;
-const CategoriaSiteUool02 = 0;
-const CategoriaSiteAtacado02 = 0;
-
-// 03 - Desodorante
-const CategoriaAmericanas03 = 0.17;
-const CategoriaCasasBahia03 = 0.21;
-const CategoriaMagalu03 = 0.18;
-const CategoriaMercadoLivreClassico03 = 0.13;
-const CategoriaMercadoLivrePremium03 = 0.18;
-const CategoriaOlist03 = 0;
-const CategoriaRD03 = 0;
-const CategoriaShopee03 = 0.2;
-const CategoriaWebContinental03 = 0;
-const CategoriaSiteUool03 = 0;
-const CategoriaSiteAtacado03 = 0;
-
-// 04 - Escova ou pente de cabelo
-const CategoriaAmericanas04 = 0.17;
-const CategoriaCasasBahia04 = 0.21;
-const CategoriaMagalu04 = 0.18;
-const CategoriaMercadoLivreClassico04 = 0.12;
-const CategoriaMercadoLivrePremium04 = 0.17;
-const CategoriaOlist04 = 0;
-const CategoriaRD04 = 0;
-const CategoriaShopee04 = 0.2;
-const CategoriaWebContinental04 = 0;
-const CategoriaSiteUool04 = 0;
-const CategoriaSiteAtacado04 = 0;
-
-// 05 - Espuma de barbear
-const CategoriaAmericanas05 = 0.17;
-const CategoriaCasasBahia05 = 0.21;
-const CategoriaMagalu05 = 0.18;
-const CategoriaMercadoLivreClassico05 = 0.13;
-const CategoriaMercadoLivrePremium05 = 0.18;
-const CategoriaOlist05 = 0;
-const CategoriaRD05 = 0;
-const CategoriaShopee05 = 0.2;
-const CategoriaWebContinental05 = 0;
-const CategoriaSiteUool05 = 0;
-const CategoriaSiteAtacado05 = 0;
-
-// 06 - Fixador de cabelo
-const CategoriaAmericanas06 = 0.17;
-const CategoriaCasasBahia06 = 0.21;
-const CategoriaMagalu06 = 0.18;
-const CategoriaMercadoLivreClassico06 = 0.12;
-const CategoriaMercadoLivrePremium06 = 0.17;
-const CategoriaOlist06 = 0;
-const CategoriaRD06 = 0;
-const CategoriaShopee06 = 0.2;
-const CategoriaWebContinental06 = 0;
-const CategoriaSiteUool06 = 0;
-const CategoriaSiteAtacado06 = 0;
-
-// 07 - Maquinário ou eletrônico
-const CategoriaAmericanas07 = 0.17;
-const CategoriaCasasBahia07 = 0.21;
-const CategoriaMagalu07 = 0.18;
-const CategoriaMercadoLivreClassico07 = 0.12;
-const CategoriaMercadoLivrePremium07 = 0.17;
-const CategoriaOlist07 = 0;
-const CategoriaRD07 = 0;
-const CategoriaShopee07 = 0.2;
-const CategoriaWebContinental07 = 0;
-const CategoriaSiteUool07 = 0;
-const CategoriaSiteAtacado07 = 0;
-
-// 08 - Pele ou unha
-const CategoriaAmericanas08 = 0.17;
-const CategoriaCasasBahia08 = 0;
-const CategoriaMagalu08 = 0.18;
-const CategoriaMercadoLivreClassico08 = 0.12;
-const CategoriaMercadoLivrePremium08 = 0.17;
-const CategoriaOlist08 = 0;
-const CategoriaRD08 = 0;
-const CategoriaShopee08 = 0.2;
-const CategoriaWebContinental08 = 0;
-const CategoriaSiteUool08 = 0;
-const CategoriaSiteAtacado08 = 0;
-
-// 09 - Repelente
-const CategoriaAmericanas09 = 0.17;
-const CategoriaCasasBahia09 = 0.21;
-const CategoriaMagalu09 = 0.18;
-const CategoriaMercadoLivreClassico09 = 0.115;
-const CategoriaMercadoLivrePremium09 = 0.165;
-const CategoriaOlist09 = 0;
-const CategoriaRD09 = 0;
-const CategoriaShopee09 = 0.2;
-const CategoriaWebContinental09 = 0;
-const CategoriaSiteUool09 = 0;
-const CategoriaSiteAtacado09 = 0;
-
-// 10 - Sabonete
-const CategoriaAmericanas10 = 0.17;
-const CategoriaCasasBahia10 = 0.21;
-const CategoriaMagalu10 = 0.18;
-const CategoriaMercadoLivreClassico10 = 0.13;
-const CategoriaMercadoLivrePremium10 = 0.18;
-const CategoriaOlist10 = 0;
-const CategoriaRD10 = 0;
-const CategoriaShopee10 = 0.2;
-const CategoriaWebContinental10 = 0;
-const CategoriaSiteUool10 = 0;
-const CategoriaSiteAtacado10 = 0;
-
-// 11 - Shampoo/Cond/Masc capilar
-const CategoriaAmericanas11 = 0.17;
-const CategoriaCasasBahia11 = 0.21;
-const CategoriaMagalu11 = 0.18;
-const CategoriaMercadoLivreClassico11 = 0.13;
-const CategoriaMercadoLivrePremium11 = 0.18;
-const CategoriaOlist11 = 0;
-const CategoriaRD11 = 0;
-const CategoriaShopee11 = 0.2;
-const CategoriaWebContinental11 = 0;
-const CategoriaSiteUool11 = 0;
-const CategoriaSiteAtacado11 = 0;
-
-// 12 - Tinta capilar
-const CategoriaAmericanas12 = 0.17;
-const CategoriaCasasBahia12 = 0.21;
-const CategoriaMagalu12 = 0.18;
-const CategoriaMercadoLivreClassico12 = 0.12;
-const CategoriaMercadoLivrePremium12 = 0.17;
-const CategoriaOlist12 = 0;
-const CategoriaRD12 = 0;
-const CategoriaShopee12 = 0.2;
-const CategoriaWebContinental12 = 0;
-const CategoriaSiteUool12 = 0;
-const CategoriaSiteAtacado12 = 0;
-
-// 13 - Utensílio ou acessório de beleza
-const CategoriaAmericanas13 = 0.17;
-const CategoriaCasasBahia13 = 0.21;
-const CategoriaMagalu13 = 0.18;
-const CategoriaMercadoLivreClassico13 = 0.12;
-const CategoriaMercadoLivrePremium13 = 0.17;
-const CategoriaOlist13 = 0;
-const CategoriaRD13 = 0;
-const CategoriaShopee13 = 0.2;
-const CategoriaWebContinental13 = 0;
-const CategoriaSiteUool13 = 0;
-const CategoriaSiteAtacado13 = 0;
+const ComissaoAmericanas = 0.17;
+const ComissaoCasasBahia = 0.21;
+const ComissaoMagalu = 0.18;
+const ComissaoMercadoLivreClassico = 0.13;
+const ComissaoMercadoLivrePremium = 0.18;
+const ComissaoOlist = 0.21;
+const ComissaoRD = 0.18;
+const ComissaoShopee = 0.2;
+const ComissaoWebContinental = 999;
+const ComissaoSiteUool = 999;
+const ComissaoSiteAtacado = 999;
 
 // ----------------------------------------
 
@@ -238,34 +88,53 @@ const FreteMagalu_ACIMA79_17a23KG = 62.9;
 const FreteMagalu_ACIMA79_23a30KG = 67.9;
 
 // Mercado Livre
-const FreteMercadoLivreGratis = 0;
-const FreteMercadoLivre_ate300G = 35.9;
-const FreteMercadoLivre_300a500G = 36.9;
-const FreteMercadoLivre_500Ga1KG = 40.9;
-const FreteMercadoLivre_1a2KG = 42.9;
-const FreteMercadoLivre_2a5KG = 52.9;
-const FreteMercadoLivre_5a9KG = 77.9;
-const FreteMercadoLivre_9a13KG = 121.9;
-const FreteMercadoLivre_13a17KG = 135.9;
-const FreteMercadoLivre_17a23KG = 158.9;
-const FreteMercadoLivre_23a30KG = 182.9;
+// Até 78,99 o frete é pago pelo cliente
+// Acima de 79 o frete é pago pelo vendedor
+const FreteMercadoLivre_ATE79 = 0;
+const FreteMercadoLivre_ACIMA79_ate300G = 40.90;
+const FreteMercadoLivre_ACIMA79_300a500G = 41.9;
+const FreteMercadoLivre_ACIMA79_500Ga1KG = 43.9;
+const FreteMercadoLivre_ACIMA79_1a2KG = 46.9;
+const FreteMercadoLivre_ACIMA79_2a5KG = 51.9;
+const FreteMercadoLivre_ACIMA79_5a9KG = 83.9;
+const FreteMercadoLivre_ACIMA79_9a13KG = 131.9;
+const FreteMercadoLivre_ACIMA79_13a17KG = 146.9;
+const FreteMercadoLivre_ACIMA79_17a23KG = 171.9;
+const FreteMercadoLivre_ACIMA79_23a30KG = 197.9;
 
 // Olist
-const FreteOlist = 0;
+// Até 78,99 o frete é pago pelo cliente
+// Acima de 79 o frete é pago pelo vendedor
+const FreteOlist_ATE79 = 0;
+const FreteOlist_ACIMA79_ate300G = 37.9;
+const FreteOlist_ACIMA79_300a500G = 38.9;
+const FreteOlist_ACIMA79_500Ga1KG = 42.9;
+const FreteOlist_ACIMA79_1a2KG = 44.9;
+const FreteOlist_ACIMA79_2a5KG = 52.9;
+const FreteOlist_ACIMA79_5a9KG = 81.9;
+const FreteOlist_ACIMA79_9a13KG = 127.9;
+const FreteOlist_ACIMA79_13a17KG = 142.9;
+const FreteOlist_ACIMA79_17a23KG = 166.9;
+const FreteOlist_ACIMA79_23a30KG = 191.9;
 
 // RD
+// O frete é pago pelo cliente
 const FreteRD = 0;
 
 // Shopee
+// O frete é pago pelo cliente
 const FreteShopee = 0;
 
 // Web Continental
-const FreteWebContinental = 0;
+// ?
+const FreteWebContinental = 999;
 
 // Site Uool
+// O frete é pago pelo cliente
 const FreteSiteUool = 0;
 
 // Site Atacado
+// O frete é pago pelo cliente
 const FreteSiteAtacado = 0;
 
 // ----------------------------------------
@@ -273,9 +142,9 @@ const FreteSiteAtacado = 0;
 // DESCONTO (%) POR NÍVEL
 
 // Americanas
-// Do nível 1 ao 3 não há desconto no frete (1 = 0%)
-// No nível 4 há desconto de 40% no frete (0.6 = 40%)
-// No nível 5 há desconto de 50% no frete (0.5 = 50%)
+// 1 ao 3:  não há (1)
+// 4:       40% (0.6)
+// 5:       50% (0.5)
 const NivelAmericanas1 = 1;
 const NivelAmericanas2 = 1;
 const NivelAmericanas3 = 1;
@@ -283,9 +152,9 @@ const NivelAmericanas4 = 0.6;
 const NivelAmericanas5 = 0.5;
 
 // Casas Bahia
-// Do nível 1 ao 3 não há desconto no frete (1 = 0%)
-// No nível 4 há desconto de 40% no frete (0.6 = 40%)
-// No nível 5 há desconto de 50% no frete (0.5 = 50%)
+// 1 ao 3:  não há (1)
+// 4:       40% (0.6)
+// 5:       50% (0.5)
 const NivelCasasBahia1 = 1;
 const NivelCasasBahia2 = 1;
 const NivelCasasBahia3 = 1;
@@ -294,9 +163,9 @@ const NivelCasasBahia5 = 0.5;
 
 
 // Magalu
-// Do nível 1 ao 3 não há desconto no frete (1 = 0%)
-// No nível 4 há desconto de 25% no frete (0.75 = 25%)
-// No nível 5 há desconto de 50% no frete (0.5 = 50%)
+// 1 ao 3:  não há (1)
+// 4:       25% (0.75)
+// 5:       50% (0.5)
 const NivelMagalu1 = 1;
 const NivelMagalu2 = 1;
 const NivelMagalu3 = 0.75;
@@ -304,6 +173,9 @@ const NivelMagalu4 = 0.5;
 const NivelMagalu5 = 0.5;
 
 // Mercado Livre
+// 1 e 2:   não há (1)
+// 3:       40% (0.6)
+// 4 e 5:   50% (0.5)
 const NivelMercadoLivre1 = 1;
 const NivelMercadoLivre2 = 1;
 const NivelMercadoLivre3 = 0.6;
@@ -311,25 +183,35 @@ const NivelMercadoLivre4 = 0.5;
 const NivelMercadoLivre5 = 0.5;
 
 // Olist
-const NivelOlist1 = 1;
-const NivelOlist2 = 1;
-const NivelOlist3 = 1;
-const NivelOlist4 = 1;
-const NivelOlist5 = 1;
+// 1:       30% (0.7)
+// 2:       35% (0.65)
+// 3:       40% (0.6)
+// 4:       45% (0.55)
+// 5:       50% (0.5)
+const NivelOlist1 = 0.7;
+const NivelOlist2 = 0.65;
+const NivelOlist3 = 0.6;
+const NivelOlist4 = 0.55;
+const NivelOlist5 = 0.5;
 
 // RD
+// Não há
 const NivelRD = 1;
 
-// Web Continental
-const NivelWebContinental = 1;
-
 // Shopee
+// Não há
 const NivelShopee = 1;
 
+// Web Continental
+// ?
+const NivelWebContinental = 999;
+
 // Site Uool
+// Não há
 const NivelSiteUool = 1;
 
 // Site Atacado
+// Não há
 const NivelSiteAtacado = 1;
 
 // ----------------------------------------
@@ -345,37 +227,47 @@ const TaxaAmericanas = 0;
 const TaxaCasasBahia = 0;
 
 // Magalu
-// Até R$ 9,99 não há taxa fixa
-// Acima de R$ 10 há taxa fixa de R$ 5
+// Até R$ 9,99:     não há
+// Acima de R$ 10:  R$ 5
 const TaxaMagalu_ATE10 = 0;
 const TaxaMagalu_ACIMA10 = 5;
 
 // Mercado Livre
-const TaxaMercadoLivre_ATE79 = 6;
-const TaxaMercadoLivre_ACIMA79 = 0;
+// Até R$ 29,99:        R$ 1
+// De R$ 30 a 49,99:    R$ 2
+// De R$ 50 a 99,99:    R$ 4
+// De R$ 100 a 198,99:  R$ 6
+// Acima de R$ 199:     não há
+const TaxaMercadoLivre_ATE29 = 1;
+const TaxaMercadoLivre_DE30A49 = 2;
+const TaxaMercadoLivre_DE50A99 = 4;
+const TaxaMercadoLivre_DE100A199 = 6;
+const TaxaMercadoLivre_ACIMA199 = 0;
 
 // Olist
-const TaxaOlist = 0;
+// Até R$ 78,99:        R$ 5
+// Acima de R$ 79:      não há
+const TaxaOlist_ATE79 = 5;
+const TaxaOlist_ACIMA79 = 0;
 
 // RD
+// Não há
 const TaxaRD = 0;
 
-// Web Continental
-const TaxaWebContinental = 0;
-
 // Shopee
+// Taxa fixa de R$ 3
 const TaxaShopee = 3;
 
+// Web Continental
+// ?
+const TaxaWebContinental = 999;
+
 // Site Uool
-const TaxaSiteUool_ATE10 = 0;
-const TaxaSiteUool_10A40 = 0;
-const TaxaSiteUool_40A79 = 0;
-const TaxaSiteUool_ACIMA79 = 0;
+// Verificar cartão de crédito em 1 e 12x
+const TaxaSiteUool_01x = 0;
 const TaxaSiteUool_12x = 0.1306;
 
 // Site Atacado
-const TaxaSiteAtacado_ATE10 = 0;
-const TaxaSiteAtacado_10A40 = 0;
-const TaxaSiteAtacado_40A79 = 0;
-const TaxaSiteAtacado_ACIMA79 = 0;
+// Verificar cartão de crédito em 1 e 12x
+const TaxaSiteAtacado_01x = 0;
 const TaxaSiteAtacado_12x = 0.1306;

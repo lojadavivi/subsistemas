@@ -165,6 +165,15 @@ CALCULADORA
     </thead>
     <tbody>
         <tr>
+            <td>4.2.2 <br> 05/04/2024</td>
+            <td>
+                <ul>
+                    <li>Cadastradas e atualizadas as variáveis de todos os marketplaces exceto WebContinental.</li>
+                    <li>Removida opção de categoria. A taxa de comissão por categoria será calculada pela mais alta por marketplace.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
             <td>4.2.1 <br> 04/04/2024</td>
             <td>
                 <ul>

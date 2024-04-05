@@ -98,6 +98,7 @@
 					<th>CNPJ</th>
 					<th>NÍVEL</th>
 					<th>PESO</th>
+					<th>CUSTO</th>
 				</tr>
 				<tr style="background-color: #2e2047;" class="tabela_calc background-color-change">
 					<td>
@@ -119,7 +120,7 @@
 							<option value="1">1</option>
 						</select>
 					</td>
-					<td>
+					<td style="background-color: #2e2047;" class="background-color-change">
 						<select class="input_calc" id="peso" name="peso" onchange="calcular()">
 							<option value="Selecione">Selecione...</option>
 							<option value="até 0.3kg">até 0.3kg</option>
@@ -134,36 +135,10 @@
 							<option value="23 a 30kg">23 a 30kg</option>
 						</select>
 					</td>
-				</tr>
-				<tr style="background-color: none;" class="tabela_calc">
-					<td colspan="3"></td>
-				</tr>
-				<tr style="background-color: #2e2047;" class="tabela_calc background-color-change">
-					<th colspan="2">CATEGORIA</th>
-					<th>CUSTO</th>
-				</tr>
-				<td colspan="2" style="background-color: #2e2047;" class="background-color-change">
-					<select class="input_calc" id="categoria" name="categoria" onchange="calcular()">
-						<option value="Selecione">Selecione...</option>
-						<option value="Bronzeador ou protetor">Bronzeador ou protetor</option>
-						<option value="Creme depilatório">Creme depilatório</option>
-						<option value="Desodorante">Desodorante</option>
-						<option value="Escova ou pente de cabelo">Escova ou pente de cabelo</option>
-						<option value="Espuma de barbear">Espuma de barbear</option>
-						<option value="Fixador de cabelo">Fixador de cabelo</option>
-						<option value="Maquinário ou eletrônico">Maquinário ou eletrônico</option>
-						<option value="Pele ou unha">Pele ou unha</option>
-						<option value="Repelente">Repelente</option>
-						<option value="Sabonete">Sabonete</option>
-						<option value="Shampoo/Cond/Masc capilar">Shampoo/Cond/Masc capilar</option>
-						<option value="Tinta capilar">Tinta capilar</option>
-						<option value="Utensílio ou acessório de beleza">Utensílio ou acessório de beleza</option>
-					</select>
-				</td>
-				<td style="background-color: #2e2047;" class="background-color-change">
-					R$ <input class="input_calc" style="width: 10ch" id="custo" name="custo" placeholder="0,00"
-						onkeyup="calcular()">
-				</td>
+					<td style="background-color: #2e2047;" class="background-color-change">
+						R$ <input class="input_calc" style="width: 10ch" id="custo" name="custo" placeholder="0,00"
+							onkeyup="calcular()">
+					</td>
 				</tr>
 			</tbody>
 		</table>
@@ -210,14 +185,16 @@
 				</tr>
 				<tr style="text-align: center;">
 					<td style="color: #ffe893; font-weight: bold;">R$ <input class="input_calc"
-							style="color: #ffe893; width: 10ch;" type="number" id="VendaManual" name="VendaManual" onkeyup="calcular()">
+							style="color: #ffe893; width: 10ch;" type="number" id="VendaManual" name="VendaManual"
+							onkeyup="calcular()">
 					</td>
 					<td style="color: #aeffac; font-weight: bold;">R$ <input class="input_calc"
-							style="color: #aeffac; width: 10ch;" type="number" id="VendaValorLiquido" name="VendaValorLiquido" onkeyup="calcular()">
+							style="color: #aeffac; width: 10ch;" type="number" id="VendaValorLiquido"
+							name="VendaValorLiquido" onkeyup="calcular()">
 					</td>
 					<td style="color: #aeffac; font-weight: bold;"><input class="input_calc"
-							style="color: #aeffac; width: 10ch; text-align: right;" type="number" id="VendaPorcentagemLiquida" name="VendaPorcentagemLiquida"
-							onkeyup="calcular()"> %</td>
+							style="color: #aeffac; width: 10ch; text-align: right;" type="number"
+							id="VendaPorcentagemLiquida" name="VendaPorcentagemLiquida" onkeyup="calcular()"> %</td>
 				</tr>
 				<tr style="height: 4ch; background-color: #2e2047;" class="background-color-change">
 					<th style="width: 23ch;">MARKETPLACE</th>
@@ -226,63 +203,72 @@
 					<th style="width: 23ch;">SUGESTÃO DE VENDA</th>
 				</tr>
 				<tr>
-					<td style="height: 4ch; text-align: right; background-color: #2e2047;" class="background-color-change">AMERICANAS
+					<td style="height: 4ch; text-align: right; background-color: #2e2047;"
+						class="background-color-change">AMERICANAS
 					</td>
 					<td id="resultado-Americanas-VendaManual">MANUTENÇÃO</td>
 					<td id="resultado-Americanas-VendaValorLiquido">MANUTENÇÃO</td>
 					<td id="resultado-Americanas-VendaPorcentagemLiquida">MANUTENÇÃO</td>
 				</tr>
 				<tr>
-					<td style="height: 4ch; text-align: right; background-color: #2e2047;" class="background-color-change">CASAS
+					<td style="height: 4ch; text-align: right; background-color: #2e2047;"
+						class="background-color-change">CASAS
 						BAHIA</td>
 					<td id="resultado-CasasBahia-VendaManual">MANUTENÇÃO</td>
 					<td id="resultado-CasasBahia-VendaValorLiquido">MANUTENÇÃO</td>
 					<td id="resultado-CasasBahia-VendaPorcentagemLiquida">MANUTENÇÃO</td>
 				</tr>
 				<tr>
-					<td style="height: 4ch; text-align: right; background-color: #2e2047;" class="background-color-change">MAGALU
+					<td style="height: 4ch; text-align: right; background-color: #2e2047;"
+						class="background-color-change">MAGALU
 					</td>
 					<td id="resultado-Magalu-VendaManual"></td>
 					<td id="resultado-Magalu-VendaValorLiquido"></td>
 					<td id="resultado-Magalu-VendaPorcentagemLiquida"></td>
 				</tr>
 				<tr>
-					<td style="height: 4ch; text-align: right; background-color: #2e2047;" class="background-color-change">MERCADO
+					<td style="height: 4ch; text-align: right; background-color: #2e2047;"
+						class="background-color-change">MERCADO
 						LIVRE CLÁSSICO</td>
 					<td id="resultado-MercadoLivreClassico-VendaManual"></td>
 					<td id="resultado-MercadoLivreClassico-VendaValorLiquido"></td>
 					<td id="resultado-MercadoLivreClassico-VendaPorcentagemLiquida"></td>
 				</tr>
 				<tr>
-					<td style="height: 4ch; text-align: right; background-color: #2e2047;" class="background-color-change">MERCADO
+					<td style="height: 4ch; text-align: right; background-color: #2e2047;"
+						class="background-color-change">MERCADO
 						LIVRE PREMIUM</td>
 					<td id="resultado-MercadoLivrePremium-VendaManual"></td>
 					<td id="resultado-MercadoLivrePremium-VendaValorLiquido"></td>
 					<td id="resultado-MercadoLivrePremium-VendaPorcentagemLiquida"></td>
 				</tr>
 				<tr>
-					<td style="height: 4ch; text-align: right; background-color: #2e2047;" class="background-color-change">OLIST
+					<td style="height: 4ch; text-align: right; background-color: #2e2047;"
+						class="background-color-change">OLIST
 					</td>
 					<td id="resultado-Olist-VendaManual">MANUTENÇÃO</td>
 					<td id="resultado-Olist-VendaValorLiquido">MANUTENÇÃO</td>
 					<td id="resultado-Olist-VendaPorcentagemLiquida">MANUTENÇÃO</td>
 				</tr>
 				<tr>
-					<td style="height: 4ch; text-align: right; background-color: #2e2047;" class="background-color-change">RD
+					<td style="height: 4ch; text-align: right; background-color: #2e2047;"
+						class="background-color-change">RD
 					</td>
 					<td id="resultado-RD-VendaManual">MANUTENÇÃO</td>
 					<td id="resultado-RD-VendaValorLiquido">MANUTENÇÃO</td>
 					<td id="resultado-RD-VendaPorcentagemLiquida">MANUTENÇÃO</td>
 				</tr>
 				<tr>
-					<td style="height: 4ch; text-align: right; background-color: #2e2047;" class="background-color-change">SHOPEE
+					<td style="height: 4ch; text-align: right; background-color: #2e2047;"
+						class="background-color-change">SHOPEE
 					</td>
 					<td id="resultado-Shopee-VendaManual"></td>
 					<td id="resultado-Shopee-VendaValorLiquido"></td>
 					<td id="resultado-Shopee-VendaPorcentagemLiquida"></td>
 				</tr>
 				<tr>
-					<td style="height: 4ch; text-align: right; background-color: #2e2047;" class="background-color-change">WEB CONTINENTAL
+					<td style="height: 4ch; text-align: right; background-color: #2e2047;"
+						class="background-color-change">WEB CONTINENTAL
 					</td>
 					<td id="resultado-WebContinental-VendaManual">MANUTENÇÃO</td>
 					<td id="resultado-WebContinental-VendaValorLiquido">MANUTENÇÃO</td>
@@ -316,7 +302,7 @@
 			</tbody>
 		</table>
 	</section>
-	<p style="text-align: right;">Versão 4.2.1 de 04/04/2024</p>
+	<p style="text-align: right;">Versão 4.2.2 de 05/04/2024</p>
 	<footer>
 		<div class="footer">
 			Desenvolvido por
