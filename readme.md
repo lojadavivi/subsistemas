@@ -165,6 +165,14 @@ CALCULADORA
     </thead>
     <tbody>
         <tr>
+            <td>4.2.3 <br> 09/04/2024</td>
+            <td>
+                <ul>
+                    <li>Reescritas todas as fórmulas de cálculo manual.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
             <td>4.2.2 <br> 05/04/2024</td>
             <td>
                 <ul>

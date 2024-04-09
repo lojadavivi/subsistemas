@@ -21,8 +21,8 @@ const cnpjVIVI = 0.06;
 // RD:              18%
 // Shopee:          20%
 // WebContinental:  ?
-// SiteUool:        ?
-// SiteAtacado:     ?
+// SiteUool:        4,69% em 1x e 19,13% em 12x
+// SiteAtacado:     4,59% em 1x e 23,87% em 12x
 
 const ComissaoAmericanas = 0.17;
 const ComissaoCasasBahia = 0.21;
@@ -33,8 +33,10 @@ const ComissaoOlist = 0.21;
 const ComissaoRD = 0.18;
 const ComissaoShopee = 0.2;
 const ComissaoWebContinental = 999;
-const ComissaoSiteUool = 999;
-const ComissaoSiteAtacado = 999;
+const ComissaoSiteUool1x = 0.0469;
+const ComissaoSiteUool12x = 0.1913
+const ComissaoSiteAtacado1x = 0.0459;
+const ComissaoSiteAtacado12x = 0.2387;
 
 // ----------------------------------------
 
@@ -263,11 +265,9 @@ const TaxaShopee = 3;
 const TaxaWebContinental = 999;
 
 // Site Uool
-// Verificar cartão de crédito em 1 e 12x
-const TaxaSiteUool_01x = 0;
-const TaxaSiteUool_12x = 0.1306;
+// Não há
+const TaxaSiteUool = 0;
 
 // Site Atacado
-// Verificar cartão de crédito em 1 e 12x
-const TaxaSiteAtacado_01x = 0;
-const TaxaSiteAtacado_12x = 0.1306;
+// Taxa fixa de R$ 0,50
+const TaxaSiteAtacado = 0.50;
