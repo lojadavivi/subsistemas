@@ -48,16 +48,16 @@ const ComissaoSiteAtacado12x = 0.2387;
 // Acima de R$ 90 o frete é pago pelo vendedor, com um desconto baseado no nível
 const FreteAmericanas_ATE40 = 0;
 const FreteAmericanas_DE40A89 = 12.9;
-const FreteAmericanas_ACIMA79_ate300G = 37.9;
-const FreteAmericanas_ACIMA79_300a500G = 37.9;
-const FreteAmericanas_ACIMA79_500Ga1KG = 40.9;
-const FreteAmericanas_ACIMA79_1a2KG = 41.9;
-const FreteAmericanas_ACIMA79_2a5KG = 50.9;
-const FreteAmericanas_ACIMA79_5a9KG = 72.9;
-const FreteAmericanas_ACIMA79_9a13KG = 96.9;
-const FreteAmericanas_ACIMA79_13a17KG = 113.9;
-const FreteAmericanas_ACIMA79_17a23KG = 121.9;
-const FreteAmericanas_ACIMA79_23a30KG = 128.9;
+const FreteAmericanas_ACIMA90_ate300G = 37.9;
+const FreteAmericanas_ACIMA90_300a500G = 37.9;
+const FreteAmericanas_ACIMA90_500Ga1KG = 40.9;
+const FreteAmericanas_ACIMA90_1a2KG = 41.9;
+const FreteAmericanas_ACIMA90_2a5KG = 50.9;
+const FreteAmericanas_ACIMA90_5a9KG = 72.9;
+const FreteAmericanas_ACIMA90_9a13KG = 96.9;
+const FreteAmericanas_ACIMA90_13a17KG = 113.9;
+const FreteAmericanas_ACIMA90_17a23KG = 121.9;
+const FreteAmericanas_ACIMA90_23a30KG = 128.9;
 
 // Casas Bahia
 // Até 69,89 o frete é pago pelo cliente

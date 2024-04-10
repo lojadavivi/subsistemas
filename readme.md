@@ -165,6 +165,16 @@ CALCULADORA
     </thead>
     <tbody>
         <tr>
+            <td>4.2.4 <br> 10/04/2024</td>
+            <td>
+                <ul>
+                    <li>Reescritas todas as fórmulas de cálculo por valor líquido.</li>
+                    <li>Reescritas todas as fórmulas de cálculo por porcentagem líquida.</li>
+                    <li>Marketplaces RD e WebContinental marcados para manutenção, por falta de dados sobre taxas.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
             <td>4.2.3 <br> 09/04/2024</td>
             <td>
                 <ul>
