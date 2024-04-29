@@ -165,6 +165,14 @@ CALCULADORA
     </thead>
     <tbody>
         <tr>
+            <td>4.2.5 <br> 29/04/2024</td>
+            <td>
+                <ul>
+                    <li>Atualizadas taxas de frete do Magalu para a nova política de frete, valendo a partir de 01/05/2024.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
             <td>4.2.4 <br> 10/04/2024</td>
             <td>
                 <ul>

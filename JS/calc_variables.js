@@ -78,16 +78,16 @@ const FreteCasasBahia_ACIMA79_23a30KG = 119.9;
 // Até 78,99 o frete é pago pelo cliente
 // Acima de 79 o frete é pago pelo vendedor
 const FreteMagalu_ATE79 = 0;
-const FreteMagalu_ACIMA79_ate300G = 27.9;
-const FreteMagalu_ACIMA79_300a500G = 27.9;
-const FreteMagalu_ACIMA79_500Ga1KG = 32.9;
-const FreteMagalu_ACIMA79_1a2KG = 35.9;
-const FreteMagalu_ACIMA79_2a5KG = 44.9;
-const FreteMagalu_ACIMA79_5a9KG = 47.9;
-const FreteMagalu_ACIMA79_9a13KG = 52.9;
-const FreteMagalu_ACIMA79_13a17KG = 57.9;
-const FreteMagalu_ACIMA79_17a23KG = 62.9;
-const FreteMagalu_ACIMA79_23a30KG = 67.9;
+const FreteMagalu_ACIMA79_ate300G = 29.9;
+const FreteMagalu_ACIMA79_300a500G = 29.9;
+const FreteMagalu_ACIMA79_500Ga1KG = 35.9;
+const FreteMagalu_ACIMA79_1a2KG = 38.9;
+const FreteMagalu_ACIMA79_2a5KG = 46.9;
+const FreteMagalu_ACIMA79_5a9KG = 68.9;
+const FreteMagalu_ACIMA79_9a13KG = 89.9;
+const FreteMagalu_ACIMA79_13a17KG = 102.9;
+const FreteMagalu_ACIMA79_17a23KG = 125.9;
+const FreteMagalu_ACIMA79_23a30KG = 139.9;
 
 // Mercado Livre
 // Até 78,99 o frete é pago pelo cliente
