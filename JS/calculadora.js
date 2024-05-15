@@ -1066,7 +1066,7 @@ function calcular(inputElement) {
     }
 
     // Mercado Livre Clássico Porcentagem Líquida - calcMercadoLivreClassicoPorcentagemLiquida
-    // Entre 50 a 78,99
+    // Até 78,99
     if (
         (
             (
@@ -1239,7 +1239,7 @@ function calcular(inputElement) {
     }
 
     // Mercado Livre Premium Porcentagem Líquida - calcMercadoLivrePremiumPorcentagemLiquida
-    // Entre 50 a 78,99
+    // Até 78,99
     if (
         (
             (
