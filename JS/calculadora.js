@@ -990,120 +990,17 @@ function calcular(inputElement) {
                 ) * constNivelMercadoLivre
             )
             + (
-                VendaManual <= 29.99 ? TaxaMercadoLivre_ATE29 :
-                    VendaManual >= 30 && VendaManual <= 49.99 ? TaxaMercadoLivre_DE30A49 :
-                        VendaManual >= 50 && VendaManual <= 99.99 ? TaxaMercadoLivre_DE50A99 :
-                            VendaManual >= 100 && VendaManual <= 198.99 ? TaxaMercadoLivre_DE100A199 :
-                                VendaManual >= 199 ? TaxaMercadoLivre_ACIMA199 : 0
+                VendaManual <= 78.99 ? TaxaMercadoLivre_ATE79 :
+                    VendaManual >= 79 ? TaxaMercadoLivre_ACIMA79 : 0
             )
         );
 
     // Mercado Livre Clássico Valor Líquido - calcMercadoLivreClassicoValorLiquido
-    // Abaixo de 29,99
+    // Até 78,99
     if (
         (
             (
-                (VendaValorLiquido + custo + TaxaMercadoLivre_ATE29)
-                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivreClassico)
-                    * 100)
-                - 100
-            )
-        ) <= 29.99) {
-
-        calcMercadoLivreClassicoValorLiquido =
-            (
-                (
-                    (VendaValorLiquido + custo + TaxaMercadoLivre_ATE29)
-                    + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoMercadoLivreClassico)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Mercado Livre Clássico Valor Líquido - calcMercadoLivreClassicoValorLiquido
-    // Entre 30 a 49,99
-    else if (
-        (
-            (
-                (VendaValorLiquido + custo + TaxaMercadoLivre_ATE29)
-                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivreClassico)
-                    * 100)
-                - 100
-            )
-        ) >= 30
-        &&
-        (
-            (
-                (VendaValorLiquido + custo + TaxaMercadoLivre_DE30A49)
-                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivreClassico)
-                    * 100)
-                - 100
-            )
-        ) <= 49.99) {
-
-        calcMercadoLivreClassicoValorLiquido =
-            (
-                (
-                    (VendaValorLiquido + custo + TaxaMercadoLivre_DE30A49)
-                    + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoMercadoLivreClassico)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Mercado Livre Clássico Valor Líquido - calcMercadoLivreClassicoValorLiquido
-    // Entre 50 a 78,99
-    else if (
-        (
-            (
-                (VendaValorLiquido + custo + TaxaMercadoLivre_DE30A49)
-                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivreClassico)
-                    * 100)
-                - 100
-            )
-        ) >= 50
-        &&
-        (
-            (
-                (VendaValorLiquido + custo + TaxaMercadoLivre_DE50A99)
+                (VendaValorLiquido + custo + TaxaMercadoLivre_ATE79)
                 + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
             ) * 100)
         /
@@ -1119,7 +1016,7 @@ function calcular(inputElement) {
         calcMercadoLivreClassicoValorLiquido =
             (
                 (
-                    (VendaValorLiquido + custo + TaxaMercadoLivre_DE50A99)
+                    (VendaValorLiquido + custo + TaxaMercadoLivre_ATE79)
                     + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
                 ) * 100)
             /
@@ -1134,11 +1031,11 @@ function calcular(inputElement) {
     }
 
     // Mercado Livre Clássico Valor Líquido - calcMercadoLivreClassicoValorLiquido
-    // Entre 79 a 99,99
+    // Acima de 79
     else if (
         (
             (
-                (VendaValorLiquido + custo + TaxaMercadoLivre_DE50A99)
+                (VendaValorLiquido + custo + TaxaMercadoLivre_ATE79)
                 + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
             ) * 100)
         /
@@ -1149,218 +1046,13 @@ function calcular(inputElement) {
                     * 100)
                 - 100
             )
-        ) >= 79
-        &&
-        (
-            (
-                (VendaValorLiquido + custo + TaxaMercadoLivre_DE50A99)
-                + (constFreteMercadoLivre * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivreClassico)
-                    * 100)
-                - 100
-            )
-        ) <= 99.99) {
+        ) >= 79) {
 
         calcMercadoLivreClassicoValorLiquido =
             (
                 (
-                    (VendaValorLiquido + custo + TaxaMercadoLivre_DE50A99)
+                    (VendaValorLiquido + custo + TaxaMercadoLivre_ACIMA79)
                     + (constFreteMercadoLivre * constNivelMercadoLivre)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoMercadoLivreClassico)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Mercado Livre Clássico Valor Líquido - calcMercadoLivreClassicoValorLiquido
-    // Entre 100 a 198,99
-    else if (
-        (
-            (
-                (VendaValorLiquido + custo + TaxaMercadoLivre_DE50A99)
-                + (constFreteMercadoLivre * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivreClassico)
-                    * 100)
-                - 100
-            )
-        ) >= 100
-        &&
-        (
-            (
-                (VendaValorLiquido + custo + TaxaMercadoLivre_DE100A199)
-                + (constFreteMercadoLivre * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivreClassico)
-                    * 100)
-                - 100
-            )
-        ) <= 198.99) {
-
-        calcMercadoLivreClassicoValorLiquido =
-            (
-                (
-                    (VendaValorLiquido + custo + TaxaMercadoLivre_DE100A199)
-                    + (constFreteMercadoLivre * constNivelMercadoLivre)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoMercadoLivreClassico)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Mercado Livre Clássico Valor Líquido - calcMercadoLivreClassicoValorLiquido
-    // Acima de 199
-    else if (
-        (
-            (
-                (VendaValorLiquido + custo + TaxaMercadoLivre_DE100A199)
-                + (constFreteMercadoLivre * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivreClassico)
-                    * 100)
-                - 100
-            )
-        ) >= 199) {
-
-        calcMercadoLivreClassicoValorLiquido =
-            (
-                (
-                    (VendaValorLiquido + custo + TaxaMercadoLivre_ACIMA199)
-                    + (constFreteMercadoLivre * constNivelMercadoLivre)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoMercadoLivreClassico)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Mercado Livre Clássico Porcentagem Líquida - calcMercadoLivreClassicoPorcentagemLiquida
-    // Abaixo de 29,99
-    if (
-        (
-            (
-                (
-                    + (custo)
-                    + ((VendaPorcentagemLiquida * custo) / 100)
-                )
-                + (TaxaMercadoLivre_ATE29)
-                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivreClassico)
-                    * 100)
-                - 100
-            )
-        ) <= 29.99) {
-
-        calcMercadoLivreClassicoPorcentagemLiquida =
-            (
-                (
-                    (
-                        + (custo)
-                        + ((VendaPorcentagemLiquida * custo) / 100)
-                    )
-                    + (TaxaMercadoLivre_ATE29)
-                    + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoMercadoLivreClassico)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Mercado Livre Clássico Porcentagem Líquida - calcMercadoLivreClassicoPorcentagemLiquida
-    // Entre 30 a 49,99
-    else if (
-        (
-            (
-                (
-                    + (custo)
-                    + ((VendaPorcentagemLiquida * custo) / 100)
-                )
-                + (TaxaMercadoLivre_ATE29)
-                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivreClassico)
-                    * 100)
-                - 100
-            )
-        ) >= 30
-        &&
-        (
-            (
-                (
-                    + (custo)
-                    + ((VendaPorcentagemLiquida * custo) / 100)
-                )
-                + (TaxaMercadoLivre_DE30A49)
-                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivreClassico)
-                    * 100)
-                - 100
-            )
-        ) <= 49.99) {
-
-        calcMercadoLivreClassicoPorcentagemLiquida =
-            (
-                (
-                    (
-                        + (custo)
-                        + ((VendaPorcentagemLiquida * custo) / 100)
-                    )
-                    + (TaxaMercadoLivre_DE30A49)
-                    + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
                 ) * 100)
             /
             (
@@ -1375,14 +1067,14 @@ function calcular(inputElement) {
 
     // Mercado Livre Clássico Porcentagem Líquida - calcMercadoLivreClassicoPorcentagemLiquida
     // Entre 50 a 78,99
-    else if (
+    if (
         (
             (
                 (
                     + (custo)
                     + ((VendaPorcentagemLiquida * custo) / 100)
                 )
-                + (TaxaMercadoLivre_DE30A49)
+                + (TaxaMercadoLivre_ATE79)
                 + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
             ) * 100)
         /
@@ -1393,26 +1085,7 @@ function calcular(inputElement) {
                     * 100)
                 - 100
             )
-        ) >= 50
-        &&
-        (
-            (
-                (
-                    + (custo)
-                    + ((VendaPorcentagemLiquida * custo) / 100)
-                )
-                + (TaxaMercadoLivre_DE50A99)
-                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivreClassico)
-                    * 100)
-                - 100
-            )
-        ) <= 78.99) {
+        ) >= 78.99) {
 
         calcMercadoLivreClassicoPorcentagemLiquida =
             (
@@ -1421,7 +1094,7 @@ function calcular(inputElement) {
                         + (custo)
                         + ((VendaPorcentagemLiquida * custo) / 100)
                     )
-                    + (TaxaMercadoLivre_DE50A99)
+                    + (TaxaMercadoLivre_ATE79)
                     + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
                 ) * 100)
             /
@@ -1436,7 +1109,7 @@ function calcular(inputElement) {
     }
 
     // Mercado Livre Clássico Porcentagem Líquida - calcMercadoLivreClassicoPorcentagemLiquida
-    // Entre 79 e 99,99
+    // Acima de 79
     else if (
         (
             (
@@ -1444,7 +1117,7 @@ function calcular(inputElement) {
                     + (custo)
                     + ((VendaPorcentagemLiquida * custo) / 100)
                 )
-                + (TaxaMercadoLivre_DE50A99)
+                + (TaxaMercadoLivre_ATE79)
                 + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
             ) * 100)
         /
@@ -1455,26 +1128,7 @@ function calcular(inputElement) {
                     * 100)
                 - 100
             )
-        ) >= 79
-        &&
-        (
-            (
-                (
-                    + (custo)
-                    + ((VendaPorcentagemLiquida * custo) / 100)
-                )
-                + (TaxaMercadoLivre_DE50A99)
-                + (constFreteMercadoLivre * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivreClassico)
-                    * 100)
-                - 100
-            )
-        ) <= 99.99) {
+        ) >= 79) {
 
         calcMercadoLivreClassicoPorcentagemLiquida =
             (
@@ -1483,112 +1137,7 @@ function calcular(inputElement) {
                         + (custo)
                         + ((VendaPorcentagemLiquida * custo) / 100)
                     )
-                    + (TaxaMercadoLivre_DE50A99)
-                    + (constFreteMercadoLivre * constNivelMercadoLivre)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoMercadoLivreClassico)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Mercado Livre Clássico Porcentagem Líquida - calcMercadoLivreClassicoPorcentagemLiquida
-    // Entre 100 a 198,99
-    else if (
-        (
-            (
-                (
-                    + (custo)
-                    + ((VendaPorcentagemLiquida * custo) / 100)
-                )
-                + (TaxaMercadoLivre_DE50A99)
-                + (constFreteMercadoLivre * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivreClassico)
-                    * 100)
-                - 100
-            )
-        ) >= 100
-        &&
-        (
-            (
-                (
-                    + (custo)
-                    + ((VendaPorcentagemLiquida * custo) / 100)
-                )
-                + (TaxaMercadoLivre_DE100A199)
-                + (constFreteMercadoLivre * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivreClassico)
-                    * 100)
-                - 100
-            )
-        ) <= 198.99) {
-
-        calcMercadoLivreClassicoPorcentagemLiquida =
-            (
-                (
-                    (
-                        + (custo)
-                        + ((VendaPorcentagemLiquida * custo) / 100)
-                    )
-                    + (TaxaMercadoLivre_DE100A199)
-                    + (constFreteMercadoLivre * constNivelMercadoLivre)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoMercadoLivreClassico)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Mercado Livre Clássico Porcentagem Líquida - calcMercadoLivreClassicoPorcentagemLiquida
-    // Acima de 199
-    else if (
-        (
-            (
-                (
-                    + (custo)
-                    + ((VendaPorcentagemLiquida * custo) / 100)
-                )
-                + (TaxaMercadoLivre_DE100A199)
-                + (constFreteMercadoLivre * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivreClassico)
-                    * 100)
-                - 100
-            )
-        ) >= 199) {
-
-        calcMercadoLivreClassicoPorcentagemLiquida =
-            (
-                (
-                    (
-                        + (custo)
-                        + ((VendaPorcentagemLiquida * custo) / 100)
-                    )
-                    + (TaxaMercadoLivre_ACIMA199)
+                    + (TaxaMercadoLivre_ACIMA79)
                     + (constFreteMercadoLivre * constNivelMercadoLivre)
                 ) * 100)
             /
@@ -1609,11 +1158,8 @@ function calcular(inputElement) {
             + (VendaManual * constCnpj)
             + (VendaManual * ComissaoMercadoLivrePremium)
             + (
-                VendaManual <= 29.99 ? TaxaMercadoLivre_ATE29 :
-                    VendaManual >= 30 && VendaManual <= 49.99 ? TaxaMercadoLivre_DE30A49 :
-                        VendaManual >= 50 && VendaManual <= 99.99 ? TaxaMercadoLivre_DE50A99 :
-                            VendaManual >= 100 && VendaManual <= 198.99 ? TaxaMercadoLivre_DE100A199 :
-                                VendaManual >= 199 ? TaxaMercadoLivre_ACIMA199 : 0)
+                VendaManual <= 78.99 ? TaxaMercadoLivre_ATE79 :
+                    VendaManual >= 79 ? TaxaMercadoLivre_ACIMA79 : 0)
             + (
                 (
                     VendaManual <= 78.99 ? FreteMercadoLivre_ATE79 :
@@ -1623,111 +1169,11 @@ function calcular(inputElement) {
         );
 
     // Mercado Livre Premium Valor Líquido - calcMercadoLivrePremiumValorLiquido
-    // Abaixo de 29,99
+    // Até 78,99
     if (
         (
             (
-                (VendaValorLiquido + custo + TaxaMercadoLivre_ATE29)
-                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivrePremium)
-                    * 100)
-                - 100
-            )
-        ) <= 29.99) {
-
-        calcMercadoLivrePremiumValorLiquido =
-            (
-                (
-                    (VendaValorLiquido + custo + TaxaMercadoLivre_ATE29)
-                    + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoMercadoLivrePremium)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Mercado Livre Premium Valor Líquido - calcMercadoLivrePremiumValorLiquido
-    // Entre 30 a 49,99
-    else if (
-        (
-            (
-                (VendaValorLiquido + custo + TaxaMercadoLivre_ATE29)
-                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivrePremium)
-                    * 100)
-                - 100
-            )
-        ) >= 30
-        &&
-        (
-            (
-                (VendaValorLiquido + custo + TaxaMercadoLivre_DE30A49)
-                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivrePremium)
-                    * 100)
-                - 100
-            )
-        ) <= 49.99) {
-
-        calcMercadoLivrePremiumValorLiquido =
-            (
-                (
-                    (VendaValorLiquido + custo + TaxaMercadoLivre_DE30A49)
-                    + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoMercadoLivrePremium)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Mercado Livre Premium Valor Líquido - calcMercadoLivrePremiumValorLiquido
-    // Entre 50 a 78,99
-    else if (
-        (
-            (
-                (VendaValorLiquido + custo + TaxaMercadoLivre_DE30A49)
-                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivrePremium)
-                    * 100)
-                - 100
-            )
-        ) >= 50
-        &&
-        (
-            (
-                (VendaValorLiquido + custo + TaxaMercadoLivre_DE50A99)
+                (VendaValorLiquido + custo + TaxaMercadoLivre_ATE79)
                 + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
             ) * 100)
         /
@@ -1743,7 +1189,7 @@ function calcular(inputElement) {
         calcMercadoLivrePremiumValorLiquido =
             (
                 (
-                    (VendaValorLiquido + custo + TaxaMercadoLivre_DE50A99)
+                    (VendaValorLiquido + custo + TaxaMercadoLivre_ATE79)
                     + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
                 ) * 100)
             /
@@ -1758,11 +1204,11 @@ function calcular(inputElement) {
     }
 
     // Mercado Livre Premium Valor Líquido - calcMercadoLivrePremiumValorLiquido
-    // Entre 79 a 99,99
+    // Acima de 79
     else if (
         (
             (
-                (VendaValorLiquido + custo + TaxaMercadoLivre_DE50A99)
+                (VendaValorLiquido + custo + TaxaMercadoLivre_ATE79)
                 + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
             ) * 100)
         /
@@ -1773,218 +1219,13 @@ function calcular(inputElement) {
                     * 100)
                 - 100
             )
-        ) >= 79
-        &&
-        (
-            (
-                (VendaValorLiquido + custo + TaxaMercadoLivre_DE50A99)
-                + (constFreteMercadoLivre * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivrePremium)
-                    * 100)
-                - 100
-            )
-        ) <= 99.99) {
+        ) >= 79) {
 
         calcMercadoLivrePremiumValorLiquido =
             (
                 (
-                    (VendaValorLiquido + custo + TaxaMercadoLivre_DE50A99)
+                    (VendaValorLiquido + custo + TaxaMercadoLivre_ACIMA79)
                     + (constFreteMercadoLivre * constNivelMercadoLivre)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoMercadoLivrePremium)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Mercado Livre Premium Valor Líquido - calcMercadoLivrePremiumValorLiquido
-    // Entre 100 a 198,99
-    else if (
-        (
-            (
-                (VendaValorLiquido + custo + TaxaMercadoLivre_DE50A99)
-                + (constFreteMercadoLivre * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivrePremium)
-                    * 100)
-                - 100
-            )
-        ) >= 100
-        &&
-        (
-            (
-                (VendaValorLiquido + custo + TaxaMercadoLivre_DE100A199)
-                + (constFreteMercadoLivre * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivrePremium)
-                    * 100)
-                - 100
-            )
-        ) <= 198.99) {
-
-        calcMercadoLivrePremiumValorLiquido =
-            (
-                (
-                    (VendaValorLiquido + custo + TaxaMercadoLivre_DE100A199)
-                    + (constFreteMercadoLivre * constNivelMercadoLivre)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoMercadoLivrePremium)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Mercado Livre Premium Valor Líquido - calcMercadoLivrePremiumValorLiquido
-    // Acima de 199
-    else if (
-        (
-            (
-                (VendaValorLiquido + custo + TaxaMercadoLivre_DE100A199)
-                + (constFreteMercadoLivre * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivrePremium)
-                    * 100)
-                - 100
-            )
-        ) >= 199) {
-
-        calcMercadoLivrePremiumValorLiquido =
-            (
-                (
-                    (VendaValorLiquido + custo + TaxaMercadoLivre_ACIMA199)
-                    + (constFreteMercadoLivre * constNivelMercadoLivre)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoMercadoLivrePremium)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Mercado Livre Premium Porcentagem Líquida - calcMercadoLivrePremiumPorcentagemLiquida
-    // Abaixo de 29,99
-    if (
-        (
-            (
-                (
-                    + (custo)
-                    + ((VendaPorcentagemLiquida * custo) / 100)
-                )
-                + (TaxaMercadoLivre_ATE29)
-                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivrePremium)
-                    * 100)
-                - 100
-            )
-        ) <= 29.99) {
-
-        calcMercadoLivrePremiumPorcentagemLiquida =
-            (
-                (
-                    (
-                        + (custo)
-                        + ((VendaPorcentagemLiquida * custo) / 100)
-                    )
-                    + (TaxaMercadoLivre_ATE29)
-                    + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoMercadoLivrePremium)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Mercado Livre Premium Porcentagem Líquida - calcMercadoLivrePremiumPorcentagemLiquida
-    // Entre 30 a 49,99
-    else if (
-        (
-            (
-                (
-                    + (custo)
-                    + ((VendaPorcentagemLiquida * custo) / 100)
-                )
-                + (TaxaMercadoLivre_ATE29)
-                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivrePremium)
-                    * 100)
-                - 100
-            )
-        ) >= 30
-        &&
-        (
-            (
-                (
-                    + (custo)
-                    + ((VendaPorcentagemLiquida * custo) / 100)
-                )
-                + (TaxaMercadoLivre_DE30A49)
-                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivrePremium)
-                    * 100)
-                - 100
-            )
-        ) <= 49.99) {
-
-        calcMercadoLivrePremiumPorcentagemLiquida =
-            (
-                (
-                    (
-                        + (custo)
-                        + ((VendaPorcentagemLiquida * custo) / 100)
-                    )
-                    + (TaxaMercadoLivre_DE30A49)
-                    + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
                 ) * 100)
             /
             (
@@ -1999,14 +1240,14 @@ function calcular(inputElement) {
 
     // Mercado Livre Premium Porcentagem Líquida - calcMercadoLivrePremiumPorcentagemLiquida
     // Entre 50 a 78,99
-    else if (
+    if (
         (
             (
                 (
                     + (custo)
                     + ((VendaPorcentagemLiquida * custo) / 100)
                 )
-                + (TaxaMercadoLivre_DE30A49)
+                + (TaxaMercadoLivre_ATE79)
                 + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
             ) * 100)
         /
@@ -2017,26 +1258,7 @@ function calcular(inputElement) {
                     * 100)
                 - 100
             )
-        ) >= 50
-        &&
-        (
-            (
-                (
-                    + (custo)
-                    + ((VendaPorcentagemLiquida * custo) / 100)
-                )
-                + (TaxaMercadoLivre_DE50A99)
-                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivrePremium)
-                    * 100)
-                - 100
-            )
-        ) <= 78.99) {
+        ) >= 78.99) {
 
         calcMercadoLivrePremiumPorcentagemLiquida =
             (
@@ -2045,7 +1267,7 @@ function calcular(inputElement) {
                         + (custo)
                         + ((VendaPorcentagemLiquida * custo) / 100)
                     )
-                    + (TaxaMercadoLivre_DE50A99)
+                    + (TaxaMercadoLivre_ATE79)
                     + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
                 ) * 100)
             /
@@ -2060,7 +1282,7 @@ function calcular(inputElement) {
     }
 
     // Mercado Livre Premium Porcentagem Líquida - calcMercadoLivrePremiumPorcentagemLiquida
-    // Entre 79 e 99,99
+    // Acima de 79
     else if (
         (
             (
@@ -2068,7 +1290,7 @@ function calcular(inputElement) {
                     + (custo)
                     + ((VendaPorcentagemLiquida * custo) / 100)
                 )
-                + (TaxaMercadoLivre_DE50A99)
+                + (TaxaMercadoLivre_ATE79)
                 + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
             ) * 100)
         /
@@ -2079,26 +1301,7 @@ function calcular(inputElement) {
                     * 100)
                 - 100
             )
-        ) >= 79
-        &&
-        (
-            (
-                (
-                    + (custo)
-                    + ((VendaPorcentagemLiquida * custo) / 100)
-                )
-                + (TaxaMercadoLivre_DE50A99)
-                + (constFreteMercadoLivre * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivrePremium)
-                    * 100)
-                - 100
-            )
-        ) <= 99.99) {
+        ) >= 79) {
 
         calcMercadoLivrePremiumPorcentagemLiquida =
             (
@@ -2107,112 +1310,7 @@ function calcular(inputElement) {
                         + (custo)
                         + ((VendaPorcentagemLiquida * custo) / 100)
                     )
-                    + (TaxaMercadoLivre_DE50A99)
-                    + (constFreteMercadoLivre * constNivelMercadoLivre)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoMercadoLivrePremium)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Mercado Livre Premium Porcentagem Líquida - calcMercadoLivrePremiumPorcentagemLiquida
-    // Entre 100 a 198,99
-    else if (
-        (
-            (
-                (
-                    + (custo)
-                    + ((VendaPorcentagemLiquida * custo) / 100)
-                )
-                + (TaxaMercadoLivre_DE50A99)
-                + (constFreteMercadoLivre * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivrePremium)
-                    * 100)
-                - 100
-            )
-        ) >= 100
-        &&
-        (
-            (
-                (
-                    + (custo)
-                    + ((VendaPorcentagemLiquida * custo) / 100)
-                )
-                + (TaxaMercadoLivre_DE100A199)
-                + (constFreteMercadoLivre * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivrePremium)
-                    * 100)
-                - 100
-            )
-        ) <= 198.99) {
-
-        calcMercadoLivrePremiumPorcentagemLiquida =
-            (
-                (
-                    (
-                        + (custo)
-                        + ((VendaPorcentagemLiquida * custo) / 100)
-                    )
-                    + (TaxaMercadoLivre_DE100A199)
-                    + (constFreteMercadoLivre * constNivelMercadoLivre)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoMercadoLivrePremium)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Mercado Livre Premium Porcentagem Líquida - calcMercadoLivrePremiumPorcentagemLiquida
-    // Acima de 199
-    else if (
-        (
-            (
-                (
-                    + (custo)
-                    + ((VendaPorcentagemLiquida * custo) / 100)
-                )
-                + (TaxaMercadoLivre_DE100A199)
-                + (constFreteMercadoLivre * constNivelMercadoLivre)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoMercadoLivrePremium)
-                    * 100)
-                - 100
-            )
-        ) >= 199) {
-
-        calcMercadoLivrePremiumPorcentagemLiquida =
-            (
-                (
-                    (
-                        + (custo)
-                        + ((VendaPorcentagemLiquida * custo) / 100)
-                    )
-                    + (TaxaMercadoLivre_ACIMA199)
+                    + (TaxaMercadoLivre_ACIMA79)
                     + (constFreteMercadoLivre * constNivelMercadoLivre)
                 ) * 100)
             /

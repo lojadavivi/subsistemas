@@ -165,6 +165,14 @@ CALCULADORA
     </thead>
     <tbody>
         <tr>
+            <td>4.2.6 <br> 15/05/2024</td>
+            <td>
+                <ul>
+                    <li>Corrigidas as taxas fixas do Mercado Livre para R$ 6,00 até valor de venda de R$ 78,99 e R$ 0 para valor de venda acima de R$ 79,00.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
             <td>4.2.5 <br> 29/04/2024</td>
             <td>
                 <ul>
