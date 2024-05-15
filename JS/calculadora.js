@@ -20,7 +20,7 @@ function calcular(inputElement) {
     } else if (cnpj === "VIVIANE CHRISTINA FERREIRA") {
         constCnpj = cnpjVIVI;
     } else if (cnpj === "Selecione") {
-        constCnpj = cnpjx;
+        constCnpj = x;
     }
 
     // Valores constantes de peso e frete para acima de R$ 79 definidos no calc_variables.js
@@ -1085,7 +1085,7 @@ function calcular(inputElement) {
                     * 100)
                 - 100
             )
-        ) >= 78.99) {
+        ) <= 78.99) {
 
         calcMercadoLivreClassicoPorcentagemLiquida =
             (
@@ -1258,7 +1258,7 @@ function calcular(inputElement) {
                     * 100)
                 - 100
             )
-        ) >= 78.99) {
+        ) <= 78.99) {
 
         calcMercadoLivrePremiumPorcentagemLiquida =
             (
