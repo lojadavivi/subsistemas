@@ -1697,13 +1697,13 @@ function calcular(inputElement) {
 
     // Site Uool Manual - calcSiteUoolManual
     var calcSiteUoolManual = VendaManual
-        - (
-            + (custo)
-            + (VendaManual * constCnpj)
-            + (VendaManual * ComissaoSiteUool1x)
-            + (FreteSiteUool)
-            + (TaxaSiteUool)
-        );
+    - (
+        + (custo)
+        + (VendaManual * constCnpj)
+        + (VendaManual * ComissaoSiteUool1x)
+        + (FreteSiteUool * constNivelSiteUool)
+        + (TaxaSiteUool)
+    );
 
     var calcSiteUoolManual12x12 = VendaManual + (VendaManual * ComissaoSiteUool12x);
     var calcSiteUoolManual12x1 = calcSiteUoolManual12x12 / 12;
@@ -1711,15 +1711,18 @@ function calcular(inputElement) {
     // Site Uool Valor Líquido - calcSiteUoolValorLiquido
     var calcSiteUoolValorLiquido = (
         (
-            + (custo)
             + (VendaValorLiquido)
-        ) * 100
-        /
-        (
-            -(
-                (constCnpj * ComissaoSiteUool1x)
-                - 100
-            )
+            + (custo)
+            + (TaxaSiteUool)
+            + (constFreteSiteUool * constNivelSiteUool)
+        ) * 100)
+    /
+    (
+        -(
+            (
+                (constCnpj + ComissaoSiteUool1x)
+                * 100)
+            - 100
         )
     );
 
@@ -1731,13 +1734,18 @@ function calcular(inputElement) {
         (
             (
                 + (custo)
-                + ((custo * VendaPorcentagemLiquida) / 100)
-            ) * 100)
-        /
-        (
-            -(
-                (constCnpj * ComissaoSiteUool1x)
-                - 100)
+                + ((VendaPorcentagemLiquida * custo) / 100)
+            )
+            + (TaxaSiteUool)
+            + (constFreteSiteUool * constNivelSiteUool)
+        ) * 100)
+    /
+    (
+        -(
+            (
+                (constCnpj + ComissaoSiteUool1x)
+                * 100)
+            - 100
         )
     );
 
@@ -1764,15 +1772,18 @@ function calcular(inputElement) {
     // Site Atacado Valor Líquido - calcSiteAtacadoValorLiquido
     var calcSiteAtacadoValorLiquido = (
         (
-            + (custo)
             + (VendaValorLiquido)
-        ) * 100
-        /
-        (
-            -(
-                (constCnpj * ComissaoSiteAtacado1x)
-                - 100
-            )
+            + (custo)
+            + (TaxaSiteAtacado)
+            + (constFreteSiteAtacado * constNivelSiteAtacado)
+        ) * 100)
+    /
+    (
+        -(
+            (
+                (constCnpj + ComissaoSiteAtacado1x)
+                * 100)
+            - 100
         )
     );
 
@@ -1784,13 +1795,18 @@ function calcular(inputElement) {
         (
             (
                 + (custo)
-                + ((custo * VendaPorcentagemLiquida) / 100)
-            ) * 100)
-        /
-        (
-            -(
-                (constCnpj * ComissaoSiteAtacado1x)
-                - 100)
+                + ((VendaPorcentagemLiquida * custo) / 100)
+            )
+            + (TaxaSiteAtacado)
+            + (constFreteSiteAtacado * constNivelSiteAtacado)
+        ) * 100)
+    /
+    (
+        -(
+            (
+                (constCnpj + ComissaoSiteAtacado1x)
+                * 100)
+            - 100
         )
     );
 
