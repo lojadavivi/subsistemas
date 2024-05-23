@@ -165,6 +165,14 @@ CALCULADORA
     </thead>
     <tbody>
         <tr>
+            <td>4.2.7 <br> 23/05/2024</td>
+            <td>
+                <ul>
+                    <li>Adicionado 2% na comissão da Shopee por conta do programa Shopee Antecipa.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
             <td>4.2.6 <br> 15/05/2024</td>
             <td>
                 <ul>

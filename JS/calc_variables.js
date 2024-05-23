@@ -19,7 +19,7 @@ const cnpjVIVI = 0.06;
 // Mercado Livre:   13% clássico e 18% premium
 // Olist:           21%
 // RD:              18%
-// Shopee:          20%
+// Shopee:          20% comissão + 2% Shopee Antecipa
 // WebContinental:  ?
 // SiteUool:        4,69% em 1x e 19,13% em 12x
 // SiteAtacado:     4,59% em 1x e 23,87% em 12x
@@ -31,7 +31,7 @@ const ComissaoMercadoLivreClassico = 0.13;
 const ComissaoMercadoLivrePremium = 0.18;
 const ComissaoOlist = 0.21;
 const ComissaoRD = 0.18;
-const ComissaoShopee = 0.2;
+const ComissaoShopee = 0.22;
 const ComissaoWebContinental = 999;
 const ComissaoSiteUool1x = 0.0469;
 const ComissaoSiteUool12x = 0.1913
