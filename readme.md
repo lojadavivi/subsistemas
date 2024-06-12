@@ -19,6 +19,14 @@ SUBSISTEMA
     </thead>
     <tbody>
         <tr>
+            <td>3.1.0<br>12/06/2024</td>
+            <td>
+                <ul>
+                    <li>Adicionado página de calculadora de caixa.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
             <td style="font-weight: bold;">3.0.0<br>03/04/2023</td>
             <td>
                 <ul>

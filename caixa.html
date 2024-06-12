@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Definição de ícones da página -->
+    <link rel="icon" href="STYLES/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="STYLES/icon.png" type="image/x-icon">
+
+    <!-- Outras definições -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da página -->
+    <title>CAIXA</title>
+
+    <!-- Descrição da página -->
+    <meta name="description" content="Ferramenta para contar dinheiro">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Calculadora -->
+    <script>
+        function calculateTotal() {
+            let denominations = [200, 100, 50, 20, 10, 5, 2, 1, 0.5, 0.25, 0.10, 0.05];
+            let total = 0;
+        
+            denominations.forEach((denomination, index) => {
+                let quantity = document.getElementById('input' + index).value;
+                let value = quantity * denomination;
+                document.getElementById('value' + index).textContent = value.toFixed(2).replace('.', ',');
+                total += value;
+            });
+        
+            document.getElementById('total').textContent = total.toFixed(2).replace('.', ',');
+        }
+        </script>
+
+</head>
+
+<body>
+    <p>Esta é uma calculadora para auxiliar a contagem do caixa.<br>
+        Na coluna <b>VALOR</b> estão os valores de notas e moedas.<br>
+        Na coluna <b>QUANTIDADE</b> você deve inserir a quantidade de notas ou moedas daquele valor.<br>
+        Na coluna <b>TOTAL</b> é mostrado o valor de soma das notas ou moedas dessa linha.<br>
+        Na linha <b>TOTAL DO CAIXA</b> é mostrado a soma de todos os valores.
+    </p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>VALOR</th>
+                <th>QUANTIDADE</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>200,00</th>
+                <td><input style="text-align: center;" class="input_calc" type="number" id="input0" oninput="calculateTotal()" min="0"></td>
+                <td id="value0">0,00</td>
+            </tr>
+            <tr>
+                <th>100,00</th>
+                <td><input style="text-align: center;" class="input_calc" type="number" id="input1" oninput="calculateTotal()" min="0"></td>
+                <td id="value1">0,00</td>
+            </tr>
+            <tr>
+                <th>50,00</th>
+                <td><input style="text-align: center;" class="input_calc" type="number" id="input2" oninput="calculateTotal()" min="0"></td>
+                <td id="value2">0,00</td>
+            </tr>
+            <tr>
+                <th>20,00</th>
+                <td><input style="text-align: center;" class="input_calc" type="number" id="input3" oninput="calculateTotal()" min="0"></td>
+                <td id="value3">0,00</td>
+            </tr>
+            <tr>
+                <th>10,00</th>
+                <td><input style="text-align: center;" class="input_calc" type="number" id="input4" oninput="calculateTotal()" min="0"></td>
+                <td id="value4">0,00</td>
+            </tr>
+            <tr>
+                <th>5,00</th>
+                <td><input style="text-align: center;" class="input_calc" type="number" id="input5" oninput="calculateTotal()" min="0"></td>
+                <td id="value5">0,00</td>
+            </tr>
+            <tr>
+                <th>2,00</th>
+                <td><input style="text-align: center;" class="input_calc" type="number" id="input6" oninput="calculateTotal()" min="0"></td>
+                <td id="value6">0,00</td>
+            </tr>
+            <tr>
+                <th>1,00</th>
+                <td><input style="text-align: center;" class="input_calc" type="number" id="input7" oninput="calculateTotal()" min="0"></td>
+                <td id="value7">0,00</td>
+            </tr>
+            <tr>
+                <th>0,50</th>
+                <td><input style="text-align: center;" class="input_calc" type="number" id="input8" oninput="calculateTotal()" min="0"></td>
+                <td id="value8">0,00</td>
+            </tr>
+            <tr>
+                <th>0,25</th>
+                <td><input style="text-align: center;" class="input_calc" type="number" id="input9" oninput="calculateTotal()" min="0"></td>
+                <td id="value9">0,00</td>
+            </tr>
+            <tr>
+                <th>0,10</th>
+                <td><input style="text-align: center;" class="input_calc" type="number" id="input10" oninput="calculateTotal()" min="0"></td>
+                <td id="value10">0,00</td>
+            </tr>
+            <tr>
+                <th>0,05</th>
+                <td><input style="text-align: center;" class="input_calc" type="number" id="input11" oninput="calculateTotal()" min="0"></td>
+                <td id="value11">0,00</td>
+            </tr>
+            <tr>
+                <th>TOTAL DO CAIXA</th>
+                <th colspan="2" id="total">0,00</th>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
