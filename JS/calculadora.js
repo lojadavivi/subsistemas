@@ -1521,18 +1521,20 @@ function calcular(inputElement) {
             + (
                 VendaManual >= 500 ? 100 :
                     VendaManual <= 499.99 ? VendaManual * ComissaoShopee : 0)
-            + (TaxaShopee)
+            + (
+                VendaManual <= 7.99 ? VendaManual / 2 :
+                    VendaManual >= 8 ? TaxaShopee_ACIMA8 : 0)
             + (
                 (FreteShopee) * constNivelShopee
             )
         );
 
     // Shopee Valor Líquido - calcShopeeValorLiquido
-    // Comissão até 100 + 3
+    // Comissão até 100 + 4
     if (
         (
             (
-                + (VendaValorLiquido + custo + TaxaShopee)
+                + (VendaValorLiquido + custo + TaxaShopee_ACIMA8)
                 + (FreteShopee * constNivelShopee)
             ) * 100)
         /
@@ -1548,7 +1550,7 @@ function calcular(inputElement) {
         calcShopeeValorLiquido =
             (
                 (
-                    + (VendaValorLiquido + custo + TaxaShopee)
+                    + (VendaValorLiquido + custo + TaxaShopee_ACIMA8)
                     + (FreteShopee * constNivelShopee)
                 ) * 100)
             /
@@ -1563,11 +1565,11 @@ function calcular(inputElement) {
     }
 
     // Shopee Valor Líquido - calcShopeeValorLiquido
-    // Comissão acima de 100 + 3
+    // Comissão acima de 100 + 4
     else if (
         (
             (
-                + (VendaValorLiquido + custo + TaxaShopee)
+                + (VendaValorLiquido + custo + TaxaShopee_ACIMA8)
                 + (FreteShopee * constNivelShopee)
             ) * 100)
         /
@@ -1583,7 +1585,7 @@ function calcular(inputElement) {
         calcShopeeValorLiquido =
             (
                 (
-                    + (VendaValorLiquido + custo + TaxaShopee + 100)
+                    + (VendaValorLiquido + custo + TaxaShopee_ACIMA8 + 100)
                     + (FreteShopee * constNivelShopee)
                 ) * 100)
             /
@@ -1596,14 +1598,14 @@ function calcular(inputElement) {
     }
 
     // Shopee Porcentagem Líquida - calcShopeePorcentagemLiquida
-    // Comissão até 100 + 3
+    // Comissão até 100 + 4
     if (
         (
             (
                 (
                     + (custo)
                     + ((custo * VendaPorcentagemLiquida) / 100))
-                + (TaxaShopee)
+                + (TaxaShopee_ACIMA8)
                 + (constFreteShopee * constNivelShopee)
             ) * 100)
         /
@@ -1622,7 +1624,7 @@ function calcular(inputElement) {
                     (
                         + (custo)
                         + ((custo * VendaPorcentagemLiquida) / 100))
-                    + (TaxaShopee)
+                    + (TaxaShopee_ACIMA8)
                     + (constFreteShopee * constNivelShopee)
                 ) * 100)
             /
@@ -1637,14 +1639,14 @@ function calcular(inputElement) {
     }
 
     // Shopee Porcentagem Líquida - calcShopeePorcentagemLiquida
-    // Comissão acima de 100 + 3
+    // Comissão acima de 100 + 4
     else if (
         (
             (
                 (
                     + (custo)
                     + ((custo * VendaPorcentagemLiquida) / 100))
-                + (TaxaShopee)
+                + (TaxaShopee_ACIMA8)
                 + (constFreteShopee * constNivelShopee)
             ) * 100)
         /
@@ -1663,7 +1665,7 @@ function calcular(inputElement) {
                     (
                         + (custo)
                         + ((custo * VendaPorcentagemLiquida) / 100))
-                    + (TaxaShopee + 100)
+                    + (TaxaShopee_ACIMA8 + 100)
                     + (constFreteShopee * constNivelShopee)
                 ) * 100)
             /
@@ -1697,13 +1699,13 @@ function calcular(inputElement) {
 
     // Site Uool Manual - calcSiteUoolManual
     var calcSiteUoolManual = VendaManual
-    - (
-        + (custo)
-        + (VendaManual * constCnpj)
-        + (VendaManual * ComissaoSiteUool1x)
-        + (FreteSiteUool * constNivelSiteUool)
-        + (TaxaSiteUool)
-    );
+        - (
+            + (custo)
+            + (VendaManual * constCnpj)
+            + (VendaManual * ComissaoSiteUool1x)
+            + (FreteSiteUool * constNivelSiteUool)
+            + (TaxaSiteUool)
+        );
 
     var calcSiteUoolManual12x12 = VendaManual + (VendaManual * ComissaoSiteUool12x);
     var calcSiteUoolManual12x1 = calcSiteUoolManual12x12 / 12;
@@ -1716,15 +1718,15 @@ function calcular(inputElement) {
             + (TaxaSiteUool)
             + (constFreteSiteUool * constNivelSiteUool)
         ) * 100)
-    /
-    (
-        -(
-            (
-                (constCnpj + ComissaoSiteUool1x)
-                * 100)
-            - 100
-        )
-    );
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoSiteUool1x)
+                    * 100)
+                - 100
+            )
+        );
 
     var calcSiteUoolValorLiquido12x12 = calcSiteUoolValorLiquido + (calcSiteUoolValorLiquido * ComissaoSiteUool12x);
     var calcSiteUoolValorLiquido12x1 = calcSiteUoolValorLiquido12x12 / 12;
@@ -1739,15 +1741,15 @@ function calcular(inputElement) {
             + (TaxaSiteUool)
             + (constFreteSiteUool * constNivelSiteUool)
         ) * 100)
-    /
-    (
-        -(
-            (
-                (constCnpj + ComissaoSiteUool1x)
-                * 100)
-            - 100
-        )
-    );
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoSiteUool1x)
+                    * 100)
+                - 100
+            )
+        );
 
     var calcSiteUoolPorcentagemLiquida12x12 = calcSiteUoolPorcentagemLiquida + (calcSiteUoolPorcentagemLiquida * ComissaoSiteUool12x);
     var calcSiteUoolPorcentagemLiquida12x1 = calcSiteUoolPorcentagemLiquida12x12 / 12;
@@ -1777,15 +1779,15 @@ function calcular(inputElement) {
             + (TaxaSiteAtacado)
             + (constFreteSiteAtacado * constNivelSiteAtacado)
         ) * 100)
-    /
-    (
-        -(
-            (
-                (constCnpj + ComissaoSiteAtacado1x)
-                * 100)
-            - 100
-        )
-    );
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoSiteAtacado1x)
+                    * 100)
+                - 100
+            )
+        );
 
     var calcSiteAtacadoValorLiquido12x12 = calcSiteAtacadoValorLiquido + (calcSiteAtacadoValorLiquido * ComissaoSiteAtacado12x);
     var calcSiteAtacadoValorLiquido12x1 = calcSiteAtacadoValorLiquido12x12 / 12;
@@ -1800,15 +1802,15 @@ function calcular(inputElement) {
             + (TaxaSiteAtacado)
             + (constFreteSiteAtacado * constNivelSiteAtacado)
         ) * 100)
-    /
-    (
-        -(
-            (
-                (constCnpj + ComissaoSiteAtacado1x)
-                * 100)
-            - 100
-        )
-    );
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoSiteAtacado1x)
+                    * 100)
+                - 100
+            )
+        );
 
     var calcSiteAtacadoPorcentagemLiquida12x12 = calcSiteAtacadoPorcentagemLiquida + (calcSiteAtacadoPorcentagemLiquida * ComissaoSiteAtacado12x);
     var calcSiteAtacadoPorcentagemLiquida12x1 = calcSiteAtacadoPorcentagemLiquida12x12 / 12;
@@ -1855,9 +1857,18 @@ function calcular(inputElement) {
     document.getElementById("resultado-Olist-VendaPorcentagemLiquida").textContent = "R$ " + calcOlistPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
 
     // Shopee
+    // Valores de venda abaixo de R$ 8 não podem ser calculados pelas fórmulas ValorLiquido e PorcentagemLiquida
     document.getElementById("resultado-Shopee-VendaManual").textContent = "R$ " + calcShopeeManual.toFixed(2).replace(".", ",") + " (" + ((calcShopeeManual / custo) * 100).toFixed(2) + "%)";
-    document.getElementById("resultado-Shopee-VendaValorLiquido").textContent = "R$ " + calcShopeeValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2) + "%)";
-    document.getElementById("resultado-Shopee-VendaPorcentagemLiquida").textContent = "R$ " + calcShopeePorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+    if (calcShopeeValorLiquido <= 7.99) {
+        document.getElementById("resultado-Shopee-VendaValorLiquido").textContent = "Este valor é muito baixo para ser calculado nesta fórmula. Use a primeira coluna.";
+    } else {
+        document.getElementById("resultado-Shopee-VendaValorLiquido").textContent = "R$ " + calcShopeeValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2) + "%)";
+    }
+    if (calcShopeePorcentagemLiquida <= 7.99) {
+        document.getElementById("resultado-Shopee-VendaPorcentagemLiquida").textContent = "Este valor é muito baixo para ser calculado nesta fórmula. Use a primeira coluna";
+    } else {
+        document.getElementById("resultado-Shopee-VendaPorcentagemLiquida").textContent = "R$ " + calcShopeePorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+    }
 
     // Web Continental
     document.getElementById("resultado-WebContinental-VendaManual").textContent = "Em breve";

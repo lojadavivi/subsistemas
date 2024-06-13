@@ -251,8 +251,9 @@ const TaxaOlist_ACIMA79 = 0;
 const TaxaRD = 0;
 
 // Shopee
-// Taxa fixa de R$ 3
-const TaxaShopee = 3;
+// Até R$ 8:            metade do valor de venda
+// Acima de R$ 8:       R$ 4
+const TaxaShopee_ACIMA8 = 4;
 
 // Web Continental
 // ?

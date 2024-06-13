@@ -173,6 +173,14 @@ CALCULADORA
     </thead>
     <tbody>
         <tr>
+            <td>4.2.8 <br> 13/06/2024</td>
+            <td>
+                <ul>
+                    <li>Taxa fixa da Shopee alterada de R$ 3 para R$ 4.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
             <td>4.2.7 <br> 23/05/2024</td>
             <td>
                 <ul>
