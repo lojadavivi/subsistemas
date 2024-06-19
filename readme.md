@@ -173,6 +173,14 @@ CALCULADORA
     </thead>
     <tbody>
         <tr>
+            <td>4.2.9 <br> 19/06/2024</td>
+            <td>
+                <ul>
+                    <li>Divisão de porcentagem alterada de "." para ",".</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
             <td>4.2.8 <br> 13/06/2024</td>
             <td>
                 <ul>
