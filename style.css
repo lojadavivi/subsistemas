@@ -45,6 +45,7 @@ header {
     max-width: 1000px;
     margin: auto;
     font-weight: bold;
+    border: 1px solid #888;
 }
 
 h1 {
@@ -86,8 +87,10 @@ nav ul li {
 footer {
     background: var(--fundo-padrao);
     max-width: 1000px;
+    margin: auto;
     font-size: smaller;
     padding: 10px;
+    border: 1px solid #888;
 }
 
 footer a {
@@ -115,7 +118,7 @@ footer a {
 .tabela_calc th,
 .tabela_calc td,
 .tabela_calc tr {
-    border: 1px solid #555;
+    border: 1px solid #888;
     padding: 10px 5px 10px 5px;
 }
 
