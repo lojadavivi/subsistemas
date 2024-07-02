@@ -37,23 +37,23 @@
 
 			if (cnpj === "Selecione") {
 				elementsToChange.forEach(function (element) {
-					element.style.backgroundColor = "#2e2047";
+					element.style.backgroundColor = "var(--tabela-padrao)";
 				});
 			} else if (cnpj === "LOJA DA VIVI LTDA") {
 				elementsToChange.forEach(function (element) {
-					element.style.backgroundColor = "#22092c";
+					element.style.backgroundColor = "var(--tabela-ltda)";
 				});
 			} else if (cnpj === "LOJA DA VIVI ONLINE") {
 				elementsToChange.forEach(function (element) {
-					element.style.backgroundColor = "#00255e";
+					element.style.backgroundColor = "var(--tabela-online)";
 				});
 			} else if (cnpj === "LOJA DA VIVI SV LTDA") {
 				elementsToChange.forEach(function (element) {
-					element.style.backgroundColor = "#3d0022";
+					element.style.backgroundColor = "var(--tabela-sv)";
 				});
 			} else if (cnpj === "VIVIANE CHRISTINA FERREIRA") {
 				elementsToChange.forEach(function (element) {
-					element.style.backgroundColor = "#151a02";
+					element.style.backgroundColor = "var(--tabela-viviane)";
 				});
 			}
 		}
@@ -80,25 +80,27 @@
 		<div id="titulo">SUBSISTEMA DA LOJA DA VIVI</div>
 		<nav>
 			<ul>
-				<li style="text-align: center;"><a
-						href="https://docs.google.com/spreadsheets/d/1JwWo0jGJEf9Elu5NvbUWfJ-AR0hm0Xm0NqKxLeRi2C4/edit?usp=sharing">Vendas<br>semanais</a>
-				<li style="text-align: center;"><a href="/subsistemas/XMLtoHTML.html">Gerador de
-						DANFE<br>simplificada</a>
-				<li style="text-align: center;"><a href="/subsistemas/index.html">Calculadora para<br>Marketplaces</a>
+				<li><a href="https://docs.google.com/spreadsheets/d/1JwWo0jGJEf9Elu5NvbUWfJ-AR0hm0Xm0NqKxLeRi2C4/edit?usp=sharing">
+					Vendas<br>semanais</a>
+				<li><a href="/subsistemas/XMLtoHTML">
+					Gerador de DANFE<br>simplificada</a>
+				<li><a href="/subsistemas/">
+					Calculadora para<br>Marketplaces</a>
 			</ul>
 		</nav>
+		<p>Versão 4.3.0 de 02/07/2024</p>
 	</header>
 
 	<section id="Calculadora">
 		<table class="tabela_calc">
 			<tbody>
-				<tr style="background-color: #2e2047;" class="tabela_calc background-color-change">
+				<tr style="background-color: var(--tabela-padrao);" class="tabela_calc background-color-change">
 					<th>CNPJ</th>
 					<th>NÍVEL</th>
 					<th>PESO</th>
 					<th>CUSTO</th>
 				</tr>
-				<tr style="background-color: #2e2047;" class="tabela_calc background-color-change">
+				<tr style="background-color: var(--tabela-padrao);" class="tabela_calc background-color-change">
 					<td>
 						<select class="input_calc" id="cnpj" name="cnpj"
 							onchange="alterarBackgroundComBaseEmCnpj(); calcular()">
@@ -118,7 +120,7 @@
 							<option value="1">1</option>
 						</select>
 					</td>
-					<td style="background-color: #2e2047;" class="background-color-change">
+					<td style="background-color: var(--tabela-padrao);" class="background-color-change">
 						<select class="input_calc" id="peso" name="peso" onchange="calcular()">
 							<option value="Selecione">Selecione...</option>
 							<option value="até 0.3kg">até 0.3kg</option>
@@ -133,7 +135,7 @@
 							<option value="23 a 30kg">23 a 30kg</option>
 						</select>
 					</td>
-					<td style="background-color: #2e2047;" class="background-color-change">
+					<td style="background-color: var(--tabela-padrao);" class="background-color-change">
 						R$ <input class="input_calc" style="width: 10ch" id="custo" name="custo" placeholder="0,00"
 							onkeyup="calcular()">
 					</td>
@@ -144,64 +146,70 @@
 		<table class="tabela_calc">
 			<tbody>
 				<tr>
-					<th rowspan="2" style="background-color: #2e2047;" class="background-color-change">CÁLCULOS</th>
-					<td style="font-size: x-small;">
+					<th rowspan="2" style="background-color: var(--tabela-padrao);" class="background-color-change">CÁLCULOS</th>
+					<td>
+						<h1 style="color: #1565C0;">MANUAL</h1>
 						<button onclick="spoilerAjuda(this)" class="spoilerbutton">Como funciona?</button>
 						<span class="spoiler" style="display: none; cursor: default; text-decoration: none;">
-							Aqui você insere o <span style="color: #ffe893; font-weight: bold;">valor de venda</span>
-							manualmente, e o sistema lhe informa qual será o <span
-								style="color: #aeffac; font-weight: bold;">valor líquido</span> aproximado que você
-							receberá
-							vendendo a esse preço em cada marketplace.
+							Aqui você insere o
+							<span style="color: #1565C0; font-weight: bold;">valor de venda</span>
+							manualmente, e o sistema lhe informa qual será o
+							<span style="color: #4CAF50; font-weight: bold;">valor líquido</span>
+							e a
+							<span style="color: #827717; font-weight: bold;">porcentagem líquida</span>
+							aproximada que você receberá vendendo a esse preço em cada marketplace.
 						</span>
 					</td>
-					<td style="font-size: x-small;">
+					<td>
+						<h1 style="color: #4CAF50;">$ LÍQUIDO</h1>
 						<button onclick="spoilerAjuda(this)" class="spoilerbutton">Como funciona?</button>
 						<span class="spoiler" style="display: none; cursor: default;
 					text-decoration: none;">
-							Aqui você insere o <span style="color: #aeffac; font-weight: bold;">valor líquido</span> que
-							deseja
-							receber pelo produto, e o sistema lhe sugere qual o <span
-								style="color: #ffe893; font-weight: bold;">valor de venda</span> a colocar em cada
-							marketplace,
-							ao mesmo tempo que lhe informa qual a porcentagem líquida que você está ganhando.
+							Aqui você insere o
+							<span style="color: #4CAF50; font-weight: bold;">valor líquido</span>
+							que deseja receber pelo produto, e o sistema lhe sugere qual o
+							<span style="color: #1565C0; font-weight: bold;">valor de venda</span>
+							a colocar em cada marketplace, ao mesmo tempo que lhe informa qual a
+							<span style="color: #827717; font-weight: bold;">porcentagem líquida</span>
+							que você está ganhando.
 						</span>
 					</td>
-					<td style="font-size: x-small;">
+					<td>
+						<h1 style="color: #827717;">% LÍQUIDA</h1>
 						<button onclick="spoilerAjuda(this)" class="spoilerbutton">Como funciona?</button>
 						<span class="spoiler" style="display: none; cursor: default;
 					text-decoration: none;">
-							Aqui você insere a <span style="color: #aeffac; font-weight: bold;">porcentagem
-								líquida</span>
-							que
-							deseja receber pelo produto, e o sistema lhe sugere qual o <span
-								style="color: #ffe893; font-weight: bold;">valor de venda</span> a colocar em cada
-							marketplace,
-							ao mesmo tempo que lhe informa qual o valor líquido que você está ganhando.
+							Aqui você insere a
+							<span style="color: #827717; font-weight: bold;">porcentagem líquida</span>
+							que deseja receber pelo produto, e o sistema lhe sugere qual o
+							<span style="color: #1565C0; font-weight: bold;">valor de venda</span>
+							a colocar em cada marketplace, ao mesmo tempo que lhe informa qual o
+							<span style="color: #4CAF50; font-weight: bold;">valor líquido</span>
+							que você está ganhando.
 						</span>
 					</td>
 				</tr>
 				<tr style="text-align: center;">
-					<td style="color: #ffe893; font-weight: bold;">R$ <input class="input_calc"
-							style="color: #ffe893; width: 10ch;" type="number" id="VendaManual" name="VendaManual"
+					<td style="color: #1565C0; font-weight: bold;">R$ <input class="input_calc"
+							style="color: #1565C0; width: 10ch;" type="number" id="VendaManual" name="VendaManual"
 							onkeyup="calcular()">
 					</td>
-					<td style="color: #aeffac; font-weight: bold;">R$ <input class="input_calc"
-							style="color: #aeffac; width: 10ch;" type="number" id="VendaValorLiquido"
+					<td style="color: #4CAF50; font-weight: bold;">R$ <input class="input_calc"
+							style="color: #4CAF50; width: 10ch;" type="number" id="VendaValorLiquido"
 							name="VendaValorLiquido" onkeyup="calcular()">
 					</td>
-					<td style="color: #aeffac; font-weight: bold;"><input class="input_calc"
-							style="color: #aeffac; width: 10ch; text-align: right;" type="number"
+					<td style="color: #827717; font-weight: bold;"><input class="input_calc"
+							style="color: #827717; width: 10ch; text-align: right;" type="number"
 							id="VendaPorcentagemLiquida" name="VendaPorcentagemLiquida" onkeyup="calcular()"> %</td>
 				</tr>
-				<tr style="height: 4ch; background-color: #2e2047;" class="background-color-change">
+				<tr style="background-color: var(--tabela-padrao);" class="background-color-change">
 					<th style="width: 23ch;">MARKETPLACE</th>
 					<th style="width: 23ch;">VALOR LÍQUIDO APROX.</th>
 					<th style="width: 23ch;">SUGESTÃO DE VENDA</th>
 					<th style="width: 23ch;">SUGESTÃO DE VENDA</th>
 				</tr>
 				<tr>
-					<td style="height: 4ch; text-align: right; background-color: #2e2047;"
+					<td style="text-align: right; background-color: var(--tabela-padrao);"
 						class="background-color-change">AMERICANAS
 					</td>
 					<td id="resultado-Americanas-VendaManual"></td>
@@ -209,7 +217,7 @@
 					<td id="resultado-Americanas-VendaPorcentagemLiquida"></td>
 				</tr>
 				<tr>
-					<td style="height: 4ch; text-align: right; background-color: #2e2047;"
+					<td style="text-align: right; background-color: var(--tabela-padrao);"
 						class="background-color-change">CASAS
 						BAHIA</td>
 					<td id="resultado-CasasBahia-VendaManual"></td>
@@ -217,7 +225,7 @@
 					<td id="resultado-CasasBahia-VendaPorcentagemLiquida"></td>
 				</tr>
 				<tr>
-					<td style="height: 4ch; text-align: right; background-color: #2e2047;"
+					<td style="text-align: right; background-color: var(--tabela-padrao);"
 						class="background-color-change">MAGALU
 					</td>
 					<td id="resultado-Magalu-VendaManual"></td>
@@ -225,7 +233,7 @@
 					<td id="resultado-Magalu-VendaPorcentagemLiquida"></td>
 				</tr>
 				<tr>
-					<td style="height: 4ch; text-align: right; background-color: #2e2047;"
+					<td style="text-align: right; background-color: var(--tabela-padrao);"
 						class="background-color-change">MERCADO
 						LIVRE CLÁSSICO</td>
 					<td id="resultado-MercadoLivreClassico-VendaManual"></td>
@@ -233,7 +241,7 @@
 					<td id="resultado-MercadoLivreClassico-VendaPorcentagemLiquida"></td>
 				</tr>
 				<tr>
-					<td style="height: 4ch; text-align: right; background-color: #2e2047;"
+					<td style="text-align: right; background-color: var(--tabela-padrao);"
 						class="background-color-change">MERCADO
 						LIVRE PREMIUM</td>
 					<td id="resultado-MercadoLivrePremium-VendaManual"></td>
@@ -241,7 +249,7 @@
 					<td id="resultado-MercadoLivrePremium-VendaPorcentagemLiquida"></td>
 				</tr>
 				<tr>
-					<td style="height: 4ch; text-align: right; background-color: #2e2047;"
+					<td style="text-align: right; background-color: var(--tabela-padrao);"
 						class="background-color-change">OLIST
 					</td>
 					<td id="resultado-Olist-VendaManual"></td>
@@ -249,7 +257,7 @@
 					<td id="resultado-Olist-VendaPorcentagemLiquida"></td>
 				</tr>
 				<tr>
-					<td style="height: 4ch; text-align: right; background-color: #2e2047;"
+					<td style="text-align: right; background-color: var(--tabela-padrao);"
 						class="background-color-change">RD
 					</td>
 					<td id="resultado-RD-VendaManual"></td>
@@ -257,7 +265,15 @@
 					<td id="resultado-RD-VendaPorcentagemLiquida"></td>
 				</tr>
 				<tr>
-					<td style="height: 4ch; text-align: right; background-color: #2e2047;"
+					<td style="text-align: right; background-color: var(--tabela-padrao);"
+						class="background-color-change">SHEIN
+					</td>
+					<td id="resultado-Shein-VendaManual"></td>
+					<td id="resultado-Shein-VendaValorLiquido"></td>
+					<td id="resultado-Shein-VendaPorcentagemLiquida"></td>
+				</tr>
+				<tr>
+					<td style="text-align: right; background-color: var(--tabela-padrao);"
 						class="background-color-change">SHOPEE
 					</td>
 					<td id="resultado-Shopee-VendaManual"></td>
@@ -265,7 +281,7 @@
 					<td id="resultado-Shopee-VendaPorcentagemLiquida"></td>
 				</tr>
 				<tr>
-					<td style="height: 4ch; text-align: right; background-color: #2e2047;"
+					<td style="text-align: right; background-color: var(--tabela-padrao);"
 						class="background-color-change">WEB CONTINENTAL
 					</td>
 					<td id="resultado-WebContinental-VendaManual"></td>
@@ -273,7 +289,7 @@
 					<td id="resultado-WebContinental-VendaPorcentagemLiquida"></td>
 				</tr>
 				<tr>
-					<td rowspan="2" style="height: 4ch; text-align: right; background-color: #2e2047;"
+					<td rowspan="2" style="text-align: right; background-color: var(--tabela-padrao);"
 						class="background-color-change">SITE-UOOL</td>
 					<td id="resultado-SiteUool-VendaManual"></td>
 					<td id="resultado-SiteUool-VendaValorLiquido"></td>
@@ -285,7 +301,7 @@
 					<td id="resultado-SiteUool-VendaPorcentagemLiquida-12x"></td>
 				</tr>
 				<tr>
-					<td rowspan="2" style="height: 4ch; text-align: right; background-color: #2e2047;"
+					<td rowspan="2" style="text-align: right; background-color: var(--tabela-padrao);"
 						class="background-color-change">SITE-ATACADO</td>
 					<td id="resultado-SiteAtacado-VendaManual"></td>
 					<td id="resultado-SiteAtacado-VendaValorLiquido"></td>
@@ -300,7 +316,7 @@
 			</tbody>
 		</table>
 	</section>
-	<p style="text-align: right;">Versão 4.2.9 de 19/06/2024</p>
+	<br>
 	<footer>
 		<div class="footer">
 			Desenvolvido por

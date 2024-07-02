@@ -31,6 +31,7 @@ function calcular(inputElement) {
         constFreteMercadoLivre = x;
         constFreteOlist = x;
         constFreteRD = x;
+        constFreteShein = x;
         constFreteShopee = x;
         constFreteWebContinental = x;
         constFreteSiteUool = x;
@@ -42,6 +43,7 @@ function calcular(inputElement) {
         constFreteMercadoLivre = FreteMercadoLivre_ACIMA79_ate300G;
         constFreteOlist = FreteOlist_ACIMA79_ate300G;
         constFreteRD = FreteRD;
+        constFreteShein = FreteShein_ACIMA49_ate300G;
         constFreteShopee = FreteShopee;
         constFreteWebContinental = FreteWebContinental;
         constFreteSiteUool = FreteSiteUool;
@@ -53,6 +55,7 @@ function calcular(inputElement) {
         constFreteMercadoLivre = FreteMercadoLivre_ACIMA79_300a500G;
         constFreteOlist = FreteOlist_ACIMA79_300a500G;
         constFreteRD = FreteRD;
+        constFreteShein = FreteShein_ACIMA49_300a500G;
         constFreteShopee = FreteShopee;
         constFreteWebContinental = FreteWebContinental;
         constFreteSiteUool = FreteSiteUool;
@@ -64,6 +67,7 @@ function calcular(inputElement) {
         constFreteMercadoLivre = FreteMercadoLivre_ACIMA79_500Ga1KG;
         constFreteOlist = FreteOlist_ACIMA79_500Ga1KG;
         constFreteRD = FreteRD;
+        constFreteShein = FreteShein_ACIMA49_500Ga1KG;
         constFreteShopee = FreteShopee;
         constFreteWebContinental = FreteWebContinental;
         constFreteSiteUool = FreteSiteUool;
@@ -75,6 +79,7 @@ function calcular(inputElement) {
         constFreteMercadoLivre = FreteMercadoLivre_ACIMA79_1a2KG;
         constFreteOlist = FreteOlist_ACIMA79_1a2KG;
         constFreteRD = FreteRD;
+        constFreteShein = FreteShein_ACIMA49_1a2KG;
         constFreteShopee = FreteShopee;
         constFreteWebContinental = FreteWebContinental;
         constFreteSiteUool = FreteSiteUool;
@@ -86,6 +91,7 @@ function calcular(inputElement) {
         constFreteMercadoLivre = FreteMercadoLivre_ACIMA79_2a5KG;
         constFreteOlist = FreteOlist_ACIMA79_2a5KG;
         constFreteRD = FreteRD;
+        constFreteShein = FreteShein_ACIMA49_2a5KG;
         constFreteShopee = FreteShopee;
         constFreteWebContinental = FreteWebContinental;
         constFreteSiteUool = FreteSiteUool;
@@ -97,6 +103,7 @@ function calcular(inputElement) {
         constFreteMercadoLivre = FreteMercadoLivre_ACIMA79_5a9KG;
         constFreteOlist = FreteOlist_ACIMA79_5a9KG;
         constFreteRD = FreteRD;
+        constFreteShein = FreteShein_ACIMA49_5a9KG;
         constFreteShopee = FreteShopee;
         constFreteWebContinental = FreteWebContinental;
         constFreteSiteUool = FreteSiteUool;
@@ -108,6 +115,7 @@ function calcular(inputElement) {
         constFreteMercadoLivre = FreteMercadoLivre_ACIMA79_9a13KG;
         constFreteOlist = FreteOlist_ACIMA79_9a13KG;
         constFreteRD = FreteRD;
+        constFreteShein = FreteShein_ACIMA49_9a13KG;
         constFreteShopee = FreteShopee;
         constFreteWebContinental = FreteWebContinental;
         constFreteSiteUool = FreteSiteUool;
@@ -119,6 +127,7 @@ function calcular(inputElement) {
         constFreteMercadoLivre = FreteMercadoLivre_ACIMA79_13a17KG;
         constFreteOlist = FreteOlist_ACIMA79_13a17KG;
         constFreteRD = FreteRD;
+        constFreteShein = FreteShein_ACIMA49_13a17KG;
         constFreteShopee = FreteShopee;
         constFreteWebContinental = FreteWebContinental;
         constFreteSiteUool = FreteSiteUool;
@@ -130,6 +139,7 @@ function calcular(inputElement) {
         constFreteMercadoLivre = FreteMercadoLivre_ACIMA79_17a23KG;
         constFreteOlist = FreteOlist_ACIMA79_17a23KG;
         constFreteRD = FreteRD;
+        constFreteShein = FreteShein_ACIMA49_17a23KG;
         constFreteShopee = FreteShopee;
         constFreteWebContinental = FreteWebContinental;
         constFreteSiteUool = FreteSiteUool;
@@ -141,6 +151,7 @@ function calcular(inputElement) {
         constFreteMercadoLivre = FreteMercadoLivre_ACIMA79_23a30KG;
         constFreteOlist = FreteOlist_ACIMA79_23a30KG;
         constFreteRD = FreteRD;
+        constFreteShein = FreteShein_ACIMA49_23a30KG;
         constFreteShopee = FreteShopee;
         constFreteWebContinental = FreteWebContinental;
         constFreteSiteUool = FreteSiteUool;
@@ -155,8 +166,9 @@ function calcular(inputElement) {
         constNivelMercadoLivre = NivelMercadoLivre5;
         constNivelOlist = NivelOlist5;
         constNivelRD = NivelRD;
-        constNivelWebContinental = NivelWebContinental;
+        constNivelShein = NivelShein;
         constNivelShopee = NivelShopee;
+        constNivelWebContinental = NivelWebContinental;
         constNivelSiteUool = NivelSiteUool;
         constNivelSiteAtacado = NivelSiteAtacado;
     } else if (nivel === "4") {
@@ -166,8 +178,9 @@ function calcular(inputElement) {
         constNivelMercadoLivre = NivelMercadoLivre4;
         constNivelOlist = NivelOlist4;
         constNivelRD = NivelRD;
-        constNivelWebContinental = NivelWebContinental;
+        constNivelShein = NivelShein;
         constNivelShopee = NivelShopee;
+        constNivelWebContinental = NivelWebContinental;
         constNivelSiteUool = NivelSiteUool;
         constNivelSiteAtacado = NivelSiteAtacado;
     } else if (nivel === "3") {
@@ -177,8 +190,9 @@ function calcular(inputElement) {
         constNivelMercadoLivre = NivelMercadoLivre3;
         constNivelOlist = NivelOlist3;
         constNivelRD = NivelRD;
-        constNivelWebContinental = NivelWebContinental;
+        constNivelShein = NivelShein;
         constNivelShopee = NivelShopee;
+        constNivelWebContinental = NivelWebContinental;
         constNivelSiteUool = NivelSiteUool;
         constNivelSiteAtacado = NivelSiteAtacado;
     } else if (nivel === "2") {
@@ -188,8 +202,9 @@ function calcular(inputElement) {
         constNivelMercadoLivre = NivelMercadoLivre2;
         constNivelOlist = NivelOlist2;
         constNivelRD = NivelRD;
-        constNivelWebContinental = NivelWebContinental;
+        constNivelShein = NivelShein;
         constNivelShopee = NivelShopee;
+        constNivelWebContinental = NivelWebContinental;
         constNivelSiteUool = NivelSiteUool;
         constNivelSiteAtacado = NivelSiteAtacado;
     } else if (nivel === "1") {
@@ -199,8 +214,9 @@ function calcular(inputElement) {
         constNivelMercadoLivre = NivelMercadoLivre1;
         constNivelOlist = NivelOlist1;
         constNivelRD = NivelRD;
-        constNivelWebContinental = NivelWebContinental;
+        constNivelShein = NivelShein;
         constNivelShopee = NivelShopee;
+        constNivelWebContinental = NivelWebContinental;
         constNivelSiteUool = NivelSiteUool;
         constNivelSiteAtacado = NivelSiteAtacado;
     }
@@ -1510,6 +1526,186 @@ function calcular(inputElement) {
     }
 
     // --------------------------------
+    // SHEIN
+    // --------------------------------
+
+    // Shein Manual - calcSheinManual
+    var calcSheinManual = VendaManual
+        - (
+            + (custo)
+            + (VendaManual * constCnpj)
+            + (VendaManual * ComissaoShein)
+            + (
+                VendaManual <= 49.89 ? TaxaShein :
+                    VendaManual >= 49.9 ? TaxaShein : 0
+            )
+            + (
+                (
+                    VendaManual <= 49.89 ? FreteShein_ATE49 :
+                        VendaManual >= 49.9 ? constFreteShein : 0
+                ) * constNivelShein
+            )
+        );
+
+    // Shein Valor Líquido - calcSheinValorLiquido
+    // Abaixo de 49,89
+    if (
+        (
+            (
+                (VendaValorLiquido + custo + TaxaShein)
+                + (FreteShein_ATE49 * constNivelShein)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoShein)
+                    * 100)
+                - 100
+            )
+        ) <= 49.89) {
+
+        calcSheinValorLiquido =
+            (
+                (
+                    (VendaValorLiquido + custo + TaxaShein)
+                    + (FreteShein_ATE49 * constNivelShein)
+                ) * 100)
+            /
+            (
+                -(
+                    (
+                        (constCnpj + ComissaoShein)
+                        * 100)
+                    - 100
+                )
+            );
+    }
+
+    // Shein Valor Líquido - calcSheinValorLiquido
+    // Acima de 49,90
+
+    else if (
+        (
+            (
+                (VendaValorLiquido + custo + TaxaShein)
+                + (FreteShein_ATE49 * constNivelShein)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoShein)
+                    * 100)
+                - 100
+            )
+        ) >= 49.9) {
+
+        calcSheinValorLiquido =
+            (
+                (
+                    (VendaValorLiquido + custo + TaxaShein)
+                    + (constFreteShein * constNivelShein)
+                ) * 100)
+            /
+            (
+                -(
+                    (
+                        (constCnpj + ComissaoShein)
+                        * 100)
+                    - 100
+                )
+            );
+    }
+
+    // Shein Porcentagem Líquida - calcSheinPorcentagemLiquida
+    // Abaixo de 49,89
+    if (
+        (
+            (
+                (
+                    + (custo)
+                    + ((VendaPorcentagemLiquida * custo) / 100)
+                )
+                + (TaxaShein)
+                + (FreteShein_ATE49 * constNivelShein)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoShein)
+                    * 100)
+                - 100
+            )
+        ) <= 49.89) {
+
+        calcSheinPorcentagemLiquida =
+            (
+                (
+                    (
+                        + (custo)
+                        + ((VendaPorcentagemLiquida * custo) / 100)
+                    )
+                    + (TaxaShein)
+                    + (FreteShein_ATE49 * constNivelShein)
+                ) * 100)
+            /
+            (
+                -(
+                    (
+                        (constCnpj + ComissaoShein)
+                        * 100)
+                    - 100
+                )
+            );
+    }
+
+    // Shein Porcentagem Líquida - calcSheinPorcentagemLiquida
+    // Acima de 49,90
+
+    else if (
+        (
+            (
+                (
+                    + (custo)
+                    + ((VendaPorcentagemLiquida * custo) / 100)
+                )
+                + (TaxaShein)
+                + (FreteShein_ATE49 * constNivelShein)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoShein)
+                    * 100)
+                - 100
+            )
+        ) >= 49.9) {
+
+        calcSheinPorcentagemLiquida =
+            (
+                (
+                    (
+                        + (custo)
+                        + ((VendaPorcentagemLiquida * custo) / 100)
+                    )
+                    + (TaxaShein)
+                    + (constFreteShein * constNivelShein)
+                ) * 100)
+            /
+            (
+                -(
+                    (
+                        (constCnpj + ComissaoShein)
+                        * 100)
+                    - 100
+                )
+            );
+    }
+
+    // --------------------------------
     // SHOPEE
     // --------------------------------
 
@@ -1846,15 +2042,20 @@ function calcular(inputElement) {
     document.getElementById("resultado-MercadoLivrePremium-VendaValorLiquido").textContent = "R$ " + calcMercadoLivrePremiumValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
     document.getElementById("resultado-MercadoLivrePremium-VendaPorcentagemLiquida").textContent = "R$ " + calcMercadoLivrePremiumPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
 
+    // Olist
+    document.getElementById("resultado-Olist-VendaManual").textContent = "R$ " + calcOlistManual.toFixed(2).replace(".", ",") + " (" + ((calcOlistManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado-Olist-VendaValorLiquido").textContent = "R$ " + calcOlistValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado-Olist-VendaPorcentagemLiquida").textContent = "R$ " + calcOlistPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+
     // RD
     document.getElementById("resultado-RD-VendaManual").textContent = "Em breve";
     document.getElementById("resultado-RD-VendaValorLiquido").textContent = "Em breve";
     document.getElementById("resultado-RD-VendaPorcentagemLiquida").textContent = "Em breve";
 
-    // Olist
-    document.getElementById("resultado-Olist-VendaManual").textContent = "R$ " + calcOlistManual.toFixed(2).replace(".", ",") + " (" + ((calcOlistManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    document.getElementById("resultado-Olist-VendaValorLiquido").textContent = "R$ " + calcOlistValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    document.getElementById("resultado-Olist-VendaPorcentagemLiquida").textContent = "R$ " + calcOlistPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+    // Shein
+    document.getElementById("resultado-Shein-VendaManual").textContent = "R$ " + calcSheinManual.toFixed(2).replace(".", ",") + " (" + ((calcSheinManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado-Shein-VendaValorLiquido").textContent = "R$ " + calcSheinValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado-Shein-VendaPorcentagemLiquida").textContent = "R$ " + calcSheinPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
 
     // Shopee
     // Valores de venda abaixo de R$ 8 não podem ser calculados pelas fórmulas ValorLiquido e PorcentagemLiquida

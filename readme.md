@@ -18,6 +18,14 @@ SUBSISTEMA
         </tr>
     </thead>
     <tbody>
+    <tr>
+        <td>3.2.0<br>02/07/2024</td>
+            <td>
+                <ul>
+                    <li>Novo design! Paleta de cores inspirada em Material Design. Fonte padrão alterada para Nunito.</li>
+                </ul>
+            </td>
+        </tr>
         <tr>
             <td>3.1.0<br>12/06/2024</td>
             <td>
@@ -172,6 +180,14 @@ CALCULADORA
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td>4.3.0 <br> 02/07/2024</td>
+            <td>
+                <ul>
+                    <li>Adicionado markeplace Shein.</li>
+                </ul>
+            </td>
+        </tr>
         <tr>
             <td>4.2.9 <br> 19/06/2024</td>
             <td>

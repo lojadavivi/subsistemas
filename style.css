@@ -1,90 +1,93 @@
-/* Padrão de fonte e fundo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Padrão de fonte, cor e fundo */
+
 @font-face {
-    font-family: "Inconsolata";
-    src: url(STYLES/Inconsolata.ttf);
+    font-family: "Nunito";
+    src: url(STYLES/Nunito-VariableFont_wght.ttf);
 }
 
+:root {
+    --pagina-background: #EEE;
+    --fundo-padrao: #BBB;
+    --texto-padrao: #000;
+    --texto-color-escuro: #DB06B7;
+    --botao-color-claro: #FB74E5;
+    --tabela-padrao: #AAA;
+    --tabela-ltda: #CE93D8;
+    --tabela-online: #90CAF9;
+    --tabela-sv: #A5D6A7;
+    --tabela-viviane: #FFAB91;
+}
+
+html,
 body {
-    font-family: "Inconsolata";
-    background-color: #241734;
-    color: #c18fff;
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
-    font-size: 2vw;
-}
-
-@media screen and (min-width: 1000px) {
-    body {
-        font-size: 20px;
-    }
+    font-family: "Nunito";
+    font-weight: normal;
+    font-size: medium;
+    text-align: center;
+    overflow-x: hidden;
+    line-height: 1;
+    background: var(--pagina-background);
+    color: var(--texto-padrao);
 }
 
 /* Título da página */
 
 header {
-    background-color: #2E2157;
-    padding: 20px 30px;
-    text-align: center;
-    max-width: 940px;
+    background-color: var(--fundo-padrao);
+    color: var(--texto-color-escuro);
+    padding: 10px 30px;
+    max-width: 1000px;
     margin: auto;
+    font-weight: bold;
+}
+
+h1 {
+    font-family: "Nunito";
+    padding-bottom: 5px;
 }
 
 #titulo {
-    font-size: 6vw;
-    font-weight: bold;
-    color: #ffc1f5;
+    font-size: 36px;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (max-width: 670px) {
     #titulo {
-        font-size: 60px;
+        font-size: 26px;
     }
 }
 
 /* Menu */
 
-nav ul {
-    margin: 0;
-    padding: 0;
-}
-
 nav ul li a {
-    background: #f706cf;
-    font-size: 2.5vw;
     text-decoration: none;
-    font-weight: bold;
-    color: #540d6e;
+    color: var(--texto-padrao);
+    padding: 0;
 }
 
 nav ul li {
     display: inline-block;
-    margin: 4px;
+    margin: 5px;
     cursor: pointer;
     border: none;
-    width: 25vw;
-    padding: 2px 2px 5px;
-    background: #f706cf;
-}
-
-@media screen and (min-width: 1000px) {
-    nav ul li {
-        width: 250px;
-    }
-
-    nav ul li a {
-        font-size: 25px;
-    }
+    border-radius: 5px;
+    width: 170px;
+    padding: 6px;
+    background: var(--botao-color-claro);
 }
 
 /* Rodapé */
 
 footer {
-    background: #2E2157;
+    background: var(--fundo-padrao);
     max-width: 1000px;
-    font-size: 1.5vw;
-    text-align: center;
-    padding: 5px;
+    font-size: smaller;
+    padding: 10px;
 }
 
 footer a {
@@ -104,75 +107,34 @@ footer a {
 .tabela_calc {
     border-collapse: collapse;
     margin: 20px auto auto;
-    width: 92vw;
+    width: 95%;
+    max-width: 1000px;
+
 }
 
 .tabela_calc th,
 .tabela_calc td,
 .tabela_calc tr {
-    font-size: 2vw;
-    text-align: center;
-    border: 1px solid #c18fff;
+    border: 1px solid #555;
     padding: 10px 5px 10px 5px;
 }
 
-.tabela_calc th {
-    text-align: center;
-}
-
 .input_calc {
-    font-family: inherit;
-    font-size: 2vw;
-    background-color: #212330;
-    color: #ffffff;
+    background-color: var(--fundo-padrao);
+    color: var(--texto-padrao);
+    font-family: "Nunito";
+    padding: 2px;
 }
 
 .spoilerbutton {
-    font-family: inherit;
-    background-color: #212330;
-    color: #ffffff;
+    background-color: var(--fundo-padrao);
+    color: var(--texto-padrao);
     cursor: pointer;
-    font-size: 2vw;
+    padding: 5px;
+    font-family: "Nunito";
 }
 
 .spoiler {
-    font-family: inherit;
-    font-size: 12px;
-}
-
-@media screen and (max-width: 470px) {
-    .tabela_calc {
-        width: 80vw;
-    }
-}
-
-@media screen and (min-width: 471px) {
-    .tabela_calc {
-        width: 90vw;
-    }
-}
-
-@media screen and (min-width: 700px) {
-    .tabela_calc {
-        width: 92vw;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    .tabela_calc {
-        width: 950px;
-    }
-    .spoilerbutton {
-        font-size: 20px;
-    }
-
-    .tabela_calc th,
-    .tabela_calc td,
-    .tabela_calc tr {
-        font-size: 20px;
-    }
-
-    .input_calc {
-        font-size: 20px;
-    }
+    font-size: small;
+    padding-top: 5px;
 }

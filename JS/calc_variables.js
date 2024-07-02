@@ -19,6 +19,7 @@ const cnpjVIVI = 0.06;
 // Mercado Livre:   13% clássico e 18% premium
 // Olist:           21%
 // RD:              18%
+// Shein:           16%
 // Shopee:          20% comissão + 2% Shopee Antecipa
 // WebContinental:  ?
 // SiteUool:        4,69% em 1x e 19,13% em 12x
@@ -31,6 +32,7 @@ const ComissaoMercadoLivreClassico = 0.13;
 const ComissaoMercadoLivrePremium = 0.18;
 const ComissaoOlist = 0.21;
 const ComissaoRD = 0.18;
+const ComissaoShein = 0.16;
 const ComissaoShopee = 0.22;
 const ComissaoWebContinental = 999;
 const ComissaoSiteUool1x = 0.0469;
@@ -123,6 +125,21 @@ const FreteOlist_ACIMA79_23a30KG = 191.9;
 // O frete é pago pelo cliente
 const FreteRD = 0;
 
+// Shein
+// Até 49,89 o frete é pago pelo cliente
+// Acima de 49,90 o frete é pago pelo vendedor
+const FreteShein_ATE49 = 0;
+const FreteShein_ACIMA49_ate300G = 4;
+const FreteShein_ACIMA49_300a500G = 5;
+const FreteShein_ACIMA49_500Ga1KG = 5;
+const FreteShein_ACIMA49_1a2KG = 5;
+const FreteShein_ACIMA49_2a5KG = 15;
+const FreteShein_ACIMA49_5a9KG = 32;
+const FreteShein_ACIMA49_9a13KG = 63;
+const FreteShein_ACIMA49_13a17KG = 73;
+const FreteShein_ACIMA49_17a23KG = 89;
+const FreteShein_ACIMA49_23a30KG = 106;
+
 // Shopee
 // O frete é pago pelo cliente
 const FreteShopee = 0;
@@ -200,6 +217,10 @@ const NivelOlist5 = 0.5;
 // Não há
 const NivelRD = 1;
 
+// Shein
+// Não há
+const NivelShein = 1;
+
 // Shopee
 // Não há
 const NivelShopee = 1;
@@ -249,6 +270,10 @@ const TaxaOlist_ACIMA79 = 0;
 // RD
 // Não há
 const TaxaRD = 0;
+
+// Shein
+// Não há
+const TaxaShein = 0;
 
 // Shopee
 // Até R$ 8:            metade do valor de venda
