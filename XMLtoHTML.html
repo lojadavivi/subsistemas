@@ -3,11 +3,11 @@
 
 <head>
 	<meta charset="UTF-8">
-	
+
 	<!-- Definição de ícones da página -->
 	<link rel="icon" href="STYLES/favicon.png" type="image/x-icon">
 	<link rel="shortcut icon" href="STYLES/icon.png" type="image/x-icon">
-	
+
 	<!-- Outras definições -->
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,12 +32,13 @@
 		<div id="titulo">SUBSISTEMA DA LOJA DA VIVI</div>
 		<nav>
 			<ul>
-				<li><a href="https://docs.google.com/spreadsheets/d/1JwWo0jGJEf9Elu5NvbUWfJ-AR0hm0Xm0NqKxLeRi2C4/edit?usp=sharing">
-					Vendas<br>semanais</a>
+				<li><a
+						href="https://docs.google.com/spreadsheets/d/1JwWo0jGJEf9Elu5NvbUWfJ-AR0hm0Xm0NqKxLeRi2C4/edit?usp=sharing">
+						Vendas<br>semanais</a>
 				<li><a href="/subsistemas/XMLtoHTML">
-					Gerador de DANFE<br>simplificada</a>
+						Gerador de DANFE<br>simplificada</a>
 				<li><a href="/subsistemas/">
-					Calculadora para<br>Marketplaces</a>
+						Calculadora para<br>Marketplaces</a>
 			</ul>
 		</nav>
 	</header>
@@ -48,37 +49,37 @@
 		</label>
 		<input class="botaoxml" type="file" id="xmlFilesInput" accept=".xml" multiple>
 		<button class="botaoxml" id="SalvarPDF">Salvar como PDF</button>
-	
+
 		<!-- Contêiner para as tabelas geradas a partir dos arquivos XML -->
 		<div id="tablesContainer"></div>
-	
+
 		<script>
 			// Função para carregar e processar os arquivos XML
 			function handleXMLFiles(event) {
 				const files = event.target.files;
 				const tablesContainer = document.getElementById("tablesContainer");
-	
+
 				for (let i = 0; i < files.length; i++) {
 					const file = files[i];
 					const reader = new FileReader();
-	
+
 					reader.onload = function (e) {
 						const xmlData = e.target.result;
 						const tableHTML = xmlToTable(xmlData);
-	
+
 						// Crie uma div para conter cada tabela e dê a ela uma classe para estilização
 						const tableDiv = document.createElement("div");
 						tableDiv.classList.add("tabelageral");
 						tableDiv.innerHTML = tableHTML;
-	
+
 						// Adicione a tabela à área de contêiner de tabelas
 						tablesContainer.appendChild(tableDiv);
 					};
-	
+
 					reader.readAsText(file);
 				}
 			}
-	
+
 			// Função para formatar data e hora no formato "dd/mm/yyyy hh:mm"
 			function formatarDataHora(data) {
 				const dataObj = new Date(data);
@@ -87,16 +88,16 @@
 				const ano = dataObj.getFullYear();
 				const hora = dataObj.getHours().toString().padStart(2, '0');
 				const minutos = dataObj.getMinutes().toString().padStart(2, '0');
-	
+
 				return `${dia}/${mes}/${ano} ${hora}:${minutos}`;
 			}
-	
+
 			// Função para transformar o XML em uma tabela HTML
 			function xmlToTable(xmlData) {
 				if (window.DOMParser) {
 					const parser = new DOMParser();
 					const xmlDoc = parser.parseFromString(xmlData, "text/xml");
-	
+
 					// Tags e atributos
 					const serie = xmlDoc.querySelector("serie");                            // Série NFe
 					const nNF = xmlDoc.querySelector("nNF");                                // Número NFe
@@ -106,7 +107,7 @@
 					const dhRecbto = xmlDoc.querySelector("dhRecbto").textContent;          // Data e hora do protocolo NFe
 					const vPag = xmlDoc.querySelector("vPag");                              // Valor da NFe
 					const infCpl = xmlDoc.querySelector("infCpl");                          // Informações complementares
-	
+
 					const emitCNPJ = xmlDoc.querySelector("emit > CNPJ");                   // CNPJ emitente
 					const emitIE = xmlDoc.querySelector("emit > IE");                       // Inscrição Estadual emitente
 					const emitxNome = xmlDoc.querySelector("emit > xNome");                 // Nome emitente
@@ -116,7 +117,7 @@
 					const emitxMun = xmlDoc.querySelector("emit > enderEmit > xMun");       // Municipio emitente
 					const emitUF = xmlDoc.querySelector("emit > enderEmit > UF");           // UF emitente
 					const emitCEP = xmlDoc.querySelector("emit > enderEmit > CEP");         // CEP emitente
-	
+
 					const destCPF = xmlDoc.querySelector("dest > CPF");                     // CPF destinatário
 					const destCNPJ = xmlDoc.querySelector("dest > CNPJ");                   // CNPJ destinatário
 					const destIEElement = xmlDoc.querySelector("dest > IE");
@@ -129,13 +130,13 @@
 					const destxMun = xmlDoc.querySelector("dest > enderDest > xMun");       // Municipio destinatário
 					const destUF = xmlDoc.querySelector("dest > enderDest > UF");           // UF destinatário
 					const destCEP = xmlDoc.querySelector("dest > enderDest > CEP");         // CEP destinatário
-	
+
 					const detalhes = xmlDoc.querySelectorAll("det");                        // Produtos
-	
+
 					// Verificar se há CPF ou CNPJ do destinatário
 					const destCPFElement = xmlDoc.querySelector("dest > CPF");
 					const destCNPJElement = xmlDoc.querySelector("dest > CNPJ");
-	
+
 					// String para exibir o CPF/CNPJ na tabela
 					let cpfCnpjString = "";
 					if (destCPFElement) {
@@ -143,11 +144,11 @@
 					} else if (destCNPJElement) {
 						cpfCnpjString = `CNPJ: ${destCNPJElement.textContent}`;
 					}
-	
+
 					// Tabela de produtos
 					const produtosTable = document.createElement("table");
 					produtosTable.classList.add("tabelaprodutos");
-	
+
 					// Cabeçalho da tabela de produtos
 					const produtosTableHeader = produtosTable.createTHead();
 					const headerRow = produtosTableHeader.insertRow();
@@ -158,19 +159,19 @@
 			<th style="width: 10ch; text-align: center;">$ UN</th>
 			<th style="width: 10ch; text-align: center;">$ TOTAL
 		`;
-	
+
 					/// Linhas da tabela de produtos
 					detalhes.forEach((detalhe, index) => {
 						const produto = detalhe.querySelector("prod");
-	
+
 						const cEAN = produto.querySelector("cEAN").textContent;
 						const xProd = produto.querySelector("xProd").textContent;
 						const qCom = parseInt(produto.querySelector("qCom").textContent);
-	
+
 						// Substitua vírgulas por pontos e então faça o parseFloat
 						const vUnCom = parseFloat(produto.querySelector("vUnCom").textContent.replace(',', '.')).toFixed(2);
 						const vProd = parseFloat(produto.querySelector("vProd").textContent.replace(',', '.')).toFixed(2);
-	
+
 						const produtosTableRow = produtosTable.insertRow();
 						produtosTableRow.innerHTML = `
 			<td style="width: 13ch;">${cEAN}</td>
@@ -180,111 +181,111 @@
 			<td style="width: 10ch; text-align: center;">R$ ${vProd.replace('.', ',')}</td>
 		`;
 					});
-	
+
 					// Tabela final que inclui os produtos e as informações
 					const table = document.createElement("table");
 					const headerRow1 = table.insertRow(0);
 					headerRow1.classList.add("centerrowgrande");
 					const headerCell1 = headerRow1.insertCell();
 					headerCell1.innerHTML = `DANFE SIMPLIFICADO - ETIQUETA<br>NFe N. ${nNF.textContent} | Série ${serie.textContent} | Tipo NFe: ${tpNF.textContent}`;
-	
+
 					const row3 = table.insertRow(1);
 					row3.classList.add("centerrow");
 					const cell3 = row3.insertCell();
 					cell3.innerHTML = `<br>${emitxNome.textContent} | CNPJ: ${emitCNPJ.textContent} | IE: ${emitIE.textContent}`;
-	
+
 					const row5 = table.insertRow(2);
 					row5.classList.add("centerrow");
 					const cell5 = row5.insertCell();
 					cell5.innerHTML = `${emitxLgr.textContent}, ${emitnro.textContent}, ${emitxBairro.textContent} - CEP: ${emitCEP.textContent} | ${emitxMun.textContent} - ${emitUF.textContent}`;
-	
+
 					const row7 = table.insertRow(3);
 					row7.classList.add("centerrow");
 					const cell7 = row7.insertCell();
 					const barcodeImage = createBarcodeImage(chNFe.textContent);
 					cell7.appendChild(barcodeImage);
-	
+
 					const row8 = table.insertRow(4);
 					row8.classList.add("centerrow");
 					const cell8 = row8.insertCell();
 					cell8.innerHTML = `${chNFe.textContent}`;
-	
+
 					const row9 = table.insertRow(5);
 					row9.classList.add("centerrow");
 					const cell9 = row9.insertCell();
 					cell9.innerHTML = `PROTOCOLO: ${nProt.textContent} - ${formatarDataHora(dhRecbto)}`;
-	
+
 					const row10 = table.insertRow(6);
 					row10.classList.add("centerrow");
 					const cell10 = row10.insertCell();
 					cell10.innerHTML = `<br>DESTINATÁRIO`;
-	
+
 					const row11 = table.insertRow(7);
 					row11.classList.add("centerrow");
 					const cell11 = row11.insertCell();
 					cell11.innerHTML = `${destxNome.textContent}`;
-	
+
 					const row12 = table.insertRow(8);
 					row12.classList.add("centerrow");
 					const cell12 = row12.insertCell();
 					cell12.innerHTML = `CNPJ/CPF: ${cpfCnpjString} | IE: ${destIE}`;
-	
+
 					const row13 = table.insertRow(9);
 					row13.classList.add("centerrow");
 					const cell13 = row13.insertCell();
 					cell13.innerHTML = `${destxLgr.textContent}, ${destnro.textContent}, ${destxBairro.textContent}`;
-	
+
 					const row14 = table.insertRow(10);
 					row14.classList.add("centerrow");
 					const cell14 = row14.insertCell();
 					cell14.innerHTML = `CEP: ${destCEP.textContent} | ${destxMun.textContent} - ${destUF.textContent}`;
-	
+
 					const emptyRow1 = table.insertRow(11);
 					const emptyCell1 = emptyRow1.insertCell();
 					emptyCell1.innerHTML = `<p> </p>`;
-	
+
 					const row15 = table.insertRow(12);
 					const cell15 = row15.insertCell();
 					cell15.colspan = 6;
 					cell15.appendChild(produtosTable);
-	
+
 					const emptyRow2 = table.insertRow(13);
 					const emptyCell2 = emptyRow2.insertCell();
 					emptyCell2.innerHTML = `<p> </p>`;
-	
+
 					const row16 = table.insertRow(14);
 					row16.classList.add("row16");
 					const cell16 = row16.insertCell();
 					cell16.innerHTML = `Valor Total da NFe: R$ ${vPag.textContent.replace(/\./g, ',')}`;
-	
+
 					const emptyRow3 = table.insertRow(15);
 					const emptyCell3 = emptyRow3.insertCell();
 					emptyCell3.innerHTML = `<p> </p>`;
-	
+
 					const row17 = table.insertRow(16);
 					const cell17 = row17.insertCell();
 					cell17.innerHTML = `Informações complementares: ${infCpl.textContent}`;
-	
+
 					const emptyRow4 = table.insertRow(16);
 					const emptyCell4 = emptyRow4.insertCell();
 					emptyCell4.innerHTML = `<p> </p>`;
-	
+
 					const row18 = table.insertRow(18);
 					const cell18 = row18.insertCell();
 					const qrCodeImage = document.createElement("img");
 					qrCodeImage.src = "STYLES/logo_vivi_qr_code.png";
 					cell18.style.textAlign = "center";
 					cell18.appendChild(qrCodeImage);
-	
+
 					return table.outerHTML;
 				}
 			}
-	
+
 			// Função para criar o código de barras em uma imagem e adicioná-lo à tabela
 			function createBarcodeImage(chNFe) {
 				// Crie um elemento de imagem para exibir o código de barras
 				const barcodeImage = new Image();
-	
+
 				// Use JsBarcode para gerar o código de barras
 				JsBarcode(barcodeImage, chNFe, {
 					format: "CODE128",
@@ -292,20 +293,20 @@
 					height: 100,
 					displayValue: false,
 				});
-	
+
 				return barcodeImage;
 			}
-	
+
 			// Ouvinte de evento do input de arquivos
 			const xmlFilesInput = document.getElementById("xmlFilesInput");
 			xmlFilesInput.addEventListener("change", handleXMLFiles);
-	
+
 			// Função para iniciar o aplicativo
 			function startApp() {
 				const salvarPDF = document.getElementById("SalvarPDF");
 				const gifImage = new Image();
 				gifImage.src = "STYLES/loading.gif";
-	
+
 				salvarPDF.addEventListener("click", () => {
 					// Exibe o GIF no centro da página
 					gifImage.style.position = "fixed";
@@ -313,36 +314,36 @@
 					gifImage.style.top = "50%";
 					gifImage.style.transform = "translate(-50%, -50%)";
 					document.body.appendChild(gifImage);
-	
+
 					const tables = document.querySelectorAll(".tabelageral");
-	
+
 					const doc = new window.jspdf.jsPDF({
 						orientation: "portrait",
 						unit: "mm",
 						format: [100, 150]
 					});
-	
+
 					const pageSize = {
 						width: 100, // Largura da página em mm (10 cm)
 						height: 150, // Altura da página em mm (15 cm)
 					};
-	
+
 					const generatePDF = (index) => {
 						if (index < tables.length) {
 							if (index > 0) {
 								// Adiciona uma nova página com o tamanho personalizado
 								doc.addPage([pageSize.width, pageSize.height]);
 							}
-	
+
 							const table = tables[index];
-	
+
 							// Use html2canvas para capturar o conteúdo da tabela como uma imagem com alta resolução
 							html2canvas(table).then((canvas) => {
 								const imgData = canvas.toDataURL('image/png');
-	
+
 								// Adiciona a imagem ao PDF
 								doc.addImage(imgData, 'png', 0, 0, pageSize.width, pageSize.height);
-	
+
 								// Chama generatePDF recursivamente para a próxima tabela
 								generatePDF(index + 1);
 							});
@@ -351,16 +352,16 @@
 							gifImage.style.display = "none";
 						}
 					};
-	
+
 					// Inicia a geração do PDF a partir da primeira tabela
 					generatePDF(0);
 				});
 			}
-	
+
 			startApp();
-	
+
 		</script>
-	
+
 		<style>
 			.tabelageral {
 				background-color: #FFFFFF;
@@ -370,67 +371,54 @@
 				padding: 5px;
 				width: 395mm;
 				height: 595mm;
-				font-family: "Inconsolata";
+				font-family: "Nunito";
 				font-size: 40px;
 				font-weight: bold;
 			}
-	
+
 			.tabelageral+.tabelageral {
 				margin-top: 10px;
 			}
-	
+
 			.tabelaprodutos {
 				border-collapse: collapse;
 				width: 100%;
 			}
-	
+
 			.tabelaprodutos th,
 			.tabelaprodutos td {
 				border: 2px solid black;
 				padding: 5px;
 				text-align: left;
 			}
-	
+
 			.centerrow,
 			.centerrowgrande {
 				text-align: center;
 			}
-	
+
 			.centerrowgrande {
 				font-size: 70px;
 			}
-	
+
 			.row16 {
 				text-align: center;
 				font-size: 50px;
 			}
-	
-			.botaoxml {
-				color: #c18fff;
-				background-color: #2E2157;
-				font-size: 2vw;
-				border: 1px solid #c18fff;
-				padding: 15px 50px;
-				cursor: pointer;
-				font-family: "Inconsolata";
-			}
-	
-			.botaoxml:hover {
-				color: #2E2157;
-				background-color: #c18fff;
-			}
 		</style>
 
 	</section>
+	
 	<br>
 	<footer>
 		<div class="footer">
 			Desenvolvido por
-			<a href="https://francis-castela.github.io/portfolio/" style="color: inherit;">Francis Castela</a>
+			<a href="https://francis-castela.github.io/portfolio/">Francis Castela</a>
 			para a
-			<a href="https://www.lojadaviviunhas.com.br/" style="color: inherit;">Loja da Vivi</a>. Licença <a
-				href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br" target="_blank"
-				rel="license noopener noreferrer" style="color: inherit;">CC BY-NC-SA 4.0
+			<a href="https://www.lojadaviviunhas.com.br/">Loja da Vivi</a>.
+			Licença
+			<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br" target="_blank"
+				rel="license noopener noreferrer">CC BY-NC-SA 4.0</a>
 		</div>
 	</footer>
 

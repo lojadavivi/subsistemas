@@ -17,6 +17,7 @@
     --texto-padrao: #000;
     --texto-color-escuro: #DB06B7;
     --botao-color-claro: #FB74E5;
+    --botao-color-claro-hover: #98D2EB;
     --tabela-padrao: #AAA;
     --tabela-ltda: #CE93D8;
     --tabela-online: #90CAF9;
@@ -80,6 +81,14 @@ nav ul li {
     width: 170px;
     padding: 6px;
     background: var(--botao-color-claro);
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s ease;
+}
+
+nav ul li:hover,
+nav ul li:focus {
+    background-color: var(--botao-color-claro-hover);
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 /* Rodapé */
@@ -95,12 +104,7 @@ footer {
 
 footer a {
     text-decoration: none;
-}
-
-@media screen and (min-width: 1000px) {
-    footer {
-        font-size: small;
-    }
+    color: var(--texto-padrao);
 }
 
 /* --------------------------------------------------- */
@@ -140,4 +144,22 @@ footer a {
 .spoiler {
     font-size: small;
     padding-top: 5px;
+}
+
+/* --------------------------------------------------- */
+
+/* ESTILOS DO GERADOR DE DANFE SIMPLIFICADA */
+
+.botaoxml {
+    padding: 15px 50px;
+    cursor: pointer;
+    font-family: "Nunito";
+    background-color: var(--fundo-padrao);
+    transition: background-color 0.3s;
+}
+
+.botaoxml:hover,
+.botaoxml:focus {
+    background-color: var(--botao-color-claro);
+    cursor: pointer;
 }
