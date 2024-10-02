@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SUBSISTEMA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div id="titulo">SUBSISTEMA DA LOJA DA VIVI</div>
+    </header>
+
+    <section id="XMLtoHTML">
+        <br>
+        <input class="botaoxml" type="file" id="xmlFilesInput" accept=".xml" multiple>
+        <div id="tablesContainer"></div>
+
+        <script>
+            // Função para carregar e processar os arquivos XML
+            function handleXMLFiles(event) {
+                const files = event.target.files;
+                const tablesContainer = document.getElementById("tablesContainer");
+
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        const xmlData = e.target.result;
+                        const tableHTML = xmlToTable(xmlData);
+
+                        const tableDiv = document.createElement("div");
+                        tableDiv.classList.add("tabelageral");
+                        tableDiv.innerHTML = tableHTML;
+
+                        tablesContainer.appendChild(tableDiv);
+                    };
+
+                    reader.readAsText(file);
+                }
+            }
+
+            // Função para transformar o XML em uma tabela HTML com as informações solicitadas
+            function xmlToTable(xmlData) {
+                if (window.DOMParser) {
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(xmlData, "text/xml");
+
+                    // Seleção dos elementos desejados
+                    const serie = xmlDoc.querySelector("serie").textContent;
+                    const nNF = xmlDoc.querySelector("nNF").textContent;
+                    const chNFe = xmlDoc.querySelector("chNFe").textContent;
+                    const emitCNPJ = xmlDoc.querySelector("emit > CNPJ").textContent;
+                    const emitxNome = xmlDoc.querySelector("emit > xNome").textContent;
+
+                    // Captura e formatação da data no formato desejado
+                    const dataEmissaoISO = xmlDoc.querySelector("dhEmi").textContent;
+                    const dataEmissaoFormatada = formatarData(dataEmissaoISO);
+
+                    // Função para converter a data do formato ISO para DD/MM/YYYY
+                    function formatarData(dataISO) {
+                        const data = new Date(dataISO);
+                        const dia = String(data.getDate()).padStart(2, '0');
+                        const mes = String(data.getMonth() + 1).padStart(2, '0'); // Mês em JavaScript vai de 0-11
+                        const ano = data.getFullYear();
+                        return `${dia}/${mes}/${ano}`;
+                    }
+
+                    // Função para formatar o CNPJ no formato 00.000.000/0000-00
+                    function formatarCNPJ(cnpj) {
+                        return cnpj.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, "$1.$2.$3/$4-$5");
+                    }
+
+                    // Formata o CNPJ
+                    const emitCNPJFormatado = formatarCNPJ(emitCNPJ);
+
+                    // Criação da tabela HTML
+                    return `
+                        <table border="1">
+                            <tr>
+								<th>Data</th>
+								<th>Fornecedor</th>
+								<th>NF</th>
+								<th>CFOP</th>
+								<th>ICMS</th>
+								<th>VALOR PROD</th>
+								<th>VALOR NOTA</th>
+								<th>PDF</th>
+								<th>XML</th>
+                                <th>CNPJ EMISSOR</th>
+								<th>Chave NFe</th>
+                            </tr>
+                            <tr>
+								<td>${dataEmissaoFormatada}</td>
+								<td>${emitxNome}</td>
+								<td>${nNF}</td>
+                                <td></td>
+                                <td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>${emitCNPJFormatado}</td>
+								<td class="chaveNFe">${chNFe}</td>
+                            </tr>
+                        </table>
+                    `;
+                }
+            }
+
+            // Ouvinte de evento do input de arquivos
+            document.getElementById("xmlFilesInput").addEventListener("change", handleXMLFiles);
+        </script>
+
+        <style>
+            .tabelageral {
+                margin-top: 10px;
+                padding: 5px;
+                font-size: small;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            th, td {
+                padding: 4px;
+                text-align: left;
+            }
+
+            /* Permitir quebra de linha na coluna da chave NFe */
+            .chaveNFe {
+                word-break: break-all;
+            }
+        </style>
+    </section>
+</body>
+
+</html>
