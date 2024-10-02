@@ -42,7 +42,7 @@
                         if (rowData) {
                             allDataRows.push(rowData); // Adiciona a linha à lista de dados
                         }
-                        
+
                         // Exibir tabela após processar todos os arquivos
                         if (i === files.length - 1) {
                             renderTable(); // Renderiza a tabela após processar todos os arquivos
@@ -154,16 +154,25 @@
 
             // Função para baixar todos os arquivos ao clicar no botão
             function downloadAllFiles() {
-                filesToDownload.forEach(file => {
-                    const url = URL.createObjectURL(file.blob);
-                    const link = document.createElement("a");
-                    link.href = url;
-                    link.download = file.name;
-                    document.body.appendChild(link); // Adiciona o link ao DOM para funcionar no Firefox
-                    link.click(); // Simula o clique para download
-                    document.body.removeChild(link); // Remove o link do DOM
-                    URL.revokeObjectURL(url); // Libera o objeto URL
-                });
+                let index = 0; // Índice para controlar qual arquivo está sendo baixado
+
+                const downloadNextFile = () => {
+                    if (index < filesToDownload.length) {
+                        const file = filesToDownload[index];
+                        const url = URL.createObjectURL(file.blob);
+                        const link = document.createElement("a");
+                        link.href = url;
+                        link.download = file.name;
+                        document.body.appendChild(link); // Adiciona o link ao DOM para funcionar no Firefox
+                        link.click(); // Simula o clique para download
+                        document.body.removeChild(link); // Remove o link do DOM
+                        URL.revokeObjectURL(url); // Libera o objeto URL
+                        index++; // Incrementa o índice para o próximo arquivo
+                        setTimeout(downloadNextFile, 100); // Chama a próxima função de download após 100ms
+                    }
+                };
+
+                downloadNextFile(); // Inicia o processo de download
             }
 
             // Ouvinte de evento do input de arquivos
@@ -175,6 +184,7 @@
             .tabelageral {
                 margin-top: 10px;
                 padding: 5px;
+                font-size: small;
             }
 
             table {
@@ -183,9 +193,8 @@
             }
 
             th, td {
-                padding: 4px;
+                padding: 8px;
                 text-align: left;
-                font-size: 10px;
             }
 
             /* Permitir quebra de linha na coluna da chave NFe */
