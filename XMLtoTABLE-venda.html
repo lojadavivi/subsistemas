@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SUBSISTEMA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div id="titulo">SUBSISTEMA DA LOJA DA VIVI</div>
+    </header>
+
+    <section id="XMLtoHTML">
+        <br>
+        <input class="botaoxml" type="file" id="xmlFilesInput" accept=".xml" multiple>
+        <button id="downloadAllBtn" style="display:none;">Baixar Todos os Arquivos</button>
+        <div id="tablesContainer"></div>
+
+        <script>
+            const filesToDownload = [];
+            let allDataRows = []; // Array para armazenar todas as linhas da tabela
+
+            // Função para carregar e processar os arquivos XML
+            function handleXMLFiles(event) {
+                const files = event.target.files;
+                const tablesContainer = document.getElementById("tablesContainer");
+                tablesContainer.innerHTML = ''; // Limpa o conteúdo anterior
+                filesToDownload.length = 0; // Limpa a lista de downloads
+                allDataRows.length = 0; // Limpa as linhas de dados
+
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        const xmlData = e.target.result;
+                        const rowData = xmlToRow(xmlData, file.name); // Obtem as informações da linha
+
+                        if (rowData) {
+                            allDataRows.push(rowData); // Adiciona a linha à lista de dados
+                        }
+
+                        // Exibir tabela após processar todos os arquivos
+                        if (i === files.length - 1) {
+                            renderTable(); // Renderiza a tabela após processar todos os arquivos
+                        }
+                    };
+
+                    reader.readAsText(file);
+                }
+
+                // Exibir botão de download após carregar os arquivos
+                if (files.length > 0) {
+                    document.getElementById("downloadAllBtn").style.display = "block";
+                }
+            }
+
+            // Função para transformar o XML em uma linha de dados
+            function xmlToRow(xmlData, originalFileName) {
+                if (window.DOMParser) {
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(xmlData, "text/xml");
+
+                    // Seleção dos elementos desejados
+                    const nNF = xmlDoc.querySelector("nNF").textContent;
+                    const emitxNome = xmlDoc.querySelector("emit > xNome").textContent;
+                    const vNF = xmlDoc.querySelector("vNF").textContent;
+
+                    // Captura e formatação da data no formato desejado
+                    const dataEmissaoISO = xmlDoc.querySelector("dhEmi").textContent;
+                    const dataEmissaoFormatada = formatarData(dataEmissaoISO);
+
+                    // Função para converter a data do formato ISO para DD/MM/YYYY
+                    function formatarData(dataISO) {
+                        const data = new Date(dataISO);
+                        const dia = String(data.getDate()).padStart(2, '0');
+                        const mes = String(data.getMonth() + 1).padStart(2, '0'); // Mês em JavaScript vai de 0-11
+                        const ano = data.getFullYear();
+                        return `${dia}/${mes}/${ano}`;
+                    }
+
+                    // Função para formatar o CNPJ no formato 00.000.000/0000-00
+                    function formatarCNPJ(cnpj) {
+                        return cnpj.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, "$1.$2.$3/$4-$5");
+                    }
+
+                    // Formatação do CNPJ
+                    const emitCNPJ = xmlDoc.querySelector("emit > CNPJ").textContent;
+                    const emitCNPJFormatado = formatarCNPJ(emitCNPJ);
+
+                    // Formata a chave NFe para permitir quebra de linha
+                    const chNFe = xmlDoc.querySelector("chNFe").textContent;
+
+                    // Adiciona o blob do arquivo à lista de arquivos para download
+                    const newFileName = `${emitxNome} - ${nNF}`;
+                    const xmlBlob = new Blob([xmlData], { type: "application/xml" });
+                    filesToDownload.push({ blob: xmlBlob, name: `${newFileName}.xml` });
+
+                    // Retorna os dados da linha
+                    return {
+                        dataEmissao: dataEmissaoFormatada,
+                        emitxNome: emitxNome,
+                        nNF: nNF,
+                        emitCNPJ: emitCNPJFormatado,
+                        chNFe: chNFe,
+                        vNF: vNF,
+                    };
+                }
+                return null; // Retorna null se houver algum erro
+            }
+
+            // Função para renderizar a tabela HTML unificada
+            function renderTable() {
+                const tablesContainer = document.getElementById("tablesContainer");
+                const rowsHTML = allDataRows.map(row => `
+                    <tr>
+                        <td>${row.dataEmissao}</td>
+                        <td>${row.emitxNome}</td>
+                        <td>${row.nNF}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>${row.vNF}</td>
+                        <td></td>
+                        <td></td>
+                        <td>${row.emitCNPJ}</td>
+                        <td class="chaveNFe">${row.chNFe}</td>
+                    </tr>
+                `).join('');
+
+                // Criação da tabela HTML unificada
+                const tableHTML = `
+                    <table border="1">
+                        <tr>
+                            <th>Data</th>
+                            <th>Fornecedor</th>
+                            <th>NF</th>
+                            <th>CFOP</th>
+                            <th>ICMS</th>
+                            <th>VALOR PROD</th>
+                            <th>VALOR NOTA</th>
+                            <th>PDF</th>
+                            <th>XML</th>
+                            <th>CNPJ EMISSOR</th>
+                            <th>Chave NFe</th>
+                        </tr>
+                        ${rowsHTML}
+                    </table>
+                `;
+
+                tablesContainer.innerHTML = tableHTML; // Renderiza a tabela no DOM
+            }
+
+            // Função para baixar todos os arquivos ao clicar no botão
+            function downloadAllFiles() {
+                let index = 0; // Índice para controlar qual arquivo está sendo baixado
+
+                const downloadNextFile = () => {
+                    if (index < filesToDownload.length) {
+                        const file = filesToDownload[index];
+                        const url = URL.createObjectURL(file.blob);
+                        const link = document.createElement("a");
+                        link.href = url;
+                        link.download = file.name;
+                        document.body.appendChild(link); // Adiciona o link ao DOM para funcionar no Firefox
+                        link.click(); // Simula o clique para download
+                        document.body.removeChild(link); // Remove o link do DOM
+                        URL.revokeObjectURL(url); // Libera o objeto URL
+                        index++; // Incrementa o índice para o próximo arquivo
+                        setTimeout(downloadNextFile, 100); // Chama a próxima função de download após 100ms
+                    }
+                };
+
+                downloadNextFile(); // Inicia o processo de download
+            }
+
+            // Ouvinte de evento do input de arquivos
+            document.getElementById("xmlFilesInput").addEventListener("change", handleXMLFiles);
+            document.getElementById("downloadAllBtn").addEventListener("click", downloadAllFiles);
+        </script>
+
+        <style>
+            .tabelageral {
+                margin-top: 10px;
+                padding: 5px;
+                
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            th, td {
+                padding: 8px;
+                text-align: left;
+                font-size: x-small;
+            }
+
+            /* Permitir quebra de linha na coluna da chave NFe */
+            .chaveNFe {
+                word-break: break-all;
+            }
+        </style>
+    </section>
+</body>
+
+</html>

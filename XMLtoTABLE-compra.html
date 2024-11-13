@@ -97,11 +97,6 @@
                     const xmlBlob = new Blob([xmlData], { type: "application/xml" });
                     filesToDownload.push({ blob: xmlBlob, name: `${newFileName}.xml` });
 
-                    // Adiciona o arquivo PDF correspondente
-                    const pdfFileName = originalFileName.replace(/\.xml$/, ".pdf"); // Troca a extensão de xml para pdf
-                    const pdfBlob = new Blob([xmlData], { type: "application/pdf" }); // Simulando a criação do PDF a partir do XML (substitua com o conteúdo real do PDF)
-                    filesToDownload.push({ blob: pdfBlob, name: `${newFileName}.pdf` });
-
                     // Retorna os dados da linha
                     return {
                         dataEmissao: dataEmissaoFormatada,
