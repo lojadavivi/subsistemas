@@ -1006,14 +1006,144 @@ function calcular(inputElement) {
                 ) * constNivelMercadoLivre
             )
             + (
-                VendaManual <= 78.99 ? TaxaMercadoLivre_ATE79 :
-                    VendaManual >= 79 ? TaxaMercadoLivre_ACIMA79 : 0
+                VendaManual <= 28.99 ? TaxaMercadoLivre_ATE29 :
+                    VendaManual >= 29 && VendaManual <= 49.99 ? TaxaMercadoLivre_ATE50 :
+                        VendaManual >= 50 && VendaManual <= 78.99 ? TaxaMercadoLivre_ATE79 :
+                            VendaManual >= 79 ? TaxaMercadoLivre_ACIMA79 : 0
             )
         );
 
     // Mercado Livre Clássico Valor Líquido - calcMercadoLivreClassicoValorLiquido
-    // Até 78,99
+    // Até 28,99
     if (
+        (
+            (
+                (VendaValorLiquido + custo + TaxaMercadoLivre_ATE29)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivreClassico)
+                    * 100)
+                - 100
+            )
+        ) <= 28.99) {
+
+        calcMercadoLivreClassicoValorLiquido =
+            (
+                (
+                    (VendaValorLiquido + custo + TaxaMercadoLivre_ATE29)
+                    + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+                ) * 100)
+            /
+            (
+                -(
+                    (
+                        (constCnpj + ComissaoMercadoLivreClassico)
+                        * 100)
+                    - 100
+                )
+            );
+    }
+
+    // Entre 29 e 49,99
+    else if (
+        (
+            (
+                (VendaValorLiquido + custo + TaxaMercadoLivre_ATE29)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivreClassico)
+                    * 100)
+                - 100
+            )
+        ) >= 29
+        &&
+        (
+            (
+                (VendaValorLiquido + custo + TaxaMercadoLivre_ATE50)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivreClassico)
+                    * 100)
+                - 100
+            )
+        ) >= 29
+        &&
+        (
+            (
+                (VendaValorLiquido + custo + TaxaMercadoLivre_ATE50)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivreClassico)
+                    * 100)
+                - 100
+            )
+        ) <= 49.99) {
+
+        calcMercadoLivreClassicoValorLiquido =
+            (
+                (
+                    (VendaValorLiquido + custo + TaxaMercadoLivre_ATE50)
+                    + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+                ) * 100)
+            /
+            (
+                -(
+                    (
+                        (constCnpj + ComissaoMercadoLivreClassico)
+                        * 100)
+                    - 100
+                )
+            );
+    }
+
+    // Entre 50 e 78,99
+    else if (
+        (
+            (
+                (VendaValorLiquido + custo + TaxaMercadoLivre_ATE50)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivreClassico)
+                    * 100)
+                - 100
+            )
+        ) >= 50
+        &&
+        (
+            (
+                (VendaValorLiquido + custo + TaxaMercadoLivre_ATE79)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivreClassico)
+                    * 100)
+                - 100
+            )
+        ) >= 50
+        &&
         (
             (
                 (VendaValorLiquido + custo + TaxaMercadoLivre_ATE79)
@@ -1046,7 +1176,6 @@ function calcular(inputElement) {
             );
     }
 
-    // Mercado Livre Clássico Valor Líquido - calcMercadoLivreClassicoValorLiquido
     // Acima de 79
     else if (
         (
@@ -1082,8 +1211,168 @@ function calcular(inputElement) {
     }
 
     // Mercado Livre Clássico Porcentagem Líquida - calcMercadoLivreClassicoPorcentagemLiquida
-    // Até 78,99
+    // Até 28,99
     if (
+        (
+            (
+                (
+                    + (custo)
+                    + ((VendaPorcentagemLiquida * custo) / 100)
+                )
+                + (TaxaMercadoLivre_ATE29)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivreClassico)
+                    * 100)
+                - 100
+            )
+        ) <= 28.99) {
+
+        calcMercadoLivreClassicoPorcentagemLiquida =
+            (
+                (
+                    (
+                        + (custo)
+                        + ((VendaPorcentagemLiquida * custo) / 100)
+                    )
+                    + (TaxaMercadoLivre_ATE29)
+                    + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+                ) * 100)
+            /
+            (
+                -(
+                    (
+                        (constCnpj + ComissaoMercadoLivreClassico)
+                        * 100)
+                    - 100
+                )
+            );
+    }
+
+    // Entre 29 e 49,99
+    else if (
+        (
+            (
+                (
+                    + (custo)
+                    + ((VendaPorcentagemLiquida * custo) / 100)
+                )
+                + (TaxaMercadoLivre_ATE29)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivreClassico)
+                    * 100)
+                - 100
+            )
+        ) >= 29
+        &&
+        (
+            (
+                (
+                    + (custo)
+                    + ((VendaPorcentagemLiquida * custo) / 100)
+                )
+                + (TaxaMercadoLivre_ATE50)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivreClassico)
+                    * 100)
+                - 100
+            )
+        ) >= 29
+        &&
+        (
+            (
+                (
+                    + (custo)
+                    + ((VendaPorcentagemLiquida * custo) / 100)
+                )
+                + (TaxaMercadoLivre_ATE50)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivreClassico)
+                    * 100)
+                - 100
+            )
+        ) <= 49.99) {
+
+        calcMercadoLivreClassicoPorcentagemLiquida =
+            (
+                (
+                    (
+                        + (custo)
+                        + ((VendaPorcentagemLiquida * custo) / 100)
+                    )
+                    + (TaxaMercadoLivre_ATE50)
+                    + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+                ) * 100)
+            /
+            (
+                -(
+                    (
+                        (constCnpj + ComissaoMercadoLivreClassico)
+                        * 100)
+                    - 100
+                )
+            );
+    }
+
+    // Entre 50 e 78,99
+    else if (
+        (
+            (
+                (
+                    + (custo)
+                    + ((VendaPorcentagemLiquida * custo) / 100)
+                )
+                + (TaxaMercadoLivre_ATE50)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivreClassico)
+                    * 100)
+                - 100
+            )
+        ) >= 50
+        &&
+        (
+            (
+                (
+                    + (custo)
+                    + ((VendaPorcentagemLiquida * custo) / 100)
+                )
+                + (TaxaMercadoLivre_ATE79)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivreClassico)
+                    * 100)
+                - 100
+            )
+        ) >= 50
+        &&
         (
             (
                 (
@@ -1124,7 +1413,6 @@ function calcular(inputElement) {
             );
     }
 
-    // Mercado Livre Clássico Porcentagem Líquida - calcMercadoLivreClassicoPorcentagemLiquida
     // Acima de 79
     else if (
         (
@@ -1174,19 +1462,150 @@ function calcular(inputElement) {
             + (VendaManual * constCnpj)
             + (VendaManual * ComissaoMercadoLivrePremium)
             + (
-                VendaManual <= 78.99 ? TaxaMercadoLivre_ATE79 :
-                    VendaManual >= 79 ? TaxaMercadoLivre_ACIMA79 : 0)
-            + (
                 (
                     VendaManual <= 78.99 ? FreteMercadoLivre_ATE79 :
                         VendaManual >= 79 ? constFreteMercadoLivre : 0
                 ) * constNivelMercadoLivre
             )
+            + (
+                VendaManual <= 28.99 ? TaxaMercadoLivre_ATE29 :
+                    VendaManual >= 29 && VendaManual <= 49.99 ? TaxaMercadoLivre_ATE50 :
+                        VendaManual >= 50 && VendaManual <= 78.99 ? TaxaMercadoLivre_ATE79 :
+                            VendaManual >= 79 ? TaxaMercadoLivre_ACIMA79 : 0
+            )
         );
 
     // Mercado Livre Premium Valor Líquido - calcMercadoLivrePremiumValorLiquido
-    // Até 78,99
+    // Até 28,99
     if (
+        (
+            (
+                (VendaValorLiquido + custo + TaxaMercadoLivre_ATE29)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivrePremium)
+                    * 100)
+                - 100
+            )
+        ) <= 28.99) {
+
+        calcMercadoLivrePremiumValorLiquido =
+            (
+                (
+                    (VendaValorLiquido + custo + TaxaMercadoLivre_ATE29)
+                    + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+                ) * 100)
+            /
+            (
+                -(
+                    (
+                        (constCnpj + ComissaoMercadoLivrePremium)
+                        * 100)
+                    - 100
+                )
+            );
+    }
+
+    // Entre 29 e 49,99
+    else if (
+        (
+            (
+                (VendaValorLiquido + custo + TaxaMercadoLivre_ATE29)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivrePremium)
+                    * 100)
+                - 100
+            )
+        ) >= 29
+        &&
+        (
+            (
+                (VendaValorLiquido + custo + TaxaMercadoLivre_ATE50)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivrePremium)
+                    * 100)
+                - 100
+            )
+        ) >= 29
+        &&
+        (
+            (
+                (VendaValorLiquido + custo + TaxaMercadoLivre_ATE50)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivrePremium)
+                    * 100)
+                - 100
+            )
+        ) <= 49.99) {
+
+        calcMercadoLivrePremiumValorLiquido =
+            (
+                (
+                    (VendaValorLiquido + custo + TaxaMercadoLivre_ATE50)
+                    + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+                ) * 100)
+            /
+            (
+                -(
+                    (
+                        (constCnpj + ComissaoMercadoLivrePremium)
+                        * 100)
+                    - 100
+                )
+            );
+    }
+
+    // Entre 50 e 78,99
+    else if (
+        (
+            (
+                (VendaValorLiquido + custo + TaxaMercadoLivre_ATE50)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivrePremium)
+                    * 100)
+                - 100
+            )
+        ) >= 50
+        &&
+        (
+            (
+                (VendaValorLiquido + custo + TaxaMercadoLivre_ATE79)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivrePremium)
+                    * 100)
+                - 100
+            )
+        ) >= 50
+        &&
         (
             (
                 (VendaValorLiquido + custo + TaxaMercadoLivre_ATE79)
@@ -1219,7 +1638,6 @@ function calcular(inputElement) {
             );
     }
 
-    // Mercado Livre Premium Valor Líquido - calcMercadoLivrePremiumValorLiquido
     // Acima de 79
     else if (
         (
@@ -1255,8 +1673,168 @@ function calcular(inputElement) {
     }
 
     // Mercado Livre Premium Porcentagem Líquida - calcMercadoLivrePremiumPorcentagemLiquida
-    // Até 78,99
+    // Até 28,99
     if (
+        (
+            (
+                (
+                    + (custo)
+                    + ((VendaPorcentagemLiquida * custo) / 100)
+                )
+                + (TaxaMercadoLivre_ATE29)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivrePremium)
+                    * 100)
+                - 100
+            )
+        ) <= 28.99) {
+
+        calcMercadoLivrePremiumPorcentagemLiquida =
+            (
+                (
+                    (
+                        + (custo)
+                        + ((VendaPorcentagemLiquida * custo) / 100)
+                    )
+                    + (TaxaMercadoLivre_ATE29)
+                    + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+                ) * 100)
+            /
+            (
+                -(
+                    (
+                        (constCnpj + ComissaoMercadoLivrePremium)
+                        * 100)
+                    - 100
+                )
+            );
+    }
+
+    // Entre 29 e 49,99
+    else if (
+        (
+            (
+                (
+                    + (custo)
+                    + ((VendaPorcentagemLiquida * custo) / 100)
+                )
+                + (TaxaMercadoLivre_ATE29)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivrePremium)
+                    * 100)
+                - 100
+            )
+        ) >= 29
+        &&
+        (
+            (
+                (
+                    + (custo)
+                    + ((VendaPorcentagemLiquida * custo) / 100)
+                )
+                + (TaxaMercadoLivre_ATE50)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivrePremium)
+                    * 100)
+                - 100
+            )
+        ) >= 29
+        &&
+        (
+            (
+                (
+                    + (custo)
+                    + ((VendaPorcentagemLiquida * custo) / 100)
+                )
+                + (TaxaMercadoLivre_ATE50)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivrePremium)
+                    * 100)
+                - 100
+            )
+        ) <= 49.99) {
+
+        calcMercadoLivrePremiumPorcentagemLiquida =
+            (
+                (
+                    (
+                        + (custo)
+                        + ((VendaPorcentagemLiquida * custo) / 100)
+                    )
+                    + (TaxaMercadoLivre_ATE50)
+                    + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+                ) * 100)
+            /
+            (
+                -(
+                    (
+                        (constCnpj + ComissaoMercadoLivrePremium)
+                        * 100)
+                    - 100
+                )
+            );
+    }
+
+    // Entre 50 e 78,99
+    else if (
+        (
+            (
+                (
+                    + (custo)
+                    + ((VendaPorcentagemLiquida * custo) / 100)
+                )
+                + (TaxaMercadoLivre_ATE50)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivrePremium)
+                    * 100)
+                - 100
+            )
+        ) >= 50
+        &&
+        (
+            (
+                (
+                    + (custo)
+                    + ((VendaPorcentagemLiquida * custo) / 100)
+                )
+                + (TaxaMercadoLivre_ATE79)
+                + (FreteMercadoLivre_ATE79 * constNivelMercadoLivre)
+            ) * 100)
+        /
+        (
+            -(
+                (
+                    (constCnpj + ComissaoMercadoLivrePremium)
+                    * 100)
+                - 100
+            )
+        ) >= 50
+        &&
         (
             (
                 (
@@ -1297,7 +1875,6 @@ function calcular(inputElement) {
             );
     }
 
-    // Mercado Livre Premium Porcentagem Líquida - calcMercadoLivrePremiumPorcentagemLiquida
     // Acima de 79
     else if (
         (
@@ -2018,9 +2595,9 @@ function calcular(inputElement) {
     // Valores que serão exibidos na tabela de resultados
 
     // Americanas
-    document.getElementById("resultado-Americanas-VendaManual").textContent = "R$ " + calcAmericanasManual.toFixed(2).replace(".", ",") + " (" + ((calcAmericanasManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    document.getElementById("resultado-Americanas-VendaValorLiquido").textContent = "R$ " + calcAmericanasValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    document.getElementById("resultado-Americanas-VendaPorcentagemLiquida").textContent = "R$ " + calcAmericanasPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+    // document.getElementById("resultado-Americanas-VendaManual").textContent = "R$ " + calcAmericanasManual.toFixed(2).replace(".", ",") + " (" + ((calcAmericanasManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    // document.getElementById("resultado-Americanas-VendaValorLiquido").textContent = "R$ " + calcAmericanasValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    // document.getElementById("resultado-Americanas-VendaPorcentagemLiquida").textContent = "R$ " + calcAmericanasPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
 
     // Casas Bahia
     document.getElementById("resultado-CasasBahia-VendaManual").textContent = "R$ " + calcCasasBahiaManual.toFixed(2).replace(".", ",") + " (" + ((calcCasasBahiaManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
@@ -2043,14 +2620,14 @@ function calcular(inputElement) {
     document.getElementById("resultado-MercadoLivrePremium-VendaPorcentagemLiquida").textContent = "R$ " + calcMercadoLivrePremiumPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
 
     // Olist
-    document.getElementById("resultado-Olist-VendaManual").textContent = "R$ " + calcOlistManual.toFixed(2).replace(".", ",") + " (" + ((calcOlistManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    document.getElementById("resultado-Olist-VendaValorLiquido").textContent = "R$ " + calcOlistValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    document.getElementById("resultado-Olist-VendaPorcentagemLiquida").textContent = "R$ " + calcOlistPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+    // document.getElementById("resultado-Olist-VendaManual").textContent = "R$ " + calcOlistManual.toFixed(2).replace(".", ",") + " (" + ((calcOlistManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    // document.getElementById("resultado-Olist-VendaValorLiquido").textContent = "R$ " + calcOlistValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    // document.getElementById("resultado-Olist-VendaPorcentagemLiquida").textContent = "R$ " + calcOlistPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
 
     // RD
-    document.getElementById("resultado-RD-VendaManual").textContent = "Em breve";
-    document.getElementById("resultado-RD-VendaValorLiquido").textContent = "Em breve";
-    document.getElementById("resultado-RD-VendaPorcentagemLiquida").textContent = "Em breve";
+    // document.getElementById("resultado-RD-VendaManual").textContent = "Em breve";
+    // document.getElementById("resultado-RD-VendaValorLiquido").textContent = "Em breve";
+    // document.getElementById("resultado-RD-VendaPorcentagemLiquida").textContent = "Em breve";
 
     // Shein
     document.getElementById("resultado-Shein-VendaManual").textContent = "R$ " + calcSheinManual.toFixed(2).replace(".", ",") + " (" + ((calcSheinManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
@@ -2072,23 +2649,23 @@ function calcular(inputElement) {
     }
 
     // Web Continental
-    document.getElementById("resultado-WebContinental-VendaManual").textContent = "Em breve";
-    document.getElementById("resultado-WebContinental-VendaValorLiquido").textContent = "Em breve";
-    document.getElementById("resultado-WebContinental-VendaPorcentagemLiquida").textContent = "Em breve";
+    // document.getElementById("resultado-WebContinental-VendaManual").textContent = "Em breve";
+    // document.getElementById("resultado-WebContinental-VendaValorLiquido").textContent = "Em breve";
+    // document.getElementById("resultado-WebContinental-VendaPorcentagemLiquida").textContent = "Em breve";
 
     // Site Uool
-    document.getElementById("resultado-SiteUool-VendaManual").textContent = "R$ " + calcSiteUoolManual.toFixed(2).replace(".", ",") + " (" + ((calcSiteUoolManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    document.getElementById("resultado-SiteUool-VendaValorLiquido").textContent = "1x R$ " + calcSiteUoolValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    document.getElementById("resultado-SiteUool-VendaPorcentagemLiquida").textContent = "1x R$ " + calcSiteUoolPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
-    document.getElementById("resultado-SiteUool-VendaManual-12x").textContent = "12x de R$ " + calcSiteUoolManual12x1.toFixed(2).replace(".", ",") + " (" + (calcSiteUoolManual12x12).toFixed(2).replace(".", ",") + ")";
-    document.getElementById("resultado-SiteUool-VendaValorLiquido-12x").textContent = "12x de R$ " + calcSiteUoolValorLiquido12x1.toFixed(2).replace(".", ",") + " (" + (calcSiteUoolValorLiquido12x12).toFixed(2).replace(".", ",") + ")";
-    document.getElementById("resultado-SiteUool-VendaPorcentagemLiquida-12x").textContent = "12x de R$ " + calcSiteUoolPorcentagemLiquida12x1.toFixed(2).replace(".", ",") + " (" + (calcSiteUoolPorcentagemLiquida12x12).toFixed(2).replace(".", ",") + ")";
+    // document.getElementById("resultado-SiteUool-VendaManual").textContent = "R$ " + calcSiteUoolManual.toFixed(2).replace(".", ",") + " (" + ((calcSiteUoolManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    // document.getElementById("resultado-SiteUool-VendaValorLiquido").textContent = "1x R$ " + calcSiteUoolValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    // document.getElementById("resultado-SiteUool-VendaPorcentagemLiquida").textContent = "1x R$ " + calcSiteUoolPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+    // document.getElementById("resultado-SiteUool-VendaManual-12x").textContent = "12x de R$ " + calcSiteUoolManual12x1.toFixed(2).replace(".", ",") + " (" + (calcSiteUoolManual12x12).toFixed(2).replace(".", ",") + ")";
+    // document.getElementById("resultado-SiteUool-VendaValorLiquido-12x").textContent = "12x de R$ " + calcSiteUoolValorLiquido12x1.toFixed(2).replace(".", ",") + " (" + (calcSiteUoolValorLiquido12x12).toFixed(2).replace(".", ",") + ")";
+    // document.getElementById("resultado-SiteUool-VendaPorcentagemLiquida-12x").textContent = "12x de R$ " + calcSiteUoolPorcentagemLiquida12x1.toFixed(2).replace(".", ",") + " (" + (calcSiteUoolPorcentagemLiquida12x12).toFixed(2).replace(".", ",") + ")";
 
     // Site Atacado
-    document.getElementById("resultado-SiteAtacado-VendaManual").textContent = "R$ " + calcSiteAtacadoManual.toFixed(2).replace(".", ",") + " (" + ((calcSiteAtacadoManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    document.getElementById("resultado-SiteAtacado-VendaValorLiquido").textContent = "1x R$ " + calcSiteAtacadoValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    document.getElementById("resultado-SiteAtacado-VendaPorcentagemLiquida").textContent = "1x R$ " + calcSiteAtacadoPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
-    document.getElementById("resultado-SiteAtacado-VendaManual-12x").textContent = "12x de R$ " + calcSiteAtacadoManual12x1.toFixed(2).replace(".", ",") + " (" + (calcSiteAtacadoManual12x12).toFixed(2).replace(".", ",") + ")";
-    document.getElementById("resultado-SiteAtacado-VendaValorLiquido-12x").textContent = "12x de R$ " + calcSiteAtacadoValorLiquido12x1.toFixed(2).replace(".", ",") + " (" + (calcSiteAtacadoValorLiquido12x12).toFixed(2).replace(".", ",") + ")";
-    document.getElementById("resultado-SiteAtacado-VendaPorcentagemLiquida-12x").textContent = "12x de R$ " + calcSiteAtacadoPorcentagemLiquida12x1.toFixed(2).replace(".", ",") + " (" + (calcSiteAtacadoPorcentagemLiquida12x12).toFixed(2).replace(".", ",") + ")";
+    // document.getElementById("resultado-SiteAtacado-VendaManual").textContent = "R$ " + calcSiteAtacadoManual.toFixed(2).replace(".", ",") + " (" + ((calcSiteAtacadoManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    // document.getElementById("resultado-SiteAtacado-VendaValorLiquido").textContent = "1x R$ " + calcSiteAtacadoValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    // document.getElementById("resultado-SiteAtacado-VendaPorcentagemLiquida").textContent = "1x R$ " + calcSiteAtacadoPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+    // document.getElementById("resultado-SiteAtacado-VendaManual-12x").textContent = "12x de R$ " + calcSiteAtacadoManual12x1.toFixed(2).replace(".", ",") + " (" + (calcSiteAtacadoManual12x12).toFixed(2).replace(".", ",") + ")";
+    // document.getElementById("resultado-SiteAtacado-VendaValorLiquido-12x").textContent = "12x de R$ " + calcSiteAtacadoValorLiquido12x1.toFixed(2).replace(".", ",") + " (" + (calcSiteAtacadoValorLiquido12x12).toFixed(2).replace(".", ",") + ")";
+    // document.getElementById("resultado-SiteAtacado-VendaPorcentagemLiquida-12x").textContent = "12x de R$ " + calcSiteAtacadoPorcentagemLiquida12x1.toFixed(2).replace(".", ",") + " (" + (calcSiteAtacadoPorcentagemLiquida12x12).toFixed(2).replace(".", ",") + ")";
 }

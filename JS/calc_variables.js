@@ -256,9 +256,13 @@ const TaxaMagalu_ATE10 = 0;
 const TaxaMagalu_ACIMA10 = 5;
 
 // Mercado Livre
-// Até R$ 78,99:        R$ 6
-// Acima de R$ 79:     não há
-const TaxaMercadoLivre_ATE79 = 6;
+// Até R$ 28,99:                R$ 6,25
+// Entre R$ 29,00 e R$ 49,99:   R$ 6,50
+// Entre R$ 50,00 e R$ 78,99:   R$ 6,75
+// Acima de R$ 79:              não há
+const TaxaMercadoLivre_ATE29 = 6.25;
+const TaxaMercadoLivre_ATE50 = 6.5;
+const TaxaMercadoLivre_ATE79 = 6.75;
 const TaxaMercadoLivre_ACIMA79 = 0;
 
 // Olist

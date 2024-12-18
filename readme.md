@@ -19,6 +19,17 @@ SUBSISTEMA
     </thead>
     <tbody>
     <tr>
+        <td>3.2.1<br>18/12/2024</td>
+            <td>
+                <ul>
+                    <li>Taxas fixas do Mercado Livre alteradas:
+                    <br>Até R$ 28,99: R$ 6,25
+                    <br>Entre R$ 29,00 e R$ 49,99: R$ 6,50
+                    <br>Entre R$ 50,00 e R$ 78,99: R$ 6,75
+                    <br>Acima de R$ 79: não há</li>
+                </ul>
+            </td>
+    </tr>
         <td>3.2.0<br>02/07/2024</td>
             <td>
                 <ul>
