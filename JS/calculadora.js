@@ -25,6 +25,7 @@ function calcular(inputElement) {
 
     // Valores constantes de peso e frete para acima de R$ 79 definidos no calc_variables.js
     if (peso === "Selecione") {
+        constFretePresencial = x;
         constFreteAmericanas = x;
         constFreteCasasBahia = x;
         constFreteMagalu = x;
@@ -37,6 +38,7 @@ function calcular(inputElement) {
         constFreteSiteUool = x;
         constFreteSiteAtacado = x;
     } else if (peso === "até 0.3kg") {
+        constFretePresencial = FretePresencial;
         constFreteAmericanas = FreteAmericanas_ACIMA90_ate300G;
         constFreteCasasBahia = FreteCasasBahia_ACIMA79_ate300G;
         constFreteMagalu = FreteMagalu_ACIMA79_ate300G;
@@ -49,6 +51,7 @@ function calcular(inputElement) {
         constFreteSiteUool = FreteSiteUool;
         constFreteSiteAtacado = FreteSiteAtacado;
     } else if (peso === "0.3 a 0.5kg") {
+        constFretePresencial = FretePresencial;
         constFreteAmericanas = FreteAmericanas_ACIMA90_300a500G;
         constFreteCasasBahia = FreteCasasBahia_ACIMA79_300a500G;
         constFreteMagalu = FreteMagalu_ACIMA79_300a500G;
@@ -61,6 +64,7 @@ function calcular(inputElement) {
         constFreteSiteUool = FreteSiteUool;
         constFreteSiteAtacado = FreteSiteAtacado;
     } else if (peso === "0.5 a 1kg") {
+        constFretePresencial = FretePresencial;
         constFreteAmericanas = FreteAmericanas_ACIMA90_500Ga1KG;
         constFreteCasasBahia = FreteCasasBahia_ACIMA79_500Ga1KG;
         constFreteMagalu = FreteMagalu_ACIMA79_500Ga1KG;
@@ -73,6 +77,7 @@ function calcular(inputElement) {
         constFreteSiteUool = FreteSiteUool;
         constFreteSiteAtacado = FreteSiteAtacado;
     } else if (peso === "1 a 2kg") {
+        constFretePresencial = FretePresencial;
         constFreteAmericanas = FreteAmericanas_ACIMA90_1a2KG;
         constFreteCasasBahia = FreteCasasBahia_ACIMA79_1a2KG;
         constFreteMagalu = FreteMagalu_ACIMA79_1a2KG;
@@ -85,6 +90,7 @@ function calcular(inputElement) {
         constFreteSiteUool = FreteSiteUool;
         constFreteSiteAtacado = FreteSiteAtacado;
     } else if (peso === "2 a 5kg") {
+        constFretePresencial = FretePresencial;
         constFreteAmericanas = FreteAmericanas_ACIMA90_2a5KG;
         constFreteCasasBahia = FreteCasasBahia_ACIMA79_2a5KG;
         constFreteMagalu = FreteMagalu_ACIMA79_2a5KG;
@@ -97,6 +103,7 @@ function calcular(inputElement) {
         constFreteSiteUool = FreteSiteUool;
         constFreteSiteAtacado = FreteSiteAtacado;
     } else if (peso === "5 a 9kg") {
+        constFretePresencial = FretePresencial;
         constFreteAmericanas = FreteAmericanas_ACIMA90_5a9KG;
         constFreteCasasBahia = FreteCasasBahia_ACIMA79_5a9KG;
         constFreteMagalu = FreteMagalu_ACIMA79_5a9KG;
@@ -109,6 +116,7 @@ function calcular(inputElement) {
         constFreteSiteUool = FreteSiteUool;
         constFreteSiteAtacado = FreteSiteAtacado;
     } else if (peso === "9 a 13kg") {
+        constFretePresencial = FretePresencial;
         constFreteAmericanas = FreteAmericanas_ACIMA90_9a13KG;
         constFreteCasasBahia = FreteCasasBahia_ACIMA79_9a13KG;
         constFreteMagalu = FreteMagalu_ACIMA79_9a13KG;
@@ -121,6 +129,7 @@ function calcular(inputElement) {
         constFreteSiteUool = FreteSiteUool;
         constFreteSiteAtacado = FreteSiteAtacado;
     } else if (peso === "13 a 17kg") {
+        constFretePresencial = FretePresencial;
         constFreteAmericanas = FreteAmericanas_ACIMA90_13a17KG;
         constFreteCasasBahia = FreteCasasBahia_ACIMA79_13a17KG;
         constFreteMagalu = FreteMagalu_ACIMA79_13a17KG;
@@ -133,6 +142,7 @@ function calcular(inputElement) {
         constFreteSiteUool = FreteSiteUool;
         constFreteSiteAtacado = FreteSiteAtacado;
     } else if (peso === "17 a 23kg") {
+        constFretePresencial = FretePresencial;
         constFreteAmericanas = FreteAmericanas_ACIMA90_17a23KG;
         constFreteCasasBahia = FreteCasasBahia_ACIMA79_17a23KG;
         constFreteMagalu = FreteMagalu_ACIMA79_17a23KG;
@@ -145,6 +155,7 @@ function calcular(inputElement) {
         constFreteSiteUool = FreteSiteUool;
         constFreteSiteAtacado = FreteSiteAtacado;
     } else if (peso === "23 a 30kg") {
+        constFretePresencial = FretePresencial;
         constFreteAmericanas = FreteAmericanas_ACIMA90_23a30KG;
         constFreteCasasBahia = FreteCasasBahia_ACIMA79_23a30KG;
         constFreteMagalu = FreteMagalu_ACIMA79_23a30KG;
@@ -160,6 +171,7 @@ function calcular(inputElement) {
 
     // Valores constantes de desconto no frete baseado no nível definidos no calc_variables.js
     if (nivel === "5") {
+        constNivelPresencial = NivelPresencial;
         constNivelAmericanas = NivelAmericanas5;
         constNivelCasasBahia = NivelCasasBahia5;
         constNivelMagalu = NivelMagalu5;
@@ -172,6 +184,7 @@ function calcular(inputElement) {
         constNivelSiteUool = NivelSiteUool;
         constNivelSiteAtacado = NivelSiteAtacado;
     } else if (nivel === "4") {
+        constNivelPresencial = NivelPresencial;
         constNivelAmericanas = NivelAmericanas4;
         constNivelCasasBahia = NivelCasasBahia4;
         constNivelMagalu = NivelMagalu4;
@@ -184,6 +197,7 @@ function calcular(inputElement) {
         constNivelSiteUool = NivelSiteUool;
         constNivelSiteAtacado = NivelSiteAtacado;
     } else if (nivel === "3") {
+        constNivelPresencial = NivelPresencial;
         constNivelAmericanas = NivelAmericanas3;
         constNivelCasasBahia = NivelCasasBahia3;
         constNivelMagalu = NivelMagalu3;
@@ -196,6 +210,7 @@ function calcular(inputElement) {
         constNivelSiteUool = NivelSiteUool;
         constNivelSiteAtacado = NivelSiteAtacado;
     } else if (nivel === "2") {
+        constNivelPresencial = NivelPresencial;
         constNivelAmericanas = NivelAmericanas2;
         constNivelCasasBahia = NivelCasasBahia2;
         constNivelMagalu = NivelMagalu2;
@@ -208,6 +223,7 @@ function calcular(inputElement) {
         constNivelSiteUool = NivelSiteUool;
         constNivelSiteAtacado = NivelSiteAtacado;
     } else if (nivel === "1") {
+        constNivelPresencial = NivelPresencial;
         constNivelAmericanas = NivelAmericanas1;
         constNivelCasasBahia = NivelCasasBahia1;
         constNivelMagalu = NivelMagalu1;
@@ -236,6 +252,31 @@ function calcular(inputElement) {
     // Fórmulas de cálculo PORCENTAGEM LÍQUIDA seguem a fórmula:
     // ([{(custo) + [(Porcentagem Líquida * custo) / 100]} + (taxa fixa) + (frete * nível no marketplace)] * 100) / ( - {[(CNPJ + comissão do marketplace) * 100] - 100})
 
+
+    // --------------------------------
+    // PRESENCIAL
+    // --------------------------------
+
+    // Presencial Manual - calcPresencialManual
+    var calcPresencialManual = VendaManual
+        - (
+            + (custo)
+            + (VendaManual * constCnpj)
+            + (VendaManual * ComissaoPresencial)
+        );
+
+    // Presencial Valor Líquido - calcPresencialValorLiquido
+    var calcPresencialValorLiquido =
+        ((VendaValorLiquido + custo) * 100)
+        /
+        ( - (((constCnpj + ComissaoPresencial)* 100) - 100));
+
+    // Presencial Porcentagem Líquida - calcPresencialPorcentagemLiquida
+    var calcPresencialPorcentagemLiquida =
+            (
+                (((custo) + ((VendaPorcentagemLiquida * custo) / 100))) * 100)
+            /
+            ( - (((constCnpj + ComissaoPresencial)* 100) - 100));
 
     // --------------------------------
     // AMERICANAS
@@ -2593,6 +2634,11 @@ function calcular(inputElement) {
     // --------------------------------
 
     // Valores que serão exibidos na tabela de resultados
+
+    // Presencial
+    document.getElementById("resultado-Presencial-VendaManual").textContent = "R$ " + calcPresencialManual.toFixed(2).replace(".", ",") + " (" + ((calcPresencialManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado-Presencial-VendaValorLiquido").textContent = "R$ " + calcPresencialValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado-Presencial-VendaPorcentagemLiquida").textContent = "R$ " + calcPresencialPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
 
     // Americanas
     // document.getElementById("resultado-Americanas-VendaManual").textContent = "R$ " + calcAmericanasManual.toFixed(2).replace(".", ",") + " (" + ((calcAmericanasManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";

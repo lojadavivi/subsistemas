@@ -13,6 +13,7 @@ const cnpjVIVI = 0.04;
 
 // COMISSÃO
 
+// Presencial       3,29% máximo da Stone (crédito)
 // Americanas:      17%
 // Casas Bahia:     21%
 // Magalu:          18%
@@ -25,6 +26,7 @@ const cnpjVIVI = 0.04;
 // SiteUool:        4,69% em 1x e 19,13% em 12x
 // SiteAtacado:     4,59% em 1x e 23,87% em 12x
 
+const ComissaoPresencial = 0.0329;
 const ComissaoAmericanas = 0.17;
 const ComissaoCasasBahia = 0.21;
 const ComissaoMagalu = 0.18;
@@ -43,6 +45,10 @@ const ComissaoSiteAtacado12x = 0.2387;
 // ----------------------------------------
 
 // FRETE
+
+// Presencial
+// Não se aplica
+const FretePresencial = 0;
 
 // Americanas
 // Até R$ 40 o frete é pago pelo cliente
@@ -160,6 +166,10 @@ const FreteSiteAtacado = 0;
 
 // DESCONTO (%) POR NÍVEL
 
+// Presencial
+// Não se aplica
+const NivelPresencial = 1;
+
 // Americanas
 // 1 ao 3:  não há (1)
 // 4:       40% (0.6)
@@ -240,6 +250,10 @@ const NivelSiteAtacado = 1;
 // ----------------------------------------
 
 // TAXA FIXA
+
+// Presencial
+// Não se aplica
+const TaxaPresencial = 0;
 
 // Americanas
 // Não há taxa fixa

@@ -19,32 +19,21 @@ SUBSISTEMA
     </thead>
     <tbody>
     <tr>
-        <td>3.2.1<br>18/12/2024</td>
-            <td>
-                <ul>
-                    <li>Taxas fixas do Mercado Livre alteradas:
-                    <br>Até R$ 28,99: R$ 6,25
-                    <br>Entre R$ 29,00 e R$ 49,99: R$ 6,50
-                    <br>Entre R$ 50,00 e R$ 78,99: R$ 6,75
-                    <br>Acima de R$ 79: não há</li>
-                </ul>
-            </td>
-    </tr>
         <td>3.2.0<br>02/07/2024</td>
-            <td>
-                <ul>
-                    <li>Novo design! Paleta de cores inspirada em Material Design. Fonte padrão alterada para Nunito.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>3.1.0<br>12/06/2024</td>
-            <td>
-                <ul>
-                    <li>Adicionado página de calculadora de caixa.</li>
-                </ul>
-            </td>
-        </tr>
+        <td>
+            <ul>
+                <li>Novo design! Paleta de cores inspirada em Material Design. Fonte padrão alterada para Nunito.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>3.1.0<br>12/06/2024</td>
+        <td>
+            <ul>
+                <li>Adicionado página de calculadora de caixa.</li>
+            </ul>
+        </td>
+    </tr>
         <tr>
             <td style="font-weight: bold;">3.0.0<br>03/04/2023</td>
             <td>
@@ -191,6 +180,26 @@ CALCULADORA
         </tr>
     </thead>
     <tbody>
+    <tr>
+        <td>4.3.2<br>22/01/2025</td>
+            <td>
+                <ul>
+                    <li>Adicionado Presencial para cálculos de vendas na loja.</li>
+                </ul>
+            </td>
+    </tr>
+    <tr>
+        <td>4.3.1<br>18/12/2024</td>
+            <td>
+                <ul>
+                    <li>Taxas fixas do Mercado Livre alteradas:
+                    <br>Até R$ 28,99: R$ 6,25
+                    <br>Entre R$ 29,00 e R$ 49,99: R$ 6,50
+                    <br>Entre R$ 50,00 e R$ 78,99: R$ 6,75
+                    <br>Acima de R$ 79: não há</li>
+                </ul>
+            </td>
+    </tr>
         <tr>
             <td>4.3.0 <br> 02/07/2024</td>
             <td>
