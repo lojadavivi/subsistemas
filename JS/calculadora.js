@@ -2333,7 +2333,7 @@ function calcular(inputElement) {
             + (custo)
             + (VendaManual * constCnpj)
             + (
-                VendaManual >= 500 ? 100 :
+                VendaManual >= 500 ? 110 :
                     VendaManual <= 499.99 ? VendaManual * ComissaoShopee : 0)
             + (
                 VendaManual <= 7.99 ? VendaManual / 2 :
@@ -2344,7 +2344,7 @@ function calcular(inputElement) {
         );
 
     // Shopee Valor Líquido - calcShopeeValorLiquido
-    // Comissão até 100 + 4
+    // Comissão até 110 + 4
     if (
         (
             (
@@ -2379,7 +2379,7 @@ function calcular(inputElement) {
     }
 
     // Shopee Valor Líquido - calcShopeeValorLiquido
-    // Comissão acima de 100 + 4
+    // Comissão acima de 110 + 4
     else if (
         (
             (
@@ -2399,7 +2399,7 @@ function calcular(inputElement) {
         calcShopeeValorLiquido =
             (
                 (
-                    + (VendaValorLiquido + custo + TaxaShopee_ACIMA8 + 100)
+                    + (VendaValorLiquido + custo + TaxaShopee_ACIMA8 + 110)
                     + (FreteShopee * constNivelShopee)
                 ) * 100)
             /
@@ -2412,7 +2412,7 @@ function calcular(inputElement) {
     }
 
     // Shopee Porcentagem Líquida - calcShopeePorcentagemLiquida
-    // Comissão até 100 + 4
+    // Comissão até 110 + 4
     if (
         (
             (
@@ -2479,7 +2479,7 @@ function calcular(inputElement) {
                     (
                         + (custo)
                         + ((custo * VendaPorcentagemLiquida) / 100))
-                    + (TaxaShopee_ACIMA8 + 100)
+                    + (TaxaShopee_ACIMA8 + 110)
                     + (constFreteShopee * constNivelShopee)
                 ) * 100)
             /

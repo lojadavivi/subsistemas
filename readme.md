@@ -181,6 +181,14 @@ CALCULADORA
     </thead>
     <tbody>
     <tr>
+        <td>4.3.3<br>19/02/2025</td>
+            <td>
+                <ul>
+                    <li>Correção de bug em calcShopeeManual exibindo valores errados quando preço está próximo de 500</li>
+                </ul>
+            </td>
+    </tr>
+    <tr>
         <td>4.3.2<br>22/01/2025</td>
             <td>
                 <ul>
