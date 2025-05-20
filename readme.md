@@ -1,173 +1,11 @@
 <h1>Subsistema da Loja da Vivi</h1>
 </p>Gerenciar marketplaces e estoques não é uma tarefa fácil. É necessário verificar aumento de preços, calcular valores líquidos baseados em custos operacionais e impostos, entre outras funções que tomam tempo e reduzem nossa capacidade de vender mais rápido que a concorrência.</p>
-</p>Para reduzir o impacto destes problemas, o <b>Subsistema da Loja da Vivi</b> começou a ser desenvolvido por <a href="https://francis-castela.github.io/portfolio/" style="color: inherit; text-decoration: underline">Francis Castela</a>. Começou com a Planilha de Cálculo para Marketplaces no início de 2023, tornando-se a Calculadora para Marketplaces em 17/08/2023, após o desenvolvimento inicial dos subsistemas de estoque em 15/08/2023, e chegando a uma versão moderna e compacta em 03/04/2024 sem os módulos de estoque. Visa ser uma solução prática de cálculo de preços para agilizar o trabalho no escritório, garantindo que não seja perdido tempo em tarefas essenciais que são, infelizmente, lentas.</p>
+</p>Para reduzir o impacto destes problemas, o <b>Subsistema da Loja da Vivi</b> começou a ser desenvolvido por <a href="https://www.aeca.com.br/francis-castela" style="color: inherit; text-decoration: underline">Francis Castela</a>. Começou com a Planilha de Cálculo para Marketplaces no início de 2023, tornando-se a Calculadora para Marketplaces em 17/08/2023, após o desenvolvimento inicial dos subsistemas de estoque em 15/08/2023, e chegando a uma versão moderna e compacta em 03/04/2024 sem os módulos de estoque. Visa ser uma solução prática de cálculo de preços para agilizar o trabalho no escritório, garantindo que não seja perdido tempo em tarefas essenciais que são, infelizmente, lentas.</p>
 <p>Hoje o Subsistema conta com uma calculadora de preços para marketplaces e um gerador de Danfe Simplificada, sempre buscando se apresentar da forma mais intuitiva possível.</p>
 <p>Construído sob a licença <a
             href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br" target="_blank"
             rel="license noopener noreferrer" style="color: inherit; text-decoration: underline;">CC BY-NC-SA 4.0</a></p>
 <h2>Changelog</h2>
-<details>
-<summary>
-SUBSISTEMA
-</summary>
-<table>
-    <thead>
-        <tr style="background-color: #333843; color: aquamarine;">
-            <th style="width: 12ch;">VERSÃO</th>
-            <th style="text-align: left; padding: 0 2ch">CHANGELOG</th>
-        </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>3.2.0<br>02/07/2024</td>
-        <td>
-            <ul>
-                <li>Novo design! Paleta de cores inspirada em Material Design. Fonte padrão alterada para Nunito.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>3.1.0<br>12/06/2024</td>
-        <td>
-            <ul>
-                <li>Adicionado página de calculadora de caixa.</li>
-            </ul>
-        </td>
-    </tr>
-        <tr>
-            <td style="font-weight: bold;">3.0.0<br>03/04/2023</td>
-            <td>
-                <ul>
-                    <li>Novo design! Paleta de cores inspirada em visuais synthwave, e layout reorganizado para ser responsivo a dimensões da tela.</li>
-                    <li>Removidos botões de estoque, não mais utilizados.</li>
-                    <li>Calculadora movida para o index.</li>
-                    <li>Adicionado link para a planilha de vendas semanais.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>2.0.6<br>24/10/2023</td>
-            <td>
-                <ul>
-                    <li>Corrigido erro de ortografia em README</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>2.0.5<br>18/10/2023</td>
-            <td>
-                <ul>
-                    <li>Adicionado botão GERADOR DE DANFE SIMPLIFICADO.</li>
-                    <li>Adicionada fonte Lekton para alguns estilos.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-        <tr>
-            <td>2.0.4<br>16/10/2023</td>
-            <td>
-                <ul>
-                    <li>Changelog transferido para a página do projeto.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>2.0.3<br>29/09/2023</td>
-            <td>
-                <ul>
-                    <li>Corrigida posição dos botões na página para o exato centro.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>2.0.2 <br> 26/09/2023</td>
-            <td>
-                <ul>
-                    <li>Corrigido link social.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>2.0.1 <br> 05/09/2023</td>
-            <td>
-                <ul>
-                    <li>Corrigido erro de sintaxe que impedia CSS de funcionar.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td style="font-weight: bold;">2.0.0 <br> 05/09/2023</td>
-            <td>
-                <ul>
-                    <li>Lançamento de versão totalmente online hospedada no GitHub.</li>
-                    <li>Reorganização dos arquivos em pastas.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>1.0.2 <br> 26/08/2023</td>
-            <td>
-                <ul>
-                    <li>Bloco TODOS OS ESTOQUES será usado para conferência de estoques entre lojas.
-                        Posteriormente será readaptado para sua ideia de função original.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>1.0.1 <br> 21/08/2023</td>
-            <td>
-                <ul>
-                    <li>Adicionado bloco TODOS OS ESTOQUES (em breve), para bloco de estoque geral, que está
-                        sendo desenvolvido.</li>
-                    <li>Botões centralizados na página.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td style="font-weight: bold;">1.0.0 <br> 18/08/2023</td>
-            <td>
-                <ul>
-                    <li>Lançamento oficial! Bem vindo 1.0.0!</li>
-                    <li>Changelog redesenhado com separação de funções.</li>
-                    <li>Nova paleta de cores para todas as páginas.</li>
-                    <li>Estilos CSS unificados e reorganizados.</li>
-                    <li>Melhora na documentação.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>0.1.1 <br> 17/08/2023</td>
-            <td>
-                <ul>
-                    <li>Adicionada CALCULADORA PARA MARKETPLACES, reescrita em HTML.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>0.1.0 <br> 16/08/2023</td>
-            <td>
-                <ul>
-                    <li>Separados os estilos CSS em um único arquivo.</li>
-                    <li>Adicionado SITE na lista de estoque.</li>
-                    <li>Adicionado botão "CALCULADORA (em breve)" na página inicial para indexar a futura
-                        página da Calculadora para Marketplaces.</li>
-                    <li>Limpeza de código em variáveis.</li>
-                    <li>Melhora na documentação.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>0.0.1 <br> 15/08/2023</td>
-            <td>
-                <ul>
-                    <li>Desenvolvimento inicial do código, disponibilizando para testes.</li>
-                </ul>
-            </td>
-        </tr>
-    </tbody>
-</table>
-</details>
-
 <details>
 <summary>
 CALCULADORA
@@ -180,6 +18,15 @@ CALCULADORA
         </tr>
     </thead>
     <tbody>
+    <tr>
+        <td>4.3.4<br>20/05/2025</td>
+            <td>
+                <ul>
+                    <li>Atualizados nomes dos CNPJs.</li>
+                    <li>Adicionado link para o Changelog no texto da versão.</li>
+                </ul>
+            </td>
+    </tr>
     <tr>
         <td>4.3.3<br>19/02/2025</td>
             <td>
@@ -371,6 +218,168 @@ CALCULADORA
                     <li>Changelog de outras versões disponível na <a
                             href="https://docs.google.com/spreadsheets/d/1JOVpaQqCp9t1EbIY9RhuKyxhysC2B_F3AEpm3ThkKtw/edit?usp=sharing"
                             style="color: inherit; text-decoration: underline;">versão planilha (3.2.1 de 21/06/2023)</a>.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</details>
+
+<details>
+<summary>
+SUBSISTEMA
+</summary>
+<table>
+    <thead>
+        <tr style="background-color: #333843; color: aquamarine;">
+            <th style="width: 12ch;">VERSÃO</th>
+            <th style="text-align: left; padding: 0 2ch">CHANGELOG</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>3.2.0<br>02/07/2024</td>
+        <td>
+            <ul>
+                <li>Novo design! Paleta de cores inspirada em Material Design. Fonte padrão alterada para Nunito.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>3.1.0<br>12/06/2024</td>
+        <td>
+            <ul>
+                <li>Adicionado página de calculadora de caixa.</li>
+            </ul>
+        </td>
+    </tr>
+        <tr>
+            <td style="font-weight: bold;">3.0.0<br>03/04/2023</td>
+            <td>
+                <ul>
+                    <li>Novo design! Paleta de cores inspirada em visuais synthwave, e layout reorganizado para ser responsivo a dimensões da tela.</li>
+                    <li>Removidos botões de estoque, não mais utilizados.</li>
+                    <li>Calculadora movida para o index.</li>
+                    <li>Adicionado link para a planilha de vendas semanais.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>2.0.6<br>24/10/2023</td>
+            <td>
+                <ul>
+                    <li>Corrigido erro de ortografia em README</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>2.0.5<br>18/10/2023</td>
+            <td>
+                <ul>
+                    <li>Adicionado botão GERADOR DE DANFE SIMPLIFICADO.</li>
+                    <li>Adicionada fonte Lekton para alguns estilos.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+        <tr>
+            <td>2.0.4<br>16/10/2023</td>
+            <td>
+                <ul>
+                    <li>Changelog transferido para a página do projeto.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>2.0.3<br>29/09/2023</td>
+            <td>
+                <ul>
+                    <li>Corrigida posição dos botões na página para o exato centro.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>2.0.2 <br> 26/09/2023</td>
+            <td>
+                <ul>
+                    <li>Corrigido link social.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>2.0.1 <br> 05/09/2023</td>
+            <td>
+                <ul>
+                    <li>Corrigido erro de sintaxe que impedia CSS de funcionar.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">2.0.0 <br> 05/09/2023</td>
+            <td>
+                <ul>
+                    <li>Lançamento de versão totalmente online hospedada no GitHub.</li>
+                    <li>Reorganização dos arquivos em pastas.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>1.0.2 <br> 26/08/2023</td>
+            <td>
+                <ul>
+                    <li>Bloco TODOS OS ESTOQUES será usado para conferência de estoques entre lojas.
+                        Posteriormente será readaptado para sua ideia de função original.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>1.0.1 <br> 21/08/2023</td>
+            <td>
+                <ul>
+                    <li>Adicionado bloco TODOS OS ESTOQUES (em breve), para bloco de estoque geral, que está
+                        sendo desenvolvido.</li>
+                    <li>Botões centralizados na página.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">1.0.0 <br> 18/08/2023</td>
+            <td>
+                <ul>
+                    <li>Lançamento oficial! Bem vindo 1.0.0!</li>
+                    <li>Changelog redesenhado com separação de funções.</li>
+                    <li>Nova paleta de cores para todas as páginas.</li>
+                    <li>Estilos CSS unificados e reorganizados.</li>
+                    <li>Melhora na documentação.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>0.1.1 <br> 17/08/2023</td>
+            <td>
+                <ul>
+                    <li>Adicionada CALCULADORA PARA MARKETPLACES, reescrita em HTML.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>0.1.0 <br> 16/08/2023</td>
+            <td>
+                <ul>
+                    <li>Separados os estilos CSS em um único arquivo.</li>
+                    <li>Adicionado SITE na lista de estoque.</li>
+                    <li>Adicionado botão "CALCULADORA (em breve)" na página inicial para indexar a futura
+                        página da Calculadora para Marketplaces.</li>
+                    <li>Limpeza de código em variáveis.</li>
+                    <li>Melhora na documentação.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>0.0.1 <br> 15/08/2023</td>
+            <td>
+                <ul>
+                    <li>Desenvolvimento inicial do código, disponibilizando para testes.</li>
                 </ul>
             </td>
         </tr>

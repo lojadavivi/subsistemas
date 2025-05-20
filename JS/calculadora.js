@@ -13,10 +13,10 @@ function calcular(inputElement) {
     // Valores constantes de CNPJ definidos no calc_variables.js
     if (cnpj === "LOJA DA VIVI LTDA") {
         constCnpj = cnpjLTDA;
-    } else if (cnpj === "LOJA DA VIVI ONLINE") {
-        constCnpj = cnpjONLINE;
-    } else if (cnpj === "LOJA DA VIVI SV LTDA") {
-        constCnpj = cnpjSV;
+    } else if (cnpj === "FERREIRA PROSPERITA COSMETICOS LTDA") {
+        constCnpj = cnpjFERREIRA;
+    } else if (cnpj === "RAV SHEFA DISTRIBUIDORA DE COSMETICOS LTDA") {
+        constCnpj = cnpjRAV;
     } else if (cnpj === "VIVIANE CHRISTINA FERREIRA") {
         constCnpj = cnpjVIVI;
     } else if (cnpj === "Selecione") {
