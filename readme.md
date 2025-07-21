@@ -19,6 +19,14 @@ CALCULADORA
     </thead>
     <tbody>
     <tr>
+        <td>4.3.5<br>21/07/2025</td>
+            <td>
+                <ul>
+                    <li>Atualizado alíquota de CNPJs</li>
+                </ul>
+            </td>
+    </tr>
+    <tr>
         <td>4.3.4<br>20/05/2025</td>
             <td>
                 <ul>

@@ -4,8 +4,8 @@
 
 // Alíquota por CNPJ
 
-const cnpjLTDA = 0.098; 
-const cnpjFERREIRA = 0.04;
+const cnpjLTDA = 0.0908; 
+const cnpjFERREIRA = 0.0554;
 const cnpjRAV = 0.094;
 const cnpjVIVI = 0.04;
 
