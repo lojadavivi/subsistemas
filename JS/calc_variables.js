@@ -2,12 +2,25 @@
 
 // ----------------------------------------
 
-// Alíquota por CNPJ
+// Alíquota Simples Nacional
 
 const cnpjLTDA = 0.0908; 
 const cnpjFERREIRA = 0.0554;
-const cnpjRAV = 0.094;
 const cnpjVIVI = 0.04;
+
+// Lucro Presumido
+const ICMSRAV = 0.17;
+const PISRAV = 0.0065;
+const COFINSRAV = 0.03;
+const FreteRAV = 0.03;
+const ComissaoRAV = 0.1;
+const cnpjRAV = (ICMSRAV + PISRAV + COFINSRAV + FreteRAV + ComissaoRAV);
+const MaquininhaRAV = 0.0329;
+const LucroPresumidoRAV = 0.08;
+const IRPJRAV = 0.15;
+const CSLLRAV = 0.09;
+const PresuncaoRAV = (LucroPresumidoRAV * (IRPJRAV + CSLLRAV));
+
 
 // ----------------------------------------
 

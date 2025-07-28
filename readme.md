@@ -19,6 +19,14 @@ CALCULADORA
     </thead>
     <tbody>
     <tr>
+        <td>4.4.0<br>28/07/2025</td>
+            <td>
+                <ul>
+                    <li>Novos cálculos para o CNPJ RAV SHEFA, que trabalha com Lucro Presumido e apenas vendas presenciais.</li>
+                </ul>
+            </td>
+    </tr>
+    <tr>
         <td>4.3.5<br>21/07/2025</td>
             <td>
                 <ul>

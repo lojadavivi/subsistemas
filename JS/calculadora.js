@@ -258,312 +258,49 @@ function calcular(inputElement) {
     // --------------------------------
 
     // Presencial Manual - calcPresencialManual
-    var calcPresencialManual = VendaManual
-        - (
-            + (custo)
-            + (VendaManual * constCnpj)
-            + (VendaManual * ComissaoPresencial)
-        );
-
+    if (cnpj === "RAV SHEFA DISTRIBUIDORA DE COSMETICOS LTDA") {
+        var calcPresencialManual = VendaManual
+            - (
+                + (custo)
+                + (VendaManual * constCnpj)
+                + (VendaManual * MaquininhaRAV)
+                + (VendaManual * PresuncaoRAV)
+            );
+    }
+    else {
+        var calcPresencialManual = VendaManual
+            - (
+                + (custo)
+                + (VendaManual * (constCnpj + ComissaoPresencial))
+            );
+    }
     // Presencial Valor Líquido - calcPresencialValorLiquido
-    var calcPresencialValorLiquido =
-        ((VendaValorLiquido + custo) * 100)
-        /
-        ( - (((constCnpj + ComissaoPresencial)* 100) - 100));
-
+    if (cnpj === "RAV SHEFA DISTRIBUIDORA DE COSMETICOS LTDA") {
+        var calcPresencialValorLiquido =
+            ((VendaValorLiquido + custo) * 100)
+            /
+            (- (((constCnpj + MaquininhaRAV + PresuncaoRAV) * 100) - 100));
+    }
+    else {
+        var calcPresencialValorLiquido =
+            ((VendaValorLiquido + custo) * 100)
+            /
+            (- (((constCnpj + ComissaoPresencial) * 100) - 100));
+    }
     // Presencial Porcentagem Líquida - calcPresencialPorcentagemLiquida
-    var calcPresencialPorcentagemLiquida =
+    if (cnpj === "RAV SHEFA DISTRIBUIDORA DE COSMETICOS LTDA") {
+        var calcPresencialPorcentagemLiquida =
             (
                 (((custo) + ((VendaPorcentagemLiquida * custo) / 100))) * 100)
             /
-            ( - (((constCnpj + ComissaoPresencial)* 100) - 100));
-
-    // --------------------------------
-    // AMERICANAS
-    // --------------------------------
-
-    // Americanas Manual - calcAmericanasManual
-    var calcAmericanasManual = VendaManual
-        - (
-            + (custo)
-            + (VendaManual * constCnpj)
-            + (VendaManual * ComissaoAmericanas)
-            + (
-                (
-                    VendaManual <= 39.99 ? FreteAmericanas_ATE40 :
-                        VendaManual >= 40 && VendaManual <= 89.99 ? FreteAmericanas_DE40A89 :
-                            VendaManual >= 79 ? constFreteAmericanas : 0
-                ) * constNivelAmericanas
-            )
-            + (TaxaAmericanas)
-        );
-
-    // Americanas Valor Líquido - calcAmericanasValorLiquido
-    // Abaixo de 40
-    if (
-        (
-            (
-                (VendaValorLiquido + custo + TaxaAmericanas)
-                + (FreteAmericanas_ATE40 * constNivelAmericanas)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoAmericanas)
-                    * 100)
-                - 100
-            )
-        ) <= 39.99) {
-
-        calcAmericanasValorLiquido =
-            (
-                (
-                    (VendaValorLiquido + custo + TaxaAmericanas)
-                    + (FreteAmericanas_ATE40 * constNivelAmericanas)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoAmericanas)
-                        * 100)
-                    - 100
-                )
-            );
+            (- (((constCnpj + MaquininhaRAV + PresuncaoRAV) * 100) - 100));
     }
-
-    // Americanas Valor Líquido - calcAmericanasValorLiquido
-    // Entre 40 e 89,99
-    else if (
-        (
+    else {
+        var calcPresencialPorcentagemLiquida =
             (
-                (VendaValorLiquido + custo + TaxaAmericanas)
-                + (FreteAmericanas_ATE40 * constNivelAmericanas)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoAmericanas)
-                    * 100)
-                - 100
-            )
-        ) >= 40
-        &&
-        (
-            (
-                (VendaValorLiquido + custo + TaxaAmericanas)
-                + (FreteAmericanas_DE40A89 * constNivelAmericanas)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoAmericanas)
-                    * 100)
-                - 100
-            )
-        ) <= 89.99) {
-
-        calcAmericanasValorLiquido =
-            (
-                (
-                    (VendaValorLiquido + custo + TaxaAmericanas)
-                    + (FreteAmericanas_DE40A89 * constNivelAmericanas)
-                ) * 100)
+                (((custo) + ((VendaPorcentagemLiquida * custo) / 100))) * 100)
             /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoAmericanas)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Americanas Valor Líquido - calcAmericanasValorLiquido
-    // Acima de 90
-    else if (
-        (
-            (
-                (VendaValorLiquido + custo + TaxaAmericanas)
-                + (FreteAmericanas_DE40A89 * constNivelAmericanas)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoAmericanas)
-                    * 100)
-                - 100
-            )
-        ) >= 90) {
-
-        calcAmericanasValorLiquido =
-            (
-                (
-                    (VendaValorLiquido + custo + TaxaAmericanas)
-                    + (constFreteAmericanas * constNivelAmericanas)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoAmericanas)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Americanas Porcentagem Líquida - calcAmericanasPorcentagemLiquida
-    // Abaixo de 40
-    if (
-        (
-            (
-                (
-                    + (custo)
-                    + ((VendaPorcentagemLiquida * custo) / 100)
-                )
-                + (TaxaAmericanas)
-                + (FreteAmericanas_ATE40 * constNivelAmericanas)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoAmericanas)
-                    * 100)
-                - 100
-            )
-        ) <= 39.99) {
-
-        calcAmericanasPorcentagemLiquida =
-            (
-                (
-                    (
-                        + (custo)
-                        + ((VendaPorcentagemLiquida * custo) / 100)
-                    )
-                    + (TaxaAmericanas)
-                    + (FreteAmericanas_ATE40 * constNivelAmericanas)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoAmericanas)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Americanas Porcentagem Líquida - calcAmericanasPorcentagemLiquida
-    // Entre 40 e 89,99
-    else if (
-        (
-            (
-                (
-                    + (custo)
-                    + ((VendaPorcentagemLiquida * custo) / 100)
-                )
-                + (TaxaAmericanas)
-                + (FreteAmericanas_ATE40 * constNivelAmericanas)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoAmericanas)
-                    * 100)
-                - 100
-            )
-        ) >= 40
-        &&
-        (
-            (
-                (
-                    + (custo)
-                    + ((VendaPorcentagemLiquida * custo) / 100)
-                )
-                + (TaxaAmericanas)
-                + (FreteAmericanas_DE40A89 * constNivelAmericanas)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoAmericanas)
-                    * 100)
-                - 100
-            )
-        ) <= 89.99) {
-
-        calcAmericanasPorcentagemLiquida =
-            (
-                (
-                    (
-                        + (custo)
-                        + ((VendaPorcentagemLiquida * custo) / 100)
-                    )
-                    + (TaxaAmericanas)
-                    + (FreteAmericanas_DE40A89 * constNivelAmericanas)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoAmericanas)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Americanas Porcentagem Líquida - calcAmericanasPorcentagemLiquida
-    // Acima de 90
-    else if (
-        (
-            (
-                (
-                    + (custo)
-                    + ((VendaPorcentagemLiquida * custo) / 100)
-                )
-                + (TaxaAmericanas)
-                + (FreteAmericanas_DE40A89 * constNivelAmericanas)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoAmericanas)
-                    * 100)
-                - 100
-            )
-        ) >= 90) {
-
-        calcAmericanasPorcentagemLiquida =
-            (
-                (
-                    (
-                        + (custo)
-                        + ((VendaPorcentagemLiquida * custo) / 100)
-                    )
-                    + (TaxaAmericanas)
-                    + (constFreteAmericanas * constNivelAmericanas)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoAmericanas)
-                        * 100)
-                    - 100
-                )
-            );
+            (- (((constCnpj + ComissaoPresencial) * 100) - 100));
     }
 
     // --------------------------------
@@ -1964,186 +1701,6 @@ function calcular(inputElement) {
 
 
     // --------------------------------
-    // OLIST
-    // --------------------------------
-
-    // Olist Manual - calcOlistManual
-    var calcOlistManual = VendaManual
-        - (
-            + (custo)
-            + (VendaManual * constCnpj)
-            + (VendaManual * ComissaoOlist)
-            + (
-                VendaManual <= 78.99 ? TaxaOlist_ATE79 :
-                    VendaManual >= 79 ? TaxaOlist_ACIMA79 : 0
-            )
-            + (
-                (
-                    VendaManual <= 78.99 ? FreteOlist_ATE79 :
-                        VendaManual >= 79 ? constFreteOlist : 0
-                ) * constNivelOlist
-            )
-        );
-
-    // Olist Valor Líquido - calcOlistValorLiquido
-    // Abaixo de 78,99
-    if (
-        (
-            (
-                (VendaValorLiquido + custo + TaxaOlist_ATE79)
-                + (FreteOlist_ATE79 * constNivelOlist)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoOlist)
-                    * 100)
-                - 100
-            )
-        ) <= 78.99) {
-
-        calcOlistValorLiquido =
-            (
-                (
-                    (VendaValorLiquido + custo + TaxaOlist_ATE79)
-                    + (FreteOlist_ATE79 * constNivelOlist)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoOlist)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Olist Valor Líquido - calcOlistValorLiquido
-    // Acima de 79
-
-    else if (
-        (
-            (
-                (VendaValorLiquido + custo + TaxaOlist_ATE79)
-                + (FreteOlist_ATE79 * constNivelOlist)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoOlist)
-                    * 100)
-                - 100
-            )
-        ) >= 79) {
-
-        calcOlistValorLiquido =
-            (
-                (
-                    (VendaValorLiquido + custo + TaxaOlist_ACIMA79)
-                    + (constFreteOlist * constNivelOlist)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoOlist)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Olist Porcentagem Líquida - calcOlistPorcentagemLiquida
-    // Abaixo de 78,99
-    if (
-        (
-            (
-                (
-                    + (custo)
-                    + ((VendaPorcentagemLiquida * custo) / 100)
-                )
-                + (TaxaOlist_ATE79)
-                + (FreteOlist_ATE79 * constNivelOlist)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoOlist)
-                    * 100)
-                - 100
-            )
-        ) <= 78.99) {
-
-        calcOlistPorcentagemLiquida =
-            (
-                (
-                    (
-                        + (custo)
-                        + ((VendaPorcentagemLiquida * custo) / 100)
-                    )
-                    + (TaxaOlist_ATE79)
-                    + (FreteOlist_ATE79 * constNivelOlist)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoOlist)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // Olist Porcentagem Líquida - calcOlistPorcentagemLiquida
-    // Acima de 79
-
-    else if (
-        (
-            (
-                (
-                    + (custo)
-                    + ((VendaPorcentagemLiquida * custo) / 100)
-                )
-                + (TaxaOlist_ATE79)
-                + (FreteOlist_ATE79 * constNivelOlist)
-            ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoOlist)
-                    * 100)
-                - 100
-            )
-        ) >= 79) {
-
-        calcOlistPorcentagemLiquida =
-            (
-                (
-                    (
-                        + (custo)
-                        + ((VendaPorcentagemLiquida * custo) / 100)
-                    )
-                    + (TaxaOlist_ACIMA79)
-                    + (constFreteOlist * constNivelOlist)
-                ) * 100)
-            /
-            (
-                -(
-                    (
-                        (constCnpj + ComissaoOlist)
-                        * 100)
-                    - 100
-                )
-            );
-    }
-
-    // --------------------------------
     // SHEIN
     // --------------------------------
 
@@ -2492,146 +2049,6 @@ function calcular(inputElement) {
     }
 
     // --------------------------------
-    // WEB CONTINENTAL
-    // --------------------------------
-
-    // Web Continental Manual - calcWebContinentalManual
-    var calcWebContinentalManual = VendaManual
-        - (
-            + (custo)
-            + (VendaManual * constCnpj)
-            + (VendaManual * ComissaoWebContinental)
-            + (TaxaWebContinental)
-            + (
-                (FreteWebContinental) * constNivelWebContinental
-            )
-        );
-
-    // --------------------------------
-    // SITE UOOL
-    // --------------------------------
-
-    // Site Uool Manual - calcSiteUoolManual
-    var calcSiteUoolManual = VendaManual
-        - (
-            + (custo)
-            + (VendaManual * constCnpj)
-            + (VendaManual * ComissaoSiteUool1x)
-            + (FreteSiteUool * constNivelSiteUool)
-            + (TaxaSiteUool)
-        );
-
-    var calcSiteUoolManual12x12 = VendaManual + (VendaManual * ComissaoSiteUool12x);
-    var calcSiteUoolManual12x1 = calcSiteUoolManual12x12 / 12;
-
-    // Site Uool Valor Líquido - calcSiteUoolValorLiquido
-    var calcSiteUoolValorLiquido = (
-        (
-            + (VendaValorLiquido)
-            + (custo)
-            + (TaxaSiteUool)
-            + (constFreteSiteUool * constNivelSiteUool)
-        ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoSiteUool1x)
-                    * 100)
-                - 100
-            )
-        );
-
-    var calcSiteUoolValorLiquido12x12 = calcSiteUoolValorLiquido + (calcSiteUoolValorLiquido * ComissaoSiteUool12x);
-    var calcSiteUoolValorLiquido12x1 = calcSiteUoolValorLiquido12x12 / 12;
-
-    // Site Uool Porcentagem Líquida- calcSiteUoolPorcentagemLiquida
-    var calcSiteUoolPorcentagemLiquida = (
-        (
-            (
-                + (custo)
-                + ((VendaPorcentagemLiquida * custo) / 100)
-            )
-            + (TaxaSiteUool)
-            + (constFreteSiteUool * constNivelSiteUool)
-        ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoSiteUool1x)
-                    * 100)
-                - 100
-            )
-        );
-
-    var calcSiteUoolPorcentagemLiquida12x12 = calcSiteUoolPorcentagemLiquida + (calcSiteUoolPorcentagemLiquida * ComissaoSiteUool12x);
-    var calcSiteUoolPorcentagemLiquida12x1 = calcSiteUoolPorcentagemLiquida12x12 / 12;
-
-    // --------------------------------
-    // SITE ATACADO
-    // --------------------------------
-
-    // Site Atacado Manual - calcSiteUoolManual
-    var calcSiteAtacadoManual = VendaManual
-        - (
-            + (custo)
-            + (VendaManual * constCnpj)
-            + (VendaManual * ComissaoSiteAtacado1x)
-            + (FreteSiteAtacado)
-            + (TaxaSiteAtacado)
-        );
-
-    var calcSiteAtacadoManual12x12 = VendaManual + (VendaManual * ComissaoSiteAtacado12x);
-    var calcSiteAtacadoManual12x1 = calcSiteAtacadoManual12x12 / 12;
-
-    // Site Atacado Valor Líquido - calcSiteAtacadoValorLiquido
-    var calcSiteAtacadoValorLiquido = (
-        (
-            + (VendaValorLiquido)
-            + (custo)
-            + (TaxaSiteAtacado)
-            + (constFreteSiteAtacado * constNivelSiteAtacado)
-        ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoSiteAtacado1x)
-                    * 100)
-                - 100
-            )
-        );
-
-    var calcSiteAtacadoValorLiquido12x12 = calcSiteAtacadoValorLiquido + (calcSiteAtacadoValorLiquido * ComissaoSiteAtacado12x);
-    var calcSiteAtacadoValorLiquido12x1 = calcSiteAtacadoValorLiquido12x12 / 12;
-
-    // Site Atacado Porcentagem Líquida- calcSiteAtacadoPorcentagemLiquida
-    var calcSiteAtacadoPorcentagemLiquida = (
-        (
-            (
-                + (custo)
-                + ((VendaPorcentagemLiquida * custo) / 100)
-            )
-            + (TaxaSiteAtacado)
-            + (constFreteSiteAtacado * constNivelSiteAtacado)
-        ) * 100)
-        /
-        (
-            -(
-                (
-                    (constCnpj + ComissaoSiteAtacado1x)
-                    * 100)
-                - 100
-            )
-        );
-
-    var calcSiteAtacadoPorcentagemLiquida12x12 = calcSiteAtacadoPorcentagemLiquida + (calcSiteAtacadoPorcentagemLiquida * ComissaoSiteAtacado12x);
-    var calcSiteAtacadoPorcentagemLiquida12x1 = calcSiteAtacadoPorcentagemLiquida12x12 / 12;
-
-
-
-    // --------------------------------
 
     // Valores que serão exibidos na tabela de resultados
 
@@ -2640,78 +2057,64 @@ function calcular(inputElement) {
     document.getElementById("resultado-Presencial-VendaValorLiquido").textContent = "R$ " + calcPresencialValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
     document.getElementById("resultado-Presencial-VendaPorcentagemLiquida").textContent = "R$ " + calcPresencialPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
 
-    // Americanas
-    // document.getElementById("resultado-Americanas-VendaManual").textContent = "R$ " + calcAmericanasManual.toFixed(2).replace(".", ",") + " (" + ((calcAmericanasManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    // document.getElementById("resultado-Americanas-VendaValorLiquido").textContent = "R$ " + calcAmericanasValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    // document.getElementById("resultado-Americanas-VendaPorcentagemLiquida").textContent = "R$ " + calcAmericanasPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
-
-    // Casas Bahia
-    document.getElementById("resultado-CasasBahia-VendaManual").textContent = "R$ " + calcCasasBahiaManual.toFixed(2).replace(".", ",") + " (" + ((calcCasasBahiaManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    document.getElementById("resultado-CasasBahia-VendaValorLiquido").textContent = "R$ " + calcCasasBahiaValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    document.getElementById("resultado-CasasBahia-VendaPorcentagemLiquida").textContent = "R$ " + calcCasasBahiaPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
-
-    // Magalu
-    document.getElementById("resultado-Magalu-VendaManual").textContent = "R$ " + calcMagaluManual.toFixed(2).replace(".", ",") + " (" + ((calcMagaluManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    document.getElementById("resultado-Magalu-VendaValorLiquido").textContent = "R$ " + calcMagaluValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    document.getElementById("resultado-Magalu-VendaPorcentagemLiquida").textContent = "R$ " + calcMagaluPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
-
-    // Mercado Livre Clássico
-    document.getElementById("resultado-MercadoLivreClassico-VendaManual").textContent = "R$ " + calcMercadoLivreClassicoManual.toFixed(2).replace(".", ",") + " (" + ((calcMercadoLivreClassicoManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    document.getElementById("resultado-MercadoLivreClassico-VendaValorLiquido").textContent = "R$ " + calcMercadoLivreClassicoValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    document.getElementById("resultado-MercadoLivreClassico-VendaPorcentagemLiquida").textContent = "R$ " + calcMercadoLivreClassicoPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
-
-    // Mercado Livre Premium
-    document.getElementById("resultado-MercadoLivrePremium-VendaManual").textContent = "R$ " + calcMercadoLivrePremiumManual.toFixed(2).replace(".", ",") + " (" + ((calcMercadoLivrePremiumManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    document.getElementById("resultado-MercadoLivrePremium-VendaValorLiquido").textContent = "R$ " + calcMercadoLivrePremiumValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    document.getElementById("resultado-MercadoLivrePremium-VendaPorcentagemLiquida").textContent = "R$ " + calcMercadoLivrePremiumPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
-
-    // Olist
-    // document.getElementById("resultado-Olist-VendaManual").textContent = "R$ " + calcOlistManual.toFixed(2).replace(".", ",") + " (" + ((calcOlistManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    // document.getElementById("resultado-Olist-VendaValorLiquido").textContent = "R$ " + calcOlistValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    // document.getElementById("resultado-Olist-VendaPorcentagemLiquida").textContent = "R$ " + calcOlistPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
-
-    // RD
-    // document.getElementById("resultado-RD-VendaManual").textContent = "Em breve";
-    // document.getElementById("resultado-RD-VendaValorLiquido").textContent = "Em breve";
-    // document.getElementById("resultado-RD-VendaPorcentagemLiquida").textContent = "Em breve";
-
-    // Shein
-    document.getElementById("resultado-Shein-VendaManual").textContent = "R$ " + calcSheinManual.toFixed(2).replace(".", ",") + " (" + ((calcSheinManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    document.getElementById("resultado-Shein-VendaValorLiquido").textContent = "R$ " + calcSheinValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    document.getElementById("resultado-Shein-VendaPorcentagemLiquida").textContent = "R$ " + calcSheinPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
-
-    // Shopee
-    // Valores de venda abaixo de R$ 8 não podem ser calculados pelas fórmulas ValorLiquido e PorcentagemLiquida
-    document.getElementById("resultado-Shopee-VendaManual").textContent = "R$ " + calcShopeeManual.toFixed(2).replace(".", ",") + " (" + ((calcShopeeManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    if (calcShopeeValorLiquido <= 7.99) {
-        document.getElementById("resultado-Shopee-VendaValorLiquido").textContent = "Este valor é muito baixo para ser calculado nesta fórmula. Use a primeira coluna.";
+    if (cnpj === "RAV SHEFA DISTRIBUIDORA DE COSMETICOS LTDA") {
+        document.getElementById("resultado-CasasBahia-VendaManual").textContent = "";
+        document.getElementById("resultado-CasasBahia-VendaValorLiquido").textContent = "";
+        document.getElementById("resultado-CasasBahia-VendaPorcentagemLiquida").textContent = "";
+        document.getElementById("resultado-Magalu-VendaManual").textContent = "";
+        document.getElementById("resultado-Magalu-VendaValorLiquido").textContent = "";
+        document.getElementById("resultado-Magalu-VendaPorcentagemLiquida").textContent = "";
+        document.getElementById("resultado-MercadoLivreClassico-VendaManual").textContent = "";
+        document.getElementById("resultado-MercadoLivreClassico-VendaValorLiquido").textContent = "";
+        document.getElementById("resultado-MercadoLivreClassico-VendaPorcentagemLiquida").textContent = "";
+        document.getElementById("resultado-MercadoLivrePremium-VendaManual").textContent = "";
+        document.getElementById("resultado-MercadoLivrePremium-VendaValorLiquido").textContent = "";
+        document.getElementById("resultado-MercadoLivrePremium-VendaPorcentagemLiquida").textContent = "";
+        document.getElementById("resultado-Shein-VendaManual").textContent = "";
+        document.getElementById("resultado-Shein-VendaValorLiquido").textContent = "";
+        document.getElementById("resultado-Shein-VendaPorcentagemLiquida").textContent = "";
+        document.getElementById("resultado-Shopee-VendaManual").textContent = "";
+        document.getElementById("resultado-Shopee-VendaValorLiquido").textContent = "";
+        document.getElementById("resultado-Shopee-VendaPorcentagemLiquida").textContent = "";
     } else {
-        document.getElementById("resultado-Shopee-VendaValorLiquido").textContent = "R$ " + calcShopeeValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+
+        // Casas Bahia
+        document.getElementById("resultado-CasasBahia-VendaManual").textContent = "R$ " + calcCasasBahiaManual.toFixed(2).replace(".", ",") + " (" + ((calcCasasBahiaManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado-CasasBahia-VendaValorLiquido").textContent = "R$ " + calcCasasBahiaValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado-CasasBahia-VendaPorcentagemLiquida").textContent = "R$ " + calcCasasBahiaPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+
+        // Magalu
+        document.getElementById("resultado-Magalu-VendaManual").textContent = "R$ " + calcMagaluManual.toFixed(2).replace(".", ",") + " (" + ((calcMagaluManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado-Magalu-VendaValorLiquido").textContent = "R$ " + calcMagaluValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado-Magalu-VendaPorcentagemLiquida").textContent = "R$ " + calcMagaluPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+
+        // Mercado Livre Clássico
+        document.getElementById("resultado-MercadoLivreClassico-VendaManual").textContent = "R$ " + calcMercadoLivreClassicoManual.toFixed(2).replace(".", ",") + " (" + ((calcMercadoLivreClassicoManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado-MercadoLivreClassico-VendaValorLiquido").textContent = "R$ " + calcMercadoLivreClassicoValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado-MercadoLivreClassico-VendaPorcentagemLiquida").textContent = "R$ " + calcMercadoLivreClassicoPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+
+        // Mercado Livre Premium
+        document.getElementById("resultado-MercadoLivrePremium-VendaManual").textContent = "R$ " + calcMercadoLivrePremiumManual.toFixed(2).replace(".", ",") + " (" + ((calcMercadoLivrePremiumManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado-MercadoLivrePremium-VendaValorLiquido").textContent = "R$ " + calcMercadoLivrePremiumValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado-MercadoLivrePremium-VendaPorcentagemLiquida").textContent = "R$ " + calcMercadoLivrePremiumPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+
+        // Shein
+        document.getElementById("resultado-Shein-VendaManual").textContent = "R$ " + calcSheinManual.toFixed(2).replace(".", ",") + " (" + ((calcSheinManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado-Shein-VendaValorLiquido").textContent = "R$ " + calcSheinValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado-Shein-VendaPorcentagemLiquida").textContent = "R$ " + calcSheinPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+
+        // Shopee
+        // Valores de venda abaixo de R$ 8 não podem ser calculados pelas fórmulas ValorLiquido e PorcentagemLiquida
+        document.getElementById("resultado-Shopee-VendaManual").textContent = "R$ " + calcShopeeManual.toFixed(2).replace(".", ",") + " (" + ((calcShopeeManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        if (calcShopeeValorLiquido <= 7.99) {
+            document.getElementById("resultado-Shopee-VendaValorLiquido").textContent = "Este valor é muito baixo para ser calculado nesta fórmula. Use a primeira coluna.";
+        } else {
+            document.getElementById("resultado-Shopee-VendaValorLiquido").textContent = "R$ " + calcShopeeValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        }
+        if (calcShopeePorcentagemLiquida <= 7.99) {
+            document.getElementById("resultado-Shopee-VendaPorcentagemLiquida").textContent = "Este valor é muito baixo para ser calculado nesta fórmula. Use a primeira coluna";
+        } else {
+            document.getElementById("resultado-Shopee-VendaPorcentagemLiquida").textContent = "R$ " + calcShopeePorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+        }
     }
-    if (calcShopeePorcentagemLiquida <= 7.99) {
-        document.getElementById("resultado-Shopee-VendaPorcentagemLiquida").textContent = "Este valor é muito baixo para ser calculado nesta fórmula. Use a primeira coluna";
-    } else {
-        document.getElementById("resultado-Shopee-VendaPorcentagemLiquida").textContent = "R$ " + calcShopeePorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
-    }
-
-    // Web Continental
-    // document.getElementById("resultado-WebContinental-VendaManual").textContent = "Em breve";
-    // document.getElementById("resultado-WebContinental-VendaValorLiquido").textContent = "Em breve";
-    // document.getElementById("resultado-WebContinental-VendaPorcentagemLiquida").textContent = "Em breve";
-
-    // Site Uool
-    // document.getElementById("resultado-SiteUool-VendaManual").textContent = "R$ " + calcSiteUoolManual.toFixed(2).replace(".", ",") + " (" + ((calcSiteUoolManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    // document.getElementById("resultado-SiteUool-VendaValorLiquido").textContent = "1x R$ " + calcSiteUoolValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    // document.getElementById("resultado-SiteUool-VendaPorcentagemLiquida").textContent = "1x R$ " + calcSiteUoolPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
-    // document.getElementById("resultado-SiteUool-VendaManual-12x").textContent = "12x de R$ " + calcSiteUoolManual12x1.toFixed(2).replace(".", ",") + " (" + (calcSiteUoolManual12x12).toFixed(2).replace(".", ",") + ")";
-    // document.getElementById("resultado-SiteUool-VendaValorLiquido-12x").textContent = "12x de R$ " + calcSiteUoolValorLiquido12x1.toFixed(2).replace(".", ",") + " (" + (calcSiteUoolValorLiquido12x12).toFixed(2).replace(".", ",") + ")";
-    // document.getElementById("resultado-SiteUool-VendaPorcentagemLiquida-12x").textContent = "12x de R$ " + calcSiteUoolPorcentagemLiquida12x1.toFixed(2).replace(".", ",") + " (" + (calcSiteUoolPorcentagemLiquida12x12).toFixed(2).replace(".", ",") + ")";
-
-    // Site Atacado
-    // document.getElementById("resultado-SiteAtacado-VendaManual").textContent = "R$ " + calcSiteAtacadoManual.toFixed(2).replace(".", ",") + " (" + ((calcSiteAtacadoManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    // document.getElementById("resultado-SiteAtacado-VendaValorLiquido").textContent = "1x R$ " + calcSiteAtacadoValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    // document.getElementById("resultado-SiteAtacado-VendaPorcentagemLiquida").textContent = "1x R$ " + calcSiteAtacadoPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
-    // document.getElementById("resultado-SiteAtacado-VendaManual-12x").textContent = "12x de R$ " + calcSiteAtacadoManual12x1.toFixed(2).replace(".", ",") + " (" + (calcSiteAtacadoManual12x12).toFixed(2).replace(".", ",") + ")";
-    // document.getElementById("resultado-SiteAtacado-VendaValorLiquido-12x").textContent = "12x de R$ " + calcSiteAtacadoValorLiquido12x1.toFixed(2).replace(".", ",") + " (" + (calcSiteAtacadoValorLiquido12x12).toFixed(2).replace(".", ",") + ")";
-    // document.getElementById("resultado-SiteAtacado-VendaPorcentagemLiquida-12x").textContent = "12x de R$ " + calcSiteAtacadoPorcentagemLiquida12x1.toFixed(2).replace(".", ",") + " (" + (calcSiteAtacadoPorcentagemLiquida12x12).toFixed(2).replace(".", ",") + ")";
 }
