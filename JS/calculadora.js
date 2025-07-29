@@ -251,14 +251,7 @@ function calcular(inputElement) {
             + Taxa_CasasBahia
             + Frete_CasasBahia_ATE69 * constNivel_CasasBahia_)
         /
-        (1 - (constCnpj + Comissao_CasasBahia)) >= 69.89
-        &&
-        (ValorLiq
-            + custo
-            + Taxa_CasasBahia
-            + constFrete_CasasBahia * constNivel_CasasBahia_)
-        /
-        (1 - (constCnpj + Comissao_CasasBahia)) <= 69.89) {
+        (1 - (constCnpj + Comissao_CasasBahia)) >= 69.89) {
         calcCasasBahiaValorLiq =
             (ValorLiq
                 + custo
@@ -293,14 +286,7 @@ function calcular(inputElement) {
             + Taxa_CasasBahia
             + Frete_CasasBahia_ATE69 * constNivel_CasasBahia_)
         /
-        (1 - (constCnpj + Comissao_CasasBahia)) >= 69.89
-        &&
-        (custo
-            + (PctLiq * custo) / 100
-            + Taxa_CasasBahia
-            + Frete_CasasBahia_ATE69 * constNivel_CasasBahia_)
-        /
-        (1 - (constCnpj + Comissao_CasasBahia)) <= 69.89) {
+        (1 - (constCnpj + Comissao_CasasBahia)) >= 69.89) {
         calcCasasBahiaPctLiq =
             (custo
                 + (PctLiq * custo) / 100
@@ -383,15 +369,7 @@ function calcular(inputElement) {
             + (Frete_Magalu_ATE79 * constNivel_Magalu_)
         )
         /
-        (1 - (constCnpj + Comissao_Magalu)) >= 78.99
-        &&
-        (ValorLiq
-            + custo
-            + Taxa_Magalu_ACIMA10
-            + (constFrete_Magalu * constNivel_Magalu_)
-        )
-        /
-        (1 - (constCnpj + Comissao_Magalu)) <= 78.99) {
+        (1 - (constCnpj + Comissao_Magalu)) >= 78.99) {
         calcMagaluValorLiq =
             (ValorLiq
                 + custo
@@ -459,15 +437,7 @@ function calcular(inputElement) {
             + Frete_Magalu_ATE79 * constNivel_Magalu_
         )
         /
-        (1 - (constCnpj + Comissao_Magalu)) >= 78.99
-        &&
-        (custo
-            + (PctLiq * custo) / 100
-            + Taxa_Magalu_ACIMA10
-            + constFrete_Magalu * constNivel_Magalu_
-        )
-        /
-        (1 - (constCnpj + Comissao_Magalu)) <= 78.99) {
+        (1 - (constCnpj + Comissao_Magalu)) >= 78.99) {
         calcMagaluPctLiq =
             (custo
                 + (PctLiq * custo) / 100
