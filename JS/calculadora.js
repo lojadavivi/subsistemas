@@ -245,13 +245,7 @@ function calcular(inputElement) {
 
     // Casas Bahia Valor Liquido - calcCasasBahiaValorLiq
     // Acima de 69,90
-    else if (
-        (ValorLiq
-            + custo
-            + Taxa_CasasBahia
-            + Frete_CasasBahia_ATE69 * constNivel_CasasBahia_)
-        /
-        (1 - (constCnpj + Comissao_CasasBahia)) >= 69.89) {
+    else {
         calcCasasBahiaValorLiq =
             (ValorLiq
                 + custo
@@ -280,13 +274,7 @@ function calcular(inputElement) {
     }
     // Casas Bahia Porcentagem Liquida - calcCasasBahiaPctLiq
     // Acima de 69,90
-    else if (
-        (custo
-            + (PctLiq * custo) / 100
-            + Taxa_CasasBahia
-            + Frete_CasasBahia_ATE69 * constNivel_CasasBahia_)
-        /
-        (1 - (constCnpj + Comissao_CasasBahia)) >= 69.89) {
+    else {
         calcCasasBahiaPctLiq =
             (custo
                 + (PctLiq * custo) / 100
@@ -341,7 +329,7 @@ function calcular(inputElement) {
             + (Frete_Magalu_ATE79 * constNivel_Magalu_)
         )
         /
-        (1 - (constCnpj + Comissao_Magalu)) >= 10
+        (1 - (constCnpj + Comissao_Magalu)) > 9.99
         &&
         (ValorLiq
             + custo
@@ -349,7 +337,7 @@ function calcular(inputElement) {
             + (Frete_Magalu_ATE79 * constNivel_Magalu_)
         )
         /
-        (1 - (constCnpj + Comissao_Magalu)) <= 78.98) {
+        (1 - (constCnpj + Comissao_Magalu)) <= 78.99) {
         calcMagaluValorLiq =
             (ValorLiq
                 + custo
@@ -362,14 +350,14 @@ function calcular(inputElement) {
 
     // Magalu Valor Liquido - calcMagaluValorLiq
     // Acima de 79
-    if (
+    else if (
         (ValorLiq
             + custo
             + Taxa_Magalu_ACIMA10
             + (Frete_Magalu_ATE79 * constNivel_Magalu_)
         )
         /
-        (1 - (constCnpj + Comissao_Magalu)) >= 78.99) {
+        (1 - (constCnpj + Comissao_Magalu)) > 78.99) {
         calcMagaluValorLiq =
             (ValorLiq
                 + custo
@@ -409,7 +397,7 @@ function calcular(inputElement) {
             + Frete_Magalu_ATE79 * constNivel_Magalu_
         )
         /
-        (1 - (constCnpj + Comissao_Magalu)) >= 10
+        (1 - (constCnpj + Comissao_Magalu)) > 9.99
         &&
         (custo
             + (PctLiq * custo) / 100
@@ -437,7 +425,7 @@ function calcular(inputElement) {
             + Frete_Magalu_ATE79 * constNivel_Magalu_
         )
         /
-        (1 - (constCnpj + Comissao_Magalu)) >= 78.99) {
+        (1 - (constCnpj + Comissao_Magalu)) > 78.99) {
         calcMagaluPctLiq =
             (custo
                 + (PctLiq * custo) / 100
@@ -452,8 +440,8 @@ function calcular(inputElement) {
     // MERCADO LIVRE
     // --------------------------------
 
-    // Mercado Livre Classico Manual - calcMercadoLivreClassicoManual
-    var calcMercadoLivreClassicoManual = Manual
+    // Mercado Livre Classico Manual - calcMLCManual
+    var calcMLCManual = Manual
         - (
             custo
             + (Manual * (constCnpj + Comissao_MLC))
@@ -474,7 +462,7 @@ function calcular(inputElement) {
             )
         );
 
-    // Mercado Livre Classico Valor Liquido - calcMercadoLivreClassicoValorLiq
+    // Mercado Livre Classico Valor Liquido - calcMLCValorLiq
     // Ate 28,99
     if (
         (ValorLiq
@@ -484,7 +472,7 @@ function calcular(inputElement) {
         )
         /
         (1 - (constCnpj + Comissao_MLC)) <= 28.99) {
-        calcMercadoLivreClassicoValorLiq =
+        calcMLCValorLiq =
             (ValorLiq
                 + custo
                 + Taxa_ML_ATE29
@@ -502,7 +490,7 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLC)) >= 29
+        (1 - (constCnpj + Comissao_MLC)) > 28.99
         &&
         (ValorLiq
             + custo
@@ -510,7 +498,7 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLC)) >= 29
+        (1 - (constCnpj + Comissao_MLC)) > 28.99
         &&
         (ValorLiq
             + custo
@@ -519,7 +507,7 @@ function calcular(inputElement) {
         )
         /
         (1 - (constCnpj + Comissao_MLC)) <= 49.99) {
-        calcMercadoLivreClassicoValorLiq =
+        calcMLCValorLiq =
             (ValorLiq
                 + custo
                 + Taxa_ML_ATE50
@@ -537,7 +525,7 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLC)) >= 50
+        (1 - (constCnpj + Comissao_MLC)) > 49.99
         &&
         (ValorLiq
             + custo
@@ -545,7 +533,7 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLC)) >= 50
+        (1 - (constCnpj + Comissao_MLC)) > 49.99
         &&
         (ValorLiq
             + custo
@@ -554,7 +542,7 @@ function calcular(inputElement) {
         )
         /
         (1 - (constCnpj + Comissao_MLC)) <= 78.99) {
-        calcMercadoLivreClassicoValorLiq =
+        calcMLCValorLiq =
             (ValorLiq
                 + custo
                 + Taxa_ML_ATE79
@@ -572,15 +560,15 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLC)) >= 78.99
+        (1 - (constCnpj + Comissao_MLC)) > 78.99
         &&
         (ValorLiq
             + custo
             + constFrete_MercadoLivre * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLC)) >= 78.99) {
-        calcMercadoLivreClassicoValorLiq =
+        (1 - (constCnpj + Comissao_MLC)) > 78.99) {
+        calcMLCValorLiq =
             (ValorLiq
                 + custo
                 + constFrete_MercadoLivre * constNivel_ML_
@@ -589,7 +577,7 @@ function calcular(inputElement) {
             (1 - (constCnpj + Comissao_MLC));
     }
 
-    // Mercado Livre Classico Porcentagem Liquida - calcMercadoLivreClassicoPctLiq
+    // Mercado Livre Classico Porcentagem Liquida - calcMLCPctLiq
     // Ate 28,99
     if (
         (custo
@@ -599,7 +587,7 @@ function calcular(inputElement) {
         )
         /
         (1 - (constCnpj + Comissao_MLC)) <= 28.99) {
-        calcMercadoLivreClassicoPctLiq =
+        calcMLCPctLiq =
             (custo
                 + (PctLiq * custo) / 100
                 + Taxa_ML_ATE29
@@ -617,7 +605,7 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLC)) >= 29
+        (1 - (constCnpj + Comissao_MLC)) > 28.99
         &&
         (custo
             + (PctLiq * custo) / 100
@@ -625,7 +613,7 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLC)) >= 29
+        (1 - (constCnpj + Comissao_MLC)) > 28.99
         &&
         (custo
             + (PctLiq * custo) / 100
@@ -634,7 +622,7 @@ function calcular(inputElement) {
         )
         /
         (1 - (constCnpj + Comissao_MLC)) <= 49.99) {
-        calcMercadoLivreClassicoPctLiq =
+        calcMLCPctLiq =
             (custo
                 + (PctLiq * custo) / 100
                 + Taxa_ML_ATE50
@@ -652,7 +640,7 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLC)) >= 50
+        (1 - (constCnpj + Comissao_MLC)) > 49.99
         &&
         (custo
             + (PctLiq * custo) / 100
@@ -660,7 +648,7 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLC)) >= 50
+        (1 - (constCnpj + Comissao_MLC)) > 49.99
         &&
         (custo
             + (PctLiq * custo) / 100
@@ -669,7 +657,7 @@ function calcular(inputElement) {
         )
         /
         (1 - (constCnpj + Comissao_MLC)) <= 78.99) {
-        calcMercadoLivreClassicoPctLiq =
+        calcMLCPctLiq =
             (custo
                 + (PctLiq * custo) / 100
                 + Taxa_ML_ATE79
@@ -687,15 +675,15 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLC)) >= 78.99
+        (1 - (constCnpj + Comissao_MLC)) > 78.99
         &&
         (custo
             + (PctLiq * custo) / 100
             + constFrete_MercadoLivre * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLC)) >= 78.99) {
-        calcMercadoLivreClassicoPctLiq = (custo
+        (1 - (constCnpj + Comissao_MLC)) > 78.99) {
+        calcMLCPctLiq = (custo
             + (PctLiq * custo) / 100
             + constFrete_MercadoLivre * constNivel_ML_
         )
@@ -703,11 +691,12 @@ function calcular(inputElement) {
             (1 - (constCnpj + Comissao_MLC));
     }
 
-    // Mercado Livre Premium Manual - calcMercadoLivrePremiumManual
-    var calcMercadoLivrePremiumManual = Manual
+    // Mercado Livre Premium Manual - calcMLPManual
+    // Mercado Livre Premium Manual - calcMLPManual
+    var calcMLPManual = Manual
         - (
             custo
-            + (Manual * (constCnpj + Comissao_MLP))
+            + (Manual * (constCnpj + Comissao_MLC))
             + (
                 (Manual <= 78.99
                     ? Frete_ML_ATE79
@@ -725,7 +714,7 @@ function calcular(inputElement) {
             )
         );
 
-    // Mercado Livre Premium Valor Liquido - calcMercadoLivrePremiumValorLiq
+    // Mercado Livre Premium Valor Liquido - calcMLPValorLiq
     // Ate 28,99
     if (
         (ValorLiq
@@ -734,15 +723,15 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLP)) <= 28.99) {
-        calcMercadoLivrePremiumValorLiq =
+        (1 - (constCnpj + Comissao_MLC)) <= 28.99) {
+        calcMLPValorLiq =
             (ValorLiq
                 + custo
                 + Taxa_ML_ATE29
                 + Frete_ML_ATE79 * constNivel_ML_
             )
             /
-            (1 - (constCnpj + Comissao_MLP));
+            (1 - (constCnpj + Comissao_MLC));
     }
 
     // Entre 29 e 49,99
@@ -753,7 +742,7 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLP)) >= 29
+        (1 - (constCnpj + Comissao_MLC)) > 28.99
         &&
         (ValorLiq
             + custo
@@ -761,7 +750,7 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLP)) >= 29
+        (1 - (constCnpj + Comissao_MLC)) > 28.99
         &&
         (ValorLiq
             + custo
@@ -769,15 +758,15 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLP)) <= 49.99) {
-        calcMercadoLivrePremiumValorLiq =
+        (1 - (constCnpj + Comissao_MLC)) <= 49.99) {
+        calcMLPValorLiq =
             (ValorLiq
                 + custo
                 + Taxa_ML_ATE50
                 + Frete_ML_ATE79 * constNivel_ML_
             )
             /
-            (1 - (constCnpj + Comissao_MLP));
+            (1 - (constCnpj + Comissao_MLC));
     }
 
     // Entre 50 e 78,99
@@ -788,7 +777,7 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLP)) >= 50
+        (1 - (constCnpj + Comissao_MLC)) > 49.99
         &&
         (ValorLiq
             + custo
@@ -796,7 +785,7 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLP)) >= 50
+        (1 - (constCnpj + Comissao_MLC)) > 49.99
         &&
         (ValorLiq
             + custo
@@ -804,15 +793,15 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLP)) <= 78.99) {
-        calcMercadoLivrePremiumValorLiq =
+        (1 - (constCnpj + Comissao_MLC)) <= 78.99) {
+        calcMLPValorLiq =
             (ValorLiq
                 + custo
                 + Taxa_ML_ATE79
                 + Frete_ML_ATE79 * constNivel_ML_
             )
             /
-            (1 - (constCnpj + Comissao_MLP));
+            (1 - (constCnpj + Comissao_MLC));
     }
 
     // Acima de 79
@@ -823,24 +812,24 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLP)) >= 78.99
+        (1 - (constCnpj + Comissao_MLC)) > 78.99
         &&
         (ValorLiq
             + custo
             + constFrete_MercadoLivre * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLP)) >= 78.99) {
-        calcMercadoLivrePremiumValorLiq =
+        (1 - (constCnpj + Comissao_MLC)) > 78.99) {
+        calcMLPValorLiq =
             (ValorLiq
                 + custo
                 + constFrete_MercadoLivre * constNivel_ML_
             )
             /
-            (1 - (constCnpj + Comissao_MLP));
+            (1 - (constCnpj + Comissao_MLC));
     }
 
-    // Mercado Livre Premium Porcentagem Liquida - calcMercadoLivrePremiumPctLiq
+    // Mercado Livre Premium Porcentagem Liquida - calcMLPPctLiq
     // Ate 28,99
     if (
         (custo
@@ -849,15 +838,15 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLP)) <= 28.99) {
-        calcMercadoLivrePremiumPctLiq =
+        (1 - (constCnpj + Comissao_MLC)) <= 28.99) {
+        calcMLPPctLiq =
             (custo
                 + (PctLiq * custo) / 100
                 + Taxa_ML_ATE29
                 + Frete_ML_ATE79 * constNivel_ML_
             )
             /
-            (1 - (constCnpj + Comissao_MLP));
+            (1 - (constCnpj + Comissao_MLC));
     }
 
     // Entre 29 e 49,99
@@ -868,7 +857,7 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLP)) >= 29
+        (1 - (constCnpj + Comissao_MLC)) > 28.99
         &&
         (custo
             + (PctLiq * custo) / 100
@@ -876,7 +865,7 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLP)) >= 29
+        (1 - (constCnpj + Comissao_MLC)) > 28.99
         &&
         (custo
             + (PctLiq * custo) / 100
@@ -884,15 +873,15 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLP)) <= 49.99) {
-        calcMercadoLivrePremiumPctLiq =
+        (1 - (constCnpj + Comissao_MLC)) <= 49.99) {
+        calcMLPPctLiq =
             (custo
                 + (PctLiq * custo) / 100
                 + Taxa_ML_ATE50
                 + Frete_ML_ATE79 * constNivel_ML_
             )
             /
-            (1 - (constCnpj + Comissao_MLP));
+            (1 - (constCnpj + Comissao_MLC));
     }
 
     // Entre 50 e 78,99
@@ -903,7 +892,7 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLP)) >= 50
+        (1 - (constCnpj + Comissao_MLC)) > 49.99
         &&
         (custo
             + (PctLiq * custo) / 100
@@ -911,7 +900,7 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLP)) >= 50
+        (1 - (constCnpj + Comissao_MLC)) > 49.99
         &&
         (custo
             + (PctLiq * custo) / 100
@@ -919,15 +908,15 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLP)) <= 78.99) {
-        calcMercadoLivrePremiumPctLiq =
+        (1 - (constCnpj + Comissao_MLC)) <= 78.99) {
+        calcMLPPctLiq =
             (custo
                 + (PctLiq * custo) / 100
                 + Taxa_ML_ATE79
                 + Frete_ML_ATE79 * constNivel_ML_
             )
             /
-            (1 - (constCnpj + Comissao_MLP));
+            (1 - (constCnpj + Comissao_MLC));
     }
 
     // Acima de 79
@@ -938,21 +927,20 @@ function calcular(inputElement) {
             + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLP)) >= 78.99
+        (1 - (constCnpj + Comissao_MLC)) > 78.99
         &&
         (custo
             + (PctLiq * custo) / 100
             + constFrete_MercadoLivre * constNivel_ML_
         )
         /
-        (1 - (constCnpj + Comissao_MLP)) >= 78.99) {
-        calcMercadoLivrePremiumPctLiq =
-            (custo
-                + (PctLiq * custo) / 100
-                + constFrete_MercadoLivre * constNivel_ML_
-            )
+        (1 - (constCnpj + Comissao_MLC)) > 78.99) {
+        calcMLPPctLiq = (custo
+            + (PctLiq * custo) / 100
+            + constFrete_MercadoLivre * constNivel_ML_
+        )
             /
-            (1 - (constCnpj + Comissao_MLP));
+            (1 - (constCnpj + Comissao_MLC));
     }
 
     // --------------------------------
@@ -972,12 +960,12 @@ function calcular(inputElement) {
             + (Manual * Comissao_Shein)
             + (
                 Manual <= 49.89 ? Taxa_Shein :
-                    Manual >= 49.9 ? Taxa_Shein : 0
+                    Manual > 49.89 ? Taxa_Shein : 0
             )
             + (
                 (
                     Manual <= 49.89 ? Frete_Shein_ATE49 :
-                        Manual >= 49.9 ? constFrete_Shein : 0
+                        Manual > 49.89 ? constFrete_Shein : 0
                 ) * constNivel_Shein
             )
         );
@@ -1003,13 +991,7 @@ function calcular(inputElement) {
     // Shein Valor Liquido - calcSheinValorLiq
     // Acima de 49,90
 
-    else if (
-        (ValorLiq
-            + custo
-            + Taxa_Shein
-            + (Frete_Shein_ATE49 * constNivel_Shein)
-        )
-        / (1 - (constCnpj + Comissao_Shein)) >= 49.89) {
+    else {
         calcSheinValorLiq =
             (ValorLiq
                 + custo
@@ -1039,13 +1021,7 @@ function calcular(inputElement) {
 
     // Shein Porcentagem Liquida - calcSheinPctLiq
     // Acima de 49,90
-    else if (
-        (custo
-            + (PctLiq * custo) / 100
-            + Taxa_Shein
-            + (Frete_Shein_ATE49 * constNivel_Shein)
-        )
-        / (1 - (constCnpj + Comissao_Shein)) >= 49.89) {
+    else {
         calcSheinPctLiq =
             (custo
                 + (PctLiq * custo) / 100
@@ -1075,7 +1051,7 @@ function calcular(inputElement) {
             + custo
             + Taxa_Shopee_ACIMA8
             + (Frete_Shopee * constNivel_Shopee))
-        / (1 - (constCnpj + Comissao_Shopee)) <= 499.99) {
+        / (1 - (constCnpj + Comissao_Shopee)) <= 500) {
         calcShopeeValorLiq =
             (ValorLiq
                 + custo
@@ -1086,12 +1062,7 @@ function calcular(inputElement) {
 
     // Shopee Valor Liquido - calcShopeeValorLiq
     // Comissao acima de 110 + 4
-    else if (
-        (ValorLiq
-            + custo
-            + Taxa_Shopee_ACIMA8
-            + (Frete_Shopee * constNivel_Shopee))
-        / (1 - (constCnpj + Comissao_Shopee)) >= 499.99) {
+    else {
         calcShopeeValorLiq =
             (ValorLiq
                 + custo
@@ -1108,7 +1079,7 @@ function calcular(inputElement) {
             + Taxa_Shopee_ACIMA8
             + constFrete_Shopee * constNivel_Shopee
         )
-        / (1 - (constCnpj + Comissao_Shopee)) <= 499.99) {
+        / (1 - (constCnpj + Comissao_Shopee)) <= 500) {
         calcShopeePctLiq =
             (custo * (1 + PctLiq / 100)
                 + Taxa_Shopee_ACIMA8
@@ -1119,12 +1090,7 @@ function calcular(inputElement) {
 
     // Shopee Porcentagem Liquida - calcShopeePctLiq
     // Comissao acima de 100 + 4
-    else if (
-        (custo * (1 + PctLiq / 100)
-            + Taxa_Shopee_ACIMA8
-            + constFrete_Shopee * constNivel_Shopee
-        )
-        / (1 - (constCnpj + Comissao_Shopee)) >= 499.99) {
+    else {
         calcShopeePctLiq =
             (custo * (1 + PctLiq / 100)
                 + Taxa_Shopee_ACIMA8
@@ -1175,15 +1141,15 @@ function calcular(inputElement) {
         document.getElementById("resultado_Magalu_PctLiq").textContent = "R$ " + calcMagaluPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
 
         // Mercado Livre Classico
-        document.getElementById("resultado_MLC_Manual").textContent = "R$ " + calcMercadoLivreClassicoManual.toFixed(2).replace(".", ",") + " (" + ((calcMercadoLivreClassicoManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_MLC_ValorLiq").textContent = "R$ " + calcMercadoLivreClassicoValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_MLC_PctLiq").textContent = "R$ " + calcMercadoLivreClassicoPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
+        document.getElementById("resultado_MLC_Manual").textContent = "R$ " + calcMLCManual.toFixed(2).replace(".", ",") + " (" + ((calcMLCManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_MLC_ValorLiq").textContent = "R$ " + calcMLCValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_MLC_PctLiq").textContent = "R$ " + calcMLCPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
 
 
         // Mercado Livre Premium
-        document.getElementById("resultado_MLP_Manual").textContent = "R$ " + calcMercadoLivrePremiumManual.toFixed(2).replace(".", ",") + " (" + ((calcMercadoLivrePremiumManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_MLP_ValorLiq").textContent = "R$ " + calcMercadoLivrePremiumValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_MLP_PctLiq").textContent = "R$ " + calcMercadoLivrePremiumPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
+        document.getElementById("resultado_MLP_Manual").textContent = "R$ " + calcMLPManual.toFixed(2).replace(".", ",") + " (" + ((calcMLPManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_MLP_ValorLiq").textContent = "R$ " + calcMLPValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_MLP_PctLiq").textContent = "R$ " + calcMLPPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
 
         // Shein
         document.getElementById("resultado_Shein_Manual").textContent = "R$ " + calcSheinManual.toFixed(2).replace(".", ",") + " (" + ((calcSheinManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
