@@ -23,6 +23,8 @@ CALCULADORA
             <td>
                 <ul>
                     <li>Novos cálculos para o CNPJ RAV SHEFA, que trabalha com Lucro Presumido e apenas vendas presenciais.</li>
+                    <li>Simplificadas todas as fórmulas de cálculo.</li>
+                    <li>Apagadas fórmulas de marketplace não usados.</li>
                 </ul>
             </td>
     </tr>
