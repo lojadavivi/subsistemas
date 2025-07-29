@@ -19,39 +19,48 @@ CALCULADORA
     </thead>
     <tbody>
     <tr>
+        <td>4.4.1<br>29/07/2025</td>
+        <td>
+            <ul>
+                <li>Correção de cálculo do CNPJ RAV SHEFA de acordo com orientação da contabilidade.</li>
+                <li>Abreviação de nomenclaturas de const.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
         <td>4.4.0<br>28/07/2025</td>
-            <td>
-                <ul>
-                    <li>Novos cálculos para o CNPJ RAV SHEFA, que trabalha com Lucro Presumido e apenas vendas presenciais.</li>
-                    <li>Simplificadas todas as fórmulas de cálculo.</li>
-                    <li>Apagadas fórmulas de marketplace não usados.</li>
-                </ul>
-            </td>
+        <td>
+            <ul>
+                <li>Novos cálculos para o CNPJ RAV SHEFA, que trabalha com Lucro Presumido e apenas vendas presenciais.</li>
+                <li>Simplificadas todas as fórmulas de cálculo.</li>
+                <li>Apagadas fórmulas de marketplace não usados.</li>
+            </ul>
+        </td>
     </tr>
     <tr>
         <td>4.3.5<br>21/07/2025</td>
-            <td>
-                <ul>
-                    <li>Atualizado alíquota de CNPJs</li>
-                </ul>
-            </td>
+        <td>
+            <ul>
+                <li>Atualizado alíquota de CNPJs</li>
+            </ul>
+        </td>
     </tr>
     <tr>
         <td>4.3.4<br>20/05/2025</td>
-            <td>
-                <ul>
-                    <li>Atualizados nomes dos CNPJs.</li>
-                    <li>Adicionado link para o Changelog no texto da versão.</li>
-                </ul>
-            </td>
+        <td>
+            <ul>
+                <li>Atualizados nomes dos CNPJs.</li>
+                <li>Adicionado link para o Changelog no texto da versão.</li>
+            </ul>
+        </td>
     </tr>
     <tr>
         <td>4.3.3<br>19/02/2025</td>
-            <td>
-                <ul>
-                    <li>Correção de bug em calcShopeeManual exibindo valores errados quando preço está próximo de 500</li>
-                </ul>
-            </td>
+        <td>
+            <ul>
+                <li>Correção de bug em calcShopeeManual exibindo valores errados quando preço está próximo de 500</li>
+            </ul>
+        </td>
     </tr>
     <tr>
         <td>4.3.2<br>22/01/2025</td>

@@ -6,155 +6,155 @@ function calcular(inputElement) {
     var nivel = document.getElementById("nivel").value;
     var peso = document.getElementById("peso").value;
     var custo = parseFloat(document.getElementById("custo").value.replace(",", "."));
-    var VendaManual = parseFloat(document.getElementById("VendaManual").value.replace(",", "."));
-    var VendaValorLiquido = parseFloat(document.getElementById("VendaValorLiquido").value.replace(",", "."));
-    var VendaPorcentagemLiquida = parseFloat(document.getElementById("VendaPorcentagemLiquida").value.replace(",", "."));
+    var Manual = parseFloat(document.getElementById("Manual").value.replace(",", "."));
+    var ValorLiq = parseFloat(document.getElementById("ValorLiq").value.replace(",", "."));
+    var PctLiq = parseFloat(document.getElementById("PctLiq").value.replace(",", "."));
 
     // Valores constantes de CNPJ definidos no calc_variables.js
     if (cnpj === "LOJA DA VIVI LTDA") {
-        constCnpj = cnpjLTDA;
+        constCnpj = cnpj_LTDA;
     } else if (cnpj === "FERREIRA PROSPERITA COSMETICOS LTDA") {
-        constCnpj = cnpjFERREIRA;
+        constCnpj = cnpj_FERREIRA;
     } else if (cnpj === "RAV SHEFA DISTRIBUIDORA DE COSMETICOS LTDA") {
-        constCnpj = cnpjRAV;
+        constCnpj = cnpj_RAV;
     } else if (cnpj === "VIVIANE CHRISTINA FERREIRA") {
-        constCnpj = cnpjVIVI;
+        constCnpj = cnpj_VIVI;
     } else if (cnpj === "Selecione") {
         constCnpj = x;
     }
 
     // Valores constantes de peso e frete para acima de R$ 79 definidos no calc_variables.js
     if (peso === "Selecione") {
-        constFretePresencial = x;
-        constFreteCasasBahia = x;
-        constFreteMagalu = x;
-        constFreteMercadoLivre = x;
-        constFreteRD = x;
-        constFreteShein = x;
-        constFreteShopee = x;
+        constFrete_Presencial = x;
+        constFrete_CasasBahia = x;
+        constFrete_Magalu = x;
+        constFrete_MercadoLivre = x;
+        constFrete_RD = x;
+        constFrete_Shein = x;
+        constFrete_Shopee = x;
     } else if (peso === "até 0.3kg") {
-        constFretePresencial = FretePresencial;
-        constFreteCasasBahia = FreteCasasBahia_ACIMA79_ate300G;
-        constFreteMagalu = FreteMagalu_ACIMA79_ate300G;
-        constFreteMercadoLivre = FreteMercadoLivre_ACIMA79_ate300G;
-        constFreteRD = FreteRD;
-        constFreteShein = FreteShein_ACIMA49_ate300G;
-        constFreteShopee = FreteShopee;
+        constFrete_Presencial = Frete_Presencial;
+        constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_ate300G;
+        constFrete_Magalu = Frete_Magalu_ACIMA79_ate300G;
+        constFrete_MercadoLivre = Frete_ML_ACIMA79_ate300G;
+        constFrete_RD = Frete_RD;
+        constFrete_Shein = Frete_Shein_ACIMA49_ate300G;
+        constFrete_Shopee = Frete_Shopee;
     } else if (peso === "0.3 a 0.5kg") {
-        constFretePresencial = FretePresencial;
-        constFreteCasasBahia = FreteCasasBahia_ACIMA79_300a500G;
-        constFreteMagalu = FreteMagalu_ACIMA79_300a500G;
-        constFreteMercadoLivre = FreteMercadoLivre_ACIMA79_300a500G;
-        constFreteRD = FreteRD;
-        constFreteShein = FreteShein_ACIMA49_300a500G;
-        constFreteShopee = FreteShopee;
+        constFrete_Presencial = Frete_Presencial;
+        constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_300a500G;
+        constFrete_Magalu = Frete_Magalu_ACIMA79_300a500G;
+        constFrete_MercadoLivre = Frete_ML_ACIMA79_300a500G;
+        constFrete_RD = Frete_RD;
+        constFrete_Shein = Frete_Shein_ACIMA49_300a500G;
+        constFrete_Shopee = Frete_Shopee;
     } else if (peso === "0.5 a 1kg") {
-        constFretePresencial = FretePresencial;
-        constFreteCasasBahia = FreteCasasBahia_ACIMA79_500Ga1KG;
-        constFreteMagalu = FreteMagalu_ACIMA79_500Ga1KG;
-        constFreteMercadoLivre = FreteMercadoLivre_ACIMA79_500Ga1KG;
-        constFreteRD = FreteRD;
-        constFreteShein = FreteShein_ACIMA49_500Ga1KG;
-        constFreteShopee = FreteShopee;
+        constFrete_Presencial = Frete_Presencial;
+        constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_500Ga1KG;
+        constFrete_Magalu = Frete_Magalu_ACIMA79_500Ga1KG;
+        constFrete_MercadoLivre = Frete_ML_ACIMA79_500Ga1KG;
+        constFrete_RD = Frete_RD;
+        constFrete_Shein = Frete_Shein_ACIMA49_500Ga1KG;
+        constFrete_Shopee = Frete_Shopee;
     } else if (peso === "1 a 2kg") {
-        constFretePresencial = FretePresencial;
-        constFreteCasasBahia = FreteCasasBahia_ACIMA79_1a2KG;
-        constFreteMagalu = FreteMagalu_ACIMA79_1a2KG;
-        constFreteMercadoLivre = FreteMercadoLivre_ACIMA79_1a2KG;
-        constFreteRD = FreteRD;
-        constFreteShein = FreteShein_ACIMA49_1a2KG;
-        constFreteShopee = FreteShopee;
+        constFrete_Presencial = Frete_Presencial;
+        constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_1a2KG;
+        constFrete_Magalu = Frete_Magalu_ACIMA79_1a2KG;
+        constFrete_MercadoLivre = Frete_ML_ACIMA79_1a2KG;
+        constFrete_RD = Frete_RD;
+        constFrete_Shein = Frete_Shein_ACIMA49_1a2KG;
+        constFrete_Shopee = Frete_Shopee;
     } else if (peso === "2 a 5kg") {
-        constFretePresencial = FretePresencial;
-        constFreteCasasBahia = FreteCasasBahia_ACIMA79_2a5KG;
-        constFreteMagalu = FreteMagalu_ACIMA79_2a5KG;
-        constFreteMercadoLivre = FreteMercadoLivre_ACIMA79_2a5KG;
-        constFreteRD = FreteRD;
-        constFreteShein = FreteShein_ACIMA49_2a5KG;
-        constFreteShopee = FreteShopee;
+        constFrete_Presencial = Frete_Presencial;
+        constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_2a5KG;
+        constFrete_Magalu = Frete_Magalu_ACIMA79_2a5KG;
+        constFrete_MercadoLivre = Frete_ML_ACIMA79_2a5KG;
+        constFrete_RD = Frete_RD;
+        constFrete_Shein = Frete_Shein_ACIMA49_2a5KG;
+        constFrete_Shopee = Frete_Shopee;
     } else if (peso === "5 a 9kg") {
-        constFretePresencial = FretePresencial;
-        constFreteCasasBahia = FreteCasasBahia_ACIMA79_5a9KG;
-        constFreteMagalu = FreteMagalu_ACIMA79_5a9KG;
-        constFreteMercadoLivre = FreteMercadoLivre_ACIMA79_5a9KG;
-        constFreteRD = FreteRD;
-        constFreteShein = FreteShein_ACIMA49_5a9KG;
-        constFreteShopee = FreteShopee;
+        constFrete_Presencial = Frete_Presencial;
+        constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_5a9KG;
+        constFrete_Magalu = Frete_Magalu_ACIMA79_5a9KG;
+        constFrete_MercadoLivre = Frete_ML_ACIMA79_5a9KG;
+        constFrete_RD = Frete_RD;
+        constFrete_Shein = Frete_Shein_ACIMA49_5a9KG;
+        constFrete_Shopee = Frete_Shopee;
     } else if (peso === "9 a 13kg") {
-        constFretePresencial = FretePresencial;
-        constFreteCasasBahia = FreteCasasBahia_ACIMA79_9a13KG;
-        constFreteMagalu = FreteMagalu_ACIMA79_9a13KG;
-        constFreteMercadoLivre = FreteMercadoLivre_ACIMA79_9a13KG;
-        constFreteRD = FreteRD;
-        constFreteShein = FreteShein_ACIMA49_9a13KG;
-        constFreteShopee = FreteShopee;
+        constFrete_Presencial = Frete_Presencial;
+        constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_9a13KG;
+        constFrete_Magalu = Frete_Magalu_ACIMA79_9a13KG;
+        constFrete_MercadoLivre = Frete_ML_ACIMA79_9a13KG;
+        constFrete_RD = Frete_RD;
+        constFrete_Shein = Frete_Shein_ACIMA49_9a13KG;
+        constFrete_Shopee = Frete_Shopee;
     } else if (peso === "13 a 17kg") {
-        constFretePresencial = FretePresencial;
-        constFreteCasasBahia = FreteCasasBahia_ACIMA79_13a17KG;
-        constFreteMagalu = FreteMagalu_ACIMA79_13a17KG;
-        constFreteMercadoLivre = FreteMercadoLivre_ACIMA79_13a17KG;
-        constFreteRD = FreteRD;
-        constFreteShein = FreteShein_ACIMA49_13a17KG;
-        constFreteShopee = FreteShopee;;
+        constFrete_Presencial = Frete_Presencial;
+        constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_13a17KG;
+        constFrete_Magalu = Frete_Magalu_ACIMA79_13a17KG;
+        constFrete_MercadoLivre = Frete_ML_ACIMA79_13a17KG;
+        constFrete_RD = Frete_RD;
+        constFrete_Shein = Frete_Shein_ACIMA49_13a17KG;
+        constFrete_Shopee = Frete_Shopee;;
     } else if (peso === "17 a 23kg") {
-        constFretePresencial = FretePresencial;
-        constFreteCasasBahia = FreteCasasBahia_ACIMA79_17a23KG;
-        constFreteMagalu = FreteMagalu_ACIMA79_17a23KG;
-        constFreteMercadoLivre = FreteMercadoLivre_ACIMA79_17a23KG;
-        constFreteRD = FreteRD;
-        constFreteShein = FreteShein_ACIMA49_17a23KG;
-        constFreteShopee = FreteShopee;
+        constFrete_Presencial = Frete_Presencial;
+        constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_17a23KG;
+        constFrete_Magalu = Frete_Magalu_ACIMA79_17a23KG;
+        constFrete_MercadoLivre = Frete_ML_ACIMA79_17a23KG;
+        constFrete_RD = Frete_RD;
+        constFrete_Shein = Frete_Shein_ACIMA49_17a23KG;
+        constFrete_Shopee = Frete_Shopee;
     } else if (peso === "23 a 30kg") {
-        constFretePresencial = FretePresencial;
-        constFreteCasasBahia = FreteCasasBahia_ACIMA79_23a30KG;
-        constFreteMagalu = FreteMagalu_ACIMA79_23a30KG;
-        constFreteMercadoLivre = FreteMercadoLivre_ACIMA79_23a30KG;
-        constFreteRD = FreteRD;
-        constFreteShein = FreteShein_ACIMA49_23a30KG;
-        constFreteShopee = FreteShopee;
+        constFrete_Presencial = Frete_Presencial;
+        constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_23a30KG;
+        constFrete_Magalu = Frete_Magalu_ACIMA79_23a30KG;
+        constFrete_MercadoLivre = Frete_ML_ACIMA79_23a30KG;
+        constFrete_RD = Frete_RD;
+        constFrete_Shein = Frete_Shein_ACIMA49_23a30KG;
+        constFrete_Shopee = Frete_Shopee;
     }
 
     // Valores constantes de desconto no frete baseado no nivel definidos no calc_variables.js
     if (nivel === "5") {
-        constNivelPresencial = NivelPresencial;
-        constNivelCasasBahia = NivelCasasBahia5;
-        constNivelMagalu = NivelMagalu5;
-        constNivelMercadoLivre = NivelMercadoLivre5;
-        constNivelRD = NivelRD;
-        constNivelShein = NivelShein;
-        constNivelShopee = NivelShopee;
+        constNivel_Presencial = Nivel_Presencial;
+        constNivel_CasasBahia_ = Nivel_CasasBahia_5;
+        constNivel_Magalu_ = Nivel_Magalu_5;
+        constNivel_ML_ = Nivel_ML_5;
+        constNivel_RD = Nivel_RD;
+        constNivel_Shein = Nivel_Shein;
+        constNivel_Shopee = Nivel_Shopee;
     } else if (nivel === "4") {
-        constNivelPresencial = NivelPresencial;
-        constNivelCasasBahia = NivelCasasBahia4;
-        constNivelMagalu = NivelMagalu4;
-        constNivelMercadoLivre = NivelMercadoLivre4;
-        constNivelRD = NivelRD;
-        constNivelShein = NivelShein;
-        constNivelShopee = NivelShopee;
+        constNivel_Presencial = Nivel_Presencial;
+        constNivel_CasasBahia_ = Nivel_CasasBahia_4;
+        constNivel_Magalu_ = Nivel_Magalu_4;
+        constNivel_ML_ = Nivel_ML_4;
+        constNivel_RD = Nivel_RD;
+        constNivel_Shein = Nivel_Shein;
+        constNivel_Shopee = Nivel_Shopee;
     } else if (nivel === "3") {
-        constNivelPresencial = NivelPresencial;
-        constNivelCasasBahia = NivelCasasBahia3;
-        constNivelMagalu = NivelMagalu3;
-        constNivelMercadoLivre = NivelMercadoLivre3;
-        constNivelRD = NivelRD;
-        constNivelShein = NivelShein;
-        constNivelShopee = NivelShopee;
+        constNivel_Presencial = Nivel_Presencial;
+        constNivel_CasasBahia_ = Nivel_CasasBahia_3;
+        constNivel_Magalu_ = Nivel_Magalu_3;
+        constNivel_ML_ = Nivel_ML_3;
+        constNivel_RD = Nivel_RD;
+        constNivel_Shein = Nivel_Shein;
+        constNivel_Shopee = Nivel_Shopee;
     } else if (nivel === "2") {
-        constNivelPresencial = NivelPresencial;
-        constNivelCasasBahia = NivelCasasBahia2;
-        constNivelMagalu = NivelMagalu2;
-        constNivelMercadoLivre = NivelMercadoLivre2;
-        constNivelRD = NivelRD;
-        constNivelShein = NivelShein;
-        constNivelShopee = NivelShopee;
+        constNivel_Presencial = Nivel_Presencial;
+        constNivel_CasasBahia_ = Nivel_CasasBahia_2;
+        constNivel_Magalu_ = Nivel_Magalu_2;
+        constNivel_ML_ = Nivel_ML_2;
+        constNivel_RD = Nivel_RD;
+        constNivel_Shein = Nivel_Shein;
+        constNivel_Shopee = Nivel_Shopee;
     } else if (nivel === "1") {
-        constNivelPresencial = NivelPresencial;
-        constNivelCasasBahia = NivelCasasBahia1;
-        constNivelMagalu = NivelMagalu1;
-        constNivelMercadoLivre = NivelMercadoLivre1;
-        constNivelRD = NivelRD;
-        constNivelShein = NivelShein;
-        constNivelShopee = NivelShopee;
+        constNivel_Presencial = Nivel_Presencial;
+        constNivel_CasasBahia_ = Nivel_CasasBahia_1;
+        constNivel_Magalu_ = Nivel_Magalu_1;
+        constNivel_ML_ = Nivel_ML_1;
+        constNivel_RD = Nivel_RD;
+        constNivel_Shein = Nivel_Shein;
+        constNivel_Shopee = Nivel_Shopee;
     }
 
     // --------------------------------
@@ -170,46 +170,42 @@ function calcular(inputElement) {
 
     // Presencial Manual - calcPresencialManual
     if (cnpj === "RAV SHEFA DISTRIBUIDORA DE COSMETICOS LTDA") {
-        var calcPresencialManual = VendaManual
-            - (
-                + (custo)
-                + (VendaManual * constCnpj)
-                + (VendaManual * MaquininhaRAV)
-                + (VendaManual * PresuncaoRAV)
+        var calcPresencialManual = Manual
+            - (custo
+                + (Manual * constCnpj)
             );
     }
     else {
-        var calcPresencialManual = VendaManual
-            - (
-                + (custo)
-                + (VendaManual * (constCnpj + ComissaoPresencial))
+        var calcPresencialManual = Manual
+            - (custo
+                + (Manual * (constCnpj + Comissao_Presencial))
             );
     }
-    // Presencial Valor Liquido - calcPresencialValorLiquido
+    // Presencial Valor Liquido - calcPresencialValorLiq
     if (cnpj === "RAV SHEFA DISTRIBUIDORA DE COSMETICOS LTDA") {
-        var calcPresencialValorLiquido =
-            (VendaValorLiquido + custo)
+        var calcPresencialValorLiq =
+            (ValorLiq + custo)
             /
-            (1 - (constCnpj + MaquininhaRAV + PresuncaoRAV));
+            (1 - constCnpj);
     }
     else {
-        var calcPresencialValorLiquido =
-            (VendaValorLiquido + custo)
+        var calcPresencialValorLiq =
+            (ValorLiq + custo)
             /
-            (1 - (constCnpj + ComissaoPresencial));
+            (1 - (constCnpj + Comissao_Presencial));
     }
-    // Presencial Porcentagem Liquida - calcPresencialPorcentagemLiquida
+    // Presencial Porcentagem Liquida - calcPresencialPctLiq
     if (cnpj === "RAV SHEFA DISTRIBUIDORA DE COSMETICOS LTDA") {
-        var calcPresencialPorcentagemLiquida =
-            custo * (1 + VendaPorcentagemLiquida / 100)
+        var calcPresencialPctLiq =
+            (custo * (1 + PctLiq / 100))
             /
-            (1 - (constCnpj + MaquininhaRAV + PresuncaoRAV));
+            (1 - constCnpj);
     }
     else {
-        var calcPresencialPorcentagemLiquida =
-            custo * (1 + VendaPorcentagemLiquida / 100)
+        var calcPresencialPctLiq =
+            (custo * (1 + PctLiq / 100))
             /
-            (1 - (constCnpj + ComissaoPresencial));
+            (1 - (constCnpj + Comissao_Presencial));
     }
 
     // --------------------------------
@@ -219,99 +215,99 @@ function calcular(inputElement) {
     // CasasBahia Manual - calcCasasBahiaManual
 
     var calcCasasBahiaManual =
-        VendaManual
+        Manual
         - (
             + custo
-            + TaxaCasasBahia
-            + (VendaManual * (constCnpj + ComissaoCasasBahia))
-            + ((VendaManual <= 69.89 ? FreteCasasBahia_ATE69 :
-                VendaManual >= 69.90 ? constFreteCasasBahia : 0
-            ) * constNivelCasasBahia)
+            + Taxa_CasasBahia
+            + (Manual * (constCnpj + Comissao_CasasBahia))
+            + ((Manual <= 69.89 ? Frete_CasasBahia_ATE69 :
+                Manual >= 69.90 ? constFrete_CasasBahia : 0
+            ) * constNivel_CasasBahia_)
         );
 
-    // Casas Bahia Valor Liquido - calcCasasBahiaValorLiquido
+    // Casas Bahia Valor Liquido - calcCasasBahiaValorLiq
     // Abaixo de 69,90
     if (
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaCasasBahia
-            + FreteCasasBahia_ATE69 * constNivelCasasBahia)
+            + Taxa_CasasBahia
+            + Frete_CasasBahia_ATE69 * constNivel_CasasBahia_)
         /
-        (1 - (constCnpj + ComissaoCasasBahia)) <= 69.89) {
-        calcCasasBahiaValorLiquido =
-            (VendaValorLiquido
+        (1 - (constCnpj + Comissao_CasasBahia)) <= 69.89) {
+        calcCasasBahiaValorLiq =
+            (ValorLiq
                 + custo
-                + TaxaCasasBahia
-                + FreteCasasBahia_ATE69 * constNivelCasasBahia)
+                + Taxa_CasasBahia
+                + Frete_CasasBahia_ATE69 * constNivel_CasasBahia_)
             /
-            (1 - (constCnpj + ComissaoCasasBahia));
+            (1 - (constCnpj + Comissao_CasasBahia));
     }
 
-    // Casas Bahia Valor Liquido - calcCasasBahiaValorLiquido
+    // Casas Bahia Valor Liquido - calcCasasBahiaValorLiq
     // Acima de 69,90
     else if (
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaCasasBahia
-            + FreteCasasBahia_ATE69 * constNivelCasasBahia)
+            + Taxa_CasasBahia
+            + Frete_CasasBahia_ATE69 * constNivel_CasasBahia_)
         /
-        (1 - (constCnpj + ComissaoCasasBahia)) >= 69.89
+        (1 - (constCnpj + Comissao_CasasBahia)) >= 69.89
         &&
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaCasasBahia
-            + constFreteCasasBahia * constNivelCasasBahia)
+            + Taxa_CasasBahia
+            + constFrete_CasasBahia * constNivel_CasasBahia_)
         /
-        (1 - (constCnpj + ComissaoCasasBahia)) <= 69.89) {
-        calcCasasBahiaValorLiquido =
-            (VendaValorLiquido
+        (1 - (constCnpj + Comissao_CasasBahia)) <= 69.89) {
+        calcCasasBahiaValorLiq =
+            (ValorLiq
                 + custo
-                + TaxaCasasBahia
-                + constFreteCasasBahia * constNivelCasasBahia)
+                + Taxa_CasasBahia
+                + constFrete_CasasBahia * constNivel_CasasBahia_)
             /
-            (1 - (constCnpj + ComissaoCasasBahia));
+            (1 - (constCnpj + Comissao_CasasBahia));
     }
 
-    // Casas Bahia Porcentagem Liquida - calcCasasBahiaPorcentagemLiquida
+    // Casas Bahia Porcentagem Liquida - calcCasasBahiaPctLiq
     // Abaixo de 69,90
     if (
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaCasasBahia
-            + FreteCasasBahia_ATE69 * constNivelCasasBahia)
+            + (PctLiq * custo) / 100
+            + Taxa_CasasBahia
+            + Frete_CasasBahia_ATE69 * constNivel_CasasBahia_)
         /
-        (1 - (constCnpj + ComissaoCasasBahia)) <= 69.89) {
-        calcCasasBahiaPorcentagemLiquida =
+        (1 - (constCnpj + Comissao_CasasBahia)) <= 69.89) {
+        calcCasasBahiaPctLiq =
             (custo
-                + (VendaPorcentagemLiquida * custo) / 100
-                + TaxaCasasBahia
-                + FreteCasasBahia_ATE69 * constNivelCasasBahia)
+                + (PctLiq * custo) / 100
+                + Taxa_CasasBahia
+                + Frete_CasasBahia_ATE69 * constNivel_CasasBahia_)
             /
-            (1 - (constCnpj + ComissaoCasasBahia));
+            (1 - (constCnpj + Comissao_CasasBahia));
     }
-    // Casas Bahia Porcentagem Liquida - calcCasasBahiaPorcentagemLiquida
+    // Casas Bahia Porcentagem Liquida - calcCasasBahiaPctLiq
     // Acima de 69,90
     else if (
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaCasasBahia
-            + FreteCasasBahia_ATE69 * constNivelCasasBahia)
+            + (PctLiq * custo) / 100
+            + Taxa_CasasBahia
+            + Frete_CasasBahia_ATE69 * constNivel_CasasBahia_)
         /
-        (1 - (constCnpj + ComissaoCasasBahia)) >= 69.89
+        (1 - (constCnpj + Comissao_CasasBahia)) >= 69.89
         &&
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaCasasBahia
-            + FreteCasasBahia_ATE69 * constNivelCasasBahia)
+            + (PctLiq * custo) / 100
+            + Taxa_CasasBahia
+            + Frete_CasasBahia_ATE69 * constNivel_CasasBahia_)
         /
-        (1 - (constCnpj + ComissaoCasasBahia)) <= 69.89) {
-        calcCasasBahiaPorcentagemLiquida =
+        (1 - (constCnpj + Comissao_CasasBahia)) <= 69.89) {
+        calcCasasBahiaPctLiq =
             (custo
-                + (VendaPorcentagemLiquida * custo) / 100
-                + TaxaCasasBahia
-                + constFreteCasasBahia * constNivelCasasBahia)
+                + (PctLiq * custo) / 100
+                + Taxa_CasasBahia
+                + constFrete_CasasBahia * constNivel_CasasBahia_)
             /
-            (1 - (constCnpj + ComissaoCasasBahia));
+            (1 - (constCnpj + Comissao_CasasBahia));
     }
 
     // --------------------------------
@@ -319,167 +315,167 @@ function calcular(inputElement) {
     // --------------------------------
 
     // Magalu Manual - calcMagaluManual
-    var calcMagaluManual = VendaManual
+    var calcMagaluManual = Manual
         - (
             + custo
-            + (VendaManual * (constCnpj + ComissaoMagalu))
-            + ((VendaManual <= 78.99 ? FreteMagalu_ATE79 :
-                VendaManual >= 79 ? constFreteMagalu : 0
-            ) * constNivelMagalu)
-            + (VendaManual <= 9.99 ? TaxaMagalu_ATE10 :
-                VendaManual >= 10 ? TaxaMagalu_ACIMA10 : 0)
+            + (Manual * (constCnpj + Comissao_Magalu))
+            + ((Manual <= 78.99 ? Frete_Magalu_ATE79 :
+                Manual >= 79 ? constFrete_Magalu : 0
+            ) * constNivel_Magalu_)
+            + (Manual <= 9.99 ? Taxa_Magalu_ATE10 :
+                Manual >= 10 ? Taxa_Magalu_ACIMA10 : 0)
         );
 
-    // Magalu Valor Liquido - calcMagaluValorLiquido
+    // Magalu Valor Liquido - calcMagaluValorLiq
     // Abaixo de 10
     if (
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaMagalu_ATE10
-            + (FreteMagalu_ATE79 * constNivelMagalu)
+            + Taxa_Magalu_ATE10
+            + (Frete_Magalu_ATE79 * constNivel_Magalu_)
         )
         /
-        (1 - (constCnpj + ComissaoMagalu)) <= 9.99) {
-        calcMagaluValorLiquido =
-            (VendaValorLiquido
+        (1 - (constCnpj + Comissao_Magalu)) <= 9.99) {
+        calcMagaluValorLiq =
+            (ValorLiq
                 + custo
-                + TaxaMagalu_ATE10
-                + (FreteMagalu_ATE79 * constNivelMagalu)
+                + Taxa_Magalu_ATE10
+                + (Frete_Magalu_ATE79 * constNivel_Magalu_)
             )
             /
-            (1 - (constCnpj + ComissaoMagalu));
+            (1 - (constCnpj + Comissao_Magalu));
     }
 
-    // Magalu Valor Liquido - calcMagaluValorLiquido
+    // Magalu Valor Liquido - calcMagaluValorLiq
     // Entre 10 e 78,99
     else if (
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaMagalu_ATE10
-            + (FreteMagalu_ATE79 * constNivelMagalu)
+            + Taxa_Magalu_ATE10
+            + (Frete_Magalu_ATE79 * constNivel_Magalu_)
         )
         /
-        (1 - (constCnpj + ComissaoMagalu)) >= 10
+        (1 - (constCnpj + Comissao_Magalu)) >= 10
         &&
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaMagalu_ACIMA10
-            + (FreteMagalu_ATE79 * constNivelMagalu)
+            + Taxa_Magalu_ACIMA10
+            + (Frete_Magalu_ATE79 * constNivel_Magalu_)
         )
         /
-        (1 - (constCnpj + ComissaoMagalu)) <= 78.98) {
-        calcMagaluValorLiquido =
-            (VendaValorLiquido
+        (1 - (constCnpj + Comissao_Magalu)) <= 78.98) {
+        calcMagaluValorLiq =
+            (ValorLiq
                 + custo
-                + TaxaMagalu_ACIMA10
-                + (FreteMagalu_ATE79 * constNivelMagalu)
+                + Taxa_Magalu_ACIMA10
+                + (Frete_Magalu_ATE79 * constNivel_Magalu_)
             )
             /
-            (1 - (constCnpj + ComissaoMagalu));
+            (1 - (constCnpj + Comissao_Magalu));
     }
 
-    // Magalu Valor Liquido - calcMagaluValorLiquido
+    // Magalu Valor Liquido - calcMagaluValorLiq
     // Acima de 79
     if (
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaMagalu_ACIMA10
-            + (FreteMagalu_ATE79 * constNivelMagalu)
+            + Taxa_Magalu_ACIMA10
+            + (Frete_Magalu_ATE79 * constNivel_Magalu_)
         )
         /
-        (1 - (constCnpj + ComissaoMagalu)) >= 78.99
+        (1 - (constCnpj + Comissao_Magalu)) >= 78.99
         &&
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaMagalu_ACIMA10
-            + (constFreteMagalu * constNivelMagalu)
+            + Taxa_Magalu_ACIMA10
+            + (constFrete_Magalu * constNivel_Magalu_)
         )
         /
-        (1 - (constCnpj + ComissaoMagalu)) <= 78.99) {
-        calcMagaluValorLiquido =
-            (VendaValorLiquido
+        (1 - (constCnpj + Comissao_Magalu)) <= 78.99) {
+        calcMagaluValorLiq =
+            (ValorLiq
                 + custo
-                + TaxaMagalu_ACIMA10
-                + (constFreteMagalu * constNivelMagalu)
+                + Taxa_Magalu_ACIMA10
+                + (constFrete_Magalu * constNivel_Magalu_)
             )
             /
-            (1 - (constCnpj + ComissaoMagalu));
+            (1 - (constCnpj + Comissao_Magalu));
     }
 
-    // Magalu Porcentagem Liquida - calcMagaluPorcentagemLiquida
+    // Magalu Porcentagem Liquida - calcMagaluPctLiq
     // Abaixo de 10
     if (
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaMagalu_ATE10
-            + FreteMagalu_ATE79 * constNivelMagalu
+            + (PctLiq * custo) / 100
+            + Taxa_Magalu_ATE10
+            + Frete_Magalu_ATE79 * constNivel_Magalu_
         )
         /
-        (1 - (constCnpj + ComissaoMagalu)) <= 9.99) {
-        calcMagaluPorcentagemLiquida =
+        (1 - (constCnpj + Comissao_Magalu)) <= 9.99) {
+        calcMagaluPctLiq =
             (custo
-                + (VendaPorcentagemLiquida * custo) / 100
-                + TaxaMagalu_ATE10
-                + FreteMagalu_ATE79 * constNivelMagalu
+                + (PctLiq * custo) / 100
+                + Taxa_Magalu_ATE10
+                + Frete_Magalu_ATE79 * constNivel_Magalu_
             )
             /
-            (1 - (constCnpj + ComissaoMagalu));
+            (1 - (constCnpj + Comissao_Magalu));
     }
 
-    // Magalu Porcentagem Liquida - calcMagaluPorcentagemLiquida
+    // Magalu Porcentagem Liquida - calcMagaluPctLiq
     // Entre 10 e 78,99
     else if (
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaMagalu_ATE10
-            + FreteMagalu_ATE79 * constNivelMagalu
+            + (PctLiq * custo) / 100
+            + Taxa_Magalu_ATE10
+            + Frete_Magalu_ATE79 * constNivel_Magalu_
         )
         /
-        (1 - (constCnpj + ComissaoMagalu)) >= 10
+        (1 - (constCnpj + Comissao_Magalu)) >= 10
         &&
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaMagalu_ACIMA10
-            + FreteMagalu_ATE79 * constNivelMagalu
+            + (PctLiq * custo) / 100
+            + Taxa_Magalu_ACIMA10
+            + Frete_Magalu_ATE79 * constNivel_Magalu_
         )
         /
-        (1 - (constCnpj + ComissaoMagalu)) <= 78.99) {
-        calcMagaluPorcentagemLiquida =
+        (1 - (constCnpj + Comissao_Magalu)) <= 78.99) {
+        calcMagaluPctLiq =
             (custo
-                + (VendaPorcentagemLiquida * custo) / 100
-                + TaxaMagalu_ACIMA10
-                + FreteMagalu_ATE79 * constNivelMagalu
+                + (PctLiq * custo) / 100
+                + Taxa_Magalu_ACIMA10
+                + Frete_Magalu_ATE79 * constNivel_Magalu_
             )
             /
-            (1 - (constCnpj + ComissaoMagalu));
+            (1 - (constCnpj + Comissao_Magalu));
     }
 
-    // Magalu Porcentagem Liquida - calcMagaluPorcentagemLiquida
+    // Magalu Porcentagem Liquida - calcMagaluPctLiq
     // Acima de 79
     else if (
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaMagalu_ACIMA10
-            + FreteMagalu_ATE79 * constNivelMagalu
+            + (PctLiq * custo) / 100
+            + Taxa_Magalu_ACIMA10
+            + Frete_Magalu_ATE79 * constNivel_Magalu_
         )
         /
-        (1 - (constCnpj + ComissaoMagalu)) >= 78.99
+        (1 - (constCnpj + Comissao_Magalu)) >= 78.99
         &&
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaMagalu_ACIMA10
-            + constFreteMagalu * constNivelMagalu
+            + (PctLiq * custo) / 100
+            + Taxa_Magalu_ACIMA10
+            + constFrete_Magalu * constNivel_Magalu_
         )
         /
-        (1 - (constCnpj + ComissaoMagalu)) <= 78.99) {
-        calcMagaluPorcentagemLiquida =
+        (1 - (constCnpj + Comissao_Magalu)) <= 78.99) {
+        calcMagaluPctLiq =
             (custo
-                + (VendaPorcentagemLiquida * custo) / 100
-                + TaxaMagalu_ACIMA10
-                + constFreteMagalu * constNivelMagalu
+                + (PctLiq * custo) / 100
+                + Taxa_Magalu_ACIMA10
+                + constFrete_Magalu * constNivel_Magalu_
             )
             /
-            (1 - (constCnpj + ComissaoMagalu));
+            (1 - (constCnpj + Comissao_Magalu));
     }
 
     // --------------------------------
@@ -487,506 +483,506 @@ function calcular(inputElement) {
     // --------------------------------
 
     // Mercado Livre Classico Manual - calcMercadoLivreClassicoManual
-    var calcMercadoLivreClassicoManual = VendaManual
+    var calcMercadoLivreClassicoManual = Manual
         - (
             custo
-            + (VendaManual * (constCnpj + ComissaoMercadoLivreClassico))
+            + (Manual * (constCnpj + Comissao_MLC))
             + (
-                (VendaManual <= 78.99
-                    ? FreteMercadoLivre_ATE79
-                    : constFreteMercadoLivre)
-                * constNivelMercadoLivre
+                (Manual <= 78.99
+                    ? Frete_ML_ATE79
+                    : constFrete_MercadoLivre)
+                * constNivel_ML_
             )
             + (
-                VendaManual <= 28.99
-                    ? TaxaMercadoLivre_ATE29
-                    : VendaManual <= 49.99
-                        ? TaxaMercadoLivre_ATE50
-                        : VendaManual <= 78.99
-                            ? TaxaMercadoLivre_ATE79
-                            : TaxaMercadoLivre_ACIMA79
+                Manual <= 28.99
+                    ? Taxa_ML_ATE29
+                    : Manual <= 49.99
+                        ? Taxa_ML_ATE50
+                        : Manual <= 78.99
+                            ? Taxa_ML_ATE79
+                            : Taxa_ML_ACIMA79
             )
         );
 
-    // Mercado Livre Classico Valor Liquido - calcMercadoLivreClassicoValorLiquido
+    // Mercado Livre Classico Valor Liquido - calcMercadoLivreClassicoValorLiq
     // Ate 28,99
     if (
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaMercadoLivre_ATE29
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + Taxa_ML_ATE29
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivreClassico)) <= 28.99) {
-        calcMercadoLivreClassicoValorLiquido =
-            (VendaValorLiquido
+        (1 - (constCnpj + Comissao_MLC)) <= 28.99) {
+        calcMercadoLivreClassicoValorLiq =
+            (ValorLiq
                 + custo
-                + TaxaMercadoLivre_ATE29
-                + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+                + Taxa_ML_ATE29
+                + Frete_ML_ATE79 * constNivel_ML_
             )
             /
-            (1 - (constCnpj + ComissaoMercadoLivreClassico));
+            (1 - (constCnpj + Comissao_MLC));
     }
 
     // Entre 29 e 49,99
     else if (
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaMercadoLivre_ATE29
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + Taxa_ML_ATE29
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivreClassico)) >= 29
+        (1 - (constCnpj + Comissao_MLC)) >= 29
         &&
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaMercadoLivre_ATE50
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + Taxa_ML_ATE50
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivreClassico)) >= 29
+        (1 - (constCnpj + Comissao_MLC)) >= 29
         &&
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaMercadoLivre_ATE50
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + Taxa_ML_ATE50
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivreClassico)) <= 49.99) {
-        calcMercadoLivreClassicoValorLiquido =
-            (VendaValorLiquido
+        (1 - (constCnpj + Comissao_MLC)) <= 49.99) {
+        calcMercadoLivreClassicoValorLiq =
+            (ValorLiq
                 + custo
-                + TaxaMercadoLivre_ATE50
-                + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+                + Taxa_ML_ATE50
+                + Frete_ML_ATE79 * constNivel_ML_
             )
             /
-            (1 - (constCnpj + ComissaoMercadoLivreClassico));
+            (1 - (constCnpj + Comissao_MLC));
     }
 
     // Entre 50 e 78,99
     else if (
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaMercadoLivre_ATE50
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + Taxa_ML_ATE50
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivreClassico)) >= 50
+        (1 - (constCnpj + Comissao_MLC)) >= 50
         &&
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaMercadoLivre_ATE79
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + Taxa_ML_ATE79
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivreClassico)) >= 50
+        (1 - (constCnpj + Comissao_MLC)) >= 50
         &&
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaMercadoLivre_ATE79
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + Taxa_ML_ATE79
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivreClassico)) <= 78.99) {
-        calcMercadoLivreClassicoValorLiquido =
-            (VendaValorLiquido
+        (1 - (constCnpj + Comissao_MLC)) <= 78.99) {
+        calcMercadoLivreClassicoValorLiq =
+            (ValorLiq
                 + custo
-                + TaxaMercadoLivre_ATE79
-                + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+                + Taxa_ML_ATE79
+                + Frete_ML_ATE79 * constNivel_ML_
             )
             /
-            (1 - (constCnpj + ComissaoMercadoLivreClassico));
+            (1 - (constCnpj + Comissao_MLC));
     }
 
     // Acima de 79
     else if (
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaMercadoLivre_ATE79
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + Taxa_ML_ATE79
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivreClassico)) >= 78.99
+        (1 - (constCnpj + Comissao_MLC)) >= 78.99
         &&
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + constFreteMercadoLivre * constNivelMercadoLivre
+            + constFrete_MercadoLivre * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivreClassico)) >= 78.99) {
-        calcMercadoLivreClassicoValorLiquido =
-            (VendaValorLiquido
+        (1 - (constCnpj + Comissao_MLC)) >= 78.99) {
+        calcMercadoLivreClassicoValorLiq =
+            (ValorLiq
                 + custo
-                + constFreteMercadoLivre * constNivelMercadoLivre
+                + constFrete_MercadoLivre * constNivel_ML_
             )
             /
-            (1 - (constCnpj + ComissaoMercadoLivreClassico));
+            (1 - (constCnpj + Comissao_MLC));
     }
 
-    // Mercado Livre Classico Porcentagem Liquida - calcMercadoLivreClassicoPorcentagemLiquida
+    // Mercado Livre Classico Porcentagem Liquida - calcMercadoLivreClassicoPctLiq
     // Ate 28,99
     if (
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaMercadoLivre_ATE29
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + (PctLiq * custo) / 100
+            + Taxa_ML_ATE29
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivreClassico)) <= 28.99) {
-        calcMercadoLivreClassicoPorcentagemLiquida =
+        (1 - (constCnpj + Comissao_MLC)) <= 28.99) {
+        calcMercadoLivreClassicoPctLiq =
             (custo
-                + (VendaPorcentagemLiquida * custo) / 100
-                + TaxaMercadoLivre_ATE29
-                + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+                + (PctLiq * custo) / 100
+                + Taxa_ML_ATE29
+                + Frete_ML_ATE79 * constNivel_ML_
             )
             /
-            (1 - (constCnpj + ComissaoMercadoLivreClassico));
+            (1 - (constCnpj + Comissao_MLC));
     }
 
     // Entre 29 e 49,99
     else if (
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaMercadoLivre_ATE29
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + (PctLiq * custo) / 100
+            + Taxa_ML_ATE29
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivreClassico)) >= 29
+        (1 - (constCnpj + Comissao_MLC)) >= 29
         &&
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaMercadoLivre_ATE50
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + (PctLiq * custo) / 100
+            + Taxa_ML_ATE50
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivreClassico)) >= 29
+        (1 - (constCnpj + Comissao_MLC)) >= 29
         &&
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaMercadoLivre_ATE50
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + (PctLiq * custo) / 100
+            + Taxa_ML_ATE50
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivreClassico)) <= 49.99) {
-        calcMercadoLivreClassicoPorcentagemLiquida =
+        (1 - (constCnpj + Comissao_MLC)) <= 49.99) {
+        calcMercadoLivreClassicoPctLiq =
             (custo
-                + (VendaPorcentagemLiquida * custo) / 100
-                + TaxaMercadoLivre_ATE50
-                + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+                + (PctLiq * custo) / 100
+                + Taxa_ML_ATE50
+                + Frete_ML_ATE79 * constNivel_ML_
             )
             /
-            (1 - (constCnpj + ComissaoMercadoLivreClassico));
+            (1 - (constCnpj + Comissao_MLC));
     }
 
     // Entre 50 e 78,99
     else if (
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaMercadoLivre_ATE50
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + (PctLiq * custo) / 100
+            + Taxa_ML_ATE50
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivreClassico)) >= 50
+        (1 - (constCnpj + Comissao_MLC)) >= 50
         &&
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaMercadoLivre_ATE79
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + (PctLiq * custo) / 100
+            + Taxa_ML_ATE79
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivreClassico)) >= 50
+        (1 - (constCnpj + Comissao_MLC)) >= 50
         &&
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaMercadoLivre_ATE79
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + (PctLiq * custo) / 100
+            + Taxa_ML_ATE79
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivreClassico)) <= 78.99) {
-        calcMercadoLivreClassicoPorcentagemLiquida =
+        (1 - (constCnpj + Comissao_MLC)) <= 78.99) {
+        calcMercadoLivreClassicoPctLiq =
             (custo
-                + (VendaPorcentagemLiquida * custo) / 100
-                + TaxaMercadoLivre_ATE79
-                + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+                + (PctLiq * custo) / 100
+                + Taxa_ML_ATE79
+                + Frete_ML_ATE79 * constNivel_ML_
             )
             /
-            (1 - (constCnpj + ComissaoMercadoLivreClassico));
+            (1 - (constCnpj + Comissao_MLC));
     }
 
     // Acima de 79
     else if (
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaMercadoLivre_ATE79
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + (PctLiq * custo) / 100
+            + Taxa_ML_ATE79
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivreClassico)) >= 78.99
+        (1 - (constCnpj + Comissao_MLC)) >= 78.99
         &&
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + constFreteMercadoLivre * constNivelMercadoLivre
+            + (PctLiq * custo) / 100
+            + constFrete_MercadoLivre * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivreClassico)) >= 78.99) {
-        calcMercadoLivreClassicoPorcentagemLiquida = (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + constFreteMercadoLivre * constNivelMercadoLivre
+        (1 - (constCnpj + Comissao_MLC)) >= 78.99) {
+        calcMercadoLivreClassicoPctLiq = (custo
+            + (PctLiq * custo) / 100
+            + constFrete_MercadoLivre * constNivel_ML_
         )
             /
-            (1 - (constCnpj + ComissaoMercadoLivreClassico));
+            (1 - (constCnpj + Comissao_MLC));
     }
 
     // Mercado Livre Premium Manual - calcMercadoLivrePremiumManual
-    var calcMercadoLivrePremiumManual = VendaManual
+    var calcMercadoLivrePremiumManual = Manual
         - (
             custo
-            + (VendaManual * (constCnpj + ComissaoMercadoLivrePremium))
+            + (Manual * (constCnpj + Comissao_MLP))
             + (
-                (VendaManual <= 78.99
-                    ? FreteMercadoLivre_ATE79
-                    : constFreteMercadoLivre)
-                * constNivelMercadoLivre
+                (Manual <= 78.99
+                    ? Frete_ML_ATE79
+                    : constFrete_MercadoLivre)
+                * constNivel_ML_
             )
             + (
-                VendaManual <= 28.99
-                    ? TaxaMercadoLivre_ATE29
-                    : VendaManual <= 49.99
-                        ? TaxaMercadoLivre_ATE50
-                        : VendaManual <= 78.99
-                            ? TaxaMercadoLivre_ATE79
-                            : TaxaMercadoLivre_ACIMA79
+                Manual <= 28.99
+                    ? Taxa_ML_ATE29
+                    : Manual <= 49.99
+                        ? Taxa_ML_ATE50
+                        : Manual <= 78.99
+                            ? Taxa_ML_ATE79
+                            : Taxa_ML_ACIMA79
             )
         );
 
-    // Mercado Livre Premium Valor Liquido - calcMercadoLivrePremiumValorLiquido
+    // Mercado Livre Premium Valor Liquido - calcMercadoLivrePremiumValorLiq
     // Ate 28,99
     if (
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaMercadoLivre_ATE29
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + Taxa_ML_ATE29
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivrePremium)) <= 28.99) {
-        calcMercadoLivrePremiumValorLiquido =
-            (VendaValorLiquido
+        (1 - (constCnpj + Comissao_MLP)) <= 28.99) {
+        calcMercadoLivrePremiumValorLiq =
+            (ValorLiq
                 + custo
-                + TaxaMercadoLivre_ATE29
-                + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+                + Taxa_ML_ATE29
+                + Frete_ML_ATE79 * constNivel_ML_
             )
             /
-            (1 - (constCnpj + ComissaoMercadoLivrePremium));
+            (1 - (constCnpj + Comissao_MLP));
     }
 
     // Entre 29 e 49,99
     else if (
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaMercadoLivre_ATE29
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + Taxa_ML_ATE29
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivrePremium)) >= 29
+        (1 - (constCnpj + Comissao_MLP)) >= 29
         &&
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaMercadoLivre_ATE50
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + Taxa_ML_ATE50
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivrePremium)) >= 29
+        (1 - (constCnpj + Comissao_MLP)) >= 29
         &&
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaMercadoLivre_ATE50
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + Taxa_ML_ATE50
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivrePremium)) <= 49.99) {
-        calcMercadoLivrePremiumValorLiquido =
-            (VendaValorLiquido
+        (1 - (constCnpj + Comissao_MLP)) <= 49.99) {
+        calcMercadoLivrePremiumValorLiq =
+            (ValorLiq
                 + custo
-                + TaxaMercadoLivre_ATE50
-                + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+                + Taxa_ML_ATE50
+                + Frete_ML_ATE79 * constNivel_ML_
             )
             /
-            (1 - (constCnpj + ComissaoMercadoLivrePremium));
+            (1 - (constCnpj + Comissao_MLP));
     }
 
     // Entre 50 e 78,99
     else if (
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaMercadoLivre_ATE50
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + Taxa_ML_ATE50
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivrePremium)) >= 50
+        (1 - (constCnpj + Comissao_MLP)) >= 50
         &&
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaMercadoLivre_ATE79
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + Taxa_ML_ATE79
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivrePremium)) >= 50
+        (1 - (constCnpj + Comissao_MLP)) >= 50
         &&
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaMercadoLivre_ATE79
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + Taxa_ML_ATE79
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivrePremium)) <= 78.99) {
-        calcMercadoLivrePremiumValorLiquido =
-            (VendaValorLiquido
+        (1 - (constCnpj + Comissao_MLP)) <= 78.99) {
+        calcMercadoLivrePremiumValorLiq =
+            (ValorLiq
                 + custo
-                + TaxaMercadoLivre_ATE79
-                + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+                + Taxa_ML_ATE79
+                + Frete_ML_ATE79 * constNivel_ML_
             )
             /
-            (1 - (constCnpj + ComissaoMercadoLivrePremium));
+            (1 - (constCnpj + Comissao_MLP));
     }
 
     // Acima de 79
     else if (
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaMercadoLivre_ATE79
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + Taxa_ML_ATE79
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivrePremium)) >= 78.99
+        (1 - (constCnpj + Comissao_MLP)) >= 78.99
         &&
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + constFreteMercadoLivre * constNivelMercadoLivre
+            + constFrete_MercadoLivre * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivrePremium)) >= 78.99) {
-        calcMercadoLivrePremiumValorLiquido =
-            (VendaValorLiquido
+        (1 - (constCnpj + Comissao_MLP)) >= 78.99) {
+        calcMercadoLivrePremiumValorLiq =
+            (ValorLiq
                 + custo
-                + constFreteMercadoLivre * constNivelMercadoLivre
+                + constFrete_MercadoLivre * constNivel_ML_
             )
             /
-            (1 - (constCnpj + ComissaoMercadoLivrePremium));
+            (1 - (constCnpj + Comissao_MLP));
     }
 
-    // Mercado Livre Premium Porcentagem Liquida - calcMercadoLivrePremiumPorcentagemLiquida
+    // Mercado Livre Premium Porcentagem Liquida - calcMercadoLivrePremiumPctLiq
     // Ate 28,99
     if (
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaMercadoLivre_ATE29
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + (PctLiq * custo) / 100
+            + Taxa_ML_ATE29
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivrePremium)) <= 28.99) {
-        calcMercadoLivrePremiumPorcentagemLiquida =
+        (1 - (constCnpj + Comissao_MLP)) <= 28.99) {
+        calcMercadoLivrePremiumPctLiq =
             (custo
-                + (VendaPorcentagemLiquida * custo) / 100
-                + TaxaMercadoLivre_ATE29
-                + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+                + (PctLiq * custo) / 100
+                + Taxa_ML_ATE29
+                + Frete_ML_ATE79 * constNivel_ML_
             )
             /
-            (1 - (constCnpj + ComissaoMercadoLivrePremium));
+            (1 - (constCnpj + Comissao_MLP));
     }
 
     // Entre 29 e 49,99
     else if (
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaMercadoLivre_ATE29
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + (PctLiq * custo) / 100
+            + Taxa_ML_ATE29
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivrePremium)) >= 29
+        (1 - (constCnpj + Comissao_MLP)) >= 29
         &&
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaMercadoLivre_ATE50
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + (PctLiq * custo) / 100
+            + Taxa_ML_ATE50
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivrePremium)) >= 29
+        (1 - (constCnpj + Comissao_MLP)) >= 29
         &&
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaMercadoLivre_ATE50
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + (PctLiq * custo) / 100
+            + Taxa_ML_ATE50
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivrePremium)) <= 49.99) {
-        calcMercadoLivrePremiumPorcentagemLiquida =
+        (1 - (constCnpj + Comissao_MLP)) <= 49.99) {
+        calcMercadoLivrePremiumPctLiq =
             (custo
-                + (VendaPorcentagemLiquida * custo) / 100
-                + TaxaMercadoLivre_ATE50
-                + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+                + (PctLiq * custo) / 100
+                + Taxa_ML_ATE50
+                + Frete_ML_ATE79 * constNivel_ML_
             )
             /
-            (1 - (constCnpj + ComissaoMercadoLivrePremium));
+            (1 - (constCnpj + Comissao_MLP));
     }
 
     // Entre 50 e 78,99
     else if (
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaMercadoLivre_ATE50
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + (PctLiq * custo) / 100
+            + Taxa_ML_ATE50
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivrePremium)) >= 50
+        (1 - (constCnpj + Comissao_MLP)) >= 50
         &&
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaMercadoLivre_ATE79
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + (PctLiq * custo) / 100
+            + Taxa_ML_ATE79
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivrePremium)) >= 50
+        (1 - (constCnpj + Comissao_MLP)) >= 50
         &&
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaMercadoLivre_ATE79
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + (PctLiq * custo) / 100
+            + Taxa_ML_ATE79
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivrePremium)) <= 78.99) {
-        calcMercadoLivrePremiumPorcentagemLiquida =
+        (1 - (constCnpj + Comissao_MLP)) <= 78.99) {
+        calcMercadoLivrePremiumPctLiq =
             (custo
-                + (VendaPorcentagemLiquida * custo) / 100
-                + TaxaMercadoLivre_ATE79
-                + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+                + (PctLiq * custo) / 100
+                + Taxa_ML_ATE79
+                + Frete_ML_ATE79 * constNivel_ML_
             )
             /
-            (1 - (constCnpj + ComissaoMercadoLivrePremium));
+            (1 - (constCnpj + Comissao_MLP));
     }
 
     // Acima de 79
     else if (
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaMercadoLivre_ATE79
-            + FreteMercadoLivre_ATE79 * constNivelMercadoLivre
+            + (PctLiq * custo) / 100
+            + Taxa_ML_ATE79
+            + Frete_ML_ATE79 * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivrePremium)) >= 78.99
+        (1 - (constCnpj + Comissao_MLP)) >= 78.99
         &&
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + constFreteMercadoLivre * constNivelMercadoLivre
+            + (PctLiq * custo) / 100
+            + constFrete_MercadoLivre * constNivel_ML_
         )
         /
-        (1 - (constCnpj + ComissaoMercadoLivrePremium)) >= 78.99) {
-        calcMercadoLivrePremiumPorcentagemLiquida =
+        (1 - (constCnpj + Comissao_MLP)) >= 78.99) {
+        calcMercadoLivrePremiumPctLiq =
             (custo
-                + (VendaPorcentagemLiquida * custo) / 100
-                + constFreteMercadoLivre * constNivelMercadoLivre
+                + (PctLiq * custo) / 100
+                + constFrete_MercadoLivre * constNivel_ML_
             )
             /
-            (1 - (constCnpj + ComissaoMercadoLivrePremium));
+            (1 - (constCnpj + Comissao_MLP));
     }
 
     // --------------------------------
@@ -999,94 +995,94 @@ function calcular(inputElement) {
     // --------------------------------
 
     // Shein Manual - calcSheinManual
-    var calcSheinManual = VendaManual
+    var calcSheinManual = Manual
         - (
             + (custo)
-            + (VendaManual * constCnpj)
-            + (VendaManual * ComissaoShein)
+            + (Manual * constCnpj)
+            + (Manual * Comissao_Shein)
             + (
-                VendaManual <= 49.89 ? TaxaShein :
-                    VendaManual >= 49.9 ? TaxaShein : 0
+                Manual <= 49.89 ? Taxa_Shein :
+                    Manual >= 49.9 ? Taxa_Shein : 0
             )
             + (
                 (
-                    VendaManual <= 49.89 ? FreteShein_ATE49 :
-                        VendaManual >= 49.9 ? constFreteShein : 0
-                ) * constNivelShein
+                    Manual <= 49.89 ? Frete_Shein_ATE49 :
+                        Manual >= 49.9 ? constFrete_Shein : 0
+                ) * constNivel_Shein
             )
         );
 
-    // Shein Valor Liquido - calcSheinValorLiquido
+    // Shein Valor Liquido - calcSheinValorLiq
     // Abaixo de 49,89
     if (
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaShein
-            + (FreteShein_ATE49 * constNivelShein)
+            + Taxa_Shein
+            + (Frete_Shein_ATE49 * constNivel_Shein)
         )
-        / (1 - (constCnpj + ComissaoShein)) <= 49.89) {
-        calcSheinValorLiquido =
-            (VendaValorLiquido
+        / (1 - (constCnpj + Comissao_Shein)) <= 49.89) {
+        calcSheinValorLiq =
+            (ValorLiq
                 + custo
-                + TaxaShein
-                + (FreteShein_ATE49 * constNivelShein)
+                + Taxa_Shein
+                + (Frete_Shein_ATE49 * constNivel_Shein)
             )
-            / (1 - (constCnpj + ComissaoShein));
+            / (1 - (constCnpj + Comissao_Shein));
     }
 
-    // Shein Valor Liquido - calcSheinValorLiquido
+    // Shein Valor Liquido - calcSheinValorLiq
     // Acima de 49,90
 
     else if (
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaShein
-            + (FreteShein_ATE49 * constNivelShein)
+            + Taxa_Shein
+            + (Frete_Shein_ATE49 * constNivel_Shein)
         )
-        / (1 - (constCnpj + ComissaoShein)) >= 49.89) {
-        calcSheinValorLiquido =
-            (VendaValorLiquido
+        / (1 - (constCnpj + Comissao_Shein)) >= 49.89) {
+        calcSheinValorLiq =
+            (ValorLiq
                 + custo
-                + TaxaShein
-                + (constFreteShein * constNivelShein)
+                + Taxa_Shein
+                + (constFrete_Shein * constNivel_Shein)
             )
-            / (1 - (constCnpj + ComissaoShein));
+            / (1 - (constCnpj + Comissao_Shein));
     }
 
-    // Shein Porcentagem Liquida - calcSheinPorcentagemLiquida
+    // Shein Porcentagem Liquida - calcSheinPctLiq
     // Abaixo de 49,89
     if (
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaShein
-            + (FreteShein_ATE49 * constNivelShein)
+            + (PctLiq * custo) / 100
+            + Taxa_Shein
+            + (Frete_Shein_ATE49 * constNivel_Shein)
         )
-        / (1 - (constCnpj + ComissaoShein)) <= 49.89) {
-        calcSheinPorcentagemLiquida =
+        / (1 - (constCnpj + Comissao_Shein)) <= 49.89) {
+        calcSheinPctLiq =
             (custo
-                + (VendaPorcentagemLiquida * custo) / 100
-                + TaxaShein
-                + (FreteShein_ATE49 * constNivelShein)
+                + (PctLiq * custo) / 100
+                + Taxa_Shein
+                + (Frete_Shein_ATE49 * constNivel_Shein)
             )
-            / (1 - (constCnpj + ComissaoShein));
+            / (1 - (constCnpj + Comissao_Shein));
     }
 
-    // Shein Porcentagem Liquida - calcSheinPorcentagemLiquida
+    // Shein Porcentagem Liquida - calcSheinPctLiq
     // Acima de 49,90
     else if (
         (custo
-            + (VendaPorcentagemLiquida * custo) / 100
-            + TaxaShein
-            + (FreteShein_ATE49 * constNivelShein)
+            + (PctLiq * custo) / 100
+            + Taxa_Shein
+            + (Frete_Shein_ATE49 * constNivel_Shein)
         )
-        / (1 - (constCnpj + ComissaoShein)) >= 49.89) {
-        calcSheinPorcentagemLiquida =
+        / (1 - (constCnpj + Comissao_Shein)) >= 49.89) {
+        calcSheinPctLiq =
             (custo
-                + (VendaPorcentagemLiquida * custo) / 100
-                + TaxaShein
-                + (constFreteShein * constNivelShein)
+                + (PctLiq * custo) / 100
+                + Taxa_Shein
+                + (constFrete_Shein * constNivel_Shein)
             )
-            / (1 - (constCnpj + ComissaoShein));
+            / (1 - (constCnpj + Comissao_Shein));
     }
 
     // --------------------------------
@@ -1094,76 +1090,76 @@ function calcular(inputElement) {
     // --------------------------------
 
     // Shopee Manual - calcShopeeManual
-    var calcShopeeManual = VendaManual
+    var calcShopeeManual = Manual
         - (custo
-            + (VendaManual * constCnpj)
-            + (VendaManual >= 500 ? 110 : VendaManual * ComissaoShopee)
-            + (VendaManual <= 7.99 ? VendaManual / 2 : TaxaShopee_ACIMA8)
-            + (FreteShopee * constNivelShopee)
+            + (Manual * constCnpj)
+            + (Manual >= 500 ? 110 : Manual * Comissao_Shopee)
+            + (Manual <= 7.99 ? Manual / 2 : Taxa_Shopee_ACIMA8)
+            + (Frete_Shopee * constNivel_Shopee)
         );
 
-    // Shopee Valor Liquido - calcShopeeValorLiquido
+    // Shopee Valor Liquido - calcShopeeValorLiq
     // Comissao ate 110 + 4
     if (
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaShopee_ACIMA8
-            + (FreteShopee * constNivelShopee))
-        / (1 - (constCnpj + ComissaoShopee)) <= 499.99) {
-        calcShopeeValorLiquido =
-            (VendaValorLiquido
+            + Taxa_Shopee_ACIMA8
+            + (Frete_Shopee * constNivel_Shopee))
+        / (1 - (constCnpj + Comissao_Shopee)) <= 499.99) {
+        calcShopeeValorLiq =
+            (ValorLiq
                 + custo
-                + TaxaShopee_ACIMA8
-                + (FreteShopee * constNivelShopee))
-            / (1 - (constCnpj + ComissaoShopee));
+                + Taxa_Shopee_ACIMA8
+                + (Frete_Shopee * constNivel_Shopee))
+            / (1 - (constCnpj + Comissao_Shopee));
     }
 
-    // Shopee Valor Liquido - calcShopeeValorLiquido
+    // Shopee Valor Liquido - calcShopeeValorLiq
     // Comissao acima de 110 + 4
     else if (
-        (VendaValorLiquido
+        (ValorLiq
             + custo
-            + TaxaShopee_ACIMA8
-            + (FreteShopee * constNivelShopee))
-        / (1 - (constCnpj + ComissaoShopee)) >= 499.99) {
-        calcShopeeValorLiquido =
-            (VendaValorLiquido
+            + Taxa_Shopee_ACIMA8
+            + (Frete_Shopee * constNivel_Shopee))
+        / (1 - (constCnpj + Comissao_Shopee)) >= 499.99) {
+        calcShopeeValorLiq =
+            (ValorLiq
                 + custo
-                + TaxaShopee_ACIMA8
+                + Taxa_Shopee_ACIMA8
                 + 110
-                + (FreteShopee * constNivelShopee))
+                + (Frete_Shopee * constNivel_Shopee))
             / (1 - constCnpj);
     }
 
-    // Shopee Porcentagem Liquida - calcShopeePorcentagemLiquida
+    // Shopee Porcentagem Liquida - calcShopeePctLiq
     // Comissao ate 110 + 4
     if (
-        (custo * (1 + VendaPorcentagemLiquida / 100)
-            + TaxaShopee_ACIMA8
-            + constFreteShopee * constNivelShopee
+        (custo * (1 + PctLiq / 100)
+            + Taxa_Shopee_ACIMA8
+            + constFrete_Shopee * constNivel_Shopee
         )
-        / (1 - (constCnpj + ComissaoShopee)) <= 499.99) {
-        calcShopeePorcentagemLiquida =
-            (custo * (1 + VendaPorcentagemLiquida / 100)
-                + TaxaShopee_ACIMA8
-                + constFreteShopee * constNivelShopee
+        / (1 - (constCnpj + Comissao_Shopee)) <= 499.99) {
+        calcShopeePctLiq =
+            (custo * (1 + PctLiq / 100)
+                + Taxa_Shopee_ACIMA8
+                + constFrete_Shopee * constNivel_Shopee
             )
-            / (1 - (constCnpj + ComissaoShopee));
+            / (1 - (constCnpj + Comissao_Shopee));
     }
 
-    // Shopee Porcentagem Liquida - calcShopeePorcentagemLiquida
+    // Shopee Porcentagem Liquida - calcShopeePctLiq
     // Comissao acima de 100 + 4
     else if (
-        (custo * (1 + VendaPorcentagemLiquida / 100)
-            + TaxaShopee_ACIMA8
-            + constFreteShopee * constNivelShopee
+        (custo * (1 + PctLiq / 100)
+            + Taxa_Shopee_ACIMA8
+            + constFrete_Shopee * constNivel_Shopee
         )
-        / (1 - (constCnpj + ComissaoShopee)) >= 499.99) {
-        calcShopeePorcentagemLiquida =
-            (custo * (1 + VendaPorcentagemLiquida / 100)
-                + TaxaShopee_ACIMA8
+        / (1 - (constCnpj + Comissao_Shopee)) >= 499.99) {
+        calcShopeePctLiq =
+            (custo * (1 + PctLiq / 100)
+                + Taxa_Shopee_ACIMA8
                 + 110
-                + constFreteShopee * constNivelShopee
+                + constFrete_Shopee * constNivel_Shopee
             )
             / (1 - (constCnpj));
     }
@@ -1173,69 +1169,69 @@ function calcular(inputElement) {
     // Valores que serao exibidos na tabela de resultados
 
     // Presencial
-    document.getElementById("resultado-Presencial-VendaManual").textContent = "R$ " + calcPresencialManual.toFixed(2).replace(".", ",") + " (" + ((calcPresencialManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    document.getElementById("resultado-Presencial-VendaValorLiquido").textContent = "R$ " + calcPresencialValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-    document.getElementById("resultado-Presencial-VendaPorcentagemLiquida").textContent = "R$ " + calcPresencialPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+    document.getElementById("resultado_Presencial_Manual").textContent = "R$ " + calcPresencialManual.toFixed(2).replace(".", ",") + " (" + ((calcPresencialManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_Presencial_ValorLiq").textContent = "R$ " + calcPresencialValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_Presencial_PctLiq").textContent = "R$ " + calcPresencialPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
 
     if (cnpj === "RAV SHEFA DISTRIBUIDORA DE COSMETICOS LTDA") {
-        document.getElementById("resultado-CasasBahia-VendaManual").textContent = "";
-        document.getElementById("resultado-CasasBahia-VendaValorLiquido").textContent = "";
-        document.getElementById("resultado-CasasBahia-VendaPorcentagemLiquida").textContent = "";
-        document.getElementById("resultado-Magalu-VendaManual").textContent = "";
-        document.getElementById("resultado-Magalu-VendaValorLiquido").textContent = "";
-        document.getElementById("resultado-Magalu-VendaPorcentagemLiquida").textContent = "";
-        document.getElementById("resultado-MercadoLivreClassico-VendaManual").textContent = "";
-        document.getElementById("resultado-MercadoLivreClassico-VendaValorLiquido").textContent = "";
-        document.getElementById("resultado-MercadoLivreClassico-VendaPorcentagemLiquida").textContent = "";
-        document.getElementById("resultado-MercadoLivrePremium-VendaManual").textContent = "";
-        document.getElementById("resultado-MercadoLivrePremium-VendaValorLiquido").textContent = "";
-        document.getElementById("resultado-MercadoLivrePremium-VendaPorcentagemLiquida").textContent = "";
-        document.getElementById("resultado-Shein-VendaManual").textContent = "";
-        document.getElementById("resultado-Shein-VendaValorLiquido").textContent = "";
-        document.getElementById("resultado-Shein-VendaPorcentagemLiquida").textContent = "";
-        document.getElementById("resultado-Shopee-VendaManual").textContent = "";
-        document.getElementById("resultado-Shopee-VendaValorLiquido").textContent = "";
-        document.getElementById("resultado-Shopee-VendaPorcentagemLiquida").textContent = "";
+        document.getElementById("resultado_CasasBahia_Manual").textContent = "";
+        document.getElementById("resultado_CasasBahia_ValorLiq").textContent = "";
+        document.getElementById("resultado_CasasBahia_PctLiq").textContent = "";
+        document.getElementById("resultado_Magalu_Manual").textContent = "";
+        document.getElementById("resultado_Magalu_ValorLiq").textContent = "";
+        document.getElementById("resultado_Magalu_PctLiq").textContent = "";
+        document.getElementById("resultado_MLC_Manual").textContent = "";
+        document.getElementById("resultado_MLC_ValorLiq").textContent = "";
+        document.getElementById("resultado_MLC_PctLiq").textContent = "";
+        document.getElementById("resultado_MLP_Manual").textContent = "";
+        document.getElementById("resultado_MLP_ValorLiq").textContent = "";
+        document.getElementById("resultado_MLP_PctLiq").textContent = "";
+        document.getElementById("resultado_Shein_Manual").textContent = "";
+        document.getElementById("resultado_Shein_ValorLiq").textContent = "";
+        document.getElementById("resultado_Shein_PctLiq").textContent = "";
+        document.getElementById("resultado_Shopee_Manual").textContent = "";
+        document.getElementById("resultado_Shopee_ValorLiq").textContent = "";
+        document.getElementById("resultado_Shopee_PctLiq").textContent = "";
     } else {
 
         // Casas Bahia
-        document.getElementById("resultado-CasasBahia-VendaManual").textContent = "R$ " + calcCasasBahiaManual.toFixed(2).replace(".", ",") + " (" + ((calcCasasBahiaManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado-CasasBahia-VendaValorLiquido").textContent = "R$ " + calcCasasBahiaValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado-CasasBahia-VendaPorcentagemLiquida").textContent = "R$ " + calcCasasBahiaPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+        document.getElementById("resultado_CasasBahia_Manual").textContent = "R$ " + calcCasasBahiaManual.toFixed(2).replace(".", ",") + " (" + ((calcCasasBahiaManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_CasasBahia_ValorLiq").textContent = "R$ " + calcCasasBahiaValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_CasasBahia_PctLiq").textContent = "R$ " + calcCasasBahiaPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
 
         // Magalu
-        document.getElementById("resultado-Magalu-VendaManual").textContent = "R$ " + calcMagaluManual.toFixed(2).replace(".", ",") + " (" + ((calcMagaluManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado-Magalu-VendaValorLiquido").textContent = "R$ " + calcMagaluValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado-Magalu-VendaPorcentagemLiquida").textContent = "R$ " + calcMagaluPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+        document.getElementById("resultado_Magalu_Manual").textContent = "R$ " + calcMagaluManual.toFixed(2).replace(".", ",") + " (" + ((calcMagaluManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_Magalu_ValorLiq").textContent = "R$ " + calcMagaluValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_Magalu_PctLiq").textContent = "R$ " + calcMagaluPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
 
         // Mercado Livre Classico
-        document.getElementById("resultado-MercadoLivreClassico-VendaManual").textContent = "R$ " + calcMercadoLivreClassicoManual.toFixed(2).replace(".", ",") + " (" + ((calcMercadoLivreClassicoManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado-MercadoLivreClassico-VendaValorLiquido").textContent = "R$ " + calcMercadoLivreClassicoValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado-MercadoLivreClassico-VendaPorcentagemLiquida").textContent = "R$ " + calcMercadoLivreClassicoPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+        document.getElementById("resultado_MLC_Manual").textContent = "R$ " + calcMercadoLivreClassicoManual.toFixed(2).replace(".", ",") + " (" + ((calcMercadoLivreClassicoManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_MLC_ValorLiq").textContent = "R$ " + calcMercadoLivreClassicoValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_MLC_PctLiq").textContent = "R$ " + calcMercadoLivreClassicoPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
 
 
         // Mercado Livre Premium
-        document.getElementById("resultado-MercadoLivrePremium-VendaManual").textContent = "R$ " + calcMercadoLivrePremiumManual.toFixed(2).replace(".", ",") + " (" + ((calcMercadoLivrePremiumManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado-MercadoLivrePremium-VendaValorLiquido").textContent = "R$ " + calcMercadoLivrePremiumValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado-MercadoLivrePremium-VendaPorcentagemLiquida").textContent = "R$ " + calcMercadoLivrePremiumPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+        document.getElementById("resultado_MLP_Manual").textContent = "R$ " + calcMercadoLivrePremiumManual.toFixed(2).replace(".", ",") + " (" + ((calcMercadoLivrePremiumManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_MLP_ValorLiq").textContent = "R$ " + calcMercadoLivrePremiumValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_MLP_PctLiq").textContent = "R$ " + calcMercadoLivrePremiumPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
 
         // Shein
-        document.getElementById("resultado-Shein-VendaManual").textContent = "R$ " + calcSheinManual.toFixed(2).replace(".", ",") + " (" + ((calcSheinManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado-Shein-VendaValorLiquido").textContent = "R$ " + calcSheinValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado-Shein-VendaPorcentagemLiquida").textContent = "R$ " + calcSheinPorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+        document.getElementById("resultado_Shein_Manual").textContent = "R$ " + calcSheinManual.toFixed(2).replace(".", ",") + " (" + ((calcSheinManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_Shein_ValorLiq").textContent = "R$ " + calcSheinValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_Shein_PctLiq").textContent = "R$ " + calcSheinPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
 
         // Shopee
-        // Valores de venda abaixo de R$ 8 nao podem ser calculados pelas formulas ValorLiquido e PorcentagemLiquida
-        document.getElementById("resultado-Shopee-VendaManual").textContent = "R$ " + calcShopeeManual.toFixed(2).replace(".", ",") + " (" + ((calcShopeeManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        if (calcShopeeValorLiquido <= 7.99) {
-            document.getElementById("resultado-Shopee-VendaValorLiquido").textContent = "Este valor é muito baixo para ser calculado nesta fórmula. Use a primeira coluna.";
+        // Valores de venda abaixo de R$ 8 nao podem ser calculados pelas formulas ValorLiq e PctLiq
+        document.getElementById("resultado_Shopee_Manual").textContent = "R$ " + calcShopeeManual.toFixed(2).replace(".", ",") + " (" + ((calcShopeeManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        if (calcShopeeValorLiq <= 7.99) {
+            document.getElementById("resultado_Shopee_ValorLiq").textContent = "Este valor é muito baixo para ser calculado nesta fórmula. Use a primeira coluna.";
         } else {
-            document.getElementById("resultado-Shopee-VendaValorLiquido").textContent = "R$ " + calcShopeeValorLiquido.toFixed(2).replace(".", ",") + " (" + ((VendaValorLiquido / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+            document.getElementById("resultado_Shopee_ValorLiq").textContent = "R$ " + calcShopeeValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
         }
-        if (calcShopeePorcentagemLiquida <= 7.99) {
-            document.getElementById("resultado-Shopee-VendaPorcentagemLiquida").textContent = "Este valor e muito baixo para ser calculado nesta formula. Use a primeira coluna";
+        if (calcShopeePctLiq <= 7.99) {
+            document.getElementById("resultado_Shopee_PctLiq").textContent = "Este valor e muito baixo para ser calculado nesta formula. Use a primeira coluna";
         } else {
-            document.getElementById("resultado-Shopee-VendaPorcentagemLiquida").textContent = "R$ " + calcShopeePorcentagemLiquida.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * VendaPorcentagemLiquida) / 100).toFixed(2).replace(".", ",") + ")";
+            document.getElementById("resultado_Shopee_PctLiq").textContent = "R$ " + calcShopeePctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
         }
     }
 }
