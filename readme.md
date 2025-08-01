@@ -19,6 +19,14 @@ CALCULADORA
     </thead>
     <tbody>
     <tr>
+        <td>4.4.2<br>01/08/2025</td>
+        <td>
+            <ul>
+                <li>Correção de cálculo do MERCADO LIVRE CLÁSSICO se repetindo para o MERCADO LIVRE PREMIUM.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
         <td>4.4.1<br>29/07/2025</td>
         <td>
             <ul>
