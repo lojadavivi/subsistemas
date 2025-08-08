@@ -19,6 +19,14 @@ CALCULADORA
     </thead>
     <tbody>
     <tr>
+        <td>4.4.3<br>08/08/2025</td>
+        <td>
+            <ul>
+                <li>Adicionado custo de insumos em todos os cálculos. Abaixo de 300g = R$1. Acima de 300g = R$2</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
         <td>4.4.2<br>01/08/2025</td>
         <td>
             <ul>

@@ -5,7 +5,7 @@ function calcular(inputElement) {
     var cnpj = document.getElementById("cnpj").value;
     var nivel = document.getElementById("nivel").value;
     var peso = document.getElementById("peso").value;
-    var custo = parseFloat(document.getElementById("custo").value.replace(",", "."));
+    var custo_puro = parseFloat(document.getElementById("custo").value.replace(",", "."));
     var Manual = parseFloat(document.getElementById("Manual").value.replace(",", "."));
     var ValorLiq = parseFloat(document.getElementById("ValorLiq").value.replace(",", "."));
     var PctLiq = parseFloat(document.getElementById("PctLiq").value.replace(",", "."));
@@ -156,6 +156,18 @@ function calcular(inputElement) {
         constNivel_Shein = Nivel_Shein;
         constNivel_Shopee = Nivel_Shopee;
     }
+
+    // Valores constantes de insumos abaixo ou acima de 300g definidos no calc_variables.js
+
+    if (peso === "Selecione") {
+        constCusto_Insumos = x;
+    } else if (peso === "até 0.3kg") {
+        constCusto_Insumos = Custo_Insumos_ate300G;
+    } else {
+        constCusto_Insumos = Custo_Insumos_acima300G;
+    }
+
+    const custo = custo_puro + constCusto_Insumos;
 
     // --------------------------------
     // --------------------------------

@@ -215,3 +215,12 @@ const Taxa_Shein = 0;
 // Até R$ 8:            metade do valor de venda
 // Acima de R$ 8:       R$ 4
 const Taxa_Shopee_ACIMA8 = 4;
+
+// ----------------------------------------
+
+// CUSTO DE INSUMOS
+
+// Até 300g:        R$ 1
+// Acima de 300g:   R$ 2
+const Custo_Insumos_ate300G = 1;
+const Custo_Insumos_acima300G = 2;
