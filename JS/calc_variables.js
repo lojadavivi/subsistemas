@@ -44,7 +44,8 @@ const Comissao_CasasBahia = 0.21;
 const Comissao_Magalu = 0.18;
 const Comissao_MLC = 0.13;
 const Comissao_MLP = 0.18;
-const Comissao_RD = 0.18;
+const Comissao_Olist = 0.21;
+const Comissao_RD = 0.19;
 const Comissao_Shein = 0.16;
 const Comissao_Shopee = 0.22;
 
@@ -101,9 +102,33 @@ const Frete_ML_ACIMA79_13a17KG = 146.9;
 const Frete_ML_ACIMA79_17a23KG = 171.9;
 const Frete_ML_ACIMA79_23a30KG = 197.9;
 
+// Olist
+// Até 78,99 o frete é pago pelo cliente
+// Acima de 79 o frete é pago pelo vendedor
+const Frete_Olist_ATE79 = 0;
+const Frete_Olist_ACIMA79_ate300G = 37.9;
+const Frete_Olist_ACIMA79_300a500G = 38.9;
+const Frete_Olist_ACIMA79_500Ga1KG = 42.9;
+const Frete_Olist_ACIMA79_1a2KG = 44.9;
+const Frete_Olist_ACIMA79_2a5KG = 52.9;
+const Frete_Olist_ACIMA79_5a9KG = 81.9;
+const Frete_Olist_ACIMA79_9a13KG = 127.9;
+const Frete_Olist_ACIMA79_13a17KG = 142.9;
+const Frete_Olist_ACIMA79_17a23KG = 166.9;
+const Frete_Olist_ACIMA79_23a30KG = 191.9;
+
 // RD
 // O frete é pago pelo cliente
-const Frete_RD = 0;
+const Frete_RD_ate300G = 40.90;
+const Frete_RD_300a500G = 41.9;
+const Frete_RD_500Ga1KG = 43.9;
+const Frete_RD_1a2KG = 46.9;
+const Frete_RD_2a5KG = 51.9;
+const Frete_RD_5a9KG = 83.9;
+const Frete_RD_9a13KG = 131.9;
+const Frete_RD_13a17KG = 146.9;
+const Frete_RD_17a23KG = 171.9;
+const Frete_RD_23a30KG = 197.9;
 
 // Shein
 // Até 49,89 o frete é pago pelo cliente
@@ -163,6 +188,16 @@ const Nivel_ML_3 = 0.6;
 const Nivel_ML_4 = 0.5;
 const Nivel_ML_5 = 0.5;
 
+// Olist
+// 1 e 2:   20% 0.8)
+// 3:       40% (0.6)
+// 4 e 5:   50% (0.5)
+const Nivel_Olist_1 = 0.8;
+const Nivel_Olist_2 = 0.8;
+const Nivel_Olist_3 = 0.6;
+const Nivel_Olist_4 = 0.5;
+const Nivel_Olist_5 = 0.5;
+
 // RD
 // Não ha
 const Nivel_RD = 1;
@@ -202,6 +237,10 @@ const Taxa_ML_ATE29 = 6.25;
 const Taxa_ML_ATE50 = 6.5;
 const Taxa_ML_ATE79 = 6.75;
 const Taxa_ML_ACIMA79 = 0;
+
+// Olist
+// R$ 5
+const Taxa_Olist = 5;
 
 // RD
 // Não ha

@@ -29,6 +29,7 @@ function calcular(inputElement) {
         constFrete_CasasBahia = x;
         constFrete_Magalu = x;
         constFrete_MercadoLivre = x;
+        constFrete_Olist = x;
         constFrete_RD = x;
         constFrete_Shein = x;
         constFrete_Shopee = x;
@@ -37,7 +38,8 @@ function calcular(inputElement) {
         constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_ate300G;
         constFrete_Magalu = Frete_Magalu_ACIMA79_ate300G;
         constFrete_MercadoLivre = Frete_ML_ACIMA79_ate300G;
-        constFrete_RD = Frete_RD;
+        constFrete_Olist = Frete_Olist_ACIMA79_ate300G;
+        constFrete_RD = Frete_RD_ate300G;
         constFrete_Shein = Frete_Shein_ACIMA49_ate300G;
         constFrete_Shopee = Frete_Shopee;
     } else if (peso === "0.3 a 0.5kg") {
@@ -45,7 +47,8 @@ function calcular(inputElement) {
         constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_300a500G;
         constFrete_Magalu = Frete_Magalu_ACIMA79_300a500G;
         constFrete_MercadoLivre = Frete_ML_ACIMA79_300a500G;
-        constFrete_RD = Frete_RD;
+        constFrete_Olist = Frete_Olist_ACIMA79_300a500G;
+        constFrete_RD = Frete_RD_300a500G;
         constFrete_Shein = Frete_Shein_ACIMA49_300a500G;
         constFrete_Shopee = Frete_Shopee;
     } else if (peso === "0.5 a 1kg") {
@@ -53,7 +56,8 @@ function calcular(inputElement) {
         constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_500Ga1KG;
         constFrete_Magalu = Frete_Magalu_ACIMA79_500Ga1KG;
         constFrete_MercadoLivre = Frete_ML_ACIMA79_500Ga1KG;
-        constFrete_RD = Frete_RD;
+        constFrete_Olist = Frete_Olist_ACIMA79_300a500G;
+        constFrete_RD = Frete_RD_500Ga1KG;
         constFrete_Shein = Frete_Shein_ACIMA49_500Ga1KG;
         constFrete_Shopee = Frete_Shopee;
     } else if (peso === "1 a 2kg") {
@@ -61,7 +65,8 @@ function calcular(inputElement) {
         constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_1a2KG;
         constFrete_Magalu = Frete_Magalu_ACIMA79_1a2KG;
         constFrete_MercadoLivre = Frete_ML_ACIMA79_1a2KG;
-        constFrete_RD = Frete_RD;
+        constFrete_Olist = Frete_Olist_ACIMA79_1a2KG;
+        constFrete_RD = Frete_RD_1a2KG;
         constFrete_Shein = Frete_Shein_ACIMA49_1a2KG;
         constFrete_Shopee = Frete_Shopee;
     } else if (peso === "2 a 5kg") {
@@ -69,7 +74,8 @@ function calcular(inputElement) {
         constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_2a5KG;
         constFrete_Magalu = Frete_Magalu_ACIMA79_2a5KG;
         constFrete_MercadoLivre = Frete_ML_ACIMA79_2a5KG;
-        constFrete_RD = Frete_RD;
+        constFrete_Olist = Frete_Olist_ACIMA79_2a5KG;
+        constFrete_RD = Frete_RD_2a5KG;
         constFrete_Shein = Frete_Shein_ACIMA49_2a5KG;
         constFrete_Shopee = Frete_Shopee;
     } else if (peso === "5 a 9kg") {
@@ -77,7 +83,8 @@ function calcular(inputElement) {
         constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_5a9KG;
         constFrete_Magalu = Frete_Magalu_ACIMA79_5a9KG;
         constFrete_MercadoLivre = Frete_ML_ACIMA79_5a9KG;
-        constFrete_RD = Frete_RD;
+        constFrete_Olist = Frete_Olist_ACIMA79_5a9KG;
+        constFrete_RD = Frete_RD_5a9KG;
         constFrete_Shein = Frete_Shein_ACIMA49_5a9KG;
         constFrete_Shopee = Frete_Shopee;
     } else if (peso === "9 a 13kg") {
@@ -85,7 +92,8 @@ function calcular(inputElement) {
         constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_9a13KG;
         constFrete_Magalu = Frete_Magalu_ACIMA79_9a13KG;
         constFrete_MercadoLivre = Frete_ML_ACIMA79_9a13KG;
-        constFrete_RD = Frete_RD;
+        constFrete_Olist = Frete_Olist_ACIMA79_9a13KG;
+        constFrete_RD = Frete_RD_9a13KG;
         constFrete_Shein = Frete_Shein_ACIMA49_9a13KG;
         constFrete_Shopee = Frete_Shopee;
     } else if (peso === "13 a 17kg") {
@@ -93,7 +101,8 @@ function calcular(inputElement) {
         constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_13a17KG;
         constFrete_Magalu = Frete_Magalu_ACIMA79_13a17KG;
         constFrete_MercadoLivre = Frete_ML_ACIMA79_13a17KG;
-        constFrete_RD = Frete_RD;
+        constFrete_Olist = Frete_Olist_ACIMA79_13a17KG;
+        constFrete_RD = Frete_RD_13a17KG;
         constFrete_Shein = Frete_Shein_ACIMA49_13a17KG;
         constFrete_Shopee = Frete_Shopee;;
     } else if (peso === "17 a 23kg") {
@@ -101,7 +110,8 @@ function calcular(inputElement) {
         constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_17a23KG;
         constFrete_Magalu = Frete_Magalu_ACIMA79_17a23KG;
         constFrete_MercadoLivre = Frete_ML_ACIMA79_17a23KG;
-        constFrete_RD = Frete_RD;
+        constFrete_Olist = Frete_Olist_ACIMA79_17a23KG;
+        constFrete_RD = Frete_RD_17a23KG;
         constFrete_Shein = Frete_Shein_ACIMA49_17a23KG;
         constFrete_Shopee = Frete_Shopee;
     } else if (peso === "23 a 30kg") {
@@ -109,7 +119,8 @@ function calcular(inputElement) {
         constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_23a30KG;
         constFrete_Magalu = Frete_Magalu_ACIMA79_23a30KG;
         constFrete_MercadoLivre = Frete_ML_ACIMA79_23a30KG;
-        constFrete_RD = Frete_RD;
+        constFrete_Olist = Frete_Olist_ACIMA79_23a30KG;
+        constFrete_RD = Frete_RD_23a30KG;
         constFrete_Shein = Frete_Shein_ACIMA49_23a30KG;
         constFrete_Shopee = Frete_Shopee;
     }
@@ -117,41 +128,46 @@ function calcular(inputElement) {
     // Valores constantes de desconto no frete baseado no nivel definidos no calc_variables.js
     if (nivel === "5") {
         constNivel_Presencial = Nivel_Presencial;
-        constNivel_CasasBahia_ = Nivel_CasasBahia_5;
+        constNivel_CasasBahia = Nivel_CasasBahia_5;
         constNivel_Magalu_ = Nivel_Magalu_5;
         constNivel_ML = Nivel_ML_5;
+        constNivel_Olist = Nivel_Olist_5;
         constNivel_RD = Nivel_RD;
         constNivel_Shein = Nivel_Shein;
         constNivel_Shopee = Nivel_Shopee;
     } else if (nivel === "4") {
         constNivel_Presencial = Nivel_Presencial;
-        constNivel_CasasBahia_ = Nivel_CasasBahia_4;
+        constNivel_CasasBahia = Nivel_CasasBahia_4;
         constNivel_Magalu_ = Nivel_Magalu_4;
         constNivel_ML = Nivel_ML_4;
+        constNivel_Olist = Nivel_Olist_4;
         constNivel_RD = Nivel_RD;
         constNivel_Shein = Nivel_Shein;
         constNivel_Shopee = Nivel_Shopee;
     } else if (nivel === "3") {
         constNivel_Presencial = Nivel_Presencial;
-        constNivel_CasasBahia_ = Nivel_CasasBahia_3;
+        constNivel_CasasBahia = Nivel_CasasBahia_3;
         constNivel_Magalu_ = Nivel_Magalu_3;
         constNivel_ML = Nivel_ML_3;
+        constNivel_Olist = Nivel_Olist_3;
         constNivel_RD = Nivel_RD;
         constNivel_Shein = Nivel_Shein;
         constNivel_Shopee = Nivel_Shopee;
     } else if (nivel === "2") {
         constNivel_Presencial = Nivel_Presencial;
-        constNivel_CasasBahia_ = Nivel_CasasBahia_2;
+        constNivel_CasasBahia = Nivel_CasasBahia_2;
         constNivel_Magalu_ = Nivel_Magalu_2;
         constNivel_ML = Nivel_ML_2;
+        constNivel_Olist = Nivel_Olist_2;
         constNivel_RD = Nivel_RD;
         constNivel_Shein = Nivel_Shein;
         constNivel_Shopee = Nivel_Shopee;
     } else if (nivel === "1") {
         constNivel_Presencial = Nivel_Presencial;
-        constNivel_CasasBahia_ = Nivel_CasasBahia_1;
+        constNivel_CasasBahia = Nivel_CasasBahia_1;
         constNivel_Magalu_ = Nivel_Magalu_1;
         constNivel_ML = Nivel_ML_1;
+        constNivel_Olist = Nivel_Olist_1;
         constNivel_RD = Nivel_RD;
         constNivel_Shein = Nivel_Shein;
         constNivel_Shopee = Nivel_Shopee;
@@ -234,7 +250,7 @@ function calcular(inputElement) {
             + (Manual * (constCnpj + Comissao_CasasBahia))
             + ((Manual <= 69.89 ? Frete_CasasBahia_ATE69 :
                 Manual >= 69.90 ? constFrete_CasasBahia : 0
-            ) * constNivel_CasasBahia_)
+            ) * constNivel_CasasBahia)
         );
 
     // Casas Bahia Valor Liquido - calcCasasBahiaValorLiq
@@ -243,14 +259,14 @@ function calcular(inputElement) {
         (ValorLiq
             + custo
             + Taxa_CasasBahia
-            + Frete_CasasBahia_ATE69 * constNivel_CasasBahia_)
+            + Frete_CasasBahia_ATE69 * constNivel_CasasBahia)
         /
         (1 - (constCnpj + Comissao_CasasBahia)) <= 69.89) {
         calcCasasBahiaValorLiq =
             (ValorLiq
                 + custo
                 + Taxa_CasasBahia
-                + Frete_CasasBahia_ATE69 * constNivel_CasasBahia_)
+                + Frete_CasasBahia_ATE69 * constNivel_CasasBahia)
             /
             (1 - (constCnpj + Comissao_CasasBahia));
     }
@@ -262,7 +278,7 @@ function calcular(inputElement) {
             (ValorLiq
                 + custo
                 + Taxa_CasasBahia
-                + constFrete_CasasBahia * constNivel_CasasBahia_)
+                + constFrete_CasasBahia * constNivel_CasasBahia)
             /
             (1 - (constCnpj + Comissao_CasasBahia));
     }
@@ -273,14 +289,14 @@ function calcular(inputElement) {
         (custo
             + (PctLiq * custo) / 100
             + Taxa_CasasBahia
-            + Frete_CasasBahia_ATE69 * constNivel_CasasBahia_)
+            + Frete_CasasBahia_ATE69 * constNivel_CasasBahia)
         /
         (1 - (constCnpj + Comissao_CasasBahia)) <= 69.89) {
         calcCasasBahiaPctLiq =
             (custo
                 + (PctLiq * custo) / 100
                 + Taxa_CasasBahia
-                + Frete_CasasBahia_ATE69 * constNivel_CasasBahia_)
+                + Frete_CasasBahia_ATE69 * constNivel_CasasBahia)
             /
             (1 - (constCnpj + Comissao_CasasBahia));
     }
@@ -291,7 +307,7 @@ function calcular(inputElement) {
             (custo
                 + (PctLiq * custo) / 100
                 + Taxa_CasasBahia
-                + constFrete_CasasBahia * constNivel_CasasBahia_)
+                + constFrete_CasasBahia * constNivel_CasasBahia)
             /
             (1 - (constCnpj + Comissao_CasasBahia));
     }
@@ -955,8 +971,117 @@ function calcular(inputElement) {
     }
 
     // --------------------------------
+    // Olist
+    // --------------------------------
+
+    // Olist Manual - calcOlistManual
+    var calcOlistManual = Manual
+        - (
+            + custo
+            + (Manual * (constCnpj + Comissao_Olist))
+            + ((Manual <= 78.99 ? Frete_Olist_ATE79 :
+                Manual >= 79 ? constFrete_Olist : 0
+            ) * constNivel_Olist)
+            + Taxa_Olist
+        );
+
+    // Olist Valor Liquido - calcOlistValorLiq
+    // Abaixo de 78.99
+    if (
+        (ValorLiq
+            + custo
+            + Taxa_Olist
+            + (Frete_Olist_ATE79 * constNivel_Olist)
+        )
+        /
+        (1 - (constCnpj + Comissao_Olist)) <= 78.99) {
+        calcOlistValorLiq =
+            (ValorLiq
+                + custo
+                + Taxa_Olist
+                + (Frete_Olist_ATE79 * constNivel_Olist)
+            )
+            /
+            (1 - (constCnpj + Comissao_Olist));
+    }
+
+    // Olist Valor Liquido - calcOlistValorLiq
+    // Acima de 79
+    else {
+        calcOlistValorLiq =
+            (ValorLiq
+                + custo
+                + Taxa_Olist
+                + (constFrete_Olist * constNivel_Olist)
+            )
+            /
+            (1 - (constCnpj + Comissao_Olist));
+    }
+
+    // Olist Porcentagem Liquida - calcOlistPctLiq
+    // Abaixo de 78.99
+    if (
+        (custo
+            + (PctLiq * custo) / 100
+            + Taxa_Olist
+            + (Frete_Olist_ATE79 * constNivel_Olist)
+        )
+        /
+        (1 - (constCnpj + Comissao_Olist)) <= 78.99) {
+        calcOlistPctLiq =
+            (custo
+                + (PctLiq * custo) / 100
+                + Taxa_Olist
+                + (Frete_Olist_ATE79 * constNivel_Olist)
+            )
+            /
+            (1 - (constCnpj + Comissao_Olist));
+    }
+
+    // Olist Porcentagem Liquida - calcOlistPctLiq
+    // Acima de 79
+    else {
+        calcOlistPctLiq =
+            (custo
+                + (PctLiq * custo) / 100
+                + Taxa_Olist
+                + (constFrete_Olist * constNivel_Olist)
+            )
+            /
+            (1 - (constCnpj + Comissao_Olist));
+    }
+
+
+    // --------------------------------
     // RD
     // --------------------------------
+
+    // RD Manual - calcRDManual
+
+    var calcRDManual =
+        Manual
+        - (
+            + custo
+            + (constFrete_RD * Comissao_RD)
+            + (Manual * (constCnpj + Comissao_RD))
+        );
+
+    // RD Valor Liquido - calcRDValorLiq
+    var calcRDValorLiq =
+            (ValorLiq
+                + custo
+                + (constFrete_RD * Comissao_RD))
+            /
+            (1 - (constCnpj + Comissao_RD));
+
+    // RD Porcentagem Liquida - calcRDPctLiq
+    // Abaixo de 69,90
+    var calcRDPctLiq =
+            (custo
+                + (PctLiq * custo) / 100
+                + (constFrete_RD * Comissao_RD))
+            /
+            (1 - (constCnpj + Comissao_RD));
 
 
     // --------------------------------
@@ -1161,6 +1286,16 @@ function calcular(inputElement) {
         document.getElementById("resultado_MLP_Manual").textContent = "R$ " + calcMLPManual.toFixed(2).replace(".", ",") + " (" + ((calcMLPManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
         document.getElementById("resultado_MLP_ValorLiq").textContent = "R$ " + calcMLPValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
         document.getElementById("resultado_MLP_PctLiq").textContent = "R$ " + calcMLPPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
+
+        // Olist
+        document.getElementById("resultado_Olist_Manual").textContent = "R$ " + calcOlistManual.toFixed(2).replace(".", ",") + " (" + ((calcOlistManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_Olist_ValorLiq").textContent = "R$ " + calcOlistValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_Olist_PctLiq").textContent = "R$ " + calcOlistPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
+        
+        // RD
+        document.getElementById("resultado_RD_Manual").textContent = "R$ " + calcRDManual.toFixed(2).replace(".", ",") + " (" + ((calcRDManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_RD_ValorLiq").textContent = "R$ " + calcRDValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_RD_PctLiq").textContent = "R$ " + calcRDPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
 
         // Shein
         document.getElementById("resultado_Shein_Manual").textContent = "R$ " + calcSheinManual.toFixed(2).replace(".", ",") + " (" + ((calcSheinManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";

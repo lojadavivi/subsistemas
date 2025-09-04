@@ -19,10 +19,18 @@ CALCULADORA
     </thead>
     <tbody>
     <tr>
+        <td>4.5.0<br>04/09/2025</td>
+        <td>
+            <ul>
+                <li>Adicionados marketplaces OLIST e RD.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
         <td>4.4.3<br>08/08/2025</td>
         <td>
             <ul>
-                <li>Adicionado custo de insumos em todos os cálculos. Abaixo de 300g = R$1. Acima de 300g = R$2</li>
+                <li>Adicionado custo de insumos em todos os cálculos. Abaixo de 300g = R$1. Acima de 300g = R$2.</li>
             </ul>
         </td>
     </tr>
@@ -57,7 +65,7 @@ CALCULADORA
         <td>4.3.5<br>21/07/2025</td>
         <td>
             <ul>
-                <li>Atualizado alíquota de CNPJs</li>
+                <li>Atualizado alíquota de CNPJs.</li>
             </ul>
         </td>
     </tr>
@@ -74,7 +82,7 @@ CALCULADORA
         <td>4.3.3<br>19/02/2025</td>
         <td>
             <ul>
-                <li>Correção de bug em calcShopeeManual exibindo valores errados quando preço está próximo de 500</li>
+                <li>Correção de bug em calcShopeeManual exibindo valores errados quando preço está próximo de 500.</li>
             </ul>
         </td>
     </tr>
@@ -207,8 +215,7 @@ CALCULADORA
             <td>4.1.1 <br> 10/10/2023</td>
             <td>
                 <ul>
-                    <li>Adicionada diferenciação de cores na tabela e no H1 de acordo com o CNPJ selecionado
-                        para facilitar a identificação de para onde o valor está sendo calculado.</li>
+                    <li>Adicionada diferenciação de cores na tabela e no H1 de acordo com o CNPJ selecionado para facilitar a identificação de para onde o valor está sendo calculado.</li>
                     <li>Textos de ajuda ficam escondidos em um spoiler.</li>
                     <li>Corrigida comissão do SITE.</li>
                 </ul>
@@ -227,10 +234,8 @@ CALCULADORA
             <td>4.0.3 <br> 15/09/2023</td>
             <td>
                 <ul>
-                    <li>Corrigido bugs de cálculo nas fórmulas de porcentagem do Mercado Livre Clássico e
-                        Premium, e Site.</li>
-                    <li>Corrigido bug de cálculo manual da Shopee que mostrava um valor líquido maior do que
-                        o real.</li>
+                    <li>Corrigido bugs de cálculo nas fórmulas de porcentagem do Mercado Livre Clássico e Premium, e Site.</li>
+                    <li>Corrigido bug de cálculo manual da Shopee que mostrava um valor líquido maior do que o real.</li>
                 </ul>
             </td>
         </tr>
@@ -255,12 +260,9 @@ CALCULADORA
             <td style="font-weight: bold;">4.0.0 <br> 17/08/2023</td>
             <td>
                 <ul>
-                    <li>Nova versão em formato HTML! Agora é possível usar a calculadora individualmente,
-                        sem esperar outra pessoa parar.</li>
+                    <li>Nova versão em formato HTML! Agora é possível usar a calculadora individualmente, sem esperar outra pessoa parar.</li>
                     <li>Correção de cálculos nas fórmulas que sugeriam valores muito baixos.</li>
-                    <li>Changelog de outras versões disponível na <a
-                            href="https://docs.google.com/spreadsheets/d/1JOVpaQqCp9t1EbIY9RhuKyxhysC2B_F3AEpm3ThkKtw/edit?usp=sharing"
-                            style="color: inherit; text-decoration: underline;">versão planilha (3.2.1 de 21/06/2023)</a>.</li>
+                    <li>Changelog de outras versões disponível na <a href="https://docs.google.com/spreadsheets/d/1JOVpaQqCp9t1EbIY9RhuKyxhysC2B_F3AEpm3ThkKtw/edit?usp=sharing" style="color: inherit; text-decoration: underline;">versão planilha (3.2.1 de 21/06/2023)</a>.</li>
                 </ul>
             </td>
         </tr>
