@@ -26,6 +26,7 @@ function calcular(inputElement) {
     // Valores constantes de peso e frete para acima de R$ 79 definidos no calc_variables.js
     if (peso === "Selecione") {
         constFrete_Presencial = x;
+        constFrete_Amazon = x;
         constFrete_CasasBahia = x;
         constFrete_Magalu = x;
         constFrete_MercadoLivre = x;
@@ -35,6 +36,7 @@ function calcular(inputElement) {
         constFrete_Shopee = x;
     } else if (peso === "até 0.3kg") {
         constFrete_Presencial = Frete_Presencial;
+        constFrete_Amazon = Frete_Amazon_ACIMA79_ate300G;
         constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_ate300G;
         constFrete_Magalu = Frete_Magalu_ACIMA79_ate300G;
         constFrete_MercadoLivre = Frete_ML_ACIMA79_ate300G;
@@ -44,6 +46,7 @@ function calcular(inputElement) {
         constFrete_Shopee = Frete_Shopee;
     } else if (peso === "0.3 a 0.5kg") {
         constFrete_Presencial = Frete_Presencial;
+        constFrete_Amazon = Frete_Amazon_ACIMA79_300a500G;
         constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_300a500G;
         constFrete_Magalu = Frete_Magalu_ACIMA79_300a500G;
         constFrete_MercadoLivre = Frete_ML_ACIMA79_300a500G;
@@ -53,6 +56,7 @@ function calcular(inputElement) {
         constFrete_Shopee = Frete_Shopee;
     } else if (peso === "0.5 a 1kg") {
         constFrete_Presencial = Frete_Presencial;
+        constFrete_Amazon = Frete_Amazon_ACIMA79_500Ga1KG;
         constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_500Ga1KG;
         constFrete_Magalu = Frete_Magalu_ACIMA79_500Ga1KG;
         constFrete_MercadoLivre = Frete_ML_ACIMA79_500Ga1KG;
@@ -62,6 +66,7 @@ function calcular(inputElement) {
         constFrete_Shopee = Frete_Shopee;
     } else if (peso === "1 a 2kg") {
         constFrete_Presencial = Frete_Presencial;
+        constFrete_Amazon = Frete_Amazon_ACIMA79_1a2KG;
         constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_1a2KG;
         constFrete_Magalu = Frete_Magalu_ACIMA79_1a2KG;
         constFrete_MercadoLivre = Frete_ML_ACIMA79_1a2KG;
@@ -71,6 +76,7 @@ function calcular(inputElement) {
         constFrete_Shopee = Frete_Shopee;
     } else if (peso === "2 a 5kg") {
         constFrete_Presencial = Frete_Presencial;
+        constFrete_Amazon = Frete_Amazon_ACIMA79_2a5KG;
         constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_2a5KG;
         constFrete_Magalu = Frete_Magalu_ACIMA79_2a5KG;
         constFrete_MercadoLivre = Frete_ML_ACIMA79_2a5KG;
@@ -80,6 +86,7 @@ function calcular(inputElement) {
         constFrete_Shopee = Frete_Shopee;
     } else if (peso === "5 a 9kg") {
         constFrete_Presencial = Frete_Presencial;
+        constFrete_Amazon = Frete_Amazon_ACIMA79_5a9KG;
         constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_5a9KG;
         constFrete_Magalu = Frete_Magalu_ACIMA79_5a9KG;
         constFrete_MercadoLivre = Frete_ML_ACIMA79_5a9KG;
@@ -89,6 +96,7 @@ function calcular(inputElement) {
         constFrete_Shopee = Frete_Shopee;
     } else if (peso === "9 a 13kg") {
         constFrete_Presencial = Frete_Presencial;
+        constFrete_Amazon = Frete_Amazon_ACIMA79_9a13KG;
         constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_9a13KG;
         constFrete_Magalu = Frete_Magalu_ACIMA79_9a13KG;
         constFrete_MercadoLivre = Frete_ML_ACIMA79_9a13KG;
@@ -98,6 +106,7 @@ function calcular(inputElement) {
         constFrete_Shopee = Frete_Shopee;
     } else if (peso === "13 a 17kg") {
         constFrete_Presencial = Frete_Presencial;
+        constFrete_Amazon = Frete_Amazon_ACIMA79_13a17KG;
         constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_13a17KG;
         constFrete_Magalu = Frete_Magalu_ACIMA79_13a17KG;
         constFrete_MercadoLivre = Frete_ML_ACIMA79_13a17KG;
@@ -107,6 +116,7 @@ function calcular(inputElement) {
         constFrete_Shopee = Frete_Shopee;;
     } else if (peso === "17 a 23kg") {
         constFrete_Presencial = Frete_Presencial;
+        constFrete_Amazon = Frete_Amazon_ACIMA79_17a23KG;
         constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_17a23KG;
         constFrete_Magalu = Frete_Magalu_ACIMA79_17a23KG;
         constFrete_MercadoLivre = Frete_ML_ACIMA79_17a23KG;
@@ -116,6 +126,7 @@ function calcular(inputElement) {
         constFrete_Shopee = Frete_Shopee;
     } else if (peso === "23 a 30kg") {
         constFrete_Presencial = Frete_Presencial;
+        constFrete_Amazon = Frete_Amazon_ACIMA79_23a30KG;
         constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_23a30KG;
         constFrete_Magalu = Frete_Magalu_ACIMA79_23a30KG;
         constFrete_MercadoLivre = Frete_ML_ACIMA79_23a30KG;
@@ -128,6 +139,7 @@ function calcular(inputElement) {
     // Valores constantes de desconto no frete baseado no nivel definidos no calc_variables.js
     if (nivel === "5") {
         constNivel_Presencial = Nivel_Presencial;
+        constNivel_Amazon = Nivel_Amazon;
         constNivel_CasasBahia = Nivel_CasasBahia_5;
         constNivel_Magalu_ = Nivel_Magalu_5;
         constNivel_ML = Nivel_ML_5;
@@ -137,6 +149,7 @@ function calcular(inputElement) {
         constNivel_Shopee = Nivel_Shopee;
     } else if (nivel === "4") {
         constNivel_Presencial = Nivel_Presencial;
+        constNivel_Amazon = Nivel_Amazon;
         constNivel_CasasBahia = Nivel_CasasBahia_4;
         constNivel_Magalu_ = Nivel_Magalu_4;
         constNivel_ML = Nivel_ML_4;
@@ -146,6 +159,7 @@ function calcular(inputElement) {
         constNivel_Shopee = Nivel_Shopee;
     } else if (nivel === "3") {
         constNivel_Presencial = Nivel_Presencial;
+        constNivel_Amazon = Nivel_Amazon;
         constNivel_CasasBahia = Nivel_CasasBahia_3;
         constNivel_Magalu_ = Nivel_Magalu_3;
         constNivel_ML = Nivel_ML_3;
@@ -155,6 +169,7 @@ function calcular(inputElement) {
         constNivel_Shopee = Nivel_Shopee;
     } else if (nivel === "2") {
         constNivel_Presencial = Nivel_Presencial;
+        constNivel_Amazon = Nivel_Amazon;
         constNivel_CasasBahia = Nivel_CasasBahia_2;
         constNivel_Magalu_ = Nivel_Magalu_2;
         constNivel_ML = Nivel_ML_2;
@@ -164,6 +179,7 @@ function calcular(inputElement) {
         constNivel_Shopee = Nivel_Shopee;
     } else if (nivel === "1") {
         constNivel_Presencial = Nivel_Presencial;
+        constNivel_Amazon = Nivel_Amazon;
         constNivel_CasasBahia = Nivel_CasasBahia_1;
         constNivel_Magalu_ = Nivel_Magalu_1;
         constNivel_ML = Nivel_ML_1;
@@ -237,6 +253,191 @@ function calcular(inputElement) {
     }
 
     // --------------------------------
+    // AMAZON
+    // --------------------------------
+
+    // Amazon Manual - calcAmazonManual
+    var calcAmazonManual =
+        Manual
+        - (
+            + custo
+            + (Manual * (constCnpj + Comissao_Amazon))
+            + ((Manual < 30 ? Frete_Amazon_ATE30 :
+                Manual >= 30 && Manual < 50 ? Frete_Amazon_30a50 :
+                    Manual >= 50 && Manual < 79 ? Frete_Amazon_50a79 :
+                        Manual >= 79 ? constFrete_Amazon : 0
+            ) * constNivel_Amazon)
+        );
+    
+    // Amazon Valor Liquido - calcAmazonValorLiq
+    // Abaixo de 30
+    if (
+        (ValorLiq
+            + custo
+            + (Frete_Amazon_ATE30 * constNivel_Amazon)
+        )
+        /
+        (1 - (constCnpj + Comissao_Amazon)) < 30) {
+        calcAmazonValorLiq =
+            (ValorLiq
+                + custo
+                + (Frete_Amazon_ATE30 * constNivel_Amazon)
+            )
+            /
+            (1 - (constCnpj + Comissao_Amazon));
+    }
+
+    // Entre 30 e 50
+    else if (
+        (ValorLiq
+            + custo
+            + (Frete_Amazon_ATE30 * constNivel_Amazon)
+        )
+        /
+        (1 - (constCnpj + Comissao_Amazon)) >= 30
+        &&
+        (ValorLiq
+            + custo
+            + (Frete_Amazon_30a50 * constNivel_Amazon)
+        )
+        /
+        (1 - (constCnpj + Comissao_Amazon)) < 50) {
+        calcAmazonValorLiq =
+            (ValorLiq
+                + custo
+                + (Frete_Amazon_30a50 * constNivel_Amazon)
+            )
+            /
+            (1 - (constCnpj + Comissao_Amazon));
+    }
+
+    // Entre 50 e 79
+    else if (
+        (ValorLiq
+            + custo
+            + (Frete_Amazon_30a50 * constNivel_Amazon)
+        )
+        /
+        (1 - (constCnpj + Comissao_Amazon)) >= 50
+        &&
+        (ValorLiq
+            + custo
+            + (Frete_Amazon_50a79 * constNivel_Amazon)
+        )
+        /
+        (1 - (constCnpj + Comissao_Amazon)) < 79) {
+        calcAmazonValorLiq =
+            (ValorLiq
+                + custo
+                + (Frete_Amazon_50a79 * constNivel_Amazon)
+            )
+            /
+            (1 - (constCnpj + Comissao_Amazon));
+    }
+
+    // Acima de 79
+    else if (
+        (ValorLiq
+            + custo
+            + (Frete_Amazon_50a79 * constNivel_Amazon)
+        )
+        /
+        (1 - (constCnpj + Comissao_Amazon)) >= 79) {
+        calcAmazonValorLiq =
+            (ValorLiq
+                + custo
+                + (constFrete_Amazon * constNivel_Amazon)
+            )
+            /
+            (1 - (constCnpj + Comissao_Amazon));
+    }
+
+    // Amazon Porcentagem Liquida - calcAmazonPctLiq
+    // Abaixo de 30
+    if (
+        (custo
+            + (PctLiq * custo) / 100
+            + (Frete_Amazon_ATE30 * constNivel_Amazon)
+        )
+        /
+        (1 - (constCnpj + Comissao_Amazon)) < 30) {
+        calcAmazonPctLiq =
+            (custo
+                + (PctLiq * custo) / 100
+                + (Frete_Amazon_ATE30 * constNivel_Amazon)
+            )
+            /
+            (1 - (constCnpj + Comissao_Amazon));
+    }
+
+    // Entre 30 e 50
+    else if (
+        (custo
+            + (PctLiq * custo) / 100
+            + (Frete_Amazon_ATE30 * constNivel_Amazon)
+        )
+        /
+        (1 - (constCnpj + Comissao_Amazon)) >= 30
+        &&
+        (custo
+            + (PctLiq * custo) / 100
+            + (Frete_Amazon_30a50 * constNivel_Amazon)
+        )
+        /
+        (1 - (constCnpj + Comissao_Amazon)) < 50) {
+        calcAmazonPctLiq =
+            (custo
+                + (PctLiq * custo) / 100
+                + (Frete_Amazon_30a50 * constNivel_Amazon)
+            )
+            /
+            (1 - (constCnpj + Comissao_Amazon));
+    }
+
+    // Entre 50 e 79
+    else if (
+        (custo
+            + (PctLiq * custo) / 100
+            + (Frete_Amazon_30a50 * constNivel_Amazon)
+        )
+        /
+        (1 - (constCnpj + Comissao_Amazon)) >= 50
+        &&
+        (custo
+            + (PctLiq * custo) / 100
+            + (Frete_Amazon_50a79 * constNivel_Amazon)
+        )
+        /
+        (1 - (constCnpj + Comissao_Amazon)) < 79) {
+
+        calcAmazonPctLiq =
+            (custo
+                + (PctLiq * custo) / 100
+                + (Frete_Amazon_50a79 * constNivel_Amazon)
+            )
+            /
+            (1 - (constCnpj + Comissao_Amazon));
+    }
+
+    // Acima de 79
+    else if (
+        (custo
+            + (PctLiq * custo) / 100
+            + (Frete_Amazon_50a79 * constNivel_Amazon)
+        )
+        /
+        (1 - (constCnpj + Comissao_Amazon)) >= 79) {
+        calcAmazonPctLiq =
+            (custo
+                + (PctLiq * custo) / 100
+                + (constFrete_Amazon * constNivel_Amazon)
+            )
+            /
+            (1 - (constCnpj + Comissao_Amazon));
+    }
+    
+
+    // --------------------------------
     // CASAS BAHIA
     // --------------------------------
 
@@ -248,8 +449,8 @@ function calcular(inputElement) {
             + custo
             + Taxa_CasasBahia
             + (Manual * (constCnpj + Comissao_CasasBahia))
-            + ((Manual <= 69.89 ? Frete_CasasBahia_ATE69 :
-                Manual >= 69.90 ? constFrete_CasasBahia : 0
+            + ((Manual < 69.90 ? Frete_CasasBahia_ATE69 :
+                Manual > 69.90 ? constFrete_CasasBahia : 0
             ) * constNivel_CasasBahia)
         );
 
@@ -271,7 +472,6 @@ function calcular(inputElement) {
             (1 - (constCnpj + Comissao_CasasBahia));
     }
 
-    // Casas Bahia Valor Liquido - calcCasasBahiaValorLiq
     // Acima de 69,90
     else {
         calcCasasBahiaValorLiq =
@@ -1068,20 +1268,20 @@ function calcular(inputElement) {
 
     // RD Valor Liquido - calcRDValorLiq
     var calcRDValorLiq =
-            (ValorLiq
-                + custo
-                + (constFrete_RD * Comissao_RD))
-            /
-            (1 - (constCnpj + Comissao_RD));
+        (ValorLiq
+            + custo
+            + (constFrete_RD * Comissao_RD))
+        /
+        (1 - (constCnpj + Comissao_RD));
 
     // RD Porcentagem Liquida - calcRDPctLiq
     // Abaixo de 69,90
     var calcRDPctLiq =
-            (custo
-                + (PctLiq * custo) / 100
-                + (constFrete_RD * Comissao_RD))
-            /
-            (1 - (constCnpj + Comissao_RD));
+        (custo
+            + (PctLiq * custo) / 100
+            + (constFrete_RD * Comissao_RD))
+        /
+        (1 - (constCnpj + Comissao_RD));
 
 
     // --------------------------------
@@ -1266,6 +1466,11 @@ function calcular(inputElement) {
         document.getElementById("resultado_Shopee_PctLiq").textContent = "";
     } else {
 
+        // Amazon
+        document.getElementById("resultado_Amazon_Manual").textContent = "R$ " + calcAmazonManual.toFixed(2).replace(".", ",") + " (" + ((calcAmazonManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_Amazon_ValorLiq").textContent = "R$ " + calcAmazonValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_Amazon_PctLiq").textContent = "R$ " + calcAmazonPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
+
         // Casas Bahia
         document.getElementById("resultado_CasasBahia_Manual").textContent = "R$ " + calcCasasBahiaManual.toFixed(2).replace(".", ",") + " (" + ((calcCasasBahiaManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
         document.getElementById("resultado_CasasBahia_ValorLiq").textContent = "R$ " + calcCasasBahiaValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
@@ -1291,7 +1496,7 @@ function calcular(inputElement) {
         document.getElementById("resultado_Olist_Manual").textContent = "R$ " + calcOlistManual.toFixed(2).replace(".", ",") + " (" + ((calcOlistManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
         document.getElementById("resultado_Olist_ValorLiq").textContent = "R$ " + calcOlistValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
         document.getElementById("resultado_Olist_PctLiq").textContent = "R$ " + calcOlistPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
-        
+
         // RD
         document.getElementById("resultado_RD_Manual").textContent = "R$ " + calcRDManual.toFixed(2).replace(".", ",") + " (" + ((calcRDManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
         document.getElementById("resultado_RD_ValorLiq").textContent = "R$ " + calcRDValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";

@@ -27,7 +27,7 @@ const cnpj_RAV = (ICMS_RAV + PIS_RAV + COFINS_RAV + Frete_RAV + Comissao_RAV + M
 // COMISSÃO
 
 // Presencial       3,29% maximo da Stone (crédito)
-// Americanas:      17%
+// Amazon:          13%
 // Casas Bahia:     21%
 // Magalu:          18%
 // Mercado Livre:   13% classico e 18% premium
@@ -35,11 +35,9 @@ const cnpj_RAV = (ICMS_RAV + PIS_RAV + COFINS_RAV + Frete_RAV + Comissao_RAV + M
 // RD:              18%
 // Shein:           16%
 // Shopee:          20% comissão + 2% Shopee Antecipa
-// WebContinental:  ?
-// SiteUool:        4,69% em 1x e 19,13% em 12x
-// SiteAtacado:     4,59% em 1x e 23,87% em 12x
 
 const Comissao_Presencial = 0.0329;
+const Comissao_Amazon = 0.145;
 const Comissao_CasasBahia = 0.21;
 const Comissao_Magalu = 0.18;
 const Comissao_MLC = 0.13;
@@ -56,6 +54,25 @@ const Comissao_Shopee = 0.22;
 // Presencial
 // Não se aplica
 const Frete_Presencial = 0;
+
+// Amazon
+// Até 30,00 = 4,50
+// De 30,00 a 49,99 = 6,50
+// De 50,00 a 78,99 = 6,75
+// Acima de 79,00 = tabela
+const Frete_Amazon_ATE30 = 4.5;
+const Frete_Amazon_30a50 = 6.5;
+const Frete_Amazon_50a79 = 6.75;
+const Frete_Amazon_ACIMA79_ate300G = 17.95;
+const Frete_Amazon_ACIMA79_300a500G = 19.3;
+const Frete_Amazon_ACIMA79_500Ga1KG = 20.2;
+const Frete_Amazon_ACIMA79_1a2KG = 21.1;
+const Frete_Amazon_ACIMA79_2a5KG = 25.6;
+const Frete_Amazon_ACIMA79_5a9KG = 41;
+const Frete_Amazon_ACIMA79_9a13KG = 69.5;
+const Frete_Amazon_ACIMA79_13a17KG = 83.5;
+const Frete_Amazon_ACIMA79_17a23KG = 104.5;
+const Frete_Amazon_ACIMA79_23a30KG = 129;
 
 // Casas Bahia
 // Até 69,89 o frete é pago pelo cliente
@@ -157,6 +174,10 @@ const Frete_Shopee = 0;
 // Não se aplica
 const Nivel_Presencial = 1;
 
+// Amazon
+// Não ha
+const Nivel_Amazon = 1;
+
 // Casas Bahia
 // 1 ao 3:  não ha (1)
 // 4:       40% (0.6)
@@ -218,15 +239,19 @@ const Nivel_Shopee = 1;
 // Não se aplica
 const Taxa_Presencial = 0;
 
+// Amazon
+// Não ha taxa fixa
+const Taxa_Amazon = 0;
+
 // Casas Bahia
 // Não ha taxa fixa
 const Taxa_CasasBahia = 0;
 
 // Magalu
 // Até R$ 9,99:     não ha
-// Acima de R$ 10:  R$ 5
+// Acima de R$ 10:  R$ 2 (para produtos de beleza)
 const Taxa_Magalu_ATE10 = 0;
-const Taxa_Magalu_ACIMA10 = 5;
+const Taxa_Magalu_ACIMA10 = 2;
 
 // Mercado Livre
 // Até R$ 28,99:                R$ 6,25
