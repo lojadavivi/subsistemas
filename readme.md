@@ -19,6 +19,14 @@ CALCULADORA
     </thead>
     <tbody>
     <tr>
+        <td>4.5.1<br>12/09/2025</td>
+        <td>
+            <ul>
+                <li>Taxa fixa do MAGALU atualizada, de R$5 para R$2.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
         <td>4.5.0<br>04/09/2025</td>
         <td>
             <ul>

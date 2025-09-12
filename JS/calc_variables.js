@@ -224,9 +224,9 @@ const Taxa_CasasBahia = 0;
 
 // Magalu
 // Até R$ 9,99:     não ha
-// Acima de R$ 10:  R$ 5
+// Acima de R$ 10:  R$ 2 (para produtos de beleza)
 const Taxa_Magalu_ATE10 = 0;
-const Taxa_Magalu_ACIMA10 = 5;
+const Taxa_Magalu_ACIMA10 = 2;
 
 // Mercado Livre
 // Até R$ 28,99:                R$ 6,25
