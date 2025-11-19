@@ -4,8 +4,8 @@
 
 // Alíquota Simples Nacional
 
-const cnpj_LTDA = 0.0908; 
-const cnpj_FERREIRA = 0.0554;
+const cnpj_LTDA = 0.1; 
+const cnpj_FERREIRA = 0.11;
 const cnpj_VIVI = 0.04;
 
 // Lucro Presumido

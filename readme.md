@@ -19,6 +19,14 @@ CALCULADORA
     </thead>
     <tbody>
     <tr>
+        <td>4.6.1<br>19/11/2025</td>
+        <td>
+            <ul>
+                <li>Alíquota de imposto da FERREIRA PROSPERITA COSMETICOS corrigida para 11%.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
         <td>4.6.0<br>12/11/2025</td>
         <td>
             <ul>
