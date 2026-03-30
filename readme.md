@@ -19,6 +19,29 @@ CALCULADORA
     </thead>
     <tbody>
     <tr>
+        <td>4.6.2<br>30/03/2026</td>
+        <td>
+            <ul>
+                <li>Comissão do marketplace MERCADO LIVRE CLÁSSICO alterada de 13% para 14%.</li>
+                <li>Comissão do marketplace MERCADO LIVRE PREMIUM alterada de 18% para 19%.</li>
+                <li>Taxas fixas marketplace MERCADO LIVRE alteradas:
+                    <br>Até R$ 12,50: não há
+                    <br>Entre R$ 12,50 e R$ 29,00: R$ 6,25
+                    <br>Entre R$ 29,00 e R$ 49,99: R$ 6,50
+                    <br>Entre R$ 50,00 e R$ 78,99: R$ 6,75
+                    <br>Acima de R$ 79,00: não há</li>
+                <li>Comissão do marketplace SHOPEE alterada de acordo com o valor do produto:
+                    <br>Até R$ 79,00: 20%
+                    <br>Acima de R$ 79,00: 14%</li>
+                <li>Taxas fixas do marketplace SHOPEE alteradas:
+                    <br>Até R$ 79,99: R$ 4,00
+                    <br>Entre R$ 80,00 e R$ 99,99: R$ 16,00
+                    <br>Entre R$ 100,00 e R$ 199,99: R$ 20,00
+                    <br>Acima de R$ 200,00: R$ 26,00
+            </ul>
+        </td>
+    </tr>
+    <tr>
         <td>4.6.1<br>19/11/2025</td>
         <td>
             <ul>

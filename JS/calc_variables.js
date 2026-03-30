@@ -34,18 +34,19 @@ const cnpj_RAV = (ICMS_RAV + PIS_RAV + COFINS_RAV + Frete_RAV + Comissao_RAV + M
 // Olist:           21%
 // RD:              18%
 // Shein:           16%
-// Shopee:          20% comissão + 2% Shopee Antecipa
+// Shopee:          Entre 14% e 20% (dependendo do valor do produto) + Entre R$ 4 a R$ 26 (dependendo do valor do produto)
 
 const Comissao_Presencial = 0.0329;
 const Comissao_Amazon = 0.145;
 const Comissao_CasasBahia = 0.21;
 const Comissao_Magalu = 0.18;
-const Comissao_MLC = 0.13;
-const Comissao_MLP = 0.18;
+const Comissao_MLC = 0.14;
+const Comissao_MLP = 0.19;
 const Comissao_Olist = 0.21;
 const Comissao_RD = 0.19;
 const Comissao_Shein = 0.16;
-const Comissao_Shopee = 0.22;
+const Comissao_Shopee_ATE79 = 0.20;
+const Comissao_Shopee_ACIMA79 = 0.14;
 
 // ----------------------------------------
 
@@ -254,10 +255,12 @@ const Taxa_Magalu_ATE10 = 0;
 const Taxa_Magalu_ACIMA10 = 2;
 
 // Mercado Livre
-// Até R$ 28,99:                R$ 6,25
-// Entre R$ 29,00 e R$ 49,99:   R$ 6,50
-// Entre R$ 50,00 e R$ 78,99:   R$ 6,75
+// Até R$ 12,50:                não há
+// Entre R$ 12,50 e R$ 29:      R$ 6,25
+// Entre R$ 29 e R$ 50:         R$ 6,50
+// Entre R$ 50 e R$ 79:         R$ 6,75
 // Acima de R$ 79:              não ha
+const Taxa_ML_ATE12 = 0;
 const Taxa_ML_ATE29 = 6.25;
 const Taxa_ML_ATE50 = 6.5;
 const Taxa_ML_ATE79 = 6.75;
@@ -276,9 +279,14 @@ const Taxa_RD = 0;
 const Taxa_Shein = 0;
 
 // Shopee
-// Até R$ 8:            metade do valor de venda
-// Acima de R$ 8:       R$ 4
-const Taxa_Shopee_ACIMA8 = 4;
+// Até R$ 79,99:                R$ 4
+// Entre R$ 80 e R$ 99,99:      R$ 16
+// Entre R$ 100 e R$ 199,99:    R$ 20
+// Acima de R$ 200:             R$ 26
+const Taxa_Shopee_ATE79 = 4;
+const Taxa_Shopee_ATE99 = 16;
+const Taxa_Shopee_ATE199 = 20;
+const Taxa_Shopee_ACIMA200 = 26;
 
 // ----------------------------------------
 
