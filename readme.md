@@ -19,6 +19,15 @@ CALCULADORA
     </thead>
     <tbody>
     <tr>
+        <td>4.7.0<br>31/03/2026</td>
+        <td>
+            <ul>
+                <li>Adicionada documentação detalhada para todos os arquivos.</li>
+                <li>Adicionado seletor de modo claro / escuro.</li>
+                <li>Estilo modificado para Liquid Glass.</li>
+                <li>Fórmulas de cálculo otimizadas.</li>
+            </ul>
+        </td>
         <td>4.6.2<br>30/03/2026</td>
         <td>
             <ul>

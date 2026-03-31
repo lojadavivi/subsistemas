@@ -2,124 +2,490 @@
 <html lang="pt-BR">
 
 <head>
+    <!-- ============================================================================
+         META TAGS E CONFIGURAÇÃO BÁSICA
+         ============================================================================= -->
     <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ferramenta para contar dinheiro em caixa">
 
-    <!-- Definição de ícones da página -->
+    <!-- ============================================================================
+         TÍTULO E ÍCONES
+         ============================================================================= -->
+    <title>Calculadora de Caixa - Contador de Cédulas e Moedas</title>
     <link rel="icon" href="STYLES/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="STYLES/icon.png" type="image/x-icon">
 
-    <!-- Outras definições -->
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Título da página -->
-    <title>CAIXA</title>
-
-    <!-- Descrição da página -->
-    <meta name="description" content="Ferramenta para contar dinheiro">
+    <!-- ============================================================================
+         ESTILOS
+         ============================================================================= -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- Calculadora -->
-    <script>
-        function calculateTotal() {
-            let denominations = [200, 100, 50, 20, 10, 5, 2, 1, 0.5, 0.25, 0.10, 0.05];
-            let total = 0;
-        
-            denominations.forEach((denomination, index) => {
-                let quantity = document.getElementById('input' + index).value;
-                let value = quantity * denomination;
-                document.getElementById('value' + index).textContent = value.toFixed(2).replace('.', ',');
-                total += value;
-            });
-        
-            document.getElementById('total').textContent = total.toFixed(2).replace('.', ',');
+    
+    <!-- Estilos locais para refinamento da página de caixa -->
+    <style>
+        body {
+            padding: 0 12px 28px;
         }
-        </script>
+
+        .caixa-page {
+            width: min(980px, 100%);
+            margin: 20px auto 0;
+        }
+
+        .caixa-card {
+            background: var(--glass-surface-strong);
+            border: 1px solid var(--glass-border);
+            border-radius: 18px;
+            box-shadow: var(--glass-shadow);
+            backdrop-filter: blur(10px) saturate(125%);
+            -webkit-backdrop-filter: blur(10px) saturate(125%);
+            padding: 18px;
+            margin-bottom: 16px;
+        }
+
+        .caixa-title {
+            font-size: clamp(24px, 2.4vw, 34px);
+            color: var(--texto-color-escuro);
+            line-height: 1.15;
+            margin-bottom: 6px;
+        }
+
+        .caixa-subtitle {
+            line-height: 1.35;
+            margin-bottom: 10px;
+        }
+
+        .caixa-tips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .tip-pill {
+            background: var(--glass-surface);
+            border: 1px solid var(--glass-border);
+            border-radius: 999px;
+            padding: 6px 10px;
+            font-size: 0.92rem;
+        }
+
+        .caixa-actions {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 12px 0 2px;
+        }
+
+        .caixa-btn {
+            font-family: "Nunito", sans-serif;
+            font-weight: 700;
+            font-size: 0.92rem;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            padding: 8px 12px;
+            cursor: pointer;
+            color: var(--texto-padrao);
+            background: linear-gradient(160deg, var(--glass-highlight), var(--glass-surface));
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+            box-shadow: 0 8px 14px rgba(0, 0, 0, 0.12);
+        }
+
+        .caixa-btn:hover,
+        .caixa-btn:focus {
+            transform: translateY(-1px);
+            background-color: var(--botao-color-claro-hover);
+            box-shadow: 0 10px 16px rgba(0, 0, 0, 0.18);
+            outline: none;
+        }
+
+        .caixa-table-wrap {
+            overflow-x: auto;
+        }
+
+        .caixa-table {
+            min-width: 620px;
+        }
+
+        .input-centered {
+            text-align: center;
+            width: 100%;
+            max-width: 130px;
+            font-weight: 700;
+        }
+
+        .valor-label {
+            white-space: nowrap;
+            text-align: left;
+            padding-left: 12px;
+        }
+
+        .line-total {
+            font-variant-numeric: tabular-nums;
+            font-weight: 700;
+        }
+
+        .grand-total-row th,
+        .grand-total-row td {
+            background: linear-gradient(160deg, color-mix(in srgb, var(--botao-color-claro) 22%, transparent), var(--glass-surface-strong));
+            font-size: 1.05rem;
+        }
+
+        .grand-total-value {
+            color: var(--texto-color-escuro);
+            font-size: 1.22rem;
+            font-weight: 800;
+            font-variant-numeric: tabular-nums;
+        }
+
+        kbd {
+            display: inline-block;
+            font-family: "Nunito", sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            background: rgba(0, 0, 0, 0.12);
+            border: 1px solid var(--glass-border);
+            border-radius: 6px;
+            padding: 1px 5px;
+            margin-left: 4px;
+            vertical-align: middle;
+            letter-spacing: 0.02em;
+        }
+
+        /* Fileira com quantidade > 0 — realce sutil */
+        .row-filled td,
+        .row-filled th {
+            background: color-mix(in srgb, var(--botao-color-claro) 18%, transparent) !important;
+            transition: background-color 0.25s ease;
+        }
+
+        /* Separador de seção (Cédulas / Moedas) */
+        .section-divider-row td {
+            background: var(--glass-surface) !important;
+            font-weight: 800;
+            font-size: 0.82rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--texto-color-escuro);
+            padding: 6px 12px;
+            text-align: left;
+            border-top: 2px solid var(--glass-border);
+        }
+
+        .version-link { color: var(--texto-color-escuro); }
+
+        @media screen and (max-width: 720px) {
+            body {
+                padding: 0 8px 20px;
+            }
+
+            .caixa-page {
+                margin-top: 14px;
+            }
+
+            .caixa-card {
+                padding: 14px;
+            }
+
+            .caixa-table {
+                min-width: 560px;
+            }
+        }
+    </style>
+
+    <!-- ============================================================================
+         LÓGICA DA PÁGINA (MODO ESCURO E CALCULADORA)
+         ============================================================================= -->
+    <script>
+        /**
+         * TOGGLE DE MODO ESCURO
+         * Salva preferência do usuário no localStorage.
+         */
+        function toggleDarkMode() {
+            try {
+                const html = document.documentElement;
+                const isDarkMode = !html.classList.contains('dark-mode');
+                const button = document.getElementById('toggle-dark-mode');
+
+                if (isDarkMode) {
+                    html.classList.add('dark-mode');
+                    html.classList.remove('light-mode');
+                } else {
+                    html.classList.add('light-mode');
+                    html.classList.remove('dark-mode');
+                }
+
+                if (button) {
+                    button.textContent = isDarkMode ? '☀️' : '🌙';
+                }
+
+                localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+            } catch (error) {
+                console.error('Erro ao alternar modo escuro:', error);
+            }
+        }
+
+        /**
+         * INICIALIZAÇÃO DE MODO ESCURO
+         * Lê preferência salva no localStorage ou detecta a preferência do sistema.
+         */
+        function initDarkMode() {
+            try {
+                const html = document.documentElement;
+                const button = document.getElementById('toggle-dark-mode');
+                const savedMode = localStorage.getItem('darkMode');
+
+                const shouldBeDark = savedMode
+                    ? savedMode === 'enabled'
+                    : window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+                if (shouldBeDark) {
+                    html.classList.add('dark-mode');
+                    html.classList.remove('light-mode');
+                    if (button) button.textContent = '☀️';
+                } else {
+                    html.classList.add('light-mode');
+                    html.classList.remove('dark-mode');
+                    if (button) button.textContent = '🌙';
+                }
+            } catch (error) {
+                console.error('Erro ao inicializar modo escuro:', error);
+            }
+        }
+
+        /**
+         * CALCULADORA DE CAIXA
+         *
+         * Opera em centavos inteiros para evitar imprecisão de ponto flutuante.
+         * Exemplo: 0.10 × 3 em float = 0.30000000000000004, mas 10 × 3 = 30 centavos (exato).
+         */
+        function calculateTotal() {
+            // Denominações como inteiros em centavos: [200, 100, 50, 20, 10, 5, 2, 1, 0.50, 0.25, 0.10, 0.05]
+            const DENOMINATIONS_CENTS = [20000, 10000, 5000, 2000, 1000, 500, 200, 100, 50, 25, 10, 5];
+
+            let totalCents = 0;
+
+            DENOMINATIONS_CENTS.forEach((denomination, index) => {
+                const quantityInput = document.getElementById('input' + index);
+                const quantity = quantityInput ? (parseInt(quantityInput.value, 10) || 0) : 0;
+
+                const lineTotalCents = quantity * denomination;
+
+                const valueDisplay = document.getElementById('value' + index);
+                if (valueDisplay) {
+                    valueDisplay.textContent = (lineTotalCents / 100).toFixed(2).replace('.', ',');
+                }
+
+                // Realça a linha quando há quantidade preenchida
+                const row = quantityInput ? quantityInput.closest('tr') : null;
+                if (row) {
+                    row.classList.toggle('row-filled', quantity > 0);
+                }
+
+                totalCents += lineTotalCents;
+            });
+
+            const totalDisplay = document.getElementById('total');
+            if (totalDisplay) {
+                totalDisplay.textContent = (totalCents / 100).toFixed(2).replace('.', ',');
+            }
+        }
+
+        /**
+         * Limpa todos os campos e foca no primeiro input.
+         */
+        function clearAll() {
+            for (let i = 0; i <= 11; i++) {
+                const input = document.getElementById('input' + i);
+                if (input) input.value = '';
+            }
+            calculateTotal();
+            const firstInput = document.getElementById('input0');
+            if (firstInput) firstInput.focus();
+        }
+
+        /**
+         * Preenche um exemplo rápido para conferência visual.
+         */
+        function fillExample() {
+            const example = [1, 2, 1, 0, 3, 2, 4, 5, 6, 4, 3, 2];
+            example.forEach((value, index) => {
+                const input = document.getElementById('input' + index);
+                if (input) input.value = value;
+            });
+            calculateTotal();
+        }
+
+        /**
+         * Atalhos de teclado:
+         * Ctrl+L — Limpar tudo
+         * Ctrl+E — Preencher exemplo
+         */
+        document.addEventListener('keydown', function (e) {
+            if (!e.ctrlKey) return;
+            if (e.key === 'l' || e.key === 'L') {
+                e.preventDefault();
+                clearAll();
+            } else if (e.key === 'e' || e.key === 'E') {
+                e.preventDefault();
+                fillExample();
+            }
+        });
+    </script>
 
 </head>
 
-<body>
-    <p>Esta é uma calculadora para auxiliar a contagem do caixa.<br>
-        Na coluna <b>VALOR</b> estão os valores de notas e moedas.<br>
-        Na coluna <b>QUANTIDADE</b> você deve inserir a quantidade de notas ou moedas daquele valor.<br>
-        Na coluna <b>TOTAL</b> é mostrado o valor de soma das notas ou moedas dessa linha.<br>
-        Na linha <b>TOTAL DO CAIXA</b> é mostrado a soma de todos os valores.
-    </p>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>VALOR</th>
-                <th>QUANTIDADE</th>
-                <th>TOTAL</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>200,00</th>
-                <td><input style="text-align: center;" class="input_calc" type="number" id="input0" oninput="calculateTotal()" min="0"></td>
-                <td id="value0">0,00</td>
-            </tr>
-            <tr>
-                <th>100,00</th>
-                <td><input style="text-align: center;" class="input_calc" type="number" id="input1" oninput="calculateTotal()" min="0"></td>
-                <td id="value1">0,00</td>
-            </tr>
-            <tr>
-                <th>50,00</th>
-                <td><input style="text-align: center;" class="input_calc" type="number" id="input2" oninput="calculateTotal()" min="0"></td>
-                <td id="value2">0,00</td>
-            </tr>
-            <tr>
-                <th>20,00</th>
-                <td><input style="text-align: center;" class="input_calc" type="number" id="input3" oninput="calculateTotal()" min="0"></td>
-                <td id="value3">0,00</td>
-            </tr>
-            <tr>
-                <th>10,00</th>
-                <td><input style="text-align: center;" class="input_calc" type="number" id="input4" oninput="calculateTotal()" min="0"></td>
-                <td id="value4">0,00</td>
-            </tr>
-            <tr>
-                <th>5,00</th>
-                <td><input style="text-align: center;" class="input_calc" type="number" id="input5" oninput="calculateTotal()" min="0"></td>
-                <td id="value5">0,00</td>
-            </tr>
-            <tr>
-                <th>2,00</th>
-                <td><input style="text-align: center;" class="input_calc" type="number" id="input6" oninput="calculateTotal()" min="0"></td>
-                <td id="value6">0,00</td>
-            </tr>
-            <tr>
-                <th>1,00</th>
-                <td><input style="text-align: center;" class="input_calc" type="number" id="input7" oninput="calculateTotal()" min="0"></td>
-                <td id="value7">0,00</td>
-            </tr>
-            <tr>
-                <th>0,50</th>
-                <td><input style="text-align: center;" class="input_calc" type="number" id="input8" oninput="calculateTotal()" min="0"></td>
-                <td id="value8">0,00</td>
-            </tr>
-            <tr>
-                <th>0,25</th>
-                <td><input style="text-align: center;" class="input_calc" type="number" id="input9" oninput="calculateTotal()" min="0"></td>
-                <td id="value9">0,00</td>
-            </tr>
-            <tr>
-                <th>0,10</th>
-                <td><input style="text-align: center;" class="input_calc" type="number" id="input10" oninput="calculateTotal()" min="0"></td>
-                <td id="value10">0,00</td>
-            </tr>
-            <tr>
-                <th>0,05</th>
-                <td><input style="text-align: center;" class="input_calc" type="number" id="input11" oninput="calculateTotal()" min="0"></td>
-                <td id="value11">0,00</td>
-            </tr>
-            <tr>
-                <th>TOTAL DO CAIXA</th>
-                <th colspan="2" id="total">0,00</th>
-            </tr>
-        </tbody>
-    </table>
+<body onload="initDarkMode(); calculateTotal()">
+    <header>
+        <div class="header-left">
+            <div id="titulo">SUBSISTEMA DA LOJA DA VIVI</div>
+            <nav>
+                <ul>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1JwWo0jGJEf9Elu5NvbUWfJ-AR0hm0Xm0NqKxLeRi2C4/edit?usp=sharing">
+                        Vendas<br>semanais</a>
+                    <li><a href="/subsistemas/XMLtoHTML">
+                        Gerador de DANFE<br>simplificada</a>
+                    <li><a href="/subsistemas/">
+                        Calculadora para<br>Marketplaces</a>
+                </ul>
+            </nav>
+            <p><a class="version-link" href="https://github.com/lojadavivi/subsistemas?tab=readme-ov-file#changelog">Versão 4.7.0 de 31/03/2026</a></p>
+        </div>
+        <button id="toggle-dark-mode" onclick="toggleDarkMode()" title="Alternar modo escuro/claro">🌙</button>
+    </header>
+
+    <main class="caixa-page">
+        <!-- ============================================================================
+             CABEÇALHO E ORIENTAÇÕES
+             ============================================================================= -->
+        <section class="caixa-card">
+            <h1 class="caixa-title">Calculadora de Caixa</h1>
+            <p class="caixa-subtitle">
+                Preencha a quantidade de cada cédula e moeda para ver o total atualizado em tempo real.
+            </p>
+
+            <div class="caixa-tips">
+                <span class="tip-pill">VALOR: denominação da cédula/moeda</span>
+                <span class="tip-pill">QUANTIDADE: número de unidades</span>
+                <span class="tip-pill">TOTAL: quantidade x valor</span>
+            </div>
+
+            <div class="caixa-actions">
+                <button type="button" class="caixa-btn" onclick="fillExample()" title="Atalho: Ctrl+E">Preencher exemplo <kbd>Ctrl+E</kbd></button>
+                <button type="button" class="caixa-btn" onclick="clearAll()" title="Atalho: Ctrl+L">Limpar tudo <kbd>Ctrl+L</kbd></button>
+            </div>
+        </section>
+
+        <!-- ============================================================================
+             TABELA DE CÁLCULO
+             ============================================================================= -->
+        <section class="caixa-card caixa-table-wrap">
+            <table class="tabela_calc caixa-table">
+                <thead>
+                    <tr>
+                        <th>VALOR</th>
+                        <th>QUANTIDADE</th>
+                        <th>TOTAL</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <!-- Cédulas: R$ 200 → R$ 2 -->
+                    <tr class="section-divider-row">
+                        <td colspan="3">Cédulas</td>
+                    </tr>
+                    <tr>
+                        <th class="valor-label">R$ 200,00</th>
+                        <td><input class="input-centered input_calc" type="number" id="input0" oninput="calculateTotal()" min="0" step="1" inputmode="numeric" placeholder="0"></td>
+                        <td class="line-total">R$ <span id="value0">0,00</span></td>
+                    </tr>
+                    <tr>
+                        <th class="valor-label">R$ 100,00</th>
+                        <td><input class="input-centered input_calc" type="number" id="input1" oninput="calculateTotal()" min="0" step="1" inputmode="numeric" placeholder="0"></td>
+                        <td class="line-total">R$ <span id="value1">0,00</span></td>
+                    </tr>
+                    <tr>
+                        <th class="valor-label">R$ 50,00</th>
+                        <td><input class="input-centered input_calc" type="number" id="input2" oninput="calculateTotal()" min="0" step="1" inputmode="numeric" placeholder="0"></td>
+                        <td class="line-total">R$ <span id="value2">0,00</span></td>
+                    </tr>
+                    <tr>
+                        <th class="valor-label">R$ 20,00</th>
+                        <td><input class="input-centered input_calc" type="number" id="input3" oninput="calculateTotal()" min="0" step="1" inputmode="numeric" placeholder="0"></td>
+                        <td class="line-total">R$ <span id="value3">0,00</span></td>
+                    </tr>
+                    <tr>
+                        <th class="valor-label">R$ 10,00</th>
+                        <td><input class="input-centered input_calc" type="number" id="input4" oninput="calculateTotal()" min="0" step="1" inputmode="numeric" placeholder="0"></td>
+                        <td class="line-total">R$ <span id="value4">0,00</span></td>
+                    </tr>
+                    <tr>
+                        <th class="valor-label">R$ 5,00</th>
+                        <td><input class="input-centered input_calc" type="number" id="input5" oninput="calculateTotal()" min="0" step="1" inputmode="numeric" placeholder="0"></td>
+                        <td class="line-total">R$ <span id="value5">0,00</span></td>
+                    </tr>
+                    <tr>
+                        <th class="valor-label">R$ 2,00</th>
+                        <td><input class="input-centered input_calc" type="number" id="input6" oninput="calculateTotal()" min="0" step="1" inputmode="numeric" placeholder="0"></td>
+                        <td class="line-total">R$ <span id="value6">0,00</span></td>
+                    </tr>
+                    <!-- Moedas: R$ 1 → R$ 0,05 -->
+                    <tr class="section-divider-row">
+                        <td colspan="3">Moedas</td>
+                    </tr>
+                    <tr>
+                        <th class="valor-label">R$ 1,00</th>
+                        <td><input class="input-centered input_calc" type="number" id="input7" oninput="calculateTotal()" min="0" step="1" inputmode="numeric" placeholder="0"></td>
+                        <td class="line-total">R$ <span id="value7">0,00</span></td>
+                    </tr>
+                    <tr>
+                        <th class="valor-label">R$ 0,50</th>
+                        <td><input class="input-centered input_calc" type="number" id="input8" oninput="calculateTotal()" min="0" step="1" inputmode="numeric" placeholder="0"></td>
+                        <td class="line-total">R$ <span id="value8">0,00</span></td>
+                    </tr>
+                    <tr>
+                        <th class="valor-label">R$ 0,25</th>
+                        <td><input class="input-centered input_calc" type="number" id="input9" oninput="calculateTotal()" min="0" step="1" inputmode="numeric" placeholder="0"></td>
+                        <td class="line-total">R$ <span id="value9">0,00</span></td>
+                    </tr>
+                    <tr>
+                        <th class="valor-label">R$ 0,10</th>
+                        <td><input class="input-centered input_calc" type="number" id="input10" oninput="calculateTotal()" min="0" step="1" inputmode="numeric" placeholder="0"></td>
+                        <td class="line-total">R$ <span id="value10">0,00</span></td>
+                    </tr>
+                    <tr>
+                        <th class="valor-label">R$ 0,05</th>
+                        <td><input class="input-centered input_calc" type="number" id="input11" oninput="calculateTotal()" min="0" step="1" inputmode="numeric" placeholder="0"></td>
+                        <td class="line-total">R$ <span id="value11">0,00</span></td>
+                    </tr>
+                </tbody>
+
+                <tfoot>
+                    <tr class="grand-total-row">
+                        <th>TOTAL DO CAIXA</th>
+                        <th colspan="2" class="grand-total-value">R$ <span id="total">0,00</span></th>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+    </main>
+
+    <br>
+    <footer>
+        <div class="footer">
+            Desenvolvido por
+            <a href="https://www.aeca.com.br/francis-castela">Francis Castela</a>
+            para a
+            <a href="https://www.lojadaviviunhas.com.br/">Loja da Vivi</a>.
+            Licença
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br" target="_blank"
+                rel="license noopener noreferrer">CC BY-NC-SA 4.0</a>
+        </div>
+    </footer>
+
 </body>
 
 </html>
