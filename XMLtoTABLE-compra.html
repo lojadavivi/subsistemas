@@ -1,208 +1,186 @@
 <!doctype html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
-    <title>SUBSISTEMA</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela XML de Compras - Loja da Vivi</title>
+    <link rel="icon" href="STYLES/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="STYLES/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <script src="JS/ui.js" defer></script>
 </head>
-
 <body>
-    <header>
-        <div id="titulo">SUBSISTEMA DA LOJA DA VIVI</div>
-    </header>
+    <div class="app-shell">
+        <header class="app-header">
+            <div class="brand-block">
+                <p class="eyebrow">Subsistema interno</p>
+                <h1 id="titulo">XML para Tabela - Compras</h1>
+                <p class="subtitle">Carregue XMLs e gere uma visão consolidada das notas.</p>
+            </div>
+            <div class="header-actions">
+                <button id="toggle-dark-mode" class="theme-toggle" type="button" title="Alternar tema" aria-label="Alternar tema">Tema</button>
+            </div>
+        </header>
 
-    <section id="XMLtoHTML">
-        <br>
-        <input class="botaoxml" type="file" id="xmlFilesInput" accept=".xml" multiple>
-        <button id="downloadAllBtn" style="display:none;">Baixar Todos os Arquivos</button>
-        <div id="tablesContainer"></div>
+        <main>
+            <section class="panel" id="XMLtoHTML">
+                <h2>Importar arquivos</h2>
+                <div class="xml-actions">
+                    <input class="input_calc" type="file" id="xmlFilesInput" accept=".xml" multiple>
+                    <button class="xml-btn" id="downloadAllBtn">Baixar todos os arquivos</button>
+                </div>
+            </section>
 
-        <script>
-            const filesToDownload = [];
-            let allDataRows = []; // Array para armazenar todas as linhas da tabela
+            <section class="panel">
+                <h2>Resultado</h2>
+                <div class="table-wrap">
+                    <div id="tablesContainer"></div>
+                </div>
+            </section>
+        </main>
 
-            // Função para carregar e processar os arquivos XML
-            function handleXMLFiles(event) {
-                const files = event.target.files;
-                const tablesContainer = document.getElementById("tablesContainer");
-                tablesContainer.innerHTML = ''; // Limpa o conteúdo anterior
-                filesToDownload.length = 0; // Limpa a lista de downloads
-                allDataRows.length = 0; // Limpa as linhas de dados
+        <footer class="app-footer">
+            <div>
+                <p class="footer-title">Subsistema Loja da Vivi</p>
+                <p class="footer-copy">Conferência de XML de compras com exportação em lote.</p>
+            </div>
+            <nav class="footer-links" aria-label="Atalhos do rodapé">
+                <a class="footer-chip" href="/subsistemas/XMLtoTABLE-venda.html">Tabela de vendas</a>
+                <a class="footer-chip" href="/subsistemas/XMLtoHTML.html">Gerador de DANFE</a>
+                <a class="footer-chip" href="/subsistemas/">Calculadora</a>
+            </nav>
+            <p class="footer-legal">Ferramenta interna para conferência de compras.</p>
+        </footer>
+    </div>
 
-                for (let i = 0; i < files.length; i++) {
-                    const file = files[i];
-                    const reader = new FileReader();
+    <script>
+        const filesToDownload = [];
+        let allDataRows = [];
 
-                    reader.onload = function (e) {
-                        const xmlData = e.target.result;
-                        const rowData = xmlToRow(xmlData, file.name); // Obtem as informações da linha
+        function handleXMLFiles(event) {
+            const files = event.target.files;
+            const tablesContainer = document.getElementById("tablesContainer");
+            tablesContainer.innerHTML = '';
+            filesToDownload.length = 0;
+            allDataRows.length = 0;
 
-                        if (rowData) {
-                            allDataRows.push(rowData); // Adiciona a linha à lista de dados
-                        }
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const reader = new FileReader();
 
-                        // Exibir tabela após processar todos os arquivos
-                        if (i === files.length - 1) {
-                            renderTable(); // Renderiza a tabela após processar todos os arquivos
-                        }
-                    };
+                reader.onload = function (e) {
+                    const xmlData = e.target.result;
+                    const rowData = xmlToRow(xmlData, file.name);
 
-                    reader.readAsText(file);
-                }
-
-                // Exibir botão de download após carregar os arquivos
-                if (files.length > 0) {
-                    document.getElementById("downloadAllBtn").style.display = "block";
-                }
-            }
-
-            // Função para transformar o XML em uma linha de dados
-            function xmlToRow(xmlData, originalFileName) {
-                if (window.DOMParser) {
-                    const parser = new DOMParser();
-                    const xmlDoc = parser.parseFromString(xmlData, "text/xml");
-
-                    // Seleção dos elementos desejados
-                    const nNF = xmlDoc.querySelector("nNF").textContent;
-                    const emitxNome = xmlDoc.querySelector("emit > xNome").textContent;
-
-                    // Captura e formatação da data no formato desejado
-                    const dataEmissaoISO = xmlDoc.querySelector("dhEmi").textContent;
-                    const dataEmissaoFormatada = formatarData(dataEmissaoISO);
-
-                    // Função para converter a data do formato ISO para DD/MM/YYYY
-                    function formatarData(dataISO) {
-                        const data = new Date(dataISO);
-                        const dia = String(data.getDate()).padStart(2, '0');
-                        const mes = String(data.getMonth() + 1).padStart(2, '0'); // Mês em JavaScript vai de 0-11
-                        const ano = data.getFullYear();
-                        return `${dia}/${mes}/${ano}`;
+                    if (rowData) {
+                        allDataRows.push(rowData);
                     }
 
-                    // Função para formatar o CNPJ no formato 00.000.000/0000-00
-                    function formatarCNPJ(cnpj) {
-                        return cnpj.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, "$1.$2.$3/$4-$5");
+                    if (i === files.length - 1) {
+                        renderTable();
                     }
+                };
 
-                    // Formatação do CNPJ
-                    const emitCNPJ = xmlDoc.querySelector("emit > CNPJ").textContent;
-                    const emitCNPJFormatado = formatarCNPJ(emitCNPJ);
-
-                    // Formata a chave NFe para permitir quebra de linha
-                    const chNFe = xmlDoc.querySelector("chNFe").textContent;
-
-                    // Adiciona o blob do arquivo à lista de arquivos para download
-                    const newFileName = `${emitxNome} - ${nNF}`;
-                    const xmlBlob = new Blob([xmlData], { type: "application/xml" });
-                    filesToDownload.push({ blob: xmlBlob, name: `${newFileName}.xml` });
-
-                    // Retorna os dados da linha
-                    return {
-                        dataEmissao: dataEmissaoFormatada,
-                        emitxNome: emitxNome,
-                        nNF: nNF,
-                        emitCNPJ: emitCNPJFormatado,
-                        chNFe: chNFe
-                    };
-                }
-                return null; // Retorna null se houver algum erro
+                reader.readAsText(file);
             }
 
-            // Função para renderizar a tabela HTML unificada
-            function renderTable() {
-                const tablesContainer = document.getElementById("tablesContainer");
-                const rowsHTML = allDataRows.map(row => `
-                    <tr>
-                        <td>${row.dataEmissao}</td>
-                        <td>${row.emitxNome}</td>
-                        <td>${row.nNF}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>${row.emitCNPJ}</td>
-                        <td class="chaveNFe">${row.chNFe}</td>
-                    </tr>
-                `).join('');
+            if (files.length > 0) {
+                document.getElementById("downloadAllBtn").style.display = "inline-block";
+            }
+        }
 
-                // Criação da tabela HTML unificada
-                const tableHTML = `
-                    <table border="1">
+        function xmlToRow(xmlData) {
+            if (!window.DOMParser) return null;
+
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xmlData, "text/xml");
+
+            const nNF = xmlDoc.querySelector("nNF")?.textContent || "";
+            const emitxNome = xmlDoc.querySelector("emit > xNome")?.textContent || "";
+            const dataEmissaoISO = xmlDoc.querySelector("dhEmi")?.textContent || "";
+            const emitCNPJ = xmlDoc.querySelector("emit > CNPJ")?.textContent || "";
+            const chNFe = xmlDoc.querySelector("chNFe")?.textContent || "";
+
+            const data = new Date(dataEmissaoISO);
+            const dia = String(data.getDate()).padStart(2, '0');
+            const mes = String(data.getMonth() + 1).padStart(2, '0');
+            const ano = data.getFullYear();
+            const dataEmissao = `${dia}/${mes}/${ano}`;
+
+            const emitCNPJFormatado = emitCNPJ.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, "$1.$2.$3/$4-$5");
+
+            const newFileName = `${emitxNome} - ${nNF}`;
+            const xmlBlob = new Blob([xmlData], { type: "application/xml" });
+            filesToDownload.push({ blob: xmlBlob, name: `${newFileName}.xml` });
+
+            return { dataEmissao, emitxNome, nNF, emitCNPJ: emitCNPJFormatado, chNFe };
+        }
+
+        function renderTable() {
+            const tablesContainer = document.getElementById("tablesContainer");
+            const rowsHTML = allDataRows.map((row) => `
+                <tr>
+                    <td>${row.dataEmissao}</td>
+                    <td>${row.emitxNome}</td>
+                    <td>${row.nNF}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>${row.emitCNPJ}</td>
+                    <td class="chaveNFe">${row.chNFe}</td>
+                </tr>
+            `).join('');
+
+            tablesContainer.innerHTML = `
+                <table class="tabela_calc">
+                    <thead>
                         <tr>
                             <th>Data</th>
                             <th>Fornecedor</th>
                             <th>NF</th>
                             <th>CFOP</th>
                             <th>ICMS</th>
-                            <th>VALOR PROD</th>
-                            <th>VALOR NOTA</th>
+                            <th>Valor prod.</th>
+                            <th>Valor nota</th>
                             <th>PDF</th>
                             <th>XML</th>
-                            <th>CNPJ EMISSOR</th>
+                            <th>CNPJ emissor</th>
                             <th>Chave NFe</th>
                         </tr>
-                        ${rowsHTML}
-                    </table>
-                `;
+                    </thead>
+                    <tbody>${rowsHTML}</tbody>
+                </table>
+            `;
+        }
 
-                tablesContainer.innerHTML = tableHTML; // Renderiza a tabela no DOM
-            }
+        function downloadAllFiles() {
+            let index = 0;
 
-            // Função para baixar todos os arquivos ao clicar no botão
-            function downloadAllFiles() {
-                let index = 0; // Índice para controlar qual arquivo está sendo baixado
+            const downloadNextFile = () => {
+                if (index < filesToDownload.length) {
+                    const file = filesToDownload[index];
+                    const url = URL.createObjectURL(file.blob);
+                    const link = document.createElement("a");
+                    link.href = url;
+                    link.download = file.name;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    URL.revokeObjectURL(url);
+                    index++;
+                    setTimeout(downloadNextFile, 100);
+                }
+            };
 
-                const downloadNextFile = () => {
-                    if (index < filesToDownload.length) {
-                        const file = filesToDownload[index];
-                        const url = URL.createObjectURL(file.blob);
-                        const link = document.createElement("a");
-                        link.href = url;
-                        link.download = file.name;
-                        document.body.appendChild(link); // Adiciona o link ao DOM para funcionar no Firefox
-                        link.click(); // Simula o clique para download
-                        document.body.removeChild(link); // Remove o link do DOM
-                        URL.revokeObjectURL(url); // Libera o objeto URL
-                        index++; // Incrementa o índice para o próximo arquivo
-                        setTimeout(downloadNextFile, 100); // Chama a próxima função de download após 100ms
-                    }
-                };
+            downloadNextFile();
+        }
 
-                downloadNextFile(); // Inicia o processo de download
-            }
-
-            // Ouvinte de evento do input de arquivos
-            document.getElementById("xmlFilesInput").addEventListener("change", handleXMLFiles);
-            document.getElementById("downloadAllBtn").addEventListener("click", downloadAllFiles);
-        </script>
-
-        <style>
-            .tabelageral {
-                margin-top: 10px;
-                padding: 5px;
-                
-            }
-
-            table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-
-            th, td {
-                padding: 8px;
-                text-align: left;
-                font-size: x-small;
-            }
-
-            /* Permitir quebra de linha na coluna da chave NFe */
-            .chaveNFe {
-                word-break: break-all;
-            }
-        </style>
-    </section>
+        document.getElementById("xmlFilesInput").addEventListener("change", handleXMLFiles);
+        document.getElementById("downloadAllBtn").addEventListener("click", downloadAllFiles);
+    </script>
 </body>
-
 </html>

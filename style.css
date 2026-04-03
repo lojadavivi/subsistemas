@@ -1,437 +1,757 @@
-/* ============================================================================
-   RESET UNIVERSAL - Remove espaçamentos padrão
-   ============================================================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* ============================================================================
-   FONTE CUSTOMIZADA - Nunito
-   ============================================================================= */
 @font-face {
     font-family: "Nunito";
     src: url(STYLES/Nunito-VariableFont_wght.ttf);
 }
 
-/* ============================================================================
-   VARIÁVEIS CSS - Paleta de Cores Reutilizável
-   ============================================================================= */
-/**
- * Define cores globais para toda aplicação
- * Facilita manutenção e permite temas consistentes
- * 
- * MODO CLARO (padrão):
- * FUNDOS GERAIS:
- * --pagina-background: Fundo principal da página (cinza claro)
- * --fundo-padrao: Fundo padrão de componentes (cinza médio)
- * 
- * TEXTOS:
- * --texto-padrao: Texto normal (preto)
- * --texto-color-escuro: Destaque e títulos (magenta)
- * 
- * BOTÕES:
- * --botao-color-claro: Botão padrão (rosa claro)
- * --botao-color-claro-hover: Botão em hover (azul)
- * 
- * TABELAS (Cores por Empresa):
- * --tabela-padrao: Padrão (cinza)
- * --tabela-ltda: Loja da Vivi LTDA (roxo)
- * --tabela-ferreira: Ferreira Prosperita (azul)
- * --tabela-rav: RAV Shefa (verde)
- * --tabela-viviane: Viviane Christina (laranja)
- */
 :root {
-    --pagina-background: #EEE;
-    --fundo-padrao: #BBB;
-    --texto-padrao: #000;
-    --texto-color-escuro: #DB06B7;
-    --botao-color-claro: #FB74E5;
-    --botao-color-claro-hover: #00b3ff;
-    --tabela-padrao: #AAA;
-    --tabela-ltda: #CE93D8;
-    --tabela-ferreira: #90CAF9;
-    --tabela-rav: #A5D6A7;
-    --tabela-viviane: #FFAB91;
-    --glass-surface: rgba(255, 255, 255, 0.38);
-    --glass-surface-strong: rgba(255, 255, 255, 0.52);
-    --glass-border: rgba(255, 255, 255, 0.55);
-    --glass-shadow: 0 10px 28px rgba(20, 30, 50, 0.14);
-    --glass-highlight: rgba(255, 255, 255, 0.62);
+    color-scheme: light;
+
+    --f2-bg-canvas: #f3f2f1;
+    --f2-bg-gradient-a: #dbeafe;
+    --f2-bg-gradient-b: #fce7f3;
+    --f2-surface-1: rgba(255, 255, 255, 0.88);
+    --f2-surface-2: rgba(255, 255, 255, 0.66);
+    --f2-border-subtle: rgba(15, 23, 42, 0.1);
+    --f2-border-strong: rgba(15, 23, 42, 0.18);
+    --f2-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+    --f2-shadow-soft: 0 8px 20px rgba(15, 23, 42, 0.08);
+
+    --f2-text: #1f2937;
+    --f2-text-muted: #4b5563;
+    --f2-accent: #0f6cbd;
+    --f2-accent-hover: #115ea3;
+    --f2-success: #107c10;
+    --f2-warning: #9a6700;
+    --f2-accent-soft: #4f8fca;
+    --f2-control-bg: #ffffff;
+    --f2-control-bg-muted: #f9fafb;
+    --f2-control-text: #111827;
+    --f2-table-bg: #ffffff;
+    --f2-footer-bg: rgba(255, 255, 255, 0.92);
+    --f2-footer-text: #1f2937;
+    --f2-footer-muted: #4b5563;
+
+    --tabela-padrao: #dbe5f4;
+    --tabela-ltda: #efd6f9;
+    --tabela-ferreira: #d2ebff;
+    --tabela-rav: #dff6e4;
+    --tabela-viviane: #ffe1d2;
 }
 
-/* ============================================================================
-   MODO ESCURO - Detecção automática de preferência do sistema
-   ============================================================================= */
-/**
- * Detecta se o sistema operacional tem modo escuro ativo
- * e aplica automaticamente cores escuras para melhor conforto visual
- */
-@media (prefers-color-scheme: dark) {
-    :root:not(.light-mode) {
-        --pagina-background: #1E1E1E;
-        --fundo-padrao: #333333;
-        --texto-padrao: #E0E0E0;
-        --texto-color-escuro: #FF69B4;
-        --botao-color-claro: #9C27B0;
-        --botao-color-claro-hover: #00D4FF;
-        --tabela-padrao: #3A3A3A;
-        --tabela-ltda: #4A2B73;
-        --tabela-ferreira: #1F4E79;
-        --tabela-rav: #2E5E37;
-        --tabela-viviane: #8C4A3F;
-        --glass-surface: rgba(25, 34, 48, 0.38);
-        --glass-surface-strong: rgba(25, 34, 48, 0.54);
-        --glass-border: rgba(165, 195, 220, 0.24);
-        --glass-shadow: 0 12px 30px rgba(0, 0, 0, 0.36);
-        --glass-highlight: rgba(180, 215, 255, 0.24);
-    }
-}
-
-/* ============================================================================
-   MODO ESCURO - Classe CSS .dark-mode para toggle manual
-   ============================================================================= */
-/**
- * Permite ao usuário alternar manualmente entre modo claro e escuro
- * Independente da preferência do sistema
- * Aplicada ao elemento <html>
- */
 html.dark-mode {
-    --pagina-background: #1E1E1E;
-    --fundo-padrao: #333333;
-    --texto-padrao: #E0E0E0;
-    --texto-color-escuro: #FF69B4;
-    --botao-color-claro: #9C27B0;
-    --botao-color-claro-hover: #00D4FF;
-    --tabela-padrao: #3A3A3A;
-    --tabela-ltda: #4A2B73;
-    --tabela-ferreira: #1F4E79;
-    --tabela-rav: #2E5E37;
-    --tabela-viviane: #8C4A3F;
-    --glass-surface: rgba(25, 34, 48, 0.38);
-    --glass-surface-strong: rgba(25, 34, 48, 0.54);
-    --glass-border: rgba(165, 195, 220, 0.24);
-    --glass-shadow: 0 12px 30px rgba(0, 0, 0, 0.36);
-    --glass-highlight: rgba(180, 215, 255, 0.24);
+    color-scheme: dark;
+
+    --f2-bg-canvas: #111827;
+    --f2-bg-gradient-a: #10284a;
+    --f2-bg-gradient-b: #2b1b35;
+    --f2-surface-1: rgba(31, 41, 55, 0.8);
+    --f2-surface-2: rgba(31, 41, 55, 0.62);
+    --f2-border-subtle: rgba(255, 255, 255, 0.14);
+    --f2-border-strong: rgba(255, 255, 255, 0.22);
+    --f2-shadow: 0 20px 42px rgba(0, 0, 0, 0.4);
+    --f2-shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.24);
+
+    --f2-text: #f3f4f6;
+    --f2-text-muted: #d1d5db;
+    --f2-accent: #60a5fa;
+    --f2-accent-hover: #93c5fd;
+    --f2-success: #4ade80;
+    --f2-warning: #facc15;
+    --f2-accent-soft: #8bc1ff;
+    --f2-control-bg: #1f2937;
+    --f2-control-bg-muted: #111827;
+    --f2-control-text: #f3f4f6;
+    --f2-table-bg: #111827;
+    --f2-footer-bg: rgba(2, 8, 23, 0.92);
+    --f2-footer-text: #dbe7f8;
+    --f2-footer-muted: #a6b6ce;
+
+    --tabela-padrao: #2f3f55;
+    --tabela-ltda: #55346a;
+    --tabela-ferreira: #27405d;
+    --tabela-rav: #2f4c37;
+    --tabela-viviane: #5d3e31;
 }
 
-/*
- * Forca modo claro quando o usuario escolhe manualmente,
- * mesmo que o sistema esteja em modo escuro.
- */
-html.light-mode {
-    --pagina-background: #EEE;
-    --fundo-padrao: #BBB;
-    --texto-padrao: #000;
-    --texto-color-escuro: #DB06B7;
-    --botao-color-claro: #FB74E5;
-    --botao-color-claro-hover: #00b3ff;
-    --tabela-padrao: #AAA;
-    --tabela-ltda: #CE93D8;
-    --tabela-ferreira: #90CAF9;
-    --tabela-rav: #A5D6A7;
-    --tabela-viviane: #FFAB91;
-    --glass-surface: rgba(255, 255, 255, 0.38);
-    --glass-surface-strong: rgba(255, 255, 255, 0.52);
-    --glass-border: rgba(255, 255, 255, 0.55);
-    --glass-shadow: 0 10px 28px rgba(20, 30, 50, 0.14);
-    --glass-highlight: rgba(255, 255, 255, 0.62);
-}
-
-/* ============================================================================
-   ESTILOS BASE - HTML e BODY
-   ============================================================================= */
 html,
 body {
-    font-family: "Nunito";
-    font-weight: normal;
-    font-size: medium;
-    text-align: center;
-    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
     min-height: 100%;
-    line-height: 1;
-    background:
-        radial-gradient(1200px 600px at 8% -10%, rgba(0, 179, 255, 0.16), transparent 62%),
-        radial-gradient(1000px 520px at 92% 8%, rgba(251, 116, 229, 0.16), transparent 64%),
-        linear-gradient(145deg, var(--pagina-background), color-mix(in srgb, var(--pagina-background) 88%, #ffffff 12%));
-    color: var(--texto-padrao);
-    transition: background-color 0.5s ease, color 0.5s ease;
-}
-
-h1 {
-    font-family: "Nunito";
-    padding-bottom: 5px;
-}
-
-/* ============================================================================
-   CABEÇALHO - Header
-   ============================================================================= */
-/**
- * Seção superior da página contendo:
- * - Título principal
- * - Menu de navegação
- * - Versão e links de changelog
- * - Botão de toggle para modo escuro
- */
-header {
-    background: var(--glass-surface-strong);
-    color: var(--texto-color-escuro);
-    padding: 10px 30px;
-    max-width: 1000px;
-    margin: auto;
-    font-weight: bold;
-    border: 1px solid var(--glass-border);
-    border-radius: 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    backdrop-filter: blur(12px) saturate(130%);
-    -webkit-backdrop-filter: blur(12px) saturate(130%);
-    box-shadow: var(--glass-shadow);
-    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
-}
-
-/**
- * Wrapper para título e navegação (lado esquerdo do header)
- */
-header .header-left {
-    flex: 1;
-}
-
-/* ============================================================================
-   BOTÃO DE TOGGLE PARA MODO ESCURO
-   ============================================================================= */
-/**
- * Botão toggle para alternar modo escuro/claro
- * Posicionado no canto superior direito do header
- * Usa ícones de emoji para luz e escuridão
- */
-#toggle-dark-mode {
-    background: linear-gradient(160deg, var(--glass-highlight), var(--glass-surface));
-    color: var(--texto-padrao);
-    border: 1px solid var(--glass-border);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-    cursor: pointer;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s ease;
-    margin-left: 15px;
-    flex-shrink: 0;
     font-family: "Nunito", sans-serif;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+    color: var(--f2-text);
+    background:
+        radial-gradient(1200px 700px at 10% -20%, var(--f2-bg-gradient-a), transparent 60%),
+        radial-gradient(900px 620px at 96% 8%, var(--f2-bg-gradient-b), transparent 62%),
+        var(--f2-bg-canvas);
 }
 
-#toggle-dark-mode:hover,
-#toggle-dark-mode:focus {
-    background-color: var(--botao-color-claro-hover);
-    transform: scale(1.1);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+* {
+    box-sizing: border-box;
+}
+
+.app-shell {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 24px 16px 40px;
+    position: relative;
+}
+
+.app-header,
+.panel,
+.app-footer {
+    border: 1px solid var(--f2-border-subtle);
+    background: linear-gradient(145deg, var(--f2-surface-1), var(--f2-surface-2));
+    border-radius: 20px;
+    box-shadow: var(--f2-shadow);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    position: relative;
+    overflow: hidden;
+}
+
+.app-header::before,
+.panel::before,
+.app-footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.25), transparent 40%);
+}
+
+.app-header {
+    padding: 20px;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.app-header:hover,
+.panel:hover {
+    box-shadow: 0 18px 36px rgba(15, 23, 42, 0.16);
+}
+
+.eyebrow {
+    margin: 0;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    color: var(--f2-accent);
+    font-weight: 800;
+}
+
+#titulo {
+    margin: 8px 0 4px;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    line-height: 1.1;
+}
+
+.subtitle {
+    margin: 0;
+    color: var(--f2-text-muted);
+}
+
+.header-actions {
+    display: grid;
+    gap: 10px;
+    justify-items: end;
+}
+
+.quick-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: end;
+}
+
+.quick-nav a {
+    text-decoration: none;
+    border: 1px solid var(--f2-border-subtle);
+    background: rgba(255, 255, 255, 0.16);
+    color: var(--f2-text);
+    border-radius: 999px;
+    padding: 7px 12px;
+    font-size: 0.92rem;
+    transition: 0.2s ease;
+}
+
+.quick-nav a:hover,
+.quick-nav a:focus {
+    border-color: var(--f2-accent);
+    color: var(--f2-accent);
+    transform: translateY(-2px);
+    box-shadow: var(--f2-shadow-soft);
+}
+
+.theme-toggle {
+    border: 1px solid var(--f2-border-strong);
+    background: linear-gradient(140deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+    color: var(--f2-text);
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: var(--f2-shadow-soft);
+    transition: 0.2s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus {
+    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--f2-accent) 75%, white 25%);
+}
+
+main {
+    margin-top: 16px;
+    display: grid;
+    gap: 16px;
+}
+
+.panel {
+    padding: 18px;
+}
+
+.panel h2 {
+    margin: 0 0 12px;
+    font-size: 1.2rem;
+    letter-spacing: 0.01em;
+}
+
+.intro-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.intro-steps p {
+    margin: 0;
+    padding: 10px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.32);
+    border: 1px solid var(--f2-border-subtle);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+.guide-panel {
+    display: grid;
+    gap: 10px;
+    max-width: 780px;
+    justify-self: start;
+}
+
+.guide-status {
+    margin: 0;
+    font-weight: 700;
+    color: var(--f2-text);
+}
+
+.guide-checklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 8px;
+    align-items: stretch;
+}
+
+.guide-step {
+    position: relative;
+    margin: 0;
+    padding: 10px 12px 10px 34px;
+    border: 1px solid var(--f2-border-subtle);
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--f2-control-bg-muted) 80%, white 20%);
+    color: var(--f2-text-muted);
+    font-weight: 700;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+}
+
+.guide-step::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    transform: translateY(-50%);
+    border: 2px solid var(--f2-border-strong);
+    background: transparent;
+}
+
+.guide-step.is-active {
+    border-color: color-mix(in srgb, var(--f2-accent) 55%, var(--f2-border-subtle));
+    color: var(--f2-text);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--f2-accent) 12%, transparent);
+}
+
+.guide-step.is-active::before {
+    border-color: var(--f2-accent);
+    background: color-mix(in srgb, var(--f2-accent) 35%, white 65%);
+}
+
+.guide-step.is-done {
+    border-color: color-mix(in srgb, var(--f2-success) 50%, var(--f2-border-subtle));
+    color: var(--f2-text);
+}
+
+.guide-step.is-done::before {
+    border-color: var(--f2-success);
+    background: var(--f2-success);
+}
+
+.guide-hint {
+    margin: 0;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px dashed color-mix(in srgb, var(--f2-accent) 45%, var(--f2-border-subtle));
+    color: var(--f2-text-muted);
+    background: color-mix(in srgb, var(--f2-accent) 6%, transparent);
+}
+
+.controls-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    padding: 10px;
+    border-radius: 14px;
+    background: var(--tabela-padrao);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.32);
+}
+
+.field {
+    display: grid;
+    gap: 6px;
+}
+
+.field > span {
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--f2-text-muted);
+}
+
+.input_calc {
+    width: 100%;
+    border: 1px solid var(--f2-border-subtle);
+    background: var(--f2-control-bg);
+    color: var(--f2-control-text);
+    border-radius: 10px;
+    min-height: 40px;
+    padding: 8px 10px;
+    font-size: 0.95rem;
+    font-family: "Nunito", sans-serif;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input_calc:focus {
+    outline: 2px solid color-mix(in srgb, var(--f2-accent) 70%, white 30%);
+    outline-offset: 1px;
+}
+
+.money-input-wrap {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--f2-border-subtle);
+    border-radius: 10px;
+    background: var(--f2-control-bg);
+    padding: 0 10px;
+    min-height: 40px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.money-input-wrap:focus-within {
+    border-color: color-mix(in srgb, var(--f2-accent) 65%, white 35%);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--f2-accent) 20%, transparent);
+}
+
+.money-input-wrap input {
+    border: 0;
+    background: transparent;
+    min-height: 34px;
+    color: var(--f2-control-text);
+    font-family: "Nunito", sans-serif;
+    font-size: 0.95rem;
+}
+
+.money-input-wrap input:focus {
     outline: none;
 }
 
-/**
- * Título principal da página
- * Responsivo: reduz tamanho em telas pequenas (< 670px)
- */
-#titulo {
-    font-size: 36px;
-    margin-bottom: 10px;
+.mode-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
 }
 
-@media screen and (max-width: 670px) {
-    #titulo {
-        font-size: 26px;
-    }
-    
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    #toggle-dark-mode {
-        align-self: flex-end;
-        margin-left: 0;
-        margin-top: 10px;
-    }
+.mode-card {
+    border: 1px solid var(--f2-border-subtle);
+    border-radius: 14px;
+    padding: 12px;
+    background: var(--f2-control-bg-muted);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* ============================================================================
-   NAVEGAÇÃO - Menu Principal
-   ============================================================================= */
-/**
- * Menu em estilo botão com efeitos de interatividade
- * Transições suaves ao passar o mouse
- */
-
-/* Container de navegação */
-nav {
-    margin: 10px 0;
+.mode-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--f2-shadow-soft);
 }
 
-/* Links do menu - sem decoração padrão */
-nav ul li a {
-    text-decoration: none;
-    color: var(--texto-padrao);
-    padding: 0;
+.mode-card h3 {
+    margin: 0;
 }
 
-/* Items do menu - layout inline com hover effects */
-nav ul li {
-    display: inline-block;
-    margin: 5px;
-    cursor: pointer;
-    border: 1px solid var(--glass-border);
+.mode-card p {
+    margin: 8px 0 12px;
+    color: var(--f2-text-muted);
+    min-height: 40px;
+}
+
+.inline-field .money-input-wrap {
+    margin-top: 2px;
+}
+
+.manual-title,
+.manual-input {
+    color: var(--f2-accent);
+}
+
+.liquido-title,
+.liquido-input {
+    color: var(--f2-success);
+}
+
+.percentual-title,
+.percentual-input {
+    color: var(--f2-warning);
+}
+
+.help-details {
+    margin-top: 12px;
+    border: 1px solid var(--f2-border-subtle);
     border-radius: 12px;
-    width: 170px;
-    padding: 6px;
-    background: linear-gradient(160deg, color-mix(in srgb, var(--botao-color-claro) 55%, transparent), var(--glass-surface));
-    backdrop-filter: blur(8px) saturate(125%);
-    -webkit-backdrop-filter: blur(8px) saturate(125%);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s ease;
+    padding: 8px 12px;
+    background: var(--f2-control-bg-muted);
 }
 
-/* Estado hover e foco - zoom e mudança de cor */
-nav ul li:hover,
-nav ul li:focus {
-    background-color: var(--botao-color-claro-hover);
+.help-details summary {
     cursor: pointer;
-    transform: scale(1.1);
+    font-weight: 700;
 }
 
-/* ============================================================================
-   RODAPÉ - Footer
-   ============================================================================= */
-/**
- * Seção inferior da página com informações de:
- * - Créditos do desenvolvedor
- * - Link para site da loja
- * - Informações de licença
- */
-footer {
-    background: var(--glass-surface-strong);
-    max-width: 1000px;
-    margin: auto;
-    font-size: smaller;
-    padding: 10px;
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    backdrop-filter: blur(10px) saturate(130%);
-    -webkit-backdrop-filter: blur(10px) saturate(130%);
-    box-shadow: var(--glass-shadow);
+.help-details ul {
+    margin: 10px 0 2px;
+    padding-left: 18px;
+    color: var(--f2-text-muted);
 }
 
-footer a {
-    text-decoration: none;
-    color: var(--texto-padrao);
+.table-wrap {
+    overflow-x: auto;
+    border-radius: 14px;
+    border: 1px solid var(--f2-border-subtle);
 }
-
-/* ============================================================================
-   CALCULADORA - Estilos de Tabela
-   ============================================================================= */
-/**
- * Tabela principal da calculadora de preços
- * Suporta 3 modos: Manual, Valor Líquido, Percentual Líquido
- * Exibe resultados para 10 marketplaces diferentes
- */
 
 .tabela_calc {
+    width: 100%;
     border-collapse: collapse;
-    margin: 20px auto auto;
-    width: 95%;
-    max-width: 1000px;
-    background: var(--glass-surface);
-    border: 1px solid var(--glass-border);
-    border-radius: 18px;
-    overflow: hidden;
-    backdrop-filter: blur(11px) saturate(130%);
-    -webkit-backdrop-filter: blur(11px) saturate(130%);
-    box-shadow: var(--glass-shadow);
+    background: var(--f2-table-bg);
 }
 
-/* Células e linhas - bordas e espaçamento consistente */
+.tabela_calc tbody tr:nth-child(even) td {
+    background: color-mix(in srgb, var(--f2-table-bg) 85%, var(--f2-bg-canvas) 15%);
+}
+
+.tabela_calc tbody tr:hover td {
+    background: color-mix(in srgb, var(--f2-accent) 8%, var(--f2-table-bg));
+}
+
 .tabela_calc th,
-.tabela_calc td,
-.tabela_calc tr {
-    border: 1px solid color-mix(in srgb, var(--glass-border) 55%, #7f7f7f 45%);
-    padding: 10px 5px 10px 5px;
-    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+.tabela_calc td {
+    border: 1px solid var(--f2-border-subtle);
+    padding: 10px 8px;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 0.92rem;
 }
 
-/* ============================================================================
-   CALCULADORA - Inputs e Botões
-   ============================================================================= */
-
-/**
- * Campos de entrada (select, input)
- * Herda fonte Nunito para consistência visual
- */
-.input_calc {
-    background: color-mix(in srgb, var(--glass-surface-strong) 80%, transparent);
-    color: var(--texto-padrao);
-    font-family: "Nunito";
-    padding: 2px;
-    border: 1px solid var(--glass-border);
-    border-radius: 8px;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: background-color 0.5s ease, color 0.5s ease;
+.tabela_calc thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: color-mix(in srgb, var(--tabela-padrao) 80%, white 20%);
 }
 
-/**
- * Botão de ajuda (spoiler)
- * Exibe/oculta dicas sobre como usar cada modo da calculadora
- */
-.spoilerbutton {
-    background: linear-gradient(160deg, var(--glass-highlight), var(--glass-surface));
-    color: var(--texto-padrao);
-    cursor: pointer;
-    padding: 5px;
-    font-family: "Nunito";
-    border: 1px solid var(--glass-border);
+.marketplace-cell {
+    min-width: 175px;
+    background: var(--tabela-padrao);
+}
+
+.background-color-change {
+    transition: background-color 0.25s ease;
+}
+
+.app-footer {
+    margin-top: 16px;
+    padding: 18px;
+    color: var(--f2-footer-text);
+    background:
+        radial-gradient(600px 200px at 4% -30%, rgba(96, 165, 250, 0.28), transparent 60%),
+        radial-gradient(460px 180px at 95% -20%, rgba(244, 114, 182, 0.22), transparent 62%),
+        var(--f2-footer-bg);
+    border-color: color-mix(in srgb, var(--f2-accent) 35%, var(--f2-border-subtle));
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px 18px;
+    align-items: center;
+}
+
+.app-footer p {
+    margin: 4px 0;
+}
+
+.app-footer a,
+.version-link {
+    color: var(--f2-accent);
+}
+
+.app-footer a:hover,
+.version-link:hover {
+    color: var(--f2-accent-hover);
+}
+
+.footer-title {
+    margin: 0;
+    font-size: 1.03rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+
+.footer-copy {
+    margin: 2px 0 0;
+    color: var(--f2-footer-muted);
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: end;
+}
+
+.footer-chip {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid color-mix(in srgb, var(--f2-accent) 30%, var(--f2-border-subtle));
+    border-radius: 999px;
+    padding: 6px 11px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    background: color-mix(in srgb, var(--f2-accent) 10%, #ffffff 90%);
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.footer-chip:hover,
+.footer-chip:focus {
+    transform: translateY(-1px);
+    border-color: color-mix(in srgb, var(--f2-accent) 55%, white 45%);
+    background: color-mix(in srgb, var(--f2-accent) 20%, #ffffff 80%);
+}
+
+html.dark-mode .app-footer a,
+html.dark-mode .version-link {
+    color: #dbeafe;
+}
+
+html.dark-mode .app-footer a:hover,
+html.dark-mode .version-link:hover {
+    color: #ffffff;
+}
+
+html.dark-mode .footer-chip {
+    border: 1px solid rgba(219, 234, 254, 0.34);
+    background: rgba(15, 23, 42, 0.28);
+}
+
+html.dark-mode .footer-chip:hover,
+html.dark-mode .footer-chip:focus {
+    border-color: rgba(255, 255, 255, 0.56);
+    background: rgba(30, 41, 59, 0.46);
+}
+
+.footer-legal {
+    grid-column: 1 / -1;
+    margin-top: 4px;
+    color: var(--f2-footer-muted);
+    font-size: 0.9rem;
+}
+
+.xml-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.xml-btn {
+    border: 1px solid var(--f2-border-subtle);
+    background: linear-gradient(135deg, var(--f2-control-bg), color-mix(in srgb, var(--f2-control-bg-muted) 70%, white 30%));
+    color: var(--f2-control-text);
     border-radius: 10px;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-}
-
-/**
- * Conteúdo do spoiler (texto de ajuda)
- * Texto pequeno com espaçamento superior
- */
-.spoiler {
-    font-size: small;
-    padding-top: 5px;
-}
-
-/* ============================================================================
-   GERADOR DE DANFE - Botão XML
-   ============================================================================= */
-/**
- * Botão grande para exportar DANFE simplificada em XML
- * Com efeito hover para indicar interatividade
- */
-
-.botaoxml {
-    padding: 15px 50px;
+    padding: 9px 14px;
+    font-weight: 800;
     cursor: pointer;
-    font-family: "Nunito";
-    background: linear-gradient(160deg, var(--glass-highlight), var(--glass-surface));
-    border: 1px solid var(--glass-border);
-    border-radius: 14px;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: background-color 0.3s;
+    box-shadow: var(--f2-shadow-soft);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Hover effect - muda cor para chamar atenção */
-.botaoxml:hover,
-.botaoxml:focus {
-    background-color: var(--botao-color-claro);
-    cursor: pointer;
+.xml-btn:hover,
+.xml-btn:focus {
+    border-color: var(--f2-accent);
+    color: var(--f2-accent);
+    transform: translateY(-1px);
+}
+
+#downloadAllBtn {
+    display: none;
+}
+
+#tablesContainer {
+    margin-top: 8px;
+}
+
+.chaveNFe {
+    word-break: break-all;
+    max-width: 340px;
+}
+
+.tabelageral {
+    background-color: #ffffff;
+    color: #000000;
+    margin-top: 10px;
+    border: 5px solid #000000;
+    border-radius: 18px;
+    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.18);
+    padding: 8px;
+    width: 395mm;
+    min-height: 595mm;
+    font-family: "Nunito", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.tabelaprodutos {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tabelaprodutos th,
+.tabelaprodutos td {
+    border: 2px solid #000000;
+    padding: 5px;
+    text-align: left;
+}
+
+.centerrow,
+.centerrowgrande {
+    text-align: center;
+}
+
+.centerrowgrande {
+    font-size: 70px;
+}
+
+.row16 {
+    text-align: center;
+    font-size: 50px;
+}
+
+@media print {
+    .tabelageral {
+        border-radius: 0;
+        box-shadow: none;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .app-header {
+        grid-template-columns: 1fr;
+        display: grid;
+    }
+
+    .header-actions {
+        justify-items: start;
+    }
+
+    .quick-nav {
+        justify-content: start;
+    }
+}
+
+@media (min-width: 1100px) {
+    .calc-main {
+        grid-template-columns: minmax(280px, 0.9fr) minmax(420px, 1.1fr);
+        align-items: start;
+    }
+
+    .calc-main .intro-panel {
+        grid-column: 1;
+    }
+
+    .calc-main .guide-panel {
+        grid-column: 2;
+        max-width: none;
+    }
+
+    .calc-main > section:not(.intro-panel):not(.guide-panel) {
+        grid-column: 1 / -1;
+    }
+
+    .guide-checklist {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .app-shell {
+        padding: 14px 10px 26px;
+    }
+
+    .panel,
+    .app-header,
+    .app-footer {
+        border-radius: 16px;
+        padding: 14px;
+    }
+
+    .app-footer {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-links {
+        justify-content: start;
+    }
+
+    .controls-grid,
+    .mode-grid,
+    .intro-steps,
+    .xml-actions {
+        grid-template-columns: 1fr;
+    }
+
+        .guide-checklist {
+            grid-template-columns: 1fr;
+        }
+
+    .tabela_calc th,
+    .tabela_calc td {
+        font-size: 0.85rem;
+        min-width: 150px;
+    }
 }

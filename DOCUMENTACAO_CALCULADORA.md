@@ -1,253 +1,162 @@
-# Documentação da Calculadora de Preços
+# Documentação da Calculadora
 
-## Visão Geral
+## Resumo
 
-A calculadora de preços (`calculadora.js`) é um sistema complexo que calcula o preço final de produtos para múltiplos canais de distribuição (Amazon, Mercado Livre, Shopee, Shein, etc.), considerando custos, taxas, comissões, fretes e margens de lucro específicas de cada plataforma.
+Este projeto possui duas camadas separadas:
 
-## Estrutura da Função Principal
+- Camada de negócio: regras de cálculo e constantes
+- Camada de interface: layout, tema, interações e eventos
 
-A função `calcular(inputElement)` é acionada quando o usuário clica no botão de cálculo no formulário HTML. Ela executa 7 etapas principais:
+A separação facilita manutenção e reduz risco de regressão ao mexer no visual.
 
-### Etapa 1: Obtenção dos Valores de Entrada
-```javascript
-var cnpj = document.getElementById("cnpj").value;      // CNPJ/Loja
-var nivel = document.getElementById("nivel").value;    // Nível (1-5)
-var peso = document.getElementById("peso").value;      // Faixa de peso
-var custo_puro = ...                                   // Custo puro do produto
-var Manual = ...                                       // Preço de venda manual
-var ValorLiq = ...                                     // Valor líquido desejado
-var PctLiq = ...                                       // Percentual de margem
+## Arquivos e responsabilidades
+
+- JS/calc_variables.js
+  - Guarda todas as constantes de negócio
+  - Alíquotas por CNPJ
+  - Comissões, fretes, níveis, taxas e insumos
+  - Expõe mapas de configuração para manutenção rápida (CNPJ_ALIQUOTAS, FRETE_POR_PESO, NIVEL_DESCONTO)
+
+- JS/calculadora.js
+  - Função principal calcular()
+  - Lê entradas da tela
+  - Aplica fórmulas por canal
+  - Escreve os resultados nos IDs de saída
+
+- JS/ui.js
+  - Inicializa tema claro/escuro
+  - Faz bind de eventos dos campos
+  - Aplica cor de contexto por CNPJ
+  - Inicializa valores padrão dos campos
+  - Atualiza o assistente guiado com checklist de preenchimento
+
+- tests/regression-calculadora.js
+  - Executa regressão A/B entre legado e versão atual
+  - Compara todas as saídas textuais por cenário
+
+- index.html
+  - Estrutura semântica da interface
+  - Mantém IDs necessários para calculadora.js
+
+- style.css
+  - Tokens visuais e componentes em estilo Fluent 2
+  - Regras responsivas para desktop e mobile
+
+## Contrato de integração (não quebrar)
+
+Para preservar o funcionamento, estes IDs devem permanecer:
+
+- Entradas
+  - cnpj
+  - nivel
+  - peso
+  - custo
+  - Manual
+  - ValorLiq
+  - PctLiq
+
+- Saídas
+  - resultado_Presencial_Manual
+  - resultado_Presencial_ValorLiq
+  - resultado_Presencial_PctLiq
+  - resultado_Amazon_Manual
+  - resultado_Amazon_ValorLiq
+  - resultado_Amazon_PctLiq
+  - resultado_CasasBahia_Manual
+  - resultado_CasasBahia_ValorLiq
+  - resultado_CasasBahia_PctLiq
+  - resultado_Magalu_Manual
+  - resultado_Magalu_ValorLiq
+  - resultado_Magalu_PctLiq
+  - resultado_MLC_Manual
+  - resultado_MLC_ValorLiq
+  - resultado_MLC_PctLiq
+  - resultado_MLP_Manual
+  - resultado_MLP_ValorLiq
+  - resultado_MLP_PctLiq
+  - resultado_Olist_Manual
+  - resultado_Olist_ValorLiq
+  - resultado_Olist_PctLiq
+  - resultado_RD_Manual
+  - resultado_RD_ValorLiq
+  - resultado_RD_PctLiq
+  - resultado_Shein_Manual
+  - resultado_Shein_ValorLiq
+  - resultado_Shein_PctLiq
+  - resultado_Shopee_Manual
+  - resultado_Shopee_ValorLiq
+  - resultado_Shopee_PctLiq
+
+## Fluxo de execução
+
+1. Página carrega e os scripts são inicializados com defer.
+2. JS/ui.js aplica tema salvo e preenche campos padrão.
+3. JS/ui.js atualiza o assistente guiado de preenchimento.
+4. Eventos de mudança e digitação disparam calcular().
+5. JS/calculadora.js processa as fórmulas por canal.
+6. Resultados são exibidos em tempo real.
+
+## Ajuda guiada (UX)
+
+O assistente da tela principal acompanha 4 passos:
+
+- Selecionar CNPJ
+- Selecionar peso
+- Informar custo
+- Preencher somente um modo de cálculo
+
+Comportamento:
+
+- Marca etapas concluídas
+- Mostra etapa ativa
+- Exibe dica contextual para reduzir erro de preenchimento
+
+## Regressão comparativa (A/B)
+
+Para validar equivalência do motor após refatoração:
+
+```bash
+node tests/regression-calculadora.js
 ```
 
-**Entrada HTML requerida:**
-- Campo com ID "cnpj" - dropdown com opções de CNPJ
-- Campo com ID "nivel" - dropdown com níveis 1-5
-- Campo com ID "peso" - dropdown com faixas de peso
-- Campo com ID "custo" - valor em R$
-- Campo com ID "Manual" - valor em R$
-- Campo com ID "ValorLiq" - valor em R$
-- Campo com ID "PctLiq" - percentual
+Referência recente:
 
-### Etapa 2: Definição de Constantes de CNPJ
-Cada CNPJ tem uma taxa/comissão diferente:
-- LOJA DA VIVI LTDA
-- FERREIRA PROSPERITA COSMETICOS LTDA
-- RAV SHEFA DISTRIBUIDORA DE COSMETICOS LTDA (tratamento especial)
-- VIVIANE CHRISTINA FERREIRA
+- 1800 cenários comparados
+- 0 divergências entre legado e atual
 
-**Onde estão as constantes?** Arquivo `calc_variables.js`
+## Regras de negócio preservadas
 
-### Etapa 3: Definição de Constantes de Frete
-O frete varia de acordo com:
-- **Peso do produto**: até 0.3kg, 0.3-0.5kg, 0.5-1kg, ..., 23-30kg
-- **Plataforma de vendas**: cada uma tem frete diferente
+- Mesmo motor de cálculo da versão anterior
+- Mesmas constantes de negócio
+- Mesmo tratamento especial para CNPJ RAV SHEFA
+- Mesmo formato final dos textos de saída
 
-Produtos acima de R$ 79 geralmente têm frete reduzido ou gratuito.
+## Como alterar com segurança
 
-### Etapa 4: Definição de Constantes de Nível
-Níveis definem descontos progressivos no frete:
-- **Nível 5**: maior desconto
-- **Nível 1**: menor desconto
+### Ajustes visuais
 
-Plataformas como RAV SHEFA e RD não têm variação de nível.
+Edite apenas:
 
-### Etapa 5: Definição de Custo de Insumos
-Produtos com peso diferente têm custos de embalagem/insumos diferentes:
-- **Até 300g**: `Custo_Insumos_ate300G`
-- **Acima de 300g**: `Custo_Insumos_acima300G`
+- style.css
+- index.html
+- JS/ui.js
 
-**Custo total** = Custo puro + Custo de insumos
+Sem alterar nomes de IDs e sem mexer no contrato de integração.
 
-### Etapa 6: Cálculo de Preços para Canais
-Cada canal tem três métodos de cálculo:
+### Ajustes de negócio
 
-#### Método 1: Manual (calcNomeManual)
-Preço de entrada - (Custo + Comissão + Frete + Taxas)
-```
-Resultado = Manual - (custo + comissão + frete + taxas)
-```
+- Atualize constantes em JS/calc_variables.js
+- Se necessário, ajuste fórmulas em JS/calculadora.js
+- Valide todas as plataformas e faixas de preço/peso
 
-#### Método 2: Valor Líquido (calcNomeValorLiq)
-Calcula o preço de venda necessário para obter um valor líquido desejado.
-```
-Preço Venda = (Valor_Desejado + custo + frete + taxas) / (1 - taxa_comissão)
-```
+## Checklist rápido de regressão
 
-#### Método 3: Percentual de Margem (calcNomePctLiq)
-Calcula o preço de venda com uma margem percentual sobre o custo.
-```
-Preço_Venda = (custo + margem_percentual + frete + taxas) / (1 - taxa_comissão)
-```
+- CNPJ muda e a superfície de contexto acompanha
+- Tema claro/escuro alterna e persiste
+- Mudança em qualquer campo atualiza resultados
+- Todos os canais exibem resultados esperados
+- CNPJ RAV SHEFA continua com comportamento especial
 
-### Canais Suportados
+## Observação
 
-#### Presencial
-- Sem variação de frete por preço
-- Para RAV SHEFA: comissão reduzida
-
-#### Amazon
-- Frete progressivo até R$ 79
-- Faixas: até 30 / 30-50 / 50-79 / acima 79
-
-#### Casas Bahia
-- Taxa fixa aplicada
-- Frete progressivo até R$ 69,90
-- Variação de nível por CNPJ
-
-#### Magalu
-- Taxa variável por preço: até 9,99 / 10+
-- Frete progressivo até R$ 79
-
-#### Mercado Livre (Clássico e Premium)
-- Taxa variável por faixa de preço: até 12,50 / 12,50-29 / 29-50 / 50-79 / acima 79
-- Duas modalidades: Clássico (MLC) e Premium (MLP) com comissões diferentes
-
-#### Olist
-- Agregador de marketplace
-- Taxa fixa
-- Frete progressivo até R$ 79
-
-#### RD
-- Cliente especial com cálculo simplificado
-- Sem variação de nível
-- Frete fixo
-
-#### Shein
-- Taxa fixa
-- Frete progressivo até R$ 49,89
-- Duas faixas: até 49,89 / acima 49,89
-
-#### Shopee
-- Comissão variável por preço: até 79,99 / até 99,99 / até 199,99 / acima 200
-- Taxa progressiva em 4 faixas
-- Frete fixo
-
-### Etapa 7: Exibição de Resultados
-
-Os resultados são formatados e exibidos em elementos HTML com IDs específicos:
-- `resultado_Presencial_Manual`
-- `resultado_Amazon_Manual`
-- etc.
-
-**Formato do resultado**: "R$ XX,XX (YY%)" ou "R$ XX,XX (R$ YY,YY)"
-
-**Tratamento Especial**: Se CNPJ = "RAV SHEFA DISTRIBUIDORA DE COSMETICOS LTDA", apenas Presencial e Olist/RD são exibidos. Os demais ficam em branco.
-
-## Arquivo de Variáveis (calc_variables.js)
-
-Este arquivo externo deve conter todas as constantes:
-
-### Constantes de CNPJ
-```javascript
-var cnpj_LTDA = 0.05;           // Taxa para LOJA DA VIVI LTDA
-var cnpj_FERREIRA = 0.04;       // Taxa para FERREIRA PROSPERITA
-var cnpj_RAV = 0.02;            // Taxa para RAV SHEFA (reduzida)
-var cnpj_VIVI = 0.05;           // Taxa para VIVIANE CHRISTINA
-```
-
-### Constantes de Frete (por canal e peso)
-```javascript
-var Frete_Amazon_ATE30 = 10.50;
-var Frete_Amazon_30a50 = 15.00;
-// ... mais fretes para diferentes canais e pesos
-```
-
-### Constantes de Nível (descontos de frete)
-```javascript
-var Nivel_Amazon = 0.95;         // Desconto de 5% no frete Amazon
-var Nivel_Magalu_5 = 0.90;       // 10% de desconto no nível 5
-// ... mais níveis para diferentes canais
-```
-
-### Constantes de Comissão (por canal)
-```javascript
-var Comissao_Presencial = 0.05;  // 5% de comissão
-var Comissao_Amazon = 0.15;      // 15% de comissão
-// ... mais comissões
-```
-
-### Constantes de Taxa (por canal)
-```javascript
-var Taxa_CasasBahia = 2.50;      // Taxa fixa Casas Bahia
-var Taxa_ML_ATE12 = 1.50;        // Taxa Mercado Livre até R$ 12,50
-// ... mais taxas
-```
-
-### Constantes de Custo de Insumos
-```javascript
-var Custo_Insumos_ate300G = 0.50;    // Embalagem até 300g
-var Custo_Insumos_acima300G = 1.00;  // Embalagem acima 300g
-```
-
-## Como Modificar ou Adicionar Canais
-
-### Para adicionar um novo canal de vendas:
-
-1. **Adicione as constantes em `calc_variables.js`**:
-   - Comissão do novo canal
-   - Taxas (se houver)
-   - Fretes por faixa de peso e nível
-
-2. **Defina as variáveis de constante na função `calcular()`**:
-   ```javascript
-   var constFrete_NovoCanal;
-   var constNivel_NovoCanal;
-   ```
-
-3. **Implemente os três tipos de cálculo**:
-   ```javascript
-   // Manual
-   var calcNovoCanal_Manual = Manual - (custo + comissão + frete + taxa);
-   
-   // Valor Líquido (em uma ou mais faixas de preço)
-   var calcNovoCanal_ValorLiq = ... / (1 - comissão);
-   
-   // Percentual de Margem
-   var calcNovoCanal_PctLiq = ... / (1 - comissão);
-   ```
-
-4. **Adicione elementos HTML para exibição**:
-   ```html
-   <span id="resultado_NovoCanal_Manual"></span>
-   <span id="resultado_NovoCanal_ValorLiq"></span>
-   <span id="resultado_NovoCanal_PctLiq"></span>
-   ```
-
-5. **Adicione a exibição dos resultados** (na Etapa 7):
-   ```javascript
-   document.getElementById("resultado_NovoCanal_Manual").textContent = 
-       "R$ " + calcNovoCanal_Manual.toFixed(2).replace(".", ",") + ...
-   ```
-
-## Notas Importantes
-
-- **Valores em reais**: Todas as variáveis de preço usam ponto (.) como separador decimal internamente, mas são exibidas com vírgula (,) para o usuário brasileiro.
-
-- **Variável `x`**: Quando um valor não é definido ou "Selecione" é escolhido, a variável recebe o valor `x`, que deve ser zero ou estar definida como constante.
-
-- **Precisão de cálculo**: Todos os resultados usam `.toFixed(2)` para arredondar a 2 casas decimais.
-
-- **RAV SHEFA**: Tem tratamento especial com:
-  - Comissão reduzida no canal Presencial
-  - Apenas canais Presencial e alguns específicos são exibidos
-  - Não acessar canais não configurados
-
-## Debugging
-
-Se os cálculos estão incorretos:
-
-1. **Verifique calc_variables.js** - as constantes estão definidas?
-2. **Verifique os IDs dos elementos HTML** - combinam com o código?
-3. **Use console.log()** para imprimir valores:
-   ```javascript
-   console.log("CNPJ:", cnpj);
-   console.log("Custo total:", custo);
-   console.log("Resultado Presencial Manual:", calcPresencialManual);
-   ```
-4. **Verifique a entrada HTML** - os valores digitados estão corretos?
-
-## Performance
-
-A função é executada em tempo real quando o usuário clica no botão. Com os múltiplos cálculos e verificações de faixas de preço, o tempo de execução é praticamente instantâneo em navegadores modernos.
-
----
+FORMULAS_CALCULO.md continua como referência matemática para auditoria das fórmulas.

@@ -1,539 +1,277 @@
-<h1>Subsistema da Loja da Vivi</h1>
-</p>Gerenciar marketplaces e estoques não é uma tarefa fácil. É necessário verificar aumento de preços, calcular valores líquidos baseados em custos operacionais e impostos, entre outras funções que tomam tempo e reduzem nossa capacidade de vender mais rápido que a concorrência.</p>
-</p>Para reduzir o impacto destes problemas, o <b>Subsistema da Loja da Vivi</b> começou a ser desenvolvido por <a href="https://www.aeca.com.br/francis-castela" style="color: inherit; text-decoration: underline">Francis Castela</a>. Começou com a Planilha de Cálculo para Marketplaces no início de 2023, tornando-se a Calculadora para Marketplaces em 17/08/2023, após o desenvolvimento inicial dos subsistemas de estoque em 15/08/2023, e chegando a uma versão moderna e compacta em 03/04/2024 sem os módulos de estoque. Visa ser uma solução prática de cálculo de preços para agilizar o trabalho no escritório, garantindo que não seja perdido tempo em tarefas essenciais que são, infelizmente, lentas.</p>
-<p>Hoje o Subsistema conta com uma calculadora de preços para marketplaces e um gerador de Danfe Simplificada, sempre buscando se apresentar da forma mais intuitiva possível.</p>
-<p>Construído sob a licença <a
-            href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br" target="_blank"
-            rel="license noopener noreferrer" style="color: inherit; text-decoration: underline;">CC BY-NC-SA 4.0</a></p>
-<h2>Changelog</h2>
-<details>
-<summary>
-CALCULADORA
-</summary>
-<table>
-    <thead>
-        <tr style="background-color: #333843; color: aquamarine;">
-            <th style="width: 12ch;">VERSÃO</th>
-            <th style="text-align: left; padding: 0 2ch">CHANGELOG</th>
-        </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>4.7.0<br>31/03/2026</td>
-        <td>
-            <ul>
-                <li>Adicionada documentação detalhada para todos os arquivos.</li>
-                <li>Adicionado seletor de modo claro / escuro.</li>
-                <li>Estilo modificado para Liquid Glass.</li>
-                <li>Fórmulas de cálculo otimizadas.</li>
-            </ul>
-        </td>
-        <td>4.6.2<br>30/03/2026</td>
-        <td>
-            <ul>
-                <li>Comissão do marketplace MERCADO LIVRE CLÁSSICO alterada de 13% para 14%.</li>
-                <li>Comissão do marketplace MERCADO LIVRE PREMIUM alterada de 18% para 19%.</li>
-                <li>Taxas fixas marketplace MERCADO LIVRE alteradas:
-                    <br>Até R$ 12,50: não há
-                    <br>Entre R$ 12,50 e R$ 29,00: R$ 6,25
-                    <br>Entre R$ 29,00 e R$ 49,99: R$ 6,50
-                    <br>Entre R$ 50,00 e R$ 78,99: R$ 6,75
-                    <br>Acima de R$ 79,00: não há</li>
-                <li>Comissão do marketplace SHOPEE alterada de acordo com o valor do produto:
-                    <br>Até R$ 79,00: 20%
-                    <br>Acima de R$ 79,00: 14%</li>
-                <li>Taxas fixas do marketplace SHOPEE alteradas:
-                    <br>Até R$ 79,99: R$ 4,00
-                    <br>Entre R$ 80,00 e R$ 99,99: R$ 16,00
-                    <br>Entre R$ 100,00 e R$ 199,99: R$ 20,00
-                    <br>Acima de R$ 200,00: R$ 26,00
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>4.6.1<br>19/11/2025</td>
-        <td>
-            <ul>
-                <li>Alíquota de imposto da FERREIRA PROSPERITA COSMETICOS corrigida para 11%.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>4.6.0<br>12/11/2025</td>
-        <td>
-            <ul>
-                <li>Adicionado marketplace AMAZON.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>4.5.1<br>12/09/2025</td>
-        <td>
-            <ul>
-                <li>Taxa fixa do MAGALU atualizada, de R$5 para R$2.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>4.5.0<br>04/09/2025</td>
-        <td>
-            <ul>
-                <li>Adicionados marketplaces OLIST e RD.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>4.4.3<br>08/08/2025</td>
-        <td>
-            <ul>
-                <li>Adicionado custo de insumos em todos os cálculos. Abaixo de 300g = R$1. Acima de 300g = R$2.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>4.4.2<br>01/08/2025</td>
-        <td>
-            <ul>
-                <li>Correção de cálculo do MERCADO LIVRE CLÁSSICO se repetindo para o MERCADO LIVRE PREMIUM.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>4.4.1<br>29/07/2025</td>
-        <td>
-            <ul>
-                <li>Correção de cálculo do CNPJ RAV SHEFA de acordo com orientação da contabilidade.</li>
-                <li>Abreviação de nomenclaturas de const.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>4.4.0<br>28/07/2025</td>
-        <td>
-            <ul>
-                <li>Novos cálculos para o CNPJ RAV SHEFA, que trabalha com Lucro Presumido e apenas vendas presenciais.</li>
-                <li>Simplificadas todas as fórmulas de cálculo.</li>
-                <li>Apagadas fórmulas de marketplace não usados.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>4.3.5<br>21/07/2025</td>
-        <td>
-            <ul>
-                <li>Atualizado alíquota de CNPJs.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>4.3.4<br>20/05/2025</td>
-        <td>
-            <ul>
-                <li>Atualizados nomes dos CNPJs.</li>
-                <li>Adicionado link para o Changelog no texto da versão.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>4.3.3<br>19/02/2025</td>
-        <td>
-            <ul>
-                <li>Correção de bug em calcShopeeManual exibindo valores errados quando preço está próximo de 500.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>4.3.2<br>22/01/2025</td>
-            <td>
-                <ul>
-                    <li>Adicionado Presencial para cálculos de vendas na loja.</li>
-                </ul>
-            </td>
-    </tr>
-    <tr>
-        <td>4.3.1<br>18/12/2024</td>
-            <td>
-                <ul>
-                    <li>Taxas fixas do Mercado Livre alteradas:
-                    <br>Até R$ 28,99: R$ 6,25
-                    <br>Entre R$ 29,00 e R$ 49,99: R$ 6,50
-                    <br>Entre R$ 50,00 e R$ 78,99: R$ 6,75
-                    <br>Acima de R$ 79: não há</li>
-                </ul>
-            </td>
-    </tr>
-        <tr>
-            <td>4.3.0 <br> 02/07/2024</td>
-            <td>
-                <ul>
-                    <li>Adicionado markeplace Shein.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>4.2.9 <br> 19/06/2024</td>
-            <td>
-                <ul>
-                    <li>Divisão de porcentagem alterada de "." para ",".</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>4.2.8 <br> 13/06/2024</td>
-            <td>
-                <ul>
-                    <li>Taxa fixa da Shopee alterada de R$ 3 para R$ 4.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>4.2.7 <br> 23/05/2024</td>
-            <td>
-                <ul>
-                    <li>Adicionado 2% na comissão da Shopee por conta do programa Shopee Antecipa.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>4.2.6 <br> 15/05/2024</td>
-            <td>
-                <ul>
-                    <li>Corrigidas as taxas fixas do Mercado Livre para R$ 6,00 até valor de venda de R$ 78,99 e R$ 0 para valor de venda acima de R$ 79,00.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>4.2.5 <br> 29/04/2024</td>
-            <td>
-                <ul>
-                    <li>Atualizadas taxas de frete do Magalu para a nova política de frete, valendo a partir de 01/05/2024.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>4.2.4 <br> 10/04/2024</td>
-            <td>
-                <ul>
-                    <li>Reescritas todas as fórmulas de cálculo por valor líquido.</li>
-                    <li>Reescritas todas as fórmulas de cálculo por porcentagem líquida.</li>
-                    <li>Marketplaces RD e WebContinental marcados para manutenção, por falta de dados sobre taxas.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>4.2.3 <br> 09/04/2024</td>
-            <td>
-                <ul>
-                    <li>Reescritas todas as fórmulas de cálculo manual.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>4.2.2 <br> 05/04/2024</td>
-            <td>
-                <ul>
-                    <li>Cadastradas e atualizadas as variáveis de todos os marketplaces exceto WebContinental.</li>
-                    <li>Removida opção de categoria. A taxa de comissão por categoria será calculada pela mais alta por marketplace.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>4.2.1 <br> 04/04/2024</td>
-            <td>
-                <ul>
-                    <li>Correção de erros no layout em relação a mudança de cores por CNPJ.</li>
-                    <li>Adicionados marketplaces RD, SITE-UOOL e SITE-ATACADO (ainda em desenvolvimento).</li>
-                    <li>Alterados nomes de CNPJ para a razão social de cada um.</li>
-                    <li>Adicionado CNPJ VIVIANE CHRISTINA FERREIRA.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>4.2.0 <br> 03/04/2024</td>
-            <td>
-                <ul>
-                    <li>Mudança de layout seguindo os novos padrões.</li>
-                    <li>Adicionado marketplace CASAS BAHIA (ainda em desenvolvimento).</li>
-                    <li>Marketplace AMERICANAS marcado para manutenção.</li>
-                    <li>Removido SITE.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>4.1.2 <br> 18/01/2024</td>
-            <td>
-                <ul>
-                    <li>Atualizada taxa de cartão para SITE.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>4.1.1 <br> 10/10/2023</td>
-            <td>
-                <ul>
-                    <li>Adicionada diferenciação de cores na tabela e no H1 de acordo com o CNPJ selecionado para facilitar a identificação de para onde o valor está sendo calculado.</li>
-                    <li>Textos de ajuda ficam escondidos em um spoiler.</li>
-                    <li>Corrigida comissão do SITE.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>4.1.0 <br> 26/09/2023</td>
-            <td>
-                <ul>
-                    <li>Adicionada linha de cálculo para SITE, exibindo o valor em 12x com juros.</li>
-                    <li>Adicionado PIX na primeira linha de cálculo para SITE.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>4.0.3 <br> 15/09/2023</td>
-            <td>
-                <ul>
-                    <li>Corrigido bugs de cálculo nas fórmulas de porcentagem do Mercado Livre Clássico e Premium, e Site.</li>
-                    <li>Corrigido bug de cálculo manual da Shopee que mostrava um valor líquido maior do que o real.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>4.0.2 <br> 14/09/2023</td>
-            <td>
-                <ul>
-                    <li>Taxa fixa da Shopee aumentou de R$ 2,00 para R$ 3,00.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>4.0.1 <br> 22/08/2023</td>
-            <td>
-                <ul>
-                    <li>Corrigido bug que impedia cálculos para itens de custo inferior a R$ 8,00.</li>
-                    <li>Estilos CSS unificados e reorganizados.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td style="font-weight: bold;">4.0.0 <br> 17/08/2023</td>
-            <td>
-                <ul>
-                    <li>Nova versão em formato HTML! Agora é possível usar a calculadora individualmente, sem esperar outra pessoa parar.</li>
-                    <li>Correção de cálculos nas fórmulas que sugeriam valores muito baixos.</li>
-                    <li>Changelog de outras versões disponível na <a href="https://docs.google.com/spreadsheets/d/1JOVpaQqCp9t1EbIY9RhuKyxhysC2B_F3AEpm3ThkKtw/edit?usp=sharing" style="color: inherit; text-decoration: underline;">versão planilha (3.2.1 de 21/06/2023)</a>.</li>
-                </ul>
-            </td>
-        </tr>
-    </tbody>
-</table>
-</details>
+# Subsistema da Loja da Vivi
 
-<details>
-<summary>
-SUBSISTEMA
-</summary>
-<table>
-    <thead>
-        <tr style="background-color: #333843; color: aquamarine;">
-            <th style="width: 12ch;">VERSÃO</th>
-            <th style="text-align: left; padding: 0 2ch">CHANGELOG</th>
-        </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>3.2.0<br>02/07/2024</td>
-        <td>
-            <ul>
-                <li>Novo design! Paleta de cores inspirada em Material Design. Fonte padrão alterada para Nunito.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>3.1.0<br>12/06/2024</td>
-        <td>
-            <ul>
-                <li>Adicionado página de calculadora de caixa.</li>
-            </ul>
-        </td>
-    </tr>
-        <tr>
-            <td style="font-weight: bold;">3.0.0<br>03/04/2023</td>
-            <td>
-                <ul>
-                    <li>Novo design! Paleta de cores inspirada em visuais synthwave, e layout reorganizado para ser responsivo a dimensões da tela.</li>
-                    <li>Removidos botões de estoque, não mais utilizados.</li>
-                    <li>Calculadora movida para o index.</li>
-                    <li>Adicionado link para a planilha de vendas semanais.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>2.0.6<br>24/10/2023</td>
-            <td>
-                <ul>
-                    <li>Corrigido erro de ortografia em README</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>2.0.5<br>18/10/2023</td>
-            <td>
-                <ul>
-                    <li>Adicionado botão GERADOR DE DANFE SIMPLIFICADO.</li>
-                    <li>Adicionada fonte Lekton para alguns estilos.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-        <tr>
-            <td>2.0.4<br>16/10/2023</td>
-            <td>
-                <ul>
-                    <li>Changelog transferido para a página do projeto.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>2.0.3<br>29/09/2023</td>
-            <td>
-                <ul>
-                    <li>Corrigida posição dos botões na página para o exato centro.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>2.0.2 <br> 26/09/2023</td>
-            <td>
-                <ul>
-                    <li>Corrigido link social.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>2.0.1 <br> 05/09/2023</td>
-            <td>
-                <ul>
-                    <li>Corrigido erro de sintaxe que impedia CSS de funcionar.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td style="font-weight: bold;">2.0.0 <br> 05/09/2023</td>
-            <td>
-                <ul>
-                    <li>Lançamento de versão totalmente online hospedada no GitHub.</li>
-                    <li>Reorganização dos arquivos em pastas.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>1.0.2 <br> 26/08/2023</td>
-            <td>
-                <ul>
-                    <li>Bloco TODOS OS ESTOQUES será usado para conferência de estoques entre lojas.
-                        Posteriormente será readaptado para sua ideia de função original.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>1.0.1 <br> 21/08/2023</td>
-            <td>
-                <ul>
-                    <li>Adicionado bloco TODOS OS ESTOQUES (em breve), para bloco de estoque geral, que está
-                        sendo desenvolvido.</li>
-                    <li>Botões centralizados na página.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td style="font-weight: bold;">1.0.0 <br> 18/08/2023</td>
-            <td>
-                <ul>
-                    <li>Lançamento oficial! Bem vindo 1.0.0!</li>
-                    <li>Changelog redesenhado com separação de funções.</li>
-                    <li>Nova paleta de cores para todas as páginas.</li>
-                    <li>Estilos CSS unificados e reorganizados.</li>
-                    <li>Melhora na documentação.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>0.1.1 <br> 17/08/2023</td>
-            <td>
-                <ul>
-                    <li>Adicionada CALCULADORA PARA MARKETPLACES, reescrita em HTML.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>0.1.0 <br> 16/08/2023</td>
-            <td>
-                <ul>
-                    <li>Separados os estilos CSS em um único arquivo.</li>
-                    <li>Adicionado SITE na lista de estoque.</li>
-                    <li>Adicionado botão "CALCULADORA (em breve)" na página inicial para indexar a futura
-                        página da Calculadora para Marketplaces.</li>
-                    <li>Limpeza de código em variáveis.</li>
-                    <li>Melhora na documentação.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>0.0.1 <br> 15/08/2023</td>
-            <td>
-                <ul>
-                    <li>Desenvolvimento inicial do código, disponibilizando para testes.</li>
-                </ul>
-            </td>
-        </tr>
-    </tbody>
-</table>
-</details>
+Ferramenta interna para acelerar rotinas operacionais de precificação e emissão/organização de documentos fiscais.
 
-<details>
-<summary>
-DANFE SIMPLIFICADO
-</summary>
-<table>
-    <thead>
-        <tr style="background-color: #333843; color: aquamarine;">
-            <th style="width: 12ch;">VERSÃO</th>
-            <th style="text-align: left; padding: 0 2ch">CHANGELOG</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td style="font-weight: bold;">1.0.0<br>04/03/2024</td>
-            <td>
-                <ul>
-                    <li>Versão marcada como estável, depois de meses de testes.</li>
-                    <li>Mudança de layout seguindo os novos padrões.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>0.1.1<br>19/10/2023</td>
-            <td>
-                <ul>
-                    <li>Corrigido bug que fazia valores não exibir centavos nos preços.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>0.1.0<br>18/10/2023</td>
-            <td>
-                <ul>
-                    <li>Versão ALPHA funcional.</li>
-                    <li>Adicionado GIF para mostrar que o arquivo está sendo gerado.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>0.0.1<br>17/10/2023</td>
-            <td>
-                <ul>
-                    <li>Desenvolvimento inicial do código, disponibilizando para testes.</li>
-                </ul>
-            </td>
-        </tr>
-    </tbody>
-</table>
-</details>
+## Objetivo
+
+- Reduzir tempo de operação no escritório.
+- Padronizar cálculo de preço líquido entre marketplaces.
+- Apoiar geração e organização de DANFE/XML.
+
+## Módulos
+
+- `calc`: calculadora de marketplaces.
+- `core`: estrutura geral do subsistema (UI, navegação e páginas auxiliares).
+- `danfe`: gerador de DANFE simplificada.
+
+## Licença
+
+- `CC BY-NC-SA 4.0`
+
+## Changelog Unificado
+
+Base de versionamento: **versão da calculadora** (`calc`).
+
+Quando uma mudança não altera a calculadora, ela ainda entra na mesma linha do tempo e recebe:
+
+- `base-calc`: versão da calculadora vigente no período.
+- `módulo`: `core` ou `danfe`.
+
+### Padrão de escrita (dev)
+
+Use sempre frases curtas, no formato:
+
+- `tipo(escopo): ação objetiva`
+
+Tipos sugeridos:
+
+- `feat`: nova funcionalidade.
+- `fix`: correção de bug.
+- `refactor`: melhoria interna sem mudança funcional.
+- `style`: mudança visual/UX.
+- `docs`: documentação.
+- `chore`: manutenção/infra.
+
+### Template para novas entradas
+
+```md
+### [versão] - AAAA-MM-DD
+- tipo(módulo): mudança 1
+- tipo(módulo): mudança 2
+- base-calc: x.y.z (use quando o módulo não for `calc`)
+```
+
+## Histórico
+
+### [5.0.0] - 2026-04-03
+- style(core): aplicou repaginação global com refinamento de superfícies, interações e legibilidade.
+- style(core): redesenhou o rodapé em todas as páginas principais com layout unificado e atalhos úteis.
+- refactor(core): centralizou estilos dos módulos XML/DANFE no CSS global e removeu blocos inline duplicados.
+- fix(calc/olist): corrigiu mapeamento de frete da faixa `0.5 a 1kg` para evitar subprecificação no canal Olist.
+- test(calc): adicionou stress test financeiro com alta cobertura de cenários e validação de sanidade numérica.
+- docs(core): atualizou referência de versão da calculadora para `5.0.0`.
+
+### [4.7.0] - 2026-03-31
+- docs(calc): documentou os arquivos principais.
+- feat(core): adicionou seletor de tema claro/escuro.
+- style(core): atualizou visual para liquid glass.
+- refactor(calc): otimizou fórmulas de cálculo.
+
+### [4.6.2] - 2026-03-30
+- feat(calc/ml): atualizou comissão do ML Clássico para `14%`.
+- feat(calc/ml): atualizou comissão do ML Premium para `19%`.
+- feat(calc/ml): revisou tabela de taxas fixas por faixa de preço.
+- feat(calc/shopee): atualizou comissão por faixa (`<=79` e `>79`).
+- feat(calc/shopee): revisou tabela de taxas fixas por faixa de preço.
+
+### [4.6.1] - 2025-11-19
+- fix(calc/tax): corrigiu alíquota do CNPJ FERREIRA PROSPERITA para `11%`.
+
+### [4.6.0] - 2025-11-12
+- feat(calc): adicionou canal AMAZON.
+
+### [4.5.1] - 2025-09-12
+- feat(calc/magalu): atualizou taxa fixa de `R$ 5` para `R$ 2`.
+
+### [4.5.0] - 2025-09-04
+- feat(calc): adicionou canais OLIST e RD.
+
+### [4.4.3] - 2025-08-08
+- feat(calc): adicionou custo de insumos por peso (`<=300g` e `>300g`).
+
+### [4.4.2] - 2025-08-01
+- fix(calc/ml): corrigiu reaproveitamento indevido de cálculo entre Clássico e Premium.
+
+### [4.4.1] - 2025-07-29
+- fix(calc/rav): corrigiu cálculo do CNPJ RAV conforme orientação contábil.
+- refactor(calc): abreviou nomenclaturas de constantes.
+
+### [4.4.0] - 2025-07-28
+- feat(calc/rav): adicionou regra específica de lucro presumido para RAV.
+- refactor(calc): simplificou fórmulas de cálculo.
+- chore(calc): removeu fórmulas de marketplaces não utilizados.
+
+### [4.3.5] - 2025-07-21
+- feat(calc/tax): atualizou alíquotas de CNPJ.
+
+### [4.3.4] - 2025-05-20
+- chore(calc): atualizou nomes de CNPJ.
+- docs(core): adicionou link de changelog no texto de versão.
+
+### [4.3.3] - 2025-02-19
+- fix(calc/shopee): corrigiu erro de cálculo manual em valores próximos de `500`.
+
+### [4.3.2] - 2025-01-22
+- feat(calc): adicionou linha de cálculo para vendas presenciais.
+
+### [4.3.1] - 2024-12-18
+- feat(calc/ml): atualizou regras de taxas fixas por faixa de preço.
+
+### [4.3.0] - 2024-07-02
+- feat(calc): adicionou marketplace SHEIN.
+
+### [core/3.2.0] - 2024-07-02
+- style(core): aplicou novo design com paleta Material e fonte Nunito.
+- base-calc: `4.3.0`
+
+### [4.2.9] - 2024-06-19
+- fix(calc): ajustou exibição de porcentagem com separador decimal em vírgula.
+
+### [4.2.8] - 2024-06-13
+- feat(calc/shopee): atualizou taxa fixa para `R$ 4`.
+
+### [core/3.1.0] - 2024-06-12
+- feat(core): adicionou página de calculadora de caixa.
+- base-calc: `4.2.8`
+
+### [4.2.7] - 2024-05-23
+- feat(calc/shopee): adicionou `+2%` de comissão (programa Shopee Antecipa).
+
+### [4.2.6] - 2024-05-15
+- fix(calc/ml): corrigiu taxas fixas até `R$ 78,99` e acima de `R$ 79,00`.
+
+### [4.2.5] - 2024-04-29
+- feat(calc/magalu): atualizou taxas de frete para nova política.
+
+### [4.2.4] - 2024-04-10
+- refactor(calc): reescreveu fórmulas de cálculo por valor líquido.
+- refactor(calc): reescreveu fórmulas de cálculo por porcentagem líquida.
+- chore(calc): marcou RD e WebContinental em manutenção por falta de dados.
+
+### [4.2.3] - 2024-04-09
+- refactor(calc): reescreveu fórmulas de cálculo manual.
+
+### [4.2.2] - 2024-04-05
+- feat(calc): cadastrou e atualizou variáveis de marketplaces (exceto WebContinental).
+- feat(calc): removeu opção de categoria e passou a usar maior comissão por marketplace.
+
+### [4.2.1] - 2024-04-04
+- fix(calc/ui): corrigiu layout relacionado à troca de cores por CNPJ.
+- feat(calc): adicionou RD, SITE-UOOL e SITE-ATACADO (em desenvolvimento).
+- chore(calc): atualizou razão social dos CNPJs.
+- feat(calc): adicionou CNPJ VIVIANE CHRISTINA FERREIRA.
+
+### [4.2.0] - 2024-04-03
+- style(calc): atualizou layout para novo padrão visual.
+- feat(calc): adicionou CASAS BAHIA (em desenvolvimento).
+- chore(calc): marcou AMERICANAS em manutenção.
+- chore(calc): removeu canal SITE.
+
+### [danfe/1.0.0] - 2024-03-04
+- release(danfe): marcou versão estável após ciclo de testes.
+- style(danfe): atualizou layout para novo padrão visual.
+- base-calc: `4.1.2`
+
+### [4.1.2] - 2024-01-18
+- feat(calc/site): atualizou taxa de cartão do canal SITE.
+
+### [4.1.1] - 2023-10-10
+- feat(calc/ui): adicionou diferenciação visual por CNPJ.
+- feat(calc/ui): adicionou textos de ajuda em spoiler.
+- fix(calc/site): corrigiu comissão do canal SITE.
+
+### [4.1.0] - 2023-09-26
+- feat(calc/site): adicionou cálculo em `12x` com juros.
+- feat(calc/site): adicionou cálculo para PIX.
+
+### [core/2.0.6] - 2023-10-24
+- docs(core): corrigiu ortografia no README.
+- base-calc: `4.1.1`
+
+### [danfe/0.1.1] - 2023-10-19
+- fix(danfe): corrigiu exibição de centavos nos valores.
+- base-calc: `4.1.1`
+
+### [core/2.0.5] - 2023-10-18
+- feat(core): adicionou botão do gerador DANFE simplificado.
+- style(core): adicionou fonte Lekton em partes da UI.
+- base-calc: `4.1.1`
+
+### [danfe/0.1.0] - 2023-10-18
+- feat(danfe): publicou versão alpha funcional.
+- feat(danfe): adicionou GIF de carregamento durante geração.
+- base-calc: `4.1.1`
+
+### [danfe/0.0.1] - 2023-10-17
+- feat(danfe): iniciou desenvolvimento e liberou para testes.
+- base-calc: `4.1.1`
+
+### [core/2.0.4] - 2023-10-16
+- docs(core): moveu changelog para a página do projeto.
+- base-calc: `4.1.1`
+
+### [core/2.0.3] - 2023-09-29
+- fix(core/ui): corrigiu centralização dos botões.
+- base-calc: `4.1.0`
+
+### [core/2.0.2] - 2023-09-26
+- fix(core): corrigiu link social.
+- base-calc: `4.1.0`
+
+### [core/2.0.1] - 2023-09-05
+- fix(core/css): corrigiu erro de sintaxe que quebrava o CSS.
+- base-calc: `4.0.3`
+
+### [core/2.0.0] - 2023-09-05
+- release(core): publicou versão online hospedada no GitHub.
+- chore(core): reorganizou estrutura de pastas.
+- base-calc: `4.0.3`
+
+### [4.0.3] - 2023-09-15
+- fix(calc): corrigiu bugs de fórmula percentual em ML Clássico, ML Premium e SITE.
+- fix(calc/shopee): corrigiu cálculo manual com líquido acima do real.
+
+### [4.0.2] - 2023-09-14
+- feat(calc/shopee): atualizou taxa fixa de `R$ 2` para `R$ 3`.
+
+### [4.0.1] - 2023-08-22
+- fix(calc): corrigiu bloqueio de cálculo para custo abaixo de `R$ 8`.
+- refactor(calc): reorganizou e unificou estilos CSS.
+
+### [core/1.0.2] - 2023-08-26
+- feat(core/estoque): preparou bloco "Todos os Estoques" para conferência entre lojas.
+- base-calc: `4.0.1`
+
+### [core/1.0.1] - 2023-08-21
+- feat(core/estoque): adicionou bloco "Todos os Estoques" (em desenvolvimento).
+- style(core): centralizou botões na página.
+- base-calc: `4.0.0`
+
+### [4.0.0] - 2023-08-17
+- release(calc): lançou versão HTML para uso individual da calculadora.
+- fix(calc): corrigiu fórmulas com sugestão de preço subestimada.
+- docs(calc): referenciou changelog legado da planilha `3.2.1`.
+
+### [core/1.0.0] - 2023-08-18
+- release(core): lançamento oficial da base do subsistema.
+- docs(core): redesenhou changelog com separação por função.
+- style(core): aplicou nova paleta global.
+- refactor(core): reorganizou estilos CSS.
+- docs(core): melhorou documentação.
+- base-calc: `4.0.0`
+
+### [core/0.1.1] - 2023-08-17
+- feat(core): adicionou calculadora para marketplaces em HTML.
+- base-calc: `4.0.0`
+
+### [core/0.1.0] - 2023-08-16
+- refactor(core): consolidou estilos CSS em arquivo único.
+- feat(core/estoque): adicionou SITE na lista de estoque.
+- feat(core): adicionou botão de acesso à calculadora (em breve).
+- refactor(core): limpou variáveis de código.
+- docs(core): melhorou documentação.
+- base-calc: `pré-4.0.0`
+
+### [core/0.0.1] - 2023-08-15
+- feat(core): iniciou desenvolvimento e liberou para testes.
+- base-calc: `pré-4.0.0`

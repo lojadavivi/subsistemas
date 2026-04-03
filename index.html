@@ -1,642 +1,251 @@
 <!doctype html>
 <html lang="pt-BR">
-
 <head>
-	<!-- ============================================================================
-	     META TAGS E CONFIGURAÇÃO BÁSICA
-	     ============================================================================= -->
-	<meta charset="UTF-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Subsistema para a Loja da Vivi - Calculadora de preços para múltiplos marketplaces">
-
-	<!-- ============================================================================
-	     TÍTULO E ÍCONES
-	     ============================================================================= -->
-	<title>Calculadora de Marketplaces - Loja da Vivi</title>
-	<link rel="icon" href="STYLES/favicon.png" type="image/x-icon">
-	<link rel="shortcut icon" href="STYLES/icon.png" type="image/x-icon">
-
-	<!-- ============================================================================
-	     ESTILOS EXTERNOS
-	     ============================================================================= -->
-	<link rel="stylesheet" href="style.css">
-
-	<!-- ============================================================================
-	     ESTILOS LOCAIS PARA INPUTS E ELEMENTOS DE COR
-	     ============================================================================= -->
-	<style>
-		/* Cores para cálculo manual (AZUL) */
-		.manual-title { color: #1565C0; }
-		.manual-input {
-			color: #1565C0;
-			font-weight: bold;
-			width: 10ch;
-		}
-		.manual-highlight {
-			color: #1565C0;
-			font-weight: bold;
-		}
-
-		/* Cores para valor líquido (VERDE) */
-		.liquido-title { color: #4CAF50; }
-		.liquido-input {
-			color: #4CAF50;
-			font-weight: bold;
-			width: 10ch;
-		}
-		.liquido-highlight {
-			color: #4CAF50;
-			font-weight: bold;
-		}
-
-		/* Cores para porcentagem líquida (MARROM) */
-		.percentual-title { color: #827717; }
-		.percentual-input {
-			color: #827717;
-			font-weight: bold;
-			width: 10ch;
-			text-align: right;
-		}
-		.percentual-highlight {
-			color: #827717;
-			font-weight: bold;
-		}
-
-		/* Estilos para input de custo */
-		.cost-input { width: 10ch; }
-
-		/* Estilos para célula de marketplace */
-		.marketplace-cell { text-align: right; }
-
-		/* Estilos para cabeçalhos de tabela */
-		.table-header { width: 23ch; }
-
-		/* Estilos para links de versão */
-		.version-link { color: var(--texto-color-escuro); }
-
-		/* Card de orientacao rapida */
-		.intro-card {
-			max-width: 1000px;
-			margin: 14px auto 0;
-			padding: 14px;
-			border: 1px solid var(--glass-border);
-			border-radius: 16px;
-			background: var(--glass-surface-strong);
-			box-shadow: var(--glass-shadow);
-			backdrop-filter: blur(10px) saturate(125%);
-			-webkit-backdrop-filter: blur(10px) saturate(125%);
-		}
-
-		.intro-title {
-			font-size: 1.05rem;
-			font-weight: 800;
-			margin-bottom: 8px;
-			color: var(--texto-color-escuro);
-		}
-
-		.intro-grid {
-			display: flex;
-			gap: 8px;
-			flex-wrap: wrap;
-			justify-content: center;
-		}
-
-		.intro-pill {
-			font-size: 0.9rem;
-			padding: 6px 10px;
-			border-radius: 999px;
-			border: 1px solid var(--glass-border);
-			background: var(--glass-surface);
-		}
-
-		/* Destaque visual dos 3 modos de calculo */
-		.mode-card {
-			padding: 10px 10px 8px;
-			border-radius: 14px;
-			border: 1px solid var(--glass-border);
-			background: color-mix(in srgb, var(--glass-surface-strong) 82%, transparent);
-		}
-
-		.mode-input-line {
-			border: 1px solid var(--glass-border);
-			border-radius: 12px;
-			background: color-mix(in srgb, var(--glass-surface) 86%, transparent);
-		}
-
-		.input_calc:focus {
-			outline: 2px solid color-mix(in srgb, var(--botao-color-claro-hover) 70%, #ffffff 30%);
-			outline-offset: 1px;
-		}
-
-		.result-header {
-			font-size: 0.87rem;
-			line-height: 1.2;
-		}
-
-		/* Botao e painel de ajuda com estado visual */
-		.spoilerbutton {
-			display: inline-flex;
-			align-items: center;
-			gap: 6px;
-			font-weight: 700;
-		}
-
-		.spoilerbutton .spoiler-icon {
-			display: inline-flex;
-			align-items: center;
-			justify-content: center;
-			width: 18px;
-			height: 18px;
-			border-radius: 999px;
-			border: 1px solid color-mix(in srgb, var(--glass-border) 70%, #777 30%);
-			font-size: 0.85rem;
-			line-height: 1;
-			transition: transform 0.2s ease, background-color 0.2s ease;
-		}
-
-		.spoilerbutton.is-open .spoiler-icon {
-			transform: rotate(45deg);
-			background: color-mix(in srgb, var(--botao-color-claro) 28%, transparent);
-		}
-
-		.spoiler {
-			line-height: 1.35;
-		}
-
-		.spoiler.is-opening {
-			animation: spoilerReveal 0.22s ease-out;
-		}
-
-		@keyframes spoilerReveal {
-			from {
-				opacity: 0;
-				transform: translateY(-4px);
-			}
-			to {
-				opacity: 1;
-				transform: translateY(0);
-			}
-		}
-	</style>
-
-	<!-- ============================================================================
-	     SCRIPTS EXTERNOS (CALCULADORA)
-	     ============================================================================= -->
-	<script src="JS/calculadora.js"></script>
-	<script src="JS/calc_variables.js"></script>
-
-	<!-- ============================================================================
-	     LÓGICA DA PÁGINA (INICIALIZAÇÃO E INTERATIVIDADE)
-	     ============================================================================= -->
-	<script>
-		/**
-		 * INICIALIZAÇÃO DE VALORES
-		 * 
-		 * Propósito: Resetar todos os campos de entrada para valores padrão
-		 * ao carregar a página.
-		 * 
-		 * @function inicializar
-		 * @description Define valores iniciais dos inputs de preço
-		 */
-		function inicializar() {
-			document.getElementById("Manual").value = "0.00";
-			document.getElementById("ValorLiq").value = "0.00";
-			document.getElementById("PctLiq").value = "0";
-		}
-
-		/**
-		 * MAPEAMENTO DE CORES POR CNPJ
-		 * 
-		 * Define qual cor (variável CSS) será usada para cada empresa.
-		 * Permite fácil manutenção sem alterar a função.
-		 */
-		const CNPJ_COLOR_MAP = {
-			"Selecione": "var(--tabela-padrao)",
-			"LOJA DA VIVI LTDA": "var(--tabela-ltda)",
-			"FERREIRA PROSPERITA COSMETICOS LTDA": "var(--tabela-ferreira)",
-			"RAV SHEFA DISTRIBUIDORA DE COSMETICOS LTDA": "var(--tabela-rav)",
-			"VIVIANE CHRISTINA FERREIRA": "var(--tabela-viviane)"
-		};
-
-		/**
-		 * ALTERADOR DE BACKGROUND POR CNPJ
-		 * 
-		 * Propósito: Mudar a cor de fundo da tabela conforme CNPJ selecionado.
-		 * Otimização: Usa mapa de cores em vez de múltiplos if-else chain.
-		 * 
-		 * @function alterarBackgroundComBaseEmCnpj
-		 * @description Aplica cor correspondente ao CNPJ em todos os elementos
-		 *              com classe 'background-color-change'
-		 */
-		function alterarBackgroundComBaseEmCnpj() {
-			const elementsToChange = document.querySelectorAll('.background-color-change');
-			const cnpj = document.getElementById("cnpj").value;
-			const color = CNPJ_COLOR_MAP[cnpj] || "var(--tabela-padrao)";
-
-			elementsToChange.forEach(element => {
-				element.style.backgroundColor = color;
-			});
-		}
-
-		/**
-		 * TOGGLE DE MODO ESCURO
-		 * 
-		 * Propósito: Alternar entre modo claro e escuro
-		 * Salva preferência do usuário no localStorage
-		 * 
-		 * @function toggleDarkMode
-		 * @description Ativa/desativa classe .dark-mode no elemento <html>
-		 *              e atualiza ícone do botão
-		 */
-		function toggleDarkMode() {
-			try {
-				const html = document.documentElement;
-				const isDarkMode = !html.classList.contains('dark-mode');
-				const button = document.getElementById('toggle-dark-mode');
-
-				if (isDarkMode) {
-					html.classList.add('dark-mode');
-					html.classList.remove('light-mode');
-				} else {
-					html.classList.add('light-mode');
-					html.classList.remove('dark-mode');
-				}
-				
-				// Atualiza ícone do botão conforme modo (com proteção null)
-				if (button) {
-					button.textContent = isDarkMode ? '☀️' : '🌙';
-				}
-				
-				// Salva preferência no localStorage
-				localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
-				
-				console.log('Dark mode toggled successfully. Mode:', isDarkMode ? 'dark' : 'light');
-			} catch (error) {
-				console.error('Erro ao alternar modo escuro:', error);
-			}
-		}
-
-		/**
-		 * INICIALIZAÇÃO DE MODO ESCURO
-		 * 
-		 * Propósito: Detectar preferência do usuário ao carregar a página
-		 * 1. Verifica se há preferência salva no localStorage
-		 * 2. Se não, detecta preferência do sistema
-		 * 3. Aplica o modo correspondente
-		 * 
-		 * @function initDarkMode
-		 */
-		function initDarkMode() {
-			try {
-				const html = document.documentElement;
-				const button = document.getElementById('toggle-dark-mode');
-				const savedMode = localStorage.getItem('darkMode');
-				
-				let shouldBeDark = false;
-				
-				if (savedMode) {
-					// Usar preferência salva do usuário
-					shouldBeDark = savedMode === 'enabled';
-				} else {
-					// Detectar preferência do sistema
-					shouldBeDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-				}
-				
-				// Aplicar modo
-				if (shouldBeDark) {
-					html.classList.add('dark-mode');
-					html.classList.remove('light-mode');
-					if (button) button.textContent = '☀️';
-				} else {
-					html.classList.add('light-mode');
-					html.classList.remove('dark-mode');
-					if (button) button.textContent = '🌙';
-				}
-				
-				console.log('Dark mode initialized. Mode:', shouldBeDark ? 'dark' : 'light', 'Button found:', !!button);
-			} catch (error) {
-				console.error('Erro ao inicializar modo escuro:', error);
-			}
-		}
-
-		/**
-		 * TOGGLE DE AJUDA (SPOILER)
-		 * 
-		 * Propósito: Mostrar/esconder texto de ajuda quando usuário clica
-		 * no botão "Como funciona?".
-		 * 
-		 * @function spoilerAjuda
-		 * @param {HTMLElement} button - Elemento do botão clicado
-		 * @description Alterna visibilidade do próximo elemento (span.spoiler)
-		 */
-		function spoilerAjuda(button) {
-			const spoiler = button.nextElementSibling;
-			const isHidden = spoiler.style.display === "none" || spoiler.style.display === "";
-
-			// Comportamento de acordeao: fecha os outros paineis antes de abrir o atual
-			const allButtons = document.querySelectorAll('.spoilerbutton');
-			allButtons.forEach(otherButton => {
-				if (otherButton === button) return;
-				const otherSpoiler = otherButton.nextElementSibling;
-				if (otherSpoiler && otherSpoiler.classList.contains('spoiler')) {
-					otherSpoiler.style.display = "none";
-					otherSpoiler.classList.remove('is-opening');
-					otherButton.classList.remove('is-open');
-					otherButton.setAttribute('aria-expanded', 'false');
-				}
-			});
-
-			if (isHidden) {
-				spoiler.style.display = "block";
-				spoiler.classList.remove('is-opening');
-				void spoiler.offsetWidth;
-				spoiler.classList.add('is-opening');
-				button.classList.add('is-open');
-				button.setAttribute('aria-expanded', 'true');
-			} else {
-				spoiler.style.display = "none";
-				button.classList.remove('is-open');
-				button.setAttribute('aria-expanded', 'false');
-			}
-		}
-	</script>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadora de preços para marketplaces da Loja da Vivi.">
+    <title>Calculadora de Marketplaces - Loja da Vivi</title>
+    <link rel="icon" href="STYLES/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="STYLES/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="JS/calc_variables.js" defer></script>
+    <script src="JS/calculadora.js" defer></script>
+    <script src="JS/ui.js" defer></script>
 </head>
+<body>
+    <div class="app-shell">
+        <header class="app-header">
+            <div class="brand-block">
+                <p class="eyebrow">Subsistema interno</p>
+                <h1 id="titulo">Calculadora da Loja da Vivi</h1>
+                <p class="subtitle">Preços consistentes para todos os canais, com menos fricção no dia a dia.</p>
+            </div>
+            <div class="header-actions">
+                <button id="toggle-dark-mode" class="theme-toggle" type="button" title="Alternar tema" aria-label="Alternar tema">Tema</button>
+            </div>
+        </header>
 
-<body onload="initDarkMode(); inicializar()">
-	<header>
-		<!-- ============================================================================
-		     CABEÇALHO DA PÁGINA
-		     ============================================================================= -->
-		<div class="header-left">
-			<div id="titulo">SUBSISTEMA DA LOJA DA VIVI</div>
-			<nav>
-				<ul>
-					<li><a href="https://docs.google.com/spreadsheets/d/1JwWo0jGJEf9Elu5NvbUWfJ-AR0hm0Xm0NqKxLeRi2C4/edit?usp=sharing">
-						Vendas<br>semanais</a>
-					<li><a href="/subsistemas/XMLtoHTML">
-						Gerador de DANFE<br>simplificada</a>
-					<li><a href="/subsistemas/">
-						Calculadora para<br>Marketplaces</a>
-				</ul>
-			</nav>
-			<p><a class="version-link" href="https://github.com/lojadavivi/subsistemas?tab=readme-ov-file#changelog">Versão 4.7.0 de 31/03/2026</a></p>
-		</div>
-		<!-- Botão toggle para modo escuro/claro -->
-		<button id="toggle-dark-mode" onclick="toggleDarkMode()" title="Alternar modo escuro/claro">🌙</button>
-	</header>
+        <main class="calc-main">
+            <section class="panel intro-panel" aria-label="Guia rápido">
+                <h2>Fluxo rápido em 3 passos</h2>
+                <div class="intro-steps">
+                    <p><strong>1.</strong> Escolha CNPJ, nível, peso e custo.</p>
+                    <p><strong>2.</strong> Preencha somente um modo de cálculo.</p>
+                    <p><strong>3.</strong> Compare os resultados por marketplace.</p>
+                </div>
+            </section>
 
-	<section class="intro-card" aria-label="Guia rapido de uso da calculadora">
-		<div class="intro-title">Como usar em 3 passos</div>
-		<div class="intro-grid">
-			<span class="intro-pill">1. Selecione CNPJ, nivel, peso e custo</span>
-			<span class="intro-pill">2. Preencha apenas um modo: MANUAL, $ LIQUIDO ou % LIQUIDA</span>
-			<span class="intro-pill">3. Compare os resultados por marketplace na tabela abaixo</span>
-		</div>
-	</section>
+            <section class="panel guide-panel" aria-label="Assistente de preenchimento">
+                <h2>Assistente de preenchimento</h2>
+                <p id="guide-status" class="guide-status" aria-live="polite">Aguardando dados para iniciar o cálculo.</p>
+                <ul class="guide-checklist" aria-label="Checklist do cálculo">
+                    <li id="guide-step-cnpj" class="guide-step">Selecionar CNPJ</li>
+                    <li id="guide-step-peso" class="guide-step">Selecionar peso</li>
+                    <li id="guide-step-custo" class="guide-step">Informar custo</li>
+                    <li id="guide-step-modo" class="guide-step">Preencher um modo de cálculo</li>
+                </ul>
+                <p id="guide-hint" class="guide-hint">Dica: use somente um modo de entrada por vez para evitar análise confusa.</p>
+            </section>
 
-	<section id="Calculadora">
-		<!-- ============================================================================
-		     SEÇÃO 1: PARÂMETROS DE ENTRADA
-		     ============================================================================= -->
-		<table class="tabela_calc">
-			<tbody>
-				<!-- Cabeçalho dos parâmetros -->
-				<tr style="background-color: var(--tabela-padrao);" class="tabela_calc background-color-change">
-					<th>CNPJ</th>
-					<th>NÍVEL</th>
-					<th>PESO</th>
-					<th>CUSTO</th>
-				</tr>
-				
-				<!-- Inputs de parâmetros para cálculo -->
-				<tr style="background-color: var(--tabela-padrao);" class="tabela_calc background-color-change">
-					<!-- Seletor de CNPJ/Loja -->
-					<td>
-						<select class="input_calc" id="cnpj" name="cnpj"
-							onchange="alterarBackgroundComBaseEmCnpj(); calcular()">
-							<option value="Selecione">Selecione...</option>
-							<option value="LOJA DA VIVI LTDA">LOJA DA VIVI LTDA</option>
-							<option value="FERREIRA PROSPERITA COSMETICOS LTDA">FERREIRA PROSPERITA COSMETICOS LTDA</option>
-							<option value="RAV SHEFA DISTRIBUIDORA DE COSMETICOS LTDA">RAV SHEFA DISTRIBUIDORA DE COSMETICOS LTDA</option>
-							<option value="VIVIANE CHRISTINA FERREIRA">VIVIANE CHRISTINA FERREIRA</option>
-						</select>
-					</td>
-					
-					<!-- Seletor de nível de vendedor (1-5) -->
-					<td>
-						<select class="input_calc" id="nivel" name="nivel" onchange="calcular()">
-							<option value="5">5</option>
-							<option value="4">4</option>
-							<option value="3">3</option>
-							<option value="2">2</option>
-							<option value="1">1</option>
-						</select>
-					</td>
-					
-					<!-- Seletor de faixa de peso do produto -->
-					<td style="background-color: var(--tabela-padrao);" class="background-color-change">
-						<select class="input_calc" id="peso" name="peso" onchange="calcular()">
-							<option value="Selecione">Selecione...</option>
-							<option value="até 0.3kg">até 0.3kg</option>
-							<option value="0.3 a 0.5kg">0.3 a 0.5kg</option>
-							<option value="0.5 a 1kg">0.5 a 1kg</option>
-							<option value="1 a 2kg">1 a 2kg</option>
-							<option value="2 a 5kg">2 a 5kg</option>
-							<option value="5 a 9kg">5 a 9kg</option>
-							<option value="9 a 13kg">9 a 13kg</option>
-							<option value="13 a 17kg">13 a 17kg</option>
-							<option value="17 a 23kg">17 a 23kg</option>
-							<option value="23 a 30kg">23 a 30kg</option>
-						</select>
-					</td>
-					
-					<!-- Input de custo do produto -->
-					<td style="background-color: var(--tabela-padrao);" class="background-color-change">
-						R$ <input class="input_calc cost-input" id="custo" name="custo" placeholder="0,00"
-							oninput="calcular()" inputmode="decimal" aria-label="Custo do produto">
-					</td>
-				</tr>
-			</tbody>
-		</table>
+            <section class="panel" aria-label="Parâmetros principais">
+                <h2>Parâmetros da operação</h2>
+                <div class="controls-grid background-color-change" id="controls-surface">
+                    <label class="field">
+                        <span>CNPJ</span>
+                        <select class="input_calc" id="cnpj" name="cnpj">
+                            <option value="Selecione">Selecione...</option>
+                            <option value="LOJA DA VIVI LTDA">LOJA DA VIVI LTDA</option>
+                            <option value="FERREIRA PROSPERITA COSMETICOS LTDA">FERREIRA PROSPERITA COSMETICOS LTDA</option>
+                            <option value="RAV SHEFA DISTRIBUIDORA DE COSMETICOS LTDA">RAV SHEFA DISTRIBUIDORA DE COSMETICOS LTDA</option>
+                            <option value="VIVIANE CHRISTINA FERREIRA">VIVIANE CHRISTINA FERREIRA</option>
+                        </select>
+                    </label>
 
-		<!-- ============================================================================
-		     SEÇÃO 2: CALCULADORA COM TRÊS MODALIDADES
-		     ============================================================================= -->
-		<table class="tabela_calc">
-			<tbody>
-				<!-- Cabeçalho explicativo com 3 modos de cálculo -->
-				<tr>
-					<th rowspan="2" style="background-color: var(--tabela-padrao);" class="background-color-change">CÁLCULOS</th>
-					
-					<!-- Modo 1: MANUAL (insere preço de venda, calcula lucro) -->
-					<td class="mode-card">
-						<h1 class="manual-title">MANUAL</h1>
-						<button onclick="spoilerAjuda(this)" class="spoilerbutton" aria-expanded="false"><span>Como funciona?</span><span class="spoiler-icon">+</span></button>
-						<span class="spoiler" style="display: none; cursor: default; text-decoration: none;">
-							Aqui você insere o
-							<span class="manual-highlight">valor de venda</span>
-							manualmente, e o sistema lhe informa qual será o
-							<span class="liquido-highlight">valor líquido</span>
-							e a
-							<span class="percentual-highlight">porcentagem líquida</span>
-							aproximada que você receberá vendendo a esse preço em cada marketplace.
-						</span>
-					</td>
-					
-					<!-- Modo 2: VALOR LÍQUIDO (insere lucro desejado, calcula preço) -->
-					<td class="mode-card">
-						<h1 class="liquido-title">$ LÍQUIDO</h1>
-						<button onclick="spoilerAjuda(this)" class="spoilerbutton" aria-expanded="false"><span>Como funciona?</span><span class="spoiler-icon">+</span></button>
-						<span class="spoiler" style="display: none; cursor: default; text-decoration: none;">
-							Aqui você insere o
-							<span class="liquido-highlight">valor líquido</span>
-							que deseja receber pelo produto, e o sistema lhe sugere qual o
-							<span class="manual-highlight">valor de venda</span>
-							a colocar em cada marketplace, ao mesmo tempo que lhe informa qual a
-							<span class="percentual-highlight">porcentagem líquida</span>
-							que você está ganhando.
-						</span>
-					</td>
-					
-					<!-- Modo 3: PERCENTUAL LÍQUIDO (insere margem %, calcula preço) -->
-					<td class="mode-card">
-						<h1 class="percentual-title">% LÍQUIDA</h1>
-						<button onclick="spoilerAjuda(this)" class="spoilerbutton" aria-expanded="false"><span>Como funciona?</span><span class="spoiler-icon">+</span></button>
-						<span class="spoiler" style="display: none; cursor: default; text-decoration: none;">
-							Aqui você insere a
-							<span class="percentual-highlight">porcentagem líquida</span>
-							que deseja receber pelo produto, e o sistema lhe sugere qual o
-							<span class="manual-highlight">valor de venda</span>
-							a colocar em cada marketplace, ao mesmo tempo que lhe informa qual o
-							<span class="liquido-highlight">valor líquido</span>
-							que você está ganhando.
-						</span>
-					</td>
-				</tr>
-				
-				<!-- Row de inputs para as 3 modalidades -->
-				<tr style="text-align: center;" class="mode-input-line">
-					<!-- Input de preço manual (AZUL) -->
-					<td class="manual-highlight">R$ <input class="input_calc manual-input" type="number" id="Manual" name="Manual" oninput="calcular()" inputmode="decimal" placeholder="0,00" aria-label="Valor de venda manual"></td>
-					
-					<!-- Input de valor líquido desejado (VERDE) -->
-					<td class="liquido-highlight">R$ <input class="input_calc liquido-input" type="number" id="ValorLiq" name="ValorLiq" oninput="calcular()" inputmode="decimal" placeholder="0,00" aria-label="Valor liquido desejado"></td>
-					
-					<!-- Input de percentual líquido desejado (MARROM) -->
-					<td class="percentual-highlight"><input class="input_calc percentual-input" type="number" id="PctLiq" name="PctLiq" oninput="calcular()" inputmode="decimal" placeholder="0" aria-label="Percentual liquido desejado"> %</td>
-				</tr>
-				
-				<!-- ============================================================================
-				     TABELA DE RESULTADOS POR MARKETPLACE
-				     ============================================================================= -->
-				<!-- Cabeçalho da tabela de resultados -->
-				<tr style="background-color: var(--tabela-padrao);" class="background-color-change">
-					<th class="table-header">MARKETPLACE</th>
-					<th class="table-header result-header">VALOR LÍQUIDO APROX.<br>(MODO MANUAL)</th>
-					<th class="table-header result-header">SUGESTÃO DE VENDA<br>(MODO $ LÍQUIDO)</th>
-					<th class="table-header result-header">SUGESTÃO DE VENDA<br>(MODO % LÍQUIDA)</th>
-				</tr>
-				
-				<!-- PRESENCIAL -->
-				<tr>
-					<td class="marketplace-cell" style="background-color: var(--tabela-padrao);" class="background-color-change">PRESENCIAL</td>
-					<td id="resultado_Presencial_Manual"></td>
-					<td id="resultado_Presencial_ValorLiq"></td>
-					<td id="resultado_Presencial_PctLiq"></td>
-				</tr>
-				
-				<!-- AMAZON -->
-				<tr>
-					<td class="marketplace-cell" style="background-color: var(--tabela-padrao);" class="background-color-change">AMAZON</td>
-					<td id="resultado_Amazon_Manual"></td>
-					<td id="resultado_Amazon_ValorLiq"></td>
-					<td id="resultado_Amazon_PctLiq"></td>
-				</tr>
-				
-				<!-- CASAS BAHIA -->
-				<tr>
-					<td class="marketplace-cell" style="background-color: var(--tabela-padrao);" class="background-color-change">CASAS BAHIA</td>
-					<td id="resultado_CasasBahia_Manual"></td>
-					<td id="resultado_CasasBahia_ValorLiq"></td>
-					<td id="resultado_CasasBahia_PctLiq"></td>
-				</tr>
-				
-				<!-- MAGALU -->
-				<tr>
-					<td class="marketplace-cell" style="background-color: var(--tabela-padrao);" class="background-color-change">MAGALU</td>
-					<td id="resultado_Magalu_Manual"></td>
-					<td id="resultado_Magalu_ValorLiq"></td>
-					<td id="resultado_Magalu_PctLiq"></td>
-				</tr>
-				
-				<!-- MERCADO LIVRE CLÁSSICO -->
-				<tr>
-					<td class="marketplace-cell" style="background-color: var(--tabela-padrao);" class="background-color-change">MERCADO LIVRE CLÁSSICO</td>
-					<td id="resultado_MLC_Manual"></td>
-					<td id="resultado_MLC_ValorLiq"></td>
-					<td id="resultado_MLC_PctLiq"></td>
-				</tr>
-				
-				<!-- MERCADO LIVRE PREMIUM -->
-				<tr>
-					<td class="marketplace-cell" style="background-color: var(--tabela-padrao);" class="background-color-change">MERCADO LIVRE PREMIUM</td>
-					<td id="resultado_MLP_Manual"></td>
-					<td id="resultado_MLP_ValorLiq"></td>
-					<td id="resultado_MLP_PctLiq"></td>
-				</tr>
-				
-				<!-- OLIST -->
-				<tr>
-					<td class="marketplace-cell" style="background-color: var(--tabela-padrao);" class="background-color-change">OLIST</td>
-					<td id="resultado_Olist_Manual"></td>
-					<td id="resultado_Olist_ValorLiq"></td>
-					<td id="resultado_Olist_PctLiq"></td>
-				</tr>
-				
-				<!-- RD -->
-				<tr>
-					<td class="marketplace-cell" style="background-color: var(--tabela-padrao);" class="background-color-change">RD</td>
-					<td id="resultado_RD_Manual"></td>
-					<td id="resultado_RD_ValorLiq"></td>
-					<td id="resultado_RD_PctLiq"></td>
-				</tr>
-				
-				<!-- SHEIN -->
-				<tr>
-					<td class="marketplace-cell" style="background-color: var(--tabela-padrao);" class="background-color-change">SHEIN</td>
-					<td id="resultado_Shein_Manual"></td>
-					<td id="resultado_Shein_ValorLiq"></td>
-					<td id="resultado_Shein_PctLiq"></td>
-				</tr>
-				
-				<!-- SHOPEE -->
-				<tr>
-					<td class="marketplace-cell" style="background-color: var(--tabela-padrao);" class="background-color-change">SHOPEE</td>
-					<td id="resultado_Shopee_Manual"></td>
-					<td id="resultado_Shopee_ValorLiq"></td>
-					<td id="resultado_Shopee_PctLiq"></td>
-				</tr>
-			</tbody>
-		</table>
-	</section>
-	<!-- ============================================================================
-	     RODAPÉ DA PÁGINA
-	     ============================================================================= -->
-	<br>
-	<footer>
-		<div class="footer">
-			Desenvolvido por
-			<a href="https://www.aeca.com.br/francis-castela">Francis Castela</a>
-			para a
-			<a href="https://www.lojadaviviunhas.com.br/">Loja da Vivi</a>.
-			Licença
-			<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br" target="_blank"
-				rel="license noopener noreferrer">CC BY-NC-SA 4.0</a>
-		</div>
-	</footer>
+                    <label class="field">
+                        <span>Nível</span>
+                        <select class="input_calc" id="nivel" name="nivel">
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                        </select>
+                    </label>
 
+                    <label class="field">
+                        <span>Peso</span>
+                        <select class="input_calc" id="peso" name="peso">
+                            <option value="Selecione">Selecione...</option>
+                            <option value="até 0.3kg">até 0.3kg</option>
+                            <option value="0.3 a 0.5kg">0.3 a 0.5kg</option>
+                            <option value="0.5 a 1kg">0.5 a 1kg</option>
+                            <option value="1 a 2kg">1 a 2kg</option>
+                            <option value="2 a 5kg">2 a 5kg</option>
+                            <option value="5 a 9kg">5 a 9kg</option>
+                            <option value="9 a 13kg">9 a 13kg</option>
+                            <option value="13 a 17kg">13 a 17kg</option>
+                            <option value="17 a 23kg">17 a 23kg</option>
+                            <option value="23 a 30kg">23 a 30kg</option>
+                        </select>
+                    </label>
+
+                    <label class="field">
+                        <span>Custo</span>
+                        <div class="money-input-wrap">
+                            <span>R$</span>
+                            <input class="input_calc" id="custo" name="custo" placeholder="0,00" inputmode="decimal" aria-label="Custo do produto">
+                        </div>
+                    </label>
+                </div>
+            </section>
+
+            <section class="panel" aria-label="Modos de cálculo">
+                <h2>Modos de cálculo</h2>
+                <div class="mode-grid">
+                    <article class="mode-card">
+                        <h3 class="manual-title">Manual</h3>
+                        <p>Você informa o preço de venda e recebe o líquido aproximado.</p>
+                        <label class="field inline-field">
+                            <span>Entrada</span>
+                            <div class="money-input-wrap">
+                                <span>R$</span>
+                                <input class="input_calc manual-input" type="number" id="Manual" name="Manual" inputmode="decimal" placeholder="0,00" aria-label="Valor manual">
+                            </div>
+                        </label>
+                    </article>
+
+                    <article class="mode-card">
+                        <h3 class="liquido-title">Valor líquido</h3>
+                        <p>Você informa quanto quer receber e o sistema sugere o preço.</p>
+                        <label class="field inline-field">
+                            <span>Entrada</span>
+                            <div class="money-input-wrap">
+                                <span>R$</span>
+                                <input class="input_calc liquido-input" type="number" id="ValorLiq" name="ValorLiq" inputmode="decimal" placeholder="0,00" aria-label="Valor líquido desejado">
+                            </div>
+                        </label>
+                    </article>
+
+                    <article class="mode-card">
+                        <h3 class="percentual-title">Percentual líquido</h3>
+                        <p>Você informa a margem em percentual e recebe o preço sugerido.</p>
+                        <label class="field inline-field">
+                            <span>Entrada</span>
+                            <div class="money-input-wrap">
+                                <input class="input_calc percentual-input" type="number" id="PctLiq" name="PctLiq" inputmode="decimal" placeholder="0" aria-label="Percentual líquido desejado">
+                                <span>%</span>
+                            </div>
+                        </label>
+                    </article>
+                </div>
+
+                <details class="help-details">
+                    <summary>Precisa de ajuda para escolher um modo?</summary>
+                    <ul>
+                        <li>Manual: ideal para conferir um preço que você já pretende usar.</li>
+                        <li>Valor líquido: ideal quando você quer garantir um valor em reais.</li>
+                        <li>Percentual líquido: ideal para trabalhar com regra de margem.</li>
+                    </ul>
+                </details>
+            </section>
+
+            <section class="panel" aria-label="Resultados por marketplace">
+                <h2>Resultados por marketplace</h2>
+                <div class="table-wrap">
+                    <table class="tabela_calc">
+                        <thead>
+                            <tr class="background-color-change">
+                                <th>Marketplace</th>
+                                <th>Líquido aprox. no modo Manual</th>
+                                <th>Sugestão de venda no modo Valor líquido</th>
+                                <th>Sugestão de venda no modo Percentual líquido</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="marketplace-cell background-color-change">PRESENCIAL</th>
+                                <td id="resultado_Presencial_Manual"></td>
+                                <td id="resultado_Presencial_ValorLiq"></td>
+                                <td id="resultado_Presencial_PctLiq"></td>
+                            </tr>
+                            <tr>
+                                <th class="marketplace-cell background-color-change">AMAZON</th>
+                                <td id="resultado_Amazon_Manual"></td>
+                                <td id="resultado_Amazon_ValorLiq"></td>
+                                <td id="resultado_Amazon_PctLiq"></td>
+                            </tr>
+                            <tr>
+                                <th class="marketplace-cell background-color-change">CASAS BAHIA</th>
+                                <td id="resultado_CasasBahia_Manual"></td>
+                                <td id="resultado_CasasBahia_ValorLiq"></td>
+                                <td id="resultado_CasasBahia_PctLiq"></td>
+                            </tr>
+                            <tr>
+                                <th class="marketplace-cell background-color-change">MAGALU</th>
+                                <td id="resultado_Magalu_Manual"></td>
+                                <td id="resultado_Magalu_ValorLiq"></td>
+                                <td id="resultado_Magalu_PctLiq"></td>
+                            </tr>
+                            <tr>
+                                <th class="marketplace-cell background-color-change">MERCADO LIVRE CLÁSSICO</th>
+                                <td id="resultado_MLC_Manual"></td>
+                                <td id="resultado_MLC_ValorLiq"></td>
+                                <td id="resultado_MLC_PctLiq"></td>
+                            </tr>
+                            <tr>
+                                <th class="marketplace-cell background-color-change">MERCADO LIVRE PREMIUM</th>
+                                <td id="resultado_MLP_Manual"></td>
+                                <td id="resultado_MLP_ValorLiq"></td>
+                                <td id="resultado_MLP_PctLiq"></td>
+                            </tr>
+                            <tr>
+                                <th class="marketplace-cell background-color-change">OLIST</th>
+                                <td id="resultado_Olist_Manual"></td>
+                                <td id="resultado_Olist_ValorLiq"></td>
+                                <td id="resultado_Olist_PctLiq"></td>
+                            </tr>
+                            <tr>
+                                <th class="marketplace-cell background-color-change">RD</th>
+                                <td id="resultado_RD_Manual"></td>
+                                <td id="resultado_RD_ValorLiq"></td>
+                                <td id="resultado_RD_PctLiq"></td>
+                            </tr>
+                            <tr>
+                                <th class="marketplace-cell background-color-change">SHEIN</th>
+                                <td id="resultado_Shein_Manual"></td>
+                                <td id="resultado_Shein_ValorLiq"></td>
+                                <td id="resultado_Shein_PctLiq"></td>
+                            </tr>
+                            <tr>
+                                <th class="marketplace-cell background-color-change">SHOPEE</th>
+                                <td id="resultado_Shopee_Manual"></td>
+                                <td id="resultado_Shopee_ValorLiq"></td>
+                                <td id="resultado_Shopee_PctLiq"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <div>
+                <p class="footer-title">Subsistema Loja da Vivi</p>
+                <p class="footer-copy">Calculadora, XML e DANFE com fluxo visual unificado.</p>
+            </div>
+            <nav class="footer-links" aria-label="Atalhos do rodapé">
+                <a class="footer-chip" href="/subsistemas/">Calculadora</a>
+                <a class="footer-chip" href="/subsistemas/XMLtoHTML.html">Gerador de DANFE</a>
+                <a class="footer-chip" href="https://github.com/lojadavivi/subsistemas?tab=readme-ov-file#changelog">Changelog</a>
+            </nav>
+            <p class="footer-legal">
+                Desenvolvido por <a href="https://www.aeca.com.br/francis-castela">Francis Castela</a> para a
+                <a href="https://www.lojadaviviunhas.com.br/">Loja da Vivi</a>. Licença
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br" target="_blank" rel="license noopener noreferrer">CC BY-NC-SA 4.0</a>.
+                <a class="version-link" href="https://github.com/lojadavivi/subsistemas?tab=readme-ov-file#changelog">Versão 5.0.0 - 03/04/2026</a>
+            </p>
+        </footer>
+    </div>
 </body>
-
 </html>

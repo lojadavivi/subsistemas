@@ -13,11 +13,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Título da página -->
-	<title>SUBSISTEMA</title>
+	<title>Gerador de DANFE Simplificada - Loja da Vivi</title>
 
 	<!-- Descrição da página -->
-	<meta name="description" content="Subsistema para a Loja da Vivi, por Francis Castela">
+	<meta name="description" content="Gerador de DANFE simplificada para a Loja da Vivi.">
 	<link rel="stylesheet" href="style.css">
+	<script src="JS/ui.js" defer></script>
 
 	<!-- Scripts de terceiros -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.5/JsBarcode.all.min.js"></script>
@@ -27,31 +28,31 @@
 </head>
 
 <body>
-	<header>
-		<!-- Cabeçalho de links -->
-		<div id="titulo">SUBSISTEMA DA LOJA DA VIVI</div>
-		<nav>
-			<ul>
-				<li><a
-						href="https://docs.google.com/spreadsheets/d/1JwWo0jGJEf9Elu5NvbUWfJ-AR0hm0Xm0NqKxLeRi2C4/edit?usp=sharing">
-						Vendas<br>semanais</a>
-				<li><a href="/subsistemas/XMLtoHTML">
-						Gerador de DANFE<br>simplificada</a>
-				<li><a href="/subsistemas/">
-						Calculadora para<br>Marketplaces</a>
-			</ul>
-		</nav>
-	</header>
-	<section id="XMLtoHTML">
-		<br>
+	<div class="app-shell">
+		<header class="app-header">
+			<div class="brand-block">
+				<p class="eyebrow">Subsistema interno</p>
+				<h1 id="titulo">Gerador de DANFE Simplificada</h1>
+				<p class="subtitle">Converta XML em etiquetas e exporte em PDF com padrão visual consistente.</p>
+			</div>
+			<div class="header-actions">
+				<button id="toggle-dark-mode" class="theme-toggle" type="button" title="Alternar tema" aria-label="Alternar tema">Tema</button>
+			</div>
+		</header>
+
+		<main>
+			<section id="XMLtoHTML" class="panel">
+				<h2>Importar arquivos</h2>
 		<!-- Input para selecionar arquivos XML e salvar -->
 		<label for="xmlFilesInput">
 		</label>
-		<input class="botaoxml" type="file" id="xmlFilesInput" accept=".xml" multiple>
-		<button class="botaoxml" id="SalvarPDF">Salvar como PDF</button>
+		<input class="xml-btn" type="file" id="xmlFilesInput" accept=".xml" multiple>
+		<button class="xml-btn" id="SalvarPDF">Salvar como PDF</button>
 
 		<!-- Contêiner para as tabelas geradas a partir dos arquivos XML -->
-		<div id="tablesContainer"></div>
+		<div class="table-wrap">
+			<div id="tablesContainer"></div>
+		</div>
 
 		<script>
 			// Função para carregar e processar os arquivos XML
@@ -362,67 +363,26 @@
 
 		</script>
 
-		<style>
-			.tabelageral {
-				background-color: #FFFFFF;
-				color: #000000;
-				margin-top: 1px;
-				border: 5px solid #000000;
-				padding: 5px;
-				width: 395mm;
-				height: 595mm;
-				font-family: "Nunito";
-				font-size: 40px;
-				font-weight: bold;
-			}
+			</section>
+		</main>
 
-			.tabelageral+.tabelageral {
-				margin-top: 10px;
-			}
-
-			.tabelaprodutos {
-				border-collapse: collapse;
-				width: 100%;
-			}
-
-			.tabelaprodutos th,
-			.tabelaprodutos td {
-				border: 2px solid black;
-				padding: 5px;
-				text-align: left;
-			}
-
-			.centerrow,
-			.centerrowgrande {
-				text-align: center;
-			}
-
-			.centerrowgrande {
-				font-size: 70px;
-			}
-
-			.row16 {
-				text-align: center;
-				font-size: 50px;
-			}
-		</style>
-
-	</section>
-	
-	<br>
-	<footer>
-		<div class="footer">
-			Desenvolvido por
-			<a href="https://francis-castela.github.io/portfolio/">Francis Castela</a>
-			para a
-			<a href="https://www.lojadaviviunhas.com.br/">Loja da Vivi</a>.
-			Licença
-			<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br" target="_blank"
-				rel="license noopener noreferrer">CC BY-NC-SA 4.0</a>
-		</div>
-	</footer>
-
-
+		<footer class="app-footer">
+			<div>
+				<p class="footer-title">Subsistema Loja da Vivi</p>
+				<p class="footer-copy">Geração de DANFE simplificada com visual de impressão mais limpo.</p>
+			</div>
+			<nav class="footer-links" aria-label="Atalhos do rodapé">
+				<a class="footer-chip" href="/subsistemas/XMLtoTABLE-compra.html">Tabela de compras</a>
+				<a class="footer-chip" href="/subsistemas/XMLtoTABLE-venda.html">Tabela de vendas</a>
+				<a class="footer-chip" href="/subsistemas/">Calculadora</a>
+			</nav>
+			<p class="footer-legal">
+				Desenvolvido por <a href="https://francis-castela.github.io/portfolio/">Francis Castela</a> para a
+				<a href="https://www.lojadaviviunhas.com.br/">Loja da Vivi</a>. Licença
+				<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br" target="_blank" rel="license noopener noreferrer">CC BY-NC-SA 4.0</a>.
+			</p>
+		</footer>
+	</div>
 </body>
 
 </html>
