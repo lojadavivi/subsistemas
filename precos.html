@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gerador de tabela de preços em páginas A4 a partir de planilha CSV ou XLS.">
+    <title>Tabela de Preços A4 - Loja da Vivi</title>
+    <link rel="icon" href="STYLES/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="STYLES/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="JS/ui.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" defer></script>
+    <script src="JS/precos.js" defer></script>
+    <style>
+        .price-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .price-meta {
+            margin: 10px 0 0;
+            color: var(--f2-text-muted);
+            font-weight: 700;
+        }
+
+        .price-model-field {
+            display: grid;
+            gap: 6px;
+            min-width: 190px;
+        }
+
+        .price-model-field span {
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: var(--f2-text-muted);
+        }
+
+        .a4-pages {
+            display: grid;
+            gap: 14px;
+            justify-items: center;
+        }
+
+        .a4-page {
+            width: 21cm;
+            min-height: 29.7cm;
+            border: 1px solid var(--f2-border-subtle);
+            background: #ffffff;
+            box-shadow: var(--f2-shadow-soft);
+            padding: 1.2cm 0.45cm 1.1cm;
+            overflow: hidden;
+        }
+
+        .price-sheet {
+            width: 20cm;
+            height: auto;
+            border-collapse: collapse;
+            table-layout: fixed;
+            margin: 0 auto;
+            background: #ffffff;
+        }
+
+        .a4-page.modelo-colorido-3x3 .price-sheet,
+        .a4-page.modelo-pb-3x3 .price-sheet {
+            width: 18cm;
+            height: auto;
+        }
+
+        .price-sheet td {
+            width: 5cm;
+            height: 3cm;
+            border: 1px solid #e04a99;
+            padding: 0;
+            vertical-align: middle;
+            background: #ffffff;
+        }
+
+        .a4-page.modelo-colorido-3x3 .price-sheet td,
+        .a4-page.modelo-pb-3x3 .price-sheet td {
+            width: 3cm;
+            height: 3cm;
+        }
+
+        .price-cell {
+            height: 100%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.5cm 1fr;
+            grid-template-rows: 0.78cm 1fr 0.38cm;
+            gap: 0.08cm;
+            align-items: stretch;
+            padding: 0.1cm 0.1cm 0.12cm;
+            overflow: hidden;
+            background: linear-gradient(180deg, #ffffff 0%, #fff6fb 100%);
+        }
+
+        .a4-page.modelo-pb .price-sheet td {
+            border-color: #000000;
+            background: #ffffff;
+        }
+
+        .a4-page.modelo-pb-3x3 .price-sheet td {
+            border-color: #000000;
+            background: #ffffff;
+        }
+
+        .a4-page.modelo-pb .price-cell {
+            background: #ffffff;
+        }
+
+        .a4-page.modelo-pb-3x3 .price-cell {
+            background: #ffffff;
+        }
+
+        .a4-page.modelo-pb .price-name,
+        .a4-page.modelo-pb .price-sku,
+        .a4-page.modelo-pb .price-logo {
+            color: #000000;
+        }
+
+        .a4-page.modelo-pb-3x3 .price-name,
+        .a4-page.modelo-pb-3x3 .price-sku,
+        .a4-page.modelo-pb-3x3 .price-logo {
+            color: #000000;
+        }
+
+        .a4-page.modelo-pb .price-tag {
+            background: #000000;
+            color: #ffffff;
+            box-shadow: none;
+        }
+
+        .a4-page.modelo-pb-3x3 .price-tag {
+            background: #000000;
+            color: #ffffff;
+            box-shadow: none;
+        }
+
+        .price-logo {
+            grid-column: 1;
+            grid-row: 2;
+            display: grid;
+            align-content: center;
+            justify-items: center;
+            user-select: none;
+        }
+
+        .price-logo-img {
+            width: 1.25cm;
+            height: auto;
+            max-height: 1.45cm;
+            object-fit: contain;
+        }
+
+        .price-name {
+            grid-column: 1 / -1;
+            grid-row: 1;
+            margin: 0;
+            font-size: 3.4mm;
+            font-weight: 900;
+            line-height: 1.05;
+            text-transform: uppercase;
+            letter-spacing: 0.01em;
+            color: #d93f95;
+            text-align: center;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            overflow: hidden;
+            align-self: center;
+        }
+
+        .price-sku {
+            grid-column: 1 / -1;
+            grid-row: 3;
+            margin: 0;
+            font-size: 2.6mm;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: 0.02em;
+            color: #5d3a97;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            align-self: center;
+        }
+
+        .price-tag {
+            grid-column: 2;
+            grid-row: 2;
+            place-self: stretch;
+            min-height: 1.35cm;
+            border-radius: 0.3cm;
+            background: #d93f95;
+            color: #ffffff;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 0.04cm;
+            padding: 0.12cm 0.16cm 0.12cm;
+            box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .price-rs {
+            margin: 0;
+            font-size: 4.3mm;
+            font-weight: 900;
+            line-height: 1;
+            align-self: center;
+        }
+
+        .price-value {
+            margin: 0;
+            font-size: 10.8mm;
+            font-weight: 900;
+            line-height: 0.9;
+            text-align: center;
+            letter-spacing: -0.01em;
+        }
+
+        .price-cents {
+            margin: 0;
+            font-size: 5.5mm;
+            font-weight: 900;
+            line-height: 1;
+            align-self: start;
+            letter-spacing: -0.02em;
+        }
+
+        .price-cell.no-logo {
+            grid-template-columns: 1fr;
+        }
+
+        .price-cell.no-logo .price-tag {
+            grid-column: 1;
+            min-height: 1.5cm;
+            padding: 0.12cm 0.22cm;
+        }
+
+        .price-cell.no-logo .price-rs {
+            font-size: 4.8mm;
+        }
+
+        .price-cell.no-logo .price-value {
+            font-size: 12mm;
+        }
+
+        .price-cell.no-logo .price-cents {
+            font-size: 6mm;
+        }
+
+        .price-cell.layout-3x3 {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1.05cm 1fr 0.4cm;
+            gap: 0.05cm;
+            padding: 0.09cm;
+        }
+
+        .price-cell.layout-3x3 .price-name {
+            grid-column: 1;
+            grid-row: 1;
+            font-size: 2.45mm;
+            line-height: 1.02;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+        }
+
+        .price-cell.layout-3x3 .price-tag {
+            grid-column: 1;
+            grid-row: 2;
+            min-height: 1.25cm;
+            border-radius: 0.25cm;
+            padding: 0.1cm 0.14cm;
+        }
+
+        .price-cell.layout-3x3 .price-rs {
+            font-size: 3.7mm;
+        }
+
+        .price-cell.layout-3x3 .price-value {
+            font-size: 9.8mm;
+        }
+
+        .price-cell.layout-3x3 .price-cents {
+            font-size: 5mm;
+        }
+
+        .price-cell.layout-3x3.price-int-3plus .price-rs {
+            font-size: 3.2mm;
+        }
+
+        .price-cell.layout-3x3.price-int-3plus .price-value {
+            font-size: 8.4mm;
+        }
+
+        .price-cell.layout-3x3.price-int-3plus .price-cents {
+            font-size: 4.3mm;
+        }
+
+        .price-cell.layout-3x3.price-int-4plus .price-rs {
+            font-size: 2.8mm;
+        }
+
+        .price-cell.layout-3x3.price-int-4plus .price-value {
+            font-size: 7.2mm;
+            letter-spacing: -0.02em;
+        }
+
+        .price-cell.layout-3x3.price-int-4plus .price-cents {
+            font-size: 3.8mm;
+        }
+
+        .price-cell.layout-3x3 .price-sku {
+            grid-column: 1;
+            grid-row: 3;
+            font-size: 2.15mm;
+            letter-spacing: 0.01em;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        @media print {
+            html,
+            body {
+                background: #ffffff !important;
+            }
+
+            .app-header,
+            .app-footer,
+            .price-import-panel {
+                display: none !important;
+            }
+
+            .app-shell,
+            main,
+            .panel {
+                margin: 0;
+                padding: 0;
+                max-width: none;
+                border: 0;
+                box-shadow: none;
+                background: transparent;
+            }
+
+            .panel[aria-label="Pré-visualização"] > h2 {
+                display: none;
+            }
+
+            .a4-pages {
+                gap: 0;
+            }
+
+            .a4-page {
+                width: 21cm;
+                height: 29.7cm;
+                min-height: 29.7cm;
+                padding: 1.2cm 0.45cm 1.1cm;
+                margin: 0;
+                border: 0;
+                box-shadow: none;
+                overflow: hidden;
+                break-after: page;
+                page-break-after: always;
+            }
+
+            .a4-page:last-child {
+                break-after: auto;
+                page-break-after: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-shell">
+        <header class="app-header">
+            <div class="brand-block">
+                <p class="eyebrow">Subsistema interno</p>
+                <h1 id="titulo">Tabela de Preços em A4</h1>
+                <p class="subtitle">Importe planilha XLS/CSV e gere etiquetas em grade.</p>
+            </div>
+            <div class="header-actions">
+                <button id="toggle-dark-mode" class="theme-toggle" type="button" title="Alternar tema" aria-label="Alternar tema">Tema</button>
+            </div>
+        </header>
+
+        <main>
+            <section class="panel price-import-panel" aria-label="Importar planilha">
+                <h2>Importar planilha</h2>
+                <div class="price-actions">
+                    <input class="input_calc" type="file" id="planilhaInput" accept=".xls,.csv" aria-label="Selecionar planilha">
+                    <label class="price-model-field" for="modeloEtiqueta">
+                        <span>Modelo da etiqueta</span>
+                        <select class="input_calc" id="modeloEtiqueta" aria-label="Modelo da etiqueta">
+                            <option value="colorido-3x3">3x3cm Colorido</option>
+                            <option value="pb-3x3">3x3cm Preto e Branco</option>
+                            <option value="colorido" selected>5x3cm Colorido</option>
+                            <option value="pb">5x3cm Preto e Branco</option>
+                        </select>
+                    </label>
+                    <button class="xml-btn" id="imprimirBtn" type="button">Imprimir</button>
+                </div>
+                <p id="priceMeta" class="price-meta" aria-live="polite">Aguardando arquivo XLS ou CSV.</p>
+            </section>
+
+            <section class="panel" aria-label="Pré-visualização">
+                <h2>Pré-visualização</h2>
+                <div id="a4Pages" class="a4-pages"></div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

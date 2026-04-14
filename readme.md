@@ -53,6 +53,12 @@ Tipos sugeridos:
 
 ## Histórico
 
+### [5.1.0] - 2026-04-14
+- feat(core/etiquetas): adicionou página de geração de etiquetas A4 com importação de planilhas `XLS` e `CSV`.
+- feat(core/etiquetas): implementou extração de dados pelas colunas `B` (código), `C` (nome) e `G` (preço).
+- feat(core/etiquetas): adicionou variações de layout `3x3cm` e `5x3cm`, com opções `Colorido` e `Preto e Branco`.
+- feat(core/etiquetas): adicionou seletor de modelo com troca dinâmica sem necessidade de reimportar a planilha.
+
 ### [5.0.0] - 2026-04-03
 - style(core): aplicou repaginação global com refinamento de superfícies, interações e legibilidade.
 - style(core): redesenhou o rodapé em todas as páginas principais com layout unificado e atalhos úteis.
