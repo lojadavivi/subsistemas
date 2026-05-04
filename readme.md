@@ -53,6 +53,18 @@ Tipos sugeridos:
 
 ## Histórico
 
+### [5.1.1] - 2026-05-04
+- fix(calc/ml): corrigiu taxa da faixa `<=12,50` para `50%` do valor de venda (era `R$ 0` fixo).
+- refactor(calc/ml): migrou `Taxa_ML_ATE12` para `Taxa_ML_ATE12_PCT = 0.5`, movendo o percentual ao denominador nas fórmulas de ValorLiq e PctLiq (MLC e MLP).
+- feat(core): adicionou links para Calculadora de Caixa e Gerador de etiquetas de preço no rodapé.
+- style(core): atualizou rótulos dos atalhos do rodapé para nomes completos dos módulos.
+
+### [5.1.0] - 2026-04-14
+- feat(core/etiquetas): adicionou página de geração de etiquetas A4 com importação de planilhas `XLS` e `CSV`.
+- feat(core/etiquetas): implementou extração de dados pelas colunas `B` (código), `C` (nome) e `G` (preço).
+- feat(core/etiquetas): adicionou variações de layout `3x3cm` e `5x3cm`, com opções `Colorido` e `Preto e Branco`.
+- feat(core/etiquetas): adicionou seletor de modelo com troca dinâmica sem necessidade de reimportar a planilha.
+
 ### [5.0.0] - 2026-04-03
 - style(core): aplicou repaginação global com refinamento de superfícies, interações e legibilidade.
 - style(core): redesenhou o rodapé em todas as páginas principais com layout unificado e atalhos úteis.
