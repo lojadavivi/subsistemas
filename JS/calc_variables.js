@@ -367,12 +367,12 @@ const Taxa_Magalu_ACIMA10 = 2;
 
 // ----- MERCADO LIVRE -----
 // Taxa por faixa de preço (para cobertura de pagamento, logística)
-// Até R$ 12,50: Sem taxa (item muito barato)
+// Até R$ 12,50: 50% do valor de venda (percentual — subtrai do denominador na fórmula)
 // R$ 12,50 - R$ 29: R$ 6,25
 // R$ 29 - R$ 50: R$ 6,50
 // R$ 50 - R$ 79: R$ 6,75
 // Acima de R$ 79: Sem taxa (produção é mais importante que taxa)
-const Taxa_ML_ATE12 = 0;
+const Taxa_ML_ATE12_PCT = 0.5; // percentual do valor de venda — usado no denominador, não no numerador
 const Taxa_ML_ATE29 = 6.25;
 const Taxa_ML_ATE50 = 6.5;
 const Taxa_ML_ATE79 = 6.75;

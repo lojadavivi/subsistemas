@@ -378,13 +378,14 @@ function calcular(inputElement) {
     const frete_ML_ATE79_n = Frete_ML_ATE79 * constNivel_ML;
     const frete_ML_ACIMA79_n = constFrete_MercadoLivre * constNivel_ML;
     const frete_Manual_ML = (Manual <= 78.99 ? frete_ML_ATE79_n : frete_ML_ACIMA79_n);
-    const taxa_Manual_ML = (Manual <= 12.5 ? Taxa_ML_ATE12 : Manual <= 29 ? Taxa_ML_ATE29 : Manual <= 50 ? Taxa_ML_ATE50 : Manual <= 78.99 ? Taxa_ML_ATE79 : Taxa_ML_ACIMA79);
+    const taxa_Manual_ML = (Manual <= 12.5 ? Taxa_ML_ATE12_PCT * Manual : Manual <= 29 ? Taxa_ML_ATE29 : Manual <= 50 ? Taxa_ML_ATE50 : Manual <= 78.99 ? Taxa_ML_ATE79 : Taxa_ML_ACIMA79);
 
     // MLC Manual - calcMLCManual - simplificado
     var calcMLCManual = Manual - (custo + Manual * (constCnpj + Comissao_MLC) + taxa_Manual_ML + frete_Manual_ML);
 
     // MLC Valor Liquido - calcMLCValorLiq - com cascata de 5 ternários
-    const calc_MLC_ate12 = (ValorLiq + custo + Taxa_ML_ATE12 + frete_ML_ATE79_n) / denominador_MLC;
+    // taxa até 12,50 é percentual: move para o denominador (denominador_MLC - Taxa_ML_ATE12_PCT)
+    const calc_MLC_ate12 = (ValorLiq + custo + frete_ML_ATE79_n) / (denominador_MLC - Taxa_ML_ATE12_PCT);
     const calc_MLC_ate29 = (ValorLiq + custo + Taxa_ML_ATE29 + frete_ML_ATE79_n) / denominador_MLC;
     const calc_MLC_ate50 = (ValorLiq + custo + Taxa_ML_ATE50 + frete_ML_ATE79_n) / denominador_MLC;
     const calc_MLC_ate79 = (ValorLiq + custo + Taxa_ML_ATE79 + frete_ML_ATE79_n) / denominador_MLC;
@@ -392,7 +393,8 @@ function calcular(inputElement) {
     var calcMLCValorLiq = (calc_MLC_ate12 <= 12.5) ? calc_MLC_ate12 : (calc_MLC_ate29 <= 29) ? calc_MLC_ate29 : (calc_MLC_ate50 <= 50) ? calc_MLC_ate50 : (calc_MLC_ate79 <= 78.99) ? calc_MLC_ate79 : calc_MLC_acima79;
 
     // MLC Porcentagem Liquida - calcMLCPctLiq - com cascata de 5 ternários
-    const calc_MLC_pct_ate12 = (custo_com_margem + Taxa_ML_ATE12 + frete_ML_ATE79_n) / denominador_MLC;
+    // taxa até 12,50 é percentual: move para o denominador (denominador_MLC - Taxa_ML_ATE12_PCT)
+    const calc_MLC_pct_ate12 = (custo_com_margem + frete_ML_ATE79_n) / (denominador_MLC - Taxa_ML_ATE12_PCT);
     const calc_MLC_pct_ate29 = (custo_com_margem + Taxa_ML_ATE29 + frete_ML_ATE79_n) / denominador_MLC;
     const calc_MLC_pct_ate50 = (custo_com_margem + Taxa_ML_ATE50 + frete_ML_ATE79_n) / denominador_MLC;
     const calc_MLC_pct_ate79 = (custo_com_margem + Taxa_ML_ATE79 + frete_ML_ATE79_n) / denominador_MLC;
@@ -403,7 +405,8 @@ function calcular(inputElement) {
     var calcMLPManual = Manual - (custo + Manual * (constCnpj + Comissao_MLP) + taxa_Manual_ML + frete_Manual_ML);
 
     // MLP Valor Liquido - calcMLPValorLiq - com cascata de 5 ternários
-    const calc_MLP_ate12 = (ValorLiq + custo + Taxa_ML_ATE12 + frete_ML_ATE79_n) / denominador_MLP;
+    // taxa até 12,50 é percentual: move para o denominador (denominador_MLP - Taxa_ML_ATE12_PCT)
+    const calc_MLP_ate12 = (ValorLiq + custo + frete_ML_ATE79_n) / (denominador_MLP - Taxa_ML_ATE12_PCT);
     const calc_MLP_ate29 = (ValorLiq + custo + Taxa_ML_ATE29 + frete_ML_ATE79_n) / denominador_MLP;
     const calc_MLP_ate50 = (ValorLiq + custo + Taxa_ML_ATE50 + frete_ML_ATE79_n) / denominador_MLP;
     const calc_MLP_ate79 = (ValorLiq + custo + Taxa_ML_ATE79 + frete_ML_ATE79_n) / denominador_MLP;
@@ -411,7 +414,8 @@ function calcular(inputElement) {
     var calcMLPValorLiq = (calc_MLP_ate12 <= 12.5) ? calc_MLP_ate12 : (calc_MLP_ate29 <= 29) ? calc_MLP_ate29 : (calc_MLP_ate50 <= 50) ? calc_MLP_ate50 : (calc_MLP_ate79 <= 78.99) ? calc_MLP_ate79 : calc_MLP_acima79;
 
     // MLP Porcentagem Liquida - calcMLPPctLiq - com cascata de 5 ternários
-    const calc_MLP_pct_ate12 = (custo_com_margem + Taxa_ML_ATE12 + frete_ML_ATE79_n) / denominador_MLP;
+    // taxa até 12,50 é percentual: move para o denominador (denominador_MLP - Taxa_ML_ATE12_PCT)
+    const calc_MLP_pct_ate12 = (custo_com_margem + frete_ML_ATE79_n) / (denominador_MLP - Taxa_ML_ATE12_PCT);
     const calc_MLP_pct_ate29 = (custo_com_margem + Taxa_ML_ATE29 + frete_ML_ATE79_n) / denominador_MLP;
     const calc_MLP_pct_ate50 = (custo_com_margem + Taxa_ML_ATE50 + frete_ML_ATE79_n) / denominador_MLP;
     const calc_MLP_pct_ate79 = (custo_com_margem + Taxa_ML_ATE79 + frete_ML_ATE79_n) / denominador_MLP;

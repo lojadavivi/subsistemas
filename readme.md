@@ -53,6 +53,10 @@ Tipos sugeridos:
 
 ## Histórico
 
+### [5.0.1] - 2026-05-04
+- fix(calc/ml): corrigiu taxa da faixa até R$ 12,50 para 50% do valor de venda (era valor fixo zerado).
+- refactor(calc/ml): migrou `Taxa_ML_ATE12` de constante fixa para percentual `Taxa_ML_ATE12_PCT = 0.5`, deslocando o cálculo do numerador para o denominador nas fórmulas de MLC e MLP.
+
 ### [5.0.0] - 2026-04-03
 - style(core): aplicou repaginação global com refinamento de superfícies, interações e legibilidade.
 - style(core): redesenhou o rodapé em todas as páginas principais com layout unificado e atalhos úteis.
