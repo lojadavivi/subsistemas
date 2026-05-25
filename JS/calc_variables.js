@@ -105,6 +105,8 @@ const Comissao_RD = 0.19;                        // RD Estação (e-commerce pre
 const Comissao_Shein = 0.16;                     // Shein (plataforma chinesa)
 const Comissao_Shopee_ATE79 = 0.20;              // Shopee até R$ 79,99 (comissão maior)
 const Comissao_Shopee_ACIMA79 = 0.14;            // Shopee acima de R$ 79,99 (comissão menor)
+const Comissao_Temu = 0;                         // Temu (sem comissão)
+const Comissao_TikTok = 0.06;                    // TikTok Shop (6% sobre valor de venda)
 
 // ============================================================================
 // SEÇÃO 3: FRETES PROGRESSIVOS POR PESO
@@ -244,6 +246,15 @@ const Frete_Shein_ACIMA49_23a30KG = 106;
 // Frete fixo único por padrão
 const Frete_Shopee = 0;
 
+// ----- TEMU -----
+// Temu não aplica frete na regra atual
+const Frete_Temu = 0;
+
+// ----- TIKTOK -----
+// TikTok aplica frete como percentual sobre o valor de venda
+const FretePct_TikTok = 0.06;
+const Frete_TikTok = 0;
+
 // ============================================================================
 // SEÇÃO 4: DESCONTOS PROGRESSIVOS POR NÍVEL DE VENDEDOR
 // ============================================================================
@@ -330,6 +341,14 @@ const Nivel_Shein = 1;
 // Shopee não usa sistema de níveis para desconto de frete em cosméticos
 const Nivel_Shopee = 1;
 
+// ----- TEMU -----
+// Temu não usa nível de vendedor para frete na regra atual
+const Nivel_Temu = 1;
+
+// ----- TIKTOK -----
+// TikTok não usa nível de vendedor para frete percentual na regra atual
+const Nivel_TikTok = 1;
+
 // ============================================================================
 // SEÇÃO 5: TAXAS FIXAS POR PLATAFORMA
 // ============================================================================
@@ -401,6 +420,14 @@ const Taxa_Shopee_ATE99 = 16;
 const Taxa_Shopee_ATE199 = 20;
 const Taxa_Shopee_ACIMA200 = 26;
 
+// ----- TEMU -----
+// Temu não cobra taxa fixa na regra atual
+const Taxa_Temu = 0;
+
+// ----- TIKTOK -----
+// TikTok cobra taxa fixa por pedido
+const Taxa_TikTok = 4;
+
 // ============================================================================
 // SEÇÃO 6: CUSTOS DE INSUMOS (EMBALAGEM E INSUMOS)
 // ============================================================================
@@ -445,6 +472,8 @@ const FRETE_POR_PESO = {
 		rd: Frete_RD_ate300G,
 		shein: Frete_Shein_ACIMA49_ate300G,
 		shopee: Frete_Shopee,
+		temu: Frete_Temu,
+		tiktok: Frete_TikTok,
 	},
 	"0.3 a 0.5kg": {
 		presencial: Frete_Presencial,
@@ -456,6 +485,8 @@ const FRETE_POR_PESO = {
 		rd: Frete_RD_300a500G,
 		shein: Frete_Shein_ACIMA49_300a500G,
 		shopee: Frete_Shopee,
+		temu: Frete_Temu,
+		tiktok: Frete_TikTok,
 	},
 	"0.5 a 1kg": {
 		presencial: Frete_Presencial,
@@ -467,6 +498,8 @@ const FRETE_POR_PESO = {
 		rd: Frete_RD_500Ga1KG,
 		shein: Frete_Shein_ACIMA49_500Ga1KG,
 		shopee: Frete_Shopee,
+		temu: Frete_Temu,
+		tiktok: Frete_TikTok,
 	},
 	"1 a 2kg": {
 		presencial: Frete_Presencial,
@@ -478,6 +511,8 @@ const FRETE_POR_PESO = {
 		rd: Frete_RD_1a2KG,
 		shein: Frete_Shein_ACIMA49_1a2KG,
 		shopee: Frete_Shopee,
+		temu: Frete_Temu,
+		tiktok: Frete_TikTok,
 	},
 	"2 a 5kg": {
 		presencial: Frete_Presencial,
@@ -489,6 +524,8 @@ const FRETE_POR_PESO = {
 		rd: Frete_RD_2a5KG,
 		shein: Frete_Shein_ACIMA49_2a5KG,
 		shopee: Frete_Shopee,
+		temu: Frete_Temu,
+		tiktok: Frete_TikTok,
 	},
 	"5 a 9kg": {
 		presencial: Frete_Presencial,
@@ -500,6 +537,8 @@ const FRETE_POR_PESO = {
 		rd: Frete_RD_5a9KG,
 		shein: Frete_Shein_ACIMA49_5a9KG,
 		shopee: Frete_Shopee,
+		temu: Frete_Temu,
+		tiktok: Frete_TikTok,
 	},
 	"9 a 13kg": {
 		presencial: Frete_Presencial,
@@ -511,6 +550,8 @@ const FRETE_POR_PESO = {
 		rd: Frete_RD_9a13KG,
 		shein: Frete_Shein_ACIMA49_9a13KG,
 		shopee: Frete_Shopee,
+		temu: Frete_Temu,
+		tiktok: Frete_TikTok,
 	},
 	"13 a 17kg": {
 		presencial: Frete_Presencial,
@@ -522,6 +563,8 @@ const FRETE_POR_PESO = {
 		rd: Frete_RD_13a17KG,
 		shein: Frete_Shein_ACIMA49_13a17KG,
 		shopee: Frete_Shopee,
+		temu: Frete_Temu,
+		tiktok: Frete_TikTok,
 	},
 	"17 a 23kg": {
 		presencial: Frete_Presencial,
@@ -533,6 +576,8 @@ const FRETE_POR_PESO = {
 		rd: Frete_RD_17a23KG,
 		shein: Frete_Shein_ACIMA49_17a23KG,
 		shopee: Frete_Shopee,
+		temu: Frete_Temu,
+		tiktok: Frete_TikTok,
 	},
 	"23 a 30kg": {
 		presencial: Frete_Presencial,
@@ -544,6 +589,8 @@ const FRETE_POR_PESO = {
 		rd: Frete_RD_23a30KG,
 		shein: Frete_Shein_ACIMA49_23a30KG,
 		shopee: Frete_Shopee,
+		temu: Frete_Temu,
+		tiktok: Frete_TikTok,
 	},
 };
 
@@ -558,6 +605,8 @@ const NIVEL_DESCONTO = {
 		rd: Nivel_RD,
 		shein: Nivel_Shein,
 		shopee: Nivel_Shopee,
+		temu: Nivel_Temu,
+		tiktok: Nivel_TikTok,
 	},
 	"4": {
 		presencial: Nivel_Presencial,
@@ -569,6 +618,8 @@ const NIVEL_DESCONTO = {
 		rd: Nivel_RD,
 		shein: Nivel_Shein,
 		shopee: Nivel_Shopee,
+		temu: Nivel_Temu,
+		tiktok: Nivel_TikTok,
 	},
 	"3": {
 		presencial: Nivel_Presencial,
@@ -580,6 +631,8 @@ const NIVEL_DESCONTO = {
 		rd: Nivel_RD,
 		shein: Nivel_Shein,
 		shopee: Nivel_Shopee,
+		temu: Nivel_Temu,
+		tiktok: Nivel_TikTok,
 	},
 	"2": {
 		presencial: Nivel_Presencial,
@@ -591,6 +644,8 @@ const NIVEL_DESCONTO = {
 		rd: Nivel_RD,
 		shein: Nivel_Shein,
 		shopee: Nivel_Shopee,
+		temu: Nivel_Temu,
+		tiktok: Nivel_TikTok,
 	},
 	"1": {
 		presencial: Nivel_Presencial,
@@ -602,6 +657,8 @@ const NIVEL_DESCONTO = {
 		rd: Nivel_RD,
 		shein: Nivel_Shein,
 		shopee: Nivel_Shopee,
+		temu: Nivel_Temu,
+		tiktok: Nivel_TikTok,
 	},
 };
 

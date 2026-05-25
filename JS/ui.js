@@ -161,6 +161,39 @@ function executarCalculoSeguro() {
     }
 }
 
+function ajustarTextoMarketplaceUmaLinha() {
+    const cells = document.querySelectorAll(".tabela_calc tbody .marketplace-cell");
+    if (!cells.length) return;
+
+    cells.forEach((cell) => {
+        if (cell.clientWidth <= 0) return;
+
+        const computed = window.getComputedStyle(cell);
+        const maxSizeRem = parseFloat(computed.getPropertyValue("--marketplace-font-max")) || 0.88;
+        const minSizeRem = parseFloat(computed.getPropertyValue("--marketplace-font-min")) || 0.7;
+
+        let fontSizeRem = maxSizeRem;
+        cell.style.fontSize = `${fontSizeRem}rem`;
+
+        while (cell.scrollWidth > cell.clientWidth && fontSizeRem > minSizeRem) {
+            fontSizeRem -= 0.02;
+            cell.style.fontSize = `${fontSizeRem}rem`;
+        }
+    });
+}
+
+let resizeMarketplaceTextRaf = null;
+function agendarAjusteTextoMarketplace() {
+    if (resizeMarketplaceTextRaf) {
+        cancelAnimationFrame(resizeMarketplaceTextRaf);
+    }
+
+    resizeMarketplaceTextRaf = requestAnimationFrame(() => {
+        ajustarTextoMarketplaceUmaLinha();
+        resizeMarketplaceTextRaf = null;
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const toggleButton = document.getElementById("toggle-dark-mode");
     if (toggleButton) {
@@ -172,4 +205,9 @@ document.addEventListener("DOMContentLoaded", () => {
     bindCalculatorEvents();
     alterarBackgroundComBaseEmCnpj();
     updateGuidedHelp();
+    agendarAjusteTextoMarketplace();
+
+    window.addEventListener("resize", () => {
+        agendarAjusteTextoMarketplace();
+    });
 });

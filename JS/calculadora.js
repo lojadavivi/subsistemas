@@ -65,6 +65,8 @@ function calcular(inputElement) {
     var constFrete_RD = fretePorPeso.rd;
     var constFrete_Shein = fretePorPeso.shein;
     var constFrete_Shopee = fretePorPeso.shopee;
+    var constFrete_Temu = fretePorPeso.temu;
+    var constFrete_TikTok = fretePorPeso.tiktok;
 
     // ============================================================================
     // ETAPA 4: DEFINIÇÃO DE CONSTANTES DE NÍVEL DE DESCONTO
@@ -83,6 +85,8 @@ function calcular(inputElement) {
     var constNivel_RD = nivelConfig.rd;
     var constNivel_Shein = nivelConfig.shein;
     var constNivel_Shopee = nivelConfig.shopee;
+    var constNivel_Temu = nivelConfig.temu;
+    var constNivel_TikTok = nivelConfig.tiktok;
 
     // ============================================================================
     // ETAPA 5: DEFINIÇÃO DE CUSTO DE INSUMOS POR FAIXA DE PESO
@@ -117,6 +121,8 @@ function calcular(inputElement) {
     const comissao_Shein = constCnpj + Comissao_Shein;
     const comissao_Shopee_ATE79 = constCnpj + Comissao_Shopee_ATE79;
     const comissao_Shopee_ACIMA79 = constCnpj + Comissao_Shopee_ACIMA79;
+    const comissao_Temu = constCnpj + Comissao_Temu;
+    const comissao_TikTok = constCnpj + Comissao_TikTok + FretePct_TikTok;
 
     // ============================================================================
     // - Comissão da plataforma (varia por CNPJ e canal)
@@ -578,6 +584,25 @@ function calcular(inputElement) {
     const calc_Shopee_pct_acima200 = (custo_com_margem + Taxa_Shopee_ACIMA200 + frete_Shopee_n) / denominador_Shopee_ACIMA79;
     var calcShopeePctLiq = (calc_Shopee_pct_ate79 <= 79.99) ? calc_Shopee_pct_ate79 : (calc_Shopee_pct_ate99 <= 99.99) ? calc_Shopee_pct_ate99 : (calc_Shopee_pct_ate199 <= 199.99) ? calc_Shopee_pct_ate199 : calc_Shopee_pct_acima200;
 
+    // ======================== TEMU ================================
+    // Temu sem comissão, sem frete e sem taxa fixa na regra atual.
+    // Apenas a alíquota do CNPJ é considerada no cálculo.
+
+    const frete_Temu = constFrete_Temu * constNivel_Temu;
+    const denominador_Temu = 1 - comissao_Temu;
+    var calcTemuManual = Manual - (custo + Manual * comissao_Temu + frete_Temu + Taxa_Temu);
+    var calcTemuValorLiq = (ValorLiq + custo + frete_Temu + Taxa_Temu) / denominador_Temu;
+    var calcTemuPctLiq = (custo_com_margem + frete_Temu + Taxa_Temu) / denominador_Temu;
+
+    // ======================== TIKTOK ==============================
+    // TikTok aplica 6% de comissão, 6% de frete sobre o valor de venda e taxa fixa de R$ 4.
+
+    const frete_TikTok = constFrete_TikTok * constNivel_TikTok;
+    const denominador_TikTok = 1 - comissao_TikTok;
+    var calcTikTokManual = Manual - (custo + Manual * comissao_TikTok + frete_TikTok + Taxa_TikTok);
+    var calcTikTokValorLiq = (ValorLiq + custo + frete_TikTok + Taxa_TikTok) / denominador_TikTok;
+    var calcTikTokPctLiq = (custo_com_margem + frete_TikTok + Taxa_TikTok) / denominador_TikTok;
+
     // ============================================================================
     // ETAPA 7: EXIBIÇÃO DOS RESULTADOS NA PÁGINA HTML
     // ============================================================================
@@ -612,6 +637,12 @@ function calcular(inputElement) {
         document.getElementById("resultado_Shopee_Manual").textContent = "";
         document.getElementById("resultado_Shopee_ValorLiq").textContent = "";
         document.getElementById("resultado_Shopee_PctLiq").textContent = "";
+        document.getElementById("resultado_Temu_Manual").textContent = "";
+        document.getElementById("resultado_Temu_ValorLiq").textContent = "";
+        document.getElementById("resultado_Temu_PctLiq").textContent = "";
+        document.getElementById("resultado_TikTok_Manual").textContent = "";
+        document.getElementById("resultado_TikTok_ValorLiq").textContent = "";
+        document.getElementById("resultado_TikTok_PctLiq").textContent = "";
     } else {
 
         // Amazon
@@ -659,6 +690,16 @@ function calcular(inputElement) {
         document.getElementById("resultado_Shopee_Manual").textContent = "R$ " + calcShopeeManual.toFixed(2).replace(".", ",") + " (" + ((calcShopeeManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
         document.getElementById("resultado_Shopee_ValorLiq").textContent = "R$ " + calcShopeeValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
         document.getElementById("resultado_Shopee_PctLiq").textContent = "R$ " + calcShopeePctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
+
+        // Temu
+        document.getElementById("resultado_Temu_Manual").textContent = "R$ " + calcTemuManual.toFixed(2).replace(".", ",") + " (" + ((calcTemuManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_Temu_ValorLiq").textContent = "R$ " + calcTemuValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_Temu_PctLiq").textContent = "R$ " + calcTemuPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
+
+        // TikTok
+        document.getElementById("resultado_TikTok_Manual").textContent = "R$ " + calcTikTokManual.toFixed(2).replace(".", ",") + " (" + ((calcTikTokManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_TikTok_ValorLiq").textContent = "R$ " + calcTikTokValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_TikTok_PctLiq").textContent = "R$ " + calcTikTokPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
     }
 
     // ============================================================================

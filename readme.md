@@ -53,6 +53,15 @@ Tipos sugeridos:
 
 ## Histórico
 
+### [5.1.2] - 2026-05-25
+- feat(calc): adicionou canais TEMU e TIKTOK na tabela de resultados.
+- feat(calc/temu): aplicou regra com comissão `0%`, frete `0%` e taxa fixa `R$ 0`.
+- feat(calc/tiktok): aplicou regra com comissão `6%`, frete `6%` sobre venda e taxa fixa `R$ 4`.
+- style(core): centralizou os elementos do rodapé (atalhos e texto legal).
+- style(core): compactou visual da interface com redução de espaçamentos, paddings e tamanhos de fonte.
+- style(calc/tabela): padronizou larguras das colunas 2, 3 e 4 da tabela de resultados.
+- feat(calc/tabela): adicionou ajuste automático de fonte na coluna Marketplace para manter o texto em uma única linha.
+
 ### [5.1.1] - 2026-05-04
 - fix(calc/ml): corrigiu taxa da faixa `<=12,50` para `50%` do valor de venda (era `R$ 0` fixo).
 - refactor(calc/ml): migrou `Taxa_ML_ATE12` para `Taxa_ML_ATE12_PCT = 0.5`, movendo o percentual ao denominador nas fórmulas de ValorLiq e PctLiq (MLC e MLP).

@@ -93,7 +93,7 @@ body {
 .app-shell {
     max-width: 1120px;
     margin: 0 auto;
-    padding: 24px 16px 40px;
+    padding: 18px 14px 28px;
     position: relative;
 }
 
@@ -102,7 +102,7 @@ body {
 .app-footer {
     border: 1px solid var(--f2-border-subtle);
     background: linear-gradient(145deg, var(--f2-surface-1), var(--f2-surface-2));
-    border-radius: 20px;
+    border-radius: 18px;
     box-shadow: var(--f2-shadow);
     backdrop-filter: blur(12px) saturate(140%);
     -webkit-backdrop-filter: blur(12px) saturate(140%);
@@ -121,11 +121,11 @@ body {
 }
 
 .app-header {
-    padding: 20px;
+    padding: 16px;
     display: flex;
     align-items: start;
     justify-content: space-between;
-    gap: 18px;
+    gap: 14px;
 }
 
 .app-header:hover,
@@ -204,31 +204,31 @@ body {
 }
 
 main {
-    margin-top: 16px;
+    margin-top: 12px;
     display: grid;
-    gap: 16px;
+    gap: 12px;
 }
 
 .panel {
-    padding: 18px;
+    padding: 14px;
 }
 
 .panel h2 {
-    margin: 0 0 12px;
-    font-size: 1.2rem;
+    margin: 0 0 10px;
+    font-size: 1.12rem;
     letter-spacing: 0.01em;
 }
 
 .intro-steps {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
+    gap: 8px;
 }
 
 .intro-steps p {
     margin: 0;
-    padding: 10px;
-    border-radius: 12px;
+    padding: 8px;
+    border-radius: 10px;
     background: rgba(255, 255, 255, 0.32);
     border: 1px solid var(--f2-border-subtle);
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
@@ -236,7 +236,7 @@ main {
 
 .guide-panel {
     display: grid;
-    gap: 10px;
+    gap: 8px;
     max-width: 780px;
     justify-self: start;
 }
@@ -253,20 +253,20 @@ main {
     padding: 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 8px;
+    gap: 6px;
     align-items: stretch;
 }
 
 .guide-step {
     position: relative;
     margin: 0;
-    padding: 10px 12px 10px 34px;
+    padding: 8px 10px 8px 30px;
     border: 1px solid var(--f2-border-subtle);
-    border-radius: 12px;
+    border-radius: 10px;
     background: color-mix(in srgb, var(--f2-control-bg-muted) 80%, white 20%);
     color: var(--f2-text-muted);
     font-weight: 700;
-    min-height: 56px;
+    min-height: 48px;
     display: flex;
     align-items: center;
 }
@@ -274,10 +274,10 @@ main {
 .guide-step::before {
     content: "";
     position: absolute;
-    left: 12px;
+    left: 10px;
     top: 50%;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 999px;
     transform: translateY(-50%);
     border: 2px solid var(--f2-border-strong);
@@ -307,8 +307,8 @@ main {
 
 .guide-hint {
     margin: 0;
-    padding: 10px 12px;
-    border-radius: 10px;
+    padding: 8px 10px;
+    border-radius: 9px;
     border: 1px dashed color-mix(in srgb, var(--f2-accent) 45%, var(--f2-border-subtle));
     color: var(--f2-text-muted);
     background: color-mix(in srgb, var(--f2-accent) 6%, transparent);
@@ -317,20 +317,20 @@ main {
 .controls-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 10px;
-    padding: 10px;
-    border-radius: 14px;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 12px;
     background: var(--tabela-padrao);
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.32);
 }
 
 .field {
     display: grid;
-    gap: 6px;
+    gap: 5px;
 }
 
 .field > span {
-    font-size: 0.86rem;
+    font-size: 0.82rem;
     font-weight: 700;
     color: var(--f2-text-muted);
 }
@@ -340,10 +340,10 @@ main {
     border: 1px solid var(--f2-border-subtle);
     background: var(--f2-control-bg);
     color: var(--f2-control-text);
-    border-radius: 10px;
-    min-height: 40px;
-    padding: 8px 10px;
-    font-size: 0.95rem;
+    border-radius: 9px;
+    min-height: 36px;
+    padding: 6px 8px;
+    font-size: 0.92rem;
     font-family: "Nunito", sans-serif;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -357,12 +357,12 @@ main {
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     border: 1px solid var(--f2-border-subtle);
-    border-radius: 10px;
+    border-radius: 9px;
     background: var(--f2-control-bg);
-    padding: 0 10px;
-    min-height: 40px;
+    padding: 0 8px;
+    min-height: 36px;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -374,10 +374,10 @@ main {
 .money-input-wrap input {
     border: 0;
     background: transparent;
-    min-height: 34px;
+    min-height: 30px;
     color: var(--f2-control-text);
     font-family: "Nunito", sans-serif;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
 }
 
 .money-input-wrap input:focus {
@@ -387,13 +387,13 @@ main {
 .mode-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px;
+    gap: 10px;
 }
 
 .mode-card {
     border: 1px solid var(--f2-border-subtle);
-    border-radius: 14px;
-    padding: 12px;
+    border-radius: 12px;
+    padding: 10px;
     background: var(--f2-control-bg-muted);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -408,9 +408,9 @@ main {
 }
 
 .mode-card p {
-    margin: 8px 0 12px;
+    margin: 6px 0 10px;
     color: var(--f2-text-muted);
-    min-height: 40px;
+    min-height: 34px;
 }
 
 .inline-field .money-input-wrap {
@@ -433,10 +433,10 @@ main {
 }
 
 .help-details {
-    margin-top: 12px;
+    margin-top: 10px;
     border: 1px solid var(--f2-border-subtle);
-    border-radius: 12px;
-    padding: 8px 12px;
+    border-radius: 10px;
+    padding: 6px 10px;
     background: var(--f2-control-bg-muted);
 }
 
@@ -446,14 +446,14 @@ main {
 }
 
 .help-details ul {
-    margin: 10px 0 2px;
+    margin: 8px 0 2px;
     padding-left: 18px;
     color: var(--f2-text-muted);
 }
 
 .table-wrap {
     overflow-x: auto;
-    border-radius: 14px;
+    border-radius: 12px;
     border: 1px solid var(--f2-border-subtle);
 }
 
@@ -461,6 +461,15 @@ main {
     width: 100%;
     border-collapse: collapse;
     background: var(--f2-table-bg);
+    table-layout: fixed;
+}
+
+.tabela_calc col.col-marketplace {
+    width: 22%;
+}
+
+.tabela_calc col.col-resultado {
+    width: 26%;
 }
 
 .tabela_calc tbody tr:nth-child(even) td {
@@ -474,10 +483,10 @@ main {
 .tabela_calc th,
 .tabela_calc td {
     border: 1px solid var(--f2-border-subtle);
-    padding: 10px 8px;
+    padding: 8px 6px;
     text-align: left;
     vertical-align: middle;
-    font-size: 0.92rem;
+    font-size: 0.88rem;
 }
 
 .tabela_calc thead th {
@@ -488,8 +497,13 @@ main {
 }
 
 .marketplace-cell {
-    min-width: 175px;
+    min-width: 160px;
     background: var(--tabela-padrao);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    --marketplace-font-max: 0.88rem;
+    --marketplace-font-min: 0.7rem;
 }
 
 .background-color-change {
@@ -497,8 +511,8 @@ main {
 }
 
 .app-footer {
-    margin-top: 16px;
-    padding: 18px;
+    margin-top: 12px;
+    padding: 14px;
     color: var(--f2-footer-text);
     background:
         radial-gradient(600px 200px at 4% -30%, rgba(96, 165, 250, 0.28), transparent 60%),
@@ -506,9 +520,15 @@ main {
         var(--f2-footer-bg);
     border-color: color-mix(in srgb, var(--f2-accent) 35%, var(--f2-border-subtle));
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 12px 18px;
+    grid-template-columns: 1fr;
+    gap: 8px 12px;
     align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.app-footer > div:empty {
+    display: none;
 }
 
 .app-footer p {
@@ -540,8 +560,8 @@ main {
 .footer-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    justify-content: end;
+    gap: 6px;
+    justify-content: center;
 }
 
 .footer-chip {
@@ -549,9 +569,9 @@ main {
     align-items: center;
     border: 1px solid color-mix(in srgb, var(--f2-accent) 30%, var(--f2-border-subtle));
     border-radius: 999px;
-    padding: 6px 11px;
+    padding: 5px 9px;
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     background: color-mix(in srgb, var(--f2-accent) 10%, #ffffff 90%);
     transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
@@ -585,10 +605,11 @@ html.dark-mode .footer-chip:focus {
 }
 
 .footer-legal {
-    grid-column: 1 / -1;
-    margin-top: 4px;
+    grid-column: 1;
+    margin-top: 2px;
     color: var(--f2-footer-muted);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    text-align: center;
 }
 
 .xml-actions {
@@ -720,14 +741,14 @@ html.dark-mode .footer-chip:focus {
 
 @media (max-width: 640px) {
     .app-shell {
-        padding: 14px 10px 26px;
+        padding: 12px 8px 20px;
     }
 
     .panel,
     .app-header,
     .app-footer {
-        border-radius: 16px;
-        padding: 14px;
+        border-radius: 14px;
+        padding: 12px;
     }
 
     .app-footer {
@@ -735,7 +756,7 @@ html.dark-mode .footer-chip:focus {
     }
 
     .footer-links {
-        justify-content: start;
+        justify-content: center;
     }
 
     .controls-grid,
@@ -751,7 +772,7 @@ html.dark-mode .footer-chip:focus {
 
     .tabela_calc th,
     .tabela_calc td {
-        font-size: 0.85rem;
-        min-width: 150px;
+        font-size: 0.82rem;
+        min-width: 138px;
     }
 }
