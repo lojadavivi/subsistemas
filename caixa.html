@@ -10,53 +10,6 @@
     <link rel="shortcut icon" href="STYLES/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script src="JS/ui.js" defer></script>
-    <style>
-        .caixa-grid {
-            display: grid;
-            gap: 16px;
-        }
-
-        .caixa-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 12px;
-        }
-
-        .caixa-btn {
-            border: 1px solid var(--f2-border-subtle);
-            background: var(--f2-control-bg);
-            color: var(--f2-control-text);
-            border-radius: 10px;
-            padding: 8px 12px;
-            font-weight: 700;
-            cursor: pointer;
-        }
-
-        .caixa-btn:hover,
-        .caixa-btn:focus {
-            border-color: var(--f2-accent);
-            color: var(--f2-accent);
-        }
-
-        .section-divider-row td {
-            background: color-mix(in srgb, var(--f2-accent) 12%, var(--f2-table-bg));
-            font-weight: 800;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-        }
-
-        .input-centered {
-            text-align: center;
-            max-width: 110px;
-        }
-
-        .grand-total-value {
-            color: var(--f2-accent);
-            font-weight: 800;
-            font-size: 1.1rem;
-        }
-    </style>
     <script>
         function calculateTotal() {
             const DENOMINATIONS_CENTS = [20000, 10000, 5000, 2000, 1000, 500, 200, 100, 50, 25, 10, 5];

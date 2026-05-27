@@ -8,46 +8,68 @@
     <title>Calculadora de Marketplaces - Loja da Vivi</title>
     <link rel="icon" href="STYLES/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="STYLES/icon.png" type="image/x-icon">
+    <script>
+        (function () {
+            try {
+                const remembered = localStorage.getItem("calculatorAuthRemembered") === "true";
+                const sessionUnlocked = sessionStorage.getItem("calculatorAuthSession") === "true";
+                if (remembered || sessionUnlocked) {
+                    document.documentElement.classList.add("is-authenticated");
+                } else {
+                    document.documentElement.classList.add("auth-locked");
+                }
+            } catch (error) {
+                document.documentElement.classList.add("auth-locked");
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="style.css">
     <script src="JS/calc_variables.js" defer></script>
     <script src="JS/calculadora.js" defer></script>
     <script src="JS/ui.js" defer></script>
 </head>
 <body>
+    <div id="login-overlay" class="login-overlay" role="dialog" aria-modal="true" aria-labelledby="login-title" aria-describedby="login-description">
+        <form id="login-form" class="login-card">
+            <p class="login-kicker">Acesso restrito</p>
+            <h2 id="login-title">Entrar na calculadora</h2>
+            <p id="login-description" class="login-description">Informe seu login e senha.</p>
+
+            <label class="field login-field">
+                <span>Login</span>
+                <input id="login-user" name="login-user" type="text" autocomplete="username" required>
+            </label>
+
+            <label class="field login-field">
+                <span>Senha</span>
+                <input id="login-password" name="login-password" type="password" autocomplete="current-password" required>
+            </label>
+
+            <label class="login-remember">
+                <input id="login-remember" type="checkbox">
+                <span>Não pedir mais neste navegador</span>
+            </label>
+
+            <p id="login-error" class="login-error" aria-live="polite"></p>
+
+            <button type="submit" class="login-submit">Entrar</button>
+        </form>
+    </div>
+
     <div class="app-shell">
         <header class="app-header">
             <div class="brand-block">
                 <p class="eyebrow">Subsistema interno</p>
                 <h1 id="titulo">Calculadora da Loja da Vivi</h1>
-                <p class="subtitle">Preços consistentes para todos os canais, com menos fricção no dia a dia.</p>
+                <p class="subtitle">Preços consistentes para todos os marketplaces.</p>
             </div>
             <div class="header-actions">
                 <button id="toggle-dark-mode" class="theme-toggle" type="button" title="Alternar tema" aria-label="Alternar tema">Tema</button>
+                <button id="logout-button" class="logout-button" type="button" title="Sair da sessão" aria-label="Sair da sessão" hidden>Sair</button>
             </div>
         </header>
 
         <main class="calc-main">
-            <section class="panel intro-panel" aria-label="Guia rápido">
-                <h2>Fluxo rápido em 3 passos</h2>
-                <div class="intro-steps">
-                    <p><strong>1.</strong> Escolha CNPJ, nível, peso e custo.</p>
-                    <p><strong>2.</strong> Preencha somente um modo de cálculo.</p>
-                    <p><strong>3.</strong> Compare os resultados por marketplace.</p>
-                </div>
-            </section>
-
-            <section class="panel guide-panel" aria-label="Assistente de preenchimento">
-                <h2>Assistente de preenchimento</h2>
-                <p id="guide-status" class="guide-status" aria-live="polite">Aguardando dados para iniciar o cálculo.</p>
-                <ul class="guide-checklist" aria-label="Checklist do cálculo">
-                    <li id="guide-step-cnpj" class="guide-step">Selecionar CNPJ</li>
-                    <li id="guide-step-peso" class="guide-step">Selecionar peso</li>
-                    <li id="guide-step-custo" class="guide-step">Informar custo</li>
-                    <li id="guide-step-modo" class="guide-step">Preencher um modo de cálculo</li>
-                </ul>
-                <p id="guide-hint" class="guide-hint">Dica: use somente um modo de entrada por vez para evitar análise confusa.</p>
-            </section>
-
             <section class="panel" aria-label="Parâmetros principais">
                 <h2>Parâmetros da operação</h2>
                 <div class="controls-grid background-color-change" id="controls-surface">
@@ -107,7 +129,6 @@
                         <h3 class="manual-title">Manual</h3>
                         <p>Você informa o preço de venda e recebe o líquido aproximado.</p>
                         <label class="field inline-field">
-                            <span>Entrada</span>
                             <div class="money-input-wrap">
                                 <span>R$</span>
                                 <input class="input_calc manual-input" type="number" id="Manual" name="Manual" inputmode="decimal" placeholder="0,00" aria-label="Valor manual">
@@ -119,7 +140,6 @@
                         <h3 class="liquido-title">Valor líquido</h3>
                         <p>Você informa quanto quer receber e o sistema sugere o preço.</p>
                         <label class="field inline-field">
-                            <span>Entrada</span>
                             <div class="money-input-wrap">
                                 <span>R$</span>
                                 <input class="input_calc liquido-input" type="number" id="ValorLiq" name="ValorLiq" inputmode="decimal" placeholder="0,00" aria-label="Valor líquido desejado">
@@ -131,7 +151,6 @@
                         <h3 class="percentual-title">Percentual líquido</h3>
                         <p>Você informa a margem em percentual e recebe o preço sugerido.</p>
                         <label class="field inline-field">
-                            <span>Entrada</span>
                             <div class="money-input-wrap">
                                 <input class="input_calc percentual-input" type="number" id="PctLiq" name="PctLiq" inputmode="decimal" placeholder="0" aria-label="Percentual líquido desejado">
                                 <span>%</span>
@@ -139,30 +158,21 @@
                         </label>
                     </article>
                 </div>
-
-                <details class="help-details">
-                    <summary>Precisa de ajuda para escolher um modo?</summary>
-                    <ul>
-                        <li>Manual: ideal para conferir um preço que você já pretende usar.</li>
-                        <li>Valor líquido: ideal quando você quer garantir um valor em reais.</li>
-                        <li>Percentual líquido: ideal para trabalhar com regra de margem.</li>
-                    </ul>
-                </details>
             </section>
 
             <section class="panel" aria-label="Resultados por marketplace">
                 <h2>Resultados por marketplace</h2>
                 <div class="table-wrap">
-                    <table class="tabela_calc">
+                    <table class="tabela_calc" style="table-layout: fixed; width: 100%;">
                         <colgroup>
-                            <col class="col-marketplace">
-                            <col class="col-resultado">
-                            <col class="col-resultado">
-                            <col class="col-resultado">
+                            <col style="width: 22%;">
+                            <col style="width: 26%;">
+                            <col style="width: 26%;">
+                            <col style="width: 26%;">
                         </colgroup>
                         <thead>
                             <tr class="background-color-change">
-                                <th>Marketplace</th>
+                                <th style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: clamp(0.68rem, 1.08vw, 0.9rem); line-height: 1.1;">Marketplace</th>
                                 <th>Líquido aprox. no modo Manual</th>
                                 <th>Sugestão de venda no modo Valor líquido</th>
                                 <th>Sugestão de venda no modo Percentual líquido</th>
@@ -170,61 +180,61 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th class="marketplace-cell background-color-change">PRESENCIAL</th>
+                                <th class="marketplace-cell background-color-change" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: clamp(0.68rem, 1.08vw, 0.9rem); line-height: 1.1;">PRESENCIAL</th>
                                 <td id="resultado_Presencial_Manual"></td>
                                 <td id="resultado_Presencial_ValorLiq"></td>
                                 <td id="resultado_Presencial_PctLiq"></td>
                             </tr>
                             <tr>
-                                <th class="marketplace-cell background-color-change">AMAZON</th>
+                                <th class="marketplace-cell background-color-change" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: clamp(0.68rem, 1.08vw, 0.9rem); line-height: 1.1;">AMAZON</th>
                                 <td id="resultado_Amazon_Manual"></td>
                                 <td id="resultado_Amazon_ValorLiq"></td>
                                 <td id="resultado_Amazon_PctLiq"></td>
                             </tr>
                             <tr>
-                                <th class="marketplace-cell background-color-change">CASAS BAHIA</th>
+                                <th class="marketplace-cell background-color-change" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: clamp(0.68rem, 1.08vw, 0.9rem); line-height: 1.1;">CASAS BAHIA</th>
                                 <td id="resultado_CasasBahia_Manual"></td>
                                 <td id="resultado_CasasBahia_ValorLiq"></td>
                                 <td id="resultado_CasasBahia_PctLiq"></td>
                             </tr>
                             <tr>
-                                <th class="marketplace-cell background-color-change">MAGALU</th>
+                                <th class="marketplace-cell background-color-change" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: clamp(0.68rem, 1.08vw, 0.9rem); line-height: 1.1;">MAGALU</th>
                                 <td id="resultado_Magalu_Manual"></td>
                                 <td id="resultado_Magalu_ValorLiq"></td>
                                 <td id="resultado_Magalu_PctLiq"></td>
                             </tr>
                             <tr>
-                                <th class="marketplace-cell background-color-change">MERCADO LIVRE CLÁSSICO</th>
+                                <th class="marketplace-cell background-color-change" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: clamp(0.68rem, 1.08vw, 0.9rem); line-height: 1.1;">MERCADO LIVRE CLÁSSICO</th>
                                 <td id="resultado_MLC_Manual"></td>
                                 <td id="resultado_MLC_ValorLiq"></td>
                                 <td id="resultado_MLC_PctLiq"></td>
                             </tr>
                             <tr>
-                                <th class="marketplace-cell background-color-change">MERCADO LIVRE PREMIUM</th>
+                                <th class="marketplace-cell background-color-change" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: clamp(0.68rem, 1.08vw, 0.9rem); line-height: 1.1;">MERCADO LIVRE PREMIUM</th>
                                 <td id="resultado_MLP_Manual"></td>
                                 <td id="resultado_MLP_ValorLiq"></td>
                                 <td id="resultado_MLP_PctLiq"></td>
                             </tr>
                             <tr>
-                                <th class="marketplace-cell background-color-change">OLIST</th>
+                                <th class="marketplace-cell background-color-change" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: clamp(0.68rem, 1.08vw, 0.9rem); line-height: 1.1;">OLIST</th>
                                 <td id="resultado_Olist_Manual"></td>
                                 <td id="resultado_Olist_ValorLiq"></td>
                                 <td id="resultado_Olist_PctLiq"></td>
                             </tr>
                             <tr>
-                                <th class="marketplace-cell background-color-change">RD</th>
+                                <th class="marketplace-cell background-color-change" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: clamp(0.68rem, 1.08vw, 0.9rem); line-height: 1.1;">RD</th>
                                 <td id="resultado_RD_Manual"></td>
                                 <td id="resultado_RD_ValorLiq"></td>
                                 <td id="resultado_RD_PctLiq"></td>
                             </tr>
                             <tr>
-                                <th class="marketplace-cell background-color-change">SHEIN</th>
+                                <th class="marketplace-cell background-color-change" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: clamp(0.68rem, 1.08vw, 0.9rem); line-height: 1.1;">SHEIN</th>
                                 <td id="resultado_Shein_Manual"></td>
                                 <td id="resultado_Shein_ValorLiq"></td>
                                 <td id="resultado_Shein_PctLiq"></td>
                             </tr>
                             <tr>
-                                <th class="marketplace-cell background-color-change">SHOPEE</th>
+                                <th class="marketplace-cell background-color-change" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: clamp(0.68rem, 1.08vw, 0.9rem); line-height: 1.1;">SHOPEE</th>
                                 <td id="resultado_Shopee_Manual"></td>
                                 <td id="resultado_Shopee_ValorLiq"></td>
                                 <td id="resultado_Shopee_PctLiq"></td>
@@ -248,8 +258,6 @@
         </main>
 
         <footer class="app-footer">
-            <div>
-            </div>
             <nav class="footer-links" aria-label="Atalhos do rodapé">
                 <a class="footer-chip" href="/subsistemas/">Calculadora para marketplaces</a>
                 <a class="footer-chip" href="/subsistemas/caixa.html">Calculadora de Caixa</a>

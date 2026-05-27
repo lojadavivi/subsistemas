@@ -6,6 +6,145 @@ const CNPJ_COLOR_MAP = {
     "VIVIANE CHRISTINA FERREIRA": "var(--tabela-viviane)"
 };
 
+const AUTH_STORAGE_KEYS = {
+    remember: "calculatorAuthRemembered",
+    session: "calculatorAuthSession",
+};
+
+const AUTH_PROFILES = [
+    {
+        user: String.fromCharCode(114, 101, 110, 97, 116, 111),
+        pass: String.fromCharCode(111, 116, 97, 110, 101, 114),
+    },
+    {
+        user: String.fromCharCode(118, 105, 118, 105, 97, 110, 101),
+        pass: String.fromCharCode(48, 50, 49, 50),
+    },
+];
+
+let calculatorInitialized = false;
+
+function getStoredAccessMode() {
+    try {
+        if (localStorage.getItem(AUTH_STORAGE_KEYS.remember) === "true") {
+            return "remembered";
+        }
+
+        if (sessionStorage.getItem(AUTH_STORAGE_KEYS.session) === "true") {
+            return "session";
+        }
+    } catch (error) {
+        return false;
+    }
+
+    return false;
+}
+
+function setAccessState(unlocked, remember = false) {
+    const html = document.documentElement;
+    const overlay = document.getElementById("login-overlay");
+    const logoutButton = document.getElementById("logout-button");
+
+    html.classList.toggle("is-authenticated", unlocked);
+    html.classList.toggle("auth-locked", !unlocked);
+
+    if (document.body) {
+        document.body.classList.toggle("auth-locked", !unlocked);
+    }
+
+    if (overlay) {
+        overlay.hidden = unlocked;
+    }
+
+    if (logoutButton) {
+        logoutButton.hidden = !unlocked;
+    }
+
+    try {
+        if (unlocked) {
+            sessionStorage.setItem(AUTH_STORAGE_KEYS.session, "true");
+            if (remember) {
+                localStorage.setItem(AUTH_STORAGE_KEYS.remember, "true");
+            } else {
+                localStorage.removeItem(AUTH_STORAGE_KEYS.remember);
+            }
+        } else {
+            sessionStorage.removeItem(AUTH_STORAGE_KEYS.session);
+        }
+    } catch (error) {
+        // Sessão bloqueada por política do navegador; seguimos apenas com a UI.
+    }
+}
+
+function credentialsAreValid(user, pass) {
+    return AUTH_PROFILES.some((profile) => profile.user === user && profile.pass === pass);
+}
+
+function unlockApplication(remember = false) {
+    setAccessState(true, remember);
+    initializeApplication();
+}
+
+function logoutApplication() {
+    try {
+        localStorage.removeItem(AUTH_STORAGE_KEYS.remember);
+        sessionStorage.removeItem(AUTH_STORAGE_KEYS.session);
+    } catch (error) {
+        // Se o storage não estiver disponível, seguimos com o estado visual.
+    }
+
+    const loginForm = document.getElementById("login-form");
+    const loginUser = document.getElementById("login-user");
+    const loginPassword = document.getElementById("login-password");
+    const loginRemember = document.getElementById("login-remember");
+    const loginError = document.getElementById("login-error");
+
+    if (loginUser) {
+        loginUser.value = "";
+    }
+
+    if (loginPassword) {
+        loginPassword.value = "";
+    }
+
+    if (loginRemember) {
+        loginRemember.checked = false;
+    }
+
+    if (loginError) {
+        loginError.textContent = "";
+    }
+
+    if (loginForm && typeof loginForm.reset === "function") {
+        loginForm.reset();
+    }
+
+    setAccessState(false, false);
+
+    if (loginUser) {
+        loginUser.focus();
+    }
+}
+
+function initializeApplication() {
+    if (calculatorInitialized) {
+        return;
+    }
+
+    calculatorInitialized = true;
+
+    const toggleButton = document.getElementById("toggle-dark-mode");
+    if (toggleButton) {
+        toggleButton.addEventListener("click", () => applyTheme(false));
+    }
+
+    applyTheme(true);
+    inicializarCampos();
+    bindCalculatorEvents();
+    alterarBackgroundComBaseEmCnpj();
+    agendarAjusteTextoMarketplace();
+}
+
 function applyTheme(initial = false) {
     const html = document.documentElement;
     const button = document.getElementById("toggle-dark-mode");
@@ -33,6 +172,9 @@ function alterarBackgroundComBaseEmCnpj() {
     const cnpj = cnpjSelect ? cnpjSelect.value : "Selecione";
     const color = CNPJ_COLOR_MAP[cnpj] || "var(--tabela-padrao)";
 
+    document.documentElement.style.setProperty("--fl-cnpj-current", color);
+    document.documentElement.style.setProperty("--fl-cnpj-overlay", color);
+
     document.querySelectorAll(".background-color-change").forEach((element) => {
         element.style.backgroundColor = color;
     });
@@ -48,87 +190,6 @@ function inicializarCampos() {
     if (pctLiq && pctLiq.value === "") pctLiq.value = "0";
 }
 
-function setGuideStepState(stepId, done, active) {
-    const el = document.getElementById(stepId);
-    if (!el) return;
-
-    el.classList.toggle("is-done", !!done);
-    el.classList.toggle("is-active", !done && !!active);
-}
-
-function toNumber(value) {
-    if (value === undefined || value === null || value === "") return 0;
-    const normalized = String(value).replace(",", ".");
-    const parsed = parseFloat(normalized);
-    return Number.isFinite(parsed) ? parsed : 0;
-}
-
-function updateGuidedHelp() {
-    const cnpjEl = document.getElementById("cnpj");
-    const pesoEl = document.getElementById("peso");
-    const custoEl = document.getElementById("custo");
-    const manualEl = document.getElementById("Manual");
-    const valorLiqEl = document.getElementById("ValorLiq");
-    const pctLiqEl = document.getElementById("PctLiq");
-
-    const statusEl = document.getElementById("guide-status");
-    const hintEl = document.getElementById("guide-hint");
-
-    if (!cnpjEl || !pesoEl || !custoEl || !manualEl || !valorLiqEl || !pctLiqEl || !statusEl || !hintEl) {
-        return;
-    }
-
-    const hasCnpj = cnpjEl.value !== "Selecione";
-    const hasPeso = pesoEl.value !== "Selecione";
-    const hasCusto = toNumber(custoEl.value) > 0;
-
-    const filledModes = [
-        toNumber(manualEl.value) > 0,
-        toNumber(valorLiqEl.value) > 0,
-        toNumber(pctLiqEl.value) > 0,
-    ].filter(Boolean).length;
-
-    const hasSingleMode = filledModes === 1;
-
-    setGuideStepState("guide-step-cnpj", hasCnpj, !hasCnpj);
-    setGuideStepState("guide-step-peso", hasPeso, hasCnpj && !hasPeso);
-    setGuideStepState("guide-step-custo", hasCusto, hasCnpj && hasPeso && !hasCusto);
-    setGuideStepState("guide-step-modo", hasSingleMode, hasCnpj && hasPeso && hasCusto && !hasSingleMode);
-
-    if (!hasCnpj) {
-        statusEl.textContent = "Passo atual: selecione o CNPJ para carregar as regras tributárias.";
-        hintEl.textContent = "Dica: cada CNPJ aplica alíquotas diferentes no resultado final.";
-        return;
-    }
-
-    if (!hasPeso) {
-        statusEl.textContent = "Passo atual: selecione o peso para aplicar fretes e insumos corretos.";
-        hintEl.textContent = "Dica: mudanças de peso podem alterar bastante a sugestão de preço.";
-        return;
-    }
-
-    if (!hasCusto) {
-        statusEl.textContent = "Passo atual: informe o custo do produto acima de zero.";
-        hintEl.textContent = "Dica: custo inválido gera margem distorcida em todos os marketplaces.";
-        return;
-    }
-
-    if (filledModes === 0) {
-        statusEl.textContent = "Passo atual: preencha um modo de cálculo para gerar os resultados.";
-        hintEl.textContent = "Dica: Manual confere um preço existente, Valor líquido define quanto receber, Percentual trabalha com margem.";
-        return;
-    }
-
-    if (filledModes > 1) {
-        statusEl.textContent = "Atenção: mais de um modo preenchido. Prefira manter apenas um campo de entrada.";
-        hintEl.textContent = "Dica: limpar os outros modos torna a leitura da tabela mais direta.";
-        return;
-    }
-
-    statusEl.textContent = "Tudo certo: parâmetros mínimos preenchidos e cálculo pronto para leitura comparativa.";
-    hintEl.textContent = "Dica: troque o CNPJ para simular cenários tributários sem perder os demais dados.";
-}
-
 function bindCalculatorEvents() {
     const triggerIds = ["cnpj", "nivel", "peso", "custo", "Manual", "ValorLiq", "PctLiq"];
 
@@ -141,7 +202,6 @@ function bindCalculatorEvents() {
             if (id === "cnpj") {
                 alterarBackgroundComBaseEmCnpj();
             }
-            updateGuidedHelp();
             executarCalculoSeguro();
         });
     });
@@ -195,19 +255,64 @@ function agendarAjusteTextoMarketplace() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const toggleButton = document.getElementById("toggle-dark-mode");
-    if (toggleButton) {
-        toggleButton.addEventListener("click", () => applyTheme(false));
+    const loginForm = document.getElementById("login-form");
+    const loginUser = document.getElementById("login-user");
+    const loginPassword = document.getElementById("login-password");
+    const loginRemember = document.getElementById("login-remember");
+    const loginError = document.getElementById("login-error");
+    const logoutButton = document.getElementById("logout-button");
+
+    const storedAccessMode = getStoredAccessMode();
+
+    if (storedAccessMode) {
+        setAccessState(true, storedAccessMode === "remembered");
+        initializeApplication();
+        window.addEventListener("resize", agendarAjusteTextoMarketplace);
+        return;
     }
 
-    applyTheme(true);
-    inicializarCampos();
-    bindCalculatorEvents();
-    alterarBackgroundComBaseEmCnpj();
-    updateGuidedHelp();
-    agendarAjusteTextoMarketplace();
+    setAccessState(false, false);
 
-    window.addEventListener("resize", () => {
-        agendarAjusteTextoMarketplace();
-    });
+    if (loginForm) {
+        loginForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const user = loginUser ? loginUser.value.trim() : "";
+            const pass = loginPassword ? loginPassword.value : "";
+            const remember = loginRemember ? loginRemember.checked : false;
+
+            if (!credentialsAreValid(user, pass)) {
+                if (loginError) {
+                    loginError.textContent = "Login ou senha inválidos.";
+                }
+
+                if (loginPassword) {
+                    loginPassword.value = "";
+                    loginPassword.focus();
+                }
+
+                return;
+            }
+
+            if (loginError) {
+                loginError.textContent = "";
+            }
+
+            if (loginPassword) {
+                loginPassword.value = "";
+            }
+
+            unlockApplication(remember);
+        });
+    }
+
+    if (logoutButton) {
+        logoutButton.addEventListener("click", logoutApplication);
+    }
+
+    if (loginUser) {
+        loginUser.focus();
+    }
+
+    window.addEventListener("resize", agendarAjusteTextoMarketplace);
 });
