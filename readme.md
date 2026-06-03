@@ -53,6 +53,20 @@ Tipos sugeridos:
 
 ## Histórico
 
+### [5.2.0] - 2026-05-27
+- feat(core/auth): adicionou bloqueio com login/senha na calculadora principal (`index`) com opção de lembrar sessão.
+- feat(core/auth): adicionou botão de logout na calculadora principal e corrigiu fluxo para funcionar também em sessão restaurada.
+- refactor(core/auth): limitou autenticação à `index` e removeu bloqueio das páginas auxiliares.
+- style(core/header): compactou cabeçalho e ações para reduzir altura visual em desktop e mobile.
+- style(core/layout): reduziu espaçamentos, paddings e alturas mínimas para interface mais densa e objetiva.
+- refactor(core/ui): removeu seções de guia rápido e assistente de preenchimento da `index` e limpou CSS/JS exclusivos não utilizados.
+- style(core/theme): redefiniu paleta global (light/dark) com tokens unificados e atualização dos tons de tabela/etiquetas.
+- style(core/cnpj): aplicou cor dinâmica do CNPJ no fundo global da página com transição suave.
+- style(core/cnpj): ajustou duração do fade de troca de cor para `1s`.
+- style(calc/tabela): vinculou o cabeçalho da tabela à cor do CNPJ com variação mais escura e contraste específico por tema.
+- style(core/footer): harmonizou rodapé com a linguagem visual do sistema e com matiz dinâmica do CNPJ.
+- base-calc: 5.2.0
+
 ### [5.1.2] - 2026-05-25
 - feat(calc): adicionou canais TEMU e TIKTOK na tabela de resultados.
 - feat(calc/temu): aplicou regra com comissão `0%`, frete `0%` e taxa fixa `R$ 0`.
