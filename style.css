@@ -550,6 +550,7 @@ main {
 
 .table-wrap {
     overflow-x: auto;
+    overflow-y: hidden;
     border: 1px solid var(--fl-border-subtle);
     border-radius: var(--fl-radius-md);
     background: color-mix(in srgb, var(--f2-table-bg) 85%, transparent);
@@ -599,6 +600,37 @@ html.dark-mode .tabela_calc thead th {
 
 .background-color-change {
     transition: background-color var(--fl-transition-mid);
+}
+
+.resultado-odometro-numero {
+    display: inline-flex;
+    align-items: baseline;
+    font-variant-numeric: tabular-nums;
+}
+
+.resultado-odometro-separador {
+    display: inline-block;
+}
+
+.resultado-odometro-slot {
+    display: inline-block;
+    width: 1ch;
+    height: 1em;
+    overflow: hidden;
+    vertical-align: -0.08em;
+}
+
+.resultado-odometro-trilho {
+    display: block;
+    transform: translateY(0);
+    will-change: transform;
+}
+
+.resultado-odometro-digito {
+    display: block;
+    height: 1em;
+    line-height: 1em;
+    text-align: center;
 }
 
 .app-footer {

@@ -29,6 +29,93 @@ function calcular(inputElement) {
         return parseFloat(valor.replace(",", "."));
     }
 
+    function animarResultadosTabela() {
+        const celulasResultado = document.querySelectorAll('td[id^="resultado_"]');
+        const regexNumero = /^-?\d+(?:,\d+)?$/;
+
+        if (!Element.prototype.animate) {
+            return;
+        }
+
+        celulasResultado.forEach(function (celula) {
+            const textoFinal = (celula.textContent || "").trim();
+
+            if (textoFinal === "" || !/\d/.test(textoFinal)) {
+                return;
+            }
+
+            celula.getAnimations({ subtree: true }).forEach(function (animacao) {
+                animacao.cancel();
+            });
+
+            const partes = textoFinal.split(/(-?\d+(?:,\d+)?)/g).filter(Boolean);
+            celula.textContent = "";
+            celula.setAttribute("aria-label", textoFinal);
+
+            let ordemNumero = 0;
+
+            partes.forEach(function (parte) {
+                if (!regexNumero.test(parte)) {
+                    celula.appendChild(document.createTextNode(parte));
+                    return;
+                }
+
+                const numeroWrapper = document.createElement("span");
+                numeroWrapper.className = "resultado-odometro-numero";
+
+                let ordemDigito = 0;
+
+                Array.from(parte).forEach(function (caractere) {
+                    if (!/\d/.test(caractere)) {
+                        const separador = document.createElement("span");
+                        separador.className = "resultado-odometro-separador";
+                        separador.textContent = caractere;
+                        numeroWrapper.appendChild(separador);
+                        return;
+                    }
+
+                    const digitoFinal = Number(caractere);
+                    const voltas = 1;
+                    const passos = voltas * 10 + digitoFinal;
+
+                    const slot = document.createElement("span");
+                    slot.className = "resultado-odometro-slot";
+
+                    const trilho = document.createElement("span");
+                    trilho.className = "resultado-odometro-trilho";
+
+                    for (let passo = 0; passo <= passos; passo++) {
+                        const item = document.createElement("span");
+                        item.className = "resultado-odometro-digito";
+                        item.textContent = String(passo % 10);
+                        trilho.appendChild(item);
+                    }
+
+                    slot.appendChild(trilho);
+                    numeroWrapper.appendChild(slot);
+
+                    trilho.animate(
+                        [
+                            { transform: "translateY(0)" },
+                            { transform: "translateY(-" + passos + "em)" }
+                        ],
+                        {
+                            duration: 560,
+                            easing: "cubic-bezier(0.2, 0.9, 0.2, 1)",
+                            delay: ordemNumero * 46 + ordemDigito * 20,
+                            fill: "forwards"
+                        }
+                    );
+
+                    ordemDigito += 1;
+                });
+
+                celula.appendChild(numeroWrapper);
+                ordemNumero += 1;
+            });
+        });
+    }
+
     // ============================================================================
     // ETAPA 1: OBTENÇÃO DOS VALORES DE ENTRADA DO FORMULÁRIO
     // ============================================================================
@@ -701,6 +788,8 @@ function calcular(inputElement) {
         document.getElementById("resultado_TikTok_ValorLiq").textContent = "R$ " + calcTikTokValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
         document.getElementById("resultado_TikTok_PctLiq").textContent = "R$ " + calcTikTokPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
     }
+
+    animarResultadosTabela();
 
     // ============================================================================
     // FIM DA FUNÇÃO

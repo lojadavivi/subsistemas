@@ -53,6 +53,13 @@ Tipos sugeridos:
 
 ## Histórico
 
+### [5.2.1] - 2026-06-03
+- style(calc/tabela): adicionou animação de entrada nos resultados após recálculo.
+- style(calc/tabela): ajustou curva e tempo da animação para transição mais suave.
+- fix(calc/tabela): removeu barra de rolagem vertical temporária durante animações na tabela.
+- feat(calc/tabela): implementou efeito tipo hodômetro com subida sequencial dos dígitos.
+- refactor(calc/tabela): restringiu animação apenas aos números, mantendo `R$`, `%`, vírgulas e parênteses estáticos.
+
 ### [5.2.0] - 2026-05-27
 - feat(core/auth): adicionou bloqueio com login/senha na calculadora principal (`index`) com opção de lembrar sessão.
 - feat(core/auth): adicionou botão de logout na calculadora principal e corrigiu fluxo para funcionar também em sessão restaurada.
