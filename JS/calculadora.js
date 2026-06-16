@@ -209,7 +209,8 @@ function calcular(inputElement) {
     const comissao_Shopee_ATE79 = constCnpj + Comissao_Shopee_ATE79;
     const comissao_Shopee_ACIMA79 = constCnpj + Comissao_Shopee_ACIMA79;
     const comissao_Temu = constCnpj + Comissao_Temu;
-    const comissao_TikTok = constCnpj + Comissao_TikTok + FretePct_TikTok;
+    const comissao_TikTok_ATE50 = constCnpj + Comissao_TikTok_ATE50 + FretePct_TikTok;
+    const comissao_TikTok_ACIMA50 = constCnpj + Comissao_TikTok_ACIMA50 + FretePct_TikTok;
 
     // ============================================================================
     // - Comissão da plataforma (varia por CNPJ e canal)
@@ -682,13 +683,25 @@ function calcular(inputElement) {
     var calcTemuPctLiq = (custo_com_margem + frete_Temu + Taxa_Temu) / denominador_Temu;
 
     // ======================== TIKTOK ==============================
-    // TikTok aplica 6% de comissão, 6% de frete sobre o valor de venda e taxa fixa de R$ 4.
+    // TikTok aplica comissão e taxa fixa por faixa de preço:
+    // - abaixo de R$ 50,00: comissão 10% e taxa fixa R$ 4,00
+    // - a partir de R$ 50,00: comissão 6% e taxa fixa R$ 6,00
 
     const frete_TikTok = constFrete_TikTok * constNivel_TikTok;
-    const denominador_TikTok = 1 - comissao_TikTok;
-    var calcTikTokManual = Manual - (custo + Manual * comissao_TikTok + frete_TikTok + Taxa_TikTok);
-    var calcTikTokValorLiq = (ValorLiq + custo + frete_TikTok + Taxa_TikTok) / denominador_TikTok;
-    var calcTikTokPctLiq = (custo_com_margem + frete_TikTok + Taxa_TikTok) / denominador_TikTok;
+    const denominador_TikTok_ATE50 = 1 - comissao_TikTok_ATE50;
+    const denominador_TikTok_ACIMA50 = 1 - comissao_TikTok_ACIMA50;
+
+    const taxa_TikTok_Manual = (Manual < 50 ? Taxa_TikTok_ATE50 : Taxa_TikTok_ACIMA50);
+    const comissao_TikTok_Manual = (Manual < 50 ? comissao_TikTok_ATE50 : comissao_TikTok_ACIMA50);
+    var calcTikTokManual = Manual - (custo + Manual * comissao_TikTok_Manual + frete_TikTok + taxa_TikTok_Manual);
+
+    const calc_TikTok_ate50 = (ValorLiq + custo + frete_TikTok + Taxa_TikTok_ATE50) / denominador_TikTok_ATE50;
+    const calc_TikTok_acima50 = (ValorLiq + custo + frete_TikTok + Taxa_TikTok_ACIMA50) / denominador_TikTok_ACIMA50;
+    var calcTikTokValorLiq = (calc_TikTok_ate50 < 50) ? calc_TikTok_ate50 : calc_TikTok_acima50;
+
+    const calc_TikTok_pct_ate50 = (custo_com_margem + frete_TikTok + Taxa_TikTok_ATE50) / denominador_TikTok_ATE50;
+    const calc_TikTok_pct_acima50 = (custo_com_margem + frete_TikTok + Taxa_TikTok_ACIMA50) / denominador_TikTok_ACIMA50;
+    var calcTikTokPctLiq = (calc_TikTok_pct_ate50 < 50) ? calc_TikTok_pct_ate50 : calc_TikTok_pct_acima50;
 
     // ============================================================================
     // ETAPA 7: EXIBIÇÃO DOS RESULTADOS NA PÁGINA HTML

@@ -105,6 +105,9 @@ const Comissao_RD = 0.19;                        // RD Estação (e-commerce pre
 const Comissao_Shein = 0.16;                     // Shein (plataforma chinesa)
 const Comissao_Shopee_ATE79 = 0.20;              // Shopee até R$ 79,99 (comissão maior)
 const Comissao_Shopee_ACIMA79 = 0.14;            // Shopee acima de R$ 79,99 (comissão menor)
+const Comissao_Temu = 0;                         // Temu (sem comissão)
+const Comissao_TikTok_ATE50 = 0.10;              // TikTok Shop abaixo de R$ 50,00
+const Comissao_TikTok_ACIMA50 = 0.06;            // TikTok Shop a partir de R$ 50,00
 
 // ============================================================================
 // SEÇÃO 3: FRETES PROGRESSIVOS POR PESO
@@ -244,6 +247,15 @@ const Frete_Shein_ACIMA49_23a30KG = 106;
 // Frete fixo único por padrão
 const Frete_Shopee = 0;
 
+// ----- TEMU -----
+// Temu não aplica frete na regra atual
+const Frete_Temu = 0;
+
+// ----- TIKTOK -----
+// TikTok aplica frete como percentual sobre o valor de venda
+const FretePct_TikTok = 0.06;
+const Frete_TikTok = 0;
+
 // ============================================================================
 // SEÇÃO 4: DESCONTOS PROGRESSIVOS POR NÍVEL DE VENDEDOR
 // ============================================================================
@@ -330,6 +342,14 @@ const Nivel_Shein = 1;
 // Shopee não usa sistema de níveis para desconto de frete em cosméticos
 const Nivel_Shopee = 1;
 
+// ----- TEMU -----
+// Temu não usa nível de vendedor para frete na regra atual
+const Nivel_Temu = 1;
+
+// ----- TIKTOK -----
+// TikTok não usa nível de vendedor para frete percentual na regra atual
+const Nivel_TikTok = 1;
+
 // ============================================================================
 // SEÇÃO 5: TAXAS FIXAS POR PLATAFORMA
 // ============================================================================
@@ -367,12 +387,12 @@ const Taxa_Magalu_ACIMA10 = 2;
 
 // ----- MERCADO LIVRE -----
 // Taxa por faixa de preço (para cobertura de pagamento, logística)
-// Até R$ 12,50: Sem taxa (item muito barato)
+// Até R$ 12,50: 50% do valor de venda (percentual — subtrai do denominador na fórmula)
 // R$ 12,50 - R$ 29: R$ 6,25
 // R$ 29 - R$ 50: R$ 6,50
 // R$ 50 - R$ 79: R$ 6,75
 // Acima de R$ 79: Sem taxa (produção é mais importante que taxa)
-const Taxa_ML_ATE12 = 0;
+const Taxa_ML_ATE12_PCT = 0.5; // percentual do valor de venda — usado no denominador, não no numerador
 const Taxa_ML_ATE29 = 6.25;
 const Taxa_ML_ATE50 = 6.5;
 const Taxa_ML_ATE79 = 6.75;
@@ -401,6 +421,15 @@ const Taxa_Shopee_ATE99 = 16;
 const Taxa_Shopee_ATE199 = 20;
 const Taxa_Shopee_ACIMA200 = 26;
 
+// ----- TEMU -----
+// Temu não cobra taxa fixa na regra atual
+const Taxa_Temu = 0;
+
+// ----- TIKTOK -----
+// TikTok cobra taxa fixa por faixa de preço
+const Taxa_TikTok_ATE50 = 4;
+const Taxa_TikTok_ACIMA50 = 6;
+
 // ============================================================================
 // SEÇÃO 6: CUSTOS DE INSUMOS (EMBALAGEM E INSUMOS)
 // ============================================================================
@@ -422,6 +451,225 @@ const Taxa_Shopee_ACIMA200 = 26;
  */
 const Custo_Insumos_ate300G = 1;    // Embalagem simples para itens pequenos
 const Custo_Insumos_acima300G = 2;  // Embalagem reforçada para itens maiores
+
+// ============================================================================
+// SEÇÃO 7: MAPAS DE CONFIGURAÇÃO (SUPORTE À CALCULADORA)
+// ============================================================================
+
+const CNPJ_ALIQUOTAS = {
+	"LOJA DA VIVI LTDA": cnpj_LTDA,
+	"FERREIRA PROSPERITA COSMETICOS LTDA": cnpj_FERREIRA,
+	"RAV SHEFA DISTRIBUIDORA DE COSMETICOS LTDA": cnpj_RAV,
+	"VIVIANE CHRISTINA FERREIRA": cnpj_VIVI,
+};
+
+const FRETE_POR_PESO = {
+	"até 0.3kg": {
+		presencial: Frete_Presencial,
+		amazon: Frete_Amazon_ACIMA79_ate300G,
+		casasBahia: Frete_CasasBahia_ACIMA79_ate300G,
+		magalu: Frete_Magalu_ACIMA79_ate300G,
+		mercadoLivre: Frete_ML_ACIMA79_ate300G,
+		olist: Frete_Olist_ACIMA79_ate300G,
+		rd: Frete_RD_ate300G,
+		shein: Frete_Shein_ACIMA49_ate300G,
+		shopee: Frete_Shopee,
+		temu: Frete_Temu,
+		tiktok: Frete_TikTok,
+	},
+	"0.3 a 0.5kg": {
+		presencial: Frete_Presencial,
+		amazon: Frete_Amazon_ACIMA79_300a500G,
+		casasBahia: Frete_CasasBahia_ACIMA79_300a500G,
+		magalu: Frete_Magalu_ACIMA79_300a500G,
+		mercadoLivre: Frete_ML_ACIMA79_300a500G,
+		olist: Frete_Olist_ACIMA79_300a500G,
+		rd: Frete_RD_300a500G,
+		shein: Frete_Shein_ACIMA49_300a500G,
+		shopee: Frete_Shopee,
+		temu: Frete_Temu,
+		tiktok: Frete_TikTok,
+	},
+	"0.5 a 1kg": {
+		presencial: Frete_Presencial,
+		amazon: Frete_Amazon_ACIMA79_500Ga1KG,
+		casasBahia: Frete_CasasBahia_ACIMA79_500Ga1KG,
+		magalu: Frete_Magalu_ACIMA79_500Ga1KG,
+		mercadoLivre: Frete_ML_ACIMA79_500Ga1KG,
+		olist: Frete_Olist_ACIMA79_500Ga1KG,
+		rd: Frete_RD_500Ga1KG,
+		shein: Frete_Shein_ACIMA49_500Ga1KG,
+		shopee: Frete_Shopee,
+		temu: Frete_Temu,
+		tiktok: Frete_TikTok,
+	},
+	"1 a 2kg": {
+		presencial: Frete_Presencial,
+		amazon: Frete_Amazon_ACIMA79_1a2KG,
+		casasBahia: Frete_CasasBahia_ACIMA79_1a2KG,
+		magalu: Frete_Magalu_ACIMA79_1a2KG,
+		mercadoLivre: Frete_ML_ACIMA79_1a2KG,
+		olist: Frete_Olist_ACIMA79_1a2KG,
+		rd: Frete_RD_1a2KG,
+		shein: Frete_Shein_ACIMA49_1a2KG,
+		shopee: Frete_Shopee,
+		temu: Frete_Temu,
+		tiktok: Frete_TikTok,
+	},
+	"2 a 5kg": {
+		presencial: Frete_Presencial,
+		amazon: Frete_Amazon_ACIMA79_2a5KG,
+		casasBahia: Frete_CasasBahia_ACIMA79_2a5KG,
+		magalu: Frete_Magalu_ACIMA79_2a5KG,
+		mercadoLivre: Frete_ML_ACIMA79_2a5KG,
+		olist: Frete_Olist_ACIMA79_2a5KG,
+		rd: Frete_RD_2a5KG,
+		shein: Frete_Shein_ACIMA49_2a5KG,
+		shopee: Frete_Shopee,
+		temu: Frete_Temu,
+		tiktok: Frete_TikTok,
+	},
+	"5 a 9kg": {
+		presencial: Frete_Presencial,
+		amazon: Frete_Amazon_ACIMA79_5a9KG,
+		casasBahia: Frete_CasasBahia_ACIMA79_5a9KG,
+		magalu: Frete_Magalu_ACIMA79_5a9KG,
+		mercadoLivre: Frete_ML_ACIMA79_5a9KG,
+		olist: Frete_Olist_ACIMA79_5a9KG,
+		rd: Frete_RD_5a9KG,
+		shein: Frete_Shein_ACIMA49_5a9KG,
+		shopee: Frete_Shopee,
+		temu: Frete_Temu,
+		tiktok: Frete_TikTok,
+	},
+	"9 a 13kg": {
+		presencial: Frete_Presencial,
+		amazon: Frete_Amazon_ACIMA79_9a13KG,
+		casasBahia: Frete_CasasBahia_ACIMA79_9a13KG,
+		magalu: Frete_Magalu_ACIMA79_9a13KG,
+		mercadoLivre: Frete_ML_ACIMA79_9a13KG,
+		olist: Frete_Olist_ACIMA79_9a13KG,
+		rd: Frete_RD_9a13KG,
+		shein: Frete_Shein_ACIMA49_9a13KG,
+		shopee: Frete_Shopee,
+		temu: Frete_Temu,
+		tiktok: Frete_TikTok,
+	},
+	"13 a 17kg": {
+		presencial: Frete_Presencial,
+		amazon: Frete_Amazon_ACIMA79_13a17KG,
+		casasBahia: Frete_CasasBahia_ACIMA79_13a17KG,
+		magalu: Frete_Magalu_ACIMA79_13a17KG,
+		mercadoLivre: Frete_ML_ACIMA79_13a17KG,
+		olist: Frete_Olist_ACIMA79_13a17KG,
+		rd: Frete_RD_13a17KG,
+		shein: Frete_Shein_ACIMA49_13a17KG,
+		shopee: Frete_Shopee,
+		temu: Frete_Temu,
+		tiktok: Frete_TikTok,
+	},
+	"17 a 23kg": {
+		presencial: Frete_Presencial,
+		amazon: Frete_Amazon_ACIMA79_17a23KG,
+		casasBahia: Frete_CasasBahia_ACIMA79_17a23KG,
+		magalu: Frete_Magalu_ACIMA79_17a23KG,
+		mercadoLivre: Frete_ML_ACIMA79_17a23KG,
+		olist: Frete_Olist_ACIMA79_17a23KG,
+		rd: Frete_RD_17a23KG,
+		shein: Frete_Shein_ACIMA49_17a23KG,
+		shopee: Frete_Shopee,
+		temu: Frete_Temu,
+		tiktok: Frete_TikTok,
+	},
+	"23 a 30kg": {
+		presencial: Frete_Presencial,
+		amazon: Frete_Amazon_ACIMA79_23a30KG,
+		casasBahia: Frete_CasasBahia_ACIMA79_23a30KG,
+		magalu: Frete_Magalu_ACIMA79_23a30KG,
+		mercadoLivre: Frete_ML_ACIMA79_23a30KG,
+		olist: Frete_Olist_ACIMA79_23a30KG,
+		rd: Frete_RD_23a30KG,
+		shein: Frete_Shein_ACIMA49_23a30KG,
+		shopee: Frete_Shopee,
+		temu: Frete_Temu,
+		tiktok: Frete_TikTok,
+	},
+};
+
+const NIVEL_DESCONTO = {
+	"5": {
+		presencial: Nivel_Presencial,
+		amazon: Nivel_Amazon,
+		casasBahia: Nivel_CasasBahia_5,
+		magalu: Nivel_Magalu_5,
+		mercadoLivre: Nivel_ML_5,
+		olist: Nivel_Olist_5,
+		rd: Nivel_RD,
+		shein: Nivel_Shein,
+		shopee: Nivel_Shopee,
+		temu: Nivel_Temu,
+		tiktok: Nivel_TikTok,
+	},
+	"4": {
+		presencial: Nivel_Presencial,
+		amazon: Nivel_Amazon,
+		casasBahia: Nivel_CasasBahia_4,
+		magalu: Nivel_Magalu_4,
+		mercadoLivre: Nivel_ML_4,
+		olist: Nivel_Olist_4,
+		rd: Nivel_RD,
+		shein: Nivel_Shein,
+		shopee: Nivel_Shopee,
+		temu: Nivel_Temu,
+		tiktok: Nivel_TikTok,
+	},
+	"3": {
+		presencial: Nivel_Presencial,
+		amazon: Nivel_Amazon,
+		casasBahia: Nivel_CasasBahia_3,
+		magalu: Nivel_Magalu_3,
+		mercadoLivre: Nivel_ML_3,
+		olist: Nivel_Olist_3,
+		rd: Nivel_RD,
+		shein: Nivel_Shein,
+		shopee: Nivel_Shopee,
+		temu: Nivel_Temu,
+		tiktok: Nivel_TikTok,
+	},
+	"2": {
+		presencial: Nivel_Presencial,
+		amazon: Nivel_Amazon,
+		casasBahia: Nivel_CasasBahia_2,
+		magalu: Nivel_Magalu_2,
+		mercadoLivre: Nivel_ML_2,
+		olist: Nivel_Olist_2,
+		rd: Nivel_RD,
+		shein: Nivel_Shein,
+		shopee: Nivel_Shopee,
+		temu: Nivel_Temu,
+		tiktok: Nivel_TikTok,
+	},
+	"1": {
+		presencial: Nivel_Presencial,
+		amazon: Nivel_Amazon,
+		casasBahia: Nivel_CasasBahia_1,
+		magalu: Nivel_Magalu_1,
+		mercadoLivre: Nivel_ML_1,
+		olist: Nivel_Olist_1,
+		rd: Nivel_RD,
+		shein: Nivel_Shein,
+		shopee: Nivel_Shopee,
+		temu: Nivel_Temu,
+		tiktok: Nivel_TikTok,
+	},
+};
+
+function obterCustoInsumoPorPeso(peso) {
+	if (peso === "até 0.3kg") {
+		return Custo_Insumos_ate300G;
+	}
+	return Custo_Insumos_acima300G;
+}
 
 // ============================================================================
 // FIM DO ARQUIVO

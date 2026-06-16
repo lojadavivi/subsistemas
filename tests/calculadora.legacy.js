@@ -24,6 +24,98 @@
  */
 function calcular(inputElement) {
 
+    function parseNumeroInput(id) {
+        const valor = document.getElementById(id).value;
+        return parseFloat(valor.replace(",", "."));
+    }
+
+    function animarResultadosTabela() {
+        const celulasResultado = document.querySelectorAll('td[id^="resultado_"]');
+        const regexNumero = /^-?\d+(?:,\d+)?$/;
+
+        if (!Element.prototype.animate) {
+            return;
+        }
+
+        celulasResultado.forEach(function (celula) {
+            const textoFinal = (celula.textContent || "").trim();
+
+            if (textoFinal === "" || !/\d/.test(textoFinal)) {
+                return;
+            }
+
+            celula.getAnimations({ subtree: true }).forEach(function (animacao) {
+                animacao.cancel();
+            });
+
+            const partes = textoFinal.split(/(-?\d+(?:,\d+)?)/g).filter(Boolean);
+            celula.textContent = "";
+            celula.setAttribute("aria-label", textoFinal);
+
+            let ordemNumero = 0;
+
+            partes.forEach(function (parte) {
+                if (!regexNumero.test(parte)) {
+                    celula.appendChild(document.createTextNode(parte));
+                    return;
+                }
+
+                const numeroWrapper = document.createElement("span");
+                numeroWrapper.className = "resultado-odometro-numero";
+
+                let ordemDigito = 0;
+
+                Array.from(parte).forEach(function (caractere) {
+                    if (!/\d/.test(caractere)) {
+                        const separador = document.createElement("span");
+                        separador.className = "resultado-odometro-separador";
+                        separador.textContent = caractere;
+                        numeroWrapper.appendChild(separador);
+                        return;
+                    }
+
+                    const digitoFinal = Number(caractere);
+                    const voltas = 1;
+                    const passos = voltas * 10 + digitoFinal;
+
+                    const slot = document.createElement("span");
+                    slot.className = "resultado-odometro-slot";
+
+                    const trilho = document.createElement("span");
+                    trilho.className = "resultado-odometro-trilho";
+
+                    for (let passo = 0; passo <= passos; passo++) {
+                        const item = document.createElement("span");
+                        item.className = "resultado-odometro-digito";
+                        item.textContent = String(passo % 10);
+                        trilho.appendChild(item);
+                    }
+
+                    slot.appendChild(trilho);
+                    numeroWrapper.appendChild(slot);
+
+                    trilho.animate(
+                        [
+                            { transform: "translateY(0)" },
+                            { transform: "translateY(-" + passos + "em)" }
+                        ],
+                        {
+                            duration: 560,
+                            easing: "cubic-bezier(0.2, 0.9, 0.2, 1)",
+                            delay: ordemNumero * 46 + ordemDigito * 20,
+                            fill: "forwards"
+                        }
+                    );
+
+                    ordemDigito += 1;
+                });
+
+                celula.appendChild(numeroWrapper);
+                ordemNumero += 1;
+            });
+        });
+    }
+
     // ============================================================================
     // ETAPA 1: OBTENÇÃO DOS VALORES DE ENTRADA DO FORMULÁRIO
     // ============================================================================
@@ -32,28 +124,16 @@ function calcular(inputElement) {
     var cnpj = document.getElementById("cnpj").value;              // CNPJ/Loja selecionada
     var nivel = document.getElementById("nivel").value;            // Nível de desconto (1-5)
     var peso = document.getElementById("peso").value;              // Faixa de peso do produto
-    var custo_puro = parseFloat(document.getElementById("custo").value.replace(",", "."));     // Custo puro do produto (sem insumos)
-    var Manual = parseFloat(document.getElementById("Manual").value.replace(",", "."));        // Preço de venda manual
-    var ValorLiq = parseFloat(document.getElementById("ValorLiq").value.replace(",", "."));    // Valor líquido desejado
-    var PctLiq = parseFloat(document.getElementById("PctLiq").value.replace(",", "."));        // Percentual de margem líquida desejada
+    var custo_puro = parseNumeroInput("custo");                    // Custo puro do produto (sem insumos)
+    var Manual = parseNumeroInput("Manual");                       // Preço de venda manual
+    var ValorLiq = parseNumeroInput("ValorLiq");                   // Valor líquido desejado
+    var PctLiq = parseNumeroInput("PctLiq");                       // Percentual de margem líquida desejada
 
     // ============================================================================
     // ETAPA 2: DEFINIÇÃO DE CONSTANTES BASEADAS NO CNPJ/LOJA SELECIONADA
     // ============================================================================
     // Cada CNPJ tem uma taxa/comissão diferente definida em calc_variables.js
-    var constCnpj;  // Taxa de comissão específica do CNPJ (variável global definida em calc_variables.js)
-
-    if (cnpj === "LOJA DA VIVI LTDA") {
-        constCnpj = cnpj_LTDA;
-    } else if (cnpj === "FERREIRA PROSPERITA COSMETICOS LTDA") {
-        constCnpj = cnpj_FERREIRA;
-    } else if (cnpj === "RAV SHEFA DISTRIBUIDORA DE COSMETICOS LTDA") {
-        constCnpj = cnpj_RAV;
-    } else if (cnpj === "VIVIANE CHRISTINA FERREIRA") {
-        constCnpj = cnpj_VIVI;
-    } else if (cnpj === "Selecione") {
-        constCnpj = x;
-    }
+    var constCnpj = CNPJ_ALIQUOTAS[cnpj];
 
     // ============================================================================
     // ETAPA 3: DEFINIÇÃO DE CONSTANTES DE FRETE POR PESO E PLATAFORMA
@@ -62,127 +142,18 @@ function calcular(inputElement) {
     // Produtos acima de R$ 79 geralmente têm frete reduzido ou gratuito.
     // Estas constantes são definidas em calc_variables.js
 
-    var constFrete_Presencial;
-    var constFrete_Amazon;
-    var constFrete_CasasBahia;
-    var constFrete_Magalu;
-    var constFrete_MercadoLivre;
-    var constFrete_Olist;
-    var constFrete_RD;
-    var constFrete_Shein;
-    var constFrete_Shopee;
-
-    if (peso === "Selecione") {
-        constFrete_Presencial = x;
-        constFrete_Amazon = x;
-        constFrete_CasasBahia = x;
-        constFrete_Magalu = x;
-        constFrete_MercadoLivre = x;
-        constFrete_Olist = x;
-        constFrete_RD = x;
-        constFrete_Shein = x;
-        constFrete_Shopee = x;
-    } else if (peso === "até 0.3kg") {
-        constFrete_Presencial = Frete_Presencial;
-        constFrete_Amazon = Frete_Amazon_ACIMA79_ate300G;
-        constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_ate300G;
-        constFrete_Magalu = Frete_Magalu_ACIMA79_ate300G;
-        constFrete_MercadoLivre = Frete_ML_ACIMA79_ate300G;
-        constFrete_Olist = Frete_Olist_ACIMA79_ate300G;
-        constFrete_RD = Frete_RD_ate300G;
-        constFrete_Shein = Frete_Shein_ACIMA49_ate300G;
-        constFrete_Shopee = Frete_Shopee;
-    } else if (peso === "0.3 a 0.5kg") {
-        constFrete_Presencial = Frete_Presencial;
-        constFrete_Amazon = Frete_Amazon_ACIMA79_300a500G;
-        constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_300a500G;
-        constFrete_Magalu = Frete_Magalu_ACIMA79_300a500G;
-        constFrete_MercadoLivre = Frete_ML_ACIMA79_300a500G;
-        constFrete_Olist = Frete_Olist_ACIMA79_300a500G;
-        constFrete_RD = Frete_RD_300a500G;
-        constFrete_Shein = Frete_Shein_ACIMA49_300a500G;
-        constFrete_Shopee = Frete_Shopee;
-    } else if (peso === "0.5 a 1kg") {
-        constFrete_Presencial = Frete_Presencial;
-        constFrete_Amazon = Frete_Amazon_ACIMA79_500Ga1KG;
-        constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_500Ga1KG;
-        constFrete_Magalu = Frete_Magalu_ACIMA79_500Ga1KG;
-        constFrete_MercadoLivre = Frete_ML_ACIMA79_500Ga1KG;
-        constFrete_Olist = Frete_Olist_ACIMA79_300a500G;
-        constFrete_RD = Frete_RD_500Ga1KG;
-        constFrete_Shein = Frete_Shein_ACIMA49_500Ga1KG;
-        constFrete_Shopee = Frete_Shopee;
-    } else if (peso === "1 a 2kg") {
-        constFrete_Presencial = Frete_Presencial;
-        constFrete_Amazon = Frete_Amazon_ACIMA79_1a2KG;
-        constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_1a2KG;
-        constFrete_Magalu = Frete_Magalu_ACIMA79_1a2KG;
-        constFrete_MercadoLivre = Frete_ML_ACIMA79_1a2KG;
-        constFrete_Olist = Frete_Olist_ACIMA79_1a2KG;
-        constFrete_RD = Frete_RD_1a2KG;
-        constFrete_Shein = Frete_Shein_ACIMA49_1a2KG;
-        constFrete_Shopee = Frete_Shopee;
-    } else if (peso === "2 a 5kg") {
-        constFrete_Presencial = Frete_Presencial;
-        constFrete_Amazon = Frete_Amazon_ACIMA79_2a5KG;
-        constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_2a5KG;
-        constFrete_Magalu = Frete_Magalu_ACIMA79_2a5KG;
-        constFrete_MercadoLivre = Frete_ML_ACIMA79_2a5KG;
-        constFrete_Olist = Frete_Olist_ACIMA79_2a5KG;
-        constFrete_RD = Frete_RD_2a5KG;
-        constFrete_Shein = Frete_Shein_ACIMA49_2a5KG;
-        constFrete_Shopee = Frete_Shopee;
-    } else if (peso === "5 a 9kg") {
-        constFrete_Presencial = Frete_Presencial;
-        constFrete_Amazon = Frete_Amazon_ACIMA79_5a9KG;
-        constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_5a9KG;
-        constFrete_Magalu = Frete_Magalu_ACIMA79_5a9KG;
-        constFrete_MercadoLivre = Frete_ML_ACIMA79_5a9KG;
-        constFrete_Olist = Frete_Olist_ACIMA79_5a9KG;
-        constFrete_RD = Frete_RD_5a9KG;
-        constFrete_Shein = Frete_Shein_ACIMA49_5a9KG;
-        constFrete_Shopee = Frete_Shopee;
-    } else if (peso === "9 a 13kg") {
-        constFrete_Presencial = Frete_Presencial;
-        constFrete_Amazon = Frete_Amazon_ACIMA79_9a13KG;
-        constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_9a13KG;
-        constFrete_Magalu = Frete_Magalu_ACIMA79_9a13KG;
-        constFrete_MercadoLivre = Frete_ML_ACIMA79_9a13KG;
-        constFrete_Olist = Frete_Olist_ACIMA79_9a13KG;
-        constFrete_RD = Frete_RD_9a13KG;
-        constFrete_Shein = Frete_Shein_ACIMA49_9a13KG;
-        constFrete_Shopee = Frete_Shopee;
-    } else if (peso === "13 a 17kg") {
-        constFrete_Presencial = Frete_Presencial;
-        constFrete_Amazon = Frete_Amazon_ACIMA79_13a17KG;
-        constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_13a17KG;
-        constFrete_Magalu = Frete_Magalu_ACIMA79_13a17KG;
-        constFrete_MercadoLivre = Frete_ML_ACIMA79_13a17KG;
-        constFrete_Olist = Frete_Olist_ACIMA79_13a17KG;
-        constFrete_RD = Frete_RD_13a17KG;
-        constFrete_Shein = Frete_Shein_ACIMA49_13a17KG;
-        constFrete_Shopee = Frete_Shopee;;
-    } else if (peso === "17 a 23kg") {
-        constFrete_Presencial = Frete_Presencial;
-        constFrete_Amazon = Frete_Amazon_ACIMA79_17a23KG;
-        constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_17a23KG;
-        constFrete_Magalu = Frete_Magalu_ACIMA79_17a23KG;
-        constFrete_MercadoLivre = Frete_ML_ACIMA79_17a23KG;
-        constFrete_Olist = Frete_Olist_ACIMA79_17a23KG;
-        constFrete_RD = Frete_RD_17a23KG;
-        constFrete_Shein = Frete_Shein_ACIMA49_17a23KG;
-        constFrete_Shopee = Frete_Shopee;
-    } else if (peso === "23 a 30kg") {
-        constFrete_Presencial = Frete_Presencial;
-        constFrete_Amazon = Frete_Amazon_ACIMA79_23a30KG;
-        constFrete_CasasBahia = Frete_CasasBahia_ACIMA79_23a30KG;
-        constFrete_Magalu = Frete_Magalu_ACIMA79_23a30KG;
-        constFrete_MercadoLivre = Frete_ML_ACIMA79_23a30KG;
-        constFrete_Olist = Frete_Olist_ACIMA79_23a30KG;
-        constFrete_RD = Frete_RD_23a30KG;
-        constFrete_Shein = Frete_Shein_ACIMA49_23a30KG;
-        constFrete_Shopee = Frete_Shopee;
-    }
+    var fretePorPeso = FRETE_POR_PESO[peso] || {};
+    var constFrete_Presencial = fretePorPeso.presencial;
+    var constFrete_Amazon = fretePorPeso.amazon;
+    var constFrete_CasasBahia = fretePorPeso.casasBahia;
+    var constFrete_Magalu = fretePorPeso.magalu;
+    var constFrete_MercadoLivre = fretePorPeso.mercadoLivre;
+    var constFrete_Olist = fretePorPeso.olist;
+    var constFrete_RD = fretePorPeso.rd;
+    var constFrete_Shein = fretePorPeso.shein;
+    var constFrete_Shopee = fretePorPeso.shopee;
+    var constFrete_Temu = fretePorPeso.temu;
+    var constFrete_TikTok = fretePorPeso.tiktok;
 
     // ============================================================================
     // ETAPA 4: DEFINIÇÃO DE CONSTANTES DE NÍVEL DE DESCONTO
@@ -191,67 +162,18 @@ function calcular(inputElement) {
     // Nível 5 = maior desconto, Nível 1 = menor desconto
     // Plataformas como RAV SHEFA e RD não têm variação de nível
 
-    var constNivel_Presencial;
-    var constNivel_Amazon;
-    var constNivel_CasasBahia;
-    var constNivel_Magalu_;
-    var constNivel_ML;
-    var constNivel_Olist;
-    var constNivel_RD;
-    var constNivel_Shein;
-    var constNivel_Shopee;
-
-    if (nivel === "5") {
-        constNivel_Presencial = Nivel_Presencial;
-        constNivel_Amazon = Nivel_Amazon;
-        constNivel_CasasBahia = Nivel_CasasBahia_5;
-        constNivel_Magalu_ = Nivel_Magalu_5;
-        constNivel_ML = Nivel_ML_5;
-        constNivel_Olist = Nivel_Olist_5;
-        constNivel_RD = Nivel_RD;
-        constNivel_Shein = Nivel_Shein;
-        constNivel_Shopee = Nivel_Shopee;
-    } else if (nivel === "4") {
-        constNivel_Presencial = Nivel_Presencial;
-        constNivel_Amazon = Nivel_Amazon;
-        constNivel_CasasBahia = Nivel_CasasBahia_4;
-        constNivel_Magalu_ = Nivel_Magalu_4;
-        constNivel_ML = Nivel_ML_4;
-        constNivel_Olist = Nivel_Olist_4;
-        constNivel_RD = Nivel_RD;
-        constNivel_Shein = Nivel_Shein;
-        constNivel_Shopee = Nivel_Shopee;
-    } else if (nivel === "3") {
-        constNivel_Presencial = Nivel_Presencial;
-        constNivel_Amazon = Nivel_Amazon;
-        constNivel_CasasBahia = Nivel_CasasBahia_3;
-        constNivel_Magalu_ = Nivel_Magalu_3;
-        constNivel_ML = Nivel_ML_3;
-        constNivel_Olist = Nivel_Olist_3;
-        constNivel_RD = Nivel_RD;
-        constNivel_Shein = Nivel_Shein;
-        constNivel_Shopee = Nivel_Shopee;
-    } else if (nivel === "2") {
-        constNivel_Presencial = Nivel_Presencial;
-        constNivel_Amazon = Nivel_Amazon;
-        constNivel_CasasBahia = Nivel_CasasBahia_2;
-        constNivel_Magalu_ = Nivel_Magalu_2;
-        constNivel_ML = Nivel_ML_2;
-        constNivel_Olist = Nivel_Olist_2;
-        constNivel_RD = Nivel_RD;
-        constNivel_Shein = Nivel_Shein;
-        constNivel_Shopee = Nivel_Shopee;
-    } else if (nivel === "1") {
-        constNivel_Presencial = Nivel_Presencial;
-        constNivel_Amazon = Nivel_Amazon;
-        constNivel_CasasBahia = Nivel_CasasBahia_1;
-        constNivel_Magalu_ = Nivel_Magalu_1;
-        constNivel_ML = Nivel_ML_1;
-        constNivel_Olist = Nivel_Olist_1;
-        constNivel_RD = Nivel_RD;
-        constNivel_Shein = Nivel_Shein;
-        constNivel_Shopee = Nivel_Shopee;
-    }
+    var nivelConfig = NIVEL_DESCONTO[nivel] || {};
+    var constNivel_Presencial = nivelConfig.presencial;
+    var constNivel_Amazon = nivelConfig.amazon;
+    var constNivel_CasasBahia = nivelConfig.casasBahia;
+    var constNivel_Magalu_ = nivelConfig.magalu;
+    var constNivel_ML = nivelConfig.mercadoLivre;
+    var constNivel_Olist = nivelConfig.olist;
+    var constNivel_RD = nivelConfig.rd;
+    var constNivel_Shein = nivelConfig.shein;
+    var constNivel_Shopee = nivelConfig.shopee;
+    var constNivel_Temu = nivelConfig.temu;
+    var constNivel_TikTok = nivelConfig.tiktok;
 
     // ============================================================================
     // ETAPA 5: DEFINIÇÃO DE CUSTO DE INSUMOS POR FAIXA DE PESO
@@ -260,15 +182,7 @@ function calcular(inputElement) {
     // - Até 300g: embalagem mais simples
     // - Acima de 300g: embalagem mais robusta (maior custo)
 
-    var constCusto_Insumos;
-
-    if (peso === "Selecione") {
-        constCusto_Insumos = x;  // Valor não definido
-    } else if (peso === "até 0.3kg") {
-        constCusto_Insumos = Custo_Insumos_ate300G;
-    } else {
-        constCusto_Insumos = Custo_Insumos_acima300G;
-    }
+    var constCusto_Insumos = obterCustoInsumoPorPeso(peso);
 
     // Custo total = custos de produto puro + custos de insumos/embalagem
     const custo = custo_puro + constCusto_Insumos;
@@ -294,6 +208,9 @@ function calcular(inputElement) {
     const comissao_Shein = constCnpj + Comissao_Shein;
     const comissao_Shopee_ATE79 = constCnpj + Comissao_Shopee_ATE79;
     const comissao_Shopee_ACIMA79 = constCnpj + Comissao_Shopee_ACIMA79;
+    const comissao_Temu = constCnpj + Comissao_Temu;
+    const comissao_TikTok_ATE50 = constCnpj + Comissao_TikTok_ATE50 + FretePct_TikTok;
+    const comissao_TikTok_ACIMA50 = constCnpj + Comissao_TikTok_ACIMA50 + FretePct_TikTok;
 
     // ============================================================================
     // - Comissão da plataforma (varia por CNPJ e canal)
@@ -555,13 +472,14 @@ function calcular(inputElement) {
     const frete_ML_ATE79_n = Frete_ML_ATE79 * constNivel_ML;
     const frete_ML_ACIMA79_n = constFrete_MercadoLivre * constNivel_ML;
     const frete_Manual_ML = (Manual <= 78.99 ? frete_ML_ATE79_n : frete_ML_ACIMA79_n);
-    const taxa_Manual_ML = (Manual <= 12.5 ? Taxa_ML_ATE12 : Manual <= 29 ? Taxa_ML_ATE29 : Manual <= 50 ? Taxa_ML_ATE50 : Manual <= 78.99 ? Taxa_ML_ATE79 : Taxa_ML_ACIMA79);
+    const taxa_Manual_ML = (Manual <= 12.5 ? Taxa_ML_ATE12_PCT * Manual : Manual <= 29 ? Taxa_ML_ATE29 : Manual <= 50 ? Taxa_ML_ATE50 : Manual <= 78.99 ? Taxa_ML_ATE79 : Taxa_ML_ACIMA79);
 
     // MLC Manual - calcMLCManual - simplificado
     var calcMLCManual = Manual - (custo + Manual * (constCnpj + Comissao_MLC) + taxa_Manual_ML + frete_Manual_ML);
 
     // MLC Valor Liquido - calcMLCValorLiq - com cascata de 5 ternários
-    const calc_MLC_ate12 = (ValorLiq + custo + Taxa_ML_ATE12 + frete_ML_ATE79_n) / denominador_MLC;
+    // taxa até 12,50 é percentual: move para o denominador (denominador_MLC - Taxa_ML_ATE12_PCT)
+    const calc_MLC_ate12 = (ValorLiq + custo + frete_ML_ATE79_n) / (denominador_MLC - Taxa_ML_ATE12_PCT);
     const calc_MLC_ate29 = (ValorLiq + custo + Taxa_ML_ATE29 + frete_ML_ATE79_n) / denominador_MLC;
     const calc_MLC_ate50 = (ValorLiq + custo + Taxa_ML_ATE50 + frete_ML_ATE79_n) / denominador_MLC;
     const calc_MLC_ate79 = (ValorLiq + custo + Taxa_ML_ATE79 + frete_ML_ATE79_n) / denominador_MLC;
@@ -569,7 +487,8 @@ function calcular(inputElement) {
     var calcMLCValorLiq = (calc_MLC_ate12 <= 12.5) ? calc_MLC_ate12 : (calc_MLC_ate29 <= 29) ? calc_MLC_ate29 : (calc_MLC_ate50 <= 50) ? calc_MLC_ate50 : (calc_MLC_ate79 <= 78.99) ? calc_MLC_ate79 : calc_MLC_acima79;
 
     // MLC Porcentagem Liquida - calcMLCPctLiq - com cascata de 5 ternários
-    const calc_MLC_pct_ate12 = (custo_com_margem + Taxa_ML_ATE12 + frete_ML_ATE79_n) / denominador_MLC;
+    // taxa até 12,50 é percentual: move para o denominador (denominador_MLC - Taxa_ML_ATE12_PCT)
+    const calc_MLC_pct_ate12 = (custo_com_margem + frete_ML_ATE79_n) / (denominador_MLC - Taxa_ML_ATE12_PCT);
     const calc_MLC_pct_ate29 = (custo_com_margem + Taxa_ML_ATE29 + frete_ML_ATE79_n) / denominador_MLC;
     const calc_MLC_pct_ate50 = (custo_com_margem + Taxa_ML_ATE50 + frete_ML_ATE79_n) / denominador_MLC;
     const calc_MLC_pct_ate79 = (custo_com_margem + Taxa_ML_ATE79 + frete_ML_ATE79_n) / denominador_MLC;
@@ -580,7 +499,8 @@ function calcular(inputElement) {
     var calcMLPManual = Manual - (custo + Manual * (constCnpj + Comissao_MLP) + taxa_Manual_ML + frete_Manual_ML);
 
     // MLP Valor Liquido - calcMLPValorLiq - com cascata de 5 ternários
-    const calc_MLP_ate12 = (ValorLiq + custo + Taxa_ML_ATE12 + frete_ML_ATE79_n) / denominador_MLP;
+    // taxa até 12,50 é percentual: move para o denominador (denominador_MLP - Taxa_ML_ATE12_PCT)
+    const calc_MLP_ate12 = (ValorLiq + custo + frete_ML_ATE79_n) / (denominador_MLP - Taxa_ML_ATE12_PCT);
     const calc_MLP_ate29 = (ValorLiq + custo + Taxa_ML_ATE29 + frete_ML_ATE79_n) / denominador_MLP;
     const calc_MLP_ate50 = (ValorLiq + custo + Taxa_ML_ATE50 + frete_ML_ATE79_n) / denominador_MLP;
     const calc_MLP_ate79 = (ValorLiq + custo + Taxa_ML_ATE79 + frete_ML_ATE79_n) / denominador_MLP;
@@ -588,7 +508,8 @@ function calcular(inputElement) {
     var calcMLPValorLiq = (calc_MLP_ate12 <= 12.5) ? calc_MLP_ate12 : (calc_MLP_ate29 <= 29) ? calc_MLP_ate29 : (calc_MLP_ate50 <= 50) ? calc_MLP_ate50 : (calc_MLP_ate79 <= 78.99) ? calc_MLP_ate79 : calc_MLP_acima79;
 
     // MLP Porcentagem Liquida - calcMLPPctLiq - com cascata de 5 ternários
-    const calc_MLP_pct_ate12 = (custo_com_margem + Taxa_ML_ATE12 + frete_ML_ATE79_n) / denominador_MLP;
+    // taxa até 12,50 é percentual: move para o denominador (denominador_MLP - Taxa_ML_ATE12_PCT)
+    const calc_MLP_pct_ate12 = (custo_com_margem + frete_ML_ATE79_n) / (denominador_MLP - Taxa_ML_ATE12_PCT);
     const calc_MLP_pct_ate29 = (custo_com_margem + Taxa_ML_ATE29 + frete_ML_ATE79_n) / denominador_MLP;
     const calc_MLP_pct_ate50 = (custo_com_margem + Taxa_ML_ATE50 + frete_ML_ATE79_n) / denominador_MLP;
     const calc_MLP_pct_ate79 = (custo_com_margem + Taxa_ML_ATE79 + frete_ML_ATE79_n) / denominador_MLP;
@@ -751,6 +672,37 @@ function calcular(inputElement) {
     const calc_Shopee_pct_acima200 = (custo_com_margem + Taxa_Shopee_ACIMA200 + frete_Shopee_n) / denominador_Shopee_ACIMA79;
     var calcShopeePctLiq = (calc_Shopee_pct_ate79 <= 79.99) ? calc_Shopee_pct_ate79 : (calc_Shopee_pct_ate99 <= 99.99) ? calc_Shopee_pct_ate99 : (calc_Shopee_pct_ate199 <= 199.99) ? calc_Shopee_pct_ate199 : calc_Shopee_pct_acima200;
 
+    // ======================== TEMU ================================
+    // Temu sem comissão, sem frete e sem taxa fixa na regra atual.
+    // Apenas a alíquota do CNPJ é considerada no cálculo.
+
+    const frete_Temu = constFrete_Temu * constNivel_Temu;
+    const denominador_Temu = 1 - comissao_Temu;
+    var calcTemuManual = Manual - (custo + Manual * comissao_Temu + frete_Temu + Taxa_Temu);
+    var calcTemuValorLiq = (ValorLiq + custo + frete_Temu + Taxa_Temu) / denominador_Temu;
+    var calcTemuPctLiq = (custo_com_margem + frete_Temu + Taxa_Temu) / denominador_Temu;
+
+    // ======================== TIKTOK ==============================
+    // TikTok aplica comissão e taxa fixa por faixa de preço:
+    // - abaixo de R$ 50,00: comissão 10% e taxa fixa R$ 4,00
+    // - a partir de R$ 50,00: comissão 6% e taxa fixa R$ 6,00
+
+    const frete_TikTok = constFrete_TikTok * constNivel_TikTok;
+    const denominador_TikTok_ATE50 = 1 - comissao_TikTok_ATE50;
+    const denominador_TikTok_ACIMA50 = 1 - comissao_TikTok_ACIMA50;
+
+    const taxa_TikTok_Manual = (Manual < 50 ? Taxa_TikTok_ATE50 : Taxa_TikTok_ACIMA50);
+    const comissao_TikTok_Manual = (Manual < 50 ? comissao_TikTok_ATE50 : comissao_TikTok_ACIMA50);
+    var calcTikTokManual = Manual - (custo + Manual * comissao_TikTok_Manual + frete_TikTok + taxa_TikTok_Manual);
+
+    const calc_TikTok_ate50 = (ValorLiq + custo + frete_TikTok + Taxa_TikTok_ATE50) / denominador_TikTok_ATE50;
+    const calc_TikTok_acima50 = (ValorLiq + custo + frete_TikTok + Taxa_TikTok_ACIMA50) / denominador_TikTok_ACIMA50;
+    var calcTikTokValorLiq = (calc_TikTok_ate50 < 50) ? calc_TikTok_ate50 : calc_TikTok_acima50;
+
+    const calc_TikTok_pct_ate50 = (custo_com_margem + frete_TikTok + Taxa_TikTok_ATE50) / denominador_TikTok_ATE50;
+    const calc_TikTok_pct_acima50 = (custo_com_margem + frete_TikTok + Taxa_TikTok_ACIMA50) / denominador_TikTok_ACIMA50;
+    var calcTikTokPctLiq = (calc_TikTok_pct_ate50 < 50) ? calc_TikTok_pct_ate50 : calc_TikTok_pct_acima50;
+
     // ============================================================================
     // ETAPA 7: EXIBIÇÃO DOS RESULTADOS NA PÁGINA HTML
     // ============================================================================
@@ -785,6 +737,12 @@ function calcular(inputElement) {
         document.getElementById("resultado_Shopee_Manual").textContent = "";
         document.getElementById("resultado_Shopee_ValorLiq").textContent = "";
         document.getElementById("resultado_Shopee_PctLiq").textContent = "";
+        document.getElementById("resultado_Temu_Manual").textContent = "";
+        document.getElementById("resultado_Temu_ValorLiq").textContent = "";
+        document.getElementById("resultado_Temu_PctLiq").textContent = "";
+        document.getElementById("resultado_TikTok_Manual").textContent = "";
+        document.getElementById("resultado_TikTok_ValorLiq").textContent = "";
+        document.getElementById("resultado_TikTok_PctLiq").textContent = "";
     } else {
 
         // Amazon
@@ -832,7 +790,19 @@ function calcular(inputElement) {
         document.getElementById("resultado_Shopee_Manual").textContent = "R$ " + calcShopeeManual.toFixed(2).replace(".", ",") + " (" + ((calcShopeeManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
         document.getElementById("resultado_Shopee_ValorLiq").textContent = "R$ " + calcShopeeValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
         document.getElementById("resultado_Shopee_PctLiq").textContent = "R$ " + calcShopeePctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
+
+        // Temu
+        document.getElementById("resultado_Temu_Manual").textContent = "R$ " + calcTemuManual.toFixed(2).replace(".", ",") + " (" + ((calcTemuManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_Temu_ValorLiq").textContent = "R$ " + calcTemuValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_Temu_PctLiq").textContent = "R$ " + calcTemuPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
+
+        // TikTok
+        document.getElementById("resultado_TikTok_Manual").textContent = "R$ " + calcTikTokManual.toFixed(2).replace(".", ",") + " (" + ((calcTikTokManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_TikTok_ValorLiq").textContent = "R$ " + calcTikTokValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+        document.getElementById("resultado_TikTok_PctLiq").textContent = "R$ " + calcTikTokPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
     }
+
+    animarResultadosTabela();
 
     // ============================================================================
     // FIM DA FUNÇÃO

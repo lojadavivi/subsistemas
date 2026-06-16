@@ -63,6 +63,21 @@ function buildDocument(inputData) {
 
     return {
         elements,
+        querySelectorAll() {
+            return [];
+        },
+        createElement() {
+            return {
+                className: "",
+                textContent: "",
+                appendChild() { },
+                setAttribute() { },
+                getAnimations() { return []; },
+            };
+        },
+        createTextNode(text) {
+            return { textContent: text };
+        },
         getElementById(id) {
             if (!elements[id]) {
                 elements[id] = { value: "", textContent: "" };
@@ -77,6 +92,7 @@ function runScenario({ variablesFile, calculatorFile, inputData }) {
     const context = {
         document,
         console,
+        Element: function Element() { },
     };
 
     vm.createContext(context);

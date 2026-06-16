@@ -53,6 +53,12 @@ Tipos sugeridos:
 
 ## Histórico
 
+### [5.2.2] - 2026-06-16
+- feat(calc/tiktok): atualizou comissão por faixa de preço para `10%` abaixo de `R$ 50,00` e `6%` a partir de `R$ 50,00`.
+- feat(calc/tiktok): atualizou taxa fixa por faixa de preço para `R$ 4,00` abaixo de `R$ 50,00` e `R$ 6,00` a partir de `R$ 50,00`.
+- test(calc): sincronizou baseline de regressão com a implementação atual (`tests/calc_variables.legacy.js` e `tests/calculadora.legacy.js`).
+- test(calc): validou a calculadora com regressão (`1800` cenários) e stress financeiro (`73800` cenários), sem falhas.
+
 ### [5.2.1] - 2026-06-03
 - style(calc/tabela): adicionou animação de entrada nos resultados após recálculo.
 - style(calc/tabela): ajustou curva e tempo da animação para transição mais suave.

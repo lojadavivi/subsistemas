@@ -48,6 +48,21 @@ function buildDocument(inputData) {
 
     return {
         elements,
+        querySelectorAll() {
+            return [];
+        },
+        createElement() {
+            return {
+                className: "",
+                textContent: "",
+                appendChild() { },
+                setAttribute() { },
+                getAnimations() { return []; },
+            };
+        },
+        createTextNode(text) {
+            return { textContent: text };
+        },
         getElementById(id) {
             if (!elements[id]) {
                 elements[id] = { value: "", textContent: "" };
@@ -62,7 +77,10 @@ function loadEngine() {
     const variablesFile = path.join(root, "JS", "calc_variables.js");
     const calculatorFile = path.join(root, "JS", "calculadora.js");
 
-    const context = { console };
+    const context = {
+        console,
+        Element: function Element() { },
+    };
     vm.createContext(context);
 
     vm.runInContext(fs.readFileSync(variablesFile, "utf8"), context, { filename: variablesFile });

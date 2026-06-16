@@ -106,7 +106,8 @@ const Comissao_Shein = 0.16;                     // Shein (plataforma chinesa)
 const Comissao_Shopee_ATE79 = 0.20;              // Shopee até R$ 79,99 (comissão maior)
 const Comissao_Shopee_ACIMA79 = 0.14;            // Shopee acima de R$ 79,99 (comissão menor)
 const Comissao_Temu = 0;                         // Temu (sem comissão)
-const Comissao_TikTok = 0.06;                    // TikTok Shop (6% sobre valor de venda)
+const Comissao_TikTok_ATE50 = 0.10;              // TikTok Shop abaixo de R$ 50,00
+const Comissao_TikTok_ACIMA50 = 0.06;            // TikTok Shop a partir de R$ 50,00
 
 // ============================================================================
 // SEÇÃO 3: FRETES PROGRESSIVOS POR PESO
@@ -425,8 +426,9 @@ const Taxa_Shopee_ACIMA200 = 26;
 const Taxa_Temu = 0;
 
 // ----- TIKTOK -----
-// TikTok cobra taxa fixa por pedido
-const Taxa_TikTok = 4;
+// TikTok cobra taxa fixa por faixa de preço
+const Taxa_TikTok_ATE50 = 4;
+const Taxa_TikTok_ACIMA50 = 6;
 
 // ============================================================================
 // SEÇÃO 6: CUSTOS DE INSUMOS (EMBALAGEM E INSUMOS)
