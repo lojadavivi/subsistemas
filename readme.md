@@ -53,6 +53,13 @@ Tipos sugeridos:
 
 ## Histórico
 
+### [5.2.3] - 2026-07-01
+- refactor(calc/rav): simplificou alíquota de lucro presumido para constante `10%`, removendo cálculo complexo anterior.
+- refactor(calc): removeu bloqueio de marketplaces para CNPJ RAV, permitindo cálculos para todos os canais.
+- style(core/footer): limpeza de espaçamento em footers (removeu divs vazios em XMLtoHTML, XMLtoTABLE-compra, XMLtoTABLE-venda).
+- feat(core/navigation): adicionou links "Calculadora de Marketplaces" e "Gerador de DANFE" ao footer de caixa.html.
+- feat(core/precos): adicionou footer completo com navegação, informações legais e versão em precos.html.
+
 ### [5.2.2] - 2026-06-16
 - feat(calc/tiktok): atualizou comissão por faixa de preço para `10%` abaixo de `R$ 50,00` e `6%` a partir de `R$ 50,00`.
 - feat(calc/tiktok): atualizou taxa fixa por faixa de preço para `R$ 4,00` abaixo de `R$ 50,00` e `R$ 6,00` a partir de `R$ 50,00`.

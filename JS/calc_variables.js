@@ -34,42 +34,7 @@
 const cnpj_LTDA = 0.1; 
 const cnpj_FERREIRA = 0.11;
 const cnpj_VIVI = 0.04;
-
-/**
- * LUCRO PRESUMIDO - CNPJ RAV (Rav Shefa Distribuidora de Cosméticos)
- * 
- * Regime tributário onde o lucro é presunmido pela Receita Federal.
- * Alíquota total = soma de todos os impostos e descontos abaixo.
- * 
- * Componentes:
- * - ICMS (Imposto sobre Circulação de Mercadorias): 17% (padrão cosméticos)
- * - PIS (Programa de Integração Social): 0.65%
- * - COFINS (Contribuição para Financiamento da Seguridade Social): 3%
- * - Frete (embutido nas despesas): 3%
- * - Comissão (desconto operacional): 10%
- * - Maquininha (Máquina de cartão): 3.29%
- * - IRPJ (Imposto de Renda Pessoa Jurídica): 15% sobre 8% presunção = 1.20%
- * - CSLL (Contribuição Social sobre o Lucro Líquido): 9% sobre 12% presunção = 1.08%
- * 
- * Total: 17% + 0.65% + 3% + 3% + 10% + 3.29% + 1.20% + 1.08% = 39.22%
- */
-const ICMS_RAV = 0.17;                           // Imposto sobre circulação de mercadorias (cosméticos)
-const PIS_RAV = 0.0065;                          // Programa de Integração Social
-const COFINS_RAV = 0.03;                         // Contribuição ao Financiamento da Seguridade Social
-const Frete_RAV = 0.03;                          // Frete embutido nas despesas operacionais
-const Comissao_RAV = 0.1;                        // Comissão operacional geral
-const Maquininha_RAV = 0.0329;                   // Taxa da máquina de cartão (débito + crédito médio)
-const Presuncao_IRPJ_RAV = 0.08;                 // Presunção de lucro para IRPJ (8% do faturamento)
-const Presuncao_CSLL_RAV = 0.12;                 // Presunção de lucro para CSLL (12% do faturamento)
-const IRPJ_RAV = 0.15;                           // Alíquota do Imposto de Renda (15%)
-const CSLL_RAV = 0.09;                           // Alíquota da Contribuição Social (9%)
-
-/**
- * ALÍQUOTA TOTAL CNPJ RAV
- * Fórmula: Impostos + Fretes + Comissão + Maquininha + (IRPJ sobre presunção) + (CSLL sobre presunção)
- * Usado como "constCnpj" em calculadora.js para descontos no cálculo final
- */
-const cnpj_RAV = (ICMS_RAV + PIS_RAV + COFINS_RAV + Frete_RAV + Comissao_RAV + Maquininha_RAV + (Presuncao_IRPJ_RAV * IRPJ_RAV) + (Presuncao_CSLL_RAV * CSLL_RAV));
+const cnpj_RAV = 0.1;
 
 
 // ============================================================================

@@ -718,89 +718,61 @@ function calcular(inputElement) {
     document.getElementById("resultado_Presencial_ValorLiq").textContent = "R$ " + calcPresencialValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
     document.getElementById("resultado_Presencial_PctLiq").textContent = "R$ " + calcPresencialPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
 
-    if (cnpj === "RAV SHEFA DISTRIBUIDORA DE COSMETICOS LTDA") {
-        document.getElementById("resultado_CasasBahia_Manual").textContent = "";
-        document.getElementById("resultado_CasasBahia_ValorLiq").textContent = "";
-        document.getElementById("resultado_CasasBahia_PctLiq").textContent = "";
-        document.getElementById("resultado_Magalu_Manual").textContent = "";
-        document.getElementById("resultado_Magalu_ValorLiq").textContent = "";
-        document.getElementById("resultado_Magalu_PctLiq").textContent = "";
-        document.getElementById("resultado_MLC_Manual").textContent = "";
-        document.getElementById("resultado_MLC_ValorLiq").textContent = "";
-        document.getElementById("resultado_MLC_PctLiq").textContent = "";
-        document.getElementById("resultado_MLP_Manual").textContent = "";
-        document.getElementById("resultado_MLP_ValorLiq").textContent = "";
-        document.getElementById("resultado_MLP_PctLiq").textContent = "";
-        document.getElementById("resultado_Shein_Manual").textContent = "";
-        document.getElementById("resultado_Shein_ValorLiq").textContent = "";
-        document.getElementById("resultado_Shein_PctLiq").textContent = "";
-        document.getElementById("resultado_Shopee_Manual").textContent = "";
-        document.getElementById("resultado_Shopee_ValorLiq").textContent = "";
-        document.getElementById("resultado_Shopee_PctLiq").textContent = "";
-        document.getElementById("resultado_Temu_Manual").textContent = "";
-        document.getElementById("resultado_Temu_ValorLiq").textContent = "";
-        document.getElementById("resultado_Temu_PctLiq").textContent = "";
-        document.getElementById("resultado_TikTok_Manual").textContent = "";
-        document.getElementById("resultado_TikTok_ValorLiq").textContent = "";
-        document.getElementById("resultado_TikTok_PctLiq").textContent = "";
-    } else {
+    // Amazon
+    document.getElementById("resultado_Amazon_Manual").textContent = "R$ " + calcAmazonManual.toFixed(2).replace(".", ",") + " (" + ((calcAmazonManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_Amazon_ValorLiq").textContent = "R$ " + calcAmazonValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_Amazon_PctLiq").textContent = "R$ " + calcAmazonPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
 
-        // Amazon
-        document.getElementById("resultado_Amazon_Manual").textContent = "R$ " + calcAmazonManual.toFixed(2).replace(".", ",") + " (" + ((calcAmazonManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_Amazon_ValorLiq").textContent = "R$ " + calcAmazonValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_Amazon_PctLiq").textContent = "R$ " + calcAmazonPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
+    // Casas Bahia
+    document.getElementById("resultado_CasasBahia_Manual").textContent = "R$ " + calcCasasBahiaManual.toFixed(2).replace(".", ",") + " (" + ((calcCasasBahiaManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_CasasBahia_ValorLiq").textContent = "R$ " + calcCasasBahiaValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_CasasBahia_PctLiq").textContent = "R$ " + calcCasasBahiaPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
 
-        // Casas Bahia
-        document.getElementById("resultado_CasasBahia_Manual").textContent = "R$ " + calcCasasBahiaManual.toFixed(2).replace(".", ",") + " (" + ((calcCasasBahiaManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_CasasBahia_ValorLiq").textContent = "R$ " + calcCasasBahiaValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_CasasBahia_PctLiq").textContent = "R$ " + calcCasasBahiaPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
+    // Magalu
+    document.getElementById("resultado_Magalu_Manual").textContent = "R$ " + calcMagaluManual.toFixed(2).replace(".", ",") + " (" + ((calcMagaluManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_Magalu_ValorLiq").textContent = "R$ " + calcMagaluValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_Magalu_PctLiq").textContent = "R$ " + calcMagaluPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
 
-        // Magalu
-        document.getElementById("resultado_Magalu_Manual").textContent = "R$ " + calcMagaluManual.toFixed(2).replace(".", ",") + " (" + ((calcMagaluManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_Magalu_ValorLiq").textContent = "R$ " + calcMagaluValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_Magalu_PctLiq").textContent = "R$ " + calcMagaluPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
-
-        // Mercado Livre Classico
-        document.getElementById("resultado_MLC_Manual").textContent = "R$ " + calcMLCManual.toFixed(2).replace(".", ",") + " (" + ((calcMLCManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_MLC_ValorLiq").textContent = "R$ " + calcMLCValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_MLC_PctLiq").textContent = "R$ " + calcMLCPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
+    // Mercado Livre Classico
+    document.getElementById("resultado_MLC_Manual").textContent = "R$ " + calcMLCManual.toFixed(2).replace(".", ",") + " (" + ((calcMLCManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_MLC_ValorLiq").textContent = "R$ " + calcMLCValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_MLC_PctLiq").textContent = "R$ " + calcMLCPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
 
 
-        // Mercado Livre Premium
-        document.getElementById("resultado_MLP_Manual").textContent = "R$ " + calcMLPManual.toFixed(2).replace(".", ",") + " (" + ((calcMLPManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_MLP_ValorLiq").textContent = "R$ " + calcMLPValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_MLP_PctLiq").textContent = "R$ " + calcMLPPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
+    // Mercado Livre Premium
+    document.getElementById("resultado_MLP_Manual").textContent = "R$ " + calcMLPManual.toFixed(2).replace(".", ",") + " (" + ((calcMLPManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_MLP_ValorLiq").textContent = "R$ " + calcMLPValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_MLP_PctLiq").textContent = "R$ " + calcMLPPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
 
-        // Olist
-        document.getElementById("resultado_Olist_Manual").textContent = "R$ " + calcOlistManual.toFixed(2).replace(".", ",") + " (" + ((calcOlistManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_Olist_ValorLiq").textContent = "R$ " + calcOlistValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_Olist_PctLiq").textContent = "R$ " + calcOlistPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
+    // Olist
+    document.getElementById("resultado_Olist_Manual").textContent = "R$ " + calcOlistManual.toFixed(2).replace(".", ",") + " (" + ((calcOlistManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_Olist_ValorLiq").textContent = "R$ " + calcOlistValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_Olist_PctLiq").textContent = "R$ " + calcOlistPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
 
-        // RD
-        document.getElementById("resultado_RD_Manual").textContent = "R$ " + calcRDManual.toFixed(2).replace(".", ",") + " (" + ((calcRDManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_RD_ValorLiq").textContent = "R$ " + calcRDValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_RD_PctLiq").textContent = "R$ " + calcRDPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
+    // RD
+    document.getElementById("resultado_RD_Manual").textContent = "R$ " + calcRDManual.toFixed(2).replace(".", ",") + " (" + ((calcRDManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_RD_ValorLiq").textContent = "R$ " + calcRDValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_RD_PctLiq").textContent = "R$ " + calcRDPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
 
-        // Shein
-        document.getElementById("resultado_Shein_Manual").textContent = "R$ " + calcSheinManual.toFixed(2).replace(".", ",") + " (" + ((calcSheinManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_Shein_ValorLiq").textContent = "R$ " + calcSheinValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_Shein_PctLiq").textContent = "R$ " + calcSheinPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
+    // Shein
+    document.getElementById("resultado_Shein_Manual").textContent = "R$ " + calcSheinManual.toFixed(2).replace(".", ",") + " (" + ((calcSheinManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_Shein_ValorLiq").textContent = "R$ " + calcSheinValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_Shein_PctLiq").textContent = "R$ " + calcSheinPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
 
-        // Shopee
-        document.getElementById("resultado_Shopee_Manual").textContent = "R$ " + calcShopeeManual.toFixed(2).replace(".", ",") + " (" + ((calcShopeeManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_Shopee_ValorLiq").textContent = "R$ " + calcShopeeValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_Shopee_PctLiq").textContent = "R$ " + calcShopeePctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
+    // Shopee
+    document.getElementById("resultado_Shopee_Manual").textContent = "R$ " + calcShopeeManual.toFixed(2).replace(".", ",") + " (" + ((calcShopeeManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_Shopee_ValorLiq").textContent = "R$ " + calcShopeeValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_Shopee_PctLiq").textContent = "R$ " + calcShopeePctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
 
-        // Temu
-        document.getElementById("resultado_Temu_Manual").textContent = "R$ " + calcTemuManual.toFixed(2).replace(".", ",") + " (" + ((calcTemuManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_Temu_ValorLiq").textContent = "R$ " + calcTemuValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_Temu_PctLiq").textContent = "R$ " + calcTemuPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
+    // Temu
+    document.getElementById("resultado_Temu_Manual").textContent = "R$ " + calcTemuManual.toFixed(2).replace(".", ",") + " (" + ((calcTemuManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_Temu_ValorLiq").textContent = "R$ " + calcTemuValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_Temu_PctLiq").textContent = "R$ " + calcTemuPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
 
-        // TikTok
-        document.getElementById("resultado_TikTok_Manual").textContent = "R$ " + calcTikTokManual.toFixed(2).replace(".", ",") + " (" + ((calcTikTokManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_TikTok_ValorLiq").textContent = "R$ " + calcTikTokValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
-        document.getElementById("resultado_TikTok_PctLiq").textContent = "R$ " + calcTikTokPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
-    }
+    // TikTok
+    document.getElementById("resultado_TikTok_Manual").textContent = "R$ " + calcTikTokManual.toFixed(2).replace(".", ",") + " (" + ((calcTikTokManual / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_TikTok_ValorLiq").textContent = "R$ " + calcTikTokValorLiq.toFixed(2).replace(".", ",") + " (" + ((ValorLiq / custo) * 100).toFixed(2).replace(".", ",") + "%)";
+    document.getElementById("resultado_TikTok_PctLiq").textContent = "R$ " + calcTikTokPctLiq.toFixed(2).replace(".", ",") + " (" + "R$ " + ((custo * PctLiq) / 100).toFixed(2).replace(".", ",") + ")";
 
     animarResultadosTabela();
 
