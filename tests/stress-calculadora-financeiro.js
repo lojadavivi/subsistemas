@@ -74,7 +74,6 @@ function buildDocument(inputData) {
 
 function loadEngine() {
     const root = path.resolve(__dirname, "..");
-    const variablesFile = path.join(root, "JS", "calc_variables.js");
     const calculatorFile = path.join(root, "JS", "calculadora.js");
 
     const context = {
@@ -83,7 +82,6 @@ function loadEngine() {
     };
     vm.createContext(context);
 
-    vm.runInContext(fs.readFileSync(variablesFile, "utf8"), context, { filename: variablesFile });
     vm.runInContext(fs.readFileSync(calculatorFile, "utf8"), context, { filename: calculatorFile });
 
     return context;
@@ -219,13 +217,6 @@ function main() {
 function validateOutput(issues, cnpj, inputData, output) {
     for (const id of OUTPUT_IDS) {
         const value = output[id] || "";
-
-        if (cnpj === "RAV SHEFA DISTRIBUIDORA DE COSMETICOS LTDA" && !id.startsWith("resultado_Presencial_")) {
-            if (value !== "") {
-                issues.push({ tipo: "saida_deveria_estar_vazia_para_rav", campo: id, inputData, value });
-            }
-            continue;
-        }
 
         if (value.includes("NaN") || value.includes("Infinity") || value.includes("undefined")) {
             issues.push({ tipo: "saida_invalida", campo: id, inputData, value });

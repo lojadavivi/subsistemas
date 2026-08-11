@@ -5,8 +5,8 @@
  * Função que calcula preços finais de produtos para diferentes canais de distribuição,
  * considerando custos, taxas, comissões, fretes e margens de lucro específicos de cada plataforma.
  * 
- * DEPENDÊNCIAS: Este arquivo depende de 'calc_variables.js' que contém as constantes
- * de CNPJ, fretes, taxas e comissões para cada canal.
+ * DEPENDÊNCIAS: Este arquivo carrega as variáveis diretamente da planilha
+ * pública do Google Sheets (CSV), sem arquivo local de variáveis.
  * 
  * CANAIS SUPORTADOS:
  * - Presencial (com envio especial para RAV SHEFA)
@@ -22,6 +22,349 @@
  * @param {HTMLElement} inputElement - Elemento HTML que acionou a função (não utilizado diretamente)
  * @returns {void} - Atualiza os elementos HTML com os resultados calculados
  */
+
+const CALCULATOR_VARIABLE_KEYS = [
+    "cnpj_LTDA", "cnpj_FERREIRA", "cnpj_VIVI", "cnpj_RAV",
+    "Comissao_Presencial", "Comissao_Amazon", "Comissao_CasasBahia", "Comissao_Magalu", "Comissao_MLC", "Comissao_MLP", "Comissao_Olist", "Comissao_RD", "Comissao_Shein", "Comissao_Shopee_ATE79", "Comissao_Shopee_ACIMA79", "Comissao_Temu", "Comissao_TikTok_ATE50", "Comissao_TikTok_ACIMA50",
+    "Frete_Presencial", "Frete_Amazon_ATE30", "Frete_Amazon_30a50", "Frete_Amazon_50a79", "Frete_Amazon_ACIMA79_ate300G", "Frete_Amazon_ACIMA79_300a500G", "Frete_Amazon_ACIMA79_500Ga1KG", "Frete_Amazon_ACIMA79_1a2KG", "Frete_Amazon_ACIMA79_2a5KG", "Frete_Amazon_ACIMA79_5a9KG", "Frete_Amazon_ACIMA79_9a13KG", "Frete_Amazon_ACIMA79_13a17KG", "Frete_Amazon_ACIMA79_17a23KG", "Frete_Amazon_ACIMA79_23a30KG",
+    "Frete_CasasBahia_ATE69", "Frete_CasasBahia_ACIMA79_ate300G", "Frete_CasasBahia_ACIMA79_300a500G", "Frete_CasasBahia_ACIMA79_500Ga1KG", "Frete_CasasBahia_ACIMA79_1a2KG", "Frete_CasasBahia_ACIMA79_2a5KG", "Frete_CasasBahia_ACIMA79_5a9KG", "Frete_CasasBahia_ACIMA79_9a13KG", "Frete_CasasBahia_ACIMA79_13a17KG", "Frete_CasasBahia_ACIMA79_17a23KG", "Frete_CasasBahia_ACIMA79_23a30KG",
+    "Frete_Magalu_ATE79", "Frete_Magalu_ACIMA79_ate300G", "Frete_Magalu_ACIMA79_300a500G", "Frete_Magalu_ACIMA79_500Ga1KG", "Frete_Magalu_ACIMA79_1a2KG", "Frete_Magalu_ACIMA79_2a5KG", "Frete_Magalu_ACIMA79_5a9KG", "Frete_Magalu_ACIMA79_9a13KG", "Frete_Magalu_ACIMA79_13a17KG", "Frete_Magalu_ACIMA79_17a23KG", "Frete_Magalu_ACIMA79_23a30KG",
+    "Frete_ML_ATE79", "Frete_ML_ACIMA79_ate300G", "Frete_ML_ACIMA79_300a500G", "Frete_ML_ACIMA79_500Ga1KG", "Frete_ML_ACIMA79_1a2KG", "Frete_ML_ACIMA79_2a5KG", "Frete_ML_ACIMA79_5a9KG", "Frete_ML_ACIMA79_9a13KG", "Frete_ML_ACIMA79_13a17KG", "Frete_ML_ACIMA79_17a23KG", "Frete_ML_ACIMA79_23a30KG",
+    "Frete_Olist_ATE79", "Frete_Olist_ACIMA79_ate300G", "Frete_Olist_ACIMA79_300a500G", "Frete_Olist_ACIMA79_500Ga1KG", "Frete_Olist_ACIMA79_1a2KG", "Frete_Olist_ACIMA79_2a5KG", "Frete_Olist_ACIMA79_5a9KG", "Frete_Olist_ACIMA79_9a13KG", "Frete_Olist_ACIMA79_13a17KG", "Frete_Olist_ACIMA79_17a23KG", "Frete_Olist_ACIMA79_23a30KG",
+    "Frete_RD_ate300G", "Frete_RD_300a500G", "Frete_RD_500Ga1KG", "Frete_RD_1a2KG", "Frete_RD_2a5KG", "Frete_RD_5a9KG", "Frete_RD_9a13KG", "Frete_RD_13a17KG", "Frete_RD_17a23KG", "Frete_RD_23a30KG",
+    "Frete_Shein_ATE49", "Frete_Shein_ACIMA49_ate300G", "Frete_Shein_ACIMA49_300a500G", "Frete_Shein_ACIMA49_500Ga1KG", "Frete_Shein_ACIMA49_1a2KG", "Frete_Shein_ACIMA49_2a5KG", "Frete_Shein_ACIMA49_5a9KG", "Frete_Shein_ACIMA49_9a13KG", "Frete_Shein_ACIMA49_13a17KG", "Frete_Shein_ACIMA49_17a23KG", "Frete_Shein_ACIMA49_23a30KG",
+    "Frete_Shopee", "Frete_Temu", "FretePct_TikTok", "Frete_TikTok",
+    "Nivel_Presencial", "Nivel_Amazon", "Nivel_CasasBahia_1", "Nivel_CasasBahia_2", "Nivel_CasasBahia_3", "Nivel_CasasBahia_4", "Nivel_CasasBahia_5", "Nivel_Magalu_1", "Nivel_Magalu_2", "Nivel_Magalu_3", "Nivel_Magalu_4", "Nivel_Magalu_5", "Nivel_ML_1", "Nivel_ML_2", "Nivel_ML_3", "Nivel_ML_4", "Nivel_ML_5", "Nivel_Olist_1", "Nivel_Olist_2", "Nivel_Olist_3", "Nivel_Olist_4", "Nivel_Olist_5", "Nivel_RD", "Nivel_Shein", "Nivel_Shopee", "Nivel_Temu", "Nivel_TikTok",
+    "Taxa_Presencial", "Taxa_Amazon", "Taxa_CasasBahia", "Taxa_Magalu_ATE10", "Taxa_Magalu_ACIMA10", "Taxa_ML_ATE12_PCT", "Taxa_ML_ATE29", "Taxa_ML_ATE50", "Taxa_ML_ATE79", "Taxa_ML_ACIMA79", "Taxa_Olist", "Taxa_RD", "Taxa_Shein", "Taxa_Shopee_ATE79", "Taxa_Shopee_ATE99", "Taxa_Shopee_ATE199", "Taxa_Shopee_ACIMA200", "Taxa_Temu", "Taxa_TikTok_ATE50", "Taxa_TikTok_ACIMA50",
+    "Custo_Insumos_ate300G", "Custo_Insumos_acima300G",
+];
+
+const CALCULATOR_VARIABLE_KEY_SET = new Set(CALCULATOR_VARIABLE_KEYS);
+const PLANILHA_DATA_CHAVES = new Set([
+    "PLANILHA_ULTIMA_ALTERACAO",
+    "META_ULTIMA_ATUALIZACAO",
+    "ULTIMA_ATUALIZACAO",
+]);
+
+function inicializarBindingsVariaveis() {
+    CALCULATOR_VARIABLE_KEYS.forEach(function (name) {
+        // Cria binding global (var) sem valor de negócio local.
+        (0, eval)("var " + name + " = 0;");
+    });
+}
+
+let CNPJ_ALIQUOTAS = {};
+let FRETE_POR_PESO = {};
+let NIVEL_DESCONTO = {};
+
+const GOOGLE_SHEET_SHARE_URL = "https://docs.google.com/spreadsheets/d/18mMqatenWtyLYyV2s2pAEQRtGokApxA3/edit?usp=sharing&ouid=102644507788220176781&rtpof=true&sd=true";
+const GOOGLE_SHEET_GID = "0";
+
+function obterValorVariavel(nome, fallback = 0) {
+    const valor = globalThis[nome];
+    return Number.isFinite(valor) ? valor : fallback;
+}
+
+function reconstruirMapasConfiguracao() {
+    CNPJ_ALIQUOTAS = {
+        "LOJA DA VIVI LTDA": cnpj_LTDA,
+        "FERREIRA PROSPERITA COSMETICOS LTDA": cnpj_FERREIRA,
+        "RAV SHEFA DISTRIBUIDORA DE COSMETICOS LTDA": cnpj_RAV,
+        "VIVIANE CHRISTINA FERREIRA": cnpj_VIVI,
+    };
+
+    const sufixoPorPeso = {
+        "até 0.3kg": "ate300G",
+        "0.3 a 0.5kg": "300a500G",
+        "0.5 a 1kg": "500Ga1KG",
+        "1 a 2kg": "1a2KG",
+        "2 a 5kg": "2a5KG",
+        "5 a 9kg": "5a9KG",
+        "9 a 13kg": "9a13KG",
+        "13 a 17kg": "13a17KG",
+        "17 a 23kg": "17a23KG",
+        "23 a 30kg": "23a30KG",
+    };
+
+    FRETE_POR_PESO = {};
+    Object.keys(sufixoPorPeso).forEach(function (faixaPeso) {
+        const sufixo = sufixoPorPeso[faixaPeso];
+        FRETE_POR_PESO[faixaPeso] = {
+            presencial: Frete_Presencial,
+            amazon: obterValorVariavel("Frete_Amazon_ACIMA79_" + sufixo),
+            casasBahia: obterValorVariavel("Frete_CasasBahia_ACIMA79_" + sufixo),
+            magalu: obterValorVariavel("Frete_Magalu_ACIMA79_" + sufixo),
+            mercadoLivre: obterValorVariavel("Frete_ML_ACIMA79_" + sufixo),
+            olist: obterValorVariavel("Frete_Olist_ACIMA79_" + sufixo),
+            rd: obterValorVariavel("Frete_RD_" + sufixo),
+            shein: obterValorVariavel("Frete_Shein_ACIMA49_" + sufixo),
+            shopee: Frete_Shopee,
+            temu: Frete_Temu,
+            tiktok: Frete_TikTok,
+        };
+    });
+
+    NIVEL_DESCONTO = {
+        "5": { presencial: Nivel_Presencial, amazon: Nivel_Amazon, casasBahia: Nivel_CasasBahia_5, magalu: Nivel_Magalu_5, mercadoLivre: Nivel_ML_5, olist: Nivel_Olist_5, rd: Nivel_RD, shein: Nivel_Shein, shopee: Nivel_Shopee, temu: Nivel_Temu, tiktok: Nivel_TikTok },
+        "4": { presencial: Nivel_Presencial, amazon: Nivel_Amazon, casasBahia: Nivel_CasasBahia_4, magalu: Nivel_Magalu_4, mercadoLivre: Nivel_ML_4, olist: Nivel_Olist_4, rd: Nivel_RD, shein: Nivel_Shein, shopee: Nivel_Shopee, temu: Nivel_Temu, tiktok: Nivel_TikTok },
+        "3": { presencial: Nivel_Presencial, amazon: Nivel_Amazon, casasBahia: Nivel_CasasBahia_3, magalu: Nivel_Magalu_3, mercadoLivre: Nivel_ML_3, olist: Nivel_Olist_3, rd: Nivel_RD, shein: Nivel_Shein, shopee: Nivel_Shopee, temu: Nivel_Temu, tiktok: Nivel_TikTok },
+        "2": { presencial: Nivel_Presencial, amazon: Nivel_Amazon, casasBahia: Nivel_CasasBahia_2, magalu: Nivel_Magalu_2, mercadoLivre: Nivel_ML_2, olist: Nivel_Olist_2, rd: Nivel_RD, shein: Nivel_Shein, shopee: Nivel_Shopee, temu: Nivel_Temu, tiktok: Nivel_TikTok },
+        "1": { presencial: Nivel_Presencial, amazon: Nivel_Amazon, casasBahia: Nivel_CasasBahia_1, magalu: Nivel_Magalu_1, mercadoLivre: Nivel_ML_1, olist: Nivel_Olist_1, rd: Nivel_RD, shein: Nivel_Shein, shopee: Nivel_Shopee, temu: Nivel_Temu, tiktok: Nivel_TikTok },
+    };
+}
+
+function obterCustoInsumoPorPeso(peso) {
+    if (peso === "até 0.3kg") {
+        return Custo_Insumos_ate300G;
+    }
+    return Custo_Insumos_acima300G;
+}
+
+function parseCsvLine(line) {
+    const values = [];
+    let current = "";
+    let inQuotes = false;
+
+    for (let i = 0; i < line.length; i += 1) {
+        const ch = line[i];
+
+        if (ch === '"') {
+            const next = line[i + 1];
+            if (inQuotes && next === '"') {
+                current += '"';
+                i += 1;
+            } else {
+                inQuotes = !inQuotes;
+            }
+            continue;
+        }
+
+        if (ch === "," && !inQuotes) {
+            values.push(current);
+            current = "";
+            continue;
+        }
+
+        current += ch;
+    }
+
+    values.push(current);
+    return values;
+}
+
+function atualizarVariavelNumerica(chave, valorBruto) {
+    if (!/^[A-Za-z_][A-Za-z0-9_]*$/.test(chave)) {
+        return false;
+    }
+    if (!CALCULATOR_VARIABLE_KEY_SET.has(chave)) {
+        return false;
+    }
+
+    let valorNormalizado = String(valorBruto).trim();
+    if (valorNormalizado === "") {
+        return false;
+    }
+
+    const isPercentual = valorNormalizado.endsWith("%");
+    valorNormalizado = valorNormalizado
+        .replace(/R\$\s*/gi, "")
+        .replace(/\s+/g, "")
+        .replace(/%$/, "");
+
+    if (valorNormalizado.includes(".") && valorNormalizado.includes(",")) {
+        valorNormalizado = valorNormalizado.replace(/\./g, "").replace(",", ".");
+    } else if (valorNormalizado.includes(",")) {
+        valorNormalizado = valorNormalizado.replace(",", ".");
+    }
+
+    let numero = Number(valorNormalizado);
+    if (isPercentual && Number.isFinite(numero)) {
+        numero = numero / 100;
+    }
+
+    if (!Number.isFinite(numero)) {
+        return false;
+    }
+
+    globalThis[chave] = numero;
+    return true;
+}
+
+function aplicarCsvDeVariaveis(csvText) {
+    const lines = csvText.split(/\r?\n/).filter(Boolean);
+    if (lines.length < 2) {
+        throw new Error("CSV de variaveis vazio ou invalido.");
+    }
+
+    let headerLineIndex = -1;
+    let header = [];
+    for (let i = 0; i < Math.min(lines.length, 20); i += 1) {
+        const probe = parseCsvLine(lines[i]).map(function (item) {
+            return item.trim().toLowerCase();
+        });
+        if (probe.indexOf("chave") !== -1 && probe.indexOf("valor") !== -1) {
+            headerLineIndex = i;
+            header = probe;
+            break;
+        }
+    }
+
+    if (headerLineIndex === -1) {
+        throw new Error("Cabecalho com colunas chave/valor nao encontrado no CSV.");
+    }
+
+    const idxChave = header.indexOf("chave");
+    const idxValor = header.indexOf("valor");
+
+    if (idxChave === -1 || idxValor === -1) {
+        throw new Error("CSV precisa conter colunas chave e valor.");
+    }
+
+    let atualizadas = 0;
+    let planilhaAtualizadaEmValor = "";
+    for (let i = headerLineIndex + 1; i < lines.length; i += 1) {
+        const cols = parseCsvLine(lines[i]);
+        const chave = (cols[idxChave] || "").trim();
+        const valor = cols[idxValor] || "";
+
+        if (PLANILHA_DATA_CHAVES.has(chave.toUpperCase())) {
+            planilhaAtualizadaEmValor = String(valor).trim();
+            continue;
+        }
+
+        if (atualizarVariavelNumerica(chave, valor)) {
+            atualizadas += 1;
+        }
+    }
+
+    if (atualizadas === 0) {
+        throw new Error("Nenhuma variavel valida foi atualizada a partir do CSV.");
+    }
+
+    reconstruirMapasConfiguracao();
+    return {
+        atualizadas: atualizadas,
+        planilhaAtualizadaEmValor: planilhaAtualizadaEmValor,
+    };
+}
+
+async function carregarVariaveisDaUrl(url) {
+    const response = await fetch(url, { cache: "no-store" });
+    if (!response.ok) {
+        throw new Error("Falha ao buscar planilha: " + response.status + " em " + url);
+    }
+    const csvText = await response.text();
+    const parsed = aplicarCsvDeVariaveis(csvText);
+
+    const lastModifiedHeader = response.headers.get("last-modified");
+    const dateHeader = response.headers.get("date");
+    const etagHeader = response.headers.get("etag");
+
+    return {
+        url: url,
+        atualizadas: parsed.atualizadas,
+        sincronizadoEm: new Date().toISOString(),
+        planilhaAtualizadaEm: parsed.planilhaAtualizadaEmValor || "",
+        planilhaAtualizadaEmHttp: lastModifiedHeader || "",
+        respostaGeradaEm: dateHeader || "",
+        etag: etagHeader || "",
+    };
+}
+
+function extrairSpreadsheetId(url) {
+    const match = String(url).match(/\/spreadsheets\/d\/([a-zA-Z0-9_-]+)/);
+    return match ? match[1] : "";
+}
+
+function montarUrlsCsvGoogle(sheetId, gid) {
+    return [
+        "https://docs.google.com/spreadsheets/d/" + sheetId + "/gviz/tq?tqx=out:csv&gid=" + gid,
+        "https://docs.google.com/spreadsheets/d/" + sheetId + "/export?format=csv&gid=" + gid,
+        "https://docs.google.com/spreadsheets/d/" + sheetId + "/export?format=csv&single=true&gid=" + gid,
+        "https://docs.google.com/spreadsheets/d/" + sheetId + "/pub?gid=" + gid + "&single=true&output=csv",
+        "https://docs.google.com/feeds/download/spreadsheets/Export?key=" + sheetId + "&exportFormat=csv&gid=" + gid,
+    ];
+}
+
+async function carregarConfiguracaoRemota() {
+    const scope = typeof window !== "undefined" ? window : globalThis;
+    const sheetId = extrairSpreadsheetId(GOOGLE_SHEET_SHARE_URL);
+    if (!sheetId) {
+        throw new Error("Nao foi possivel extrair o ID da planilha no link configurado.");
+    }
+
+    const urls = montarUrlsCsvGoogle(sheetId, GOOGLE_SHEET_GID);
+    const falhas = [];
+
+    for (let i = 0; i < urls.length; i += 1) {
+        const url = urls[i];
+        try {
+            const resultado = await carregarVariaveisDaUrl(url);
+            scope.calculatorConfigStatus = {
+                ok: true,
+                erro: "",
+                fonte: resultado.url,
+                atualizadas: resultado.atualizadas,
+                sincronizadoEm: resultado.sincronizadoEm,
+                planilhaAtualizadaEm: resultado.planilhaAtualizadaEm,
+                planilhaAtualizadaEmHttp: resultado.planilhaAtualizadaEmHttp,
+                respostaGeradaEm: resultado.respostaGeradaEm,
+                etag: resultado.etag,
+            };
+            console.info("Variaveis carregadas de", resultado.url, "(atualizadas:", resultado.atualizadas + ")");
+            return resultado;
+        } catch (error) {
+            falhas.push(error && error.message ? error.message : String(error));
+        }
+    }
+
+    const erroFinal = "Falha ao buscar planilha em todos os endpoints CSV do Google. Detalhes: " + falhas.join(" | ");
+    scope.calculatorConfigStatus = {
+        ok: false,
+        erro: erroFinal,
+        fonte: "",
+        atualizadas: 0,
+        sincronizadoEm: "",
+        planilhaAtualizadaEm: "",
+        planilhaAtualizadaEmHttp: "",
+        respostaGeradaEm: "",
+        etag: "",
+    };
+
+    throw new Error(erroFinal);
+}
+
+inicializarBindingsVariaveis();
+reconstruirMapasConfiguracao();
+
+const runtimeScope = typeof window !== "undefined" ? window : globalThis;
+runtimeScope.calculatorConfigStatus = {
+    ok: false,
+    erro: "Aguardando sincronizacao.",
+    fonte: "",
+    atualizadas: 0,
+    sincronizadoEm: "",
+    planilhaAtualizadaEm: "",
+    planilhaAtualizadaEmHttp: "",
+    respostaGeradaEm: "",
+    etag: "",
+};
+if (typeof fetch === "function") {
+    runtimeScope.calculatorConfigReady = carregarConfiguracaoRemota();
+} else {
+    runtimeScope.calculatorConfigReady = Promise.resolve({
+        url: "embedded-defaults",
+        atualizadas: 0,
+    });
+}
+
+runtimeScope.recarregarVariaveisCalculadora = function () {
+    if (typeof fetch !== "function") {
+        return Promise.resolve({ url: "embedded-defaults", atualizadas: 0 });
+    }
+    return carregarConfiguracaoRemota();
+};
+
 function calcular(inputElement) {
 
     function parseNumeroInput(id) {
@@ -132,7 +475,7 @@ function calcular(inputElement) {
     // ============================================================================
     // ETAPA 2: DEFINIÇÃO DE CONSTANTES BASEADAS NO CNPJ/LOJA SELECIONADA
     // ============================================================================
-    // Cada CNPJ tem uma taxa/comissão diferente definida em calc_variables.js
+    // Cada CNPJ tem uma taxa/comissão diferente carregada da planilha pública
     var constCnpj = CNPJ_ALIQUOTAS[cnpj];
 
     // ============================================================================
@@ -140,7 +483,7 @@ function calcular(inputElement) {
     // ============================================================================
     // O frete varia dependendo do peso do produto e da plataforma de vendas.
     // Produtos acima de R$ 79 geralmente têm frete reduzido ou gratuito.
-    // Estas constantes são definidas em calc_variables.js
+    // Estas constantes são definidas pelos dados da planilha pública
 
     var fretePorPeso = FRETE_POR_PESO[peso] || {};
     var constFrete_Presencial = fretePorPeso.presencial;
@@ -253,7 +596,7 @@ function calcular(inputElement) {
     // ================================ AMAZON ====================================
     // Amazon tem frete progressivo até R$ 79: frete reduzido acima desse valor
     // CalcA3 cálculos: Manual, Valor Líquido (ValorLiq), Percentual (PctLiq)
-    // Comissão: padrão para Amazon (definida em calc_variables.js)
+    // Comissão: padrão para Amazon (definida pela planilha pública)
 
     // Pré-calcular para Amazon
     const denominador_Amazon = 1 - (constCnpj + Comissao_Amazon);
@@ -781,7 +1124,7 @@ function calcular(inputElement) {
     // ============================================================================
     // Todos os cálculos foram executados e os resultados foram exibidos na página.
     // Se precisar adicionar novos canais de vendas:
-    // 1. Adicione as constantes necessárias em calc_variables.js
+    // 1. Adicione as constantes necessárias na planilha pública
     // 2. Defina as constantes de CNPJ, frete, nível e insumos
     // 3. Implemente os três tipos de cálculo: Manual, ValorLiq, PctLiq
     // 4. Adicione elementos HTML para exibir os resultados

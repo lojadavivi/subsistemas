@@ -26,6 +26,13 @@
             </div>
         </header>
 
+        <div class="app-toolbar" role="region" aria-label="Barra operacional de etiquetas">
+            <span class="toolbar-chip">Fluxo: importar arquivo, escolher modelo e imprimir</span>
+            <div class="toolbar-actions">
+                <a class="footer-chip" href="index.html">Ir para calculadora de marketplaces</a>
+            </div>
+        </div>
+
         <main>
             <section class="panel price-import-panel" aria-label="Importar planilha">
                 <h2>Importar planilha</h2>
@@ -50,19 +57,28 @@
                 <div id="a4Pages" class="a4-pages"></div>
             </section>
         </main>
-        <footer class="app-footer">
-            <nav class="footer-links" aria-label="Atalhos do rodapé">
-                <a class="footer-chip" href="/subsistemas/">Calculadora para marketplaces</a>
-                <a class="footer-chip" href="/subsistemas/caixa.html">Calculadora de Caixa</a>
-                <a class="footer-chip" href="/subsistemas/precos.html">Gerador de etiquetas de preço</a>
-                <a class="footer-chip" href="/subsistemas/XMLtoHTML.html">Gerador de DANFE Simplificada</a>
-            </nav>
-            <p class="footer-legal">
-                Desenvolvido por <a href="https://www.aeca.com.br/francis-castela">Francis Castela</a> para a
-                <a href="https://www.lojadaviviunhas.com.br/">Loja da Vivi</a>. Licença
-                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br" target="_blank" rel="license noopener noreferrer">CC BY-NC-SA 4.0</a>.
-                <a class="version-link" href="https://github.com/lojadavivi/subsistemas?tab=readme-ov-file#changelog">Versão 5.2.3 - 01/07/2026</a>
-            </p>
+        <footer class="app-footer app-footer-redesign">
+            <div class="footer-main">
+                <div class="footer-identity">
+                    <p class="footer-kicker">Subsistemas Loja da Vivi</p>
+                    <p class="footer-title">Gerador de Etiquetas A4</p>
+                    <p class="footer-text">Importe sua planilha e gere impressão com layout pronto para operação.</p>
+                </div>
+                <nav class="footer-nav" aria-label="Atalhos do rodapé">
+                    <a class="footer-nav-link" href="index.html">Marketplaces</a>
+                    <a class="footer-nav-link" href="caixa.html">Caixa</a>
+                    <a class="footer-nav-link" href="precos.html">Etiquetas</a>
+                    <a class="footer-nav-link" href="XMLtoHTML.html">DANFE</a>
+                </nav>
+            </div>
+            <div class="footer-meta">
+                <p class="footer-meta-text">Desenvolvido por <a href="https://www.aeca.com.br/francis-castela">Francis Castela</a> para a <a href="https://www.lojadaviviunhas.com.br/">Loja da Vivi</a> • <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br" target="_blank" rel="license noopener noreferrer">CC BY-NC-SA 4.0</a></p>
+                <div class="footer-meta-links">
+                    <a href="README.md">Guia</a>
+                    <a href="CHANGELOG.md">Changelog</a>
+                    <a class="footer-version" href="https://github.com/lojadavivi/subsistemas/blob/main/CHANGELOG.md">v6.0.0 LTS</a>
+                </div>
+            </div>
         </footer>
     </div>
 </body>

@@ -11,14 +11,10 @@ A separação facilita manutenção e reduz risco de regressão ao mexer no visu
 
 ## Arquivos e responsabilidades
 
-- JS/calc_variables.js
-  - Guarda todas as constantes de negócio
-  - Alíquotas por CNPJ
-  - Comissões, fretes, níveis, taxas e insumos
-  - Expõe mapas de configuração para manutenção rápida (CNPJ_ALIQUOTAS, FRETE_POR_PESO, NIVEL_DESCONTO)
-
 - JS/calculadora.js
   - Função principal calcular()
+  - Carrega constantes via CSV público do Google Sheets
+  - Reconstrói mapas de configuração (CNPJ_ALIQUOTAS, FRETE_POR_PESO, NIVEL_DESCONTO)
   - Lê entradas da tela
   - Aplica fórmulas por canal
   - Escreve os resultados nos IDs de saída
@@ -28,11 +24,12 @@ A separação facilita manutenção e reduz risco de regressão ao mexer no visu
   - Faz bind de eventos dos campos
   - Aplica cor de contexto por CNPJ
   - Inicializa valores padrão dos campos
-  - Atualiza o assistente guiado com checklist de preenchimento
+  - Aguarda sincronização da planilha para liberar cálculo com dados atualizados
+  - Mostra status de sincronização da planilha e permite atualização manual
 
 - tests/regression-calculadora.js
-  - Executa regressão A/B entre legado e versão atual
-  - Compara todas as saídas textuais por cenário
+  - Executa regressão da versão atual
+  - Valida preenchimento das saídas textuais por cenário
 
 - index.html
   - Estrutura semântica da interface
@@ -90,28 +87,14 @@ Para preservar o funcionamento, estes IDs devem permanecer:
 ## Fluxo de execução
 
 1. Página carrega e os scripts são inicializados com defer.
-2. JS/ui.js aplica tema salvo e preenche campos padrão.
-3. JS/ui.js atualiza o assistente guiado de preenchimento.
+2. JS/calculadora.js inicializa bindings em zero e tenta sincronizar variáveis pela planilha pública.
+3. JS/ui.js aplica tema salvo e preenche campos padrão.
 4. Eventos de mudança e digitação disparam calcular().
-5. JS/calculadora.js processa as fórmulas por canal.
-6. Resultados são exibidos em tempo real.
+5. Antes do cálculo, JS/ui.js pode sincronizar variáveis remotas novamente (intervalo e botão manual).
+6. JS/calculadora.js processa as fórmulas por canal.
+7. Resultados são exibidos em tempo real.
 
-## Ajuda guiada (UX)
-
-O assistente da tela principal acompanha 4 passos:
-
-- Selecionar CNPJ
-- Selecionar peso
-- Informar custo
-- Preencher somente um modo de cálculo
-
-Comportamento:
-
-- Marca etapas concluídas
-- Mostra etapa ativa
-- Exibe dica contextual para reduzir erro de preenchimento
-
-## Regressão comparativa (A/B)
+## Regressão
 
 Para validar equivalência do motor após refatoração:
 
@@ -119,15 +102,12 @@ Para validar equivalência do motor após refatoração:
 node tests/regression-calculadora.js
 ```
 
-Referência recente:
-
-- 1800 cenários comparados
-- 0 divergências entre legado e atual
+Observação: os testes atuais validam consistência da versão em produção.
 
 ## Regras de negócio preservadas
 
 - Mesmo motor de cálculo da versão anterior
-- Mesmas constantes de negócio
+- Mesmas constantes de negócio (agora carregadas da planilha Google)
 - Mesmo tratamento especial para CNPJ RAV SHEFA
 - Mesmo formato final dos textos de saída
 
@@ -145,7 +125,7 @@ Sem alterar nomes de IDs e sem mexer no contrato de integração.
 
 ### Ajustes de negócio
 
-- Atualize constantes em JS/calc_variables.js
+- Atualize constantes na planilha pública do Google Sheets
 - Se necessário, ajuste fórmulas em JS/calculadora.js
 - Valide todas as plataformas e faixas de preço/peso
 
@@ -159,4 +139,4 @@ Sem alterar nomes de IDs e sem mexer no contrato de integração.
 
 ## Observação
 
-FORMULAS_CALCULO.md continua como referência matemática para auditoria das fórmulas.
+docs/FORMULAS_CALCULO.md continua como referência matemática para auditoria das fórmulas.
